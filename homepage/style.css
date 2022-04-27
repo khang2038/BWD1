@@ -1,152 +1,178 @@
-:root{
-    /* --primary-color : rgb(60, 153, 245); */
-    --header-height : 50px;
-    --header-fontsize : 20px;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anek+Tamil&family=Josefin+Sans&family=Patua+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anek+Tamil&family=Josefin+Sans&family=Nunito:ital,wght@0,300;1,200;1,300&family=Patua+One&display=swap');
+
+/*---------animate -----------------*/
+.animate__animated.animate__bounceInUp {
+  --animate-duration: 2s;
 }
+.animate__animated.animate__bounceInRight {
+  --animate-duration: 2s;
+}
+
+/*--------------------------*/
 
 * {
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
 }
+:root{
+  --primary-color-light:#F6F5FF;
+  --header-color:#fff;
+  --body-color:#ffffff;
+  --search-color:#ebebeb;
+  --nav-center-icon-color:#e0e0e0;
+  --page-color:#f7f7f7;
+  --the_left_page-color:#fff;
+  --text-the_left_page-color:#727272;
+  --toggle-color:#DDD;
+  --shadow-header-color:#dbdbdb;
 
+  --tran-02:all 0.2s ease;
+  --tran-03:all 0.3s ease;
+  --tran-04:all 0.4s ease;
+  --tran-05:all 0.5s ease;
+}
+body.dark{
+  --primary-color-light:#F6F5FF;
+  --header-color:#242526;
+  --body-color:#18191A;
+  --search-color:#494949;
+  --nav-center-icon-color:#868383;
+  --page-color:#18191A;
+  --the_left_page-color:#242526;
+  --text-the_left_page-color:#CCC;
+  --toggle-color:#FFF;
+  --shadow-header-color:#383636;
+}
+body{
+  transition:var(--tran-04);
+}
 html{
-    font-family: 'Lato',sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 20px;
-    color: white;
-    background-color: #ffffff;
+    color: #5a5a5a;
+    background-color: var(--body-color);
     text-rendering: optimizeLegibility;
 }
-
-body {
+header{
+  display:flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 60px;
+  box-shadow:0 1px 5px 2px var(--shadow-header-color);
+  position:fixed;
+  background-color:var(--header-color);
+  z-index: 2;
+}
+.the_left_nav{
+   display:flex;
+   align-items: center;
+   margin-left:2%;
+   color:var(--text-the_left_page-color);
+}
+.logo{
+   margin-right:15px;
+   background-color:blueviolet;
+   padding:7px 15px;
+   color:white;
+   font-weight:700;
+   border-radius:20%;
+}
+.search{
+  display:flex;
+  padding:12px 20px;
+  background-color:var(--search-color);
+  border-radius: 20px;
+}
+.search input{
+    margin-left: 4px;
+    border:none;
+    outline:none;
+    background-color: var(--search-color);
+}
+.search .icon{
+   font-size:16px;
+   margin-right: 5px;
+}
+.the_center_nav{
+   display:flex;
+   align-items: center;
+   justify-content: center;
+   margin-right: 30px;
+   color:var(--text-the_left_page-color);
+}
+.the_center_nav .icon{
+    margin-right: 25px;
+    font-size: 25px;
+    padding: 10px 30px; 
+    transition: all 0.5s;
     position: relative;
 }
-
-/*===========----------HEADER-------===========*/
-
-header {
-    display: flex;
-    justify-content: space-around;
-    position: fixed;
-    width: 100%;
-    background-color: #ffffff;
-    height: calc(var(--header-height));
-    border-bottom: 0.1px solid #000;
+.the_center_nav .icon:hover,
+.the_center_nav .icon:active{
+    background-color:var(--nav-center-icon-color);
+    border-radius: 10px;
+    cursor: pointer;
 }
-/*----------ctn__header---------*/
-
-header .ctn__header {
-    display: flex;
-    justify-content: space-around;
-    width: 40%;
+.the_center_nav .icon:hover::after,
+.the_center_nav .icon:active:after{
+    position: absolute;
+    content: "_______";
+    top:20px;
+    left: 1px;
+    bottom: 1px;
 }
 
-header .ctn__header div{
-    padding: 15px 30px;
-    font-size: var(--header-fontsize);
-    border-bottom: 0px solid #333;
-
+.the_right_nav{
+  display:flex;
+  align-items: center;
+  margin-right: 20%;
+  color:var(--text-the_left_page-color);
+}
+.the_right_nav .icon{
+  margin-right: 10px;
+  font-size: 25px;
+  color: var(--text-the_left_page-color);
 }
 
-header .ctn__header div:hover {
-    animation-name: header-line;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    border-bottom: 3px solid #333;
+/*====================Introduce__web================*/
+.introduce__web {
+  padding: 60px 0 0 0;
+  display: flex;
+  justify-content: center;
+  font-family: 'Nunito', sans-serif;
+  /* font-family: 'Anek Tamil', sans-serif; */
 }
 
-@keyframes header-line {
-    0% {
-        border-bottom: 0px solid #333;
-    }
-    100% {
-        border-bottom: 3px solid #333;
-    }
+.introduce__web .ctn__content{
+  width: 50%;
+  text-align: center;
+  padding: 200px 0;
 }
 
-header .ctn__header div a{
-    color: black;
-    text-decoration: none;
-}
-/*----------search---------*/
-
-header .search{
-    display: none;
-    margin: 5px 0;
-    width: 0%;
-    align-items: center;
-    /* background-color:rgb(218, 211, 211); */
-    /* padding-left:18px; */
-    border: 1px solid #333;
-    border-radius: 20px;
+.introduce__web .ctn__content h1{
+  text-align: left;
+  padding: 0 20%;
 }
 
-@keyframes searchtoLong {
-    0% {
-        width: 0%;
-    }
-    100% {
-        width: 20%;
-    }
-}
-@keyframes searchtoNone {
-    0% {
-        width: 20%;
-    }
-    100% {
-        width: 0%;
-    }
+.introduce__web .ctn__content pre{
+  padding: 20px 15% 20px 20%;
+  text-align: left;
+  font-size: 25px;
 }
 
-header .search input{
-    font-size: 16px;
-    outline: none;
-    border: none;
-    width: 80%;
-    /* background-color:rgb(218, 211, 211); */
-    color:#5a5a5a;
-}
-header .search .icon{
-    color: #333;
-    font-size: var(--header-fontsize);
-    margin: 0 10px;
-}
-/*----------sign-in---------*/
-
-header .sign-in {
-    padding: 15px;
-    font-size: var(--header-fontsize);
-    height: var(--header-fontsize);
+.introduce__web .ctn__image{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  padding: 100px 0;
 }
 
-header .sign-in a{
-    color: black;
-    text-decoration: none;
+.introduce__web .ctn__image img{
+  width: 50%;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
