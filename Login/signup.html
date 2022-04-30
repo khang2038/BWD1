@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | PRO4</title>
-    <link rel="stylesheet" href="login.css">
+    <title>Sign-up | PRO4</title>
+    <link rel="stylesheet" href="signup.css">
     <script src="https://kit.fontawesome.com/1b6a20c6b1.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -17,26 +17,24 @@
                 </div> -->
                 <div class="login__form">
                     <p class="login__title">
-                        Sign In 
+                        Sign Up 
                     </p>
                     <p class="login__decs">
                         Professional Crowdfunding Platform - Let's explore ! 
                     </p>
-                    <label for="eamil">Email</label>
+                    <label for="name">Name*</label>
+                    <input type="text" name="name" id="name" placeholder="display name">
+                    <label for="eamil">Email*</label>
                     <input type="email" name="email" id="email" placeholder="user@mail.com">
-                    <label for="password">Password</label>
-                    <input type="text" name="password" id="password" placeholder="Password">
+                    <label for="password">Password*</label>
+                    <input type="text" name="password" id="password" placeholder="strong password">
                     <p class="conditions">
-                        <!-- <input type="checkbox">
+                        <input type="checkbox">
                         I agree to the 
-                        <a href="#">Terms & Conditions</a> -->
-                        <a class="forgot" href="#">Forgot password?</a> 
+                        <a href="#">Terms & Conditions</a>
                     </p>
-                    <button type="submit">Sign In</button>
-                    <p class="mention-sign-up">
-                        Need a account? 
-                        <a class="sign-up" href="signup.html">Sign up</a> 
-                    </p>
+                    <button type="button" onclick="window.location= 'login.html'">Sign Up</button>
+                   
                 </div>
             </div>
             <div class="login__banner">

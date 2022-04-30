@@ -49,7 +49,7 @@ html {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
 }
 
 .login__form .login__title {
@@ -102,7 +102,7 @@ html {
 
 .login__form .conditions a {
     text-decoration: none;
-    /* font-weight: 600; */
+    font-weight: 600;
     color: var(--background-secondary-color);
 } 
 
@@ -111,19 +111,6 @@ html {
     border: 0;
 }
 
-.login__form .mention-sign-up {
-    font-weight: 500;
-}
-
-/* .mention-sign-up .sign-up {
-    margin-top: 10px;
-} */
-
-.login__form .mention-sign-up a {
-    text-decoration: none;
-    color: var(--background-secondary-color);
-    font-weight: 600;
-}
 /* End Left Main Login */
 
 .login .login__banner {
