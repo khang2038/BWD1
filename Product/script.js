@@ -14,3 +14,18 @@ const body=document.querySelector("body"),
               modeText.innerText="Dark Mode";
           }
       })
+
+
+    $(document).ready(function(){
+        $('.ctn__footer').waypoint(
+            function(direction){
+                if(direction == 'down'){
+                    slidebar.classList.remove('letf_page');
+                }else{
+                    slidebar.classList.add('letf_page');
+                }
+            },{
+                offset : "600px"
+            }
+        )
+})

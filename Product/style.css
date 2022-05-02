@@ -35,6 +35,7 @@ body.dark{
 }
 body{
   transition:var(--tran-04);
+  background-color:var(--page-color);
 }
 html{
     font-family: 'Poppins', sans-serif;
@@ -65,6 +66,7 @@ header{
    color:white;
    font-weight:700;
    border-radius:20%;
+   cursor: pointer;
 }
 .search{
   display:flex;
@@ -125,23 +127,37 @@ header{
 /* -------------page---------- */
 .page{
     background-color:  var(--page-color);
-    height:100vh;
+    height:100%;
+    width:100%;
     display: flex;
 }
 .the_left_page{
    margin-top: 5%;
    background-color:var(--the_left_page-color);
    display: flex;
-   width: 15%;
+   width: 16%;
    flex-direction: column;
    border-radius:10px;
    font-size:16px;
-   
+}
+ .letf_page{
+   position:fixed;
 }
 .the_left_page li{
-   margin-left:25px;
    margin-top:40px;
    list-style: none;
+}
+.the_left_page .menu li{
+    transition:all 0.5s;
+    padding-left: 25px;
+}
+.the_left_page .menu li:hover,
+.the_left_page .menu li:hover{
+    background-color:var(--nav-center-icon-color);
+    padding:10px;
+    padding-left: 10px;
+    border-radius:15px;
+    cursor: pointer;
 }
 .the_left_page li span{
    font-weight:550;
@@ -153,6 +169,7 @@ header{
    margin-right: 15px;
 }
 .the_left_page .mode{
+    margin-left:25px;
     margin-top:90%;
     display: flex;
 }
@@ -208,3 +225,173 @@ body.dark .the_left_page .mode i.moon{
 body.dark .switch::before{
     left:25px;
 }
+                    /* center page */
+.center_page{
+     display:flex;
+     flex-direction: column;
+     margin-left: 30%;
+     margin-top: 5%;
+     color:var(--text-the_left_page-color);
+}
+.Infor-AI{
+    display:flex;
+    flex-direction: column;
+    font-size: 16px;
+    font-weight: 400;
+    background-color:var(--the_left_page-color);
+    padding: 10px;
+    width: 510px;
+    border-radius: 20px;
+  }
+.Infor-AI .author img{
+    width:50px;
+    border-radius:50%;
+}
+.Infor-AI .author{
+    margin-top:5px;
+    margin-left: 8px;
+    display: flex;
+}
+hr{
+  margin-top:30px;
+}
+.img1{
+  display: flex;
+}
+.img{
+  margin-top: 10px;
+  margin-right: 5px;
+  display:flex;
+  flex-direction: column;
+}
+
+.emotion{
+   margin-top: 10px;
+   font-size:25px;
+}
+.emotion i{
+  margin-left:10px;
+}
+.decription{
+   display:flex;
+   justify-content:space-around;
+   align-items: center;
+}
+.donate-investment{
+   display:flex;
+   margin-top: 5px;
+}
+.donate-investment .donate{
+   margin-right: 20px;
+   padding:7px;
+   border:solid 1px #5a5a5a;
+   border-radius:15px;
+}
+.donate-investment .investment{
+   padding:7px;
+   border:solid 1px #5a5a5a;
+   border-radius:15px;
+}
+.Infor-AI .info{
+  margin-top: 5px;
+}
+.Infor-AI .info img{
+   width: 250px;
+}
+.Infor-AI .info p{
+   margin-left: 15px;
+}
+
+.infor_author{
+   display: flex;
+   margin-left: 10px;
+   flex-direction: column;
+}
+.author .infor_author span{
+   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+   font-size:17px;
+   font-weight:700;
+}
+/*----------------footer----------------------*/
+.ctn__footer {
+  width: 100%;
+  background-color: rgb(72, 68, 68);
+  list-style:none;
+  margin-top: 50px;
+}
+
+.ctn__footer__content {
+  width: 90%;
+  height: 100%;
+  padding: 40px 0 15px;
+  margin: 0 auto;
+}
+
+.ctn__footer .footer__title {
+  color: #f4efeb;
+  font-size: 25px;
+  font-weight: 700;
+  text-align: center;
+  display: flex;
+  justify-content: flex-end;
+} 
+/*---------------------------------------------*/
+.ctn__footer .footer__title_text {
+  width: 60%;
+}
+
+.ctn__footer .footer__icon {
+  width:20%;
+}
+
+/*----------------------------------------------*/
+.footer__sign_up{
+  margin:35px 0 0;
+  display: flex;
+  justify-content: center;
+}
+.ctn__footer .sign_up__title {
+  color: #fff;
+  background-color: #a60505;
+  font-size: 18px;
+  padding: 10px 35px;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+.ctn__footer .sign_up__title:hover {
+  cursor: pointer;
+}
+
+.footer__menu {
+  display: flex;
+  justify-content: center;
+}
+.footer__menu a {
+  color: white;
+  text-decoration: none;
+  padding: 20px  20px;
+  margin: 20px;
+  font-size: 22px;
+}
+
+.footer__menu a:hover {
+  color: #ff0000;
+   background-color: rgba(124, 112, 112, 0.5);
+  border-radius: 15px;
+}
+
+/*---------footer__address-------------*/
+.footer__address{
+  width:100%;
+}
+
+.footer__address__text {
+  color: white;
+  width:45%;
+  margin: 0 auto;
+  padding: 50px 0;
+  font-size: 20px;
+  text-align: center;
+}
+
