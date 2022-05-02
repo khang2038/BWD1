@@ -48,6 +48,7 @@ body.dark{
 }
 body{
   transition:var(--tran-04);
+  position: relative;
   /* overflow: hidden; */
 }
 html{
@@ -200,6 +201,7 @@ header{
   border-radius: 20px;
   border: #ebeaf1 solid 2px;
   box-shadow: 0 1px 10px 1px #9e9e9e91;
+  background-color: white;
 }
 
 .card .form_card img{
@@ -440,6 +442,139 @@ header{
   padding: 5px 10% 30px 10%;
   font-size: 18px;
 }
+
+/*-------------------MODAL----------------------*/
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 12%;
+  left: 2%;
+  width: 96%;
+  height: 85%;
+  background-color: #ffffff;
+  z-index: 3;
+  border-radius: 20px;  
+  border: 2px solid #383636;
+}
+
+.modal.open {
+  display: block;
+}
+
+.modal .exit {
+  width: 100%;
+  height: 10%;
+}
+
+.modal .exit i {
+  font-size: 30px;
+  margin: 10px 20px;
+  font-weight: bold;
+  float: right;
+}
+
+.modal .exit i:hover {
+  cursor: pointer;
+}
+
+/*---------content----------*/
+
+.content {
+  width: 100%;
+  height: 87%;
+  display: flex;
+}
+
+.content .info_img{
+  width: 40%;
+  padding: 30px;
+}
+
+.content .info_img img{
+  width: 100%;
+}
+
+.content .info_content{
+  width: 60%;
+}
+
+.content .info_content h2{
+  color: #028858;
+  width: 100%;
+}
+
+.content .info_content h2 i{
+  float: right;
+  padding: 0 200px 0 0;
+}
+
+.content .info_content .content_details {
+  padding: 20px;
+  list-style-type: disc;
+}
+
+.content .info_content .content_details li{
+  padding: 10px;
+}
+
+.content .info_content .content_details h4{
+  padding: 20px 0 0 0;
+}
+
+.content .info_content button{
+  font-size: 30px;
+  margin: 0 0 0 60%;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.content .info_content button:hover{
+  cursor: pointer;
+  background-color: rgb(249, 247, 247);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /*----------------footer----------------------*/
 .ctn__footer {

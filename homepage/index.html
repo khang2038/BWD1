@@ -11,7 +11,9 @@
     <script src="https://kit.fontawesome.com/9590368206.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/homepage/themify-icons/themify-icons.css">
 </head>
+
 <body>
+
     <header>
         <div class="the_left_nav">
           <div class="logo">
@@ -29,7 +31,7 @@
         </div>
         <div class="the_right_nav">
             <i class="fa-solid fa-right-to-bracket icon"></i>
-            <span>Login</span>
+            <a href="/Login/login.html" style="text-decoration: none;">Login</a>
         </div>         
     </header>
 
@@ -79,7 +81,7 @@ startups and investors,Easily exchange and cooperate
             </pre>
         </div>
         
-        <div class="info_item-1">
+        <div class="info_item-1" style="background-color: white;">
             <img src="img/financial.webp" alt="">
             <div class="info_item__content">
                 <h2>Financial credibility and reasonableness</h2>
@@ -87,7 +89,7 @@ startups and investors,Easily exchange and cooperate
             </div>
         </div>
     
-        <div class="info_item-2">
+        <div class="info_item-2" style="background-color: white;">
             <div class="info_item__content">
                 <h2>MISSION</h2>
                 <p>Promoting creativity, incubating potential startups that need funding, creating a learning environment to exchange knowledge and experience for young start-ups</p>
@@ -106,7 +108,7 @@ startups and investors,Easily exchange and cooperate
 
         </i>
         <div class="card_project">
-            <div class="form_card_project">
+            <div class="form_card_project" onclick=open_prj() style="background-color: white;">
                 <div>
                     <img src="img/project4.avif" alt="">
                 </div>
@@ -115,7 +117,7 @@ startups and investors,Easily exchange and cooperate
                 <p>A fully assembled, high-quality handmade bookshelf Insert with a Cyberpunk diorama theme. Includes many personalizable addons.</p>
                 
             </div>
-            <div class="form_card_project">
+            <div class="form_card_project" style="background-color: white;">
                 <div>
 
                     <img src="img/project5.avif" alt="">
@@ -124,7 +126,7 @@ startups and investors,Easily exchange and cooperate
                 <p>For Skiing, Yachting, Cycling and all Sports Players. Have Fun and Stay Connected, Go Adventure Boldly with Pruto!</p>
                 
             </div>
-            <div class="form_card_project">
+            <div class="form_card_project" style="background-color: white;">
                 <div>
                     <img src="img/project6.avif" alt="">
                 </div>
@@ -135,7 +137,7 @@ startups and investors,Easily exchange and cooperate
         </div>
         <!--card-form-2-->
             <div class="card_project-1">
-                <div class="form_card_project-1">
+                <div class="form_card_project-1" style="background-color: white;">
                     <div>
                         <img src="img/project2.avif" alt="">
 
@@ -145,7 +147,7 @@ startups and investors,Easily exchange and cooperate
                     
                     
                 </div>
-                <div class="form_card_project-1">
+                <div class="form_card_project-1" style="background-color: white;">
                     <div>
                         <img src="img/project3.avif" alt="">
 
@@ -155,7 +157,7 @@ startups and investors,Easily exchange and cooperate
                     
            
                 </div>
-                <div class="form_card_project-1">
+                <div class="form_card_project-1" style="background-color: white;">
                     <div>
                         <img src="img/project1.avif" alt="">
 
@@ -168,6 +170,36 @@ startups and investors,Easily exchange and cooperate
             </div>
     </div>
 
+    <div class="modal">
+        <div class="exit" onclick=close_prj()>
+            <i class="ti-close">
+
+            </i>
+        </div>
+        <div class="content">
+            <div class="info_img">
+                <img src="img/project4.avif" alt="">
+                <p style="font-weight: bold;padding: 10px 0px;">Cyberpunk Mini Alley - Bookshelf Insert / Booknook</p>
+                <p>A fully assembled, high-quality handmade bookshelf Insert with a Cyberpunk diorama theme. Includes many personalizable addons.</p>
+            </div>
+            
+            <div class="info_content">
+                <h2 style="width: 100%">US $ <span>196.096</span><i class="ti-check-box"> 100%</i></h2>
+                <p>Pledged of US$ 10,000 goal</p>
+
+                <ul class="content_details">
+                    <li>Have you fallen in love with the beautiful neon lights of the Cyberpunk world?</li>
+                    <li>Do you want to experience a high-tech, low-life city?</li>
+                    <li>Would you want a piece of this unique world inside your home? </li>
+
+                    <h4> <i class="ti-star"> </i> The Cyberpunk MiniAlley turns this dystopian futuristic world into a reality. Now you can have your very own piece of Cyberpunk diorama in your own home. This beautiful handmade piece sits neatly on any bookshelf and provides the perfect escape into a world unlike any other.  </h4>
+                </ul>
+
+                <button>Details ...</button>
+            </div>
+        </div>
+    </div>
+        
     <div class="ctn__footer">
         <div class="ctn__footer__content">
             <li class="footer__title">
@@ -205,6 +237,13 @@ startups and investors,Easily exchange and cooperate
 
         </div>
     </div>
+
+        <img src="/homepage/img/img_background/home-bck-img-2.svg" alt="" style="position:absolute;top: 0;left: 0;z-index: -1;">
+
+        <img src="/homepage/img/img_background/home-bck-img-2.svg" alt="" style="position:absolute;top: 1000px;right: 0;z-index: -1;transform: rotate(180deg);">
+    
+        <img src="/homepage/img/img_background/home-bck-img-2.svg" alt="" style="position:absolute;top: 2000px;left: 0;z-index: -1;transform: rotate(0deg);">
+
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.js"></script>

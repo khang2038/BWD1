@@ -1,6 +1,9 @@
 //animate
 $('.ctn__content').addClass('animate__animated animate__bounceInUp');
 $('.ctn__image').addClass('animate__animated animate__bounceInRight');
+$('.content .info_img').addClass('animate__animated animate__bounceInLeft');
+$('.content .info_content').addClass('animate__animated animate__bounceInRight');
+
 
 $(document).ready(function(){
     $(window).scroll(function(){
@@ -19,12 +22,10 @@ $(document).ready(function(){
             // $('.highlights .title').addClass('animate__animated animate__bounceInUp');
             // $('.highlights .card_project').addClass('animate__animated animate__bounceInUp');
         }
-
     });
 })
 
 //btn_project_card
-
 function trans_aft_card() {
     let card_project = document.querySelector('.card_project');
     let form_card_project = document.querySelectorAll('.card_project .form_card_project');
@@ -53,6 +54,17 @@ function trans_pre_card() {
 
 }
 
+//info_details
+let modal=document.querySelector('.modal');
+
+function open_prj() {
+    modal.classList.add('open');
+}
+
+function close_prj() {
+    console.log('hihi00');
+    modal.classList.remove('open');
+}
 
 
 
