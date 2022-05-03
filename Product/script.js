@@ -25,7 +25,7 @@ const body=document.querySelector("body"),
                     slidebar.classList.add('letf_page');
                 }
             },{
-                offset : "600px"
+                offset : "550px"
             }
         )
 })
