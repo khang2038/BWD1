@@ -55,18 +55,43 @@ function trans_pre_card() {
 }
 
 //info_details
-let modal=document.querySelector('.modal');
+let modal_1=document.querySelector('.modal_1');
+let modal_2=document.querySelector('.modal_2');
+let modal_3=document.querySelector('.modal_3');
 
-function open_prj() {
-    modal.classList.add('open');
+
+//open
+function open_prj_1() {
+    modal_1.classList.add('open');
 }
 
-function close_prj() {
-    console.log('hihi00');
-    modal.classList.remove('open');
+function open_prj_2() {
+    modal_2.classList.add('open');
+}
+
+function open_prj_3() {
+    modal_3.classList.add('open');
+}
+
+//close
+function close_prj_1() {
+    modal_1.classList.remove('open');
+}
+
+function close_prj_2() {
+    modal_2.classList.remove('open');
+}
+
+function close_prj_3() {
+    modal_3.classList.remove('open');
 }
 
 
+
+
+
+
+// Tìm cách lấy thẻ 
 
 
 
