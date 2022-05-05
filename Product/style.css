@@ -51,6 +51,7 @@ header{
   height: 60px;
   box-shadow:0 1px 5px 2px var(--shadow-header-color);
   position:fixed;
+  z-index: 4;
   background-color:var(--header-color);
 }
 .the_left_nav{
