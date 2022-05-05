@@ -444,6 +444,9 @@ header{
 }
 
 /*-------------------MODAL----------------------*/
+.modal_6 ,
+.modal_5 ,
+.modal_4 ,
 .modal_3 ,
 .modal_2 ,
 .modal_1 {
@@ -459,12 +462,18 @@ header{
   border: 2px solid #383636;
 }
 
+.modal_6.open ,
+.modal_5.open ,
+.modal_4.open , 
 .modal_3.open ,
 .modal_2.open ,
 .modal_1.open {
   display: block;
 }
 
+.modal_6 .exit ,
+.modal_5 .exit ,
+.modal_4 .exit ,
 .modal_3 .exit ,
 .modal_2 .exit ,
 .modal_1 .exit {
@@ -472,6 +481,9 @@ header{
   height: 10%;
 }
 
+.modal_6 .exit i ,
+.modal_5 .exit i ,
+.modal_4 .exit i ,
 .modal_3 .exit i ,
 .modal_2 .exit i ,
 .modal_1 .exit i {
@@ -481,6 +493,9 @@ header{
   float: right;
 }
 
+.modal_6 .exit i:hover ,
+.modal_5 .exit i:hover ,
+.modal_4 .exit i:hover ,
 .modal_3 .exit i:hover ,
 .modal_2 .exit i:hover ,
 .modal_1 .exit i:hover {

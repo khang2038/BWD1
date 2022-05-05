@@ -58,6 +58,10 @@ function trans_pre_card() {
 let modal_1=document.querySelector('.modal_1');
 let modal_2=document.querySelector('.modal_2');
 let modal_3=document.querySelector('.modal_3');
+let modal_4=document.querySelector('.modal_4');
+let modal_5=document.querySelector('.modal_5');
+let modal_6=document.querySelector('.modal_6');
+
 
 
 //open
@@ -73,6 +77,18 @@ function open_prj_3() {
     modal_3.classList.add('open');
 }
 
+function open_prj_4() {
+    modal_4.classList.add('open');
+}
+
+function open_prj_5() {
+    modal_5.classList.add('open');
+}
+
+function open_prj_6() {
+    modal_6.classList.add('open');
+}
+
 //close
 function close_prj_1() {
     modal_1.classList.remove('open');
@@ -86,6 +102,17 @@ function close_prj_3() {
     modal_3.classList.remove('open');
 }
 
+function close_prj_4() {
+    modal_4.classList.remove('open');
+}
+
+function close_prj_5() {
+    modal_5.classList.remove('open');
+}
+
+function close_prj_6() {
+    modal_6.classList.remove('open');
+}
 
 
 
