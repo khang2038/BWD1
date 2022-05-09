@@ -254,10 +254,9 @@ body.dark .switch::before{
   margin-top: 60px;
   /* margin-left: 5%; */
   /* background-color: #436282; */
+  display: flex;
+  justify-content: center;
 }
-
-
-
 
 
 
