@@ -29,3 +29,66 @@ const body=document.querySelector("body"),
             }
         )
 })
+/* =============loadding================= */
+/*-----coi lại promise-------*/
+var ctn__loading__home=document.querySelector('.ctn__loading__body');
+var homepage=document.querySelector('#homepage');
+var product=document.querySelector('#product');
+var projects=document.querySelector('#projects');
+
+function sleep(s){
+    return new Promise(function(resolve) {
+        setTimeout(resolve,s)
+    })
+}
+
+function onclick__home(){
+    sleep(0)
+        .then(function() {
+            ctn__loading__home.classList.add('open__load');
+            
+            return sleep(1300);
+        })
+        .then(function() {
+            
+            ctn__loading__home.classList.remove('open__load')
+            homepage.href="../homepage/index.html"; 
+            homepage.click();
+        })      
+}
+homepage.addEventListener('click' , onclick__home);
+
+function onclick__product(){
+    sleep(0)
+        .then(function() {
+            ctn__loading__home.classList.add('open__load');
+            
+            return sleep(1300);
+        })
+        .then(function() {
+            
+            ctn__loading__home.classList.remove('open__load')
+            product.href="../Product/index.html"; 
+            product.click();
+        })      
+}
+
+product.addEventListener('click' , onclick__product);
+
+
+function onclick__projects(){
+    sleep(0)
+        .then(function() {
+            ctn__loading__home.classList.add('open__load');
+            
+            return sleep(1300);
+        })
+        .then(function() {
+            
+            ctn__loading__home.classList.remove('open__load')
+            projects.href="../projects/index.html"; 
+            projects.click();
+        })      
+}
+
+projects.addEventListener('click' , onclick__projects);

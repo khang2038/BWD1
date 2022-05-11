@@ -98,6 +98,7 @@ header{
     padding: 10px 30px; 
     transition: all 0.5s;
     position: relative;
+    text-decoration: none;
 }
 .the_center_nav .icon:hover,
 .the_center_nav .icon:active{
@@ -345,83 +346,136 @@ hr{
 /*----------------footer----------------------*/
 .ctn__footer {
   width: 100%;
-  background-color: rgb(72, 68, 68);
+  /* background-color: rgb(72, 68, 68); */
+  background-color: #000000;
   list-style:none;
   margin-top: 50px;
+  position: relative;
+  text-align: center;
 }
 
 .ctn__footer__content {
   width: 90%;
-  height: 100%;
+  height: 300px;
   padding: 40px 0 15px;
   margin: 0 auto;
-}
-
-.ctn__footer .footer__title {
-  color: #f4efeb;
-  font-size: 25px;
-  font-weight: 700;
-  text-align: center;
   display: flex;
-  justify-content: flex-end;
-} 
-/*---------------------------------------------*/
-.ctn__footer .footer__title_text {
-  width: 60%;
+  justify-content: space-around;
+  align-items: flex-start;
+  font-family: proxima-nova,Helvetica Neue,Helvetica,Arial,sans-serif;
+  flex: 1;
 }
 
-.ctn__footer .footer__icon {
-  width:20%;
-}
-
-/*----------------------------------------------*/
-.footer__sign_up{
-  margin:35px 0 0;
-  display: flex;
-  justify-content: center;
-}
-.ctn__footer .sign_up__title {
-  color: #fff;
-  background-color: #a60505;
-  font-size: 18px;
-  padding: 10px 35px;
-  border-radius: 10px;
-  font-size: 20px;
-}
-
-.ctn__footer .sign_up__title:hover {
-  cursor: pointer;
-}
-
-.footer__menu {
-  display: flex;
-  justify-content: center;
-}
-.footer__menu a {
-  color: white;
+.ctn__footer__content .footer__colum a {
   text-decoration: none;
-  padding: 20px  20px;
-  margin: 20px;
-  font-size: 22px;
+  color: var(--header-color);
 }
 
-.footer__menu a:hover {
-  color: #ff0000;
-   background-color: rgba(124, 112, 112, 0.5);
-  border-radius: 15px;
+.ctn__footer__content .footer__colum>a {
+  font-weight: 700;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding-top: 16px;
+  padding-bottom: 8px;
+  align-self: flex-start;
 }
 
-/*---------footer__address-------------*/
-.footer__address{
-  width:100%;
+.ctn__footer__content .footer__colum li{
+  font-size: 14px;
+  list-style: none;
+  font-weight: 600;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
-.footer__address__text {
-  color: white;
-  width:45%;
-  margin: 0 auto;
-  padding: 50px 0;
-  font-size: 20px;
-  text-align: center;
+.ctn__footer__content .footer__colum li>a {
+  color: #979797;
 }
 
+/*=============loading==================*/
+.ctn__loading__body {
+   position: fixed;
+   top:0;
+   right:0;
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(181, 181, 181, 0.5);
+   display: none;
+   justify-content: center;
+   align-items: center;
+   z-index: 5;
+ }
+ 
+ .ctn__loading__body.open__load {
+   animation-delay: 5s;
+   display: flex;
+ }
+ 
+ .ctn__loading {
+   animation: #fff linear 4s infinite;
+   
+   background-image: url(/homepage/img/F5S.png);
+   background-size: 70%;
+   background-repeat: no-repeat;
+   background-position-x: center;
+   background-position-y: center;
+ 
+ }
+ 
+ .ctn__loading__content {
+   position: relative;
+   width: 130px;
+   height: 130px;
+   border: 14px solid #00CCFF;
+   border-radius: 50%;
+   border-bottom-color: transparent;
+   border-left-color: transparent;
+   animation: rotate1 linear 2s infinite;
+ }
+ 
+ .ctn__loading__content::before {
+   content: '';
+   position: absolute;
+   top: 5px;
+   left: 5px;
+   bottom: 5px;
+   right: 5px;
+   border: 10px solid aquamarine;
+   border-radius: 50%;
+   border-bottom-color: transparent;
+   border-left-color: transparent;
+   animation: rotate2 linear 2s infinite;
+ }
+ 
+ 
+ 
+ @keyframes changecolor {
+   0%{
+       filter: hue-rotate(0deg);
+   }
+   100%{
+       filter: hue-rotate(360deg);
+   }
+ }
+ 
+ @keyframes rotate1 {
+   0% {
+       transform: rotate(0deg);
+   }
+   100%{
+       transform: rotate(360deg);
+   }
+ }
+ 
+ @keyframes rotate2 {
+   0% {
+       transform: rotate(0deg);
+   }
+   100%{
+       transform: rotate(-720deg);
+   }
+ }
