@@ -370,8 +370,6 @@ hr{
   flex: 1;
 }
 
-<<<<<<< HEAD
-=======
 .ctn__footer__content .footer__colum {
   display: flex;
   flex-direction: column;
@@ -380,49 +378,38 @@ hr{
   width: 20%;
 }
 
->>>>>>> f619e9ac289a38a2589bbcb2f9c84801480eed84
 .ctn__footer__content .footer__colum a {
   text-decoration: none;
   color: var(--header-color);
 }
 
 .ctn__footer__content .footer__colum>a {
-<<<<<<< HEAD
-=======
   align-self: center;
->>>>>>> f619e9ac289a38a2589bbcb2f9c84801480eed84
   font-weight: 700;
   font-size: 16px;
   text-transform: uppercase;
   letter-spacing: 2px;
   padding-top: 16px;
   padding-bottom: 8px;
-<<<<<<< HEAD
   align-self: flex-start;
-=======
   border-left: 2px solid hsla(0,0%,100%,.2);
   width: 100%;
->>>>>>> f619e9ac289a38a2589bbcb2f9c84801480eed84
 }
 
 .ctn__footer__content .footer__colum li{
   font-size: 14px;
   list-style: none;
   font-weight: 600;
-<<<<<<< HEAD
   margin-bottom: 10px;
   margin-top: 10px;
-=======
   margin-bottom: 12px;
   margin-top: 12px;
->>>>>>> f619e9ac289a38a2589bbcb2f9c84801480eed84
 }
 
 .ctn__footer__content .footer__colum li>a {
   color: #979797;
 }
 
-<<<<<<< HEAD
 /*=============loading==================*/
 .ctn__loading__body {
    position: fixed;
@@ -509,7 +496,6 @@ hr{
        transform: rotate(-720deg);
    }
  }
-=======
 .f__follow .list-follow a {
   margin: 0 5px;
 }
@@ -563,4 +549,3 @@ hr{
   font-size: 12px;
   text-align: justify;
 }
->>>>>>> f619e9ac289a38a2589bbcb2f9c84801480eed84
