@@ -28,12 +28,6 @@ const body=document.querySelector("body"),
                 offset : "550px"
             }
         )
-<<<<<<< HEAD
-    })
-
-    
-   
-=======
 })
 /* =============loadding================= */
 /*-----coi lại promise-------*/
@@ -86,7 +80,6 @@ function onclick__projects(){
     sleep(0)
         .then(function() {
             ctn__loading__home.classList.add('open__load');
-            
             return sleep(1300);
         })
         .then(function() {
@@ -98,4 +91,3 @@ function onclick__projects(){
 }
 
 projects.addEventListener('click' , onclick__projects);
->>>>>>> a1c85bec1cf4bf7678a06b4f7d1e14b52a4aaff9
