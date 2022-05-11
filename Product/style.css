@@ -289,11 +289,23 @@ hr{
    padding:7px;
    border:solid 1px #5a5a5a;
    border-radius:15px;
+   transition: all 0.5s;
+}
+.donate-investment .donate:hover,
+.donate-investment .donate:active{
+   background-color:var(--nav-center-icon-color);
+   cursor: pointer;
 }
 .donate-investment .investment{
    padding:7px;
    border:solid 1px #5a5a5a;
    border-radius:15px;
+   transition: all 0.5s;
+}
+.donate-investment .investment:hover,
+.donate-investment .investment:active{
+   background-color:var(--nav-center-icon-color);
+   cursor: pointer;
 }
 .Infor .info-des{
   margin-top: 5px;
@@ -340,8 +352,83 @@ hr{
    width: 200px;
    margin-top: 1px;
 }
+/*--------------------------------- the right page------------------------ */
+.the_right_page{
+  margin-top: 6%;
+  margin-left: 8%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.ranking{
+   font-weight: 595;
+   color:var(--text-the_left_page-color);
+   margin-top: 10px;
+}
+.investor_rankings{
+  position:fixed;
+}
+.Investor img{
+  width:50px;
+  height: 50px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+.Investor{
+  display:flex;
+  margin-left: 12%;
+  margin-top:10%;
+  font-size: 16px ;
+  
+}
+li{
+  list-style: none;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
 
+.Investor span{
+   color:var(--text-the_left_page-color);
+}
+.infor_Investor{
+   margin-left: 5px;
+   display: flex;
+   flex-direction: column;
+}
 
+.Top_project{
+   margin-top:10px;
+   position:fixed;
+   top:350px;
+}
+
+.Project {
+  display: flex;
+  transition: all 0.5s;
+}
+
+.Project:hover,
+.Project:active{
+   cursor: pointer;
+   background-color:var(--nav-center-icon-color);
+   padding:5px;
+   padding-bottom: 10px;
+   border-radius:10px;
+}
+
+.Project img{
+   width: 130px;
+   border-radius: 10%;
+   margin-top: 10px;
+   margin-left: 10px;
+   margin-right: 10px;
+   box-shadow:0px 2px 4px 1px var(--shadow-header-color); ;
+}
+.Project span{
+   font-size:16px;
+   color: var(--text-the_left_page-color);
+}
+ 
 /*----------------footer----------------------*/
 .ctn__footer {
   width: 100%;
