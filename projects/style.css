@@ -315,9 +315,8 @@ body.dark .switch::before{
 
 .ctn__loading {
   animation: #fff linear 4s infinite;
-  
-  background-image: url(/homepage/img/F5S.png);
-  background-size: 70%;
+  background-image: url(/Logo/PRO4-logos_black.png);
+  background-size: 60%;
   background-repeat: no-repeat;
   background-position-x: center;
   background-position-y: center;
@@ -328,7 +327,7 @@ body.dark .switch::before{
   position: relative;
   width: 130px;
   height: 130px;
-  border: 14px solid #00CCFF;
+  border: 13px solid #00CCFF;
   border-radius: 50%;
   border-bottom-color: transparent;
   border-left-color: transparent;
@@ -338,11 +337,11 @@ body.dark .switch::before{
 .ctn__loading__content::before {
   content: '';
   position: absolute;
-  top: 5px;
-  left: 5px;
-  bottom: 5px;
-  right: 5px;
-  border: 10px solid aquamarine;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  border: 13px solid aquamarine;
   border-radius: 50%;
   border-bottom-color: transparent;
   border-left-color: transparent;
