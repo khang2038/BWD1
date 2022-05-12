@@ -39,6 +39,7 @@ body.dark{
 body{
   transition:var(--tran-04);
   background-color:var(--page-color);
+  transition: all 0.5s;
 }
 html{
     font-family: 'Poppins', sans-serif;
@@ -119,6 +120,9 @@ header{
     bottom: 1px;
 }
 
+.center_page_fix{
+    margin-right: 500px;
+}
 .the_right_nav{
   display:flex;
   align-items: center;
@@ -149,6 +153,11 @@ header{
  .letf_page{
    position:fixed;
 }
+
+.left_page_fix{
+    margin-top: 5500px;
+}
+
 .the_left_page li{
    margin-top:40px;
    list-style: none;
@@ -401,9 +410,12 @@ li{
    flex-direction: column;
 }
 
+.Top_project_fix{
+    position:fixed;
+}
+
 .Top_project{
    margin-top:10px;
-   position:fixed;
    top:350px;
 }
 
@@ -434,6 +446,9 @@ li{
    color: var(--text-the_left_page-color);
 }
  
+a{
+  text-decoration: none;
+}
 /*----------------footer----------------------*/
 .ctn__footer {
   width: 100%;

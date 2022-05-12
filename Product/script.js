@@ -20,12 +20,18 @@ const body=document.querySelector("body"),
         $('.ctn__footer').waypoint(
             function(direction){
                 if(direction == 'down'){
-                    slidebar.classList.remove('letf_page');
+                    $('.letf_page').hide(200);
+                    // $('.center_page').addClass('center_page_fix'); 
+                    $('.investor_rankings').hide(200);
+                    $('.Top_project_fix').hide(200);
                 }else{
-                    slidebar.classList.add('letf_page');
+                    $('.letf_page').show(300);
+                    //  $('.center_page').removeClass('center_page_fix');
+                    $('.investor_rankings').show();
+                    $('.Top_project_fix').show();
                 }
             },{
-                offset : "550px"
+                offset : "560px"
             }
         )
 })
