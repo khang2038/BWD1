@@ -148,13 +148,11 @@ function onclick__product(){
     sleep(0)
         .then(function() {
             ctn__loading__home.classList.add('open__load');
-            
             return sleep(1300);
         })
         .then(function() {
-            
             ctn__loading__home.classList.remove('open__load')
-            product.href="../Product/index.html"; 
+            product.href="../Product/index.html";
             product.click();
         })      
 }
@@ -166,19 +164,15 @@ function onclick__projects(){
     sleep(0)
         .then(function() {
             ctn__loading__home.classList.add('open__load');
-            
             return sleep(1300);
         })
         .then(function() {
-            
-            ctn__loading__home.classList.remove('open__load')
-            projects.href="../projects/index.html"; 
+            ctn__loading__home.classList.remove('open__load');
+            projects.href="../projects/index.html";
             projects.click();
-        })      
+        })
 }
-
 projects.addEventListener('click' , onclick__projects);
-
 // Tìm cách lấy thẻ 
 
 

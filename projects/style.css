@@ -131,7 +131,7 @@ header{
     background-color:  var(--page-color);
     height: 100%;
     width: 100%;
-    display: flex;
+
 }
 .the_left_page{
    margin-top: 5%;
@@ -377,18 +377,52 @@ body.dark .switch::before{
   }
 }
 
+/*=================featured project===================*/
+/*--------------featured_projects----------------*/
+.featured_projects {
+  /* background-color: #b9c8cb; */
+  width: 100%;
+  height: 400px;
+}
 
+/*--------------potential_projects----------------*/
+.potential_projects {
+  /* background-color: #d8acac; */
+  width: 100%;
+}
 
+.potential_projects h1{
+  padding: 20px 0 20px 10%;
+}
 
+.form {
+  padding: 40px 3% 40px 3%;
+  display: flex;
+  flex-direction: row;
+}
 
+.form .form_1-1 {
+  background-color: #00CCFF;
+  width : 29%;
+  height: 600px;
+  margin: 0 2% 0 2%;
+}
 
+.form .form_1-2 {
+  margin: 0 2% 0 2%;
+  width: 62%;
+  display: flex;
+  flex-direction: row;
+}
+.form .form_1-2 div{
+  width: 100%;
 
+}
 
-
-
-
-
-
+.form .form_1-2 .form_bl{
+  width: 100%;
+  height: 300px;
+}
 
 
 
