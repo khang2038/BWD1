@@ -143,6 +143,7 @@ header{
    font-size: 16px;
    padding-right: 2%;
    left: -14%;
+   z-index: 3;
 }
 
 @keyframes trans_slide_bar_to_left {
@@ -391,21 +392,69 @@ body.dark .switch::before{
   width: 100%;
 }
 
-.potential_projects h1{
-  padding: 20px 0 20px 10%;
+.potential_projects h4{
+  padding: 20px 0 10px 5%;
 }
 
 .form {
-  padding: 40px 3% 40px 3%;
+  padding: 25px 3% 25px 3%;
   display: flex;
   flex-direction: row;
 }
 
 .form .form_1-1 {
-  background-color: #00CCFF;
-  width : 29%;
-  height: 600px;
+  position: relative;;
+  width : 40%;
+  height: 400px;
   margin: 0 2% 0 2%;
+  z-index: 0;
+}
+
+.form .form_1-1 .img_w_title {
+  width: 100%;
+  height: 98%;
+}
+
+
+.form_1-1 .progessbar {
+  position: absolute;
+  bottom: 4px;
+  background-color: #338CFF; 
+  height: 3%; 
+  width: 100%; 
+  border: 1px solid #5a5a5a;
+}
+
+.form_1-1 .img_w_title{
+  position: relative;
+  
+}
+
+.img_w_title img {
+  height: 98%;
+}
+
+.img_w_title h5 {
+  color: #ffffff;
+}
+
+.img_w_title p {
+  color: #ffffff;
+  font-size: small;
+}
+
+.img_w_title .title {
+  position: absolute;
+  bottom: 2%;
+  width: 100%;
+  height: 30%;
+  background-image: linear-gradient(95deg, #485461 0%, #28313b 74%);
+  opacity: 0.8;
+  display: none;
+}
+
+.img_w_title:hover .title {
+  display: block;
 }
 
 .form .form_1-2 {
@@ -420,9 +469,21 @@ body.dark .switch::before{
 }
 
 .form .form_1-2 .form_bl{
-  width: 100%;
-  height: 300px;
+  width: 95%;
+  height: 190px;
+  /* border: 1px solid #5a5a5a; */
 }
+
+.form_bl.bl1,.bl3 {
+  margin-bottom: 20px;
+}
+
+.form_bl.bl2,.bl4 {
+  margin-top: 20px;
+}
+
+
+
 
 
 
