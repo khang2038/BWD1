@@ -393,11 +393,11 @@ body.dark .switch::before{
 }
 
 .potential_projects h4{
-  padding: 20px 0 10px 5%;
+  padding: 100px 0 10px 5%;
 }
 
 .form {
-  padding: 25px 3% 25px 3%;
+  padding: 25px 3% 75px 3%;
   display: flex;
   flex-direction: row;
 }
