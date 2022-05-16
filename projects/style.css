@@ -420,18 +420,18 @@ body.dark .switch::before{
   position: absolute;
   bottom: 4px;
   background-color: #338CFF; 
-  height: 3%; 
+  height: 1.5%; 
   width: 100%; 
   border: 1px solid #5a5a5a;
 }
 
 .form_1-1 .img_w_title{
   position: relative;
-  
 }
 
 .img_w_title img {
-  height: 98%;
+  height: 100%;
+  width: 100%;
 }
 
 .img_w_title h5 {
@@ -445,49 +445,200 @@ body.dark .switch::before{
 
 .img_w_title .title {
   position: absolute;
+  padding: 3%;
   bottom: 2%;
   width: 100%;
-  height: 30%;
   background-image: linear-gradient(95deg, #485461 0%, #28313b 74%);
-  opacity: 0.8;
-  display: none;
+  opacity: 0;
+}
+
+@keyframes title_appear {
+  0% {
+    opacity: 0;
+  } 
+  100% {
+    opacity: 0.8;
+  }
 }
 
 .img_w_title:hover .title {
-  display: block;
+  animation-name: title_appear;
+  animation-duration: 1s;
+  opacity: 0.8;
+  cursor: pointer;
 }
 
 .form .form_1-2 {
   margin: 0 2% 0 2%;
   width: 62%;
+  height: 400px;
   display: flex;
   flex-direction: row;
+
 }
 .form .form_1-2 div{
-  width: 100%;
+  width: 90%;
 
 }
 
 .form .form_1-2 .form_bl{
-  width: 95%;
-  height: 190px;
-  /* border: 1px solid #5a5a5a; */
+  height: 48%;
+  margin-bottom: 2%;
+  background-repeat: no-repeat;
+  color: white;
 }
 
-.form_bl.bl1,.bl3 {
-  margin-bottom: 20px;
+.form .form_1-2 .form_bl .title{
+  padding: 5%;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(95deg, #485461 0%, #28313b 74%);
+
 }
 
-.form_bl.bl2,.bl4 {
-  margin-top: 20px;
+.form .form_1-2 .form_bl h2{
+  font-size: 0.83em;
+  color: white;
+}
+
+.form .form_1-2 .form_bl p{
+  font-size: 0.8em;
+  color: white;
+
+}
+
+/*------------bl1-----------------------*/
+.form_1-2 .bl1 {
+  background-image: url(../projects/img/feature_prj_2.avif);
+  width: 100%;
+  height: 50%;
+}
+
+.form_1-2 .bl1:hover {
+  cursor: pointer;
+}
+
+
+.form_1-2 .bl1 .title {
+  color: white;
+  opacity: 0;
+}
+
+@keyframes trans_prj_1 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.8;
+  }
 }
 
 
 
+.form_1-2 .bl1:hover .title {
+  animation-name: trans_prj_1;
+  animation-duration: 1s;
+  opacity: 0.8;
+}
+
+/*------------bl3-----------------------*/
+
+.form_1-2 .bl3 {
+  background-image: url(../projects/img/feature_prj_3.avif);
+  width: 100%;
+  height: 50%;
+}
+
+.form_1-2 .bl3:hover {
+  cursor: pointer;
+}
 
 
+.form_1-2 .bl3 .title {
+  color: white;
+  opacity: 0;
+}
+
+@keyframes trans_prj_3 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+.form_1-2 .bl3:hover .title {
+  animation-name: trans_prj_3;
+  animation-duration: 1s;
+  opacity: 0.8;
+}
+
+/*------------bl2-----------------------*/
+
+.form_1-2 .bl2 {
+  background-image: url(../projects/img/feature_prj_1.avif);
+  width: 100%;
+  height: 50%;
+}
+
+.form_1-2 .bl2:hover {
+  cursor: pointer;
+}
 
 
+.form_1-2 .bl2 .title {
+  color: white;
+  opacity: 0;
+}
+
+@keyframes trans_prj_2 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+.form_1-2 .bl2:hover .title {
+  animation-name: trans_prj_2;
+  animation-duration: 1s;
+  opacity: 0.8;
+}
+
+/*------------bl4-----------------------*/
+
+.form_1-2 .bl4 {
+  background-image: url(../projects/img/feature_prj_4.avif);
+  width: 100%;
+  height: 50%;
+}
+
+.form_1-2 .bl4:hover {
+  cursor: pointer;
+}
+
+
+.form_1-2 .bl4 .title {
+  color: white;
+  opacity: 0;
+}
+
+@keyframes trans_prj_4 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+.form_1-2 .bl4:hover .title {
+  animation-name: trans_prj_4;
+  animation-duration: 1s;
+  opacity: 0.8;
+}
 
 
 
