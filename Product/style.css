@@ -166,6 +166,9 @@ header{
     transition:all 0.5s;
     padding-left: 25px;
 }
+.the_left_page .menu a{
+  color: var(--text-the_left_page-color);
+}
 .the_left_page .menu li:hover,
 .the_left_page .menu li:hover{
     background-color:var(--nav-center-icon-color);
@@ -591,7 +594,7 @@ a{
 
 .ctn__loading {
   animation: #fff linear 4s infinite;
-  background-image: url(/Logo/PRO4-logos_black.png);
+  background-image: url(../Logo/PRO4-logos_black.png);
   background-size: 60%;
   background-repeat: no-repeat;
   background-position-x: center;
@@ -603,7 +606,7 @@ a{
   position: relative;
   width: 130px;
   height: 130px;
-  border: 13px solid #00CCFF;
+  border: 13px solid #8730fab1;
   border-radius: 50%;
   border-bottom-color: transparent;
   border-left-color: transparent;
@@ -617,7 +620,7 @@ a{
   left: 0px;
   bottom: 0px;
   right: 0px;
-  border: 13px solid aquamarine;
+  border: 13px solid #07acfea7 ;
   border-radius: 50%;
   border-bottom-color: transparent;
   border-left-color: transparent;
