@@ -62,11 +62,11 @@ header{
 }
 .logo{
    margin-right:15px;
-   background-color:blueviolet;
+   background-color:#000;
    padding:7px 15px;
    color:white;
    font-weight:700;
-   border-radius:20%;
+   border-radius:5px;
    cursor: pointer;
 }
 .search{
@@ -143,6 +143,7 @@ header{
    font-size: 16px;
    padding-right: 2%;
    left: -14%;
+   z-index: 3;
 }
 
 @keyframes trans_slide_bar_to_left {
@@ -170,10 +171,18 @@ header{
    margin-top:40px;
    list-style: none;
 }
+
+.the_left_page .menu a {
+  text-decoration: none;
+  color: var(--text-the_left_page-color);
+}
+
+
 .the_left_page .menu li{
     transition:all 0.5s;
     padding-left: 25px;
 }
+
 .the_left_page .menu li:hover,
 .the_left_page .menu li:hover{
     background-color:var(--nav-center-icon-color);
@@ -182,6 +191,7 @@ header{
     border-radius:15px;
     cursor: pointer;
 }
+
 .the_left_page li span{
    font-weight:550;
    font-size: 17px;
@@ -315,7 +325,7 @@ body.dark .switch::before{
 
 .ctn__loading {
   animation: #fff linear 4s infinite;
-  background-image: url(/Logo/PRO4-logos_black.png);
+  background-image: url(../Logo/PRO4-logos_black.png);
   background-size: 60%;
   background-repeat: no-repeat;
   background-position-x: center;
@@ -327,7 +337,7 @@ body.dark .switch::before{
   position: relative;
   width: 130px;
   height: 130px;
-  border: 13px solid #00CCFF;
+  border: 13px solid #8730fab1;
   border-radius: 50%;
   border-bottom-color: transparent;
   border-left-color: transparent;
@@ -341,7 +351,7 @@ body.dark .switch::before{
   left: 0px;
   bottom: 0px;
   right: 0px;
-  border: 13px solid aquamarine;
+  border: 13px solid #07acfea7 ;
   border-radius: 50%;
   border-bottom-color: transparent;
   border-left-color: transparent;
@@ -386,49 +396,274 @@ body.dark .switch::before{
 }
 
 /*--------------potential_projects----------------*/
+hr {
+  opacity: 0.5;
+  width: 80%;
+  margin: 0 auto;
+}
 .potential_projects {
   /* background-color: #d8acac; */
   width: 100%;
 }
 
-.potential_projects h1{
-  padding: 20px 0 20px 10%;
+.potential_projects h4{
+  padding: 50px 0 10px 5%;
 }
 
 .form {
-  padding: 40px 3% 40px 3%;
+  padding: 25px 3% 55px 3%;
   display: flex;
   flex-direction: row;
 }
 
 .form .form_1-1 {
-  background-color: #00CCFF;
-  width : 29%;
-  height: 600px;
+  position: relative;;
+  width : 40%;
+  height: 400px;
   margin: 0 2% 0 2%;
+  z-index: 0;
+}
+
+.form .form_1-1 .img_w_title {
+  width: 100%;
+  height: 98%;
+}
+
+
+.form_1-1 .progessbar {
+  position: absolute;
+  bottom: 4px;
+  background-color: #338CFF; 
+  height: 1.5%; 
+  width: 100%; 
+  border: 1px solid #5a5a5a;
+}
+
+.form_1-1 .img_w_title{
+  position: relative;
+}
+
+.img_w_title img {
+  height: 100%;
+  width: 100%;
+}
+
+
+.img_w_title h5 {
+  color: #ffffff;
+}
+
+.img_w_title p {
+  color: #ffffff;
+  font-size: small;
+}
+
+.img_w_title .title {
+  position: absolute;
+  padding: 3%;
+  height: 36%;
+  bottom: 0%;
+  width: 100%;
+  background-image: linear-gradient(95deg, #485461 0%, #28313b 74%);
+  opacity: 0;
+}
+
+@keyframes title_appear {
+  0% {
+    opacity: 0;
+  } 
+  100% {
+    opacity: 0.8;
+  }
+}
+
+.img_w_title:hover .title {
+  animation-name: title_appear;
+  animation-duration: 1s;
+  opacity: 0.8;
+  cursor: pointer;
 }
 
 .form .form_1-2 {
   margin: 0 2% 0 2%;
   width: 62%;
+  height: 400px;
   display: flex;
   flex-direction: row;
+
 }
 .form .form_1-2 div{
-  width: 100%;
+  width: 90%;
+  
+}
 
+.form .form_1-2 img {
+  width: -webkit-fill-available;
+  height: 100%;
 }
 
 .form .form_1-2 .form_bl{
+  position: relative;
+  height: 48%;
+  background-repeat: no-repeat;
+  color: white;
+}
+
+.form .form_1-2 .form_bl .title{
+  position: absolute;
+  top: 0;
+  padding: 5%;
   width: 100%;
-  height: 300px;
+  height: 100%;
+  background-image: linear-gradient(95deg, #485461 0%, #28313b 74%);
+}
+
+.form .form_1-2 .form_bl h5{
+  color: #ffffff;
+}
+
+.form .form_1-2 .form_bl p{
+  color: #ffffff;
+  font-size: small;
+
+}
+
+/*------------bl1-----------------------*/
+.form_1-2 .bl1 {
+  background-image: url(../projects/img/feature_prj_2.avif);
+  width: 100%;
+  height: 50%;
+  margin-bottom: 4%;
+}
+
+.form_1-2 .bl1:hover {
+  cursor: pointer;
+}
+
+
+.form_1-2 .bl1 .title {
+  color: white;
+  opacity: 0;
+}
+
+@keyframes trans_prj_1 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.8;
+  }
 }
 
 
 
+.form_1-2 .bl1:hover .title {
+  animation-name: trans_prj_1;
+  animation-duration: 1s;
+  opacity: 0.8;
+}
+
+/*------------bl3-----------------------*/
+
+.form_1-2 .bl3 {
+  background-image: url(../projects/img/feature_prj_3.avif);
+  width: 100%;
+  height: 50%;
+  margin-bottom: 4%;
+}
+
+.form_1-2 .bl3:hover {
+  cursor: pointer;
+}
 
 
+.form_1-2 .bl3 .title {
+  color: white;
+  opacity: 0;
+}
 
+@keyframes trans_prj_3 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+.form_1-2 .bl3:hover .title {
+  animation-name: trans_prj_3;
+  animation-duration: 1s;
+  opacity: 0.8;
+}
+
+/*------------bl2-----------------------*/
+
+.form_1-2 .bl2 {
+  background-image: url(../projects/img/feature_prj_1.avif);
+  width: 100%;
+  height: 50%;
+  margin-top: 4%;
+}
+
+.form_1-2 .bl2:hover {
+  cursor: pointer;
+}
+
+
+.form_1-2 .bl2 .title {
+  color: white;
+  opacity: 0;
+}
+
+@keyframes trans_prj_2 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+.form_1-2 .bl2:hover .title {
+  animation-name: trans_prj_2;
+  animation-duration: 1s;
+  opacity: 0.8;
+}
+
+/*------------bl4-----------------------*/
+
+.form_1-2 .bl4 {
+  background-image: url(../projects/img/feature_prj_4.avif);
+  width: 100%;
+  height: 50%;
+  margin-top: 4%;
+}
+
+.form_1-2 .bl4:hover {
+  cursor: pointer;
+}
+
+
+.form_1-2 .bl4 .title {
+  color: white;
+  opacity: 0;
+}
+
+@keyframes trans_prj_4 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
+.form_1-2 .bl4:hover .title {
+  animation-name: trans_prj_4;
+  animation-duration: 1s;
+  opacity: 0.8;
+}
 
 
 
