@@ -143,6 +143,30 @@ header{
   color: var(--text-the_left_page-color);
 }
 
+/*----------bars------------*/
+.bars {
+  display: none;
+   align-items: center;
+   justify-content: center;
+   /* margin-right: 30px; */
+   color:var(--text-the_left_page-color);
+}
+
+.bars i{
+  /* margin-right: 25px; */
+  font-size: 25px;
+  padding: 10px 30px; 
+  transition: all 0.5s;
+  position: relative;
+  text-decoration: none;
+}
+
+.bars i:hover {
+  background-color:var(--nav-center-icon-color);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
 /*====================Introduce__web================*/
 .introduce__web {
   padding: 60px 0 60px 0;
@@ -167,6 +191,10 @@ header{
   padding: 20px 15% 20px 20%;
   text-align: left;
   font-size: 25px;
+}
+
+.introduce__web .ctn__content p{
+  display: none;
 }
 
 .introduce__web .ctn__image{

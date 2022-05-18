@@ -1,0 +1,16 @@
+/*------mobile-----------*/
+
+@media screen and (max-width : 46.1875em) {
+    header .search{
+        display: none;
+    }
+    header .the_center_nav {
+        display: none;
+    }
+    header .the_right_nav {
+        display: none;
+    }
+    header .bars {
+        display: flex;
+    }
+} 
