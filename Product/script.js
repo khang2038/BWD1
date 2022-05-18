@@ -14,9 +14,11 @@ const body=document.querySelector("body"),
               modeText.innerText="Dark Mode";
           }
       })
-
-
-    $(document).ready(function(){
+      
+      
+      $(document).ready(function(){
+          var width=$(document).width();
+          console.log(width);
         $('.ctn__footer').waypoint(
             function(direction){
                 if(direction == 'down'){
@@ -24,17 +26,21 @@ const body=document.querySelector("body"),
                     // $('.center_page').addClass('center_page_fix'); 
                     $('.investor_rankings').hide(200);
                     $('.Top_project_fix').hide(200);
-                }else{
+                }else if(width > 768 ) {
                     $('.letf_page').show(300);
                     //  $('.center_page').removeClass('center_page_fix');
                     $('.investor_rankings').show();
                     $('.Top_project_fix').show();
                 }
+              
             },{
                 offset : "560px"
             }
         )
-})
+      })
+    
+    
+
 /* =============loadding================= */
 /*-----coi lại promise-------*/
 var ctn__loading__home=document.querySelector('.ctn__loading__body');
