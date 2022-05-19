@@ -142,7 +142,98 @@ header{
   font-size: 25px;
   color: var(--text-the_left_page-color);
 }
+/*----------RESPONSIVE__Mobile------------*/
 
+header .nav_mobile {
+  padding: 5%;
+  width: 100%;
+}
+
+header .close {
+  font-weight: bold;
+}
+header .close i{
+  font-weight: bold;
+}
+
+header .close:hover i{
+
+}
+/*----------bars------------*/
+.bars {
+  display: none;
+   align-items: center;
+   justify-content: center;
+   /* margin-right: 30px; */
+   color:var(--text-the_left_page-color);
+}
+
+.bars i{
+  /* margin-right: 25px; */
+  font-size: 25px;
+  padding: 10px 30px; 
+  transition: all 0.5s;
+  position: relative;
+  text-decoration: none;
+}
+
+.bars i:hover {
+  background-color:var(--nav-center-icon-color);
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/*----------nav_mobile------------*/
+.nav_mobile {
+  position: fixed;
+  /* height: 200px; */
+  transform: translateX(100%);
+  top:0;
+  left: 0;
+  right: 0;
+  background-color: white;
+}
+
+@keyframes spin_open_nav_mobile {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes spin_close_nav_mobile {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.nav_mobile .close:hover{
+  cursor: pointer;
+}
+
+.nav_mobile .homepage:hover{
+  padding: 10px;
+  cursor: pointer;
+}
+
+.nav_mobile .product:hover{
+  cursor: pointer;
+}
+
+.nav_mobile .projects:hover{
+  cursor: pointer;
+}
+
+.nav_mobile a {
+  text-decoration: none;
+  color: #5a5a5a;
+  font-weight: bold;
+}
 /*====================Introduce__web================*/
 .introduce__web {
   padding: 60px 0 60px 0;
@@ -169,6 +260,10 @@ header{
   font-size: 25px;
 }
 
+.introduce__web .ctn__content p{
+  display: none;
+}
+
 .introduce__web .ctn__image{
   width: 50%;
   display: flex;
@@ -178,6 +273,11 @@ header{
 
 .introduce__web .ctn__image img{
   width: 75%;
+}
+/*----------Introduce__web__mobile------------*/
+
+.introduce__web-mobile {
+  display: none;
 }
 
 /*====================Our-impact================*/
@@ -223,8 +323,17 @@ header{
   padding: 100px 3%;
   margin: 0 10%;
   text-align: center;
-
 }
+
+/*-----------responsive_reason_title----------*/
+.reason_use .reason_title-mobile {
+  display: none;
+  padding: 100px 3%;
+  margin: 0 10%;
+  text-align: center;
+}
+
+/*-----------done_responsive_reason_title----------*/
 
 .reason_use .reason_title h1{
   padding: 20px 0;
@@ -395,7 +504,6 @@ header{
   display: none;
   justify-content: center;
   overflow: hidden;
-
   /* top:120px; */
 }
 
@@ -718,6 +826,11 @@ header{
   text-align: justify;
 }
 
+/*=============footer-mobile==================*/
+.ctn__footer-mobile {
+  display: none;
+
+}
 
 /*=============loading==================*/
 .ctn__loading__body {

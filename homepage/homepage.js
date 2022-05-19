@@ -8,17 +8,20 @@ $('.content .info_content').addClass('animate__animated animate__bounceInRight')
 $(document).ready(function(){
     $(window).scroll(function(){
         var body=$('html,body').scrollTop();
+        var width_screen = window.innerWidth;
+        console.log(width_screen);
+
         console.log(body);
-        if (body>=100 && body<900) {
+        if (body>=100 && body<900 && width_screen>739) {
             $('.our_impact h1').addClass('animate__animated animate__bounceInUp');
             $('.our_impact .card').addClass('animate__animated animate__bounceInUp');
-        } else if (body>=900 && body<1254) {
+        } else if (body>=900 && body<1254 && width_screen>739) {
             $('.reason_title').addClass('animate__animated animate__bounceInUp');
             $('.info_item-1').addClass('animate__animated animate__bounceInUp');
-        } else if (body>=1254 && body<1866) {
+        } else if (body>=1254 && body<1866 && width_screen>739) {
             $('.info_item-2').addClass('animate__animated animate__bounceInUp');
             
-        } else if (body>=1866 && body<3000) {
+        } else if (body>=1866 && body<3000 && width_screen>739) {
             // $('.highlights .title').addClass('animate__animated animate__bounceInUp');
             // $('.highlights .card_project').addClass('animate__animated animate__bounceInUp');
         }
@@ -174,6 +177,49 @@ function onclick__projects(){
 }
 projects.addEventListener('click' , onclick__projects);
 // Tìm cách lấy thẻ 
+
+/*------------RESPONSIVE--------------------*/
+/*---------bars--------*/
+const nav_mobile = document.querySelector('header .nav_mobile')
+function open_nav_mobile() {
+    Object.assign(nav_mobile.style , {
+        animationName : 'spin_open_nav_mobile',
+        animationDuration: '0.5s',
+        transform : 'translateX(0%)',
+    })
+}
+
+function close_nav_mobile() {
+    Object.assign(nav_mobile.style , {
+        animationName : 'spin_close_nav_mobile',
+        animationDuration: '0.5s',
+        transform : 'translateX(100%)', 
+    })
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
