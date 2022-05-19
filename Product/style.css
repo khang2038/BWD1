@@ -86,6 +86,116 @@ header{
    font-size:24px;
    font-weight:25px;
 }
+.nav_overlay{
+   position:fixed;
+   top:0;
+   left:0;
+   right:0;
+   bottom:0;
+   background-color:rgba(0, 0, 0,0.3);
+   display: none;
+   animation: fadeIn linear 0.2s;
+}
+.mobile_nav_drop{
+   background-color:var(--the_left_page-color);
+   display: flex;
+   width: 45%;
+   flex-direction: column;
+   border-radius:10px;
+   font-size:16px;
+   position:fixed;
+   right:0;
+   top:0;
+   bottom:0;
+   transform:translateX(100%);
+   transition:transform linear 0.2s;
+   opacity: 0;
+}
+.mobile_nav_drop li{
+   margin-top:40px;
+   list-style: none;
+}
+.mobile_nav_drop .menu_mobile li{
+    transition:all 0.5s;
+    padding-left: 25px;
+}
+.mobile_nav_drop .menu_mobile a{
+  color: var(--text-the_left_page-color);
+}
+.mobile_nav_drop .menu_mobile li:hover,
+.mobile_nav_drop .menu_mobile li:hover{
+    background-color:var(--nav-center-icon-color);
+    padding:10px;
+    padding-left: 10px;
+    border-radius:15px;
+    cursor: pointer;
+}
+.mobile_nav_drop li span{
+   font-weight:550;
+   font-size: 17px;
+   color:var(--text-the_left_page-color);
+}
+.mobile_nav_drop li .icon{
+   font-size: 20px;
+   margin-right: 15px;
+}
+.mobile_nav_drop .mode-mobile{
+    margin-left:25px;
+    margin-top:90%;
+    display: flex;
+}
+.mobile_nav_drop .mode-mobile .moon-sun{
+      height:25px;
+      width: 25px;
+      display: flex;
+      align-items: center;
+}
+.mobile_nav_drop .mode-mobile i{
+    position: absolute;
+
+}
+.mobile_nav_drop .mode-text{
+   font-size:16px;
+}
+.mobile_nav_drop .mode-mobile i.sun{
+      opacity: 0;
+}
+body.dark .mobile_nav_drop .mode-mobile i.sun{
+   opacity: 1;
+}
+body.dark .mobile_nav_drop .mode-mobile i.moon{
+   opacity: 0;
+}
+.mobile_nav_drop .mode-mobile .toggle-switch{
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    height: 100%;
+    min-width: 60px;
+    cursor: pointer;
+}
+.nav_mobile_close{
+    font-size: 1.4rem;
+    color:#666;
+    position: absolute;
+    top:1rem;
+    right: 1rem;
+}
+.nav__input:checked ~ .nav_overlay{
+    display:block;
+} 
+.nav__input:checked ~ .mobile_nav_drop{
+   transform:translateX(0%);
+   opacity: 1;
+}
+@keyframes fadeIn{
+   from{
+     opacity: 0;
+   }
+   to{
+     opacity: 1;
+   }
+}
 .logo{
   margin-right:15px;
   background-color:rgb(0, 0, 0);
