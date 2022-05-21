@@ -96,3 +96,16 @@ function onclick__projects(){
 }
 
 projects.addEventListener('click' , onclick__projects);
+
+
+
+
+
+
+
+
+
+
+
+
+
