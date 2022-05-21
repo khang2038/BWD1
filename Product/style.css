@@ -144,7 +144,7 @@ header{
     margin-top:90%;
     display: flex;
 }
-.mobile_nav_drop .mode-mobile .moon-sun{
+.mobile_nav_drop .mode-mobile .moon-sun_mobile{
       height:25px;
       width: 25px;
       display: flex;
@@ -152,27 +152,48 @@ header{
 }
 .mobile_nav_drop .mode-mobile i{
     position: absolute;
-
 }
-.mobile_nav_drop .mode-text{
+.mobile_nav_drop .mode-text_mobile{
    font-size:16px;
 }
-.mobile_nav_drop .mode-mobile i.sun{
+.mobile_nav_drop .mode-mobile i.sun_mobile{
       opacity: 0;
 }
-body.dark .mobile_nav_drop .mode-mobile i.sun{
+body.dark .mobile_nav_drop .mode-mobile i.sun_mobile{
    opacity: 1;
 }
-body.dark .mobile_nav_drop .mode-mobile i.moon{
+body.dark .mobile_nav_drop .mode-mobile i.moon_mobile{
    opacity: 0;
 }
-.mobile_nav_drop .mode-mobile .toggle-switch{
+.mobile_nav_drop .mode-mobile .toggle-switch_mobile{
     display:flex;
     align-items: center;
     justify-content:center;
     height: 100%;
     min-width: 60px;
     cursor: pointer;
+}
+.toggle-switch_mobile .switch_mobile{
+    position: relative;
+    height:22px;
+    width:44px;
+    border-radius:25px;
+    background:var(--toggle-color);
+} 
+.switch_mobile::before{
+   content:'';
+   position: absolute;
+   height:15px;
+   width: 15px;
+   border-radius:50%;
+   top:50%;
+   left:5px;
+   transform: translateY(-50%);
+   background:var(--the_left_page-color);
+   transition:var(--tran-03);
+}
+body.dark .switch_mobile::before{
+    left:25px;
 }
 .nav_mobile_close{
     font-size: 1.4rem;

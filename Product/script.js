@@ -3,8 +3,19 @@ const body=document.querySelector("body"),
       toggle=body.querySelector(".toggle"),
       modeSwitch=body.querySelector(".toggle-switch"),
       modeText=body.querySelector(".mode-text");
+      
+      modeSwitchmobile=body.querySelector(".toggle-switch_mobile"),
+      modeTextmobile=body.querySelector(".mode-text_mobile");
 
-      toggle  
+
+       modeSwitchmobile.addEventListener("click",()=>{
+          body.classList.toggle("dark");
+          if(body.classList.contains("dark")){
+              modeTextmobile.innerText="Light Mode";
+          }else{
+              modeTextmobile.innerText="Dark Mode";
+          }
+      })
 
       modeSwitch.addEventListener("click",()=>{
           body.classList.toggle("dark");
