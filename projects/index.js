@@ -7,6 +7,7 @@ const body=document.querySelector("body"),
       toggle  
 
       modeSwitch.addEventListener("click",()=>{
+          alert("gugu");
           body.classList.toggle("dark");
           if(body.classList.contains("dark")){
               modeText.innerText="Light Mode";

@@ -578,8 +578,37 @@ body.dark .switch::before{
   border: 2px solid rgb(187, 161, 161);
   height: 10px;
   margin: 10px auto;
+  position: relative;
 }
 
+@keyframes navbar_trans {
+  0% {
+    left : 0%;
+  }
+  25% {
+    left : 0%;
+  }
+  50% {
+    left :25%;
+  }
+  75% {
+    left : 50%;
+  }
+  100%{
+    left: 75%;
+  }
+}
+
+.featured_projects .navbar_trans .trans{
+  background-color: #b4b3b3;
+  height: 100%;
+  width: 25%;
+  position: absolute;
+  animation-name: navbar_trans;
+  animation-duration: 16s;
+  animation-iteration-count:  infinite;
+  animation-timing-function: normal;
+}
 
 
 /*--------------potential_projects----------------*/
