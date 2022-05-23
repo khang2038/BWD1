@@ -114,6 +114,7 @@ function onclick__projects(){
 }
 
 projects.addEventListener('click' , onclick__projects);
+<<<<<<< HEAD
 // loading mobile
 
 var ctn__loading__home=document.querySelector('.ctn__loading__body');
@@ -176,3 +177,25 @@ function onclick__projects(){
 }
 
 projects_mb.addEventListener('click' , onclick__projects);
+=======
+
+// to top btn
+
+window.scroll({
+    top: 2500, 
+    left: 0, 
+    behavior: 'smooth'
+  });
+  
+  // Scroll certain amounts from current position 
+  window.scrollBy({ 
+    top: 100, // could be negative value
+    left: 0, 
+    behavior: 'smooth' 
+  });
+  
+  // Scroll to a certain element
+  document.querySelector('.hello').scrollIntoView({ 
+    behavior: 'smooth' 
+  });
+>>>>>>> f1bf9edd804ae6ff5db42aed56c7683eb499a02c

@@ -475,15 +475,15 @@ startups and investors,Easily exchange and cooperate
                     Copyright © 2022 Startups.com. All rights reserved.
                 </p>
                 <p class="content__describle">
-                    Fundable is a software as a service crowdfunding platform. Fundable is not a 
+                    PRO4 is a software as a service crowdfunding platform. PRO4 is not a 
                     registered broker-dealer and does not offer investment advice or advise on the
-                     raising of capital through securities offerings. Fundable does not recommend 
+                     raising of capital through securities offerings. PRO4 does not recommend 
                      or otherwise suggest that any investor make an investment in a particular company, 
-                     or that any company offer securities to a particular investor. Fundable takes no 
+                     or that any company offer securities to a particular investor. PRO4 takes no 
                      part in the negotiation or execution of transactions for the purchase or sale of 
                      securities, and at no time has possession of funds or securities. No securities
-                      transactions are executed or negotiated on or through the Fundable platform. 
-                      Fundable receives no compensation in connection with the purchase or sale of securities. 
+                      transactions are executed or negotiated on or through the PRO4 platform. 
+                      PRO4 receives no compensation in connection with the purchase or sale of securities. 
                 </p>
             </div>
         </div>
@@ -523,6 +523,33 @@ startups and investors,Easily exchange and cooperate
             </div>
         </div>
     </div>
+        <!-- To top btn -->
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">
+        <i class="fa-solid fa-circle-arrow-up"></i>
+    </button>
+
+
+    <script>
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("myBtn").style.display = "block";
+        } else {
+            document.getElementById("myBtn").style.display = "none";
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+    </script>
+    
+        <!-- end top btn -->
 
     <img class="background_img" src="../homepage/img/img_background/home-bck-img-2.svg" alt="" style="position:absolute;top: 0;left: 0;z-index: -1;">
 
