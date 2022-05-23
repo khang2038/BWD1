@@ -29,17 +29,11 @@ $(document).ready(function(){
 })
 
 //btn_project_card
-function trans_aft_card() {
-    let card_project = document.querySelector('.card_project');
-    let form_card_project = document.querySelectorAll('.card_project .form_card_project');
-    let card_project_1 = document.querySelector('.card_project-1');
 
-    Object.assign(card_project.style ,{
-        display : 'none',
-    })
-
-    Object.assign(card_project_1.style ,{
-        display : 'flex',
+//promise
+function sleep(s){
+    return new Promise(function(resolve) {
+        setTimeout(resolve,s)
     })
 }
 
@@ -47,6 +41,7 @@ function trans_pre_card() {
     let card_project = document.querySelector('.card_project');
     let form_card_project = document.querySelectorAll('.card_project .form_card_project');
     let card_project_1 = document.querySelector('.card_project-1');
+    // $('.card_project').addClass('animate__animated animate__backOutLeft');
     
     Object.assign(card_project_1.style ,{
         display : 'none',
@@ -55,6 +50,58 @@ function trans_pre_card() {
         display : 'flex',
     })
 
+    sleep(0)
+        .then(function() {
+            $('.card_project_1').addClass('animate__animated animate__bounceOutRight');
+            $('.card_project').addClass('animate__animated animate__bounceInLeft');
+            
+            return sleep(500);
+        })
+        .then(function() {
+            Object.assign(card_project.style ,{
+                display : 'flex',
+            })
+        
+            Object.assign(card_project_1.style ,{
+                display : 'none',
+            })
+
+            return sleep(0)
+        })
+        .then(function() {
+            $('.card_project_1').removeClass('animate__animated animate__bounceOutRight');
+            $('.card_project').removeClass('animate__animated animate__bounceInLeft');
+        })
+
+}
+
+function trans_aft_card() {
+    let card_project = document.querySelector('.card_project');
+    let form_card_project = document.querySelectorAll('.card_project .form_card_project');
+    let card_project_1 = document.querySelector('.card_project-1');
+    
+    sleep(0)
+        .then(function() {
+            $('.card_project').addClass('animate__animated animate__bounceOutLeft');
+            $('.card_project_1').addClass('animate__animated animate__bounceInRight');
+            
+            return sleep(500);
+        })
+        .then(function() {
+            Object.assign(card_project.style ,{
+                display : 'none',
+            })
+        
+            Object.assign(card_project_1.style ,{
+                display : 'flex',
+            })
+
+            return sleep(0)
+        })
+        .then(function() {
+            $('.card_project').removeClass('animate__animated animate__bounceOutLeft');
+            $('.card_project_1').removeClass('animate__animated animate__bounceInRight');
+        })
 }
 
 //info_details
