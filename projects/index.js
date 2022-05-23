@@ -96,3 +96,65 @@ function onclick__projects(){
 }
 
 projects.addEventListener('click' , onclick__projects);
+// loading mobile
+
+var ctn__loading__home=document.querySelector('.ctn__loading__body');
+var homepage_mb=document.querySelector('#homepage_mobile');
+var product_mb=document.querySelector('#product_mobile');
+var projects_mb=document.querySelector('#projects_mobile');
+
+function sleep(s){
+    return new Promise(function(resolve) {
+        setTimeout(resolve,s)
+    })
+}
+
+function onclick__home(){
+    sleep(0)
+        .then(function() {
+            ctn__loading__home.classList.add('open__load');
+            
+            return sleep(1300);
+        })
+        .then(function() {
+            
+            ctn__loading__home.classList.remove('open__load')
+            homepage_mb.href="../homepage/index.html"; 
+            homepage_mb.click();
+        })      
+}
+homepage_mb.addEventListener('click' , onclick__home);
+
+function onclick__product(){
+    sleep(0)
+        .then(function() {
+            ctn__loading__home.classList.add('open__load');
+            
+            return sleep(1300);
+        })
+        .then(function() {
+            
+            ctn__loading__home.classList.remove('open__load')
+            product_mb.href="../Product/index.html"; 
+            product_mb.click();
+        })      
+}
+
+product_mb.addEventListener('click' , onclick__product);
+
+
+function onclick__projects(){
+    sleep(0)
+        .then(function() {
+            ctn__loading__home.classList.add('open__load');
+            return sleep(1300);
+        })
+        .then(function() {
+            
+            ctn__loading__home.classList.remove('open__load')
+            projects_mb.href="../projects/index.html"; 
+            projects_mb.click();
+        })      
+}
+
+projects_mb.addEventListener('click' , onclick__projects);
