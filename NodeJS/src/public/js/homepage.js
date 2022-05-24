@@ -141,7 +141,7 @@ function onclick__home(){
         .then(function() {
             
             ctn__loading__home.classList.remove('open__load')
-            homepage.href="../homepage/index.html"; 
+            homepage.href="home"; 
             homepage.click();
         })      
 }
@@ -155,7 +155,7 @@ function onclick__product(){
         })
         .then(function() {
             ctn__loading__home.classList.remove('open__load')
-            product.href="../Product/index.html";
+            product.href="product";
             product.click();
         })      
 }

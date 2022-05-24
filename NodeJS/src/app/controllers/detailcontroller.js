@@ -5,7 +5,6 @@ class detailcontroller{
     }
 
     show(req,res){
-        res.send('newdetail')
     }
 
 }

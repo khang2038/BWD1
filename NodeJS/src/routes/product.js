@@ -5,7 +5,6 @@ const productcontroller=require('../app/controllers/productcontroller');
 
 // productcontroller.index
 
-router.use('/detailprod',productcontroller.show);
 router.use('/',productcontroller.index);
 
 

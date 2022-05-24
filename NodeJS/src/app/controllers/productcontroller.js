@@ -1,11 +1,14 @@
 class productcontroller{
 
     index(req,res){
-         res.render('product');
+         res.render('product',{
+          title: 'Product',
+          style:'styleproduct.css',
+          style2:'queriesproduct.css'
+      });
     }
 
     show(req,res){
-        res.send('newdetail')
     }
 
 }
