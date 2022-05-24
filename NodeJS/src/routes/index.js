@@ -1,16 +1,19 @@
 const productrouter=require('./product')
+const detailrouter=require('./detail')
 
 function route(app){
 
     app.use('/product',productrouter);
 
     app.get('/', (req, res) => {
-      res.render('home');
+      res.render('home',{
+          title: 'Home',
+          style:'stylehome.css',
+          style2:'responsivehome.css'
+      });
     })
 
-    app.get('/detail', (req, res) => {
-      res.render('detail');
-    })
+    app.get('/detail',detailrouter)
 
 
 }
