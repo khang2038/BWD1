@@ -57,7 +57,7 @@ function onclick__home(){
         .then(function() {
             
             ctn__loading__home.classList.remove('open__load')
-            homepage.href="localhost:3000/homepage"; 
+            homepage.href="home"; 
             homepage.click();
         })      
 }
@@ -73,7 +73,7 @@ function onclick__product(){
         .then(function() {
             
             ctn__loading__home.classList.remove('open__load')
-            product.href="localhost:3000/Product"; 
+            product.href="product"; 
             product.click();
         })      
 }
@@ -91,7 +91,7 @@ function onclick__projects(){
         .then(function() {
             
             ctn__loading__home.classList.remove('open__load')
-            projects.href="localhost:3000/detail"; 
+            projects.href="detail"; 
             projects.click();
         })      
 }
@@ -110,7 +110,7 @@ function sleep(s){
     })
 }
 
-function onclick__home(){
+function onclick__home_mb(){
     sleep(0)
         .then(function() {
             ctn__loading__home.classList.add('open__load');
@@ -124,9 +124,9 @@ function onclick__home(){
             homepage_mb.click();
         })      
 }
-homepage_mb.addEventListener('click' , onclick__home);
+homepage_mb.addEventListener('click' , onclick__home_mb);
 
-function onclick__product(){
+function onclick__product_mb(){
     sleep(0)
         .then(function() {
             ctn__loading__home.classList.add('open__load');
@@ -141,10 +141,10 @@ function onclick__product(){
         })      
 }
 
-product_mb.addEventListener('click' , onclick__product);
+product_mb.addEventListener('click' , onclick__product_mb);
 
 
-function onclick__projects(){
+function onclick__projects_mb(){
     sleep(0)
         .then(function() {
             ctn__loading__home.classList.add('open__load');
@@ -158,7 +158,7 @@ function onclick__projects(){
         })      
 }
 
-projects_mb.addEventListener('click' , onclick__projects);
+projects_mb.addEventListener('click' , onclick__projects_mb);
 
 // to top btn
 

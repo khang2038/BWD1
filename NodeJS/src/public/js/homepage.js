@@ -141,7 +141,7 @@ function onclick__home(){
         .then(function() {
             
             ctn__loading__home.classList.remove('open__load')
-            homepage.href="localhost:3000"; 
+            homepage.href="home"; 
             homepage.click();
         })      
 }
@@ -155,13 +155,12 @@ function onclick__product(){
         })
         .then(function() {
             ctn__loading__home.classList.remove('open__load')
-            product.href="localhost:3000/product";
+            product.href="product";
             product.click();
         })      
 }
 
 product.addEventListener('click' , onclick__product);
-
 
 function onclick__projects(){
     sleep(0)
@@ -171,7 +170,7 @@ function onclick__projects(){
         })
         .then(function() {
             ctn__loading__home.classList.remove('open__load');
-            projects.href="localhost:3000/detail";
+            projects.href="detail";
             projects.click();
         })
 }

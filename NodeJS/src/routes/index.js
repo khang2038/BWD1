@@ -1,6 +1,7 @@
 const productrouter=require('./product')
 const detailrouter=require('./detail')
 const loginrouter=require('./login')
+const homerouter=require('./home')
 function route(app){
 
     app.use('/product',productrouter);
@@ -13,6 +14,7 @@ function route(app){
       });
     })
 
+    app.get('/home',homerouter)
     app.get('/detail',detailrouter)
     app.get('/login',loginrouter)
 

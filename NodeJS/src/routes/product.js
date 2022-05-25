@@ -7,6 +7,7 @@ const productcontroller=require('../app/controllers/productcontroller');
 
 router.use('/',productcontroller.index);
 
-
+router.use('/detailprod',productcontroller.show);
+router.use('/',productcontroller.index);
 
 module.exports = router;
