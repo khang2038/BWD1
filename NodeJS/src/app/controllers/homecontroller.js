@@ -4,7 +4,7 @@ class homecontroller{
          res.render('home',{
           title: 'Home',
           style:'stylehome.css',
-          style2:'querieshome.css'
+          style2:'responsivehome.css'
       });
     }
 
