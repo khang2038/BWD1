@@ -8,6 +8,7 @@ const Approuter=require('./App')
 const costumerouter=require('./costume')
 const ecommercerouter=require('./ecommerce')
 const Gamerouter=require('./Game')
+const donaterouter=require('./donate')
 function route(app){
 
     app.use('/product',productrouter);
@@ -41,5 +42,6 @@ function route(app){
     app.get('/costume',costumerouter)
     app.get('/ecommerce',ecommercerouter)
     app.get('/Game',Gamerouter)
+    app.get('/donate',donaterouter)
 }
 module.exports = route;
