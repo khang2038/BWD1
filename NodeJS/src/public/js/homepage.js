@@ -141,7 +141,7 @@ function onclick__home(){
         .then(function() {
             
             ctn__loading__home.classList.remove('open__load')
-            homepage.href="localhost:3000"; 
+            homepage.href="homepage"; 
             homepage.click();
         })      
 }
@@ -155,7 +155,7 @@ function onclick__product(){
         })
         .then(function() {
             ctn__loading__home.classList.remove('open__load')
-            product.href="localhost:3000/product";
+            product.href="product";
             product.click();
         })      
 }
@@ -171,7 +171,7 @@ function onclick__projects(){
         })
         .then(function() {
             ctn__loading__home.classList.remove('open__load');
-            projects.href="localhost:3000/detail";
+            projects.href="detail";
             projects.click();
         })
 }

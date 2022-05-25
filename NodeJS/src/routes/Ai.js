@@ -1,10 +1,10 @@
 const express=require('express');
 const router=express.Router();
 
-const productcontroller=require('../app/controllers/productcontroller');
+const Aicontroller=require('../app/controllers/Aicontroller');
 
 // productcontroller.index
-router.use('/',productcontroller.index);
+router.use('/',Aicontroller.index);
 
 
 

@@ -57,7 +57,7 @@ function onclick__home(){
         .then(function() {
             
             ctn__loading__home.classList.remove('open__load')
-            homepage.href="localhost:3000/homepage"; 
+            homepage.href="homepage"; 
             homepage.click();
         })      
 }
@@ -73,7 +73,7 @@ function onclick__product(){
         .then(function() {
             
             ctn__loading__home.classList.remove('open__load')
-            product.href="localhost:3000/Product"; 
+            product.href="product"; 
             product.click();
         })      
 }
@@ -91,7 +91,7 @@ function onclick__projects(){
         .then(function() {
             
             ctn__loading__home.classList.remove('open__load')
-            projects.href="localhost:3000/detail"; 
+            projects.href="detail"; 
             projects.click();
         })      
 }
@@ -120,7 +120,7 @@ function onclick__home(){
         .then(function() {
             
             ctn__loading__home.classList.remove('open__load')
-            homepage_mb.href="localhost:3000/homepage"; 
+            homepage_mb.href="homepage"; 
             homepage_mb.click();
         })      
 }
@@ -136,7 +136,7 @@ function onclick__product(){
         .then(function() {
             
             ctn__loading__home.classList.remove('open__load')
-            product_mb.href="localhost:3000/Product"; 
+            product_mb.href="product"; 
             product_mb.click();
         })      
 }
@@ -153,7 +153,7 @@ function onclick__projects(){
         .then(function() {
             
             ctn__loading__home.classList.remove('open__load')
-            projects_mb.href="localhost:3000/detail"; 
+            projects_mb.href="detail"; 
             projects_mb.click();
         })      
 }
