@@ -125,6 +125,35 @@
             </li>
         </ul>
         <div class="center_page">
+             {{#each products}}   
+             <div class="Infor {{this.name}}">
+                    <div class="author">
+                        <img src="{{this.img_author}}" alt="">
+                        <div class="infor_author">
+                            <span>{{this.name_author}}</span>
+                            <p>1m <i class="fa-solid fa-earth-americas icon 3"></i> </p>
+                        </div>
+                    </div>
+                    <div class="info-des">
+                        <p>{{this.infor}}</p>
+                        <div class="img-App">
+                            <img  src="{{this.img1}}" alt="">
+                        </div>
+                    </div>
+                    <hr>
+                <div class="decription">  
+                  <div class="emotion">
+                      <i class="fa-regular fa-heart"></i>
+                      <i class="fa-regular fa-comment"></i>
+                      <i class="fa-solid fa-share-nodes"></i>
+                  </div>
+                  <div class="donate-investment">
+                      <p class="donate">Donate</p>
+                      <p class="investment">Investment</p> 
+                  </div>   
+                </div>       
+             </div>
+            {{/each}}
              <div class="Infor AI">
                     <div class="author">
                         <img src="content/AI/author/242671915_948353739079553_3477742332105636451_n.jpg" alt="">
@@ -225,98 +254,9 @@
                   </div>   
                 </div>       
              </div>
-             <div class="Infor App">
-                    <div class="author">
-                        <img src="content/App/author/213771796_1467470380252432_1466475105722431964_n.jpg" alt="">
-                        <div class="infor_author">
-                            <span>Nguyễn Đức Hiếu</span>
-                            <p>3h <i class="fa-solid fa-earth-americas icon 3"></i> </p>
-                        </div>
-                    </div>
-                    <div class="info-des">
-                        <p>Dự án được thực hiện bởi team Pro4! </p>
-                        <p>Giới thiệu sơ lược:</p>
-                        <p>Công nghệ Beacon không phải là khái niệm quá mới lạ, nhưng vẫn tạo được sức hút đối với sự phát triển của mobile app và được dự đoán sẽ trở nên phổ biến hơn trong năm 2022.
-                           Công nghệ này cung cấp một liên kết giữa thế giới trực tuyến và ngoại tuyến, tạo điều kiện cho người dùng mobile app tương tác với các cửa hàng thực, cho phép các doanh nghiệp tìm hiểu và nắm bắt được nhu cầu của khách hàng.
-                           Tính đến thời điểm hiện nay, ngành bán lẻ đã áp dụng công nghệ beacon vào rất nhiều khía cạnh trong quá trình kinh doanh. Nhiều nhà bán lẻ hiện đã sử dụng công nghệ này để thu thập thông tin về cách người mua hàng tương tác với cửa hàng thực. Từ đó, họ có thể theo dõi các mô hình mua sắm của khách hàng và phân phối những nội dung quảng cáo phù hợp nhất.
-                           Ngoài ra, công nghệ này cũng rất hữu ích trong việc điều hướng qua các trung tâm mua sắm sầm uất và một số cửa hàng nhỏ lẻ. Trong những năm tới, công nghệ beacon sẽ tiếp tục mở rộng khi ngày càng có nhiều nhà bán lẻ và các lĩnh vực khác đón nhận.</p>
-                        <div class="img-App">
-                            <img  src="content/App/Công nghệ Beacon/Công nghệ Beacon.jpg" alt="">
-                        </div>
-                    </div>
-                    <hr>
-                <div class="decription">  
-                  <div class="emotion">
-                      <i class="fa-regular fa-heart"></i>
-                      <i class="fa-regular fa-comment"></i>
-                      <i class="fa-solid fa-share-nodes"></i>
-                  </div>
-                  <div class="donate-investment">
-                      <p class="donate">Donate</p>
-                      <p class="investment">Investment</p> 
-                  </div>   
-                </div>       
-             </div>
-             <div class="Infor App">
-                    <div class="author">
-                        <img src="content/App/author/It-was-me...-I-let-the-dogs-out.jpg" alt="">
-                        <div class="infor_author">
-                            <span>Trường Giang</span>
-                            <p>4h <i class="fa-solid fa-earth-americas icon 3"></i> </p>
-                        </div>
-                    </div>
-                    <div class="info-des">
-                        <p>Tích hợp AR đã là một xu hướng phát triển mobile app trong những năm vừa qua và được dự đoán sẽ tiếp tục trở thành một làn sóng mới trong năm 2022.
-                           Ưu điểm đặc biệt của AR chính là khả năng sự tích hợp vào không gian kinh doanh, cho phép người bán và nhà cung cấp dịch vụ tương tác với khách hàng của họ theo những phương pháp cá nhân hóa hơn. Ngoài ra, AR cũng cho phép các doanh nghiệp tạo ra trải nghiệm hoặc giới thiệu những câu chuyện thương hiệu thú vị với người dùng của mình.
-                           Khi ngày càng có nhiều doanh nghiệp nắm bắt sự phát triển của công nghệ, app developers sẽ cần phát triển các tính năng và chức năng sáng tạo hơn nhằm đảm bảo người dùng AR có được trải nghiệm phong phú nhất.
-                           Vào năm 2022, AR sẽ tiếp tục là một phần quan trọng của sự phát triển ứng dụng di động trong các lĩnh vực khác nhau từ bán lẻ đến kỹ thuật cho đến bất động sản.</p>
-                        <div class="img-App">
-                            <img  src="content/App/Tích hợp thực tế tăng cường (AR)/Thực tế ảo.jpeg" alt="">
-                        </div>
-                    </div>
-                    <hr>
-                <div class="decription">  
-                  <div class="emotion">
-                      <i class="fa-regular fa-heart"></i>
-                      <i class="fa-regular fa-comment"></i>
-                      <i class="fa-solid fa-share-nodes"></i>
-                  </div>
-                  <div class="donate-investment">
-                      <p class="donate">Donate</p>
-                      <p class="investment">Investment</p> 
-                  </div>   
-                </div>       
-             </div>
-             
+
             
-             <div class="Infor Ecommerce">
-                    <div class="author">
-                        <img src="content/Ecommerce/author/download.png" alt="">
-                        <div class="infor_author">
-                            <span>Vat gia</span>
-                            <p>3h <i class="fa-solid fa-earth-americas icon 3"></i> </p>
-                        </div>
-                    </div>
-                    <div class="info-des">
-                        <p>Đây là trang web mua sắm, đăng tin mua bán rao vặt mà bạn sẽ tìm thấy vô vàn các mặt hàng từ đồ điện tử, hàng công nghệ, cho đến ô tô, xe máy, làm đẹp, thời trang, thực phẩm, các dịch vụ giải trí, vui chơi, du lịch,…Vatgia cũng thu hút khách hàng nhờ công cụ tìm kiếm dễ dàng cho người tiêu dùng có thể tìm được sản phẩm như mong muốn và công cụ bình chọn đánh giá chất lượng dịch vụ của người bán.
-                           Vatgia còn tạo ra không gian để nhiều người đóng góp ý kiến, trao đổi thông tin về sản phẩm giúp người tiêu dùng tìm được những sản phẩm dịch vụ có giá cả và chất lượng phù hợp nhất. Với những lý do đó, Vatgia đã được xếp vào một trong những sàn thương mại điện tử lớn nhất Việt Nam.</p>
-                        <div class="img-App">
-                            <img  src="content/Ecommerce/VatGia/Untitled.png" alt="">
-                        </div>
-                    </div>
-                    <hr>
-                <div class="decription">  
-                  <div class="emotion">
-                      <i class="fa-regular fa-heart"></i>
-                      <i class="fa-regular fa-comment"></i>
-                      <i class="fa-solid fa-share-nodes"></i>
-                  </div>
-                  <div class="donate-investment">
-                      <p class="donate">Donate</p>
-                      <p class="investment">Investment</p> 
-                  </div>   
-                </div>       
-             </div>
+
             
         </div>
 
