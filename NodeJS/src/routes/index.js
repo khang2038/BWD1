@@ -44,4 +44,5 @@ function route(app){
     app.use('/Game',Gamerouter)
     app.use('/donate',donaterouter)
 }
+
 module.exports = route;
