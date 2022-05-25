@@ -10,7 +10,7 @@ class productcontroller{
       });
     }
 
-    show1(req,res){
+    show(req,res){
       
     }
 

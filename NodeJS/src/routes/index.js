@@ -1,12 +1,9 @@
 const productrouter=require('./product')
 const detailrouter=require('./detail')
 const loginrouter=require('./login')
-<<<<<<< HEAD
 const signuprouter=require('./signup')
 const Airouter=require('./Ai')
-=======
 const homerouter=require('./home')
->>>>>>> c6286de3880a90e0258c440310b8d3e2aa08ca65
 function route(app){
 
     app.use('/product',productrouter);
