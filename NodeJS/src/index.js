@@ -5,6 +5,11 @@ const app = express()
 const route=require('./routes')
 const port = 3000
 
+
+const db=require('./config/db');
+
+db.connect();
+
 app.use(express.static(path.join(__dirname, 'public')))
 
 app.use(express.urlencoded({ 
