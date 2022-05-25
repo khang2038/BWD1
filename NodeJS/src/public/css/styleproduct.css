@@ -835,3 +835,102 @@ background-color: #555;
       transform: rotate(-720deg);
   }
 }
+
+/*comment*/
+.ctn_comment {
+  display: none;
+
+}
+
+.ctn_comment .bl__ctn_comment{
+  display: flex;
+  justify-content: center;
+  margin: 20px 20px;
+}
+
+.ctn_comment .avatar {
+  background-image: url(../content/shark-hung-la-ai.jpg);
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.ctn_comment input {
+  padding: 10px;
+  border-radius: 10px;
+  width: 90%;
+  height: 40px;
+}
+
+.ctn_comment.open_cmt{
+  display: flex;
+  justify-content: center;
+}
+
+/*comment_1*/
+.ctn_comment_1 {
+  display: none;
+
+}
+
+.ctn_comment_1 .bl__ctn_comment_1{
+  display: flex;
+  justify-content: center;
+  margin: 20px 20px;
+}
+
+.ctn_comment_1 .avatar {
+  background-image: url(../content/shark-hung-la-ai.jpg);
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.ctn_comment_1 input {
+  padding: 10px;
+  border-radius: 10px;
+  width: 90%;
+  height: 40px;
+}
+
+.ctn_comment_1.open_cmt{
+  display: flex;
+  justify-content: center;
+}
+
+/*comment_2*/
+.ctn_comment_2 {
+  display: none;
+
+}
+
+.ctn_comment_2 .bl__ctn_comment_2{
+  display: flex;
+  justify-content: center;
+  margin: 20px 20px;
+}
+
+.ctn_comment_2 .avatar {
+  background-image: url(../content/shark-hung-la-ai.jpg);
+  background-repeat: no-repeat;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.ctn_comment_2 input {
+  padding: 10px;
+  border-radius: 10px;
+  width: 90%;
+  height: 40px;
+}
+
+.ctn_comment_2.open_cmt{
+  display: flex;
+  justify-content: center;
+}

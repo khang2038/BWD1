@@ -4,7 +4,6 @@ $('.ctn__image').addClass('animate__animated animate__bounceInRight');
 $('.content .info_img').addClass('animate__animated animate__bounceInLeft');
 $('.content .info_content').addClass('animate__animated animate__bounceInRight');
 
-
 $(document).ready(function(){
     $(window).scroll(function(){
         var body=$('html,body').scrollTop();

@@ -26,7 +26,6 @@ const body=document.querySelector("body"),
           }
       })
       
-      
       $(document).ready(function(){
           var width=$(document).width();
           console.log(width);
@@ -115,26 +114,6 @@ function onclick__projects(){
 
 projects.addEventListener('click' , onclick__projects);
 
-// to top btn
-
-window.scroll({
-    top: 2500, 
-    left: 0, 
-    behavior: 'smooth'
-  });
-  
-  // Scroll certain amounts from current position 
-  window.scrollBy({ 
-    top: 100, // could be negative value
-    left: 0, 
-    behavior: 'smooth' 
-  });
-  
-  // Scroll to a certain element
-  document.querySelector('.hello').scrollIntoView({ 
-    behavior: 'smooth' 
-  });
-  
 // loading mobile
 
 var ctn__loading__home=document.querySelector('.ctn__loading__body');
@@ -198,6 +177,21 @@ function onclick__projects(){
 
 projects_mb.addEventListener('click' , onclick__projects);
 
+    //comment
+    var ctn_comment = document.querySelector('.ctn_comment');
+
+    function click_cmt() {
+        if (!ctn_comment.classList.contains('open_cmt')) {
+            ctn_comment.classList.add('open_cmt');
+        }
+        else {
+            ctn_comment.classList.remove('open_cmt');
+        }
+    }
+
+
+
+
 // to top btn
 
 window.scroll({
@@ -217,3 +211,5 @@ window.scroll({
   document.querySelector('.hello').scrollIntoView({ 
     behavior: 'smooth' 
   });
+
+
