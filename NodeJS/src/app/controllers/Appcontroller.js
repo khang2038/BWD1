@@ -1,8 +1,8 @@
-class Aicontroller{
+class Appcontroller{
 
     index(req,res){
-         res.render('Ai',{
-          title: 'Ai',
+         res.render('App',{
+          title: 'App',
           style:'styleproduct.css',
           style2:'queriesproduct.css',
           script1:'scriptproduct.js',
@@ -12,4 +12,4 @@ class Aicontroller{
 
 }
 
-module.exports= new Aicontroller;
+module.exports= new Appcontroller;

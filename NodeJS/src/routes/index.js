@@ -4,6 +4,10 @@ const loginrouter=require('./login')
 const signuprouter=require('./signup')
 const Airouter=require('./Ai')
 const homerouter=require('./home')
+const Approuter=require('./App')
+const costumerouter=require('./costume')
+const ecommercerouter=require('./ecommerce')
+const Gamerouter=require('./Game')
 function route(app){
 
     app.use('/product',productrouter);
@@ -33,6 +37,9 @@ function route(app){
     app.get('/login',loginrouter)
     app.get('/signup',signuprouter)
     app.get('/Ai',Airouter)
-
+    app.get('/App',Approuter)
+    app.get('/costume',costumerouter)
+    app.get('/ecommerce',ecommercerouter)
+    app.get('/Game',Gamerouter)
 }
 module.exports = route;

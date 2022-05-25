@@ -114,7 +114,6 @@ html {
 /* End Left Main Login */
 
 .login .login__banner {
-    background : url(img/crownfuding.webp) top center / cover no-repeat;
     width: 50%;
     height: 100%;
 }
