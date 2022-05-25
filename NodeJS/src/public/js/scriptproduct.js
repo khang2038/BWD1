@@ -115,11 +115,7 @@ function onclick__projects(){
 
 projects.addEventListener('click' , onclick__projects);
 
-<<<<<<< HEAD
-
-=======
   
->>>>>>> beca3bbe8b2ccecf7edf8381bcf85d4cd769cbc9
 // loading mobile
 
 var ctn__loading__home=document.querySelector('.ctn__loading__body');
