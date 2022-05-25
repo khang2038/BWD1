@@ -4,7 +4,7 @@ const router=express.Router();
 const costumecontroller=require('../app/controllers/costumecontroller');
 
 // productcontroller.index
-router.use('/',costumecontroller.index);
+router.get('/',costumecontroller.index);
 
 
 

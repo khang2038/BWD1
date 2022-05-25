@@ -4,7 +4,7 @@ const router=express.Router();
 const Gamecontroller=require('../app/controllers/Gamecontroller');
 
 // productcontroller.index
-router.use('/',Gamecontroller.index);
+router.get('/',Gamecontroller.index);
 
 
 

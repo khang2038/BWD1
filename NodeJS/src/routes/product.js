@@ -4,9 +4,9 @@ const router=express.Router();
 const productcontroller=require('../app/controllers/productcontroller');
 
 // productcontroller.index
-router.use('/',productcontroller.index);
+router.get('/',productcontroller.index);
 
-router.use('/detailprod',productcontroller.show);
-router.use('/',productcontroller.index);
+router.get('/detailprod',productcontroller.show);
+router.get('/',productcontroller.index);
 
 module.exports = router;

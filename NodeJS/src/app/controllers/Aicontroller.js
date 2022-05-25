@@ -1,3 +1,4 @@
+
 class Aicontroller{
 
     index(req,res){

@@ -4,7 +4,7 @@ const router=express.Router();
 const Appcontroller=require('../app/controllers/Appcontroller');
 
 // productcontroller.index
-router.use('/',Appcontroller.index);
+router.get('/',Appcontroller.index);
 
 
 

@@ -4,7 +4,7 @@ const router=express.Router();
 const ecommercecontroller=require('../app/controllers/ecommercecontroller');
 
 // productcontroller.index
-router.use('/',ecommercecontroller.index);
+router.get('/',ecommercecontroller.index);
 
 
 

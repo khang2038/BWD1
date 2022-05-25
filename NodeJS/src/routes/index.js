@@ -33,15 +33,15 @@ function route(app){
       });
     })
 
-    app.get('/home',homerouter)
-    app.get('/detail',detailrouter)
-    app.get('/login',loginrouter)
-    app.get('/signup',signuprouter)
-    app.get('/Ai',Airouter)
-    app.get('/App',Approuter)
-    app.get('/costume',costumerouter)
-    app.get('/ecommerce',ecommercerouter)
-    app.get('/Game',Gamerouter)
-    app.get('/donate',donaterouter)
+    app.use('/home',homerouter)
+    app.use('/detail',detailrouter)
+    app.use('/login',loginrouter)
+    app.use('/signup',signuprouter)
+    app.use('/Ai',Airouter)
+    app.use('/App',Approuter)
+    app.use('/costume',costumerouter)
+    app.use('/ecommerce',ecommercerouter)
+    app.use('/Game',Gamerouter)
+    app.use('/donate',donaterouter)
 }
 module.exports = route;

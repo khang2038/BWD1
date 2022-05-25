@@ -4,7 +4,7 @@ const router=express.Router();
 const Aicontroller=require('../app/controllers/Aicontroller');
 
 // productcontroller.index
-router.use('/',Aicontroller.index);
+router.get('/',Aicontroller.index);
 
 
 

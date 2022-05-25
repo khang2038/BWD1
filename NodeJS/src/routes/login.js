@@ -5,8 +5,8 @@ const logincontroller=require('../app/controllers/logincontroller');
 
 // productcontroller.index
 
-router.use('/detailprod',logincontroller.show);
-router.use('/',logincontroller.index);
+router.get('/detailprod',logincontroller.show);
+router.get('/',logincontroller.index);
 
 
 

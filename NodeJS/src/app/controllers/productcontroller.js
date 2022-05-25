@@ -1,13 +1,20 @@
+const product=require('../models/product')
 class productcontroller{
 
-    index(req,res){
-         res.render('product',{
-          title: 'Product',
-          style:'styleproduct.css',
-          style2:'queriesproduct.css',
-          script1:'scriptproduct.js',
-          script2:'jquery.waypoints.min.js'
-      });
+    
+
+    index(req,res,next){
+        product.find({})
+            .then(products=>res.render('product',{
+                                        title: 'Product',
+                                        style:'styleproduct.css',
+                                        style2:'queriesproduct.css',
+                                        script1:'scriptproduct.js',
+                                        script2:'jquery.waypoints.min.js',
+                                        products:products
+                                        })
+                    )
+            .catch(next);
     }
 
     show(req,res){

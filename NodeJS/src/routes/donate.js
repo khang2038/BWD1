@@ -5,8 +5,8 @@ const donatecontroller=require('../app/controllers/donatecontroller');
 
 // productcontroller.index
 
-router.use('/detailprod',donatecontroller.show);
-router.use('/',donatecontroller.index);
+router.get('/detailprod',donatecontroller.show);
+router.get('/',donatecontroller.index);
 
 
 

@@ -5,8 +5,8 @@ const signupcontroller=require('../app/controllers/signupcontroller');
 
 // productcontroller.index
 
-router.use('/detailprod',signupcontroller.show);
-router.use('/',signupcontroller.index);
+router.get('/detailprod',signupcontroller.show);
+router.get('/',signupcontroller.index);
 
 
 
