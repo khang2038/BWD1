@@ -57,7 +57,11 @@ function onclick__home(){
         .then(function() {
             
             ctn__loading__home.classList.remove('open__load')
+<<<<<<< HEAD
             homepage.href="homepage"; 
+=======
+            homepage.href="home"; 
+>>>>>>> c6286de3880a90e0258c440310b8d3e2aa08ca65
             homepage.click();
         })      
 }
@@ -110,7 +114,7 @@ function sleep(s){
     })
 }
 
-function onclick__home(){
+function onclick__home_mb(){
     sleep(0)
         .then(function() {
             ctn__loading__home.classList.add('open__load');
@@ -124,9 +128,9 @@ function onclick__home(){
             homepage_mb.click();
         })      
 }
-homepage_mb.addEventListener('click' , onclick__home);
+homepage_mb.addEventListener('click' , onclick__home_mb);
 
-function onclick__product(){
+function onclick__product_mb(){
     sleep(0)
         .then(function() {
             ctn__loading__home.classList.add('open__load');
@@ -141,10 +145,10 @@ function onclick__product(){
         })      
 }
 
-product_mb.addEventListener('click' , onclick__product);
+product_mb.addEventListener('click' , onclick__product_mb);
 
 
-function onclick__projects(){
+function onclick__projects_mb(){
     sleep(0)
         .then(function() {
             ctn__loading__home.classList.add('open__load');
@@ -158,7 +162,7 @@ function onclick__projects(){
         })      
 }
 
-projects_mb.addEventListener('click' , onclick__projects);
+projects_mb.addEventListener('click' , onclick__projects_mb);
 
 // to top btn
 

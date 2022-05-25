@@ -141,7 +141,11 @@ function onclick__home(){
         .then(function() {
             
             ctn__loading__home.classList.remove('open__load')
+<<<<<<< HEAD
             homepage.href="homepage"; 
+=======
+            homepage.href="home"; 
+>>>>>>> c6286de3880a90e0258c440310b8d3e2aa08ca65
             homepage.click();
         })      
 }
@@ -161,7 +165,6 @@ function onclick__product(){
 }
 
 product.addEventListener('click' , onclick__product);
-
 
 function onclick__projects(){
     sleep(0)

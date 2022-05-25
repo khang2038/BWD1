@@ -9,6 +9,7 @@ class logincontroller{
     }
 
     show(req,res){
+        
     }
 
 }
