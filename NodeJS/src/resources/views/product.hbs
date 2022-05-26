@@ -144,7 +144,7 @@
                 <div class="decription">  
                   <div class="emotion">
                       <i class="fa-regular fa-heart"></i>
-                      <i class="fa-regular fa-comment"></i>
+                      <i class="fa-regular fa-comment" onclick=handle_comment('{{this.name}}')></i>
                       <i class="fa-solid fa-share-nodes"></i>
                   </div>
                   <div class="donate-investment">
@@ -152,6 +152,19 @@
                       <p class="investment" onclick=handle_mess()>Investment</p> 
                   </div>   
                 </div>       
+
+                 <!--comment-->
+                <div class="ctn_comment" style="height: 100px;">
+                    <div class="bl__ctn_comment" style="width: 90%;">
+                        <div class="avatar">
+                            
+                        </div>
+                        <input type="text" placeholder="Viết bình luận ... ">
+
+                    </div>
+                </div>
+                <!--end_comment-->    
+
              </div>
             {{/each}}
              <div class="Infor AI">

@@ -365,6 +365,20 @@ function handle_mess() {
     messenger.click();
 }
 
+//handle_comment
+function handle_comment(class1) {
+    console.log(class1);
+    var comment1 = document.querySelector(`.${class1} .ctn_comment`);
+    
+    if (comment1.classList.contains('open_cmt')){
+        comment1.classList.remove('open_cmt');
+    } 
+    else {
+        comment1.classList.add('open_cmt');
+    }
+    
+}
+
 // to top btn
 
 window.scroll({
