@@ -7,6 +7,7 @@ class productcontroller{
         product.find({})
             .then(products=>{
                 products=products.map(product => product.toObject() )
+                products.reverse();
                 res.render('product',{
                                         title: 'Product',
                                         style:'styleproduct.css',

@@ -11,6 +11,7 @@ const Gamerouter=require('./Game')
 const donaterouter=require('./donate')
 const createrouter=require('./create')
 const storerouter=require('./store')
+const merouter=require('./me')
 function route(app){
 
     app.use('/product',productrouter);
@@ -47,6 +48,7 @@ function route(app){
     app.use('/donate',donaterouter)
     app.use('/create',createrouter)
     app.use('/store',storerouter)
+    app.use('/me',merouter)
 }
 
 module.exports = route;
