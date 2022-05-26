@@ -19,10 +19,6 @@ class productcontroller{
             .catch(next);
     }
 
-    show(req,res){
-      
-    }
-
 }
 
 module.exports= new productcontroller;
