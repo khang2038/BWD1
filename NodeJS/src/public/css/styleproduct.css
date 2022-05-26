@@ -342,7 +342,7 @@ body.dark .switch_mobile::before{
 }
 .the_left_page .mode{
     margin-left:25px;
-    margin-top:90%;
+    margin-top:50%;
     display: flex;
 }
 .the_left_page .mode .moon-sun{
