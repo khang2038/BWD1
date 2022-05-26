@@ -365,6 +365,25 @@ function handle_mess() {
     messenger.click();
 }
 
+//handle_heart
+function handle_heart(class1) {
+    var heart = document.querySelector(`.${class1} .heart`);
+    if (heart.classList.contains('fa-regular')) {
+        heart.classList.remove('fa-regular');
+        heart.classList.add('fa-solid');
+        Object.assign(heart.style , {
+            color : 'red',
+        })
+    }
+    else {
+        heart.classList.remove('fa-solid');
+        heart.classList.add('fa-regular');
+        Object.assign(heart.style , {
+            color : 'black',
+        })
+    }
+}
+
 //handle_comment
 function handle_comment(class1) {
     console.log(class1);
