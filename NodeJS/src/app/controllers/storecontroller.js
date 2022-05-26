@@ -6,7 +6,7 @@ class storecontroller{
         const product= new Product(formdata);
         product.save();
         res.send('save')
-                
+            
     }
 
 
