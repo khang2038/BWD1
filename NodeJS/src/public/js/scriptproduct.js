@@ -359,6 +359,12 @@ $("#textInput").keypress(function (e) {
     }
 });
 
+
+//investment
+function handle_mess() {
+    messenger.click();
+}
+
 // to top btn
 
 window.scroll({
