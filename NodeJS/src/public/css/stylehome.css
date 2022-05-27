@@ -248,6 +248,14 @@ header .close:hover i{
   width: 50%;
   text-align: center;
   padding: 200px 0;
+  color: #000000;
+  font-family: 'Open Sans',sans-serif;
+
+}
+
+.introduce__web .ctn__content .content__title{
+  font-size: 48px;
+  font-weight: bold;
 }
 
 .introduce__web .ctn__content h1{
