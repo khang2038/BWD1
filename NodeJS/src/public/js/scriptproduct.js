@@ -118,6 +118,67 @@ projects.addEventListener('click' , onclick__projects);
   
 // loading mobile
 
+var ctn__loading__home=document.querySelector('.ctn__loading__body');
+var homepage_mb=document.querySelector('#homepage_mobile');
+var product_mb=document.querySelector('#product_mobile');
+var projects_mb=document.querySelector('#projects_mobile');
+
+function sleep(s){
+    return new Promise(function(resolve) {
+        setTimeout(resolve,s)
+    })
+}
+
+function onclick__home_mb(){
+    sleep(0)
+        .then(function() {
+            ctn__loading__home.classList.add('open__load');
+            
+            return sleep(500);
+        })
+        .then(function() {
+            
+            ctn__loading__home.classList.remove('open__load');
+            homepage_mb.href="homepage"; 
+            homepage_mb.click();
+        })      
+}
+homepage_mb.addEventListener('click' , onclick__home_mb);
+
+function onclick__product_mb(){
+    sleep(0)
+        .then(function() {
+            ctn__loading__home.classList.add('open__load');
+            
+            return sleep(500);
+        })
+        .then(function() {
+            
+            ctn__loading__home.classList.remove('open__load')
+            product_mb.href="product"; 
+            product_mb.click();
+        })      
+}
+
+product_mb.addEventListener('click' , onclick__product_mb);
+
+
+function onclick__projects_mb(){
+    sleep(0)
+        .then(function() {
+            ctn__loading__home.classList.add('open__load');
+            return sleep(500);
+        })
+        .then(function() {
+            
+            ctn__loading__home.classList.remove('open__load')
+            projects_mb.href="detail"; 
+            projects_mb.click();
+        })      
+}
+
+projects_mb.addEventListener('click' , onclick__projects_mb);
+
 
 //comment
 var ctn_comment = document.querySelector('.ctn_comment');
