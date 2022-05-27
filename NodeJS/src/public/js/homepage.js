@@ -4,7 +4,6 @@ $('.ctn__image').addClass('animate__animated animate__bounceInRight');
 $('.content .info_img').addClass('animate__animated animate__bounceInLeft');
 $('.content .info_content').addClass('animate__animated animate__bounceInRight');
 
-
 $(document).ready(function(){
     $(window).scroll(function(){
         var body=$('html,body').scrollTop();
@@ -29,17 +28,11 @@ $(document).ready(function(){
 })
 
 //btn_project_card
-function trans_aft_card() {
-    let card_project = document.querySelector('.card_project');
-    let form_card_project = document.querySelectorAll('.card_project .form_card_project');
-    let card_project_1 = document.querySelector('.card_project-1');
 
-    Object.assign(card_project.style ,{
-        display : 'none',
-    })
-
-    Object.assign(card_project_1.style ,{
-        display : 'flex',
+//promise
+function sleep(s){
+    return new Promise(function(resolve) {
+        setTimeout(resolve,s)
     })
 }
 
@@ -47,6 +40,7 @@ function trans_pre_card() {
     let card_project = document.querySelector('.card_project');
     let form_card_project = document.querySelectorAll('.card_project .form_card_project');
     let card_project_1 = document.querySelector('.card_project-1');
+    // $('.card_project').addClass('animate__animated animate__backOutLeft');
     
     Object.assign(card_project_1.style ,{
         display : 'none',
@@ -55,6 +49,58 @@ function trans_pre_card() {
         display : 'flex',
     })
 
+    sleep(0)
+        .then(function() {
+            $('.card_project_1').addClass('animate__animated animate__bounceOutRight');
+            $('.card_project').addClass('animate__animated animate__bounceInLeft');
+            
+            return sleep(500);
+        })
+        .then(function() {
+            Object.assign(card_project.style ,{
+                display : 'flex',
+            })
+        
+            Object.assign(card_project_1.style ,{
+                display : 'none',
+            })
+
+            return sleep(0)
+        })
+        .then(function() {
+            $('.card_project_1').removeClass('animate__animated animate__bounceOutRight');
+            $('.card_project').removeClass('animate__animated animate__bounceInLeft');
+        })
+
+}
+
+function trans_aft_card() {
+    let card_project = document.querySelector('.card_project');
+    let form_card_project = document.querySelectorAll('.card_project .form_card_project');
+    let card_project_1 = document.querySelector('.card_project-1');
+    
+    sleep(0)
+        .then(function() {
+            $('.card_project').addClass('animate__animated animate__bounceOutLeft');
+            $('.card_project_1').addClass('animate__animated animate__bounceInRight');
+            
+            return sleep(500);
+        })
+        .then(function() {
+            Object.assign(card_project.style ,{
+                display : 'none',
+            })
+        
+            Object.assign(card_project_1.style ,{
+                display : 'flex',
+            })
+
+            return sleep(0)
+        })
+        .then(function() {
+            $('.card_project').removeClass('animate__animated animate__bounceOutLeft');
+            $('.card_project_1').removeClass('animate__animated animate__bounceInRight');
+        })
 }
 
 //info_details
@@ -141,7 +187,7 @@ function onclick__home(){
         .then(function() {
             
             ctn__loading__home.classList.remove('open__load')
-            homepage.href="home"; 
+            homepage.href="../homepage/index.html"; 
             homepage.click();
         })      
 }
@@ -155,12 +201,13 @@ function onclick__product(){
         })
         .then(function() {
             ctn__loading__home.classList.remove('open__load')
-            product.href="product";
+            product.href="../Product/index.html";
             product.click();
         })      
 }
 
 product.addEventListener('click' , onclick__product);
+
 
 function onclick__projects(){
     sleep(0)
@@ -170,7 +217,7 @@ function onclick__projects(){
         })
         .then(function() {
             ctn__loading__home.classList.remove('open__load');
-            projects.href="detail";
+            projects.href="../projects/index.html";
             projects.click();
         })
 }
