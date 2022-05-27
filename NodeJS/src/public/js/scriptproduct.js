@@ -70,7 +70,7 @@ function onclick__home(){
         .then(function() {
             ctn__loading__home.classList.add('open__load');
             
-            return sleep(1300);
+            return sleep(500);
         })
         .then(function() {
             
@@ -86,7 +86,7 @@ function onclick__product(){
         .then(function() {
             ctn__loading__home.classList.add('open__load');
             
-            return sleep(1300);
+            return sleep(500);
         })
         .then(function() {
             
@@ -103,7 +103,7 @@ function onclick__projects(){
     sleep(0)
         .then(function() {
             ctn__loading__home.classList.add('open__load');
-            return sleep(1300);
+            return sleep(500);
         })
         .then(function() {
             
