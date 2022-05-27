@@ -274,7 +274,10 @@ function getBotResponse(input) {
     }
 
     // Simple responses
-    if (input == "hello" || input=="Hello") {
+    if (input == 'champion team BWD?') {
+        return "It's definitely 4i";
+    }
+    else if (input == "hello" || input=="Hello") {
         return "Hello , May I help you?";
     } else if (input == "goodbye" || input=='Goodbye' || input=='bye') {
         return "Thank you for using PRO4, see you soon!";

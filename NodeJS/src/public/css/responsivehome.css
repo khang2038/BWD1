@@ -1,6 +1,8 @@
+
+
 /*------mobile-----------*/
 
-@media screen and (max-width : 46.1875em) {
+@media screen and (max-width : 78.6em) {
     /*---------body-----------*/
     .background_img {
         display: none;
@@ -40,7 +42,7 @@
     
     .our_impact .card .form_card{
         width: 80%;
-        margin: 20px 0;
+        margin: 20px auto;
         /* padding: 20px 0; */
     }
 
@@ -82,8 +84,14 @@
 
     .card_project-1 .form_card_project-1 ,
     .card_project .form_card_project {
+        margin: 0 auto;
         margin-bottom: 50px;
         width: 90%;
+    }
+
+    .info_item-2 img,
+    .info_item-1 img {
+        display: none;
     }
 
     .highlights .pre_card {
