@@ -160,6 +160,158 @@ function onclick__projects_mb(){
 
 projects_mb.addEventListener('click' , onclick__projects_mb);
 
+// boxchat
+
+var coll = document.getElementsByClassName("collapsible");
+var messenger = document.querySelector('.messenger');
+
+messenger.addEventListener("click", function () {
+        coll[0].classList.toggle("active");
+        //lay elm ke tiep
+        var content = coll[0].nextElementSibling;
+        if (content.style.maxHeight) {
+            Object.assign(coll[0].style , {
+                display : 'none',
+            })
+            content.style.maxHeight = null;
+        } else {
+            console.log(content.scrollHeight);
+            Object.assign(coll[0].style , {
+                display : 'flex',
+                justifyContent : 'space-between'
+            })
+            content.style.maxHeight = content.scrollHeight + "px";
+        }
+});
+
+var minimize = document.querySelector('.fa-window-minimize');
+
+minimize.addEventListener('click', function () {
+    var content = coll[0].nextElementSibling;
+    Object.assign(coll[0].style , {
+        display : 'none',
+    })
+    content.style.maxHeight = null;
+})
+
+function getTime() {
+    let today = new Date();
+    hours = today.getHours();
+    minutes = today.getMinutes();
+
+    if (hours < 10) {
+        hours = "0" + hours;
+    }
+
+    if (minutes < 10) {
+        minutes = "0" + minutes;
+    }
+
+    let time = hours + ":" + minutes;
+    return time;
+}
+
+function getBotResponse(input) {
+    //rock paper scissors
+    if (input == "rock") {
+        return "paper";
+    } else if (input == "paper") {
+        return "scissors";
+    } else if (input == "scissors") {
+        return "rock";
+    }
+
+    // Simple responses
+    if (input == "hello" || input=="Hello") {
+        return "Hello , May I help you?";
+    } else if (input == "goodbye" || input=='Goodbye' || input=='bye') {
+        return "Thank you for using PRO4, see you soon!";
+    } else if(input == "Which team wins the BWD contest?"||input == "which team wins the BWD contest?"||input == "Which team wins the BWD contest"||input == "which team wins the BWD contest"){
+        return "4i";
+    }else{
+        return "Try asking something else!";
+    }
+
+}
+
+// tin nhan mac dinh dau tien
+function firstBotMessage() {
+    let firstMessage = "How's it going?"
+    document.getElementById("botStarterMessage").innerHTML = '<p class="botText"><span>' + firstMessage + '</span></p>';
+
+    let time = getTime();
+
+    $("#chat-timestamp").append(time);
+}
+
+firstBotMessage();
+
+// add tin nhan
+function getHardResponse(userText) {
+    let botResponse = getBotResponse(userText);
+    let botHtml = '<p class="botText"><span>' + botResponse + '</span></p>';
+    $("#chatbox").append(botHtml);
+
+    document.getElementById("chat-bar-bottom").scrollIntoView(true);
+}
+
+//Xu li Lay text trong input va day len message
+function getResponse() {
+    //lay text
+    let userText = $("#textInput").val();
+
+    if (userText == "") {
+        userText = "I love Code Palace!";
+    }
+
+    let userHtml = '<p class="userText"><span>' + userText + '</span></p>';
+
+    // tra ve focus ban dau
+    $("#textInput").val("");
+    $("#chatbox").append(userHtml);
+    //lan ve UI chinh
+    document.getElementById("chat-bar-bottom").scrollIntoView(true);
+
+    setTimeout(() => {
+        getHardResponse(userText);
+    }, 1000)
+
+}
+
+// xu li  gui tin nhan bot
+function buttonSendText(sampleText) {
+    let userHtml = '<p class="userText"><span>' + sampleText + '</span></p>';
+
+    $("#textInput").val("");
+    $("#chatbox").append(userHtml);
+
+    //scroll den view chinh
+    document.getElementById("chat-bar-bottom").scrollIntoView(true);
+
+    //Uncomment this if you want the bot to respond to this buttonSendText event
+    setTimeout(() => {
+        getHardResponse(sampleText);
+    }, 1000)
+}
+
+
+function sendButton() {
+    getResponse();
+}
+
+function heartButton() {
+    buttonSendText("Heart clicked!")
+}
+
+// xu li su kien enter va day tin nhan
+$("#textInput").keypress(function (e) {
+    console.log('hi');
+    if (e.which == 13) {
+        getResponse();
+    }
+});
+
+
 // to top btn
 
 window.scroll({

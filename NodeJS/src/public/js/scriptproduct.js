@@ -278,9 +278,12 @@ function getBotResponse(input) {
         return "Hello , May I help you?";
     } else if (input == "goodbye" || input=='Goodbye' || input=='bye') {
         return "Thank you for using PRO4, see you soon!";
-    } else {
+    } else if(input == "Which team wins the BWD contest?"||input == "which team wins the BWD contest?"||input == "Which team wins the BWD contest"||input == "which team wins the BWD contest"){
+        return "4i";
+    }else{
         return "Try asking something else!";
     }
+
 }
 
 // tin nhan mac dinh dau tien
