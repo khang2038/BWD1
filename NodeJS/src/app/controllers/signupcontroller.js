@@ -8,9 +8,6 @@ class signupcontroller{
       });
     }
 
-    show(req,res){
-    }
-
 }
 
 module.exports= new signupcontroller;

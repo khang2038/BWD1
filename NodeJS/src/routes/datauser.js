@@ -1,11 +1,11 @@
 const express=require('express');
 const router=express.Router();
 
-const logincontroller=require('../app/controllers/logincontroller');
+const datausercontroller=require('../app/controllers/datausercontroller');
 
 // productcontroller.index
 
-router.get('/',logincontroller.index);
+router.post('/',datausercontroller.index);
 
 
 

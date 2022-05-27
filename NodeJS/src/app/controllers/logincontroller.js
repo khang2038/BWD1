@@ -8,10 +8,6 @@ class logincontroller{
       });
     }
 
-    show(req,res){
-        
-    }
-
 }
 
 module.exports= new logincontroller;

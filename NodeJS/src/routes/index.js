@@ -11,7 +11,9 @@ const Gamerouter=require('./Game')
 const donaterouter=require('./donate')
 const createrouter=require('./create')
 const storerouter=require('./store')
+const datauserrouter=require('./datauser')
 const merouter=require('./me')
+const User = require('../app/models/user')
 function route(app){
 
     app.use('/product',productrouter);
@@ -49,6 +51,24 @@ function route(app){
     app.use('/create',createrouter)
     app.use('/store',storerouter)
     app.use('/me',merouter)
+    app.use('/datauser',datauserrouter)
+    app.post('/signup',async(req,res)=>{
+       try{
+           const tk=new User({
+               email:req.body.email,
+               password:req.body.password,
+               name_author:req.body.name,
+               img_author:req.body.img_author
+           })
+         tk.save()
+            .then(()=> res.redirect('login'))
+            .catch(error => {
+
+            })  
+       }catch(error){
+         res.status(404).send(error);
+       }
+    })
 }
 
 module.exports = route;
