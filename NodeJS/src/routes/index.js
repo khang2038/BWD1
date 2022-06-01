@@ -14,10 +14,12 @@ const storerouter=require('./store')
 const datauserrouter=require('./datauser')
 const merouter=require('./me')
 const User = require('../app/models/user')
+const create_project = require('./create_project');
 function route(app){
 
-    app.use('/product',productrouter);
+    app.use('/create_project' , create_project);
 
+    app.use('/product',productrouter);
 
     app.get('/homepage', (req, res) => {
       res.render('home',{
