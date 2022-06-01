@@ -179,7 +179,6 @@ function onclick__projects_mb(){
 
 projects_mb.addEventListener('click' , onclick__projects_mb);
 
-
 //comment
 var ctn_comment = document.querySelector('.ctn_comment');
 var ctn_comment_1 = document.querySelector('.ctn_comment_1');
@@ -359,7 +358,7 @@ function heartButton() {
     buttonSendText("Heart clicked!")
 }
 
-// xu li su kien enter va day tin nhan
+
 $("#textInput").keypress(function (e) {
     if (e.which == 13) {
         getResponse();
@@ -408,20 +407,20 @@ function handle_comment(class1) {
 
 // to top btn
 
-window.scroll({
-    top: 2500, 
-    left: 0, 
-    behavior: 'smooth'
-  });
+// window.scroll({
+//     top: 2500, 
+//     left: 0, 
+//     behavior: 'smooth'
+//   });
   
-  // Scroll certain amounts from current position 
-  window.scrollBy({ 
-    top: 100, // could be negative value
-    left: 0, 
-    behavior: 'smooth' 
-  });
+//   // Scroll certain amounts from current position 
+//   window.scrollBy({ 
+//     top: 100, // could be negative value
+//     left: 0, 
+//     behavior: 'smooth' 
+//   });
   
-  // Scroll to a certain element
-  document.querySelector('.hello').scrollIntoView({ 
-    behavior: 'smooth' 
-  });
+//   // Scroll to a certain element
+//   document.querySelector('.hello').scrollIntoView({ 
+//     behavior: 'smooth' 
+//   });

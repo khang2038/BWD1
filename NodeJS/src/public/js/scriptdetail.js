@@ -4,18 +4,14 @@ const body=document.querySelector("body"),
       modeSwitch=body.querySelector(".toggle-switch"),
       modeText=body.querySelector(".mode-text");
 
-      toggle  
-
-      modeSwitch.addEventListener("click",()=>{
-          alert("gugu");
-          body.classList.toggle("dark");
-          if(body.classList.contains("dark")){
-              modeText.innerText="Light Mode";
-          }else{
-              modeText.innerText="Dark Mode";
-          }
-      })
-
+function toggle_dark_light() {
+    body.classList.toggle("dark");
+    if(body.classList.contains("dark")){
+        modeText.innerText="Light Mode";
+    }else{
+        modeText.innerText="Dark Mode";
+    }
+}
 
 // transform thanh chủ đề 
 function onmouseover_the_left_page() {
@@ -313,23 +309,23 @@ $("#textInput").keypress(function (e) {
 
 // to top btn
 
-window.scroll({
-    top: 2500, 
-    left: 0, 
-    behavior: 'smooth'
-  });
+// window.scroll({
+//     top: 2500, 
+//     left: 0, 
+//     behavior: 'smooth'
+//   });
   
-  // Scroll certain amounts from current position 
-  window.scrollBy({ 
-    top: 100, // could be negative value
-    left: 0, 
-    behavior: 'smooth' 
-  });
+//   // Scroll certain amounts from current position 
+//   window.scrollBy({ 
+//     top: 100, // could be negative value
+//     left: 0, 
+//     behavior: 'smooth' 
+//   });
   
   // Scroll to a certain element
-  document.querySelector('.hello').scrollIntoView({ 
-    behavior: 'smooth' 
-  });
+//   document.querySelector('.hello').scrollIntoView({ 
+//     behavior: 'smooth' 
+//   });
 
 
 

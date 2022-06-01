@@ -118,13 +118,13 @@
                     </a>
                 </li>    
             </div> 
-            <li class="mode">
+            <li class="mode" onclick=log()>
                 <div class="moon-sun">
                     <i class="fa-solid fa-moon moon "></i>
                     <i class="fa-solid fa-sun sun"></i>
                 </div>
                 <span class="mode-text">Dark Mode</span>
-                <div class="toggle-switch">
+                <div class="toggle-switch" onclick=toggle_dark_light()>
                     <span class="switch"></span>
                 </div>
             </li>
@@ -529,5 +529,10 @@
     </script>
 
     <!-- end top btn -->
-    
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous">
+    </script>
+    <script src="jquery.waypoints.min.js"></script>
     <script src="js/scriptdetail.js"></script>
