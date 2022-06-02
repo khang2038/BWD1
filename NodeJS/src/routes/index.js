@@ -19,7 +19,9 @@ function route(app){
     app.use('/product',productrouter);
 
 
-    app.get('/homepage', (req, res) => {
+    app.get('/homepage', (req, res, next) => {
+      console.log(req.user);
+
       res.render('home',{
           title: 'Home',
           style:'stylehome.css',
