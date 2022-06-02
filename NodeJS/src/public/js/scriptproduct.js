@@ -70,7 +70,7 @@ function onclick__home(){
         .then(function() {
             ctn__loading__home.classList.add('open__load');
             
-            return sleep(1300);
+            return sleep(500);
         })
         .then(function() {
             
@@ -86,7 +86,7 @@ function onclick__product(){
         .then(function() {
             ctn__loading__home.classList.add('open__load');
             
-            return sleep(1300);
+            return sleep(500);
         })
         .then(function() {
             
@@ -103,7 +103,7 @@ function onclick__projects(){
     sleep(0)
         .then(function() {
             ctn__loading__home.classList.add('open__load');
-            return sleep(1300);
+            return sleep(500);
         })
         .then(function() {
             
@@ -134,11 +134,11 @@ function onclick__home_mb(){
         .then(function() {
             ctn__loading__home.classList.add('open__load');
             
-            return sleep(1300);
+            return sleep(500);
         })
         .then(function() {
             
-            ctn__loading__home.classList.remove('open__load')
+            ctn__loading__home.classList.remove('open__load');
             homepage_mb.href="homepage"; 
             homepage_mb.click();
         })      
@@ -150,7 +150,7 @@ function onclick__product_mb(){
         .then(function() {
             ctn__loading__home.classList.add('open__load');
             
-            return sleep(1300);
+            return sleep(500);
         })
         .then(function() {
             
@@ -167,7 +167,7 @@ function onclick__projects_mb(){
     sleep(0)
         .then(function() {
             ctn__loading__home.classList.add('open__load');
-            return sleep(1300);
+            return sleep(500);
         })
         .then(function() {
             
@@ -178,7 +178,6 @@ function onclick__projects_mb(){
 }
 
 projects_mb.addEventListener('click' , onclick__projects_mb);
-
 
 //comment
 var ctn_comment = document.querySelector('.ctn_comment');
@@ -220,6 +219,7 @@ var messenger = document.querySelector('.messenger');
 messenger.addEventListener("click", function () {
         coll[0].classList.toggle("active");
         //lay elm ke tiep
+        console.log('hi');
         var content = coll[0].nextElementSibling;
         if (content.style.maxHeight) {
             Object.assign(coll[0].style , {
@@ -274,7 +274,10 @@ function getBotResponse(input) {
     }
 
     // Simple responses
-    if (input == "hello" || input=="Hello") {
+    if (input == 'champion team BWD?') {
+        return "It's definitely 4i";
+    }
+    else if (input == "hello" || input=="Hello") {
         return "Hello , May I help you?";
     } else if (input == "goodbye" || input=='Goodbye' || input=='bye') {
         return "Thank you for using PRO4, see you soon!";
@@ -355,7 +358,7 @@ function heartButton() {
     buttonSendText("Heart clicked!")
 }
 
-// xu li su kien enter va day tin nhan
+
 $("#textInput").keypress(function (e) {
     if (e.which == 13) {
         getResponse();
@@ -365,6 +368,7 @@ $("#textInput").keypress(function (e) {
 
 //investment
 function handle_mess() {
+    var messenger = document.querySelector('.messenger');
     messenger.click();
 }
 
@@ -403,20 +407,20 @@ function handle_comment(class1) {
 
 // to top btn
 
-window.scroll({
-    top: 2500, 
-    left: 0, 
-    behavior: 'smooth'
-  });
+// window.scroll({
+//     top: 2500, 
+//     left: 0, 
+//     behavior: 'smooth'
+//   });
   
-  // Scroll certain amounts from current position 
-  window.scrollBy({ 
-    top: 100, // could be negative value
-    left: 0, 
-    behavior: 'smooth' 
-  });
+//   // Scroll certain amounts from current position 
+//   window.scrollBy({ 
+//     top: 100, // could be negative value
+//     left: 0, 
+//     behavior: 'smooth' 
+//   });
   
-  // Scroll to a certain element
-  document.querySelector('.hello').scrollIntoView({ 
-    behavior: 'smooth' 
-  });
+//   // Scroll to a certain element
+//   document.querySelector('.hello').scrollIntoView({ 
+//     behavior: 'smooth' 
+//   });

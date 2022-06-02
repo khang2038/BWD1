@@ -1,4 +1,9 @@
 
+/*big tablet to 1200px: */
+@media only screen and (max-width:1200px){
+    
+}
+
 @media only screen and (max-width : 46.1875em){
     html{
         font-size:16px;
@@ -46,6 +51,10 @@
      }
 
      /*--------res_featured_projects---------*/
+
+    .featured_projects{
+        display: none;
+    }
 
     .potential_projects h4 {
         font-size: 25px;

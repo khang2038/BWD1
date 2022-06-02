@@ -11,8 +11,8 @@
             </div>
             <div class="the_center_nav">
                 <a id="homepage" class="fa-solid fa-house icon 1"></a>
-                <a id="product" class="fa-brands fa-atlassian icon 2"></a>
-                <a id="projects" class="fa-solid fa-earth-americas icon 3"></a>
+                <a id="product" class="fa-solid fa-earth-americas icon 2"></a>
+                <a id="projects" class="fa-solid fa-circle-dollar-to-slot icon 3" style="font-size: 28px;"></a>
             </div>
             <div class="the_right_nav">
                 <i class="fa-solid fa-right-to-bracket icon"></i>
@@ -118,13 +118,13 @@
                     </a>
                 </li>    
             </div> 
-            <li class="mode">
+            <li class="mode" onclick=log()>
                 <div class="moon-sun">
                     <i class="fa-solid fa-moon moon "></i>
                     <i class="fa-solid fa-sun sun"></i>
                 </div>
                 <span class="mode-text">Dark Mode</span>
-                <div class="toggle-switch">
+                <div class="toggle-switch" onclick=toggle_dark_light()>
                     <span class="switch"></span>
                 </div>
             </li>
@@ -452,7 +452,8 @@
         </div>
     </div>
     {{!-- boxchat --}}
-    <div class="messenger" style="background-image: url(content/images3.png);">
+    <div class="messenger">
+        <i class="fa-brands fa-facebook-messenger"></i>
         
     </div>
 
@@ -528,5 +529,10 @@
     </script>
 
     <!-- end top btn -->
-    
+    <script
+        src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous">
+    </script>
+    <script src="jquery.waypoints.min.js"></script>
     <script src="js/scriptdetail.js"></script>
