@@ -1,8 +1,5 @@
 const product=require('../models/product')
 class productcontroller{
-
-    
-
     index(req,res,next){
         product.find({})
             .then(products=>{

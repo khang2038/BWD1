@@ -1,4 +1,4 @@
-<header>
+    <header>
         <div class="the_left_nav">
           <div class="logo">
               <p>PRO4</p>
@@ -18,8 +18,6 @@
             <i class="fa-solid fa-right-to-bracket icon"></i>
             <a href="Login" style="text-decoration: none;">Login</a>
         </div>     
-
-{{!-- RES_MOBILE --}}
         <div class="bars">
             <i class="ti-menu" onclick=open_nav_mobile()></i>
         </div>    
@@ -52,12 +50,111 @@
                 </a>
             </div>
         </div>
-{{!-- RES_MOBILE --}}
-</header>
+    </header>
+    {{#each project}}
+    <div class="ctn_main_prj">
+        <div style="width: 90%;">
+            <div class="prj_video_img">
+                <div class="main_prj_video" style="background-image: url({{this.img_big}})">
+                    
+                </div>
+                <div class="main_prj_img">
+                    <ul>
+                        <li><img src={{this.img_big}} alt=""></li>
+                        <li><img src={{this.img2}} alt=""></li>
+                        <li><img src={{this.img3}} alt=""></li>
+                        <li><img src={{this.img4}} alt=""></li>
+                        <li><img src={{this.img5}} alt=""></li>
+                        <li><img src={{this.img6}} alt=""></li>
+                    </ul>
+                </div>
+            </div>
 
-<div style="height: 60px;"></div>
-    
-    {{!-- footer --}}
+            <div class="main_prj_content">
+                <h5 style="color: #05ce78;padding: 10px 0;">FUNDING</h5>
+                <h2 style="color : black;font-weight: bold;">{{this.main_title}}</h2>
+                <h4 style="padding: 20px 0;">{{this.main_content}}</h4>
+                <div class="ctn_statistic">
+                    <div class="ctn_pledged_backers">
+                        <div class="pledged">
+                            $<span>{{this.money_pledged}}</span>
+                            <div class="title">{{this.title_money_pledged}}</div>
+                        </div>
+                        <div class="backers">
+                            {{this.amount_backers}}
+                            <div class="title">{{this.title_amount_backers}}</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="complete_figures">
+                    <div class="complete">
+
+                    </div>
+                </div>
+                <div class="percent_complete">
+                    78% of $238,374
+                </div>
+                <div class="form_donate">
+                    <button class="support_this">
+                        SUPPORT THIS
+                    </button>
+                    <button class="follow">
+                        FOLLOW
+                    </button>
+                    <div class="ctn_social">
+                        <i class="fa-brands fa-facebook" style="color: #39579a"></i>
+                        <i class="fa-brands fa-telegram" style="color: #38b3f1;"></i>
+                        <i class="fa-brands fa-twitter" style="color: #1d9bf0;"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
+
+
+    <div class="ctn_content_detail_prj">
+        <div class="header_detail_prj">
+            <div class="story">
+                Story
+            </div>
+            <div class="statistics">
+                Statistics
+            </div>
+            <div class="comments">
+                Comnents
+            </div>
+            <div class="community">
+                Community
+            </div>
+        </div>
+        <div class="body_detail_prj">
+            <div class="left_body_prj">
+                <div class="connect">
+                    <i class="fa-brands fa-connectdevelop"></i>
+                    <p>
+                        Kickstarter connects creators with backers to fund projects.
+                    </p>
+                </div>
+                <div class="easy">
+                    <i class="fa-brands fa-stack-exchange"></i>
+                    <p>
+                        Easy exchange environment for startups.
+                    </p>
+                </div>
+                <div class="target">
+                    <i class="fa-solid fa-comments-dollar" style="color: rgb(134, 134, 100);"></i>
+                    <p>
+                        You’re only charged if the project meets its funding goal by the campaign deadline.
+                    </p>
+                </div>
+            </div>
+            <div class="right_body_prj">
+
+            </div>
+        </div>
+    </div>
+
     <div class="ctn__footer">
         <div class="ctn__footer__content">
             <div class="footer__colum f__strart">
@@ -143,7 +240,6 @@
         </div>
     </div>
 
-
     <div class="ctn__loading__body">
         <div class="ctn__loading">
             <div class="ctn__loading__content">
@@ -151,9 +247,6 @@
             </div>
         </div>
     </div>
-
-
-
 
        <script
         src="https://code.jquery.com/jquery-3.6.0.js"
