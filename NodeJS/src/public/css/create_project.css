@@ -20,7 +20,7 @@
 :root{
   --primary-color-light:#F6F5FF;
   --header-color:#fff;
-  --body-color:#f0f0e8;
+  --body-color:#ffffff;
   --search-color:#ebebeb;
   --nav-center-icon-color:#e0e0e0;
   --page-color:#f7f7f7;
@@ -378,6 +378,11 @@ header .nav_mobile {
     margin: 0 20px;
 }
 
+.ctn_main_prj .form_donate .follow:hover,
+.ctn_main_prj .form_donate .support_this:hover{
+  cursor: pointer;
+}
+
 .ctn_main_prj .form_donate .ctn_social{
     width: 40%;
     display: flex;
@@ -387,6 +392,10 @@ header .nav_mobile {
 .ctn_main_prj .form_donate .ctn_social i{
     font-size: 30px;
     margin: 0 10px;
+}
+
+.ctn_main_prj .form_donate .ctn_social i:hover{
+  cursor: pointer;
 }
 
 /*----------ctn_content_detail_prj-------------*/
@@ -422,6 +431,8 @@ header .nav_mobile {
 .ctn_content_detail_prj .body_detail_prj{
     width: 100%;
     margin-top: 50px;
+    display: flex;
+    justify-content: center;
 }
 
 .body_detail_prj .left_body_prj{
@@ -446,6 +457,35 @@ header .nav_mobile {
     justify-content: center;
 }
 
+/*---------block_story-----------------*/
+
+.block_story{
+  padding: 0 100px 0 40px;
+  /* display: none; */
+}
+
+.block_story h1{
+  padding: 20px 0;
+}
+
+.block_story p {
+  padding: 20px 0;
+}
+
+.block_story img {
+  width: 100%;
+  margin: 20px 0;
+}
+
+/*-----------block_end----------------*/
+
+.block_end{
+  width: 70%;
+  margin: 0 auto;
+  padding: 20px;
+  margin: 100px auto 50px auto;
+  border: 2px solid #8f8989;
+}
 
 
 

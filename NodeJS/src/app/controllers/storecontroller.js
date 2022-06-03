@@ -11,7 +11,6 @@ class storecontroller{
             })
         }
 
-
 }
 
 module.exports= new storecontroller;

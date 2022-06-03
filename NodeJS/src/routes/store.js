@@ -7,6 +7,4 @@ const storecontroller=require('../app/controllers/storecontroller');
 
 router.post('/',storecontroller.index);
 
-
-
 module.exports = router;

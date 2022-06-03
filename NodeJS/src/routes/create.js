@@ -7,6 +7,4 @@ const createcontroller=require('../app/controllers/createcontroller');
 
 router.get('/',createcontroller.index);
 
-
-
 module.exports = router;
