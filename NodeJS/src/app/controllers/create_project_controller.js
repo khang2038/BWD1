@@ -27,16 +27,14 @@ class create_project_controller{
             })
             .catch(next);
         
-        res.render('create_project', {
+        res.render('create_project/create_project', {
             prj_cmt : prj_cmt_db,
             project : project_db,
             question : faq_db,
             title : 'create_project',
             style : 'create_project.css',
         });
-        
-        
-        }
+    }
 }
 
 module.exports= new create_project_controller;

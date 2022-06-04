@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+const slug = require('mongoose-slug-generator');
+mongoose.plugin(slug);
+
 const project = new Schema({
     img_big: {type:String},
     img1 : {type:String},
@@ -11,11 +14,8 @@ const project = new Schema({
     img6 : {type:String},
     main_title : {type:String},
     main_content : {type:String},
-    money_pledged : {type:String},
     title_money_pledged: {type:String},
-    amount_backers: {type:String},
-    title_amount_backers: {type:String},
-
+    slug: { type: String, slug: "main_title" , unique : true},
     createdAt:{type:Date,default:Date.now},
     updateAt: {type:Date,default:Date.now},
 })
