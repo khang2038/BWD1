@@ -18,7 +18,6 @@ const project = new Schema({
 
     createdAt:{type:Date,default:Date.now},
     updateAt: {type:Date,default:Date.now},
-
 })
 
 module.exports = mongoose.model('project',project);

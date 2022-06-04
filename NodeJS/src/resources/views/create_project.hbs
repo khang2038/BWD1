@@ -118,8 +118,8 @@
             <div class="story">
                 Story
             </div>
-            <div class="statistics">
-                Statistics
+            <div class="FAQ">
+                FAQ
             </div>
             <div class="comments">
                 Comments
@@ -172,12 +172,31 @@
 
                 </div>
 
-                <div class="block_statistics">
-
+                <div class="block_FAQ">
+                    
                 </div>
 
                 <div class="block_comments">
-                    
+                    <h1>Comment</h1>
+                    {{!-- <div class="comment_action">
+                        
+                    </div> --}}
+                    {{#each prj_cmt}}
+                    <div style="margin: 30px 0;padding: 20px;border: 2px solid rgb(188, 172, 172)">
+                        <div class="cmt_info">
+                            <div class="cmt_avatar">
+                                <img src={{this.avatar}} alt="">
+                            </div>
+                            <div class="cmt_name">
+                                {{this.name}}
+                            </div>
+                        </div>
+                        <div class="cmt_content">
+                                {{this.comment}}
+                        </div>
+                    </div>
+
+                    {{/each}}
                 </div>
 
                 <div class="block_community">

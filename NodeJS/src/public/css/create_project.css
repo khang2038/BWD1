@@ -461,7 +461,7 @@ header .nav_mobile {
 
 .block_story{
   padding: 0 100px 0 40px;
-  /* display: none; */
+  display: none;
 }
 
 .block_story h1{
@@ -476,6 +476,48 @@ header .nav_mobile {
   width: 100%;
   margin: 20px 0;
 }
+
+/*-----------block_comment------------*/
+
+.block_comments{
+  padding: 0 100px 0 40px;
+
+}
+
+.block_comments .cmt_info{
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+
+}
+
+.block_comments .cmt_avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  padding: 0 40px 0 0;
+
+}
+
+.block_comments .cmt_avatar img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+
+.block_comments .cmt_name{
+  padding: 0 10px;
+}
+
+.block_comments .cmt_content {
+  padding: 20px;
+}
+
+/*-----------comment_action------------*/
+
+
+
+
 
 /*-----------block_end----------------*/
 
