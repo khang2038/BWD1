@@ -115,13 +115,13 @@
 
     <div class="ctn_content_detail_prj">
         <div class="header_detail_prj">
-            <div class="story">
+            <div class="story" onclick=open_story()>
                 Story
             </div>
-            <div class="FAQ">
+            <div class="FAQ" onclick=open_FAQ()>
                 FAQ
             </div>
-            <div class="comments">
+            <div class="comments" onclick=open_comments()>
                 Comments
             </div>
             <div class="community">
@@ -173,7 +173,19 @@
                 </div>
 
                 <div class="block_FAQ">
-                    
+                    <h1>Frequently Asked Questions</h1>
+                    {{#each question}}
+                    <div class="bl_FAQ_question">
+                        <div class="bl_question">                            
+                            <div style="font-size: 20px;">
+                                {{this.question}}
+                            </div>
+                            <div style="display: flex; align-items: center;">
+                                <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
                 </div>
 
                 <div class="block_comments">

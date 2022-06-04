@@ -1,3 +1,4 @@
+// scroll 
 var ctn_content_detail_prj = document.querySelector('.ctn_content_detail_prj');
 var header_detail_prj = document.querySelector('.header_detail_prj');
 var left_body_prj = document.querySelector('.left_body_prj');
@@ -59,7 +60,41 @@ $(document).ready(function(){
 })
 
 
+//trans_header
+let block_story = document.querySelector('.block_story');
+let block_FAQ = document.querySelector('.block_FAQ');
+let block_comments = document.querySelector('.block_comments');
+let block_community = document.querySelector('.block_community');
 
+function open_story() {
+    if (block_FAQ.classList.contains('open')) {
+        block_FAQ.classList.remove('open');
+    }
+    if (block_comments.classList.contains('open')) {
+        block_comments.classList.remove('open');
+    }
+    block_story.classList.add('open');
+}
+
+function open_FAQ() {
+    if (block_story.classList.contains('open')) {
+        block_story.classList.remove('open');
+    }
+    if (block_comments.classList.contains('open')) {
+        block_comments.classList.remove('open');
+    }
+    block_FAQ.classList.add('open');
+}
+
+function open_comments() {
+    if (block_FAQ.classList.contains('open')) {
+        block_FAQ.classList.remove('open');
+    }
+    if (block_story.classList.contains('open')) {
+        block_story.classList.remove('open');
+    }
+    block_comments.classList.add('open');
+}
 
 
 
