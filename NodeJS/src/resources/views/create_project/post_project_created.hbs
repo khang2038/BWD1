@@ -57,9 +57,11 @@
             <div class="form-group">
                 <div style="display: flex; flex-direction: column;">
                     <label for="img_big">Image</label>
-                    <input type="text" class="form-control" id="img_big" name="img_big">
+                    <img style="margin: 20px 50px;" src="" alt="" id="image" width="300" height="300">
+                    <input style="margin: 20px 50px;" type="file" class="form-control" id="img_big" name="img_big" onchange=chooseFile(this)
+                            accept="image/gif , image/jpeg, image/png">
                 </div>
-                
+
                 <div style="display: flex; flex-direction: column;">
                     <label for="main_title">Name Project</label>
                     <input type="text" class="form-control" id="main_title" name="main_title">

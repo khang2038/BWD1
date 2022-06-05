@@ -1,3 +1,4 @@
+
 // scroll 
 var ctn_content_detail_prj = document.querySelector('.ctn_content_detail_prj');
 var header_detail_prj = document.querySelector('.header_detail_prj');
@@ -13,7 +14,6 @@ $(document).ready(function(){
         var ctn_content_detail_prj_top = $('.ctn_content_detail_prj').offset().top;
         var header_top = $('header').offset().top; 
         var ctn_footer_top = $('.ctn__footer').offset().top;
-
 
         if (ctn_content_detail_prj_top<body) {
             if (ctn_footer_top-header_top<=screen.height) {
@@ -95,7 +95,6 @@ function open_comments() {
     }
     block_comments.classList.add('open');
 }
-
 
 
 
