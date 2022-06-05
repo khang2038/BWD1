@@ -51,34 +51,34 @@
             </div>
         </div>
     </header>
-    {{#each project}}
+    
     <div class="ctn_main_prj">
         <div style="width: 90%;">
             <div class="prj_video_img">
-                <div class="main_prj_video" style="background-image: url(img/imgproject/{{this.img_big}});">
+                <div class="main_prj_video" style="background-image: url(../../img/imgproject/{{project.img_big}});">
                     
                 </div>
                 <div class="main_prj_img">
                     <ul>
-                        <li><img src={{this.img_big}} alt=""></li>
-                        <li><img src={{this.img2}} alt=""></li>
-                        <li><img src={{this.img3}} alt=""></li>
-                        <li><img src={{this.img4}} alt=""></li>
-                        <li><img src={{this.img5}} alt=""></li>
-                        <li><img src={{this.img6}} alt=""></li>
+                        <li><img src={{project.img_big}} alt=""></li>
+                        <li><img src={{project.img2}} alt=""></li>
+                        <li><img src={{project.img3}} alt=""></li>
+                        <li><img src={{project.img4}} alt=""></li>
+                        <li><img src={{project.img5}} alt=""></li>
+                        <li><img src={{project.img6}} alt=""></li>
                     </ul>
                 </div>
             </div>
 
             <div class="main_prj_content">
                 <h5 style="color: #05ce78;padding: 10px 0;">FUNDING</h5>
-                <h2 style="color : black;font-weight: bold;">{{this.main_title}}</h2>
-                <h4 style="padding: 20px 0;">{{this.main_content}}</h4>
+                <h2 style="color : black;font-weight: bold;">{{project.main_title}}</h2>
+                <h4 style="padding: 20px 0;">{{project.main_content}}</h4>
                 <div class="ctn_statistic">
                     <div class="ctn_pledged_backers">
                         <div class="pledged">
                             $<span>$246,830</span>
-                            <div class="title">{{this.title_money_pledged}}</div>
+                            <div class="title">{{project.title_money_pledged}}</div>
                         </div>
                         <div class="backers">
                             1,682
@@ -110,7 +110,6 @@
             </div>
         </div>
     </div>
-    {{/each}}
 
 
     <div class="ctn_content_detail_prj">
