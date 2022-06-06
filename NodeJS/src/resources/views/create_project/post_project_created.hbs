@@ -1,4 +1,4 @@
-<header>
+    <header>
         <div class="the_left_nav">
           <div class="logo">
               <p>PRO4</p>
@@ -52,32 +52,63 @@
         </div>
     </header>
 
+    <div class="nav_main_post">
+        <ul>
+            <div class="over_view">
+                OVER VIEW
+            </div>
+            <div class="story">
+                STORY
+            </div>
+            <div class="rewards">
+                REWARDS
+            </div>
+            <div class="faq">
+                FAQ
+            </div>
+            
+        </ul>
+    </div>
+
     <div class="main_post">
+
         <form  method="POST" action="/post_project_created/store">
             <div class="form-group">
                 <div style="display: flex; flex-direction: column;">
-                    <label for="img_big">Image</label>
-                    <img style="margin: 20px 50px;" src="" alt="" id="image" width="300" height="300">
-                    <input style="margin: 20px 50px;" type="file" class="form-control" id="img_big" name="img_big" onchange=chooseFile(this)
+                    <label style="font-size: 30px;font-weight: bold;text-align: center;" for="img_big">PROJECT IMAGE</label>
+                    <p style="text-align: center; padding: 20px 0;">Add an image that clearly represents your project. Choose one that looks good at different sizes—it’ll appear on your project page, across the Kickstarter website and mobile apps, and (when shared) on social channels.</p>
+                    <p style="text-align: center;padding: 20px 0;">Your image should be at least 1024x576 pixels. It will be cropped to a 16:9 ratio.</p>
+                    <img style="margin: 20px 50px;margin: 0 auto; z-index: 6" src="" alt="" id="image" width="300" height="300">
+                    <input style="width: 80%;margin: 20px auto 60px auto;" type="file" class="form-control" id="img_big" name="img_big" onchange=chooseFile(this)
                             accept="image/gif , image/jpeg, image/png">
                 </div>
+            
+                <hr style="width: 70%; margin: 0 auto;">
 
-                <div style="display: flex; flex-direction: column;">
-                    <label for="main_title">Name Project</label>
+
+                <div style="display: flex; flex-direction: column;margin-top: 60px;">
+                    <label style="font-size: 30px;font-weight: bold;text-align: center;" for="main_title">PROJECT TITLE</label>
+                    <p style="text-align: center; padding: 20px 0;">Write a clear, brief title and subtitle to help people quickly understand your project. Both will appear on your project and pre-launch pages.</p>
                     <input type="text" class="form-control" id="main_title" name="main_title">
                 </div>
 
-                <div style="display: flex; flex-direction: column;">
-                    <label for="main_content">General introduction</label>
-                    <input type="text" class="form-control" id="main_content" name="main_content">
+                <div style="display: flex; flex-direction: column;margin-top: 60px;">
+                    <label style="font-size: 30px;font-weight: bold;text-align: center;" for="main_content">GENERAL INTRODUCTION</label>
+                    <p style="text-align: center; padding: 20px 0;">Potential backers will also see them if your project appears on category pages, search results, or in emails we send to our community.</p>
+                    <input type="text" class="form-control" id="main_content" name="main_content" style="margin-bottom: 80px;">
                 </div>
                 
-                <div style="display: flex; flex-direction: column;">
-                    <label for="title_money_pledged">Goal</label>
+                <hr style="width: 70%; margin: 0 auto;">
+
+                <div style="display: flex; flex-direction: column;margin: 60px 0;">
+                    <label style="font-size: 30px;font-weight: bold;text-align: center;" for="main_content" for="title_money_pledged">FUNDING GOAL</label>
+                    <p style="text-align: center; padding: 10px 0;">Set an achievable goal that covers what you need to complete your project.</p>
+                    <p style="text-align: center; padding: 10px 0 20px 0;">Funding is all-or-nothing. If you don’t meet your goal, you won’t receive any money.</p>
                     <input type="text" class="form-control" id="title_money_pledged" name="title_money_pledged">
                 </div>
-
-                <button type="submit">POST</button>
+                
+                <button type="submit" style="padding: 10px 20px;">NEXT</button>
+                <button style="padding: 10px 20px;">PREVIEW</button>
             </div>
         </form>
     </div>
@@ -174,6 +205,15 @@
             </div>
         </div>
     </div>
+
+    <img class="background_img" src="img/imghome/img_background/home-bck-img-2.svg" alt="" style="position:absolute;top: -100px;left: 0;z-index: -1;">
+
+    <img class="background_img" src="img/imghome/img_background/home-bck-img-2.svg" alt="" style="position:absolute;top: -100px;right: 0;z-index: -1;transform: rotate(180deg);">
+
+
+    <img class="background_img" src="img/imghome/img_background/home-bck-img-2.svg" alt="" style="position:absolute;top: 1300px;left: 0;z-index: -1;">
+
+    <img class="background_img" src="img/imghome/img_background/home-bck-img-2.svg" alt="" style="position:absolute;top:  1300px;right: 0;z-index: -1;transform: rotate(180deg);">
 
        <script
         src="https://code.jquery.com/jquery-3.6.0.js"
