@@ -5,11 +5,22 @@ var methodOverride = require('method-override')
 const app = express()
 const route=require('./routes')
 const port = 3000
+const passports = require("passport");
+const session =require("express-session");
 
 
 const db=require('./config/db');
+const initPassportLocal = require('./app/auth/passportLocal');
 
 db.connect();
+
+app.use(passports.initialize());
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: true,
+}));
+app.use(passports.session());
 
 app.use(express.static(path.join(__dirname, 'public')))
 
@@ -25,7 +36,7 @@ app.engine('hbs',handlebars.engine({
 }));
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'resources/views'));
-
+initPassportLocal();
 route(app);
 
 app.listen(port, () => {

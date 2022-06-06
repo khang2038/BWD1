@@ -13,9 +13,10 @@ const createrouter=require('./create')
 const storerouter=require('./store')
 const datauserrouter=require('./datauser')
 const merouter=require('./me')
-const User = require('../app/models/user')
+const user = require('../app/models/user')
 const create_project = require('./create_project');
 const post_project_created = require('./post_project_created');
+const initPassportLocal = require("../app/auth/passportLocal");
 function route(app){
 
     app.use('/post_project_created' , post_project_created);
@@ -26,7 +27,6 @@ function route(app){
 
     app.get('/homepage', (req, res, next) => {
       console.log(req.user);
-
       res.render('home',{
           title: 'Home',
           style:'stylehome.css',
