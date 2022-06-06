@@ -8,6 +8,4 @@ router.get('/create',post_project_created_controller.create);
 router.post('/store',post_project_created_controller.store);
 router.get('/',post_project_created_controller.index);
 
-
-
 module.exports = router;

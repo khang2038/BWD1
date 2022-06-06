@@ -21,7 +21,7 @@ class post_project_created_controller{
         const project = new Project(temp);
         project.save()
             .then(
-                res.redirect('/create_project')
+                res.redirect(`/create_project/${req.body.main_title}`)
             ) 
             .catch(next)
     }
