@@ -51,38 +51,38 @@
             </div>
         </div>
     </header>
-    {{#each project}}
+    
     <div class="ctn_main_prj">
         <div style="width: 90%;">
             <div class="prj_video_img">
-                <div class="main_prj_video" style="background-image: url({{this.img_big}})">
+                <div class="main_prj_video" style="background-image: url(../../img/imgproject/{{project.img_big}});">
                     
                 </div>
                 <div class="main_prj_img">
                     <ul>
-                        <li><img src={{this.img_big}} alt=""></li>
-                        <li><img src={{this.img2}} alt=""></li>
-                        <li><img src={{this.img3}} alt=""></li>
-                        <li><img src={{this.img4}} alt=""></li>
-                        <li><img src={{this.img5}} alt=""></li>
-                        <li><img src={{this.img6}} alt=""></li>
+                        <li><img src={{project.img_big}} alt=""></li>
+                        <li><img src={{project.img2}} alt=""></li>
+                        <li><img src={{project.img3}} alt=""></li>
+                        <li><img src={{project.img4}} alt=""></li>
+                        <li><img src={{project.img5}} alt=""></li>
+                        <li><img src={{project.img6}} alt=""></li>
                     </ul>
                 </div>
             </div>
 
             <div class="main_prj_content">
                 <h5 style="color: #05ce78;padding: 10px 0;">FUNDING</h5>
-                <h2 style="color : black;font-weight: bold;">{{this.main_title}}</h2>
-                <h4 style="padding: 20px 0;">{{this.main_content}}</h4>
+                <h2 style="color : black;font-weight: bold;">{{project.main_title}}</h2>
+                <h4 style="padding: 20px 0;">{{project.main_content}}</h4>
                 <div class="ctn_statistic">
                     <div class="ctn_pledged_backers">
                         <div class="pledged">
-                            $<span>{{this.money_pledged}}</span>
-                            <div class="title">{{this.title_money_pledged}}</div>
+                            $<span>$246,830</span>
+                            <div class="title">{{project.title_money_pledged}}</div>
                         </div>
                         <div class="backers">
-                            {{this.amount_backers}}
-                            <div class="title">{{this.title_amount_backers}}</div>
+                            1,682
+                            <div class="title">backers</div>
                         </div>
                     </div>
                 </div>
@@ -110,18 +110,17 @@
             </div>
         </div>
     </div>
-    {{/each}}
 
 
     <div class="ctn_content_detail_prj">
         <div class="header_detail_prj">
-            <div class="story">
+            <div class="story" onclick=open_story()>
                 Story
             </div>
-            <div class="FAQ">
+            <div class="FAQ" onclick=open_FAQ()>
                 FAQ
             </div>
-            <div class="comments">
+            <div class="comments" onclick=open_comments()>
                 Comments
             </div>
             <div class="community">
@@ -133,7 +132,7 @@
                 <div class="connect">
                     <i class="fa-brands fa-connectdevelop"></i>
                     <p>
-                        Kickstarter connects creators with backers to fund projects.
+                        PRO4 connects creators with backers to fund projects.
                     </p>
                 </div>
                 <div class="easy">
@@ -150,7 +149,7 @@
                 </div>
             </div>
             <div class="right_body_prj">
-                <div class="block_story">
+                <div class="block_story open">
                     <h1>Story</h1>
                     <img src="https://ksr-ugc.imgix.net/assets/037/214/754/9c707b5a6137c3a43dc635b7bbf50417_original.png?ixlib=rb-4.0.2&w=680&fit=max&v=1651836106&gif-q=50&lossless=true&s=03a9b5c0f91e6e70c79f302f716f7dcd" alt="">
                     <p>Bed Pillow is a pillow designed to always adapt to the way you sleep. Its unique ergonomic shape and high-quality materials ensure that your head is positioned properly for a good night's sleep, regardless of your sleeping position.</p>
@@ -173,7 +172,20 @@
                 </div>
 
                 <div class="block_FAQ">
+                    <h1>Frequently Asked Questions</h1>
                     
+                    {{#each question}}
+                    <div class="bl_FAQ_question">
+                        <div class="bl_question">                            
+                            <div style="font-size: 20px;">
+                                {{this.question}}
+                            </div>
+                            <div style="display: flex; align-items: center;">
+                                <i class="fa-solid fa-arrow-right-to-bracket"></i>
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
                 </div>
 
                 <div class="block_comments">

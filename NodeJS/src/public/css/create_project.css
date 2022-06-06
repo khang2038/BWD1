@@ -411,7 +411,7 @@ header .nav_mobile {
 }
 
 .header_detail_prj .story,
-.header_detail_prj .statistics,
+.header_detail_prj .FAQ,
 .header_detail_prj .comments,
 .header_detail_prj .community{
     color:#242526;
@@ -420,7 +420,7 @@ header .nav_mobile {
 }
 
 .header_detail_prj .story:hover,
-.header_detail_prj .statistics:hover,
+.header_detail_prj .FAQ:hover,
 .header_detail_prj .comments:hover,
 .header_detail_prj .community:hover{
     cursor: pointer;
@@ -481,7 +481,7 @@ header .nav_mobile {
 
 .block_comments{
   padding: 0 100px 0 40px;
-
+  display: none;
 }
 
 .block_comments .cmt_info{
@@ -515,6 +515,45 @@ header .nav_mobile {
 
 /*-----------comment_action------------*/
 
+
+
+/*-----------block_FAQ------------*/
+
+.block_FAQ {
+  padding: 0 100px 0 40px;
+  display: none;
+}
+
+.block_FAQ h1{
+
+}
+
+.block_FAQ .bl_FAQ_question{
+  margin: 30px 0;
+  border: 2px solid #dfcbcb;
+}
+
+.block_FAQ .bl_FAQ_question:hover{
+  cursor: pointer;
+}
+
+.block_FAQ .bl_FAQ_question .bl_question{
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.block_FAQ i {
+  font-size: 20px;
+}
+
+/*-----------trans_header-------------*/
+.block_story.open,
+.block_FAQ.open,
+.block_comments.open,
+.block_community.open{
+  display: block;
+}
 
 
 
