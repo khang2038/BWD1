@@ -7,8 +7,27 @@ const body=document.querySelector("body"),
       modeSwitchmobile=body.querySelector(".toggle-switch_mobile"),
       modeTextmobile=body.querySelector(".mode-text_mobile");
 
-     
+        
+      var deleteform=document.forms['delete_form'];
 
+      function delete_p(class1){
+            swal({
+                title: "Are you sure?",
+                text: "You will not be able to recover this imaginary file!",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: '#DD6B55',
+                confirmButtonText: 'Yes, delete it!',
+                closeOnConfirm: false,
+                //closeOnCancel: false
+            },
+            function(){
+                swal("Deleted!", "Your imaginary file has been deleted!", "success");
+                deleteform.action='/store/' + class1 + '?_method=DELETE';
+                deleteform.submit();
+                console.log(class1);
+            });
+        };
 
 
        modeSwitchmobile.addEventListener("click",()=>{

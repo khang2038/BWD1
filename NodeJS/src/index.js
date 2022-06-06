@@ -1,6 +1,7 @@
 const express = require('express')
 const path=require('path')
 const handlebars=require('express-handlebars');
+var methodOverride = require('method-override')
 const app = express()
 const route=require('./routes')
 const port = 3000
@@ -16,6 +17,8 @@ app.use(express.urlencoded({
     extended:true
 }));
 app.use(express.json());
+
+app.use(methodOverride('_method'));
 
 app.engine('hbs',handlebars.engine({
       extname:'.hbs'

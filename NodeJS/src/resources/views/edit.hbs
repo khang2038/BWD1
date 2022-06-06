@@ -35,7 +35,7 @@
 </nav>
 <div class="mt-4 body_create_prj">
     <h3>Edit Project</h3>
-        <form method="POST" action="store">
+        <form method="POST" action="../../../store/{{Product._id}}?_method=PUT">
                 <div class="mb-3">
                     <label for="name" class="form-label">Name project</label>
                     <input type="text" class="form-control" value="{{Product.name}}" id="name" name="name" >

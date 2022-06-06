@@ -10,7 +10,16 @@ class storecontroller{
 
             })
         }
-
+    update(req,res,next){
+        Product.updateOne({_id:req.params.id},req.body)
+            .then(()=> res.redirect('../../me'))
+            .catch(next);
+        }   
+    delete(req,res,next){
+        Product.deleteOne({_id:req.params.id})
+            .then(()=> res.redirect('../../me'))
+            .catch(next);
+    }      
 }
 
 module.exports= new storecontroller;

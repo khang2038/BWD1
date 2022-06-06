@@ -180,7 +180,7 @@
                                <a href="/product/{{this._id}}/edit"> Update </a> 
                             </li>
                             <li>
-                                <p>Delete</p>
+                                <p id="b4" class="{{this._id}}" onclick=delete_p('{{this._id}}')>Delete</p>
                             </li>
                         </div> 
                     </ul>   
@@ -465,6 +465,8 @@
         </div>
     </div>
 
+    
+    <form method="post" name="delete_form"></form>
     <!-- To top btn -->
 
     <button onclick="topFunction()" id="myBtn" title="Go to top">

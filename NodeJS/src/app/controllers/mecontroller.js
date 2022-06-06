@@ -11,6 +11,8 @@ class mecontroller{
                                         style2:'queriesproduct.css',
                                         script1:'scriptproduct.js',
                                         script2:'jquery.waypoints.min.js',
+                                        style3:'https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.css',
+                                        script3:'https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.min.js',
                                         products: products
                                         })}
                     )
