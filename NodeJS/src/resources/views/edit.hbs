@@ -1,0 +1,169 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-dark  ">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active text-white" aria-current="page" href="../../../homepage">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="../../../product">Product</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            More
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="../../../detail">Project</a></li>
+            <li><a class="dropdown-item" href="../../../login">Login</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="../../../donate">Donate</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" href="../../../detail" >Project</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<div class="mt-4 body_create_prj">
+    <h3>Edit Project</h3>
+        <form method="POST" action="store">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name project</label>
+                    <input type="text" class="form-control" value="{{Product.name}}" id="name" name="name" >
+                </div>
+                 <div class="mb-3">
+                    <label for="name_author" class="form-label">Name author</label>
+                    <input type="text" class="form-control" value="{{Product.name_author}}" id="name_author" name="name_author" >
+                </div>
+                 <div class="mb-3">
+                    <label for="img_author" class="form-label">img_author</label>
+                    <input type="text" class="form-control" value="{{Product.img_author}}" id="img_author" name="img_author" >
+                </div>
+                 <div class="mb-3">
+                    <label for="infor" class="form-label">decription</label>
+                    <textarea type="text" class="form-control" id="infor" name="infor"> {{Product.infor}} </textarea>
+                </div>
+                 <div class="mb-3">
+                    <label for="img1" class="form-label">img</label>
+                    <input type="text" class="form-control" value="{{Product.img1}}" id="img1" name="img1">
+                </div>
+
+
+                <button type="submit" class="btn btn-primary">Update Project</button>
+        </form>
+</div>
+
+{{!-- footer --}}
+    <div class="ctn__footer">
+        <div class="ctn__footer__content">
+            <div class="footer__colum f__strart">
+                <a href="../../../signup" style="border: none;">Get Started</a>
+                <ul>
+                    <li><a href="../../../Login">Start Fundraise</a></li>
+                    <li><a href="#">Investor Signup</a></li>
+                    <li><a href="#">Account Login</a></li>
+                </ul>
+            </div>
+            <div class="footer__colum f__browse">
+                <a href="#">Browse</a>
+                <ul>
+                    <li><a href="#">Trending</a></li>
+                    <li><a href="#">Recently</a></li>
+                    <li><a href="#">Start-up Magazine</a></li>
+                    <li><a href="#">Communities</a></li>
+                </ul>
+            </div>
+            <div class="footer__colum f__resources">
+                <a href="#">Resources</a>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Guidelines</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer__colum f__legal">
+                <a href="#">Legal</a>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer__colum f__follow">
+                <a href="#">Follow</a>
+                <ul class="list-follow">
+                    <a href="#"><i class="fa-brands fa-facebook-square"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                </ul>
+            </div>
+        </div>
+        <!-- another footer -->
+        <div class="ctn__footer__describle">
+            <div class="sponsor">
+                <p>Special thanks for sponsors</p>
+                <div class="ctn__brands__img">
+                    <p class="img__img">
+                        Brand A
+                    </p>
+                    <p class="img__img">
+                        Brand B
+                    </p>
+                    <p class="img__img">
+                        Brand C
+                    </p>
+                    <p class="img__img">
+                        Brand D
+                    </p>
+                    <p class="img__img">
+                        Brand E
+                    </p>
+                </div>
+            </div>
+            <div class="describle">
+                <p class="coppyright">
+                    Copyright © 2022 Startups.com. All rights reserved.
+                </p>
+                <p class="content__describle">
+                    PRO4 is a software as a service crowdfunding platform. PRO4 is not a 
+                    registered broker-dealer and does not offer investment advice or advise on the
+                     raising of capital through securities offerings. PRO4 does not recommend 
+                     or otherwise suggest that any investor make an investment in a particular company, 
+                     or that any company offer securities to a particular investor. PRO4 takes no 
+                     part in the negotiation or execution of transactions for the purchase or sale of 
+                     securities, and at no time has possession of funds or securities. No securities
+                      transactions are executed or negotiated on or through the PRO4 platform. 
+                      PRO4 receives no compensation in connection with the purchase or sale of securities. 
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    
+    <div class="ctn__loading__body">
+        <div class="ctn__loading">
+            <div class="ctn__loading__content">
+                
+            </div>
+        </div>
+    </div>
+
+
+
+
+       <script
+        src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous">
+    </script>
+   

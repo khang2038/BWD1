@@ -1,7 +1,7 @@
 const express=require('express');
 const router=express.Router();
 
-const datausercontroller=require('../app/controllers/datausercontroller');
+const datausercontroller=require('../../../datausercontroller');
 
 // productcontroller.index
 
