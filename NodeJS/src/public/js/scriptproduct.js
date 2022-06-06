@@ -7,6 +7,9 @@ const body=document.querySelector("body"),
       modeSwitchmobile=body.querySelector(".toggle-switch_mobile"),
       modeTextmobile=body.querySelector(".mode-text_mobile");
 
+     
+
+
 
        modeSwitchmobile.addEventListener("click",()=>{
           body.classList.toggle("dark");
@@ -401,6 +404,21 @@ function handle_comment(class1) {
     } 
     else {
         comment1.classList.add('open_cmt');
+    }
+    
+}
+//handle update
+ 
+function handle_update(class1) {
+    console.log(class1);
+     var checkupdate= $('#project-input').prop('checked');
+    var update1 = document.querySelector(`.${class1} .update-drop`);
+    
+    if (update1.classList.contains('open')){
+        update1.classList.remove('open');
+    } 
+    else {
+        update1.classList.add('open');
     }
     
 }

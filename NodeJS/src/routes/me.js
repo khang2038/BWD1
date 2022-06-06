@@ -4,7 +4,7 @@ const router=express.Router();
 const mecontroller=require('../app/controllers/mecontroller');
 
 // productcontroller.index
-router.get('/me',mecontroller.store);
+router.get('/',mecontroller.index);
 
 
 module.exports = router;
