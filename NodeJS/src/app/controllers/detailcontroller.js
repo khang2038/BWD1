@@ -1,10 +1,10 @@
 class detailcontroller{
 
     index(req,res){
-         res.render('detail',{
+          res.render('detail',{
           title: 'Project',
-          style:'styledetail.css',
-          style2:'responsivedetail.css'
+          style: 'styledetail.css',
+          style2: 'responsivedetail.css'
       });
     }
 
