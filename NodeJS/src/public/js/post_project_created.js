@@ -15,18 +15,20 @@ function chooseFile(fileInput) {
 }
 
 //add FAQ
-let ctn_FAQ = document.querySelector('.ctn_FAQ');
+let question_FAQ = document.querySelector('.question_FAQ');
 let data_FAQ = "";
+let btn_next = `<button>NEXT</button>`;
 let data_add_btn =
     `<div style="width: 100%;">
         <div class="add_FAQ" style="margin : 30px 0">
-            <input type="text">
+            <input type="text" name="question" id="question">
         </div>
     </div>`;
 
 function add_FAQ() {
     data_FAQ += data_add_btn;
-    ctn_FAQ.innerHTML = data_FAQ;
+    question_FAQ.innerHTML = data_FAQ;
+    
 }
 
 

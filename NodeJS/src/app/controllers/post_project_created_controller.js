@@ -1,5 +1,5 @@
 const Project = require('../models/create_prj');
-
+const Faqs = require('../models/question');
 
 class post_project_created_controller{
 
@@ -24,6 +24,19 @@ class post_project_created_controller{
                 res.redirect(`/create_project/${req.body.main_title}`)
             ) 
             .catch(next)
+    }
+
+    //[POST] /faq
+    faq(req,res,next) {
+        var total_qs = [];
+        for (var question of req.body.question) {
+            total_qs.push({question});
+        }
+        for (var question of total_qs) {
+            let faq = new Faqs(question);
+            faq.save();
+        }
+        res.json(total_qs);
     }
 }
 
