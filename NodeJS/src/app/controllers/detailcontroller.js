@@ -4,7 +4,8 @@ class detailcontroller{
          res.render('detail',{
           title: 'Project',
           style:'styledetail.css',
-          style2:'responsivedetail.css'
+          style2:'responsivedetail.css',
+          users:req.user
       });
     }
 

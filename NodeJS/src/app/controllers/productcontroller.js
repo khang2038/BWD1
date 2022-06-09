@@ -12,7 +12,8 @@ class productcontroller{
                                         style2:'queriesproduct.css',
                                         script1:'scriptproduct.js',
                                         script2:'jquery.waypoints.min.js',
-                                        products: products
+                                        products: products,
+                                        users:req.user
                                         })}
                     )
             .catch(next);
@@ -28,6 +29,7 @@ class productcontroller{
                                         style3:'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css',
                                         script3:'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js',
                                         Product:mongooseToObject(Product),
+                                        users:req.user
                                         }))   
     }
     }

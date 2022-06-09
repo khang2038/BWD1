@@ -13,7 +13,8 @@ class mecontroller{
                                         script2:'jquery.waypoints.min.js',
                                         style3:'https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.css',
                                         script3:'https://cdn.rawgit.com/t4t5/sweetalert/v0.2.0/lib/sweet-alert.min.js',
-                                        products: products
+                                        products: products,
+                                        users:req.user
                                         })}
                     )
             .catch(next);

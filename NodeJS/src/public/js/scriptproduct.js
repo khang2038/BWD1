@@ -97,7 +97,7 @@ function onclick__home(){
         .then(function() {
             
             ctn__loading__home.classList.remove('open__load')
-            homepage.href="home"; 
+            homepage.href="homepage"; 
             homepage.click();
         })      
 }
