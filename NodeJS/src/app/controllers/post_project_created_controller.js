@@ -33,14 +33,10 @@ class post_project_created_controller{
             total_qs.push({question,slug: 'Bed Pillow | Adaptive ergonomics to improve your sleep'});
         }
         for (var question of total_qs) {
-            let faq = new Faqs(question);
-            faq.save()
-                .then(
-                    res.redirect(`/create_project/${req.body.slug}`)
-                )
-                .catch(next)
+            var faq = new Faqs(question);
+            faq.save();
         }
-        res.json(total_qs);
+        res.redirect(`/create_project`);
     }
 }
 
