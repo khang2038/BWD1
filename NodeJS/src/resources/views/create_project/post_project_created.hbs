@@ -55,23 +55,29 @@
     <div class="nav_main_post">
         <ul>
             <div class="over_view">
+                <i class="fa-solid fa-eye"></i>
                 OVER VIEW
             </div>
             <div class="story">
+                <i class="fa-solid fa-book-open-reader"></i>
                 STORY
             </div>
             <div class="rewards">
+                <i class="fa-solid fa-gifts"></i>
                 REWARDS
             </div>
             <div class="faq">
+                <i class="fa-solid fa-file-circle-question"></i>
                 FAQ
             </div>
             
         </ul>
     </div>
 
-    <div class="main_post">
 
+
+    <div class="main_post">
+        <div style="display: flex; flex-direction: column;width: 70%;">
         <form  method="POST" action="/post_project_created/store">
             <div class="form-group">
                 <div style="display: flex; flex-direction: column;">
@@ -106,12 +112,33 @@
                     <p style="text-align: center; padding: 10px 0 20px 0;">Funding is all-or-nothing. If you don’t meet your goal, you won’t receive any money.</p>
                     <input type="text" class="form-control" id="title_money_pledged" name="title_money_pledged">
                 </div>
-                
-                <button type="submit" style="padding: 10px 20px;">NEXT</button>
                 <button style="padding: 10px 20px;">PREVIEW</button>
             </div>
         </form>
+        <button type="submit" style="padding: 10px 20px;margin: 0px 50px 60px 50px;font-size: 30px;">NEXT</button>
+        </div>
     </div>
+
+    <div class="FAQ_post" style="display: flex; justify-content: center;">
+        <div style="width: 70%;">
+            <div style="display: flex;flex-direction: row-reverse;">
+                <button style="font-size: 30px; padding : 10px 20px;" onclick=add_FAQ()>
+                    <i class="fa-solid fa-plus"></i>
+                    ADD QUESTION
+                </button>
+            </div>
+            <form class="ctn_FAQ" method="POST" action="/post_project_created/faq">
+               <div class="question_FAQ">
+                   
+               </div>
+               <button type="submit">
+                   NEXT
+               </button>
+            </form>
+        </div>
+    </div>
+
+    <div style="height: 200px;"></div>
 
     <div class="ctn__footer">
         <div class="ctn__footer__content">

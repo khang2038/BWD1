@@ -5,13 +5,45 @@ const { mutipleMongooseToObject } = require('../../util/mongoose');
 const { mongooseToObject } = require('../../util/mongoose');
 
 var prj_cmt_db, project_db, faq_db;
-class create_project_controller{
 
+// const checkSlugExist = async (req, res) => {
+//     const { slug } = req.body;
+//     const result = await userService.checkEmailExist(email);
+//     return response(res, result);
+// }
+
+// async updateUser(req, res, next) {
+//     try {
+//         const userId = req.userId;
+//         const { userName, email } = req.body;
+//         const result = await userService.updateUser(userId,_.pickBy({ userName, email }, _.identity));
+//         res.json(result);
+//     } catch (error) {next(error)}
+// }
+
+class create_project_controller{
     show_detail(req, res, next) {
+        project_comment.find({}) 
+            .then(prj_cmt => {
+                prj_cmt = mutipleMongooseToObject(prj_cmt);
+                prj_cmt_db = prj_cmt;
+            })
+            .catch(next);
+
+        faqs.find({slug : req.params.slug})
+            .then(faq => {
+                faq = mutipleMongooseToObject(faq);
+                faq_db = faq;
+            })
+            .catch(next);
+    
         create_prj.findOne({slug : req.params.slug})
             .then(project => {
+                
                 res.render('create_project/create_project', {
                     project : mongooseToObject(project),
+                    prj_cmt : prj_cmt_db,
+                    question : faq_db,
                     title : 'create_project',
                     style : '../../css/create_project.css',
                     script1 : '../../js/create_project.js',
@@ -34,7 +66,7 @@ class create_project_controller{
                 project_db = project;
             })
             .catch(next);
-        
+
         faqs.find({})
             .then(faq => {
                 faq = mutipleMongooseToObject(faq);
