@@ -94,6 +94,14 @@ header{
   font-size: 25px;
   color: var(--text-the_left_page-color);
 }
+.the_right_nav img{
+   width: 50px;
+   border-radius: 50%;
+   margin-right: 10px;
+}
+.the_right_nav p{
+   font-size:14px;
+}
 .wallet{
     display:flex;
 }

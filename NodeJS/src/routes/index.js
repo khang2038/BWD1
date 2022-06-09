@@ -26,13 +26,13 @@ function route(app){
     app.use('/product',productrouter);
 
     app.get('/homepage', (req, res, next) => {
-      console.log(req.user);
-      res.render('home',{
+      res.render('homepage',{
           title: 'Home',
           style:'stylehome.css',
           style2:'responsivehome.css',
-          script1:'homepage.js',
-          script2:'https://code.jquery.com/jquery-3.6.0.js'
+          script1:'homepage_login.js',
+          script2:'https://code.jquery.com/jquery-3.6.0.js',
+          users:req.user
       });
     })
      app.get('/', (req, res) => {

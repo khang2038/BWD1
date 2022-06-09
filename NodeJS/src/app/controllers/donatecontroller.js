@@ -4,7 +4,8 @@ class donatecontroller{
          res.render('donate',{
           title: 'Donate',
           style:'styledonate.css',
-          style2:''
+          style2:'',
+          users:req.user
       });
     }
 
