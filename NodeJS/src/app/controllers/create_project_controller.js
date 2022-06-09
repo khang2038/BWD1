@@ -30,7 +30,7 @@ class create_project_controller{
             })
             .catch(next);
 
-        faqs.find({})
+        faqs.find({slug : req.params.slug})
             .then(faq => {
                 faq = mutipleMongooseToObject(faq);
                 faq_db = faq;
