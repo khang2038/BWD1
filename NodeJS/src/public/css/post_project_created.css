@@ -285,7 +285,7 @@ header .nav_mobile {
 
 .main_post {
   margin-top: 60px;
-  display: none;
+  display: flex;
   justify-content: center;
 }
 
@@ -320,6 +320,8 @@ header .nav_mobile {
 
 .FAQ_post {
   margin-top: 60px;
+  display: none; 
+  justify-content: center;
 }
 
 .FAQ_post button{

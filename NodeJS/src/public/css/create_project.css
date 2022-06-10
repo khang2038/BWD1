@@ -244,10 +244,10 @@ header .nav_mobile {
 
 /*------------------ctn_main_prj----------------*/
 .ctn_main_prj{
-    margin: 100px 0;
     width: 100%;
     display: flex;
     justify-content: center;
+    margin-bottom: 30px;
 }
 
 .ctn_main_prj>div{

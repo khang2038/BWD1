@@ -97,8 +97,23 @@ function open_comments() {
 }
 
 
+//trans post_project_created : main-> FAQ
 
+const main_post = document.querySelector('.main_post');
+const faq_post = document.querySelector('.FAQ_post');
 
+// console.log('1');
+// console.log(main_post);
+
+function trans_main_faq() {
+    Object.assign(main_post.style , {
+        display : 'none',
+    })
+    Object.assign(faq_post.style , {
+        display : 'flex',
+    })
+    console.log('1');
+}
 
 
 
