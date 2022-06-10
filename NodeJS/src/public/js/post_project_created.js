@@ -28,9 +28,7 @@ let data_add_btn =
 function add_FAQ() {
     data_FAQ += data_add_btn;
     question_FAQ.innerHTML = data_FAQ;
-    
 }
-
 
 
 
