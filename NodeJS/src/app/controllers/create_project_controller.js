@@ -47,6 +47,7 @@ class create_project_controller{
                     title : 'create_project',
                     style : '../../css/create_project.css',
                     script1 : '../../js/create_project.js',
+                    script3 : '../../js/post_project_created.js',
                 });
             })
             .catch(next)
@@ -80,6 +81,7 @@ class create_project_controller{
             question : faq_db,
             title : 'create_project',
             style : 'create_project.css',
+            script3 : '../../js/post_project_created.js',
         });
     }
 

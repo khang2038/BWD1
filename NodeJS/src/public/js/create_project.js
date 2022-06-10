@@ -97,26 +97,6 @@ function open_comments() {
 }
 
 
-//handle : trans post_project_created : main-> FAQ
-
-const main_post = document.querySelector('.main_post');
-const faq_post = document.querySelector('.FAQ_post');
-const next_step_a = document.querySelector('.next_step a');
-console.log(main_post);
-console.log(faq_post);
-
-function click_main_trans_faq() {
-    Object.assign(main_post.style , {
-        display : 'none',
-    })
-    Object.assign(faq_post.style, {
-        display : 'flex',
-    })
-}
-
-// click_main_trans_faq();
-
-
 
 
 
