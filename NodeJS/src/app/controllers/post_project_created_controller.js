@@ -32,7 +32,7 @@ class post_project_created_controller{
     faq(req,res,next) {
         var total_qs = [];
         for (var question of req.body.question) {
-            total_qs.push({question,slug: slug_present});
+            total_qs.push({question,slug_temp: slug_present});
         }
         for (var question of total_qs) {
             var faq = new Faqs(question);
