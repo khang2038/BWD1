@@ -38,7 +38,12 @@ class post_project_created_controller{
             var faq = new Faqs(question);
             faq.save();
         }
-        res.redirect(`/create_project/${total_qs[0].slug}`);
+
+        //handle đường truyền dấu ' ' -> '-'
+        let temp = total_qs[0].question;
+        temp = temp.replace(/ /g,'-');
+        console.log(temp);
+        res.redirect(`/create_project/${temp}`);
     }
 }
 
