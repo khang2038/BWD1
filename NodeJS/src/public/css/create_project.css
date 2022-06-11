@@ -244,6 +244,7 @@ header .nav_mobile {
 
 /*------------------ctn_main_prj----------------*/
 .ctn_main_prj{
+    margin-top: 80px;
     width: 100%;
     display: flex;
     justify-content: center;

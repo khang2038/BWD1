@@ -39,7 +39,6 @@ class create_project_controller{
     
         create_prj.findOne({slug : req.params.slug})
             .then(project => {
-                
                 res.render('create_project/create_project', {
                     project : mongooseToObject(project),
                     prj_cmt : prj_cmt_db,
@@ -83,6 +82,7 @@ class create_project_controller{
             style : 'create_project.css',
             script3 : '../../js/post_project_created.js',
         });
+
     }
 
     
