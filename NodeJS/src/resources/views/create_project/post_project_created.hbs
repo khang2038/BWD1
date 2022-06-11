@@ -81,7 +81,7 @@
                     <label style="font-size: 30px;font-weight: bold;text-align: center;" for="img_big">PROJECT IMAGE</label>
                     <p style="text-align: center; padding: 20px 0;">Add an image that clearly represents your project. Choose one that looks good at different sizes—it’ll appear on your project page, across the Kickstarter website and mobile apps, and (when shared) on social channels.</p>
                     <p style="text-align: center;padding: 20px 0;">Your image should be at least 1024x576 pixels. It will be cropped to a 16:9 ratio.</p>
-                    <img style="margin: 20px 50px;margin: 0 auto; z-index: 6" src="" alt="" id="image" width="300" height="300">
+                    <img style="margin: 20px 50px;margin: 0 auto; z-index: 1" src="" alt="" id="image" width="300" height="300">
                     <input style="width: 80%;margin: 20px auto 60px auto;" type="file" class="form-control" id="img_big" name="img_big" onchange=chooseFile(this)
                             accept="image/gif , image/jpeg, image/png">
                 </div>
@@ -134,14 +134,33 @@
             </form>
         </div>
     </div>
+    
+    <div class="story_post" style="display: flex;">
+        <div style="width: 80%;display : flex;flex-direction: row;">
+            <div class="button_add_str">
+                <button onclick=add_story_title()>
+                    <i class="fa-solid fa-plus"></i>
+                    ADD TITLE
+                </button>
+                <button onclick=add_story_content()>
+                    <i class="fa-solid fa-plus"></i>
+                    ADD CONTENT
+                </button>
+                <button onclick=add_story_image()>
+                    <i class="fa-solid fa-plus"></i>
+                    ADD IMAGE
+                </button>
+            </div>
+            <div class="input_add_str">
+                
+            </div>
+        </div>
+    </div>
 
     <div class="rewards_post">
 
     </div>
 
-    <div class="store_post" style="display: flex;">
-
-    </div>
 
     <div style="height: 200px;"></div>
 

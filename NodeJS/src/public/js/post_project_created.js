@@ -14,6 +14,8 @@ function chooseFile(fileInput) {
     }
 }
 
+
+
 //add FAQ
 let question_FAQ = document.querySelector('.question_FAQ');
 let data_FAQ = "";
@@ -99,6 +101,52 @@ function open_faq() {
     })
 }
 
+
+//~~~~~~~   handle add story    ~~~~~~~~~~~
+let id_image = 1;
+let input_add_str = document.querySelector('.input_add_str');
+let data_story = "";
+let data_add_title =
+    `<input type="text" style="width: 90%;font-size : 40px; padding: 10px;margin: 10px;">
+    `;
+let data_add_content = 
+    `<input type="text" style="width: 90%;font-size : 20px; padding: 10px;margin: 10px;">
+    `
+let data_add_image = 
+    `<div style="display: flex; flex-direction: column;">
+    <img style="margin: 0 auto; z-index: 1" src="" alt="" id="image_${id_image}" width="300" height="300">
+    <input style="width: 80%;margin: 20px auto 60px auto;" type="file" class="form-control" id="img_big" name="img_big" onchange=chooseFile_story(this)
+            accept="image/gif , image/jpeg, image/png">
+    </div>
+    `
+
+function add_story_title() {
+    data_story += data_add_title;
+    input_add_str.innerHTML = data_story;
+}
+
+function add_story_content() {
+    data_story += data_add_content;
+    input_add_str.innerHTML = data_story;
+}
+
+function add_story_image() {
+    data_story += data_add_image;
+    input_add_str.innerHTML = data_story;
+}
+
+function chooseFile_story(fileInput) {
+    if (fileInput.files && fileInput.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function(e){
+            $(`#image_${id_image}`).attr('src' , e.target.result);
+            path_image= e.target.result;
+        }
+        
+        reader.readAsDataURL(fileInput.files[0]);
+    }
+}
 
 
 
