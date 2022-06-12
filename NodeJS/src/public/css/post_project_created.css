@@ -387,7 +387,7 @@ header .nav_mobile {
 /*------input_add_str------*/
 
 .story_post .input_add_str{
-  width: 80%;
+  width: 100%;
   margin: 0 40px;
   /* background-color: #8e6b6b; */
 }

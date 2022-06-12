@@ -1,5 +1,7 @@
 const Project = require('../models/create_prj');
 const Faqs = require('../models/question');
+const Storys = require('../models/story');
+
 let slug_present;
 class post_project_created_controller{
 
@@ -44,6 +46,14 @@ class post_project_created_controller{
         temp = temp.replace(/ /g,'-');
         console.log(temp);
         res.redirect(`/create_project/${temp}`);
+    }
+
+    //[POST] /story
+    story(req, res, next) {
+        const temp = req.body;
+        const story = new Storys(temp);
+        story.save();
+        res.json(req.body);
     }
 }
 
