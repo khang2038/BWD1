@@ -50,10 +50,11 @@ class post_project_created_controller{
 
     //[POST] /story
     story(req, res, next) {
+        //do chua nhap main_title ben phan 1 
         const temp = req.body;
+        temp.slug_temp = slug_present;
         const story = new Storys(temp);
         story.save();
-        res.json(req.body);
     }
 }
 

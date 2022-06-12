@@ -28,7 +28,8 @@ const story = new Schema({
     content5 : {type:String},
     content6 : {type:String},
     content7 : {type:String},
-    
+    slug_temp : {type:String},
+    slug: { type: String, slug: "slug_temp"},
 })
 
 module.exports = mongoose.model('storys', story);
