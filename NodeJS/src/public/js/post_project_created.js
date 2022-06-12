@@ -103,7 +103,7 @@ function open_faq() {
 
 
 //~~~~~~~   handle add story    ~~~~~~~~~~~
-let id_image = 1;
+let id_image = 0;
 let input_add_str = document.querySelector('.input_add_str');
 let data_story = "";
 let data_add_title =
@@ -112,13 +112,13 @@ let data_add_title =
 let data_add_content = 
     `<input type="text" style="width: 90%;font-size : 20px; padding: 10px;margin: 10px;">
     `
-let data_add_image = 
-    `<div style="display: flex; flex-direction: column;">
-    <img style="margin: 0 auto; z-index: 1" src="" alt="" id="image_${id_image}" width="300" height="300">
-    <input style="width: 80%;margin: 20px auto 60px auto;" type="file" class="form-control" id="img_big" name="img_big" onchange=chooseFile_story(this)
-            accept="image/gif , image/jpeg, image/png">
-    </div>
-    `
+// let data_add_image = 
+//     `<div style="display: flex; flex-direction: column;">
+//     <img style="margin: 0 auto; z-index: 1" src="" alt="" id="image_${id_image}" width="300" height="300">
+//     <input style="width: 80%;margin: 20px auto 60px auto;" type="file" class="form-control" id="img_big" name="img_big" onchange=chooseFile_story(this)
+//             accept="image/gif , image/jpeg, image/png">
+//     </div>
+//     `
 
 function add_story_title() {
     data_story += data_add_title;
@@ -131,33 +131,95 @@ function add_story_content() {
 }
 
 function add_story_image() {
-    data_story += data_add_image;
+    id_image++;
+    data_story += 
+    `<div style="display: flex; flex-direction: column;">
+    <img style="margin: 0 auto; z-index: 1" src="" alt="" id="image_${id_image}" width="300" height="300">
+    <input style="width: 80%;margin: 20px auto 60px auto;" type="file" class="form-control" id="img_big" name="img_big" onchange=chooseFile_story_${id_image}(this)
+            accept="image/gif , image/jpeg, image/png">
+    </div>
+    `;
     input_add_str.innerHTML = data_story;
 }
 
-function chooseFile_story(fileInput) {
+//function chay
+
+function chooseFile_story_1(fileInput) {
     if (fileInput.files && fileInput.files[0]) {
         var reader = new FileReader();
-
         reader.onload = function(e){
-            $(`#image_${id_image}`).attr('src' , e.target.result);
+            $(`#image_1`).attr('src' , e.target.result);
             path_image= e.target.result;
         }
-        
         reader.readAsDataURL(fileInput.files[0]);
     }
 }
 
+function chooseFile_story_2(fileInput) {
+    if (fileInput.files && fileInput.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e){
+            $(`#image_2`).attr('src' , e.target.result);
+            path_image= e.target.result;
+        }
+        reader.readAsDataURL(fileInput.files[0]);
+    }
+}
 
+function chooseFile_story_3(fileInput) {
+    if (fileInput.files && fileInput.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e){
+            $(`#image_3`).attr('src' , e.target.result);
+            path_image= e.target.result;
+        }
+        reader.readAsDataURL(fileInput.files[0]);
+    }
+}
 
+function chooseFile_story_4(fileInput) {
+    if (fileInput.files && fileInput.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e){
+            $(`#image_4`).attr('src' , e.target.result);
+            path_image= e.target.result;
+        }
+        reader.readAsDataURL(fileInput.files[0]);
+    }
+}
 
+function chooseFile_story_5(fileInput) {
+    if (fileInput.files && fileInput.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e){
+            $(`#image_5`).attr('src' , e.target.result);
+            path_image= e.target.result;
+        }
+        reader.readAsDataURL(fileInput.files[0]);
+    }
+}
 
+function chooseFile_story_6(fileInput) {
+    if (fileInput.files && fileInput.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e){
+            $(`#image_6`).attr('src' , e.target.result);
+            path_image= e.target.result;
+        }
+        reader.readAsDataURL(fileInput.files[0]);
+    }
+}
 
-
-
-
-
-
+function chooseFile_story_7(fileInput) {
+    if (fileInput.files && fileInput.files[0]) {
+        var reader = new FileReader();
+        reader.onload = function(e){
+            $(`#image_7`).attr('src' , e.target.result);
+            path_image= e.target.result;
+        }
+        reader.readAsDataURL(fileInput.files[0]);
+    }
+}
 
 
 
