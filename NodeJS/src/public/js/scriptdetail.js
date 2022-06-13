@@ -1,3 +1,5 @@
+$('#featured').addClass('animate__animated animate__bounceInUp');
+
 const body=document.querySelector("body"),
       slidebar=body.querySelector(".the_left_page"),
       toggle=body.querySelector(".toggle"),
@@ -12,6 +14,25 @@ function toggle_dark_light() {
         modeText.innerText="Dark Mode";
     }
 }
+
+$(document).ready(function(){
+    $(window).scroll(function(){
+        var body=$('html,body').scrollTop();
+
+        console.log(body);
+        if (body>400) {
+            $('#art').addClass('animate__animated animate__bounceInUp');
+            
+        }
+        if (body>1000) {
+            $('#game').addClass('animate__animated animate__bounceInUp');
+
+        }
+
+    });
+})
+
+// 
 
 // transform thanh chủ đề 
 function onmouseover_the_left_page() {

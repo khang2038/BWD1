@@ -683,6 +683,10 @@ header .close:hover i{
   background-color: white;
 }
 
+.content .info_content button a{
+  
+}
+
 .content .info_content button:hover{
   cursor: pointer;
   background-color: rgb(249, 247, 247);
