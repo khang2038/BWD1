@@ -54,27 +54,24 @@
 
     <div class="nav_main_post">
         <ul>
-            <div class="over_view">
+            <div class="over_view" onclick=open_over_view()>
                 <i class="fa-solid fa-eye"></i>
                 OVER VIEW
             </div>
-            <div class="story">
-                <i class="fa-solid fa-book-open-reader"></i>
-                STORY
-            </div>
-            <div class="rewards">
-                <i class="fa-solid fa-gifts"></i>
-                REWARDS
-            </div>
-            <div class="faq">
+            <div class="faq" onclick=open_faq()>
                 <i class="fa-solid fa-file-circle-question"></i>
                 FAQ
             </div>
-            
+            <div class="story" onclick=open_story()>
+                <i class="fa-solid fa-book-open-reader"></i>
+                STORY
+            </div>
+            <div class="rewards" onclick=open_rewards()>
+                <i class="fa-solid fa-gifts"></i>
+                REWARDS
+            </div>
         </ul>
     </div>
-
-
 
     <div class="main_post">
         <div style="display: flex; flex-direction: column;width: 70%;">
@@ -84,11 +81,11 @@
                     <label style="font-size: 30px;font-weight: bold;text-align: center;" for="img_big">PROJECT IMAGE</label>
                     <p style="text-align: center; padding: 20px 0;">Add an image that clearly represents your project. Choose one that looks good at different sizes—it’ll appear on your project page, across the Kickstarter website and mobile apps, and (when shared) on social channels.</p>
                     <p style="text-align: center;padding: 20px 0;">Your image should be at least 1024x576 pixels. It will be cropped to a 16:9 ratio.</p>
-                    <img style="margin: 20px 50px;margin: 0 auto; z-index: 6" src="" alt="" id="image" width="300" height="300">
+                    <img style="margin: 20px 50px;margin: 0 auto; z-index: 1" src="" alt="" id="image" width="300" height="300">
                     <input style="width: 80%;margin: 20px auto 60px auto;" type="file" class="form-control" id="img_big" name="img_big" onchange=chooseFile(this)
                             accept="image/gif , image/jpeg, image/png">
                 </div>
-            
+                
                 <hr style="width: 70%; margin: 0 auto;">
 
 
@@ -113,13 +110,13 @@
                     <input type="text" class="form-control" id="title_money_pledged" name="title_money_pledged">
                 </div>
                 <button style="padding: 10px 20px;">PREVIEW</button>
+                <button style="padding: 10px 20px;margin: 0px 50px 60px 50px;font-size: 30px;" onclick=open_faq()>NEXT</button>
             </div>
         </form>
-        <button type="submit" style="padding: 10px 20px;margin: 0px 50px 60px 50px;font-size: 30px;">NEXT</button>
         </div>
     </div>
 
-    <div class="FAQ_post" style="display: flex; justify-content: center;">
+    <div class="FAQ_post">
         <div style="width: 70%;">
             <div style="display: flex;flex-direction: row-reverse;">
                 <button style="font-size: 30px; padding : 10px 20px;" onclick=add_FAQ()>
@@ -131,12 +128,44 @@
                <div class="question_FAQ">
                    
                </div>
-               <button type="submit">
+               <button type="submit" onclick=open_story()>
                    NEXT
                </button>
             </form>
         </div>
     </div>
+    
+    <div class="story_post">
+        <div style="width: 80%;display : flex;flex-direction: row;">
+            <div class="button_add_str">
+                <button onclick=add_story_title()>
+                    <i class="fa-solid fa-plus"></i>
+                    ADD TITLE
+                </button>
+                <button onclick=add_story_content()>
+                    <i class="fa-solid fa-plus"></i>
+                    ADD CONTENT
+                </button>
+                <button onclick=add_story_image()>
+                    <i class="fa-solid fa-plus"></i>
+                    ADD IMAGE
+                </button>
+            </div>
+            <div style="width : 80%;">
+                <form method="POST" action="/post_project_created/story">
+                    <div class="input_add_str">
+                        
+                    </div>
+                    <button type="submit">SEND</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="rewards_post">
+
+    </div>
+
 
     <div style="height: 200px;"></div>
 
@@ -237,15 +266,11 @@
 
     <img class="background_img" src="img/imghome/img_background/home-bck-img-2.svg" alt="" style="position:absolute;top: -100px;right: 0;z-index: -1;transform: rotate(180deg);">
 
-
-    <img class="background_img" src="img/imghome/img_background/home-bck-img-2.svg" alt="" style="position:absolute;top: 1300px;left: 0;z-index: -1;">
-
-    <img class="background_img" src="img/imghome/img_background/home-bck-img-2.svg" alt="" style="position:absolute;top:  1300px;right: 0;z-index: -1;transform: rotate(180deg);">
-
        <script
         src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
         crossorigin="anonymous">
     </script>
     <script src="jquery.waypoints.min.js"></script>
+    <script src="js/create_project.js"></script>
     <script src="js/post_project_created.js"></script>
