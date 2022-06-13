@@ -96,10 +96,27 @@ function open_comments() {
     block_comments.classList.add('open');
 }
 
+//money increase
+const total_money = document.querySelector('.main_prj_content .ctn_statistic .ctn_pledged_backers .pledged span');
+const total_backers = document.querySelector('.main_prj_content .ctn_statistic .ctn_pledged_backers .backers span');
 
+function counterUp(el, to) {
+	let speed = 200
+	let from = 0
+	let step = to / speed
+	const counter = setInterval(function () {
+		from += step
+		if (from > to) {
+			clearInterval(counter)
+			el.innerText = to
+		} else {
+			el.innerText = Math.ceil(from)
+		}
+	}, 1)
+}
 
-
-
+counterUp(total_money, 231700);
+counterUp(total_backers, 1682);
 
 
 
