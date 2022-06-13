@@ -478,6 +478,15 @@ header .nav_mobile {
   margin: 20px 0;
 }
 
+.img_story{
+  background-repeat: no-repeat;
+  background-size: 100%;
+  object-fit: cover;
+  width: 100%;
+  height: 600px;
+  margin: 20px;
+}
+
 /*-----------block_comment------------*/
 
 .block_comments{

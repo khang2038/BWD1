@@ -157,39 +157,26 @@
 
                 <div class="block_story open">
                     <h1>Story</h1>
-                    <!--img-->
-                    <!--1.title-->
-                    <!--img-->
-                    <!--content-->
-                    <!--2.title-->
-                    <!--content-->
-                    <!--img-->
-                    <!--img-->
-                    
+                
+                    {{#each story}}
                         <div>
-                            <img src="" alt="">
-                            <h1></h1>
-                            <h3></h3>
-                            <img src="" alt="">
-                            <p></p>
-                            <h3></h3>
-                            <p></p>
-                            <img src="" alt="">
-                            <img src="" alt="">
-                        </div>
+                            <div class="img_story" style="background-image: url(../../img/imgproject/{{this.image1}});"></div>
+                            <h2>{{this.title1}}</h2>
+                            <div class="img_story" style="background-image: url(../../img/imgproject/{{this.image2}});"></div>
 
-                    {{!-- {{#each story}}
-                        <div>
-                            <img src="" alt="">
-                            <h2></h2>
-                            <img src="" alt="">
-                            <p></p>
-                            <h2></h2>
-                            <p></p>
-                            <img src="" alt="">
-                            <img src="" alt="">
+                            <p>{{this.content1}}</p>
+                            <p>{{this.content2}}</p>
+                            <h2>{{this.title2}}</h2>
+                            <p>{{this.content3}}</p>
+                            <div class="img_story" style="background-image: url(../../img/imgproject/{{this.image3}});"></div>
+                            <div class="img_story" style="background-image: url(../../img/imgproject/{{this.image4}});"></div>
+
+                            <p>{{this.content4}}</p>
+                            <p>{{this.content5}}</p>
+                            <div class="img_story" style="background-image: url(../../img/imgproject/{{this.image5}});"></div>
+
                         </div>
-                    {{/each}} --}}
+                    {{/each}}
 
                 </div>
 
@@ -208,6 +195,7 @@
                         </div>
                     </div>
                     {{/each}}
+
                 </div>
 
                 <div class="block_comments">
