@@ -5,10 +5,8 @@ class createcontroller{
                                         title: 'Create',
                                         style:'styleproduct.css',
                                         style2:'create.css',
-                                        script1:'scriptproduct.js',
                                         script2:'jquery.waypoints.min.js',
-                                        style3:'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css',
-                                      
+                                        script3:'scriptcreate.js',
                                         users:req.user
                                         })
     }
