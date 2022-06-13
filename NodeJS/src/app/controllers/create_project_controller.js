@@ -56,6 +56,7 @@ class create_project_controller{
                     style : '../../css/create_project.css',
                     script1 : '../../js/create_project.js',
                     script3 : '../../js/post_project_created.js',
+                    
                 });
             })
             .catch(next)
