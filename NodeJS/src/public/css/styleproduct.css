@@ -76,6 +76,28 @@ header{
     display:flex;
     justify-content:space-around
 }
+.user-drop{
+   background-color:var(--shadow-header-color);
+   display: flex;
+   width: 0;
+   height:0;
+   flex-direction: column;
+   border-radius:10px;
+   font-size:16px;
+   position:relative;
+   transition:all 0.2s;
+   opacity: 0;
+   position:absolute;
+   top:55px;
+   right:0; 
+   animation: fadeIn;
+}
+.user-drop li{
+   margin-top:30px;
+   list-style: none;
+   margin-left: 20px;
+   cursor: pointer;
+}
 .the_left_nav{
    display:flex;
    align-items: center;
@@ -113,7 +135,7 @@ header{
    animation: fadeIn;
 }
 .update-drop li{
-   margin-top:20px;
+   margin-top:30px;
    list-style: none;
    margin-left: 20px;
    cursor: pointer;
@@ -124,9 +146,14 @@ header{
    width: 20%;
    height: 20%;
   } */
+  .open1{
+    opacity: 1;
+    width: 180px;
+     height: 230px;
+  }
   .open{
     opacity: 1;
-    width: 100px;
+    width: 130px;
      height: 150px;
   }
 
@@ -333,6 +360,7 @@ body.dark .switch_mobile::before{
   align-items: center;
   margin-right: 20%;
   color:var(--text-the_left_page-color);
+  position: relative;
 }
 .the_right_nav .icon{
   margin-right: 10px;
@@ -341,6 +369,7 @@ body.dark .switch_mobile::before{
 }
 .the_right_nav img{
    width: 50px;
+   height: 50px;
    border-radius: 50%;
    margin-right: 10px;
 }
@@ -401,7 +430,7 @@ body.dark .switch_mobile::before{
 }
 .the_left_page .mode{
     margin-left:25px;
-    margin-top:50%;
+    margin-top:15%;
     display: flex;
 }
 .the_left_page .mode .moon-sun{
