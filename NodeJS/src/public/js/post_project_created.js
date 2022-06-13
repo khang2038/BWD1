@@ -58,13 +58,15 @@ function click_main_trans_faq() {
 // handle nav header 
 const over_view = document.querySelector('.main_post');
 const faq = document.querySelector('.FAQ_post');
+const story = document.querySelector('.story_post');
+
 function close_all() {
     Object.assign(over_view.style , {
         display : 'none',
     })
-    // Object.assign(story.style , {
-    //     display : 'none',
-    // })
+    Object.assign(story.style , {
+        display : 'none',
+    })
     // Object.assign(rewards.style , {
     //     display : 'none',
     // })
@@ -80,12 +82,12 @@ function open_over_view() {
     })
 }
 
-// function open_story() {
-//     close_all();
-//     Object.assign(story.style , {
-//         display : 'flex',
-//     })
-// }
+function open_story() {
+    close_all();
+    Object.assign(story.style , {
+        display : 'flex',
+    })
+}
 
 // function open_rewards() {
 //     close_all();

@@ -42,12 +42,10 @@ class post_project_created_controller{
         }
 
         //handle đường truyền dấu ' ' -> '-'
-        let temp = total_qs[0].question;
-        temp = temp.replace(/ /g,'-');
-        console.log(temp);
-        res.redirect(`/create_project/${temp}`);
+        // let temp = total_qs[0].slug_temp;
+        // temp = temp.replace(/ /g,'-');
     }
-
+    
     //[POST] /story
     story(req, res, next) {
         //do chua nhap main_title ben phan 1 
@@ -55,6 +53,11 @@ class post_project_created_controller{
         temp.slug_temp = slug_present;
         const story = new Storys(temp);
         story.save();
+        let temp1 = temp.slug_temp;
+        console.log(temp1);
+        temp1 = temp1.replace(/ /g,'-');
+        console.log(temp1);
+        res.redirect(`/create_project/${temp1}`);
     }
 }
 
