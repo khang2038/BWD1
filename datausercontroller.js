@@ -20,4 +20,5 @@ class datausercontroller{
 
 }
 
+
 module.exports= new datausercontroller;

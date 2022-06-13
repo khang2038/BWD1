@@ -355,6 +355,7 @@ function getResponse() {
 
 }
 
+
 // xu li  gui tin nhan bot
 function buttonSendText(sampleText) {
     let userHtml = '<p class="userText"><span>' + sampleText + '</span></p>';
