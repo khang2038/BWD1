@@ -5,13 +5,13 @@
           </div>
           <div class="search">
               <i class="fa-solid fa-magnifying-glass icon"></i>
-              <input type="text" placeholder="Search...">
+              <input type="text" placeholder="Search...">   
           </div> 
         </div>
         <div class="the_center_nav">
-            <a id="homepage" class="fa-solid fa-house icon 1"></a>
-            <a id="product" class="fa-solid fa-earth-americas icon 2"></a>
-            <a id="projects" class="fa-solid fa-circle-dollar-to-slot icon 3" style="font-size: 28px;"></a>
+            <a href="../homepage" id="homepage" class="fa-solid fa-house icon 1" style="color: #727272;"></a>
+            <a href="../product" id="product" class="fa-solid fa-earth-americas icon 2" style="color: #727272;"></a>
+            <a href="../detail" id="projects" class="fa-solid fa-circle-dollar-to-slot icon 3" style="color: #727272;font-size: 28px;"></a>
 
         </div>
         <div class="the_right_nav">
@@ -56,6 +56,7 @@
         <a href="../post_project_created" style="text-decoration: none;background-color: white;border: 2px solid #333; padding : 10px 20px; font-weight: bold;margin-left: 85%;font-size: 20px;">Next</a>
     </div> --}}
 
+
     <div class="ctn_main_prj">
         <div style="width: 90%;">
             <div class="prj_video_img">
@@ -83,7 +84,7 @@
                     <div class="ctn_pledged_backers">
                         <div class="pledged">
                             $<span>0</span>
-                            <div class="title">{{project.title_money_pledged}}</div>
+                            <div class="title">pledged of $ {{project.title_money_pledged}} goal</div>
                         </div>
                         <div class="backers">
                             <span>0</span>
@@ -115,7 +116,6 @@
             </div>
         </div>
     </div>
-
 
     <div class="ctn_content_detail_prj">
         <div class="header_detail_prj">
@@ -225,8 +225,21 @@
                                 {{this.comment}}
                         </div>
                     </div>
-
                     {{/each}}
+
+                    <div style="margin: 30px 0;padding: 20px;border: 2px solid rgb(188, 172, 172)">
+                        <div class="cmt_info">
+                            <div class="cmt_avatar">
+                                <img src="https://haycafe.vn/wp-content/uploads/2021/11/Anh-avatar-dep-chat-lam-hinh-dai-dien.jpg" alt="">
+                            </div>
+                            <div class="cmt_name">
+                                giangka
+                            </div>
+                        </div>
+                        <div class="cmt_content">
+                            참 씨, 나는 당신의 마음을 잡고 하나가되고 싶어 ! 
+                        </div>
+                    </div>
                 </div>
 
                 <div class="block_community">
@@ -325,13 +338,7 @@
         </div>
     </div>
 
-    <div class="ctn__loading__body">
-        <div class="ctn__loading">
-            <div class="ctn__loading__content">
-                
-            </div>
-        </div>
-    </div>
+  
 
        <script
         src="https://code.jquery.com/jquery-3.6.0.js"
