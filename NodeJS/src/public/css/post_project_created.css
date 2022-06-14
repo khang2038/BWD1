@@ -10,6 +10,7 @@
   --animate-duration: 2s;
 }
 
+
 /*--------------------------*/
 
 * {
@@ -371,7 +372,7 @@ header .nav_mobile {
 .story_post button {
   background-color: white;
   padding: 20px;
-  margin: 10px;
+  margin: 10px 30px;
   font-size: 15px;
 
 }
