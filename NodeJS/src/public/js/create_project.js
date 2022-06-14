@@ -99,6 +99,7 @@ function open_comments() {
 //money increase
 const total_money = document.querySelector('.main_prj_content .ctn_statistic .ctn_pledged_backers .pledged span');
 const total_backers = document.querySelector('.main_prj_content .ctn_statistic .ctn_pledged_backers .backers span');
+const percent = document.querySelector('.percent_complete span')
 
 function counterUp(el, to) {
 	let speed = 200
@@ -117,6 +118,7 @@ function counterUp(el, to) {
 
 counterUp(total_money, 231700);
 counterUp(total_backers, 1682);
+counterUp(percent, 78);
 
 
 

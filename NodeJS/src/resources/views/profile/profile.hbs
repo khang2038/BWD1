@@ -1,0 +1,135 @@
+    <header>
+        <div class="the_left_nav">
+          <div class="logo">
+              <p>PRO4</p>
+          </div>
+          <div class="search">
+              <i class="fa-solid fa-magnifying-glass icon"></i>
+              <input type="text" placeholder="Search...">   
+          </div> 
+        </div>
+        <div class="the_center_nav">
+            <a href="../homepage" id="homepage" class="fa-solid fa-house icon 1" style="color: #727272;"></a>
+            <a href="../product" id="product" class="fa-solid fa-earth-americas icon 2" style="color: #727272;"></a>
+            <a href="../detail" id="projects" class="fa-solid fa-circle-dollar-to-slot icon 3" style="color: #727272;font-size: 28px;"></a>
+
+        </div>
+        <div class="the_right_nav">
+            <i class="fa-solid fa-right-to-bracket icon"></i>
+            <a href="Login" style="text-decoration: none;">Login</a>
+        </div>     
+        <div class="bars">
+            <i class="ti-menu" onclick=open_nav_mobile()></i>
+        </div>    
+        <div class="nav_mobile">
+            <div class="close" onclick=close_nav_mobile()>
+                <i class="ti-close">
+                    
+                </i>
+                Close
+            </div>
+            <div class="homepage" style="padding: 20px;">
+                <a id="homepage" class="fa-solid fa-house icon 1" style="padding: 0 10px;" href="homepage">
+                </a>
+                <a href="homepage">
+                    HOME
+                </a>
+            </div>
+            <div class="product" style="padding: 20px;">
+                <a id="product" class="fa-brands fa-atlassian icon 2" style="padding: 0 10px;" href="product">
+                </a>
+                <a href="product">
+                    POSTS
+                </a>
+            </div>
+            <div class="projects" style="padding: 20px;">
+                <a id="projects" class="fa-solid fa-earth-americas icon 3" style="padding: 0 10px;" href="detail">
+                </a>
+                <a href="detail">
+                    PROJECTS
+                </a>
+            </div>
+        </div>
+    </header>
+    
+
+    <div style="margin-top: 60px;" class="content_profile"c>
+        <div class="right_content">
+            <div class="nav">
+
+                <div class="wrapper">
+                    <div class="icon user">
+                        <i class="fa-solid fa-user"></i>
+                        <span class="tooltip">About me</span>
+                    </div>
+                    <div class="icon my_project">
+                        <i class="fa-solid fa-file-shield"></i>
+                        <span class="tooltip">My project</span>
+                    </div>
+                    <div class="icon prj_favorite">
+                        <i class="fa-solid fa-heart-circle-check"></i>
+                        <span class="tooltip">Favorite project</span>
+                    </div>
+                    <div class="icon log_out">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span class="tooltip">Log out</span>
+                    </div>
+                </div>
+
+                {{!-- <div class="about_me">
+                    About_me
+                </div>
+                <div class="my_project">
+                    My project
+                </div>
+                <div class="favorite_project">
+                    Favorite project
+                </div>
+                <div class="log_out">
+                    Log out
+                </div> --}}
+            </div>
+        </div>
+    </div>
+   
+
+    <div class="left_content" style="display : flex; justify-content: center;">
+        <div style="width: 80%;margin: 0 auto;">
+            <div style="width: 100%;">
+                <div class="avatar_profile" style="background-image: url(/img/imgprofile/sharkhung.png);">
+                    
+                </div>
+            </div>
+            <h2 class="name_user">
+                Phạm Thanh Hưng
+            </h2>
+            <div class="title_user">
+                “Các bạn phải có một ước mơ đủ lớn để có chỗ người khác tham gia vào. Chứ ước mơ của các bạn quá bé, bản thân các bạn ngồi đã chật rồi, chúng tôi không còn chỗ"
+            <div class="edit">
+                <button>Edit profile</button>
+            </div>
+        </div>
+    </div>
+   
+
+
+       <script
+        src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+        crossorigin="anonymous">
+    </script>
+    <script src="jquery.waypoints.min.js"></script>
+    <script src="js/profile.js"></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+

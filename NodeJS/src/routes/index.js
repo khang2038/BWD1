@@ -16,8 +16,10 @@ const merouter=require('./me')
 const User = require('../app/models/user')
 const create_project = require('./create_project');
 const post_project_created = require('./post_project_created');
+const profile = require('./profile');
 const initPassportLocal = require("../app/auth/passportLocal");
 function route(app){
+    app.use('/profile' , profile);
 
     app.use('/post_project_created' , post_project_created);
 
