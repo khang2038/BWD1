@@ -29,25 +29,19 @@ const body=document.querySelector("body"),
             });
         };
 
+var path_image;
+function chooseFile(fileInput) {
+    if (fileInput.files && fileInput.files[0]) {
+        var reader = new FileReader();
 
-       modeSwitchmobile.addEventListener("click",()=>{
-          body.classList.toggle("dark");
-          if(body.classList.contains("dark")){
-              modeTextmobile.innerText="Light Mode";
-          }else{
-              modeTextmobile.innerText="Dark Mode";
-          }
-      })
-
-      modeSwitch.addEventListener("click",()=>{
-          body.classList.toggle("dark");
-          if(body.classList.contains("dark")){
-              modeText.innerText="Light Mode";
-          }else{
-              modeText.innerText="Dark Mode";
-          }
-      })
-      
+        reader.onload = function(e){
+            $('#image').attr('src' , e.target.result);
+            path_image=e.target.result;
+        }
+        
+        reader.readAsDataURL(fileInput.files[0]);
+    }
+}
       
       $(document).ready(function(){
           var width=$(document).width();
@@ -443,7 +437,6 @@ function handle_update(class1) {
     }
     
 }
-
 //handle userdropdown
 function handle_user() {
     var update1 = document.querySelector(`.user-drop`);

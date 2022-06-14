@@ -34,28 +34,77 @@
   </div>
 </nav> --}}
 
-
-<div class="mt-4 body_create_prj">
-    <h3>Post Project</h3>
-        <form method="POST" action="store">
-                <div class="mb-3">
-                    <label for="name" class="form-label">Name project</label>
-                    <input type="text" class="form-control" id="name" name="name" >
+<header>
+        <div class="nav_pc">
+            <div class="the_left_nav">
+            <div class="logo">
+                <p>PRO4</p>
+            </div>
+            <div class="search">
+                <i class="fa-solid fa-magnifying-glass icon"></i>
+                <input type="text" placeholder="Search...">
+            </div> 
+            </div>
+            <div class="the_center_nav">
+                <a id="homepage" class="fa-solid fa-house icon 1"></a>
+                <a id="product" class="fa-solid fa-earth-americas icon 2"></a>
+                <a id="projects" class="fa-solid fa-circle-dollar-to-slot icon 3" style="font-size: 28px;"></a>
+            </div>
+            <div class="the_right_nav" onclick=handle_user()>
+                <img id="img_login" src="{{users.img_author}}" alt="">
+                <p>{{users.name_author}}</p>
+                <ul class="user-drop">
+                        <i class="fa-solid fa-xmark project_close " > </i>
+                        <div class="menu_drop">
+                            <li>
+                               <a href="#"> Profile </a> 
+                            </li>
+                            <li>
+                                 <a href="#"> Statistic </a> 
+                            </li>
+                            <li>
+                                <a href="#"> cac </a>
+                            </li>
+                             <li>
+                                <a href="home"> Logout </a>
+                            </li>
+                        </div> 
+                    </ul>  
+            </div>
+            
+        </div>  
+</header>        
+<div class="body_create_prj">
+                 <div class="author">
+                        <img src="{{users.img_author}}" alt="">
+                        <div class="infor_author">
+                            <span>{{users.name_author}}</span>
+                            <p>public   <i class="fa-solid fa-earth-americas icon 3"></i> </p>
+                        </div>
                 </div>
-                 <div class="mb-3">
+        <form method="POST" action="store">
+                <div class="infor">
+                     <label for="name">NAME PROJECT</label>
+                     <p>Write a clear, brief title and subtitle to help people quickly understand your project. Both will appear on your project and pre-launch pages.</p>
+                     <input type="text" class="form-control" id="name" name="name" >
+                </div>
+                 <div hidden="true">
                     <label for="name_author" class="form-label">Name author</label>
                     <input type="text" class="form-control" id="name_author" value="{{users.name_author}}"  name="name_author" >
                 </div>
-                 <div class="mb-3">
+                 <div  hidden="true">
                     <label for="img_author" class="form-label">img_author</label>
                     <input type="text" class="form-control" id="img_author" value="{{users.img_author}}" name="img_author" >
                 </div>
-                 <div class="mb-3">
+                 <div class="infor">
                     <label for="infor" class="form-label">decription</label>
+                    <p> Potential backers will also see them if your project appears on category pages, search results, or in emails we send to our community.</p>
                     <input type="text" class="form-control" id="infor" name="infor">
                 </div>
-                 <div class="mb-3">
+                 <div class="infor">
                     <label for="img1" class="form-label">img</label>
+                    <p style="text-align: center; padding: 20px 0;">Add an image that clearly represents your project. Choose one that looks good at different sizes—it’ll appear on your project page, across the Kickstarter website and mobile apps, and (when shared) on social channels.</p>
+                    <p style="text-align: center;padding: 20px 0;">Your image should be at least 1024x576 pixels. It will be cropped to a 16:9 ratio.</p>
                     <input type="text" class="form-control" id="img1" name="img1">
                 </div>
 
@@ -63,6 +112,11 @@
                 <button type="submit" class="btn btn-primary">Post</button>
         </form>
 </div>
+    <img class="background_img" src="img/imghome/img_background/home-bck-img-2.svg" alt="" style="position:absolute;top: 0;left: 0;z-index: -1;">
+
+    <img class="background_img" src="img/imghome/img_background/home-bck-img-2.svg" alt="" style="position:absolute;top: 1000px;right: 0;z-index: -1;transform: rotate(180deg);">
+
+    <img class="background_img" src="img/imghome/img_background/home-bck-img-2.svg" alt="" style="position:absolute;top: 2000px;left: 0;z-index: -1;transform: rotate(0deg);">    
 
 {{!-- footer --}}
     <div class="ctn__footer">
@@ -150,6 +204,7 @@
         </div>
     </div>
 
+    
 
     
     <div class="ctn__loading__body">

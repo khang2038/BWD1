@@ -72,6 +72,11 @@ header{
    display:flex;
    justify-content:space-between;
 }
+.open_search{
+   position: fixed;
+   height: 400px;
+   box-shadow: 1px 1px 1px 1px var(--shadow-header-color);
+}
 .navduoi{
     display:flex;
     justify-content:space-around
