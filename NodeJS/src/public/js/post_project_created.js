@@ -125,7 +125,7 @@ let data_story = "";
 function add_story_title() {
     id_title++;
     data_story += 
-    `<input name="title${id_title}" type="text" style="width: 90%;font-size : 40px; padding: 10px;margin: 10px;">
+    `<input name="title${id_title}" type="text" style="width: 90%;font-size : 30px; padding: 20px;margin: 10px;">
     `;
     input_add_str.innerHTML = data_story;
 }
