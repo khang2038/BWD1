@@ -323,18 +323,16 @@ header .nav_mobile {
 }
 
 .content_profile .right_content .nav div{
-    
     text-align: center;
     /* background-color: #b9adad; */
-    padding: 10px;
 }
 
 /*---------header_profile--------------*/
 
 .wrapper {
 	display: flex;
-    justify-content: space-around;
-    width: 50%;
+    justify-content: space-between;
+    width: 100%;
 }
 
 .icon {
@@ -346,31 +344,32 @@ header .nav_mobile {
 .icon i {
 	height: 60px;
 	width: 60px;
-	border-radius: 50%;
+	border-radius: 50% ;
 	background: #fff;
 	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 	font-size: 25px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+
 }
 
 .icon .tooltip {
 	position: absolute;
 	top: 0;
-	left: 50%;
+	left: 160px;
 	transform: translateX(-50%);
 	color: #fff;
-	padding: 10px 18px;
+	padding: 15px 18px;
 	font-size: 20px;
 	font-weight: 500;
-	border-radius: 25px;
-	opacity: 0;
+	border-radius: 0 25px 25px 0;
+	opacity: 0.2;
 	pointer-events: none;
 	box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
 }
 
-.icon .tooltip:before {
+/* .icon .tooltip:before {
 	position: absolute;
 	content: '';
 	height: 15px;
@@ -378,7 +377,7 @@ header .nav_mobile {
 	left: 50%;
 	bottom: -6px;
 	transform: translateX(-50%) rotate(45deg);
-}
+} */
 
 .tooltip,
 .icon i {
@@ -388,7 +387,7 @@ header .nav_mobile {
 .icon:hover .tooltip {
 	opacity: 1;
 	pointer-events: auto;
-	top: -50px;
+	top: 0px;
 }
 
 .icon:hover i {
@@ -401,18 +400,33 @@ header .nav_mobile {
 	background-color: #a28ce6;
     color: white;
 }
+
+.user:hover i {
+  border-radius: 50% 0 0 50%;
+}
+
 .my_project .tooltip:before,
 .my_project:hover i,
 .my_project .tooltip {
 	background-color: #5766dc;
     color: white;
 }
+
+.my_project:hover i{
+  border-radius: 50% 0 0 50%;
+}
+
 .prj_favorite .tooltip:before,
 .prj_favorite:hover i,
 .prj_favorite .tooltip {
 	background-color: #dc5788;
     color: white;
 }
+
+.prj_favorite:hover i{
+  border-radius: 50% 0 0 50%;
+}
+
 .log_out .tooltip:before,
 .log_out:hover i,
 .log_out .tooltip {
