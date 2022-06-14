@@ -4,9 +4,17 @@
             <div class="logo">
                 <p>PRO4</p>
             </div>
-            <div class="search">
+            <div class="search" onclick=handle_search()>
                 <i class="fa-solid fa-magnifying-glass icon"></i>
-                <input type="text" placeholder="Search...">
+                <input type="text" id="filter" placeholder="Search...">
+                <ul class="search-drop">
+                        <i class="fa-solid fa-xmark search_close " onclick=close1()> </i>
+                        <div class="menu_drop">
+                            <li>
+                               <a href="#"> Loading..... </a> 
+                            </li>
+                        </div> 
+                    </ul> 
             </div> 
             </div>
             <div class="the_center_nav">
@@ -17,8 +25,8 @@
             <div class="the_right_nav" onclick=handle_user()>
                 <img id="img_login" src="{{users.img_author}}" alt="">
                 <p>{{users.name_author}}</p>
-                 <ul class="user-drop">
-                        <i class="fa-solid fa-xmark project_close " > </i>
+                <ul class="user-drop">
+                        <i class="fa-solid fa-xmark project_close " onclick=handle_user()> </i>
                         <div class="menu_drop">
                             <li>
                                <a href="#"> Profile </a> 
@@ -27,9 +35,9 @@
                                  <a href="#"> Statistic </a> 
                             </li>
                             <li>
-                                <a href="#"> cac </a>
+                                <a href="/post_project_created"> Add new project </a>
                             </li>
-                            <li>
+                             <li>
                                 <a href="home"> Logout </a>
                             </li>
                         </div> 

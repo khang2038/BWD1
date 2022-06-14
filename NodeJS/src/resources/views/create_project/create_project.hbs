@@ -15,8 +15,25 @@
 
         </div>
         <div class="the_right_nav">
-            <i class="fa-solid fa-right-to-bracket icon"></i>
-            <a href="Login" style="text-decoration: none;">Login</a>
+           <img id="img_login" src="{{users.img_author}}" alt="">
+                <p>{{users.name_author}}</p>
+                <ul class="user-drop">
+                        <i class="fa-solid fa-xmark project_close " onclick=handle_user()> </i>
+                        <div class="menu_drop">
+                            <li>
+                               <a href="#"> Profile </a> 
+                            </li>
+                            <li>
+                                 <a href="#"> Statistic </a> 
+                            </li>
+                            <li>
+                                <a href="/post_project_created"> Add new project </a>
+                            </li>
+                             <li>
+                                <a href="home"> Logout </a>
+                            </li>
+                        </div> 
+                    </ul>  
         </div>     
         <div class="bars">
             <i class="ti-menu" onclick=open_nav_mobile()></i>

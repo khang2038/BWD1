@@ -440,6 +440,42 @@ header .nav_mobile {
 
     
 }
+.user-drop{
+   background-color:var(--shadow-header-color);
+   display: flex;
+   width: 0;
+   height:0;
+   flex-direction: column;
+   border-radius:10px;
+   font-size:16px;
+   position:relative;
+   transition:all 0.2s;
+   opacity: 0;
+   position:absolute;
+   top:55px;
+   right:0; 
+   animation: fadeIn;
+}
+.user-drop li{
+   margin-top:30px;
+   list-style: none;
+   margin-left: 20px;
+   cursor: pointer;
+}
+.the_right_nav img{
+   width: 50px;
+   height: 50px;
+   border-radius: 50%;
+   margin-right: 10px;
+}
+.the_right_nav p{
+   font-size:14px;
+}
+ .open1{
+    opacity: 1;
+    width: 180px;
+     height: 230px;
+  }
 
 .ctn_content_detail_prj .body_detail_prj{
     width: 100%;

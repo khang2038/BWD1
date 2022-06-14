@@ -7,6 +7,7 @@ const body=document.querySelector("body"),
       modeSwitchmobile=body.querySelector(".toggle-switch_mobile"),
       modeTextmobile=body.querySelector(".mode-text_mobile");
 
+   
         
       var deleteform=document.forms['delete_form'];
 
@@ -443,7 +444,72 @@ function handle_update(class1) {
     }
     
 }
+//handle search
+var close = document.querySelector(`.search_close`);
 
+ function close1(){
+    var u = document.querySelector(`.search-drop`);
+     
+        u.classList.remove('open_search');
+     
+   
+ }
+function handle_search() {
+    var update1 = document.querySelector(`.search-drop`);
+    
+    if (update1.classList.contains('open_search')){
+        update1.classList.remove('open_search');
+    } 
+    else {
+        update1.classList.add('open_search');
+    }
+    
+}
+//search
+
+const searchs = document.querySelector('.search-drop')
+const filter = document.getElementById('filter')
+const listItems = []
+// const list=[]
+//     const products =require('../../app/models/product')
+//     products.find({})
+//         .then(products=>{
+//                     products=products.map(product => product.toObject() )
+//                     list=products
+//             }) 
+//     console.log(list)        
+ getData()
+filter.addEventListener('input', (e) => filterData(e.target.value))
+async function getData() {
+	const res = await fetch('https://62a8d2d0ec36bf40bdaed066.mockapi.io/PD')
+
+	const results = await res.json()
+    searchs.innerHTML = ''
+
+	results.forEach((productt) => {
+		const li = document.createElement('li')
+		li.setAttribute('class', 'searchs')
+		listItems.push(li)
+
+		li.innerHTML = `
+			<img src="${productt.img1}" alt="">
+			<div class="product-detail">
+				<h4>${productt.infor.slice(0, 30)}</h4>
+			</div>
+        `
+
+		searchs.appendChild(li)
+	})
+}
+function filterData(search) {
+	listItems.forEach((item) => {
+		if (item.innerText.toLowerCase().includes(search.toLowerCase())) {
+			item.classList.remove('hide')
+		} else {
+			item.classList.add('hide')
+		}
+	})
+}
 //handle userdropdown
 function handle_user() {
     var update1 = document.querySelector(`.user-drop`);
