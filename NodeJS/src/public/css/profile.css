@@ -142,6 +142,7 @@ header{
    align-items: center;
    margin-right: 20%;
    color:var(--text-the_left_page-color);
+   position: relative;
  }
  .the_right_nav .icon{
    margin-right: 10px;
@@ -184,6 +185,26 @@ header{
     width: 180px;
      height: 230px;
   }
+  .drop-bars-btn{
+  position: absolute;
+  top:20px;
+  right: 20px;
+   font-size:18px;
+   font-weight:25px;
+   cursor: pointer;
+}
+a{
+  text-decoration: none;
+  color: var(--text-the_left_page-color);
+}
+.project_close{
+    font-size: 1.3rem;
+    color:#666;
+    position: absolute;
+    top: 3px;
+    right: 10px;
+    cursor: pointer;
+}
 
 /*----------RESPONSIVE__Mobile------------*/
 
@@ -520,11 +541,11 @@ header .nav_mobile {
 
 /*-------project_demo_user-------------*/
 
-ul{
+.project_demo_user ul{
   position: relative;
   transform: skewY(-5deg);
 }
-ul li{
+.project_demo_user ul li{
   position: relative;
   list-style: none;
   width: 150px;
@@ -533,11 +554,11 @@ ul li{
   transition: 0.5s;
   z-index: calc(1 * var(--i));
 }
-ul li:hover{
+.project_demo_user ul li:hover{
   transform: translateX(50px);
   background: var(--clr);
 }
-ul li::before{
+.project_demo_user ul li::before{
   content: '';
   position: absolute;
   top: 0;
@@ -550,11 +571,11 @@ ul li::before{
   transform: skewY(45deg);
   transition: 0.5s;
 }
-ul li:hover::before{
+.project_demo_user ul li:hover::before{
   background: var(--clr);
   filter: brightness(0.7);
 }
-ul li::after{
+.project_demo_user ul li::after{
   content: '';
   position: absolute;
   top:-40px;
@@ -567,11 +588,11 @@ ul li::after{
   transform: skewX(45deg);
   transition: 0.5s;
 }
-ul li:hover:after{
+.project_demo_user ul li:hover:after{
   background: var(--clr);
   filter: brightness(0.9);
 }
-ul li a{
+.project_demo_user ul li a{
   text-decoration: none;
   color: #fff;
   display: block;
@@ -579,14 +600,14 @@ ul li a{
   letter-spacing: 0.05em;
   transition: 0.5s;
 }
-ul li:hover a
+.project_demo_user ul li:hover a
 {
   color: #fff;
 }
-ul li:last-child::after{
+.project_demo_user ul li:last-child::after{
   box-shadow: -120px 120px 20px rgba(0,0,0,0.25);
 }
-ul li span{
+.project_demo_user ul li span{
   position: absolute;
   top: 0;
   left: -40px;
@@ -602,7 +623,7 @@ ul li span{
   opacity: 0.5;
   font-size: 1.25em;
 }
-ul li:hover span{
+.project_demo_user ul li:hover span{
   opacity: 1;
 }
 
