@@ -583,7 +583,82 @@ ul li:hover span{
   height: 1000px;
 }
 
+.ctn_my_project .total_projects{
+  width: 100%;
+  margin: 40px 0 0 0;
+}
 
+.ctn_my_project p{
+  width: 100%;
+
+  text-align: center;
+}
+
+/*-----card project-------*/
+
+.card_project {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+
+}
+
+.card_project .form_card_project {
+  width: 350px;
+  text-align: left;
+  box-sizing: unset;
+  margin: 0 5%;
+  padding: 0px 0 10px 0;
+  /* border-radius: 20px; */
+  border: #ebeaf1 solid 2px;
+  box-shadow: 0 1px 10px 1px #9e9e9e91;
+  overflow: hidden;
+  /* transform: translateX(2000px); */
+}
+
+.card_project .form_card_project:hover {
+  cursor: pointer;
+}
+
+.card_project .form_card_project div{
+  overflow: hidden;
+  height: 200px;
+}
+
+.card_project .form_card_project img{
+  width: 100%;
+  height: 100%;
+  transition: transform 2s;
+}
+
+.card_project .form_card_project:hover img{
+  transform: scale(1.5);
+}
+
+.card_project .form_card_project h1{
+  padding: 30px 10%;
+  font-size: 22px;
+  text-align: left;
+  color: #868383;
+}
+
+.card_project .form_card_project h1:hover{
+  color: #000000;
+  cursor: pointer;
+}
+
+.card_project .form_card_project p{
+  padding: 5px 10% 30px 10%;
+  font-size: 18px;
+  text-align: left;
+}
+
+/*-----------num count project-------------*/
+
+.num_count_project {
+  width: 100%;
+  
+}
 
 /*--------------ctn_favorite_project -----------------*/
 
