@@ -103,6 +103,18 @@ function trans_aft_card() {
         })
 }
 
+ function handle_user() {
+    var update1 = document.querySelector(`.user-drop`);
+    
+    if (update1.classList.contains('open1')){
+        update1.classList.remove('open1');
+    } 
+    else {
+        update1.classList.add('open1');
+    }
+    
+}
+
 //info_details
 let modal_1=document.querySelector('.modal_1');
 let modal_2=document.querySelector('.modal_2');
@@ -262,6 +274,10 @@ window.scroll({
   document.querySelector('.hello').scrollIntoView({ 
     behavior: 'smooth' 
   });
+ 
+    
+  
+
 
   
   

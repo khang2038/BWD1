@@ -163,6 +163,18 @@ function chooseFile_story_1(fileInput) {
     }
 }
 
+function handle_user() {
+    var update1 = document.querySelector(`.user-drop`);
+    
+    if (update1.classList.contains('open1')){
+        update1.classList.remove('open1');
+    } 
+    else {
+        update1.classList.add('open1');
+    }
+    
+}
+
 function chooseFile_story_2(fileInput) {
     if (fileInput.files && fileInput.files[0]) {
         var reader = new FileReader();

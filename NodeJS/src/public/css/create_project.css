@@ -141,6 +141,7 @@ header{
    align-items: center;
    margin-right: 20%;
    color:var(--text-the_left_page-color);
+   position: relative;
  }
  .the_right_nav .icon{
    margin-right: 10px;
@@ -218,6 +219,11 @@ header .nav_mobile {
     }
   }
   
+  a{
+    text-decoration: none;
+    color: var(--text-the_left_page-color);
+  }
+
   .nav_mobile .close:hover{
     cursor: pointer;
   }

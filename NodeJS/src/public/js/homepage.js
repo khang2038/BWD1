@@ -217,7 +217,7 @@ function onclick__product(){
         })
         .then(function() {
             ctn__loading__home.classList.remove('open__load')
-            product.href="Product";
+            product.href="login";
             product.click();
         })      
 }
@@ -233,7 +233,7 @@ function onclick__projects(){
         })
         .then(function() {
             ctn__loading__home.classList.remove('open__load');
-            projects.href="detail";
+            projects.href="login";
             projects.click();
         })
 }
@@ -278,6 +278,7 @@ window.scroll({
   document.querySelector('.hello').scrollIntoView({ 
     behavior: 'smooth' 
   });
+
 
   
   
