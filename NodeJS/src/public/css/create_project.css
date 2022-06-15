@@ -348,7 +348,19 @@ header .nav_mobile {
     border-radius: 10px;
 }
 
+@keyframes increase_percent {
+  0% {
+    width: 0%;
+  }
+  100%{
+    width: 78%;
+  }
+}
+
 .complete_figures .complete{
+    animation-name: increase_percent;
+    animation-duration: 2s;
+    
     width: 78%;
     height: 100%;
     background-color: #05ce78;
