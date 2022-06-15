@@ -39,8 +39,29 @@ function set_all() {
     })
 }
 
+
+
+//----------------trans_nav_bar------------------
+const ctn_about_me = document.querySelector('.ctn_about_me');
+const ctn_my_project = document.querySelector('.ctn_my_project');
+const ctn_favorite_project = document.querySelector('.ctn_favorite_project');
+
+
+function set_nav_bar_close() {
+    Object.assign(ctn_about_me.style , {
+        display : 'none',
+    })
+    Object.assign(ctn_my_project.style , {
+        display : 'none',
+    })
+    Object.assign(ctn_favorite_project.style , {
+        display : 'none',
+    })
+}
+
 function trans_user() {
     set_all();
+    set_nav_bar_close();
     Object.assign(user_i.style , {
         borderRadius: '50% 0 0 50%',
         backgroundColor: '#a28ce6',
@@ -50,10 +71,14 @@ function trans_user() {
         opacity: '1',
         color: 'white',
     })
+    Object.assign(ctn_about_me.style , {
+        display : 'flex',
+    })
 }
 
 function trans_my_project() {
     set_all();
+    set_nav_bar_close();
     Object.assign(my_project_i.style , {
         borderRadius: '50% 0 0 50%',
         backgroundColor: '#5766dc',
@@ -63,10 +88,14 @@ function trans_my_project() {
         opacity: '1',
         color: 'white',
     })
+    Object.assign(ctn_my_project.style , {
+        display : 'flex',
+    })
 }
 
 function trans_prj_favorite() {
     set_all();
+    set_nav_bar_close();
     Object.assign(prj_favorite_i.style , {
         borderRadius: '50% 0 0 50%',
         backgroundColor: '#dc5788',
@@ -76,10 +105,10 @@ function trans_prj_favorite() {
         opacity: '1',
         color: 'white',
     })
+    Object.assign(ctn_favorite_project.style , {
+        display : 'flex',
+    })
 }
-
-
-
 
 
 

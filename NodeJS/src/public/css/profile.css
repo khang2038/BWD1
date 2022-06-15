@@ -70,7 +70,7 @@ header{
   width: 100%;
   height: 60px;
   box-shadow:0 1px 5px 2px var(--shadow-header-color);
-  position:fixed;
+  position: fixed;
   top:0;
   background-color:var(--header-color);
   z-index: 2;
@@ -312,7 +312,7 @@ header .nav_mobile {
 .content_profile .right_content{
     width: 70%;
     /* background-color: rgb(209, 201, 201); */
-    height: 1000px;
+    /* height: 1000px; */
     margin-top: 60px;
 }
 
@@ -408,7 +408,7 @@ header .nav_mobile {
 .my_project .tooltip:before,
 .my_project:hover i,
 .my_project .tooltip {
-	background-color: #5766dc;
+	  background-color: #5766dc;
     color: white;
 }
 
@@ -420,7 +420,7 @@ header .nav_mobile {
 .prj_favorite:hover i,
 .prj_favorite .tooltip {
 	background-color: #dc5788;
-    color: white;
+  color: white;
 }
 
 .prj_favorite:hover i{
@@ -438,17 +438,70 @@ header .nav_mobile {
     width: 200px;
 }
 
+.wrapper .user span {
+  opacity: 1;
+  color: white;
+}
+
+.wrapper .user i{
+  background-color: #a28ce6;
+  color: white;
+  border-radius: 50% 0 0 50%;
+}
+
+/*--------------ctn about me -----------------*/
+
+.right_content .nav_bar_profile{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.nav_bar_profile .ctn_about_me {
+  width: 95%;
+  margin: 20px;
+  border-radius: 50px;
+  background-color: #eff0fa;
+  display: flex;
+  flex-direction: row;
+}
+
+.nav_bar_profile .ctn_about_me .info_user{
+  width: 60%;
+  height: 470px;
+}
+
+.nav_bar_profile .ctn_about_me .img_user{
+  width: 40%;
+  background-color: #cac6c6;
+  display: flex;
+  align-items: center;
+}
+
+/*--------------ctn_my_project -----------------*/
+
+.ctn_my_project {
+  display: none;
+
+}
 
 
 
+/*--------------ctn_favorite_project -----------------*/
+
+.ctn_favorite_project {
+  display: none;
+
+}
 
 
 
-
-
-
-
-
+/*--------------trans nav bar------------------*/
+.ctn_about_me.open,
+.ctn_my_project.open,
+.ctn_favorite_project.open {
+  display: flex;
+}
 
 
 
