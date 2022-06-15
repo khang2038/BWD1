@@ -580,6 +580,7 @@ ul li:hover span{
   display: none;
   flex-direction: row;
   justify-content: space-between;
+  height: 1000px;
 }
 
 

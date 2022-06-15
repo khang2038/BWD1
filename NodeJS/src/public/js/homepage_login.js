@@ -9,14 +9,29 @@ $(document).ready(function(){
         var body=$('html,body').scrollTop();
         var width_screen = window.innerWidth;
         console.log(width_screen);
-
         console.log(body);
-        if (body>=100 && body<900 && width_screen>739) {
-            $('.our_impact h1').addClass('animate__animated animate__bounceInUp');
-            $('.our_impact .card').addClass('animate__animated animate__bounceInUp');
-        } else if (body>=900 && body<1254 && width_screen>739) {
-            $('.reason_title').addClass('animate__animated animate__bounceInUp');
-            $('.info_item-1').addClass('animate__animated animate__bounceInUp');
+        if (body>=100 && body<200 && width_screen>739) {
+            
+        }
+        else if (body>400 && body<900) {
+            Object.assign(document.querySelector('.our_impact').style , {
+                display : 'initial',    
+            })
+            Object.assign(document.querySelector('.space_1').style , {
+                display : 'none',    
+            })
+            $('.our_impact h1').addClass('animate__animated animate__fadeInUp');
+            $('.our_impact .card').addClass('animate__animated animate__fadeInUp');
+        }
+        else if (body>=1100 && body<1254 && width_screen>739) {
+            Object.assign(document.querySelector('.reason_use').style , {
+                display : 'initial',    
+            })
+            Object.assign(document.querySelector('.space_2').style , {
+                display : 'none',    
+            })
+            $('.reason_title').addClass('animate__animated animate__fadeInUp');
+            $('.info_item-1').addClass('animate__animated animate__fadeInUp');
         } else if (body>=1254 && body<1866 && width_screen>739) {
             $('.info_item-2').addClass('animate__animated animate__bounceInUp');
             
@@ -24,6 +39,7 @@ $(document).ready(function(){
             // $('.highlights .title').addClass('animate__animated animate__bounceInUp');
             // $('.highlights .card_project').addClass('animate__animated animate__bounceInUp');
         }
+        
     });
 })
 
