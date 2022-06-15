@@ -121,9 +121,37 @@ function handle_user() {
     
 }
 
+// ----------open and close card project--------------
+const card_1 = document.querySelector('.card_1');
+const card_2 = document.querySelector('.card_2');
+const card_3 = document.querySelector('.card_3');
 
 
+function close_card() {
+    card_1.classList.remove('open');
+    card_2.classList.remove('open');
+    card_3.classList.remove('open');
+}
 
+function open_card_1() {
+    close_card();
+    card_1.classList.add('open');
+    $('.card_1').addClass('animate__animated animate__slideInRight');
+
+}
+function open_card_2() {
+    close_card();
+    card_2.classList.add('open');
+    $('.card_2').addClass('animate__animated animate__slideInRight');
+
+
+}
+function open_card_3() {
+    close_card();
+    card_3.classList.add('open');
+    $('.card_3').addClass('animate__animated animate__slideInRight');
+
+}
 
 
 
