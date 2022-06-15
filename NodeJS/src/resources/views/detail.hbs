@@ -14,9 +14,26 @@
                 <a id="product" class="fa-solid fa-earth-americas icon 2"></a>
                 <a id="projects" class="fa-solid fa-circle-dollar-to-slot icon 3" style="font-size: 28px;"></a>
             </div>
-            <div class="the_right_nav">
+             <div class="the_right_nav" onclick=handle_user()>
                 <img id="img_login" src="{{users.img_author}}" alt="">
                 <p>{{users.name_author}}</p>
+                <ul class="user-drop">
+                        <i class="fa-solid fa-xmark project_close " onclick=handle_user()> </i>
+                        <div class="menu_drop">
+                            <li>
+                               <a href="/profile"> Profile </a> 
+                            </li>
+                            <li>
+                                 <a href="#"> Statistic </a> 
+                            </li>
+                            <li>
+                                <a href="/post_project_created"> Add new project </a>
+                            </li>
+                             <li>
+                                <a href="home"> Logout </a>
+                            </li>
+                        </div> 
+                    </ul>  
             </div>
         </div>     
         <div class="mobile_nav">
