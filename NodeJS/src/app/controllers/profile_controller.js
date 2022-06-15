@@ -8,7 +8,7 @@ class post_project_created_controller{
         res.render('profile/profile', {
             title : 'profile',
             style : 'profile.css',
-            
+            users:req.user
         });
     }
 

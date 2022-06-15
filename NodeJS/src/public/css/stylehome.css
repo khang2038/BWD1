@@ -190,6 +190,26 @@ header{
 .the_right_nav p{
    font-size:14px;
 }
+.drop-bars-btn{
+  position: absolute;
+  top:20px;
+  right: 20px;
+   font-size:18px;
+   font-weight:25px;
+   cursor: pointer;
+}
+a{
+  text-decoration: none;
+  color: var(--text-the_left_page-color);
+}
+.project_close{
+    font-size: 1.3rem;
+    color:#666;
+    position: absolute;
+    top: 3px;
+    right: 10px;
+    cursor: pointer;
+}
 /*----------RESPONSIVE__Mobile------------*/
 
 header .nav_mobile {
