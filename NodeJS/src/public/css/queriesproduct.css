@@ -76,9 +76,18 @@
     hr{
         margin-top:-10px;
     }
+    .the_right_nav{
+      margin-top:5px;
+    }
+}
+@media only screen and (max-width:1018px){
+   .Project img{
+         margin-right:7px;
+         margin-top:3%;
+    }
 }   
 /* small phones to small tablets */
-@media only screen and (max-width:768px){
+@media only screen and (max-width:852px){
          .the_left_page{
             display: none;
         }
@@ -88,7 +97,7 @@
         
          .center_page{
              width: 100%;
-             margin-top: 21%;
+             margin-top: 15%;
              margin-left: 0;
          }
          .Infor{
@@ -150,7 +159,7 @@
            margin-right: 10%;
         }
         .navduoi{
-            margin-top: 10%;
+            margin-top: 5%;
         }
         .logo{
             position:absolute;
@@ -275,6 +284,27 @@
         width: 72%;
         font-size: 12px;
         text-align: justify;
+      }
+}
+@media only screen and (max-width:710px){
+     .center_page{
+             width: 100%;
+             margin-top: 19%;
+             margin-left: 0;
+         }
+      .navduoi{
+        margin-top: 7%;
+      }
+}
+@media only screen and (max-width:600px){
+     .center_page{
+             width: 100%;
+             margin-top: 23%;
+             margin-left: 0;
+         }
+      .navduoi{
+        margin-top: 9%;
+        margin-right: 3%;
       }
 }
 /*small phone fromm 0 to 480px */
