@@ -637,7 +637,7 @@ header .nav_mobile {
   display: none;
   flex-direction: row;
   justify-content: space-between;
-  height: 1000px;
+  flex-direction: column;
 }
 
 .ctn_my_project .total_projects{
@@ -742,6 +742,14 @@ header .nav_mobile {
 .num_count_project li:hover{
   background-color: #afb5e7;
 }
+
+.ctn_my_project .my_project_statistic{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+
 /*--------------ctn_favorite_project -----------------*/
 
 .ctn_favorite_project {
@@ -759,7 +767,7 @@ header .nav_mobile {
 }
 
 
-
+/*--------------*/
 
 
 

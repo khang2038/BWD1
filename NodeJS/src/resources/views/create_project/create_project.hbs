@@ -21,7 +21,7 @@
                         <i class="fa-solid fa-xmark project_close " onclick=handle_user()> </i>
                         <div class="menu_drop">
                             <li>
-                               <a href="#"> Profile </a> 
+                               <a href="/profile"> Profile </a> 
                             </li>
                             <li>
                                  <a href="#"> Statistic </a> 
@@ -115,7 +115,7 @@
                     </div>
                 </div>
                 <div class="percent_complete">
-                    <span>0</span> % of $238,374
+                    <span>0</span> % of ${{project.title_money_pledged}}
                 </div>
                 <div class="form_donate">
                     <button class="support_this">
@@ -145,8 +145,8 @@
             <div class="comments" onclick=open_comments()>
                 Comments
             </div>
-            <div class="community">
-                Community
+            <div class="statistic" onclick=open_statistic()>
+                Statistic
             </div>
         </div>
         <div class="body_detail_prj">
@@ -259,8 +259,13 @@
                     </div>
                 </div>
 
-                <div class="block_community">
-
+                <div class="block_statistic">
+                    <div class="line_statistic">
+                        <h2 style="margin: 20px 0;"><i class="fa-solid fa-sun" style="margin: 0 10px;"></i> INTERACTIVE</h2>
+                        <div style="width: 100%;">
+                            <canvas id="myChart"></canvas>
+                        </div>
+                    </div>  
                 </div>
 
                 <div class="block_end">

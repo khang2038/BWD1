@@ -153,6 +153,44 @@ function open_card_3() {
 
 }
 
+//---------------statistic all prj of user
 
+const labels = [
+    'GAME',
+    'ART',
+    'SOCIETY',
+    'MUSIC',
+    'SPORT',
+    'OTHER',
+];
+
+const data = {
+    labels: labels,
+    datasets: [{
+        label: 'My First dataset',
+        backgroundColor: [
+            '#6699FF',
+            '#CC66FF',
+            '#009900',  
+            '#EEB4B4',
+            '#CD853F',
+            '#CDCDB4',
+        ],
+        borderColor: 'rgb(255, 99, 132)',
+        data: [1 , 1, 2, 1, 2,0],
+    }]
+};
+
+
+const config = {
+    type: 'pie',
+    data: data,
+    options: {}
+};
+
+const myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+);
 
 

@@ -432,7 +432,7 @@ header .nav_mobile {
 .header_detail_prj .story,
 .header_detail_prj .FAQ,
 .header_detail_prj .comments,
-.header_detail_prj .community{
+.header_detail_prj .statistic{
     color:#242526;
     padding: 20px 30px;
     margin: 0 30px;
@@ -441,7 +441,7 @@ header .nav_mobile {
 .header_detail_prj .story:hover,
 .header_detail_prj .FAQ:hover,
 .header_detail_prj .comments:hover,
-.header_detail_prj .community:hover{
+.header_detail_prj .statistic:hover{
     cursor: pointer;
 
     
@@ -683,12 +683,13 @@ a{
 /*-----------trans_header-------------*/
 .block_story.open,
 .block_FAQ.open,
-.block_comments.open,
-.block_community.open{
+.block_comments.open{
   display: block;
 }
 
-
+.block_statistic.open{
+  display: flex;
+}
 
 
 /*-----------block_end----------------*/
@@ -700,6 +701,33 @@ a{
   margin: 100px auto 50px auto;
   border: 2px solid #8f8989;
 }
+
+/*-----------block_statistic-----------*/
+
+.block_statistic {
+  width: 100%;
+  display: none;
+  justify-content: center;
+}
+
+.block_statistic .line_statistic{
+  width: 80%;
+  /* background-color: #99ddc5; */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

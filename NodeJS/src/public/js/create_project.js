@@ -64,36 +64,33 @@ $(document).ready(function(){
 let block_story = document.querySelector('.block_story');
 let block_FAQ = document.querySelector('.block_FAQ');
 let block_comments = document.querySelector('.block_comments');
-let block_community = document.querySelector('.block_community');
+let block_statistic = document.querySelector('.block_statistic');
+
+function close_all_block() {
+    block_FAQ.classList.remove('open');
+    block_story.classList.remove('open');
+    block_comments.classList.remove('open');
+    block_statistic.classList.remove('open');
+}
 
 function open_story() {
-    if (block_FAQ.classList.contains('open')) {
-        block_FAQ.classList.remove('open');
-    }
-    if (block_comments.classList.contains('open')) {
-        block_comments.classList.remove('open');
-    }
+    close_all_block();
     block_story.classList.add('open');
 }
 
 function open_FAQ() {
-    if (block_story.classList.contains('open')) {
-        block_story.classList.remove('open');
-    }
-    if (block_comments.classList.contains('open')) {
-        block_comments.classList.remove('open');
-    }
+    close_all_block();
     block_FAQ.classList.add('open');
 }
 
 function open_comments() {
-    if (block_FAQ.classList.contains('open')) {
-        block_FAQ.classList.remove('open');
-    }
-    if (block_story.classList.contains('open')) {
-        block_story.classList.remove('open');
-    }
+    close_all_block();
     block_comments.classList.add('open');
+}
+
+function open_statistic() {
+    close_all_block();
+    block_statistic.classList.add('open');
 }
 
 //money increase
@@ -132,7 +129,39 @@ counterUp(total_backers, 1682);
 counterUp(percent, 78);
 
 
+//------------statistic bieu do---------------
+const labels = [
+    '17/06',
+    '18/06',
+    '19/06',
+    '20/06',
+    '21/06',
+    '22/06',
+    '23/06',
+    '24/06',
+    '25/06',
+];
 
+const data = {
+    labels: labels,
+    datasets: [{
+        label: 'Interaction of the day',
+        backgroundColor: 'rgb(255, 99, 132)',
+        borderColor: 'rgb(255, 99, 132)',
+        data: [2, 9, 5, 2, 16, 24,20,25,26],
+    }]
+};
+
+const config = {
+    type: 'line',
+    data: data,
+    options: {}
+};
+
+const myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+);
 
 
 
