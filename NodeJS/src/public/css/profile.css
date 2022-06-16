@@ -527,16 +527,37 @@ header .nav_mobile {
 .nav_bar_profile .ctn_about_me .info_user{
   width: 60%;
   height: 470px;
+
+
 }
+
+.infor {
+  display: flex;
+  justify-content: center;
+}
+
+.infor td{
+  /* display: flex; */
+  /* padding:0 15px; */
+  padding: 20px 50px 0 0;
+}
+
+.label i:hover {
+  cursor: pointer;
+}
+
+.edit button{
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+}
+
 
 .nav_bar_profile .ctn_about_me .project_demo_user{
   width: 35%;
-  /* background-color: #cac6c6; */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* margin-top: 100px; */
 }
 
 /*-------project_demo_user-------------*/
