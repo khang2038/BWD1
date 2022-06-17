@@ -4,6 +4,7 @@
 -trang 2
 -tym , bình luận ,botchat
 -light/dark mode 
+-search
 -Post bài đăng
 -My project -> update -> delete
 -demo từng lĩnh vực :Game ,App ,AI
@@ -13,6 +14,7 @@
 -demo từng lĩnh vực :Game ,App ,AI trong thanh nav
 -demo 2 project :bed ,mood
 -giới thiệu cách tạo 1 project (overview , FAQ , story)
--sẵn project để post (prj cổ phục,khang tự giới thiệu dự án)
+-sẵn project để post (prj cổ phục,khang tự giới thiệu dự án) 
 -trang profile 
--logout
+-responsive
+-logout 
