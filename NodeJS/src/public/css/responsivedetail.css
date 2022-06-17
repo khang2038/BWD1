@@ -9,6 +9,11 @@
          margin-top:3%;
     }
 }
+@media only screen and (max-width:710px){
+      .navduoi{
+        margin-top: 7%;
+      }
+}
 @media only screen and (max-width : 46.1875em){
     html{
         font-size:16px;
