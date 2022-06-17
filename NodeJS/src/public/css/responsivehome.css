@@ -1,8 +1,23 @@
 
+@media screen and (max-width : 956px) {
+     .introduce__web img{
+        display: none;
+    }
 
+    .form_card p{
+        margin-bottom:70%;
+    }
+    .form_card h1{
+        font-size:28px;
+    }
+    .reason_use .reason_title pre{
+        margin: 0 15% 20px 0;
+    }
+
+}
 /*------mobile-----------*/
 
-@media screen and (max-width : 78.6em) {
+@media screen and (max-width : 835px) {
     /*---------body-----------*/
     .background_img {
         display: none;
