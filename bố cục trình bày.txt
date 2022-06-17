@@ -1,0 +1,17 @@
+-trang 1 
+-login
+
+-trang 2
+-tym , bình luận ,botchat
+-light/dark mode 
+-Post bài đăng
+-My project -> update -> delete
+-demo từng lĩnh vực :Game ,App ,AI
+
+-trang3
+-botchat
+-demo từng lĩnh vực :Game ,App ,AI trong thanh nav
+-demo 2 project :bed ,mood
+-giới thiệu cách tạo 1 project (overview , FAQ , story)
+-sẵn project để post (prj cổ phục,khang tự giới thiệu dự án)
+-trang profile 

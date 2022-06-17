@@ -152,9 +152,25 @@ const data = {
     }]
 };
 
+const data2 = {
+    labels: labels,
+    datasets: [{
+        label: 'Cash flow the day',
+        backgroundColor: '#0099FF',
+        borderColor: '#0099FF',
+        data: [2, 4, 5, 8, 10, 6, 10, 12, 26],
+    }]
+};
+
 const config = {
     type: 'line',
     data: data,
+    options: {}
+};
+
+const config2 = {
+    type: 'line',
+    data: data2,
     options: {}
 };
 
@@ -163,7 +179,10 @@ const myChart = new Chart(
     config
 );
 
-
+const myChart_2 = new Chart(
+    document.getElementById('myChart_2'),
+    config2
+);
 
 
 

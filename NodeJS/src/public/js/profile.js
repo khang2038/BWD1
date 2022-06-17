@@ -3,7 +3,6 @@ const user = document.querySelector('.wrapper .user');
 const user_i = document.querySelector('.wrapper .user i');
 const user_span = document.querySelector('.wrapper .user span');
 
-
 const my_project = document.querySelector('.wrapper .my_project');
 const my_project_i = document.querySelector('.wrapper .my_project i');
 const my_project_span = document.querySelector('.wrapper .my_project span');
