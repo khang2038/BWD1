@@ -39,7 +39,7 @@ class post_project_created_controller{
         res.render('create_project/post_project_created', {
             title : 'create_project',
             style : 'post_project_created.css',
-            
+            users: req.user
         });
     }
 
