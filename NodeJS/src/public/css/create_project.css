@@ -315,7 +315,7 @@ header .nav_mobile {
 /*---------ctn_statistic----------*/
 
 .ctn_statistic {
-    border-top: 5px solid #34ca96;
+    border-top: 5px solid #427fb8;
 }
 
 .ctn_statistic .ctn_pledged_backers{
@@ -330,7 +330,7 @@ header .nav_mobile {
     width: 50%;
     font-size: 30px;
     padding: 20px 0;
-    color: #05ce78;
+    color: #427fb8;
 }
 
 .ctn_pledged_backers .backers .title,
@@ -363,7 +363,7 @@ header .nav_mobile {
     
     width: 78%;
     height: 100%;
-    background-color: #05ce78;
+    background-color: #55a1e9;
 }
 
 .main_prj_content .percent_complete{
@@ -378,7 +378,7 @@ header .nav_mobile {
 }
 
 .ctn_main_prj .form_donate .support_this{
-    background-color: #028858;
+    background-color: #336491;
     font-size: 15px;
     color: white;
     border: none;
@@ -388,7 +388,7 @@ header .nav_mobile {
 }
 
 .ctn_main_prj .form_donate .follow{
-    background-color: #028858;
+    background-color: #336491;
     color: white;
     font-size: 15px;
     border: none;
