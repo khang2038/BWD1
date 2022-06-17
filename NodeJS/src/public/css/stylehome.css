@@ -160,12 +160,22 @@ header{
    margin-right: 10px;
 }
 .the_right_nav p{
-   font-size:14px;
+   font-size:16px;
 }
+
+.the_right_nav:hover{
+  cursor: pointer;
+}
+
  .open1{
     opacity: 1;
     width: 180px;
-     height: 230px;
+    height: 230px;
+  }
+
+  .open1 i {
+    font-size: 20px;
+    padding: 3px;
   }
  
 

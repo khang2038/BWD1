@@ -24,7 +24,9 @@
             </div>
             <div class="the_right_nav" onclick=handle_user()>
                 <img id="img_login" src="{{users.img_author}}" alt="">
-                <p>{{users.name_author}}</p>
+                <p>{{users.name_author}} 
+                    <i class="fa-solid fa-sort-down icon"></i>
+                </p>
                 <ul class="user-drop">
                         <i class="fa-solid fa-xmark project_close " onclick=handle_user()> </i>
                         <div class="menu_drop">
@@ -202,7 +204,7 @@
                  <!--comment-->
                 <div class="ctn_comment" style="height: 100px;">
                     <div class="bl__ctn_comment" style="width: 90%;">
-                       <img class="avatar" src="{{users.img_author}}">
+                       <img class="avatar" src="http://localhost:3000/img/imgprofile/sharkhung.png">
                         
                         </img>
                         <input type="text" placeholder="Viết bình luận ... ">
