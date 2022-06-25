@@ -1,10 +1,11 @@
 import { useDispatch } from 'react-redux';
+import Home from './pages/Home';
 
 import * as actions from './redux/actions';
 
 function App() {
 
-  return <p>This is blog app</p>
+  return <Home />
 
 }
 
