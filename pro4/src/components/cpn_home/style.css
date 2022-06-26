@@ -454,7 +454,7 @@ header .close:hover i{
 
 .reason_use {
   margin: 100px 0;
-  display : none;
+  display : block;
 }
 /*-----------------reason_title-----------------------*/
 .reason_use .reason_title {
@@ -477,7 +477,7 @@ header .close:hover i{
   padding: 20px 0;
 }
 
-.reason_use .reason_title pre{
+.reason_use .reason_title p{
   margin: 0 20%;
   text-align: left;
   font-size: 22px;
@@ -485,6 +485,7 @@ header .close:hover i{
 
 /*-----------------info_item-----------------------*/
 .info_item-1 {
+  background-color: white;
   padding: 2% 3%;
   margin: 0 10% 180px 10%;
   display: flex;
@@ -514,6 +515,7 @@ header .close:hover i{
 }
 
 .info_item-2 {
+  background-color: white;
   padding: 2% 3%;
   margin: 0 10% 180px 10%;
   display: flex;
@@ -560,6 +562,7 @@ header .close:hover i{
 }
 
 .card_project .form_card_project {
+  background-color: white;
   width: 23%;
   text-align: left;
   box-sizing: unset;
@@ -647,6 +650,7 @@ header .close:hover i{
 }
 
 .card_project-1 .form_card_project-1 {
+  background-color: white;
   width: 23%;
   text-align: left;
   box-sizing: unset;
@@ -701,6 +705,7 @@ header .close:hover i{
 .modal_3 ,
 .modal_2 ,
 .modal_1 {
+  overflow: scroll;
   display: none;
   position: fixed;
   top: 12%;
@@ -753,6 +758,15 @@ header .close:hover i{
   cursor: pointer;
 }
 
+
+.content_info_img_p{
+  font-weight: bold;
+  padding: 10px 0px;
+}
+
+.modal_4_btn_a {
+  text-decoration: none;
+}
 /*---------content----------*/
 
 .content {
@@ -775,6 +789,7 @@ header .close:hover i{
 }
 
 .content .info_content h2{
+  width: 100%;
   color: #028858;
   width: 100%;
 }
