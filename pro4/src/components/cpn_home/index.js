@@ -1,6 +1,8 @@
 import React from 'react';
 import './style.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import pro4 from '../../public/img/imghome/z3376126787751_61175d6aeb38e9828c719e0993ef2f15.jpg';
+
 
 export default function Cpn_home() {   
     return (   
@@ -68,10 +70,10 @@ export default function Cpn_home() {
                         <h1 class="content__title">
                             Welcome to PRO4
                         </h1>
-                        <pre>
+                        <p>
             A place to call for crowdfunding 
-            promote potential and creativity projects
-                        </pre>
+            promote potential and creativity projects 
+                        </p>
                         <div class="btn">
 
                             <button>GO TO FUNDRAISE</button>
@@ -79,7 +81,7 @@ export default function Cpn_home() {
                     </div>
             
                     <div class="ctn__image">
-                        <img src="img/imghome/z3376126787751_61175d6aeb38e9828c719e0993ef2f15.jpg" alt=""/>
+                        <img src={pro4} alt=""/>
                     </div>
                 </div>
 
@@ -95,12 +97,42 @@ export default function Cpn_home() {
                         </p>
                     </div>
                 </div>
-                <div class="space_1">
+                {/* <div class="space_1">
                     
-                </div>
+                </div> */}
             {/* DONE_RES_MOBILE */}
 
+            <div class="our_impact">
+                <h1>Our Impact</h1>
+                <div class="card">
+                    <div class="form_card">
+                        <img src="img/imghome/project_fund.webp" alt=""/>
+                        <h1>125</h1>
+                        <p>Projects funded</p>
+                    </div>
+                    <div class="form_card">
+                        <img src="img/imghome/money.webp" alt=""/>
+                        <h1>$1,170,203</h1>
+                        <p>Total amount invested</p>
+                    </div>
+                    <div class="form_card">
+                        <img src="img/imghome/supporter.webp" alt=""/>
+                        <h1>21080</h1>
+                        <p>Number of supporters</p>
+                    </div>
+                </div>
+            </div>
+
+            {/* <div class="space_2">
+                
+            </div> */}
+
             
+            
+
+
+
+
         </div>
             
             
