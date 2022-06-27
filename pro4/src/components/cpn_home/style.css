@@ -630,7 +630,7 @@ header .close:hover i{
   left : 3%;
   top : 55%;
   background-color: #f1ebeb;
-  padding: 20px 5px;
+  padding: 20px 10px;
 }
 
 .highlights .aft_card {
@@ -638,7 +638,7 @@ header .close:hover i{
   right: 3%;
   top : 55%;
   background-color: #f1ebeb;
-  padding: 20px 5px;
+  padding: 20px 10px;
 }
 
 /*-----------card-project-1--------------------*/

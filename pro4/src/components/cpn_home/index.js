@@ -1,6 +1,7 @@
 import React from 'react';
 import './style.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+
 import pro4 from '~/public/img/imghome/z3376126787751_61175d6aeb38e9828c719e0993ef2f15.jpg';
 import project_fund from '~/public/img/imghome/project_fund.webp';
 import money from '~/public/img/imghome/money.webp';
@@ -28,10 +29,10 @@ function Highlights() {
 
     return <div class="highlights">
         <h1 class="title">Featured projects</h1>
-        <i class="pre_card ti-angle-left" onclick>
-
+        <i class="pre_card fa-solid fa-angle-left" onclick>
+            
         </i>
-        <i class="aft_card ti-angle-right" onclick>
+        <i class="aft_card fa-solid fa-angle-right" onclick>
 
         </i>
         <div class="card_project">
