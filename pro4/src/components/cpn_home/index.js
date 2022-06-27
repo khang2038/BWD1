@@ -13,9 +13,19 @@ import project3 from '~/public/img/imghome/project3.avif';
 import project4 from '~/public/img/imghome/project4.avif';
 import project5 from '~/public/img/imghome/project5.avif';
 import project6 from '~/public/img/imghome/project6.avif';
+// import '../../public/js/homepage.js';
+
+let modal_1=document.querySelector('.modal_1');
+
+function open_prj_1() {
+    console.log(2);
+    modal_1.current.classList.add('open');
+}
 
 
 function Highlights() {
+    
+
     return <div class="highlights">
         <h1 class="title">Featured projects</h1>
         <i class="pre_card ti-angle-left" onclick>
@@ -25,7 +35,7 @@ function Highlights() {
 
         </i>
         <div class="card_project">
-            <div class="form_card_project" onclick>
+            <div class="form_card_project" onClick={open_prj_1}>
                 <div>
                     <img src={project4} alt=""/>
                 </div>
