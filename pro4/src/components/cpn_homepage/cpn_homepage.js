@@ -1,5 +1,6 @@
+
 import React from 'react';
-import './style.css';
+import './style_homepage.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import $ from 'jquery';
 import 'animate.css';
@@ -401,7 +402,7 @@ function Highlights() {
     </div>
 }
 
-export default function Cpn_home() {   
+export default function Cpn_homepage() {   
     return (   
         <div>   
             <div class="introduce__web">

@@ -464,25 +464,87 @@ hr {
     text-decoration: none;
 }
 
-.form .form_1-2 .bl1{
-    background-image: url(../../public/img/imgdetail/feature_prj_2.avif);
-    background-repeat: no-repeat;
+/*pp_featured*/
+
+.pp_featured .form_1-2 .bl1{
+  background-image: url(../../public/img/imgdetail/feature_prj_2.avif);
+  background-repeat: no-repeat;
+  
 }
 
-.form .form_1-2 .bl2{
-    background-image: url(../../public/img/imgdetail/feature_prj_1.avif);
-    background-repeat: no-repeat;
+.pp_featured .form_1-2 .bl2{
+  background-image: url(../../public/img/imgdetail/feature_prj_1.avif);
+  background-repeat: no-repeat;
 }
 
-.form .form_1-2 .bl3{
-    background-image: url(../../public/img/imgdetail/feature_prj_3.avif);
-    background-repeat: no-repeat;
+.pp_featured .form_1-2 .bl3{
+  background-image: url(../../public/img/imgdetail/feature_prj_3.avif);
+  background-repeat: no-repeat;
 }
 
-.form .form_1-2 .bl4{
-    background-image: url(../../public/img/imgdetail/feature_prj_4.avif);
-    background-repeat: no-repeat;
+.pp_featured .form_1-2 .bl4{
+  background-image: url(../../public/img/imgdetail/feature_prj_4.avif);
+  background-repeat: no-repeat;
 }
+/*pp_art*/
+
+.pp_art .form_1-2 .bl1{
+  background-image: url(../../public/img/imgdetail/art2.avif);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.pp_art .form_1-2 .bl2{
+  background-image: url(../../public/img/imgdetail/art3.jpg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+
+}
+
+.pp_art .form_1-2 .bl3{
+  background-image: url(../../public/img/imgdetail/art4.avif);
+  background-repeat: no-repeat;
+  background-size: 100%;
+
+}
+
+.pp_art .form_1-2 .bl4{
+  background-image: url(../../public/img/imgdetail/art5.avif);
+  background-repeat: no-repeat;
+  background-size: 100%;
+
+}
+/*pp_game*/
+
+.pp_game .form_1-2 .bl1{
+  background-image: url(../../public/img/imgdetail/game2.avif);
+  background-repeat: no-repeat;
+  background-size: 100%;
+
+}
+
+.pp_game .form_1-2 .bl2{
+  background-image: url(../../public/img/imgdetail/game3.avif);
+  background-repeat: no-repeat;
+  background-size: 100%;
+
+}
+
+.pp_game .form_1-2 .bl3{
+  background-image: url(../../public/img/imgdetail/game4.avif);
+  background-repeat: no-repeat;
+  background-size: 100%;
+
+}
+
+.pp_game .form_1-2 .bl4{
+  background-image: url(../../public/img/imgdetail/game5.avif);
+  background-repeat: no-repeat;
+  background-size: 100%;
+
+}
+
+/*------------------------------------------------------------*/
 
 .form .form_1-2 .form_bl .title{
   position: absolute;
@@ -657,6 +719,14 @@ hr {
   background-color: #eaecef;
 }
 
+.bars i{
+  background-color: #eaecef;
+}
+
+.title span {
+  font-size: smaller;
+  margin-top: 50px;
+}
 
 
 /* boxchat */

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './style_header.css';
 
 export default function Cpn_header() {
@@ -14,9 +15,9 @@ export default function Cpn_header() {
             </div> 
             </div>
             <div class="the_center_nav">
-                <a id="homepage" class="fa-solid fa-house icon 1"></a>
-                <a id="product" class="fa-solid fa-earth-americas icon 2"></a>
-                <a id="projects" class="fa-solid fa-circle-dollar-to-slot icon 3"></a>
+                <Link id="homepage" class="fa-solid fa-house icon 1" to='/homepage'></Link>
+                <Link id="product" class="fa-solid fa-earth-americas icon 2" to='/product'></Link>
+                <Link id="projects" class="fa-solid fa-circle-dollar-to-slot icon 3" to='/details'></Link>
             </div>
              <div class="the_right_nav" onclick>
                 <img id="img_login" src="{{users.img_author}}" alt=""/>
