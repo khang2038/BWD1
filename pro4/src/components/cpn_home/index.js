@@ -1,7 +1,8 @@
 import React from 'react';
 import './style.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-
+import $ from 'jquery';
+import 'animate.css';
 import pro4 from '~/public/img/imghome/z3376126787751_61175d6aeb38e9828c719e0993ef2f15.jpg';
 import project_fund from '~/public/img/imghome/project_fund.webp';
 import money from '~/public/img/imghome/money.webp';
@@ -14,25 +15,156 @@ import project3 from '~/public/img/imghome/project3.avif';
 import project4 from '~/public/img/imghome/project4.avif';
 import project5 from '~/public/img/imghome/project5.avif';
 import project6 from '~/public/img/imghome/project6.avif';
-// import '../../public/js/homepage.js';
+import '../../public/js/homepage.js';
 
-let modal_1=document.querySelector('.modal_1');
 
+//trans_pre_aft_modal_card
+//promise
+function sleep(s){
+    return new Promise(function(resolve) {
+        setTimeout(resolve,s)
+    })
+}
+
+function trans_pre_card() {
+    let card_project = document.querySelector('.card_project');
+    let form_card_project = document.querySelectorAll('.card_project .form_card_project');
+    let card_project_1 = document.querySelector('.card_project-1');
+    // $('.card_project').addClass('animate__animated animate__backOutLeft');
+
+    // Object.assign(card_project_1.style ,{
+    //     display : 'none',
+    // })
+
+    // Object.assign(card_project.style ,{
+    //     display : 'flex',
+    // })
+
+    // sleep(0)
+    //     .then(function() {
+    //         $('.card_project_1').addClass('animate__animated animate__bounceOutRight');
+    //         $('.card_project').addClass('animate__animated animate__bounceInLeft');
+            
+    //         return sleep(500);
+    //     })
+    //     .then(function() {
+    //         Object.assign(card_project.style ,{
+    //             display : 'flex',
+    //         })
+        
+    //         Object.assign(card_project_1.style ,{
+    //             display : 'none',
+    //         })
+
+    //         return sleep(0)
+    //     })
+    //     .then(function() {
+    //         $('.card_project_1').removeClass('animate__animated animate__bounceOutRight');
+    //         $('.card_project').removeClass('animate__animated animate__bounceInLeft');
+    //     })
+
+}
+
+// function trans_aft_card() {
+//     let card_project = document.querySelector('.card_project');
+//     let form_card_project = document.querySelectorAll('.card_project .form_card_project');
+//     let card_project_1 = document.querySelector('.card_project-1');
+    
+//     sleep(0)
+//         .then(function() {
+//             $('.card_project').addClass('animate__animated animate__bounceOutLeft');
+//             $('.card_project_1').addClass('animate__animated animate__bounceInRight');
+            
+//             return sleep(500);
+//         })
+//         .then(function() {
+//             Object.assign(card_project.style ,{
+//                 display : 'none',
+//             })
+        
+//             Object.assign(card_project_1.style ,{
+//                 display : 'flex',
+//             })
+
+//             return sleep(0)
+//         })
+//         .then(function() {
+//             $('.card_project').removeClass('animate__animated animate__bounceOutLeft');
+//             $('.card_project_1').removeClass('animate__animated animate__bounceInRight');
+//         })
+// }
+
+//open_close_feature_prj
+//open
 function open_prj_1() {
-    console.log(2);
-    modal_1.current.classList.add('open');
+    let modal_1=document.querySelector('.modal_1');
+    modal_1.classList.add('open');
+}
+
+function open_prj_2() {
+    let modal_2=document.querySelector('.modal_2');
+    modal_2.classList.add('open');
+}
+
+function open_prj_3() {
+    let modal_3=document.querySelector('.modal_3');
+    modal_3.classList.add('open');
+}
+
+function open_prj_4() {
+    let modal_4=document.querySelector('.modal_4');
+    modal_4.classList.add('open');
+}
+
+function open_prj_5() {
+    let modal_5=document.querySelector('.modal_5');
+    modal_5.classList.add('open');
+}
+
+function open_prj_6() {
+    let modal_6=document.querySelector('.modal_6');
+    modal_6.classList.add('open');
+}
+//close
+function close_prj_1() {
+    let modal_1=document.querySelector('.modal_1');
+    modal_1.classList.remove('open');
+}
+
+function close_prj_2() {
+    let modal_2=document.querySelector('.modal_2');
+    modal_2.classList.remove('open');
 }
 
 
-function Highlights() {
-    
+function close_prj_3() {
+    let modal_3=document.querySelector('.modal_3');
+    modal_3.classList.remove('open');
+}
 
+
+function close_prj_4() {
+    let modal_4=document.querySelector('.modal_4');
+    modal_4.classList.remove('open');
+}
+
+function close_prj_5() {
+    let modal_5=document.querySelector('.modal_5');
+    modal_5.classList.remove('open');
+}
+
+function close_prj_6() {
+    let modal_6=document.querySelector('.modal_6');
+    modal_6.classList.remove('open');
+}
+
+function Highlights() {
     return <div class="highlights">
         <h1 class="title">Featured projects</h1>
-        <i class="pre_card fa-solid fa-angle-left" onclick>
+        <i class="pre_card fa-solid fa-angle-left" onClick={trans_pre_card()}>
             
         </i>
-        <i class="aft_card fa-solid fa-angle-right" onclick>
+        <i class="aft_card fa-solid fa-angle-right" onClick>
 
         </i>
         <div class="card_project">
@@ -45,16 +177,15 @@ function Highlights() {
                 <p>A fully assembled, high-quality handmade bookshelf Insert with a Cyberpunk diorama theme. Includes many personalizable addons.</p>
                 
             </div>
-            <div class="form_card_project" onclick >
+            <div class="form_card_project" onClick={open_prj_2} >
                 <div>
-
                     <img src={project5} alt=""/>
                 </div>
                 <h1>Pruto: Mesh Action Sports Communicator with LED Light</h1>
                 <p>For Skiing, Yachting, Cycling and all Sports Players. Have Fun and Stay Connected, Go Adventure Boldly with Pruto!</p>
                 
             </div>
-            <div class="form_card_project" onclick>
+            <div class="form_card_project" onClick={open_prj_3}>
                 <div>
                     <img src={project6} alt=""/>
                 </div>
@@ -67,7 +198,7 @@ function Highlights() {
 
         {/* <!--card-form-2--> */}
         <div class="card_project-1">
-                <div class="form_card_project-1" onclick>
+                <div class="form_card_project-1" onclick={open_prj_4}>
                     <div>
                         <img src={project2} alt=""/>
 
@@ -76,7 +207,7 @@ function Highlights() {
                     <p>A Fine Art Photobook by Rob MacInnis Featuring 15 Years of Farm Animal Portraits</p>
                     
                 </div>
-                <div class="form_card_project-1" onclick>
+                <div class="form_card_project-1" onclick={open_prj_5}>
                     <div>
                         <img src={project3} alt=""/>
 
@@ -86,7 +217,7 @@ function Highlights() {
                     
            
                 </div>
-                <div class="form_card_project-1" onclick>
+                <div class="form_card_project-1" onclick={open_prj_6}>
                     <div>
                         <img src={project1} alt=""/>
 
@@ -99,8 +230,8 @@ function Highlights() {
 
             <div class="modal_1">
                 <div class="exit">
-                    <i class="ti-close">
-                        
+                    <i class="fa-solid fa-circle-xmark" onClick={close_prj_1}>
+
                     </i>
                 </div>
                 <div class="content">
@@ -129,7 +260,7 @@ function Highlights() {
 
 
             <div class="modal_2">
-        <div class="exit" onclick>
+        <div class="exit" onClick={close_prj_2}>
             <i class="ti-close">
 
             </i>
@@ -158,7 +289,7 @@ function Highlights() {
         </div>
 
         <div class="modal_3">
-            <div class="exit" onclick>
+            <div class="exit" onClick={close_prj_3}>
                 <i class="ti-close">
 
                 </i>
@@ -188,7 +319,7 @@ function Highlights() {
         </div>
         
     <div class="modal_4">
-        <div class="exit">
+        <div class="exit" onClick={close_prj_4}>
             <i class="ti-close">
 
             </i>
@@ -216,7 +347,7 @@ function Highlights() {
     </div>
 
     <div class="modal_5">
-        <div class="exit" onclick>
+        <div class="exit" onClick={close_prj_5}>
             <i class="ti-close">
 
             </i>
@@ -244,7 +375,7 @@ function Highlights() {
     </div>
 
     <div class="modal_6">
-        <div class="exit" onclick>
+        <div class="exit" onClick={close_prj_6}>
             <i class="ti-close">
 
             </i>

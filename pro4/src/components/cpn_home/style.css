@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Anek+Tamil&family=Josefin+Sans&family=Patua+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anek+Tamil&family=Josefin+Sans&family=Nunito:ital,wght@0,300;1,200;1,300&family=Patua+One&display=swap');
 
+
 /*---------animate -----------------*/
 .animate__animated.animate__bounceInUp {
   --animate-duration: 2s;
