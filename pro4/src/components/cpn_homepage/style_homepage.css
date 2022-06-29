@@ -734,6 +734,8 @@ header .close:hover i{
 .modal_3 .exit ,
 .modal_2 .exit ,
 .modal_1 .exit {
+  display: flex;
+  justify-content: flex-end;
   width: 100%;
   height: 10%;
 }
@@ -770,50 +772,50 @@ header .close:hover i{
 }
 /*---------content----------*/
 
-.content {
+.content1 {
   width: 100%;
   height: 87%;
   display: flex;
 }
 
-.content .info_img{
+.content1 .info_img{
   width: 40%;
   padding: 30px;
 }
 
-.content .info_img img{
+.content1 .info_img img{
   width: 100%;
 }
 
-.content .info_content{
+.content1 .info_content{
   width: 60%;
 }
 
-.content .info_content h2{
+.content1 .info_content h2{
   width: 100%;
   color: #028858;
   width: 100%;
 }
 
-.content .info_content h2 i{
-  float: right;
-  padding: 0 200px 0 0;
+.content1 .info_content h2 i{
+
+  padding: 0 0 0 25%;
 }
 
-.content .info_content .content_details {
+.content1 .info_content .content_details {
   padding: 20px;
   list-style-type: disc;
 }
 
-.content .info_content .content_details li{
+.content1 .info_content .content_details li{
   padding: 10px;
 }
 
-.content .info_content .content_details h4{
+.content1 .info_content .content_details h4{
   padding: 20px 0 0 0;
 }
 
-.content .info_content button{
+.content1 .info_content button{
   font-size: 30px;
   margin: 0 0 20px 60%;
   padding: 10px;
@@ -821,11 +823,11 @@ header .close:hover i{
   background-color: white;
 }
 
-.content .info_content button a{
+.content1 .info_content button a{
   
 }
 
-.content .info_content button:hover{
+.content1 .info_content button:hover{
   cursor: pointer;
   background-color: rgb(249, 247, 247);
 }
