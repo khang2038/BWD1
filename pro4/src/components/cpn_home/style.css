@@ -169,6 +169,10 @@ header{
    font-size:16px;
 }
 
+.the_right_nav a{
+  text-decoration: none;
+}
+
 .the_right_nav:hover{
   cursor: pointer;
 }
@@ -247,6 +251,21 @@ header .close i{
 
 header .close:hover i{
 
+}
+
+.nav_mobile #homepage{
+  padding: 0 10px;
+}
+
+.nav_mobile .homepage,
+.nav_mobile .product,
+.nav_mobile .projects{
+  padding: 20px;
+}
+
+.product #product ,
+.projects #projects {
+  padding: 0 10px;
 }
 /*----------bars------------*/
 .bars {

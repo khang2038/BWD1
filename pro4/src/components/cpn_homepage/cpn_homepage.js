@@ -25,143 +25,148 @@ function sleep(s) {
   });
 }
 
-function trans_pre_card() {
-  let card_project = document.querySelector(".card_project");
-  let form_card_project = document.querySelectorAll(
-    ".card_project .form_card_project"
-  );
-  let card_project_1 = document.querySelector(".card_project-1");
-  // $('.card_project').addClass('animate__animated animate__backOutLeft');
-
-  // Object.assign(card_project_1.style ,{
-  //     display : 'none',
-  // })
-
-  // Object.assign(card_project.style ,{
-  //     display : 'flex',
-  // })
-
-  // sleep(0)
-  //     .then(function() {
-  //         $('.card_project_1').addClass('animate__animated animate__bounceOutRight');
-  //         $('.card_project').addClass('animate__animated animate__bounceInLeft');
-
-  //         return sleep(500);
-  //     })
-  //     .then(function() {
-  //         Object.assign(card_project.style ,{
-  //             display : 'flex',
-  //         })
-
-  //         Object.assign(card_project_1.style ,{
-  //             display : 'none',
-  //         })
-
-  //         return sleep(0)
-  //     })
-  //     .then(function() {
-  //         $('.card_project_1').removeClass('animate__animated animate__bounceOutRight');
-  //         $('.card_project').removeClass('animate__animated animate__bounceInLeft');
-  //     })
-}
-
-// function trans_aft_card() {
-//     let card_project = document.querySelector('.card_project');
-//     let form_card_project = document.querySelectorAll('.card_project .form_card_project');
-//     let card_project_1 = document.querySelector('.card_project-1');
-
-//     sleep(0)
-//         .then(function() {
-//             $('.card_project').addClass('animate__animated animate__bounceOutLeft');
-//             $('.card_project_1').addClass('animate__animated animate__bounceInRight');
-
-//             return sleep(500);
-//         })
-//         .then(function() {
-//             Object.assign(card_project.style ,{
-//                 display : 'none',
-//             })
-
-//             Object.assign(card_project_1.style ,{
-//                 display : 'flex',
-//             })
-
-//             return sleep(0)
-//         })
-//         .then(function() {
-//             $('.card_project').removeClass('animate__animated animate__bounceOutLeft');
-//             $('.card_project_1').removeClass('animate__animated animate__bounceInRight');
-//         })
-// }
-
-//open_close_feature_prj
-//open
-function open_prj_1() {
-  let modal_1 = document.querySelector(".modal_1");
-  modal_1.classList.add("open");
-}
-
-function open_prj_2() {
-  let modal_2 = document.querySelector(".modal_2");
-  modal_2.classList.add("open");
-}
-
-function open_prj_3() {
-  let modal_3 = document.querySelector(".modal_3");
-  modal_3.classList.add("open");
-}
-
-function open_prj_4() {
-  let modal_4 = document.querySelector(".modal_4");
-  modal_4.classList.add("open");
-}
-
-function open_prj_5() {
-  let modal_5 = document.querySelector(".modal_5");
-  modal_5.classList.add("open");
-}
-
-function open_prj_6() {
-  let modal_6 = document.querySelector(".modal_6");
-  modal_6.classList.add("open");
-}
-//close
-function close_prj_1() {
-  let modal_1 = document.querySelector(".modal_1");
-  modal_1.classList.remove("open");
-}
-
-function close_prj_2() {
-  let modal_2 = document.querySelector(".modal_2");
-  modal_2.classList.remove("open");
-}
-
-function close_prj_3() {
-  let modal_3 = document.querySelector(".modal_3");
-  modal_3.classList.remove("open");
-}
-
-function close_prj_4() {
-  let modal_4 = document.querySelector(".modal_4");
-  modal_4.classList.remove("open");
-}
-
-function close_prj_5() {
-  let modal_5 = document.querySelector(".modal_5");
-  modal_5.classList.remove("open");
-}
-
-function close_prj_6() {
-  let modal_6 = document.querySelector(".modal_6");
-  modal_6.classList.remove("open");
-}
-
 function Highlights() {
+  function trans_pre_card() {
+    let card_project = document.querySelector(".card_project");
+    let form_card_project = document.querySelectorAll(
+      ".card_project .form_card_project"
+    );
+    let card_project_1 = document.querySelector(".card_project-1");
+    // $('.card_project').addClass('animate__animated animate__backOutLeft');
+
+    if (document.querySelector(".card_project-1")) {
+      Object.assign(document.querySelector(".card_project-1").style, {
+        display: "none",
+      });
+    }
+
+    if (document.querySelector(".card_project")) {
+      Object.assign(document.querySelector(".card_project").style, {
+        display: "flex",
+      });
+    }
+
+    sleep(0)
+      .then(function () {
+        $(".card_project_1").addClass(
+          "animate__animated animate__bounceOutRight"
+        );
+        $(".card_project").addClass("animate__animated animate__bounceInLeft");
+
+        return sleep(500);
+      })
+      .then(function () {
+        Object.assign(card_project.style, {
+          display: "flex",
+        });
+
+        Object.assign(card_project_1.style, {
+          display: "none",
+        });
+
+        return sleep(0);
+      })
+      .then(function () {
+        $(".card_project_1").removeClass(
+          "animate__animated animate__bounceOutRight"
+        );
+        $(".card_project").removeClass(
+          "animate__animated animate__bounceInLeft"
+        );
+      });
+  }
+
+  function trans_aft_card() {
+    let card_project = document.querySelector(".card_project");
+    let form_card_project = document.querySelectorAll(
+      ".card_project .form_card_project"
+    );
+    let card_project_1 = document.querySelector(".card_project-1");
+
+    sleep(0)
+      .then(function () {
+        $(".card_project").addClass("animate__animated animate__bounceOutLeft");
+        $(".card_project_1").addClass(
+          "animate__animated animate__bounceInRight"
+        );
+
+        return sleep(500);
+      })
+      .then(function () {
+        Object.assign(card_project.style, {
+          display: "none",
+        });
+
+        Object.assign(card_project_1.style, {
+          display: "flex",
+        });
+
+        return sleep(0);
+      })
+      .then(function () {
+        $(".card_project").removeClass(
+          "animate__animated animate__bounceOutLeft"
+        );
+        $(".card_project_1").removeClass(
+          "animate__animated animate__bounceInRight"
+        );
+      });
+  }
+  //open_close_feature_prj
+
+  //open
+  function open_prj_1() {
+    let modal_1 = document.querySelector(".modal_1");
+    modal_1.classList.add("open");
+  }
+
+  function open_prj_2() {
+    let modal_2 = document.querySelector(".modal_2");
+    modal_2.classList.add("open");
+  }
+
+  function open_prj_3() {
+    let modal_3 = document.querySelector(".modal_3");
+    modal_3.classList.add("open");
+  }
+
+  function open_prj_4() {
+    console.log("123");
+    let modal_4 = document.querySelector(".modal_4");
+    modal_4.classList.add("open");
+  }
+
+  function open_prj_5() {
+    let modal_5 = document.querySelector(".modal_5");
+    modal_5.classList.add("open");
+  }
+
+  function open_prj_6() {
+    let modal_6 = document.querySelector(".modal_6");
+    modal_6.classList.add("open");
+  }
+  //close
+  function close_prj() {
+    let modal_1 = document.querySelector(".modal_1");
+    let modal_2 = document.querySelector(".modal_2");
+    let modal_3 = document.querySelector(".modal_3");
+    let modal_4 = document.querySelector(".modal_4");
+    let modal_5 = document.querySelector(".modal_5");
+    let modal_6 = document.querySelector(".modal_6");
+
+    modal_1.classList.remove("open");
+    modal_2.classList.remove("open");
+    modal_3.classList.remove("open");
+    modal_4.classList.remove("open");
+    modal_5.classList.remove("open");
+    modal_6.classList.remove("open");
+  }
+
   return (
     <div class="highlights">
       <h1 class="title">Featured projects</h1>
-      <i class="pre_card fa-solid fa-angle-left" onClick={trans_pre_card()}></i>
-      <i class="aft_card fa-solid fa-angle-right" onClick></i>
+      <i class="pre_card fa-solid fa-angle-left" onClick={trans_pre_card}></i>
+      <i class="aft_card fa-solid fa-angle-right" onClick={trans_aft_card}></i>
       <div class="card_project">
         <div class="form_card_project" onClick={open_prj_1}>
           <div>
@@ -198,7 +203,7 @@ function Highlights() {
 
       {/* <!--card-form-2--> */}
       <div class="card_project-1">
-        <div class="form_card_project-1" onclick={open_prj_4}>
+        <div class="form_card_project-1" onClick={open_prj_4}>
           <div>
             <img src={project2} alt="" />
           </div>
@@ -208,7 +213,7 @@ function Highlights() {
             Animal Portraits
           </p>
         </div>
-        <div class="form_card_project-1" onclick={open_prj_5}>
+        <div class="form_card_project-1" onClick={open_prj_5}>
           <div>
             <img src={project3} alt="" />
           </div>
@@ -218,7 +223,7 @@ function Highlights() {
             on your PC and join with your friends on your smartphones.
           </p>
         </div>
-        <div class="form_card_project-1" onclick={open_prj_6}>
+        <div class="form_card_project-1" onClick={open_prj_6}>
           <div>
             <img src={project1} alt="" />
           </div>
@@ -232,7 +237,7 @@ function Highlights() {
 
       <div class="modal_1">
         <div class="exit">
-          <i class="fa-solid fa-circle-xmark" onClick={close_prj_1}></i>
+          <i class="fa-solid fa-circle-xmark" onClick={close_prj}></i>
         </div>
         <div class="content1">
           <div class="info_img">
@@ -278,7 +283,7 @@ function Highlights() {
 
       <div class="modal_2">
         <div class="exit">
-            <i class="fa-solid fa-circle-xmark" onClick={close_prj_2}></i>
+          <i class="fa-solid fa-circle-xmark" onClick={close_prj}></i>
         </div>
         <div class="content1">
           <div class="info_img">
@@ -314,171 +319,169 @@ function Highlights() {
             <button>Details ...</button>
           </div>
         </div>
-
-        
       </div>
+
       <div class="modal_3">
-            <div class="exit">
-                <i class="fa-solid fa-circle-xmark" onClick={close_prj_3}></i>
-            </div>
-            <div class="content1">
-                <div class="info_img">
-                <img src={project6} alt="" />
-                <p>Haven Safari: your all-in-one hammock tent</p>
-                <p>
-                    Hang as a hammock | Pitch as a bivy | Patented lay-flat design |
-                    Comfort and durability | Making sleep the highlight of camping .{" "}
-                </p>
-                </div>
-
-                <div class="info_content">
-                <h2>
-                    $<span> 402,243</span>
-                    <i class="ti-check-box"> 100%</i>
-                </h2>
-                <p>Pledged of $20,000 goal</p>
-
-                <ul class="content_details">
-                    <li>
-                    Deluxe insulated air mattress, coated in vegan suede, with
-                    adjustable lounge strap.{" "}
-                    </li>
-                    <li>Quick and easy assembly .</li>
-                    <li>
-                    6 large pockets and ridgeline for additional storage , 4
-                    different color options with extra Kickstarter perks!{" "}
-                    </li>
-
-                    <h4>
-                    {" "}
-                    <i class="ti-star"> </i> As an avid outdoorsman, it was hard
-                    to reconcile the fact that every amazing day in the woods,
-                    would be punctuated by a miserable night. I designed the Haven
-                    Tent with the goal of, making sleep the highlight of camping.{" "}
-                    </h4>
-                </ul>
-
-                <button>Details ...</button>
-                </div>
-            </div>
-        </div>
-
-        <div class="modal_4">
         <div class="exit">
-          <i class="fa-solid fa-circle-xmark" onClick={close_prj_4}></i>
+          <i class="fa-solid fa-circle-xmark" onClick={close_prj}></i>
         </div>
-          <div class="content1">
-            <div class="info_img">
-              <img src={project2} alt="" />
-              <p>The Farm Family Project</p>
-              <p>
-                A Fine Art Photobook by Rob MacInnis Featuring 15 Years of Farm
-                Animal Portraits{" "}
-              </p>
-            </div>
-
-            <div class="info_content">
-              <h2>
-                $<span> 45,412</span>
-                <i class="ti-check-box"> 100%</i>
-              </h2>
-              <p>Pledged of $10,000 goal</p>
-
-              <ul class="content_details">
-                <h4>
-                  {" "}
-                  <i class="ti-star"> </i>The Farm Family Project, will be a
-                  book of 42 photographs of farm animal portraiture I've taken
-                  over the last 15 years.{" "}
-                </h4>
-                <h4>
-                  {" "}
-                  <i class="ti-star"> </i>Publishing a book will allow more
-                  people to see these beautiful animals as I see them, and bring
-                  more people into the conversation.{" "}
-                </h4>
-              </ul>
-
-              <button>
-                <a
-                  class="modal_4_btn_a"
-                  href="/create_project/the-farm-family-project"
-                >
-                  Details ...
-                </a>
-              </button>
-            </div>
+        <div class="content1">
+          <div class="info_img">
+            <img src={project6} alt="" />
+            <p>Haven Safari: your all-in-one hammock tent</p>
+            <p>
+              Hang as a hammock | Pitch as a bivy | Patented lay-flat design |
+              Comfort and durability | Making sleep the highlight of camping .{" "}
+            </p>
           </div>
-        </div>
 
-        <div class="modal_5">
-        <div class="exit">
-          <i class="fa-solid fa-circle-xmark" onClick={close_prj_5}></i>
-        </div>
-          <div class="content1">
-            <div class="info_img">
-              <img src={project3} alt="" />
-              <p>SnackHunter - A magical multiplayer hide-and-seek game</p>
-              <p>
+          <div class="info_content">
+            <h2>
+              $<span> 402,243</span>
+              <i class="ti-check-box"> 100%</i>
+            </h2>
+            <p>Pledged of $20,000 goal</p>
+
+            <ul class="content_details">
+              <li>
+                Deluxe insulated air mattress, coated in vegan suede, with
+                adjustable lounge strap.{" "}
+              </li>
+              <li>Quick and easy assembly .</li>
+              <li>
+                6 large pockets and ridgeline for additional storage , 4
+                different color options with extra Kickstarter perks!{" "}
+              </li>
+
+              <h4>
                 {" "}
-                Enchanted snacks face off against hungry mages! Launch
-                SnackHunter on your PC and join with your friends on your
-                smartphones.{" "}
-              </p>
-            </div>
+                <i class="ti-star"> </i> As an avid outdoorsman, it was hard to
+                reconcile the fact that every amazing day in the woods, would be
+                punctuated by a miserable night. I designed the Haven Tent with
+                the goal of, making sleep the highlight of camping.{" "}
+              </h4>
+            </ul>
 
-            <div class="info_content">
-              <h2>
-                $<span> 3,481 </span>
-                <i class="ti-check-box"> 100%</i>
-              </h2>
-              <p>Pledged of $3,154 goal</p>
-
-              <ul class="content_details">
-                <li>SnackHunter offers an easy-to-use multiplayer system. </li>
-                <li>
-                  Free to use , up to 16 friends can play together without any
-                  problems since not everyone has to buy the game.
-                </li>
-                <h4>
-                  {" "}
-                  <i class="ti-star"> </i>SnackHunter là một trò chơi trốn tìm
-                  nhiều người chơi đầy thú vị và kỳ diệu! Tham gia vào đội Thợ
-                  săn ma thuật và đuổi theo thức ăn bỏ chạy của bạn hoặc trở
-                  thành một Snack mê hoặc và trốn khỏi những pháp sư đói.{" "}
-                </h4>
-              </ul>
-
-              <button>Details ...</button>
-            </div>
+            <button>Details ...</button>
           </div>
         </div>
+      </div>
 
-        <div class="modal_6">
-            <div class="exit">
-                <i class="fa-solid fa-circle-xmark" onClick={close_prj_6}></i>
-            </div>
-          <div class="content1">
-            <div class="info_img">
-              <img src={project1} alt="" />
-              <p>Waterproof and soft light ball-POOF LIGHT</p>
-              <p>
-                Hold it, like holding the summer moon, but more than the moon to
-                add a soft and gentle.
-              </p>
-            </div>
+      <div class="modal_4">
+        <div class="exit">
+          <i class="fa-solid fa-circle-xmark" onClick={close_prj}></i>
+        </div>
+        <div class="content1">
+          <div class="info_img">
+            <img src={project2} alt="" />
+            <p>The Farm Family Project</p>
+            <p>
+              A Fine Art Photobook by Rob MacInnis Featuring 15 Years of Farm
+              Animal Portraits{" "}
+            </p>
+          </div>
 
-            <div class="info_content">
-              <h2>
-                $<span> 3,481 </span>
-                <i class="ti-check-box"> 100%</i>
-              </h2>
-              <p>Pledged of $3,154 goal</p>
+          <div class="info_content">
+            <h2>
+              $<span> 45,412</span>
+              <i class="ti-check-box"> 100%</i>
+            </h2>
+            <p>Pledged of $10,000 goal</p>
 
-              <button>Details ...</button>
-            </div>
+            <ul class="content_details">
+              <h4>
+                {" "}
+                <i class="ti-star"> </i>The Farm Family Project, will be a book
+                of 42 photographs of farm animal portraiture I've taken over the
+                last 15 years.{" "}
+              </h4>
+              <h4>
+                {" "}
+                <i class="ti-star"> </i>Publishing a book will allow more people
+                to see these beautiful animals as I see them, and bring more
+                people into the conversation.{" "}
+              </h4>
+            </ul>
+
+            <button>
+              <a
+                class="modal_4_btn_a"
+                href="/create_project/the-farm-family-project"
+              >
+                Details ...
+              </a>
+            </button>
           </div>
         </div>
+      </div>
+
+      <div class="modal_5">
+        <div class="exit">
+          <i class="fa-solid fa-circle-xmark" onClick={close_prj}></i>
+        </div>
+        <div class="content1">
+          <div class="info_img">
+            <img src={project3} alt="" />
+            <p>SnackHunter - A magical multiplayer hide-and-seek game</p>
+            <p>
+              {" "}
+              Enchanted snacks face off against hungry mages! Launch SnackHunter
+              on your PC and join with your friends on your smartphones.{" "}
+            </p>
+          </div>
+
+          <div class="info_content">
+            <h2>
+              $<span> 3,481 </span>
+              <i class="ti-check-box"> 100%</i>
+            </h2>
+            <p>Pledged of $3,154 goal</p>
+
+            <ul class="content_details">
+              <li>SnackHunter offers an easy-to-use multiplayer system. </li>
+              <li>
+                Free to use , up to 16 friends can play together without any
+                problems since not everyone has to buy the game.
+              </li>
+              <h4>
+                {" "}
+                <i class="ti-star"> </i>SnackHunter là một trò chơi trốn tìm
+                nhiều người chơi đầy thú vị và kỳ diệu! Tham gia vào đội Thợ săn
+                ma thuật và đuổi theo thức ăn bỏ chạy của bạn hoặc trở thành một
+                Snack mê hoặc và trốn khỏi những pháp sư đói.{" "}
+              </h4>
+            </ul>
+
+            <button>Details ...</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal_6">
+        <div class="exit">
+          <i class="fa-solid fa-circle-xmark" onClick={close_prj}></i>
+        </div>
+        <div class="content1">
+          <div class="info_img">
+            <img src={project1} alt="" />
+            <p>Waterproof and soft light ball-POOF LIGHT</p>
+            <p>
+              Hold it, like holding the summer moon, but more than the moon to
+              add a soft and gentle.
+            </p>
+          </div>
+
+          <div class="info_content">
+            <h2>
+              $<span> 3,481 </span>
+              <i class="ti-check-box"> 100%</i>
+            </h2>
+            <p>Pledged of $3,154 goal</p>
+
+            <button>Details ...</button>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
