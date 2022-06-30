@@ -16,6 +16,7 @@ import project4 from "~/public/img/imghome/project4.avif";
 import project5 from "~/public/img/imghome/project5.avif";
 import project6 from "~/public/img/imghome/project6.avif";
 import "../../public/js/homepage.js";
+import Cpn_gototop from "../cpn_gototop/cpn_gototop";
 
 //trans_pre_aft_modal_card
 //promise
@@ -26,6 +27,40 @@ function sleep(s) {
 }
 
 function Highlights() {
+  $(document).ready(function () {
+    $(window).scroll(function () {
+      var body = $("html,body").scrollTop();
+      var width_screen = window.innerWidth;
+      console.log(width_screen);
+      console.log(body);
+      if (body >= 100 && body < 200 && width_screen > 739) {
+      } else if (body > 400 && body < 900) {
+        Object.assign(document.querySelector(".our_impact").style, {
+          display: "initial",
+        });
+        Object.assign(document.querySelector(".space_1").style, {
+          display: "none",
+        });
+        $(".our_impact h1").addClass("animate__animated animate__fadeInUp");
+        $(".our_impact .card").addClass("animate__animated animate__fadeInUp");
+      } else if (body >= 1100 && body < 1254 && width_screen > 739) {
+        Object.assign(document.querySelector(".reason_use").style, {
+          display: "initial",
+        });
+        Object.assign(document.querySelector(".space_2").style, {
+          display: "none",
+        });
+        $(".reason_title").addClass("animate__animated animate__fadeInUp");
+        $(".info_item-1").addClass("animate__animated animate__fadeInUp");
+      } else if (body >= 1254 && body < 1866 && width_screen > 739) {
+        $(".info_item-2").addClass("animate__animated animate__bounceInUp");
+      } else if (body >= 1866 && body < 3000 && width_screen > 739) {
+        // $('.highlights .title').addClass('animate__animated animate__bounceInUp');
+        // $('.highlights .card_project').addClass('animate__animated animate__bounceInUp');
+      }
+    });
+  });
+
   function trans_pre_card() {
     let card_project = document.querySelector(".card_project");
     let form_card_project = document.querySelectorAll(
@@ -487,6 +522,16 @@ function Highlights() {
 }
 
 export default function Cpn_homepage() {
+  function handle_user() {
+    var update1 = document.querySelector(`.user-drop`);
+
+    if (update1.classList.contains("open1")) {
+      update1.classList.remove("open1");
+    } else {
+      update1.classList.add("open1");
+    }
+  }
+
   return (
     <div>
       <div class="introduce__web">
@@ -516,9 +561,7 @@ export default function Cpn_homepage() {
           </p>
         </div>
       </div>
-      {/* <div class="space_1">
-                    
-                </div> */}
+      <div class="space_1"></div>
       {/* DONE_RES_MOBILE */}
 
       <div class="our_impact">
@@ -542,9 +585,7 @@ export default function Cpn_homepage() {
         </div>
       </div>
 
-      {/* <div class="space_2">
-                
-            </div> */}
+      <div class="space_2"></div>
 
       <div class="reason_use">
         <div class="reason_title">
@@ -590,6 +631,8 @@ export default function Cpn_homepage() {
       </div>
 
       <Highlights />
+
+      <Cpn_gototop />
     </div>
   );
 }

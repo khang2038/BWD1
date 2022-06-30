@@ -285,11 +285,6 @@ window.scroll({
     left: 0, 
     behavior: 'smooth' 
   });
-  
-  // Scroll to a certain element
-  document.querySelector('.hello').scrollIntoView({ 
-    behavior: 'smooth' 
-  });
  
     
   
