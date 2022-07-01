@@ -89,6 +89,7 @@ html{
 
  .letf_page{
    position:fixed;
+   padding: 0 0 30px 0;
 }
 .the_left_page li{
    margin-top:40px;

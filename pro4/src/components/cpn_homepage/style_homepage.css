@@ -338,6 +338,7 @@ header .close:hover i{
 }
 /*====================Introduce__web================*/
 .introduce__web {
+  position: relative;
   padding: 60px 0 0px 0;
   display: flex;
   justify-content: center;
@@ -412,6 +413,43 @@ header .close:hover i{
 .introduce__web .ctn__image img{
   width: 75%;
 }
+
+/*-------------background-------------------*/
+.background_1{
+  width: 50%;
+  height: 1300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-image: url(../../public/img/imghome/img_background/home-bck-img-2.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.background_2{
+  width: 50%;
+  height: 1300px;
+  position: absolute;
+  top: 1000px;
+  right: 0;
+  transform: rotate(180deg);
+  background-image: url(../../public/img/imghome/img_background/home-bck-img-2.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.background_3{
+  width: 50%;
+  height: 1300px;
+  position:absolute;
+  top: 2000px;
+  left: 0;
+  transform: rotate(0deg);
+  background-image: url(../../public/img/imghome/img_background/home-bck-img-2.svg);
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
 /*----------Introduce__web__mobile------------*/
 
 .introduce__web-mobile {
@@ -1000,6 +1038,7 @@ header .close:hover i{
   display: none;
 
 }
+
 
 
 

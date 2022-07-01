@@ -590,7 +590,15 @@ export default function Cpn_homepage() {
         <div class="ctn__image">
           <img src={pro4} alt="" />
         </div>
+
+        <div class="background_1"></div>
+        <div class="background_2"></div>
+        <div class="background_3"></div>
+
+
       </div>
+
+      
     
       {/* RES_MOBILE  */}
       <div class="introduce__web-mobile">

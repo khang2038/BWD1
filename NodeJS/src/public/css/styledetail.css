@@ -338,8 +338,7 @@ a{
     background-color:  var(--page-color);
     height: 100%;
     width: 100%;
-
-}
+  }
 .the_left_page{
    margin-top: 5%;
    background-color:var(--the_left_page-color);
@@ -373,6 +372,7 @@ a{
 
  .letf_page{
    position:fixed;
+   
 }
 .the_left_page li{
    margin-top:40px;

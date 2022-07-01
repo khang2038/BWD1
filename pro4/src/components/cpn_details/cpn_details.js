@@ -230,13 +230,43 @@ function Cpn_game_project() {
 }
 
 export default function Cpn_details() {
+    function onmouseover_the_left_page() {
+        var slidebar=document.querySelector(".the_left_page");
+        Object.assign(slidebar.style , {
+            animationName : 'trans_slide_bar_to_left',
+            animationDuration: '0.5s',
+            left: 0,
+        })
+    }
+    
+    function onmouseout_the_left_page() {
+        var slidebar=document.querySelector(".the_left_page");
+        Object.assign(slidebar.style , {
+            animationName : 'trans_slide_bar_to_right',
+            animationDuration: '0.5s',
+            left : '-14%',
+        })
+    }
+
+    function toggle_dark_light() {
+        var body=document.querySelector("body");
+        var modeText=body.querySelector(".mode-text");
+        body.classList.toggle("dark");
+        
+        // if(body.classList.contains("dark")){
+        //     modeText.innerText='Light Mode';
+        // }else{
+        //     modeText.innerText="Dark Mode";
+        // }
+    }
+
     return (<Container maxWidth={false} className="" style={{margin:'0', padding: '0'}}>
         <div class="page">
-            <ul class="the_left_page letf_page">
+            <ul class="the_left_page letf_page" onMouseOver={onmouseover_the_left_page} onMouseOut={onmouseout_the_left_page}>
             <div class="menu">
                     <li class="menu-feature-prj">
                         <a href="#featured">
-                            <i class="fa-brands fa-hotjar"></i>
+                            <i class="fa-brands fa-hotjar" style={{padding : '0 20px 0 0'}}></i>
                             <span>Featured</span>
                         </a>
                     </li>
@@ -254,7 +284,7 @@ export default function Cpn_details() {
                     </li>
                     <li class="menu-Art">
                         <a href="#art">
-                            <i class="fa-brands fa-artstation"></i>
+                            <i class="fa-brands fa-artstation" style={{padding : '0 20px 0 0'}}></i>
                             <span>Art</span>
                         </a>
                     </li>
@@ -265,13 +295,13 @@ export default function Cpn_details() {
                         </a>
                     </li>    
                 </div> 
-                <li class="mode" onclick>
+                <li class="mode">
                     <div class="moon-sun">
                         <i class="fa-solid fa-moon moon "></i>
                         <i class="fa-solid fa-sun sun"></i>
                     </div>
-                    <span class="mode-text">Dark Mode</span>
-                    <div class="toggle-switch" onclick>
+                    <span class="mode-text">Dark/Light</span>
+                    <div class="toggle-switch" onClick={toggle_dark_light}>
                         <span class="switch"></span>
                     </div>
                 </li>
@@ -297,6 +327,8 @@ export default function Cpn_details() {
             <Cpn_game_project />
             <Ctn_footer />
         </div>
+
+
     </Container>
     )
 }
