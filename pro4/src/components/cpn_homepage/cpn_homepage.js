@@ -27,6 +27,27 @@ function sleep(s) {
 }
 
 function Highlights() {
+  function hide_gototop() {
+    var myBtn = document.querySelector('#myBtn');
+    Object.assign(myBtn.style , {
+      opacity : 0,
+    })
+  }  
+  
+  function show_gototop(){
+    var myBtn = document.querySelector('#myBtn');
+    Object.assign(myBtn.style , {
+      opacity : 1,
+    })
+  }
+
+  function handle_animate_modal() {
+    $('.info_img').addClass("animate__animated animate__bounceInLeft");
+    $('.info_content').addClass(
+      "animate__animated animate__bounceInRight"
+    );
+  }
+
   $(document).ready(function () {
     $(window).scroll(function () {
       var body = $("html,body").scrollTop();
@@ -36,7 +57,7 @@ function Highlights() {
       if (body >= 100 && body < 200 && width_screen > 739) {
       } else if (body > 400 && body < 900) {
         Object.assign(document.querySelector(".our_impact").style, {
-          display: "initial",
+          display: "block",
         });
         Object.assign(document.querySelector(".space_1").style, {
           display: "none",
@@ -153,32 +174,48 @@ function Highlights() {
   function open_prj_1() {
     let modal_1 = document.querySelector(".modal_1");
     modal_1.classList.add("open");
+    handle_animate_modal();
+    hide_gototop();
   }
 
   function open_prj_2() {
     let modal_2 = document.querySelector(".modal_2");
     modal_2.classList.add("open");
+    handle_animate_modal();
+    hide_gototop();
+
   }
 
   function open_prj_3() {
     let modal_3 = document.querySelector(".modal_3");
     modal_3.classList.add("open");
+    handle_animate_modal();
+    hide_gototop();
+
   }
 
   function open_prj_4() {
-    console.log("123");
     let modal_4 = document.querySelector(".modal_4");
     modal_4.classList.add("open");
+    handle_animate_modal();
+    hide_gototop();
+
   }
 
   function open_prj_5() {
     let modal_5 = document.querySelector(".modal_5");
     modal_5.classList.add("open");
+    handle_animate_modal();
+    hide_gototop();
+
   }
 
   function open_prj_6() {
     let modal_6 = document.querySelector(".modal_6");
     modal_6.classList.add("open");
+    handle_animate_modal();
+    hide_gototop();
+
   }
   //close
   function close_prj() {
@@ -195,6 +232,8 @@ function Highlights() {
     modal_4.classList.remove("open");
     modal_5.classList.remove("open");
     modal_6.classList.remove("open");
+
+    show_gototop();
   }
 
   return (
@@ -532,6 +571,8 @@ export default function Cpn_homepage() {
     }
   }
 
+
+
   return (
     <div>
       <div class="introduce__web">
@@ -550,7 +591,7 @@ export default function Cpn_homepage() {
           <img src={pro4} alt="" />
         </div>
       </div>
-
+    
       {/* RES_MOBILE  */}
       <div class="introduce__web-mobile">
         <div class="ctn__content-mobile">
@@ -561,6 +602,7 @@ export default function Cpn_homepage() {
           </p>
         </div>
       </div>
+
       <div class="space_1"></div>
       {/* DONE_RES_MOBILE */}
 

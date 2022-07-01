@@ -8,7 +8,7 @@ import Cpn_gototop from '../components/cpn_gototop/cpn_gototop';
 export default function Homepage() {
   return <Container maxWidth={false} className="" style={{margin:'0', padding: '0',backgroundColor: 'white',}}>
     <Cpn_homepage />
-    <Cpn_gototop />
+    {/* <Cpn_gototop /> */}
     <Cpn_footer />
   </Container>
 }

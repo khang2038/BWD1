@@ -346,6 +346,7 @@ header .close:hover i{
 }
 
 .introduce__web .ctn__content{
+  z-index: 1;
   width: 50%;
   text-align: center;
   padding: 200px 0;
@@ -420,8 +421,9 @@ header .close:hover i{
 /*====================Our-impact================*/
 
 .our_impact {
+  z-index: 1;
   padding: 30px 0 60px 0;
-  /* display: none; */
+  display: none;
 }
 
 .our_impact h1{
@@ -455,7 +457,7 @@ header .close:hover i{
 
 .reason_use {
   margin: 100px 0;
-  display : block;
+  display : flex;
 }
 /*-----------------reason_title-----------------------*/
 .reason_use .reason_title {
@@ -486,6 +488,7 @@ header .close:hover i{
 
 /*-----------------info_item-----------------------*/
 .info_item-1 {
+  z-index: 1;
   background-color: white;
   padding: 2% 3%;
   margin: 0 10% 180px 10%;
@@ -516,6 +519,7 @@ header .close:hover i{
 }
 
 .info_item-2 {
+  z-index: 1;
   background-color: white;
   padding: 2% 3%;
   margin: 0 10% 180px 10%;
@@ -549,6 +553,7 @@ header .close:hover i{
 
 .highlights {
   padding: 30px 0 60px 0;
+  z-index: 1;
   /* display: none; */
 }
 
@@ -571,6 +576,7 @@ header .close:hover i{
   padding: 0px 0 10px 0;
   /* border-radius: 20px; */
   border: #ebeaf1 solid 2px;
+  border-radius: 20px;
   box-shadow: 0 1px 10px 1px #9e9e9e91;
   overflow: hidden;
   /* transform: translateX(2000px); */
@@ -659,6 +665,7 @@ header .close:hover i{
   padding: 0px 0 10px 0;
   /* border-radius: 20px; */
   border: #ebeaf1 solid 2px;
+  border-radius: 20px;
   box-shadow: 0 1px 10px 1px #9e9e9e91;
   overflow: hidden;
   /* transform: translateX(2000px); */
@@ -706,7 +713,7 @@ header .close:hover i{
 .modal_3 ,
 .modal_2 ,
 .modal_1 {
-  overflow: scroll;
+  /* overflow: auto; */
   display: none;
   position: fixed;
   top: 12%;
@@ -785,6 +792,7 @@ header .close:hover i{
 
 .content1 .info_img img{
   width: 100%;
+  border-radius: 20px;
 }
 
 .content1 .info_content{
@@ -992,12 +1000,6 @@ header .close:hover i{
   display: none;
 
 }
-
-
-
-
-
-
 
 
 

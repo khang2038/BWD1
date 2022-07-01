@@ -725,7 +725,7 @@ header .close:hover i{
 .modal_3 ,
 .modal_2 ,
 .modal_1 {
-  overflow: scroll;
+  overflow: auto;
   display: none;
   position: fixed;
   top: 12%;
