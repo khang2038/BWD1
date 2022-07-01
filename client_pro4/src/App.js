@@ -5,6 +5,7 @@ import Homepage from './pages/Homepage';
 import Cpn_header from '~/components/cpn_header/cpn_header.js';
 import Details from './pages/Details';
 import Home from './pages/Home';
+import Create_project from './pages/Create_project';
 
 
 import * as actions from './redux/actions';
@@ -19,6 +20,9 @@ function App_logged() {
 
         </Route>
         <Route path="/details" element={<Details />}>
+
+        </Route>
+        <Route path="/create_project" element={<Create_project />}>
 
         </Route>
       </Routes>
