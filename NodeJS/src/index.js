@@ -11,7 +11,11 @@ const session =require("express-session");
 const db=require('./config/db');
 const initPassportLocal = require('./app/auth/passportLocal');
 
+const cors = require('cors');
+
 db.connect();
+
+app.use(cors());
 
 app.use(passports.initialize());
 app.use(session({
