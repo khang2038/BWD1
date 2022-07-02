@@ -3,6 +3,8 @@ import "./style_create_project.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import $ from "jquery";
 import "animate.css";
+import axios from 'axios';
+import { useCallback , useEffect } from 'react';
 
 function Ctn_main_prj() {
   return (
@@ -72,6 +74,24 @@ function Ctn_main_prj() {
 }
 
 export default function Cpn_create_project() {
+  const getAllPosts = useCallback(async () => {
+    try {
+      const option = {
+        method:  "get",
+        url : '/api/v1/posts',
+      }
+      const response = await axios(option);
+      const posts = response.data.data.posts;
+      console.log(posts);
+    } catch (error) {
+      console.log(error);
+    }
+  })
+
+  useEffect(() => {
+    getAllPosts();
+  },[getAllPosts]);
+
   return (
     <div>
       <Ctn_main_prj />

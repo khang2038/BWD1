@@ -24,7 +24,7 @@ function App() {
     >
       <Cpn_header />
 
-      <AppContext.Provider>
+      <AppContext.Provider value={{state , dispatch }}> 
         <Routes>
           <Route path="/homepage" element={<Homepage />}></Route>
           <Route path="/details" element={<Details />}></Route>
