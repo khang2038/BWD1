@@ -3,7 +3,7 @@
 #myBtn {
     display: flex;
     position: fixed;
-    bottom: 10px;
+    bottom: 80px;
     right: 1%;
     z-index: 1;
     font-size: 18px;
@@ -17,7 +17,7 @@
   }
   
   #myBtn i {
-    font-size: 60px;
+    font-size: 44px;
   }
   
   #myBtn:hover {

@@ -17,6 +17,7 @@ import project5 from "~/public/img/imghome/project5.avif";
 import project6 from "~/public/img/imghome/project6.avif";
 import "../../public/js/homepage.js";
 import Cpn_gototop from "../cpn_gototop/cpn_gototop";
+import Cpn_messenger from "../cpn_messenger/cpn_messenger";
 
 //trans_pre_aft_modal_card
 //promise
@@ -681,7 +682,6 @@ export default function Cpn_homepage() {
       </div>
 
       <Highlights />
-
       <Cpn_gototop />
     </div>
   );

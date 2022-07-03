@@ -8,6 +8,7 @@ import art_main from '~/public/img/imgdetail/art1.jpg';
 import game_main from '~/public/img/imgdetail/game1.jpg';
 import Ctn_footer from '../cpn_footer/cpn_footer.js';
 import Cpn_messenger from '../cpn_messenger/cpn_messenger';
+import Cpn_gototop from '../cpn_gototop/cpn_gototop';
 
 
 function Cpn_potential_project() {
@@ -327,6 +328,7 @@ export default function Cpn_details() {
             <Cpn_art_project />
             <Cpn_game_project />
             <Cpn_messenger />
+            <Cpn_gototop />
             <Ctn_footer />
         </div>
 
