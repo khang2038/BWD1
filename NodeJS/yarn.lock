@@ -1303,6 +1303,11 @@
   "resolved" "https://registry.npmjs.org/node-addon-api/-/node-addon-api-3.2.1.tgz"
   "version" "3.2.1"
 
+"node-bin-setup@^1.0.0":
+  "integrity" "sha512-pTeU6NgUrexiLNtd+AKwvg6cngHMvj5FZ5e2bbv2ogBSIc9yhkXSSaTScfSRZnwHIh5YFmYSYlemLWkiKD7rog=="
+  "resolved" "https://registry.npmjs.org/node-bin-setup/-/node-bin-setup-1.1.0.tgz"
+  "version" "1.1.0"
+
 "node-fetch@^2.6.7":
   "integrity" "sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ=="
   "resolved" "https://registry.npmjs.org/node-fetch/-/node-fetch-2.6.7.tgz"
@@ -1310,10 +1315,17 @@
   dependencies:
     "whatwg-url" "^5.0.0"
 
-"nodemon@^2.0.16":
-  "integrity" "sha512-zsrcaOfTWRuUzBn3P44RDliLlp263Z/76FPoHFr3cFFkOz0lTPAcIw8dCzfdVIx/t3AtDYCZRCDkoCojJqaG3w=="
-  "resolved" "https://registry.npmjs.org/nodemon/-/nodemon-2.0.16.tgz"
-  "version" "2.0.16"
+"node@^18.4.0":
+  "integrity" "sha512-uOeU340PxuLdddq9IWLBNrPU1x/ndr+p7UE3C9D+hHeXqjWC7zfe+QY67pfis/1Z5e0WXIImU5eBj7tfOpHIVg=="
+  "resolved" "https://registry.npmjs.org/node/-/node-18.4.0.tgz"
+  "version" "18.4.0"
+  dependencies:
+    "node-bin-setup" "^1.0.0"
+
+"nodemon@^2.0.18":
+  "integrity" "sha512-uAvrKipi2zAz8E7nkSz4qW4F4zd5fs2wNGsTx+xXlP8KXqd9ucE0vY9wankOsPboeDyuUGN9vsXGV1pLn80l/A=="
+  "resolved" "https://registry.npmjs.org/nodemon/-/nodemon-2.0.18.tgz"
+  "version" "2.0.18"
   dependencies:
     "chokidar" "^3.5.2"
     "debug" "^3.2.7"

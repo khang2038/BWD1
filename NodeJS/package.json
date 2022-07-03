@@ -19,11 +19,12 @@
     "json-server": "^0.17.0",
     "method-override": "^3.0.0",
     "mongoose": "^6.3.4",
+    "node": "^18.4.0",
     "passport": "^0.6.0",
     "passport-google-oauth20": "^2.0.0",
     "passport-local": "^1.0.0"
   },
   "devDependencies": {
-    "nodemon": "^2.0.16"
+    "nodemon": "^2.0.18"
   }
 }
