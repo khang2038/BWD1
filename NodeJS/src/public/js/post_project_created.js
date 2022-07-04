@@ -22,8 +22,9 @@ let data_FAQ = "";
 let btn_next = `<button>NEXT</button>`;
 let data_add_btn =
     `<div style="width: 100%;">
-        <div class="add_FAQ" style="margin : 30px 0">
+        <div class="add_FAQ" style="margin : 30px 0;">
             <input type="text" name="question" id="question">
+          
         </div>
     </div>`;
 

@@ -109,13 +109,21 @@
                 <div style="display: flex; flex-direction: column;margin-top: 60px;">
                     <label style="font-size: 30px;font-weight: bold;text-align: center;" for="main_title">PROJECT TITLE</label>
                     <p style="text-align: center; padding: 20px 0;">Write a clear, brief title and subtitle to help people quickly understand your project. Both will appear on your project and pre-launch pages.</p>
-                    <input type="text" class="form-control" id="main_title" name="main_title" style="padding : 20px 30px;font-size : 20px;border-radius: 20px;border : 2px solid rgb(189, 167, 167)" placeholder="">
+                    <div style="position: relative;">
+                        <input required="required" type="text" class="form-control" id="main_title" name="main_title" style="padding : 20px 30px;font-size : 20px;border-radius: 20px;border : 2px solid rgb(189, 167, 167)" placeholder="">
+                        <span>Write about project title</span>
+                    </div>
                 </div>
 
                 <div style="display: flex; flex-direction: column;margin-top: 60px;">
                     <label style="font-size: 30px;font-weight: bold;text-align: center;" for="main_content">GENERAL INTRODUCTION</label>
                     <p style="text-align: center; padding: 20px 0;">Potential backers will also see them if your project appears on category pages, search results, or in emails we send to our community.</p>
-                    <input type="text" class="form-control" id="main_content" name="main_content" style="margin-bottom: 80px;padding : 20px 30px;font-size : 20px;border-radius: 20px;border : 2px solid rgb(189, 167, 167)" placeholder="">
+                    <div style="position: relative;">
+                        <input required="required" type="text" class="form-control" id="main_content" name="main_content" style="margin-bottom: 80px;padding : 20px 30px;font-size : 20px;border-radius: 20px;border : 2px solid rgb(189, 167, 167)" placeholder="">
+                        <span>Write about general introduction</span>
+
+                    </div>
+                    
                 </div>
                 
                 <hr style="width: 70%; margin: 0 auto;">
@@ -124,7 +132,11 @@
                     <label style="font-size: 30px;font-weight: bold;text-align: center;" for="main_content" for="title_money_pledged">FUNDING GOAL</label>
                     <p style="text-align: center; padding: 10px 0;">Set an achievable goal that covers what you need to complete your project.</p>
                     <p style="text-align: center; padding: 10px 0 20px 0;">Funding is all-or-nothing. If you don’t meet your goal, you won’t receive any money.</p>
-                    <input type="text" class="form-control" id="title_money_pledged" name="title_money_pledged" style="padding : 20px 30px;font-size : 20px;border-radius: 20px;border : 2px solid rgb(189, 167, 167)" placeholder="">
+                    <div style="position: relative;">
+                        <input required="required" type="text" class="form-control" id="title_money_pledged" name="title_money_pledged" style="padding : 20px 30px;font-size : 20px;border-radius: 20px;border : 2px solid rgb(189, 167, 167)" placeholder="">
+                        <span>Write about funding goal</span>
+
+                    </div>
                 </div>
                 <button style="padding: 10px 20px;border-radius: 10px;border : 2px solid rgb(179, 164, 164);"><i class="fa-solid fa-eye" style="margin: 0 20px;border-radius: 10px;"></i>PREVIEW</button>
                 <button style="padding: 10px 20px;margin: 0px 50px 60px 50px;font-size: 30px;border-radius: 10px;border : 2px solid rgb(179, 164, 164)" onclick=open_faq()><i class="fa-solid fa-arrow-right-to-bracket" style="margin: 0 20px;"></i>NEXT</button>

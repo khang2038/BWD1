@@ -6,10 +6,10 @@
 .animate__animated.animate__bounceInUp {
   --animate-duration: 2s;
 }
+
 .animate__animated.animate__bounceInRight {
   --animate-duration: 2s;
 }
-
 
 /*--------------------------*/
 
@@ -374,6 +374,38 @@ header .nav_mobile {
   font-size: 30px;
 }
 
+.main_post .form-group .form-control{
+
+  transition: 0.5s;
+}
+
+.main_post .form-group span{
+    position: absolute;
+    left: 0;
+    padding: 20px 35px;
+    pointer-events: none;
+    color: rgba(4, 0, 0, 0.25);
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+.main_post .form-control:valid ~ span,
+.main_post .form-control:focus ~ span{
+    color: black;
+    transform: translateX(40px) translateY(-7px);
+    font-size: 0.75em;
+    padding: 0 20px;
+    /* background: #1d2b3a; */
+    background-color: white;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    letter-spacing: 0.20em;
+}
+
+.main_post .form-control:valid,
+.main_post .form-control:focus{
+    border: 1px solid #00dfc4;
+}
 /*----------------FAQ_post------------------*/
 
 .FAQ_post {
@@ -409,6 +441,8 @@ header .nav_mobile {
   width: 100%;
   font-size: 20px;
   padding: 10px 30px;
+  transition: 0.5s;
+
 }
 
 /*----------------story_post------------------*/
