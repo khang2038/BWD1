@@ -1,5 +1,5 @@
 const create_prj = require('../models/create_prj');
-const project_comment = require('../models/project_comment');
+const Project_comment = require('../models/project_comment');
 const faqs = require('../models/question');
 const story = require('../models/story');
 const { mutipleMongooseToObject } = require('../../util/mongoose');
@@ -24,7 +24,7 @@ var prj_cmt_db, project_db, faq_db ,str_db;
 
 class create_project_controller{
     show_detail(req, res, next) {
-        project_comment.find({}) 
+        Project_comment.find({}) 
             .then(prj_cmt => {
                 prj_cmt = mutipleMongooseToObject(prj_cmt);
                 prj_cmt_db = prj_cmt;
@@ -63,7 +63,7 @@ class create_project_controller{
     }
 
     index(req,res,next){
-        project_comment.find({}) 
+        Project_comment.find({}) 
             .then(prj_cmt => {
                 prj_cmt = mutipleMongooseToObject(prj_cmt);
                 prj_cmt_db = prj_cmt;
@@ -95,7 +95,15 @@ class create_project_controller{
 
     }
 
-    
+    //[POST] /create_project/store
+    save_comment(req , res) {
+        
+        const temp = req.body;
+      
+        // slug_present = req.body.main_title;
+        const project_comment = new Project_comment(temp);
+        project_comment.save();
+    }
 }
 
 module.exports= new create_project_controller;

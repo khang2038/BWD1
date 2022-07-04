@@ -80,7 +80,7 @@
                 <div class="main_prj_video" style="background-image: url(../../img/imgproject/{{project.img_big}});">
                     
                 </div>
-                <div class="main_prj_img">
+                {{!-- <div class="main_prj_img">
                     <ul>
                         <li><img src={{project.img_big}} alt=""></li>
                         <li><img src={{project.img2}} alt=""></li>
@@ -89,7 +89,7 @@
                         <li><img src={{project.img5}} alt=""></li>
                         <li><img src={{project.img6}} alt=""></li>
                     </ul>
-                </div>
+                </div> --}}
             </div>
 
             <div class="main_prj_content">
@@ -223,8 +223,11 @@
                             <i class="fa-solid fa-photo-film img_comment" style="color: #319545"></i>
 
                             <i class="fa-solid fa-face-grin-squint status_comment" style="color: #d2a32d"></i>
-                            
-                            <input type="text" class="in_cmt" placeholder="Viết bình luận vào đây . ">
+                            <form method="POST" style="width: 100%;" action="/create_project/save_comment">
+                                <label for="comment"></label>
+                                <input name="comment" id="comment" style="width: 80%;" type="text" class="in_cmt" placeholder="Viết bình luận vào đây . ">
+                                <button class="submit_comment">Send</button>
+                            </form>
                         </div>
                     </div>
                     
