@@ -855,6 +855,27 @@ header .nav_mobile {
   flex-direction: column;
 }
 
+.ctn_my_project .my_project_statistic .img_statistic{
+  background-image: url(../img/imgprofile/img_statistic.webp);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  height: 400px;
+  width: 50%;
+  display: none;
+}
+
+.detail_my_project_statistic {
+  width: 60%;
+  margin: 20px auto 50px auto;
+
+}
+
+.temp {
+  display: flex;
+  justify-content: space-between;
+}
+
 /*--------------project_progress----------------*/
 .project_progress{
   width: 100%;
