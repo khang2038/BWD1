@@ -858,9 +858,30 @@ header .nav_mobile {
 /*--------------project_progress----------------*/
 .project_progress{
   width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.project_progress div{
+  width: 95%;
+}
+
+.project_progress ul{
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  box-shadow: 0 1px 9px 2px #9e9e9e91; 
+  margin: 20px 0;
+}
+
+.project_progress li{
+  list-style: none;
 
 }
 
+.project_progress li{
+  
+}
 
 /*--------------ctn_history_project -----------------*/
 
