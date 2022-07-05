@@ -71,11 +71,15 @@
         </div>
     </header>
 
-    <div style="margin-top: 60px;" class="content_profile"c>
+    <div style="margin-top: 60px;" class="content_profile">
         <div class="right_content">
             <div class="nav" style="display: flex;flex-direction: column;">
 
                 <div class="wrapper">
+                    <div class="icon add_profile">
+                        <i class="fa-solid fa-plus" onclick=trans_add_profile()></i>
+                        <span class="tooltip">Detail</span>
+                    </div>
                     <div class="icon user">
                         <i class="fa-solid fa-user" onclick=trans_user()></i>
                         <span class="tooltip">About me</span>
@@ -84,9 +88,9 @@
                         <i class="fa-solid fa-file-shield" onclick=trans_my_project()></i>
                         <span class="tooltip">My project</span>
                     </div>
-                    <div class="icon prj_favorite">
-                        <i class="fa-solid fa-heart-circle-check" onclick=trans_prj_favorite()></i>
-                        <span class="tooltip">Favorite project</span>
+                    <div class="icon prj_history">
+                        <i class="fa-solid fa-clock-rotate-left" onclick=trans_prj_history()></i>
+                        <span class="tooltip">History</span>
                     </div>
                     <div class="icon log_out">
                         <i class="fa-solid fa-right-from-bracket"></i>
@@ -311,6 +315,11 @@
                         </div>
 
                         <hr style="width : 60%;margin: 0 auto;">
+                        
+                        <div class="project_progress">
+
+                        </div>
+
 
                         <div class="my_project_statistic">
                             <h2 style="width: 100%;text-align: center;margin: 50px 0;">Statistic my projects</h2>
@@ -320,8 +329,12 @@
                         </div>
                      </div>
 
-                     <div class="ctn_favorite_project">
-                        <h1 style="margin: 50% 0 0 0;">No favorite projects</h1>
+                     <div class="ctn_history_project">
+                        <h1 style="margin: 50% 0 0 0;">
+
+                            
+
+                        </h1>
                      </div>
                 </div>
 
@@ -331,7 +344,7 @@
    
 
     <div class="left_content" style="display : flex; justify-content: center;">
-        <div style="width: 80%;margin: 0 auto;">
+        <div style="width: 80%;margin: 0 auto; position: relative;" class="left_content_detail">
             <div style="width: 100%;">
                 <div class="avatar_profile" style="background-image: url(/img/imgprofile/sharkhung.png);">
                     
@@ -345,6 +358,10 @@
             <div class="edit">
                 <button>Edit profile</button>
             </div>
+        </div>
+
+        <div class="btn_hide" onclick=btn_hide_close()>
+           <i class="fa-solid fa-square-minus"></i>
         </div>
     </div>
    

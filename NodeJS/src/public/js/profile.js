@@ -7,9 +7,21 @@ const my_project = document.querySelector('.wrapper .my_project');
 const my_project_i = document.querySelector('.wrapper .my_project i');
 const my_project_span = document.querySelector('.wrapper .my_project span');
 
-const prj_favorite = document.querySelector('.wrapper .prj_favorite');
-const prj_favorite_i = document.querySelector('.wrapper .prj_favorite i');
-const prj_favorite_span = document.querySelector('.wrapper .prj_favorite span');
+const prj_history = document.querySelector('.wrapper .prj_history');
+const prj_history_i = document.querySelector('.wrapper .prj_history i');
+const prj_history_span = document.querySelector('.wrapper .prj_history span');
+
+const left_content = document.querySelector('.left_content');
+const right_content = document.querySelector('.right_content');
+const left_content_detail = document.querySelector('.left_content_detail');
+const wrapper = document.querySelector('.wrapper');
+const wrapper_add_profile = document.querySelector('.wrapper .add_profile');
+
+function sleep(s){
+    return new Promise(function(resolve) {
+        setTimeout(resolve,s)
+    })
+}
 
 function set_all() {
     Object.assign(user_i.style , {
@@ -28,12 +40,12 @@ function set_all() {
     Object.assign(my_project_span.style , {
         opacity: '0.2',
     })
-    Object.assign(prj_favorite_i.style , {
+    Object.assign(prj_history_i.style , {
         borderRadius: '50%',
         backgroundColor: 'white',
         color: '#5a5a5a',
     })
-    Object.assign(prj_favorite_span.style , {
+    Object.assign(prj_history_span.style , {
         opacity: '0.2',
     })
 }
@@ -43,7 +55,7 @@ function set_all() {
 //----------------trans_nav_bar------------------
 const ctn_about_me = document.querySelector('.ctn_about_me');
 const ctn_my_project = document.querySelector('.ctn_my_project');
-const ctn_favorite_project = document.querySelector('.ctn_favorite_project');
+const ctn_history_project = document.querySelector('.ctn_history_project');
 
 
 function set_nav_bar_close() {
@@ -53,9 +65,62 @@ function set_nav_bar_close() {
     Object.assign(ctn_my_project.style , {
         display : 'none',
     })
-    Object.assign(ctn_favorite_project.style , {
+    Object.assign(ctn_history_project.style , {
         display : 'none',
     })
+}
+
+function trans_add_profile() {
+    set_all();
+    set_nav_bar_close();
+    sleep(0) 
+        .then(function() {
+            Object.assign(right_content.style, {
+                animationName : 'open_right_profile',
+                animationDuration: '2s',
+                animationDirection: 'normal',
+            })
+            Object.assign(wrapper.style, {
+                animationName : 'wrapper_content_profile',
+                animationDuration: '2s',
+                animationDirection: 'normal',
+            })
+            return sleep(300);
+        })
+        .then(function() {
+            Object.assign(wrapper.style, {
+                justifyContent: 'space-between',
+            })
+            Object.assign(wrapper_add_profile.style, {
+                display: 'none',
+            })
+            Object.assign(right_content.style , {
+                width : '70%',
+            })
+        })
+
+
+    
+    sleep(0)
+        .then(function() {
+            Object.assign(left_content.style, {
+                animationName : 'open_left_profile',
+                animationDuration: '2s',
+                animationDirection: 'normal',
+            })
+            return sleep(300);
+        })
+        .then(function() {
+            Object.assign(left_content.style, {
+                display : 'flex',
+            })
+            return sleep(1000);
+        })
+        .then(function() {
+            Object.assign(left_content_detail.style, {
+                display : 'block',
+            })
+        })      
 }
 
 function trans_user() {
@@ -92,19 +157,19 @@ function trans_my_project() {
     })
 }
 
-function trans_prj_favorite() {
+function trans_prj_history() {
     set_all();
     set_nav_bar_close();
-    Object.assign(prj_favorite_i.style , {
+    Object.assign(prj_history_i.style , {
         borderRadius: '50% 0 0 50%',
         backgroundColor: '#dc5788',
         color: 'white',
     })
-    Object.assign(prj_favorite_span.style , {
+    Object.assign(prj_history_span.style , {
         opacity: '1',
         color: 'white',
     })
-    Object.assign(ctn_favorite_project.style , {
+    Object.assign(ctn_history_project.style , {
         display : 'flex',
     })
 }
@@ -191,5 +256,81 @@ const myChart = new Chart(
     document.getElementById('myChart'),
     config
 );
+
+
+//minimize
+
+function btn_hide_close() {
+    sleep(0) 
+        .then(function() {
+            Object.assign(right_content.style, {
+                animationName : 'close_right_profile',
+                animationDuration: '2s',
+                animationDirection: 'normal',
+            })
+            Object.assign(wrapper.style, {
+                animationName : 'wrapper_content_profile',
+                animationDuration: '2s',
+                animationDirection: 'normal',
+            })
+            return sleep(300);
+        })
+        .then(function() {
+            Object.assign(wrapper.style, {
+                justifyContent: 'space-around'
+            })
+            Object.assign(wrapper_add_profile.style, {
+                display: 'flex',
+            })
+        })
+
+
+    Object.assign(right_content.style , {
+        width : '100%',
+    })
+    
+    sleep(0)
+        .then(function() {
+            Object.assign(left_content.style, {
+                animationName : 'close_left_profile',
+                animationDuration: '2s',
+                animationDirection: 'normal',
+            })
+            return sleep(300);
+        })
+        .then(function() {
+            Object.assign(left_content_detail.style, {
+                display : 'none',
+            })
+            return sleep(1700);
+        })
+        .then(function() {
+            Object.assign(left_content.style, {
+                display : 'none',
+            })
+
+        })      
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
