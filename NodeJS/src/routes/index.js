@@ -1,6 +1,7 @@
 const productrouter=require('./product')
 const detailrouter=require('./detail')
 const loginrouter=require('./login')
+const messrouter=require('./mess')
 const signuprouter=require('./signup')
 const Airouter=require('./Ai')
 const homerouter=require('./home')
@@ -30,6 +31,7 @@ function route(app){
     app.use('/create_project' , create_project);
 
     app.use('/product',productrouter);
+    app.use('/mess',messrouter);
 
     app.get('/homepage', (req, res, next) => {
       res.render('homepage',{
