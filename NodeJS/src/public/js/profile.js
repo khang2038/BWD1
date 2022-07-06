@@ -17,6 +17,12 @@ const left_content_detail = document.querySelector('.left_content_detail');
 const wrapper = document.querySelector('.wrapper');
 const wrapper_add_profile = document.querySelector('.wrapper .add_profile');
 
+const my_project_statistic = document.querySelector('.my_project_statistic');
+const detail_my_project_statistic = document.querySelector('.detail_my_project_statistic');
+const myChart1 = document.querySelector('#myChart');
+const temp = document.querySelector('.temp');
+const img_statistic = document.querySelector('.img_statistic');
+
 function sleep(s){
     return new Promise(function(resolve) {
         setTimeout(resolve,s)
@@ -282,12 +288,19 @@ function btn_hide_close() {
             Object.assign(wrapper_add_profile.style, {
                 display: 'flex',
             })
+            Object.assign(right_content.style , {
+                width : '100%',
+            })
+            Object.assign(detail_my_project_statistic.style , {
+                width : '40%',
+            })
+            Object.assign(img_statistic.style , {
+                display : 'block',
+                width : '40%',
+            })
         })
 
 
-    Object.assign(right_content.style , {
-        width : '100%',
-    })
     
     sleep(0)
         .then(function() {
