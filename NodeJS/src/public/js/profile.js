@@ -21,7 +21,7 @@ const my_project_statistic = document.querySelector('.my_project_statistic');
 const detail_my_project_statistic = document.querySelector('.detail_my_project_statistic');
 const myChart1 = document.querySelector('#myChart');
 const temp = document.querySelector('.temp');
-const img_statistic = document.querySelector('.img_statistic');
+const detail_statistic = document.querySelector('.detail_statistic');
 
 function sleep(s){
     return new Promise(function(resolve) {
@@ -102,6 +102,12 @@ function trans_add_profile() {
             })
             Object.assign(right_content.style , {
                 width : '70%',
+            })
+            Object.assign(detail_my_project_statistic.style, {
+                width: '60%',
+            })
+            Object.assign(detail_statistic.style , {
+                display: 'none',
             })
         })
 
@@ -294,7 +300,7 @@ function btn_hide_close() {
             Object.assign(detail_my_project_statistic.style , {
                 width : '40%',
             })
-            Object.assign(img_statistic.style , {
+            Object.assign(detail_statistic.style , {
                 display : 'block',
                 width : '40%',
             })

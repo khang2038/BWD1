@@ -126,7 +126,7 @@ let data_story = "";
 function add_story_title() {
     id_title++;
     data_story += 
-    `<input name="title${id_title}" type="text" style="width: 90%;font-size : 30px; padding: 20px;margin: 10px;">
+    `<input name="title${id_title}" type="text" style="border_radius:20px;width: 50%;font-size : 30px; padding: 20px;margin: 10px;" placeholder="Title">
     `;
     input_add_str.innerHTML = data_story;
 }
@@ -134,7 +134,7 @@ function add_story_title() {
 function add_story_content() {
     id_content++;
     data_story += 
-    `<input name="content${id_content}" type="text" style="width: 90%;font-size : 20px; padding: 10px;margin: 10px;">
+    `<input name="content${id_content}" type="text" style="border-radius: 10px; height:200px;word-break: break-word; width: 90%;font-size : 20px; padding: 10px;margin: 10px;" placeholder="Content">
     `;
     input_add_str.innerHTML = data_story;
 }
@@ -145,7 +145,7 @@ function add_story_image() {
     `<div style="display: flex; flex-direction: column;">
     <img style="margin: 0 auto; z-index: 1" src="" alt="" id="image_${id_image}" width="300" height="300">
     <input name="image${id_image}" style="width: 80%;margin: 20px auto 60px auto;" type="file" class="form-control" id="img_big" name="img_big" onchange=chooseFile_story_${id_image}(this)
-            accept="image/gif , image/jpeg, image/png">
+            accept="image/gif , image/jpeg, image/png" placeholder="image">
     </div>
     `;
     input_add_str.innerHTML = data_story;
