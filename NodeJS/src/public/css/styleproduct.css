@@ -441,6 +441,8 @@ body.dark .switch_mobile::before{
    height: 50px;
    border-radius: 50%;
    margin-right: 10px;
+   object-fit: cover;
+   margin-top: 5px;
 }
 .the_right_nav p{
    font-size:14px;
