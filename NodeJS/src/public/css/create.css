@@ -61,27 +61,29 @@ header{
 }
 form{
     margin-top: 2%;
-    display: flex;
-    flex-direction: column;
+    width: 100%;
+     display : flex;
+     justify-content: center;
 }
+
 .infor{
     display: flex;
     flex-direction: column;
     margin-top:0.5%;
     margin-bottom: 2%;
+    position: relative;
+
 }
 .author img{
-    width:80px;
-    height:80px;
+    width:60px;
+    height:60px;
     border-radius:50%;
 }
 .author{
-    margin-top:5%;
     margin-left: 8px;
     display: flex;
 }
-.author .infor_author span{
-    margin-top:20px;
+.author .infor_author h3{
     margin-left: 20px;
 }
 .author .infor_author p{
@@ -98,22 +100,55 @@ form{
       margin-bottom: 2%;
 }
 .infor input{
-    width: 70%;
-    padding:30px;
-    font-size:20px;
-    border-radius: 10px;
-    color: rgb(61, 57, 57);
-    align-self: center;
-    border: 2px solid rgb(206, 187, 187);
+    width: 100%;
+    padding: 10px;
+    border: 2px solid rgba(82, 54, 54, 0.25);
+    background: #ffffff;
+    border-radius: 50px;
+
+    outline: none;
+    color: rgb(74, 63, 63);
+    font-size: 1em;
+    transition: 0.5s;
 }
+
+.infor span {
+    position: absolute;
+    left: 0;
+    padding: 10px 30px;
+    pointer-events: none;
+    color: rgba(25, 0, 0, 0.25);
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+.infor input:valid ~ span,
+.infor input:focus ~ span{
+    color: #000000;
+    transform: translateX(30px) translateY(-7px);
+    font-size: 0.75em;
+    padding: 0 10px;
+    background: #ffffff;
+    border-left: 1px solid #00dfc4;
+    border-right: 1px solid #00dfc4;
+    letter-spacing: 0.20em;
+}
+
+.infor input:valid,
+.infor input:focus{
+    border: 1px solid #00dfc4;
+}
+
+
+
 form button{
     padding: 10px;
     font-size:20px;
     margin-top: 30px;
-    background-color: rgb(61, 245, 107);
+    background-color: rgb(190, 208, 194);
     border: none;
     cursor: pointer;
-    box-shadow:5px 5px 5px  #477e50;
+    box-shadow:5px 5px 5px  #9bb19f;
     width: 70%;
     align-self: center;
     border-radius: 10px;
