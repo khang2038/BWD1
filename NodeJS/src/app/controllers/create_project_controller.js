@@ -5,7 +5,7 @@ const story = require('../models/story');
 const { mutipleMongooseToObject } = require('../../util/mongoose');
 const { mongooseToObject } = require('../../util/mongoose');
 
-var prj_cmt_db, project_db, faq_db ,str_db, slug_val;
+var prj_cmt_db, project_db, faq_db ,str_db, slug_val, project_db;
 
 // const checkSlugExist = async (req, res) => {
 //     const { slug } = req.body;
@@ -48,6 +48,7 @@ class create_project_controller{
 
         create_prj.findOne({slug : req.params.slug})
             .then(project => {
+                project_db = mongooseToObject(project);
                 slug_val = project.main_title;
                 res.render('create_project/create_project', {
                     project : mongooseToObject(project),
@@ -110,6 +111,7 @@ class create_project_controller{
         const project_comment = new Project_comment(temp);
 
         project_comment.save();
+
         
     }
 }

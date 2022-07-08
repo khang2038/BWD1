@@ -126,7 +126,7 @@ let data_story = "";
 function add_story_title() {
     id_title++;
     data_story += 
-    `<input name="title${id_title}" type="text" style="border_radius:20px;width: 50%;font-size : 30px; padding: 20px;margin: 10px;" placeholder="Title">
+    `<input name="title${id_title}" type="text" style="border_radius:20px;width: 80%;font-size : 30px; padding: 20px;margin: 10px;" placeholder="Title">
     `;
     input_add_str.innerHTML = data_story;
 }
@@ -134,7 +134,7 @@ function add_story_title() {
 function add_story_content() {
     id_content++;
     data_story += 
-    `<input name="content${id_content}" type="text" style="border-radius: 10px; height:200px;word-break: break-word; width: 90%;font-size : 20px; padding: 10px;margin: 10px;" placeholder="Content">
+    `<input name="content${id_content}" type="text" style="border-radius: 10px; height: 20px;word-break: break-word; width: 90%;font-size : 20px; padding: 30px 10px 140px 30px;margin: 10px;" placeholder="Content">
     `;
     input_add_str.innerHTML = data_story;
 }
