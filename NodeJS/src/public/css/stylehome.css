@@ -753,6 +753,7 @@ header .close:hover i{
   padding: 10px;
   border-radius: 10px;
   background-color: white;
+  border : 1px solid #b39f9f;
 }
 
 .content .info_content button a{
