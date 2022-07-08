@@ -23,28 +23,28 @@ var prj_cmt_db, project_db, faq_db ,str_db, slug_val;
 // }
 
 class create_project_controller{
-    show_detail(req, res, next) {
-        Project_comment.find({slug : req.params.slug}) 
+    async show_detail(req, res, next) {
+        await Project_comment.find({slug : req.params.slug}) 
             .then(prj_cmt => {
                 prj_cmt = mutipleMongooseToObject(prj_cmt);
                 prj_cmt_db = prj_cmt.reverse();
             })
             .catch(next);
 
-        faqs.find({slug : req.params.slug})
+        await faqs.find({slug : req.params.slug})
             .then(faq => {
                 faq = mutipleMongooseToObject(faq);
                 faq_db = faq;
             })
             .catch(next);
             
-        story.find({slug : req.params.slug})
+        await story.find({slug : req.params.slug})
         .then(str => {
             str = mutipleMongooseToObject(str);
             str_db = str;
         })
         .catch(next);
-    
+        
 
         create_prj.findOne({slug : req.params.slug})
             .then(project => {
