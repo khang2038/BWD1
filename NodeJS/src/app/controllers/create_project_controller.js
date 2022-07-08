@@ -5,7 +5,7 @@ const story = require('../models/story');
 const { mutipleMongooseToObject } = require('../../util/mongoose');
 const { mongooseToObject } = require('../../util/mongoose');
 
-var prj_cmt_db, project_db, faq_db ,str_db;
+var prj_cmt_db, project_db, faq_db ,str_db, slug_val;
 
 // const checkSlugExist = async (req, res) => {
 //     const { slug } = req.body;
@@ -24,10 +24,10 @@ var prj_cmt_db, project_db, faq_db ,str_db;
 
 class create_project_controller{
     show_detail(req, res, next) {
-        Project_comment.find({}) 
+        Project_comment.find({slug : req.params.slug}) 
             .then(prj_cmt => {
                 prj_cmt = mutipleMongooseToObject(prj_cmt);
-                prj_cmt_db = prj_cmt;
+                prj_cmt_db = prj_cmt.reverse();
             })
             .catch(next);
 
@@ -45,8 +45,10 @@ class create_project_controller{
         })
         .catch(next);
     
+
         create_prj.findOne({slug : req.params.slug})
             .then(project => {
+                slug_val = project.main_title;
                 res.render('create_project/create_project', {
                     project : mongooseToObject(project),
                     prj_cmt : prj_cmt_db,
@@ -56,7 +58,7 @@ class create_project_controller{
                     style : '../../css/create_project.css',
                     script1 : '../../js/create_project.js',
                     script3 : '../../js/post_project_created.js',
-                    users:req.user
+                    users: req.user
                 });
             })
             .catch(next)
@@ -96,13 +98,19 @@ class create_project_controller{
     }
 
     //[POST] /create_project/store
-    save_comment(req , res) {
-        
+    save_comment(req , res ) {
+
         const temp = req.body;
-      
+
+        temp.slug_temp = slug_val;
+        temp.avatar = req.user.img_author;
+        temp.name = req.user.name_author;
+        // res.json(req.user);
         // slug_present = req.body.main_title;
         const project_comment = new Project_comment(temp);
+
         project_comment.save();
+        
     }
 }
 

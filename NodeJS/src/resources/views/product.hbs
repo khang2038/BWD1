@@ -173,26 +173,26 @@
             </li>
         </ul>
         <div class="center_page">
-             {{#each products}}   
-             <div class="Infor {{this.name}}">
+             {{#each products as |product|}}   
+             <div class="Infor {{product.name}}">
                     <div class="author">
-                        <img src="{{this.img_author}}" alt="">
+                        <img src="{{product.img_author}}" alt="">
                         <div class="infor_author">
-                            <span>{{this.name_author}}</span>
+                            <span>{{product.name_author}}</span>
                             <p>1m <i class="fa-solid fa-earth-americas icon 3"></i> </p>
                         </div>
                     </div>
                     <div class="info-des">
-                        <p>{{this.infor}}</p>
+                        <p>{{product.infor}}</p>
                         <div class="img-App">
-                            <img  src="{{this.img1}}" alt="">
+                            <img  src="{{product.img1}}" alt="">
                         </div>
                     </div>
                     <hr>
                 <div class="decription">  
                   <div class="emotion">
-                      <i class="heart fa-heart fa-regular" onclick=handle_heart('{{this.name}}')></i>
-                      <i class="fa-regular fa-comment" onclick=handle_comment('{{this.name}}')></i>
+                      <i class="heart fa-heart fa-regular" onclick=handle_heart('{{product.name}}')></i>
+                      <i class="fa-regular fa-comment" onclick=handle_comment('{{product.name}}')></i>
                       <i class="fa-solid fa-share-nodes"></i>
                   </div>
                   <div class="donate-investment">
@@ -204,13 +204,16 @@
                  <!--comment-->
                 <div class="ctn_comment" style="height: 100px;">
                     <div class="bl__ctn_comment" style="width: 90%;">
-                       <img class="avatar" src="http://localhost:3000/img/imgprofile/sharkhung.png">
-                        
-                        </img>
-                        <input type="text" placeholder="Viết bình luận ... ">
+                        <img class="avatar" src="">
 
+                        </img>
+                        <form action="">
+                            <input type="text" placeholder="Write a comment ... ">
+                            <button><i class="fa-solid fa-paper-plane"></i></button>
+                        </form>
                     </div>
                 </div>
+
                 <!--end_comment-->    
 
              </div>

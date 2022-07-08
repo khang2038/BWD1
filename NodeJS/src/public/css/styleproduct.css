@@ -1018,11 +1018,31 @@ background-color: #555;
   margin-right: 10px;
 }
 
-.ctn_comment input {
+.ctn_comment .bl__ctn_comment form{
+  display: flex; 
+  flex-direction: row;
+  width: 90%;
+}
+
+.bl__ctn_comment input {
   padding: 10px;
   border-radius: 10px;
-  width: 90%;
+  width: 80%;
   height: 40px;
+}
+
+.bl__ctn_comment button {
+  height: 40px;
+  font-size: 25px;
+  padding : 0 10px;
+  border-radius: 10px;
+  margin: 0 10px;
+  background-color: white;
+  border: none;
+}
+
+.bl__ctn_comment button:hover {
+  cursor: pointer;
 }
 
 .ctn_comment.open_cmt{
