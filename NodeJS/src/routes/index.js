@@ -19,10 +19,12 @@ const create_project = require('./create_project');
 const post_project_created = require('./post_project_created');
 const profile = require('./profile');
 const initPassportLocal = require("../app/auth/passportLocal");
-const history = require('./history');
+const wallet = require('./wallet');
 
 function route(app){
-    app.use('/history' , history);
+
+
+    app.use('/wallet' , wallet);
 
     app.use('/profile' , profile);
 
