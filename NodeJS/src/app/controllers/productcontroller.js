@@ -23,11 +23,9 @@ class productcontroller{
             .then(Product=>res.render('edit',{
                                         title: 'Edit',
                                         style:'../../../css/styleproduct.css',
-                                        style2:'../../../css/create.css',
+                                        style2:'../../../css/edit.css',
                                         script1:'../../../css/scriptproduct.js',
                                         script2:'jquery.waypoints.min.js',
-                                        style3:'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css',
-                                        script3:'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js',
                                         Product:mongooseToObject(Product),
                                         users:req.user
                                         }))   

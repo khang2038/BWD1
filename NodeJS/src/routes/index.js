@@ -22,7 +22,7 @@ const initPassportLocal = require("../app/auth/passportLocal");
 const wallet = require('./wallet');
 
 function route(app){
-
+   
 
     app.use('/wallet' , wallet);
 
