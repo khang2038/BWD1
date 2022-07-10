@@ -1329,10 +1329,10 @@
   dependencies:
     "whatwg-url" "^5.0.0"
 
-"nodemon@^2.0.16":
-  "integrity" "sha512-zsrcaOfTWRuUzBn3P44RDliLlp263Z/76FPoHFr3cFFkOz0lTPAcIw8dCzfdVIx/t3AtDYCZRCDkoCojJqaG3w=="
-  "resolved" "https://registry.npmjs.org/nodemon/-/nodemon-2.0.16.tgz"
-  "version" "2.0.16"
+"nodemon@^2.0.19":
+  "integrity" "sha512-4pv1f2bMDj0Eeg/MhGqxrtveeQ5/G/UVe9iO6uTZzjnRluSA4PVWf8CW99LUPwGB3eNIA7zUFoP77YuI7hOc0A=="
+  "resolved" "https://registry.npmjs.org/nodemon/-/nodemon-2.0.19.tgz"
+  "version" "2.0.19"
   dependencies:
     "chokidar" "^3.5.2"
     "debug" "^3.2.7"
@@ -1340,10 +1340,10 @@
     "minimatch" "^3.0.4"
     "pstree.remy" "^1.1.8"
     "semver" "^5.7.1"
+    "simple-update-notifier" "^1.0.7"
     "supports-color" "^5.5.0"
     "touch" "^3.1.0"
     "undefsafe" "^2.0.5"
-    "update-notifier" "^5.1.0"
 
 "nopt@^5.0.0":
   "integrity" "sha512-Tbj67rffqceeLpcRXrT7vKAN8CwfPeIBgM7E6iBkmKLV7bEMwpGgYLGv0jACUsECaa/vuxP0IjEont6umdMgtQ=="
@@ -1715,6 +1715,11 @@
   dependencies:
     "lru-cache" "^6.0.0"
 
+"semver@~7.0.0":
+  "integrity" "sha512-+GB6zVA9LWh6zovYQLALHwv5rb2PHGlJi3lfiqIHxR0uuwCgefcOJc59v9fv1w8GbStwxuuqqAjI9NMAOOgq1A=="
+  "resolved" "https://registry.npmjs.org/semver/-/semver-7.0.0.tgz"
+  "version" "7.0.0"
+
 "send@0.18.0":
   "integrity" "sha512-qqWzuOjSFOuqPjFe4NOsMLafToQQwBSOEpS+FwEt3A2V3vKubTquT3vmLTQpFgMXp8AlFWFuP1qKaJZOtPpVXg=="
   "resolved" "https://registry.npmjs.org/send/-/send-0.18.0.tgz"
@@ -1784,6 +1789,13 @@
   "integrity" "sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ=="
   "resolved" "https://registry.npmjs.org/signal-exit/-/signal-exit-3.0.7.tgz"
   "version" "3.0.7"
+
+"simple-update-notifier@^1.0.7":
+  "integrity" "sha512-BBKgR84BJQJm6WjWFMHgLVuo61FBDSj1z/xSFUIozqO6wO7ii0JxCqlIud7Enr/+LhlbNI0whErq96P2qHNWew=="
+  "resolved" "https://registry.npmjs.org/simple-update-notifier/-/simple-update-notifier-1.0.7.tgz"
+  "version" "1.0.7"
+  dependencies:
+    "semver" "~7.0.0"
 
 "smart-buffer@^4.2.0":
   "integrity" "sha512-94hK0Hh8rPqQl2xXc3HsaBoOXKV20MToPkcXvwbISWLEs+64sBq5kFgn2kJDHb1Pry9yrP0dxrCI9RRci7RXKg=="

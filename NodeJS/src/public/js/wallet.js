@@ -15,7 +15,6 @@ $(document).ready(function(){
         console.log(body);
         if (body>=100 && body<200 && width_screen>739) {
             
-            
         }
         else if (body>200 && body<900) {
             sleep(0)
