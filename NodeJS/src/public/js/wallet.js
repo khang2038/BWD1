@@ -13,11 +13,11 @@ $(document).ready(function(){
         var width_screen = window.innerWidth;
         console.log(width_screen);
         console.log(body);
-        if (body>=300 && body<400 && width_screen>739) {
+        if (body>=100 && body<200 && width_screen>739) {
             
             
         }
-        else if (body>400 && body<900) {
+        else if (body>200 && body<900) {
             sleep(0)
             .then(function() {
 
