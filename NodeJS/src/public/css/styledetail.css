@@ -380,6 +380,7 @@ a{
 .the_left_page li{
    margin-top:40px;
    list-style: none;
+   margin-bottom: 20px;
 }
 
 .the_left_page .menu a {

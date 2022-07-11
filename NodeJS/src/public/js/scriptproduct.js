@@ -40,11 +40,27 @@ const body=document.querySelector("body"),
           }
       })
 
+      var logo1 = document.querySelector('.logo1');
+      var logo2 = document.querySelector('.logo2');
+
       modeSwitch.addEventListener("click",()=>{
           body.classList.toggle("dark");
           if(body.classList.contains("dark")){
+            Object.assign(logo1.style , {
+                display : 'none',
+            })
+            Object.assign(logo2.style , {
+                display : 'block',
+            })
+            
               modeText.innerText="Light Mode";
           }else{
+            Object.assign(logo2.style , {
+                display : 'none',
+            })
+            Object.assign(logo1.style , {
+                display : 'block',
+            })
               modeText.innerText="Dark Mode";
           }
       })
