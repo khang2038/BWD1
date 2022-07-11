@@ -10,11 +10,20 @@
 -demo từng lĩnh vực :Game ,App ,AI
 
 -trang3
--botchat
 -demo từng lĩnh vực :Game ,App ,AI trong thanh nav
 -demo 2 project :bed ,mood
+
+(trang đăng bài)
 -giới thiệu cách tạo 1 project (overview , FAQ , story)
 -sẵn project để post (prj cổ phục,khang tự giới thiệu dự án) 
--trang profile 
+
+-> lưu vào trang profile 
+-đóng mở
+
+-trang wallet
+
+
+
+
 -responsive
 -logout 

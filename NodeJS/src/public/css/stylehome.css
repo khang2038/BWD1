@@ -751,13 +751,44 @@ header .close:hover i{
 }
 
 .content .info_content button{
-  font-size: 30px;
-  margin: 0 0 20px 60%;
-  padding: 10px;
-  border-radius: 10px;
-  background-color: white;
-  border : 1px solid #b39f9f;
+  margin-left: 60%;
+  padding: 20px 40px;
+	background: none;
+	border: none;
+	position: relative;
+	text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: 3px;
+	cursor: pointer;
 }
+
+.content .info_content button:before,
+.content .info_content button:after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border: 2px solid #000;
+  transition: transform .2s;
+}
+		
+.content .info_content button:after{
+  transform: translate(3px, 3px);	
+}
+.content .info_content button:before{
+  transform: translate(-3px, -3px)
+}
+.content .info_content button:hover:after{
+  transform: translate(0);
+}
+.content .info_content button:hover:before{
+  transform: translate(0);
+}
+
+
+
 
 .content .info_content button a{
   
@@ -937,7 +968,7 @@ header .close:hover i{
   position: fixed;
   bottom: 10px;
   right: 1%;
-  z-index: 99;
+  z-index: 2;
   font-size: 18px;
   border: none;
   outline: none;

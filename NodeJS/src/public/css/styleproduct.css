@@ -10,7 +10,7 @@
   --body-color:#ffffff;
   --search-color:#ebebeb;
   --nav-center-icon-color:#e0e0e0;
-  --page-color:#f7f7f7;
+  --page-color:#eff3f6;
   --the_left_page-color:#fff;
   --text-the_left_page-color:#727272;
   --toggle-color:#DDD;
@@ -449,7 +449,7 @@ body.dark .switch_mobile::before{
 }
 /* -------------page---------- */
 .page{
-    background-color:  #eff3f6;
+    background-color:  var(--page-color);
     height:100%;
     width:100%;
     display: flex;

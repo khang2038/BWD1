@@ -18,13 +18,15 @@
             </div> 
             </div>
             <div class="the_center_nav">
-                <a id="homepage" class="fa-solid fa-house icon 1"></a>
-                <a id="product" class="fa-solid fa-earth-americas icon 2"></a>
-                <a id="projects" class="fa-solid fa-circle-dollar-to-slot icon 3" style="font-size: 28px;"></a>
+                <a href="homepage" id="homepage" class="fa-solid fa-house icon 1"></a>
+                <a href="product" id="product" class="fa-solid fa-earth-americas icon 2"></a>
+                <a href="detail" id="projects" class="fa-solid fa-circle-dollar-to-slot icon 3" style="font-size: 28px;"></a>
             </div>
             <div class="the_right_nav" onclick=handle_user()>
                 <img id="img_login" src="{{users.img_author}}" alt="">
-                <p>{{users.name_author}}</p>
+                <p>{{users.name_author}}
+                    <i class="fa-solid fa-sort-down icon"></i>
+                </p>
                 <ul class="user-drop">
                         <i class="fa-solid fa-xmark project_close " onclick=handle_user()> </i>
                         <div class="menu_drop">

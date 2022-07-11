@@ -408,10 +408,10 @@ $("#textInput").keypress(function (e) {
 
 
 //investment
-function handle_mess() {
-    var messenger = document.querySelector('.messenger');
-    messenger.click();
-}
+// function handle_mess() {
+//     var messenger = document.querySelector('.messenger');
+//     messenger.click();
+// }
 
 //handle_heart
 function handle_heart(class1) {
