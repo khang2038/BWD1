@@ -1,4 +1,4 @@
- <header>
+    <header>
         <div class="nav_pc">
             <div class="the_left_nav">
           <div class="logo">
@@ -126,7 +126,7 @@
                         <img src="{{users.img_author}}" alt="" class="cover">
                      </div>
                      <ul class="nav_icons">
-                        <li><ion-icon name="scan-circle-outline"></ion-icon></li>
+                        <li><ion-icon name="scan-circle-outline" class="close_open_user" onclick=close_user()></ion-icon></li>
                         <li><ion-icon name="chatbox"></ion-icon></li>
                         <li><ion-icon name="ellipsis-vertical"></ion-icon></li>
                      </ul>
@@ -230,17 +230,19 @@
                  </div>
             </div>
             <div class="rightSide">
-                 <div class="header">
+                 <div class="header" style="display: flex;justify-content: left;">
+                    <button onclick=open_user() style="display: none;margin-right: 20px;;border-radius: 50%;"><i style="font-size: 20px;padding: 10px;" class="fa-solid fa-user-plus"></i></button>
+
                      <div class="imgText">
                         <div class="userimg">
                             <img src="https://nghesiviet.vn/storage/files/7/phamthanhhung/tieu-su-shark-hung3-768x768.jpg" alt="" class="cover">
                         </div>
                         <h4> Phạm Thanh Hưng <br> <span> Online </span> </h4>
                      </div>
-                     <ul class="nav_icons">
+                     {{!-- <ul class="nav_icons">
                         <li> <ion-icon name="search-outline"></ion-icon></li>
                         <li><ion-icon name="ellipsis-vertical"></ion-icon></li>
-                     </ul>
+                     </ul> --}}
                  </div>
 
 
