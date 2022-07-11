@@ -449,7 +449,7 @@ body.dark .switch_mobile::before{
 }
 /* -------------page---------- */
 .page{
-    background-color:  var(--page-color);
+    background-color:  #eff3f6;
     height:100%;
     width:100%;
     display: flex;
