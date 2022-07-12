@@ -7,23 +7,23 @@
 -search
 -Post bài đăng
 -My project -> update -> delete
+-messenger
 -demo từng lĩnh vực :Game ,App ,AI
 
 -trang3
 -demo từng lĩnh vực :Game ,App ,AI trong thanh nav
 -demo 2 project :bed ,mood
+-comment bed (it is very convenient)
 
 (trang đăng bài)
 -giới thiệu cách tạo 1 project (overview , FAQ , story)
 -sẵn project để post (prj cổ phục,khang tự giới thiệu dự án) 
 
--> lưu vào trang profile 
+-> lưu vào trang profile ->mở dự án cổ phục-> comment(Ý tưởng hay)
 -đóng mở
+-Giới thiệu
 
 -trang wallet
-
-
-
 
 -responsive
 -logout 

@@ -213,6 +213,11 @@ body.dark .mobile_nav_drop .mode-mobile i.moon{
  width: 100%;
  height: 100%;
 }
+
+.mobile_nav .logo{
+  height: 50%;
+}
+
 .search{
   display:flex;
   padding:12px 20px;

@@ -52,7 +52,7 @@
      .search{
        position:absolute;  
        right:10px;
-       top:5px;
+       top: 15px;
      }
 
      .menu_mobile a {
@@ -328,8 +328,7 @@
 }
 @media only screen and (max-width : 400px){
      .navduoi{
-         margin-top: 13%;
-         margin-left: 10%;
+        margin: 15% auto 0 auto;
      }
      .navduoi .the_center_nav a{
          margin-right: 3%;

@@ -73,6 +73,10 @@ header{
    justify-content:space-between;
 }
 
+.mobile_nav .logo{
+  height: 50%;
+}
+
 .search-drop{
    background-color:var(--page-color);
    display: flex;
@@ -437,12 +441,11 @@ body.dark .switch_mobile::before{
   color: var(--text-the_left_page-color);
 }
 .the_right_nav img{
+    margin: auto 10px auto 0;
    width: 50px;
    height: 50px;
    border-radius: 50%;
-   margin-right: 10px;
    object-fit: cover;
-   margin-top: 5px;
 }
 .the_right_nav p{
    font-size:14px;

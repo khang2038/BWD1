@@ -15,14 +15,13 @@ body{
     display:flex;
     justify-content:center;
     align-items:center ;
-    min-height:100vh;
-    background:linear-gradient(#009688 0%,#009688 130px,#d9dbd5 50%,#d9dbd5 100% );
+    
 }
 .container{
     position:relative;
-    width:1260px;
+    width: 100%;
     max-width: 100%;
-    height:calc(100vh - 40px - 59px);
+    height: calc(100vh - 58px);
     background-color: #fff;
     margin-top:4%;
     box-shadow: 0 1px 1px 0 rgba();
@@ -355,4 +354,14 @@ body{
 .rightSide .header button:hover {
     cursor: pointer;
 
+}
+
+.block .imgbx{
+    margin-left: 30px;
+
+}
+
+.block .details{
+    margin-left: 10px;
+    width: 72%;
 }

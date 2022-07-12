@@ -969,7 +969,7 @@ header .nav_mobile {
 .card_content {
 }
 
-.card-content h2 {
+.card-content a {
     font-size: 22px;
     text-align: left;
     color: #9c8d8d;

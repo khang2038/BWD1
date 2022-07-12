@@ -245,11 +245,11 @@ const data = {
     datasets: [{
         label: 'My First dataset',
         backgroundColor: [
-            '#6699FF',
-            '#CC66FF',
-            '#009900',  
-            '#EEB4B4',
-            '#CD853F',
+            '#FFFF99',
+            '#99FFFF',
+            '#FFF5EE',  
+            '#B0E2FF',
+            '#C1FFC1',
             '#CDCDB4',
         ],
         borderColor: 'rgb(255, 99, 132)',

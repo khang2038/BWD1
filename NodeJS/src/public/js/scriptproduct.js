@@ -3,9 +3,9 @@ const body=document.querySelector("body"),
       toggle=body.querySelector(".toggle"),
       modeSwitch=body.querySelector(".toggle-switch"),
       modeText=body.querySelector(".mode-text");
-      
-      modeSwitchmobile=body.querySelector(".toggle-switch_mobile"),
-      modeTextmobile=body.querySelector(".mode-text_mobile");
+
+const  modeSwitchmobile=document.querySelector(".toggle-switch_mobile"),
+       modeTextmobile=document.querySelector(".mode-text_mobile");
 
    
         
@@ -30,18 +30,34 @@ const body=document.querySelector("body"),
             });
         };
 
+    var logo1 = document.querySelector('.logo1');
+    var logo2 = document.querySelector('.logo2');
+
+    var logo1_mobile = document.querySelector('.mobile_nav .logo1');
+    var logo2_mobile = document.querySelector('.mobile_nav .logo2');
 
        modeSwitchmobile.addEventListener("click",()=>{
           body.classList.toggle("dark");
           if(body.classList.contains("dark")){
+              Object.assign(logo1_mobile.style , {
+                display : 'none',
+            })
+            Object.assign(logo2_mobile.style , {
+                display : 'block',
+            })
               modeTextmobile.innerText="Light Mode";
           }else{
+            Object.assign(logo2_mobile.style , {
+                display : 'none',
+            })
+            Object.assign(logo1_mobile.style , {
+                display : 'block',
+            })
               modeTextmobile.innerText="Dark Mode";
           }
       })
 
-      var logo1 = document.querySelector('.logo1');
-      var logo2 = document.querySelector('.logo2');
+      
 
       modeSwitch.addEventListener("click",()=>{
           body.classList.toggle("dark");
