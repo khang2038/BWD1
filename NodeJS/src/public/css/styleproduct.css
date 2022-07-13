@@ -61,6 +61,7 @@ header{
 .nav_pc{
     display:flex;
     justify-content: space-between;
+    height: 100%;
 }
 .mobile_nav{
    display:flex;
