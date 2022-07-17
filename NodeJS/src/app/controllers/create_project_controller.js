@@ -99,7 +99,7 @@ class create_project_controller{
     }
 
     //[POST] /create_project/store
-    save_comment(req , res ) {
+    save_comment(req , res ,next) {
 
         const temp = req.body;
 
@@ -111,8 +111,6 @@ class create_project_controller{
         const project_comment = new Project_comment(temp);
 
         project_comment.save();
-
-        
     }
 }
 

@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Anek+Tamil&family=Josefin+Sans&family=Patua+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Anek+Tamil&family=Josefin+Sans&family=Nunito:ital,wght@0,300;1,200;1,300&family=Patua+One&display=swap');
 
-/*---------animate -----------------*/
+/*---------animate-----------*/
 .animate__animated.animate__bounceInUp {
   --animate-duration: 2s;
 }
@@ -529,6 +529,198 @@ header .nav_mobile {
 
 
 
+/*==================PREVIEW==================*/
+
+#modal_preview{
+  position: fixed;
+  top: 80px;
+  left: 100px;
+  right: 100px;
+  bottom: 20px;
+  background-color: white;
+  border: 2px solid #000000;
+  z-index: 1;
+  display: none;
+  justify-content: space-around;
+  padding: 30px;
+}
+
+/*----preview_img----*/
+
+#modal_preview .img_preview{
+  width: 50%;
+  padding: 40px 10px;
+}
+
+#modal_preview .img_preview .main_prj_video{
+  width: 100%;
+  height: 80%;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+/*----preview_info----*/
+
+#modal_preview .info_preview{
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+}
+
+#modal_preview .info_preview h5{
+  color: #427fb8;
+  padding: 10px 0;
+}
+
+#modal_preview .info_preview h2{
+  color: black;
+  font-weight: bold;
+}
+
+#modal_preview .info_preview h4{
+  padding: 20px 0;
+}
+
+
+
+/*---------ctn_statistic----------*/
+
+#modal_preview .ctn_statistic {
+  border-top: 5px solid #427fb8;
+}
+
+#modal_preview .ctn_statistic .ctn_pledged_backers{
+  display: flex;
+  flex-direction: row;
+}
+
+#modal_preview .ctn_statistic .ctn_pledged_backers .backers,
+#modal_preview .ctn_statistic .ctn_pledged_backers .pledged{
+  font-weight: bold;
+  text-align: center;
+  width: 50%;
+  font-size: 30px;
+  padding: 20px 0;
+  color: #427fb8;
+}
+
+#modal_preview .ctn_pledged_backers .backers .title,
+#modal_preview .ctn_pledged_backers .pledged .title{
+  font-size: 20px;
+  color: black;
+  padding: 10px 0;
+}
+
+/*------complete figures-------*/
+#modal_preview .complete_figures {
+  width: 100%;
+  height: 15px;
+  border: 2px solid #000000;
+  border-radius: 10px;
+
+}
+
+@keyframes increase_percent {
+0% {
+  width: 0%;
+}
+100%{
+  width: 78%;
+}
+}
+
+#modal_preview .complete_figures .complete{
+  animation-name: increase_percent;
+  animation-duration: 2s;
+  
+  width: 78%;
+  height: 100%;
+  background-color: #55a1e9;
+}
+
+#modal_preview .main_prj_content .percent_complete{
+  padding: 10px 0;
+}
+
+/*------------form_donate----------------*/
+
+#modal_preview .form_donate{
+  display: flex;
+  flex-direction: row;
+  margin: 30px 0;
+}
+
+#modal_preview .form_donate .support_this{
+  background-color: #336491;
+  font-size: 15px;
+  color: white;
+  border: none;
+  padding: 15px;
+  width: 30%;
+  margin: 0 20px;
+}
+
+#modal_preview .form_donate .follow{
+  background-color: #336491;
+  color: white;
+  font-size: 15px;
+  border: none;
+  padding: 15px;
+  width: 30%;
+  margin: 0 20px;
+}
+
+#modal_preview .form_donate .follow:hover,
+#modal_preview .form_donate .support_this:hover{
+cursor: pointer;
+}
+
+#modal_preview .form_donate .ctn_social{
+  width: 40%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+#modal_preview .form_donate .ctn_social i{
+  font-size: 30px;
+  margin: 0 10px;
+}
+
+#modal_preview .form_donate .ctn_social i:hover{
+cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -657,7 +849,6 @@ header .nav_mobile {
   display: none;
 
 }
-
 
 
 

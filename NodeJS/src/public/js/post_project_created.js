@@ -1,4 +1,6 @@
 
+
+
 // choose_image
 var path_image;
 function chooseFile(fileInput) {
@@ -243,7 +245,31 @@ function chooseFile_story_7(fileInput) {
 }
 
 
+// PREVIEW MODAL
 
+jQuery(document).ready(($) =>{
+    BookPostingPreview()
+    
+    function BookPostingPreview() {
+        $('#preview').on('click', () => {
+            $('#modal_preview .info_preview h2').text($('#main_title').val());
+            $('#modal_preview .info_preview h4').text($('#main_content').val());
+            $('#modal_preview .info_preview .ctn_pledged_backers .pledged .title').text(`pledged of $` + $('#title_money_pledged').val() + ` goal`);
+           
+            $('.main_prj_video').attr('src',$('#image').attr('src'));
+
+            $('#modal_preview').css({
+                'display': 'flex',
+            })
+             
+            // setTimeout(() => {
+            //     $('.form-posting > form > button[type="submit"]').css({
+            //         'display': 'block',
+            //     })
+            // }, 1000);        
+        })     
+    }
+})
 
 
 
