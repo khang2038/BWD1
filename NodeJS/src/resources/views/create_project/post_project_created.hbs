@@ -117,7 +117,7 @@
 </div>
 
 <div class="main_post">
-  <div style="display: flex; flex-direction: column;width: 70%;">
+  <div style="position:relative;display: flex; flex-direction: column;width: 70%;">
     <form method="POST" action="/post_project_created/store">
       <div class="form-group">
         <div style="display: flex; flex-direction: column;">
@@ -227,7 +227,7 @@
           </div>
         </div>
         <button
-          style="padding: 10px 20px;margin: 0px 50px 60px 50px;font-size: 30px;border-radius: 10px;border : 2px solid rgb(179, 164, 164)"
+          style="padding: 10px 20px;font-size: 30px;border-radius: 10px;border : 2px solid rgb(179, 164, 164)"
           onclick="open_faq()"
         ><i
             class="fa-solid fa-arrow-right-to-bracket"
@@ -238,45 +238,49 @@
     </form>
 
     <div id="modal_preview">
+      <div style="display: flex;justify-content: right;" onclick=onClick_close_preview()>
+        <i class="fa-solid fa-circle-xmark" style="font-size: 30px;"></i>
+      </div>
+      <div style="display: flex;justify-content: space-around;">
         <div class="img_preview">
             <img class="main_prj_video">
         </div>
-      <div class="info_preview">
-        <h5>FUNDING</h5>
-        <h2></h2>
-        <h4></h4>
-        <div class="ctn_statistic">
-          <div class="ctn_pledged_backers">
-            <div class="pledged">
-              $<span>231700</span>
-              <div class="title"></div>
-            </div>
-            <div class="backers">
-              <span>1682</span>
-              <div class="title">backers</div>
+        <div class="info_preview">
+          <h5>FUNDING</h5>
+          <h2></h2>
+          <h4></h4>
+          <div class="ctn_statistic">
+            <div class="ctn_pledged_backers">
+              <div class="pledged">
+                $<span>0</span>
+                <div class="title"></div>
+              </div>
+              <div class="backers">
+                <span>0</span>
+                <div class="title">backers</div>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="complete_figures">
-          <div class="complete">
+          <div class="complete_figures">
+            <div class="complete">
 
+            </div>
           </div>
-        </div>
-        <div class="percent_complete">
-          <span>0</span>
-          % of 10000 $
-        </div>
-        <div class="form_donate">
-          <button class="support_this">
-            SUPPORT THIS
-          </button>
-          <button class="follow">
-            FOLLOW
-          </button>
-          <div class="ctn_social">
-            <i class="fa-brands fa-facebook" style="color: #39579a"></i>
-            <i class="fa-brands fa-telegram" style="color: #38b3f1;"></i>
-            <i class="fa-brands fa-twitter" style="color: #1d9bf0;"></i>
+          <div class="percent_complete">
+            
+          </div>
+          <div class="form_donate">
+            <button class="support_this">
+              SUPPORT THIS
+            </button>
+            <button class="follow">
+              FOLLOW
+            </button>
+            <div class="ctn_social">
+              <i class="fa-brands fa-facebook" style="color: #39579a"></i>
+              <i class="fa-brands fa-telegram" style="color: #38b3f1;"></i>
+              <i class="fa-brands fa-twitter" style="color: #1d9bf0;"></i>
+            </div>
           </div>
         </div>
       </div>

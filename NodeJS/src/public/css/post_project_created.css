@@ -373,7 +373,7 @@ header .nav_mobile {
 }
 
 .main_post form button{
-  margin: 30px 50px;
+  margin: 0px 50px 60px 70%;
   font-size: 30px;
 }
 
@@ -540,9 +540,13 @@ header .nav_mobile {
   background-color: white;
   border: 2px solid #000000;
   z-index: 1;
-  display: none;
-  justify-content: space-around;
   padding: 30px;
+  display: none;
+  flex-direction: column;
+}
+
+#modal_preview>div i:hover{
+  cursor: pointer;
 }
 
 /*----preview_img----*/
@@ -625,7 +629,7 @@ header .nav_mobile {
   width: 0%;
 }
 100%{
-  width: 78%;
+  width: 0%;
 }
 }
 
@@ -633,7 +637,7 @@ header .nav_mobile {
   animation-name: increase_percent;
   animation-duration: 2s;
   
-  width: 78%;
+  width: 0%;
   height: 100%;
   background-color: #55a1e9;
 }
@@ -690,7 +694,15 @@ cursor: pointer;
 cursor: pointer;
 }
 
+#preview {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30%;
+  font-size: 30px;
+  margin: 0px 50px 80px 10%;
 
+}
 
 
 

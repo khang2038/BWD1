@@ -246,6 +246,13 @@ function chooseFile_story_7(fileInput) {
 
 
 // PREVIEW MODAL
+const preview = document.querySelector('#modal_preview');
+
+function onClick_close_preview() {
+    Object.assign(preview.style, {
+        display: 'none',
+    })
+}
 
 jQuery(document).ready(($) =>{
     BookPostingPreview()
@@ -255,6 +262,7 @@ jQuery(document).ready(($) =>{
             $('#modal_preview .info_preview h2').text($('#main_title').val());
             $('#modal_preview .info_preview h4').text($('#main_content').val());
             $('#modal_preview .info_preview .ctn_pledged_backers .pledged .title').text(`pledged of $` + $('#title_money_pledged').val() + ` goal`);
+            $('#modal_preview .info_preview .percent_complete').text(`0 % of ` + $('#title_money_pledged').val() + ` $`);
            
             $('.main_prj_video').attr('src',$('#image').attr('src'));
 
