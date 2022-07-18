@@ -126,31 +126,29 @@ let data_story = "";
 //     `
 
 function add_story_title() {
-    id_title++;
-    data_story += 
-    `<input name="title${id_title}" type="text" style="border_radius:20px;width: 80%;font-size : 30px; padding: 20px;margin: 10px;" placeholder="Title">
-    `;
-    input_add_str.innerHTML = data_story;
-}
+    id_title++; 
+    const div_title = document.createElement("div")
+    div_title.innerHTML=`<textarea name="title${id_title}" type="text" style="height: 80px;border_radius:20px;width: 80%;font-size : 30px; padding: 20px;margin: 10px;" placeholder="Title"></textarea>`;
+    input_add_str.appendChild(div_title); 
+} 
 
 function add_story_content() {
-    id_content++;
-    data_story += 
-    `<input name="content${id_content}" type="text" style="border-radius: 10px; height: 20px;word-break: break-word; width: 90%;font-size : 20px; padding: 30px 10px 140px 30px;margin: 10px;" placeholder="Content">
-    `;
-    input_add_str.innerHTML = data_story;
+    id_content++; 
+    const div_content = document.createElement('div');
+    div_content.innerHTML=`<textarea name="content${id_content}" type="text" style="border-radius: 10px; height: 20px;word-break: break-word; width: 90%;font-size : 20px; padding: 30px 10px 140px 30px;margin: 10px;" placeholder="Content"></textarea>`; 
+    input_add_str.appendChild(div_content); 
 }
 
 function add_story_image() {
     id_image++;
-    data_story += 
-    `<div style="display: flex; flex-direction: column;">
+    const div_image = document.createElement('div');
+    div_image.innerHTML=`<div style="display: flex; flex-direction: column;">
     <img style="margin: 0 auto; z-index: 1" src="" alt="" id="image_${id_image}" width="300" height="300">
     <input name="image${id_image}" style="width: 80%;margin: 20px auto 60px auto;" type="file" class="form-control" id="img_big" name="img_big" onchange=chooseFile_story_${id_image}(this)
             accept="image/gif , image/jpeg, image/png" placeholder="image">
     </div>
     `;
-    input_add_str.innerHTML = data_story;
+    input_add_str.appendChild(div_image);
 }
 
 //function chay
