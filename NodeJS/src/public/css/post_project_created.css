@@ -459,6 +459,9 @@ header .nav_mobile {
 /*------button_add_str------*/
 
 .story_post .button_add_str{
+  position: fixed;
+  top: 238px;
+  left: 98px;
   width: 20%;
   display: flex;
   flex-direction: column;

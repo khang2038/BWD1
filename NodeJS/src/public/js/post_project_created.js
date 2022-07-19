@@ -242,6 +242,69 @@ function chooseFile_story_7(fileInput) {
     }
 }
 
+const button_add_str = document.querySelector('.story_post .button_add_str');
+
+$(document).ready(function(){
+    $(window).scroll(function(){
+        var body = $('html, body').scrollTop();
+        var nav_main_post_top = $('.nav_main_post').offset().top;
+        var button_add_str_top = $('.button_add_str').offset().top;
+        var header_top = $('header').offset().top; 
+        var ctn_footer_top = $('.ctn__footer').offset().top;
+
+        console.log(button_add_str_top + 455.63);
+        console.log(ctn_footer_top);
+
+        if ((button_add_str_top + 455.52) < ctn_footer_top) {
+            Object.assign(button_add_str.style , {
+                display: 'flex',
+            })
+        }
+        else {
+            Object.assign(button_add_str.style , {
+                display: 'none',
+            })
+        }
+        
+
+    })
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // PREVIEW MODAL
 const preview = document.querySelector('#modal_preview');
