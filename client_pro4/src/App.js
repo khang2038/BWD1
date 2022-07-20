@@ -6,11 +6,12 @@ import Cpn_header from '~/components/cpn_header/cpn_header.js';
 import Details from './pages/Details';
 import Home from './pages/Home';
 import Create_project from './pages/Create_project';
-
+import axios from 'axios';
 
 import * as actions from './redux/actions';
 
 function App_logged() {
+
   return (
     <Container maxWidth={false} className="" style={{margin:'0', padding: '0'}}>
       <Cpn_header />
@@ -31,7 +32,9 @@ function App_logged() {
 }
 
 function App() {
+
   return (
+    
     <App_logged />
   )
 }

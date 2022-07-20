@@ -2,9 +2,9 @@ import React from 'react';
 import './style_footer.css';
 
 function Cpn_footer_1() {
-    return (<div class="ctn__footer">
-        <div class="ctn__footer__content">
-            <div class="footer__colum f__strart">
+    return (<div className="ctn__footer">
+        <div className="ctn__footer__content">
+            <div className="footer__colum f__strart">
                 <a href="../Login/signup.html">Get Started</a>
                 <ul>
                     <li><a href="Login">Start Fundraise</a></li>
@@ -12,7 +12,7 @@ function Cpn_footer_1() {
                     <li><a href="#">Account Login</a></li>
                 </ul>
             </div>
-            <div class="footer__colum f__browse">
+            <div className="footer__colum f__browse">
                 <a href="#">Browse</a>
                 <ul>
                     <li><a href="#">Trending</a></li>
@@ -21,7 +21,7 @@ function Cpn_footer_1() {
                     <li><a href="#">Communities</a></li>
                 </ul>
             </div>
-            <div class="footer__colum f__resources">
+            <div className="footer__colum f__resources">
                 <a href="#">Resources</a>
                 <ul>
                     <li><a href="#">FAQ</a></li>
@@ -29,50 +29,50 @@ function Cpn_footer_1() {
                     <li><a href="#">Contact Us</a></li>
                 </ul>
             </div>
-            <div class="footer__colum f__legal">
+            <div className="footer__colum f__legal">
                 <a href="#">Legal</a>
                 <ul>
                     <li><a href="#">Privacy Policy</a></li>
                     <li><a href="#">Terms of Service</a></li>
                 </ul>
             </div>
-            <div class="footer__colum f__follow">
+            <div className="footer__colum f__follow">
                 <a href="#">Follow</a>
-                <ul class="list-follow">
-                    <a href="#"><i class="fa-brands fa-facebook-square"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+                <ul className="list-follow">
+                    <a href="#"><i className="fa-brands fa-facebook-square"></i></a>
+                    <a href="#"><i className="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i className="fa-brands fa-linkedin"></i></a>
+                    <a href="#"><i className="fa-brands fa-youtube"></i></a>
                 </ul>
             </div>
         </div>
 
-        <div class="ctn__footer__describle">
-            <div class="sponsor">
+        <div className="ctn__footer__describle">
+            <div className="sponsor">
                 <p>Special thanks for sponsors</p>
-                <div class="ctn__brands__img">
-                    <p class="img__img">
+                <div className="ctn__brands__img">
+                    <p className="img__img">
                         Brand A
                     </p>
-                    <p class="img__img">
+                    <p className="img__img">
                         Brand B
                     </p>
-                    <p class="img__img">
+                    <p className="img__img">
                         Brand C
                     </p>
-                    <p class="img__img">
+                    <p className="img__img">
                         Brand D
                     </p>
-                    <p class="img__img">
+                    <p className="img__img">
                         Brand E
                     </p>
                 </div>
             </div>
-            <div class="describle">
-                <p class="coppyright">
+            <div className="describle">
+                <p className="coppyright">
                     Copyright © 2022 Startups.com. All rights reserved.
                 </p>
-                <p class="content__describle">
+                <p className="content__describle">
                     PRO4 is a software as a service crowdfunding platform. PRO4 is not a 
                     registered broker-dealer and does not offer investment advice or advise on the
                      raising of capital through securities offerings. PRO4 does not recommend 
@@ -90,8 +90,8 @@ function Cpn_footer_1() {
 
 function Cpn_footer_res() {
     return (
-    <div class="ctn__footer-mobile">
-        <div class="footer__colum f__strart">
+    <div className="ctn__footer-mobile">
+        <div className="footer__colum f__strart">
             <a href="../Login/signup.html">Get Started</a>
             <ul>
                 <li><a href="../Login/login.html">Start Fundraise</a></li>
@@ -99,7 +99,7 @@ function Cpn_footer_res() {
                 <li><a href="#">Account Login</a></li>
             </ul>
         </div>
-        <div class="footer__colum f__browse">
+        <div className="footer__colum f__browse">
             <a href="#">Browse</a>
             <ul>
                 <li><a href="#">Trending</a></li>
@@ -108,7 +108,7 @@ function Cpn_footer_res() {
                 <li><a href="#">Communities</a></li>
             </ul>
         </div>
-        <div class="footer__colum f__resources">
+        <div className="footer__colum f__resources">
             <a href="#">Resources</a>
             <ul>
                 <li><a href="#">FAQ</a></li>
@@ -116,20 +116,20 @@ function Cpn_footer_res() {
                 <li><a href="#">Contact Us</a></li>
             </ul>
         </div>
-        <div class="footer__colum f__legal">
+        <div className="footer__colum f__legal">
             <a href="#">Legal</a>
             <ul>
                 <li><a href="#">Privacy Policy</a></li>
                 <li><a href="#">Terms of Service</a></li>
             </ul>
         </div>
-        <div class="footer__colum f__follow">
+        <div className="footer__colum f__follow">
             <a href="#">Follow</a>
-            <ul class="list-follow">
-                <a href="#"><i class="fa-brands fa-facebook-square"></i></a>
-                <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            <ul className="list-follow">
+                <a href="#"><i className="fa-brands fa-facebook-square"></i></a>
+                <a href="#"><i className="fa-brands fa-instagram"></i></a>
+                <a href="#"><i className="fa-brands fa-linkedin"></i></a>
+                <a href="#"><i className="fa-brands fa-youtube"></i></a>
             </ul>
         </div>
     </div>

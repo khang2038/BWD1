@@ -24,6 +24,14 @@ var prj_cmt_db, project_db, faq_db ,str_db, slug_val, project_db;
 
 class create_project_controller{
     async show_detail(req, res, next) {
+        res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+
+        res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+
+        res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+
+        res.setHeader('Access-Control-Allow-Credentials', true);
+
         await Project_comment.find({slug : req.params.slug}) 
             .then(prj_cmt => {
                 prj_cmt = mutipleMongooseToObject(prj_cmt);
@@ -50,17 +58,19 @@ class create_project_controller{
             .then(project => {
                 project_db = mongooseToObject(project);
                 slug_val = project.main_title;
-                res.render('create_project/create_project', {
-                    project : mongooseToObject(project),
-                    prj_cmt : prj_cmt_db,
-                    question : faq_db,
-                    story : str_db,
-                    title : 'create_project',
-                    style : '../../css/create_project.css',
-                    script1 : '../../js/create_project.js',
-                    script3 : '../../js/post_project_created.js',
-                    users: req.user
-                });
+                res.send(mongooseToObject(project));
+
+                // res.render('create_project/create_project', {
+                //     project : mongooseToObject(project),
+                //     prj_cmt : prj_cmt_db,
+                //     question : faq_db,
+                //     story : str_db,
+                //     title : 'create_project',
+                //     style : '../../css/create_project.css',
+                //     script1 : '../../js/create_project.js',
+                //     script3 : '../../js/post_project_created.js',
+                //     users: req.user
+                // });
             })
             .catch(next)
     }

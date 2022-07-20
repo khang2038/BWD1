@@ -161,12 +161,12 @@ function Highlights() {
     modal_6.classList.remove("open");
   }
   return (
-    <div class="highlights">
-      <h1 class="title">Featured projects</h1>
-      <i class="pre_card fa-solid fa-angle-left" onClick={trans_pre_card}></i>
-      <i class="aft_card fa-solid fa-angle-right" onClick={trans_aft_card}></i>
-      <div class="card_project">
-        <div class="form_card_project" onClick={open_prj_1}>
+    <div className="highlights">
+      <h1 className="title">Featured projects</h1>
+      <i className="pre_card fa-solid fa-angle-left" onClick={trans_pre_card}></i>
+      <i className="aft_card fa-solid fa-angle-right" onClick={trans_aft_card}></i>
+      <div className="card_project">
+        <div className="form_card_project" onClick={open_prj_1}>
           <div>
             <img src={project4} alt="" />
           </div>
@@ -177,7 +177,7 @@ function Highlights() {
             Cyberpunk diorama theme. Includes many personalizable addons.
           </p>
         </div>
-        <div class="form_card_project" onClick={open_prj_2}>
+        <div className="form_card_project" onClick={open_prj_2}>
           <div>
             <img src={project5} alt="" />
           </div>
@@ -187,7 +187,7 @@ function Highlights() {
             Stay Connected, Go Adventure Boldly with Pruto!
           </p>
         </div>
-        <div class="form_card_project" onClick={open_prj_3}>
+        <div className="form_card_project" onClick={open_prj_3}>
           <div>
             <img src={project6} alt="" />
           </div>
@@ -200,8 +200,8 @@ function Highlights() {
       </div>
 
       {/* <!--card-form-2--> */}
-      <div class="card_project-1">
-        <div class="form_card_project-1" onclick={open_prj_4}>
+      <div className="card_project-1">
+        <div className="form_card_project-1" onclick={open_prj_4}>
           <div>
             <img src={project2} alt="" />
           </div>
@@ -211,7 +211,7 @@ function Highlights() {
             Animal Portraits
           </p>
         </div>
-        <div class="form_card_project-1" onclick={open_prj_5}>
+        <div className="form_card_project-1" onclick={open_prj_5}>
           <div>
             <img src={project3} alt="" />
           </div>
@@ -221,7 +221,7 @@ function Highlights() {
             on your PC and join with your friends on your smartphones.
           </p>
         </div>
-        <div class="form_card_project-1" onclick={open_prj_6}>
+        <div className="form_card_project-1" onclick={open_prj_6}>
           <div>
             <img src={project1} alt="" />
           </div>
@@ -233,12 +233,12 @@ function Highlights() {
         </div>
       </div>
 
-      <div class="modal_1">
-        <div class="exit">
-          <i class="fa-solid fa-circle-xmark" onClick={close_prj}></i>
+      <div className="modal_1">
+        <div className="exit">
+          <i className="fa-solid fa-circle-xmark" onClick={close_prj}></i>
         </div>
-        <div class="content1">
-          <div class="info_img">
+        <div className="content1">
+          <div className="info_img">
             <img src={project4} alt="" />
             <p>Cyberpunk Mini Alley - Bookshelf Insert / Booknook</p>
             <p>
@@ -247,14 +247,14 @@ function Highlights() {
             </p>
           </div>
 
-          <div class="info_content">
+          <div className="info_content">
             <h2>
               US $ <span>196.096</span>
-              <i class="ti-check-box"> 100%</i>
+              <i className="ti-check-box"> 100%</i>
             </h2>
             <p>Pledged of US$ 10,000 goal</p>
 
-            <ul class="content_details">
+            <ul className="content_details">
               <li>
                 Have you fallen in love with the beautiful neon lights of the
                 Cyberpunk world?
@@ -266,7 +266,7 @@ function Highlights() {
 
               <h4>
                 {" "}
-                <i class="ti-star"> </i> The Cyberpunk MiniAlley turns this
+                <i className="ti-star"> </i> The Cyberpunk MiniAlley turns this
                 dystopian futuristic world into a reality. Now you can have your
                 very own piece of Cyberpunk diorama in your own home. This
                 beautiful handmade piece sits neatly on any bookshelf and
@@ -279,12 +279,12 @@ function Highlights() {
         </div>
       </div>
 
-      <div class="modal_2">
-        <div class="exit">
-          <i class="fa-solid fa-circle-xmark" onClick={close_prj}></i>
+      <div className="modal_2">
+        <div className="exit">
+          <i className="fa-solid fa-circle-xmark" onClick={close_prj}></i>
         </div>
-        <div class="content1">
-          <div class="info_img">
+        <div className="content1">
+          <div className="info_img">
             <img src={project5} alt="" />
             <p>Pruto: Mesh Action Sports Communicator with LED Light</p>
             <p>
@@ -293,21 +293,21 @@ function Highlights() {
             </p>
           </div>
 
-          <div class="info_content">
+          <div className="info_content">
             <h2>
               US$<span> 288,377</span>
-              <i class="ti-check-box"> 100%</i>
+              <i className="ti-check-box"> 100%</i>
             </h2>
             <p>Pledged of US$ 5,000 goal</p>
 
-            <ul class="content_details">
+            <ul className="content_details">
               <li>Real-time hands free conversation</li>
               <li>Keep in touch , ultra wide range ,superb sound quality</li>
               <li>Prepared for any situation </li>
 
               <h4>
                 {" "}
-                <i class="ti-star"> </i> Go wild! Have adventures with friends
+                <i className="ti-star"> </i> Go wild! Have adventures with friends
                 and stay connected no matter how intense the action gets! With
                 Pruto, revolutionize the way you communicate with your
                 companions while enjoying outdoor activities.{" "}
@@ -318,12 +318,12 @@ function Highlights() {
           </div>
         </div>
       </div>
-      <div class="modal_3">
-        <div class="exit">
-          <i class="fa-solid fa-circle-xmark" onClick={close_prj}></i>
+      <div className="modal_3">
+        <div className="exit">
+          <i className="fa-solid fa-circle-xmark" onClick={close_prj}></i>
         </div>
-        <div class="content1">
-          <div class="info_img">
+        <div className="content1">
+          <div className="info_img">
             <img src={project6} alt="" />
             <p>Haven Safari: your all-in-one hammock tent</p>
             <p>
@@ -332,14 +332,14 @@ function Highlights() {
             </p>
           </div>
 
-          <div class="info_content">
+          <div className="info_content">
             <h2>
               $<span> 402,243</span>
-              <i class="ti-check-box"> 100%</i>
+              <i className="ti-check-box"> 100%</i>
             </h2>
             <p>Pledged of $20,000 goal</p>
 
-            <ul class="content_details">
+            <ul className="content_details">
               <li>
                 Deluxe insulated air mattress, coated in vegan suede, with
                 adjustable lounge strap.{" "}
@@ -352,7 +352,7 @@ function Highlights() {
 
               <h4>
                 {" "}
-                <i class="ti-star"> </i> As an avid outdoorsman, it was hard to
+                <i className="ti-star"> </i> As an avid outdoorsman, it was hard to
                 reconcile the fact that every amazing day in the woods, would be
                 punctuated by a miserable night. I designed the Haven Tent with
                 the goal of, making sleep the highlight of camping.{" "}
@@ -364,12 +364,12 @@ function Highlights() {
         </div>
       </div>
 
-      <div class="modal_4">
-        <div class="exit">
-          <i class="fa-solid fa-circle-xmark" onClick={close_prj}></i>
+      <div className="modal_4">
+        <div className="exit">
+          <i className="fa-solid fa-circle-xmark" onClick={close_prj}></i>
         </div>
-        <div class="content1">
-          <div class="info_img">
+        <div className="content1">
+          <div className="info_img">
             <img src={project2} alt="" />
             <p>The Farm Family Project</p>
             <p>
@@ -378,23 +378,23 @@ function Highlights() {
             </p>
           </div>
 
-          <div class="info_content">
+          <div className="info_content">
             <h2>
               $<span> 45,412</span>
-              <i class="ti-check-box"> 100%</i>
+              <i className="ti-check-box"> 100%</i>
             </h2>
             <p>Pledged of $10,000 goal</p>
 
-            <ul class="content_details">
+            <ul className="content_details">
               <h4>
                 {" "}
-                <i class="ti-star"> </i>The Farm Family Project, will be a book
+                <i className="ti-star"> </i>The Farm Family Project, will be a book
                 of 42 photographs of farm animal portraiture I've taken over the
                 last 15 years.{" "}
               </h4>
               <h4>
                 {" "}
-                <i class="ti-star"> </i>Publishing a book will allow more people
+                <i className="ti-star"> </i>Publishing a book will allow more people
                 to see these beautiful animals as I see them, and bring more
                 people into the conversation.{" "}
               </h4>
@@ -402,7 +402,7 @@ function Highlights() {
 
             <button>
               <a
-                class="modal_4_btn_a"
+                className="modal_4_btn_a"
                 href="/create_project/the-farm-family-project"
               >
                 Details ...
@@ -412,12 +412,12 @@ function Highlights() {
         </div>
       </div>
 
-      <div class="modal_5">
-        <div class="exit">
-          <i class="fa-solid fa-circle-xmark" onClick={close_prj}></i>
+      <div className="modal_5">
+        <div className="exit">
+          <i className="fa-solid fa-circle-xmark" onClick={close_prj}></i>
         </div>
-        <div class="content1">
-          <div class="info_img">
+        <div className="content1">
+          <div className="info_img">
             <img src={project3} alt="" />
             <p>SnackHunter - A magical multiplayer hide-and-seek game</p>
             <p>
@@ -427,14 +427,14 @@ function Highlights() {
             </p>
           </div>
 
-          <div class="info_content">
+          <div className="info_content">
             <h2>
               $<span> 3,481 </span>
-              <i class="ti-check-box"> 100%</i>
+              <i className="ti-check-box"> 100%</i>
             </h2>
             <p>Pledged of $3,154 goal</p>
 
-            <ul class="content_details">
+            <ul className="content_details">
               <li>SnackHunter offers an easy-to-use multiplayer system. </li>
               <li>
                 Free to use , up to 16 friends can play together without any
@@ -442,7 +442,7 @@ function Highlights() {
               </li>
               <h4>
                 {" "}
-                <i class="ti-star"> </i>SnackHunter là một trò chơi trốn tìm
+                <i className="ti-star"> </i>SnackHunter là một trò chơi trốn tìm
                 nhiều người chơi đầy thú vị và kỳ diệu! Tham gia vào đội Thợ săn
                 ma thuật và đuổi theo thức ăn bỏ chạy của bạn hoặc trở thành một
                 Snack mê hoặc và trốn khỏi những pháp sư đói.{" "}
@@ -454,12 +454,12 @@ function Highlights() {
         </div>
       </div>
 
-      <div class="modal_6">
-        <div class="exit">
-          <i class="fa-solid fa-circle-xmark" onClick={close_prj}></i>
+      <div className="modal_6">
+        <div className="exit">
+          <i className="fa-solid fa-circle-xmark" onClick={close_prj}></i>
         </div>
-        <div class="content1">
-          <div class="info_img">
+        <div className="content1">
+          <div className="info_img">
             <img src={project1} alt="" />
             <p>Waterproof and soft light ball-POOF LIGHT</p>
             <p>
@@ -468,10 +468,10 @@ function Highlights() {
             </p>
           </div>
 
-          <div class="info_content">
+          <div className="info_content">
             <h2>
               $<span> 3,481 </span>
-              <i class="ti-check-box"> 100%</i>
+              <i className="ti-check-box"> 100%</i>
             </h2>
             <p>Pledged of $3,154 goal</p>
 
@@ -487,56 +487,56 @@ export default function Cpn_home() {
   return (
     <div>
       <header>
-        <div class="the_left_nav">
-          <div class="logo">
+        <div className="the_left_nav">
+          <div className="logo">
             <p>PRO4</p>
           </div>
-          <div class="search">
-            <i class="fa-solid fa-magnifying-glass icon"></i>
+          <div className="search">
+            <i className="fa-solid fa-magnifying-glass icon"></i>
             <input type="text" placeholder="Search..." />
           </div>
         </div>
-        <div class="the_center_nav">
-          <a id="homepage" class="fa-solid fa-house icon 1"></a>
-          <a id="product" class="fa-solid fa-earth-americas icon 2"></a>
-          <a id="projects" class="fa-solid fa-circle-dollar-to-slot icon 3"></a>
+        <div className="the_center_nav">
+          <a id="homepage" className="fa-solid fa-house icon 1"></a>
+          <a id="product" className="fa-solid fa-earth-americas icon 2"></a>
+          <a id="projects" className="fa-solid fa-circle-dollar-to-slot icon 3"></a>
         </div>
-        <div class="the_right_nav">
-          <div class="login_nav">
-            <i class="fa-solid fa-right-to-bracket icon"></i>
+        <div className="the_right_nav">
+          <div className="login_nav">
+            <i className="fa-solid fa-right-to-bracket icon"></i>
             <a href="Login">Login</a>
           </div>
         </div>
         {/* 
 {{!-- RES_MOBILE --}} */}
-        <div class="bars">
-          <i class="ti-menu" onclick></i>
+        <div className="bars">
+          <i className="ti-menu" ></i>
         </div>
-        <div class="nav_mobile">
-          <div class="close" onclick>
-            <i class="ti-close"></i>
+        <div className="nav_mobile">
+          <div className="close">
+            <i className="ti-close"></i>
             Close
           </div>
-          <div class="homepage">
+          <div className="homepage">
             <a
               id="homepage"
-              class="fa-solid fa-house icon 1"
+              className="fa-solid fa-house icon 1"
               href="homepage"
             ></a>
             <a href="homepage">HOME</a>
           </div>
-          <div class="product">
+          <div className="product">
             <a
               id="product"
-              class="fa-brands fa-atlassian icon 2"
+              className="fa-brands fa-atlassian icon 2"
               href="product"
             ></a>
             <a href="product">POSTS</a>
           </div>
-          <div class="projects">
+          <div className="projects">
             <a
               id="projects"
-              class="fa-solid fa-earth-americas icon 3"
+              className="fa-solid fa-earth-americas icon 3"
               href="detail"
             ></a>
             <a href="detail">PROJECTS</a>
@@ -544,52 +544,52 @@ export default function Cpn_home() {
         </div>
       </header>
 
-      <div class="introduce__web">
-        <div class="ctn__content">
-          <h1 class="content__title">Welcome to PRO4</h1>
+      <div className="introduce__web">
+        <div className="ctn__content">
+          <h1 className="content__title">Welcome to PRO4</h1>
           <p>
             A place to call for crowdfunding promote potential and creativity
             projects
           </p>
-          <div class="btn">
+          <div className="btn">
             <button>GO TO FUNDRAISE</button>
           </div>
         </div>
 
-        <div class="ctn__image">
+        <div className="ctn__image">
           <img src={pro4} alt="" />
         </div>
       </div>
 
       {/* RES_MOBILE  */}
-      <div class="introduce__web-mobile">
-        <div class="ctn__content-mobile">
-          <h1 class="content__title-mobile">Welcome to PRO4</h1>
+      <div className="introduce__web-mobile">
+        <div className="ctn__content-mobile">
+          <h1 className="content__title-mobile">Welcome to PRO4</h1>
           <p>
             A place to call for crowdfunding promote potential and creativity
             projects
           </p>
         </div>
       </div>
-      {/* <div class="space_1">
+      {/* <div className="space_1">
                     
                 </div> */}
       {/* DONE_RES_MOBILE */}
 
-      <div class="our_impact">
+      <div className="our_impact">
         <h1>Our Impact</h1>
-        <div class="card">
-          <div class="form_card">
+        <div className="card">
+          <div className="form_card">
             <img src={project_fund} alt="" />
             <h1>125</h1>
             <p>Projects funded</p>
           </div>
-          <div class="form_card">
+          <div className="form_card">
             <img src={money} alt="" />
             <h1>$1,170,203</h1>
             <p>Total amount invested</p>
           </div>
-          <div class="form_card">
+          <div className="form_card">
             <img src={supporter} alt="" />
             <h1>21080</h1>
             <p>Number of supporters</p>
@@ -597,12 +597,12 @@ export default function Cpn_home() {
         </div>
       </div>
 
-      {/* <div class="space_2">
+      {/* <div className="space_2">
                 
             </div> */}
 
-      <div class="reason_use">
-        <div class="reason_title">
+      <div className="reason_use">
+        <div className="reason_title">
           <h1>Why should you use PRO4?</h1>
           <pre>
             Friendly, easy to use, proactive environment for both startups and
@@ -610,7 +610,7 @@ export default function Cpn_home() {
           </pre>
         </div>
         {/* {{!-- reason_title-mobile --}} */}
-        <div class="reason_title-mobile">
+        <div className="reason_title-mobile">
           <h1>Why should you use PRO4?</h1>
           <p>
             Friendly, easy to use, proactive environment for both startups and
@@ -619,9 +619,9 @@ export default function Cpn_home() {
         </div>
 
         {/* {{!-- DONE_reason_title-mobile --}} */}
-        <div class="info_item-1">
+        <div className="info_item-1">
           <img src={financial} alt="" />
-          <div class="info_item__content">
+          <div className="info_item__content">
             <h2>Financial credibility and reasonableness</h2>
             <p>
               If you do not attract enough capital after the specified time, you
@@ -631,8 +631,8 @@ export default function Cpn_home() {
           </div>
         </div>
 
-        <div class="info_item-2">
-          <div class="info_item__content">
+        <div className="info_item-2">
+          <div className="info_item__content">
             <h2>MISSION</h2>
             <p>
               Promoting creativity, incubating potential startups that need

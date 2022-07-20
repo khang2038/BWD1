@@ -22,7 +22,7 @@ export default function Cpn_gototop() {
 
     return (
     <button onClick={topFunction} id="myBtn" title="Go to top">
-      <i class="fa-solid fa-circle-arrow-up"></i>
+      <i className="fa-solid fa-circle-arrow-up"></i>
     </button>
   );
 }

@@ -98,7 +98,7 @@ export default function Cpn_messenger() {
 
   // tin nhan mac dinh dau tien
   function createMarkup(firstMessage) {
-    return {__html: '<p class="botText"><span>' + firstMessage + "</span></p>"};
+    return {__html: '<p className="botText"><span>' + firstMessage + "</span></p>"};
   }  
 
   function firstBotMessage() {
@@ -115,7 +115,7 @@ export default function Cpn_messenger() {
  // add tin nhan
 function getHardResponse(userText) {
     let botResponse = getBotResponse(userText);
-    let botHtml = '<p class="botText"><span>' + botResponse + '</span></p>';
+    let botHtml = '<p className="botText"><span>' + botResponse + '</span></p>';
     $("#chatbox").append(botHtml);
 
     document.getElementById("chat-bar-bottom").scrollIntoView(true);
@@ -130,7 +130,7 @@ function getResponse() {
         userText = "I love Code Palace!";
     }
 
-    let userHtml = '<p class="userText"><span>' + userText + '</span></p>';
+    let userHtml = '<p className="userText"><span>' + userText + '</span></p>';
 
     // tra ve focus ban dau
     $("#textInput").val("");
@@ -146,7 +146,7 @@ function getResponse() {
 
 // xu li  gui tin nhan bot
 function buttonSendText(sampleText) {
-    let userHtml = '<p class="userText"><span>' + sampleText + '</span></p>';
+    let userHtml = '<p className="userText"><span>' + sampleText + '</span></p>';
 
     $("#textInput").val("");
     $("#chatbox").append(userHtml);

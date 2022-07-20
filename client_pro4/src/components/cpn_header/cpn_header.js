@@ -61,46 +61,46 @@ export default function Cpn_header() {
   return (
     <div>
       <header>
-        <div class="nav_pc">
-          <div class="the_left_nav">
-            <div class="logo">
+        <div className="nav_pc">
+          <div className="the_left_nav">
+            <div className="logo">
               <p>PRO4</p>
             </div>
-            <div class="search">
-              <i class="fa-solid fa-magnifying-glass icon"></i>
+            <div className="search">
+              <i className="fa-solid fa-magnifying-glass icon"></i>
               <input type="text" placeholder="Search..." />
             </div>
           </div>
-          <div class="the_center_nav">
+          <div className="the_center_nav">
             <Link
               id="homepage"
-              class="fa-solid fa-house icon 1"
+              className="fa-solid fa-house icon 1"
               to="/homepage"
               onClick={onclick__home}
             ></Link>
             <Link
               id="product"
-              class="fa-solid fa-earth-americas icon 2"
+              className="fa-solid fa-earth-americas icon 2"
               to="/product"
               onClick={onclick__product}
             ></Link>
             <Link
               id="projects"
-              class="fa-solid fa-circle-dollar-to-slot icon 3"
+              className="fa-solid fa-circle-dollar-to-slot icon 3"
               to="/details"
               onClick={onclick__projects}
             ></Link>
           </div>
-          <div class="the_right_nav" onclick>
+          <div className="the_right_nav">
             <img id="img_login" src="{{users.img_author}}" alt="" />
             <p>
-              <i class="fa-solid fa-sort-down icon"></i>
+              <i className="fa-solid fa-sort-down icon"></i>
             </p>
-            <ul class="user-drop">
-              <i class="fa-solid fa-xmark project_close " onclick>
+            <ul className="user-drop">
+              <i className="fa-solid fa-xmark project_close ">
                 {" "}
               </i>
-              <div class="menu_drop">
+              <div className="menu_drop">
                 <li>
                   <a href="/profile"> Profile </a>
                 </li>
@@ -117,26 +117,26 @@ export default function Cpn_header() {
             </ul>
           </div>
         </div>
-        <div class="mobile_nav">
-          <div class="navtren">
-            <div class="logo">
+        <div className="mobile_nav">
+          <div className="navtren">
+            <div className="logo">
               <p>PRO4</p>
             </div>
-            <div class="search">
-              <i class="fa-solid fa-magnifying-glass icon tk"></i>
+            <div className="search">
+              <i className="fa-solid fa-magnifying-glass icon tk"></i>
             </div>
           </div>
-          <div class="navduoi">
-            <div class="the_center_nav">
-              <a id="homepage_mobile" class="fa-solid fa-house icon 1"></a>
-              <a id="product_mobile" class="fa-brands fa-atlassian icon 2"></a>
+          <div className="navduoi">
+            <div className="the_center_nav">
+              <a id="homepage_mobile" className="fa-solid fa-house icon 1"></a>
+              <a id="product_mobile" className="fa-brands fa-atlassian icon 2"></a>
               <a
                 id="projects_mobile"
-                class="fa-solid fa-earth-americas icon 3"
+                className="fa-solid fa-earth-americas icon 3"
               ></a>
             </div>
-            <label for="nav-mobile-input" class="nav_bars-btn">
-              <i class="fa-solid fa-bars"></i>
+            <label htmlFor="nav-mobile-input" className="nav_bars-btn">
+              <i className="fa-solid fa-bars"></i>
             </label>
           </div>
         </div>
@@ -144,65 +144,65 @@ export default function Cpn_header() {
           type="checkbox"
           name=""
           hidden="true"
-          class="nav__input"
+          className="nav__input"
           id="nav-mobile-input"
         />
-        <label for="nav-mobile-input" class="nav_overlay"></label>
-        <ul class="mobile_nav_drop">
-          <label for="nav-mobile-input">
-            <i class="fa-solid fa-xmark nav_mobile_close"></i>{" "}
+        <label htmlFor="nav-mobile-input" className="nav_overlay"></label>
+        <ul className="mobile_nav_drop">
+          <label htmlFor="nav-mobile-input">
+            <i className="fa-solid fa-xmark nav_mobile_close"></i>{" "}
           </label>
-          <div class="menu_mobile">
+          <div className="menu_mobile">
             <a href="Game">
               {" "}
-              <li class="menu-game">
-                <i class="fa-solid fa-gamepad icon"></i>
+              <li className="menu-game">
+                <i className="fa-solid fa-gamepad icon"></i>
                 <span>Game</span>
               </li>
             </a>
             <a href="App">
-              <li class="menu-app">
-                <i class="fa-brands fa-app-store icon"></i>
+              <li className="menu-app">
+                <i className="fa-brands fa-app-store icon"></i>
                 <span>App</span>
               </li>
             </a>
             <a href="Ai.html">
               {" "}
-              <li class="menu-AI">
-                <i class="fa-solid fa-robot icon"></i>
+              <li className="menu-AI">
+                <i className="fa-solid fa-robot icon"></i>
                 <span>AI</span>
               </li>
             </a>
             <a href="costume">
-              <li class="menu-costume">
-                <i class="fa-solid fa-shirt icon"></i>
+              <li className="menu-costume">
+                <i className="fa-solid fa-shirt icon"></i>
                 <span>Costume</span>
               </li>
             </a>
             <a href="ecommerce">
               {" "}
-              <li class="menu-ecommerce">
-                <i class="fa-brands fa-shopify icon"></i>
+              <li className="menu-ecommerce">
+                <i className="fa-brands fa-shopify icon"></i>
                 <span>Ecommerce</span>
               </li>
             </a>
           </div>
-          <li class="mode-mobile">
-            <div class="moon-sun">
-              <i class="fa-solid fa-moon moon "></i>
-              <i class="fa-solid fa-sun sun"></i>
+          <li className="mode-mobile">
+            <div className="moon-sun">
+              <i className="fa-solid fa-moon moon "></i>
+              <i className="fa-solid fa-sun sun"></i>
             </div>
-            <span class="mode-text">Dark Mode</span>
-            <div class="toggle-switch">
-              <span class="switch"></span>
+            <span className="mode-text">Dark Mode</span>
+            <div className="toggle-switch">
+              <span className="switch"></span>
             </div>
           </li>
         </ul>
       </header>
 
-      <div class="ctn__loading__body">
-        <div class="ctn__loading">
-          <div class="ctn__loading__content"></div>
+      <div className="ctn__loading__body">
+        <div className="ctn__loading">
+          <div className="ctn__loading__content"></div>
         </div>
       </div>
     </div>

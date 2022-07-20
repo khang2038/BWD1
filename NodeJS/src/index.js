@@ -4,10 +4,9 @@ const handlebars=require('express-handlebars');
 var methodOverride = require('method-override')
 const app = express()
 const route=require('./routes')
-const port = 3000
+const port = 5000
 const passports = require("passport");
 const session =require("express-session");
-
 
 const db=require('./config/db');
 const initPassportLocal = require('./app/auth/passportLocal');
