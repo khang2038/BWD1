@@ -4,6 +4,15 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import $ from "jquery";
 import "animate.css";
 import axios from 'axios';
+import { useState , useEffect} from "react";
+
+//main_prj
+const get_main_prj = () => {
+  axios.get('http://localhost:5000/create_project/the-farm-family-project')
+    .then((res) => res.data)
+}
+
+
 
 function Ctn_main_prj() {
   return (
@@ -72,18 +81,44 @@ function Ctn_main_prj() {
   );
 }
 
+function print_main_project(main_prj) {
+  if (main_prj !== null) {
+    return (
+      <Ctn_main_prj 
+        key={main_prj.key}
+        main_title={main_prj.title}
+        img_big={main_prj.img_big}
+        main_content={main_prj.main_content}
+        title_money_pledged={main_prj.title_money_pledged}
+      />
+    )
+  }
+}
+
 export default function Cpn_create_project() {
-  axios.get('http://localhost:5000/create_project/the-farm-family-project')
-  .then(function(res){
-    console.log(res.data);
-  })
-  .catch(function(error){
-    console.log(error);
-  });
+  const [main_prj, setMain_prj] = useState(null);
+  console.log(1);
+  useEffect(() => {
+    if (main_prj === null) {
+        axios.get('http://localhost:5000/create_project/the-farm-family-project')
+          .then((res) => res.data)  
+          .then((data) => {
+            setMain_prj(data);
+          })
+      }
+  },[])
+
+  // useComponentWillMount(
+  //   if (main_prj.data === null) {
+  //     get_main_prj().then((res) => {
+  //       setMain_prj(res)
+  //     })
+  //   }
+  // ) 
 
   return (
     <div>
-      <Ctn_main_prj />
+      {print_main_project(main_prj)}
     </div>
   );
 }
