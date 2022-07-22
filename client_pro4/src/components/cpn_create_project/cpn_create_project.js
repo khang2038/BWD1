@@ -5,14 +5,10 @@ import $ from "jquery";
 import "animate.css";
 import axios from "axios";
 import { useState, useEffect } from "react";
+//get slug
+import { useLocation } from 'react-router-dom'
 
 //main_prj
-const get_main_prj = () => {
-  axios
-    .get("http://localhost:5000/create_project/the-farm-family-project")
-    .then((res) => res.data);
-};
-
 function Ctn_main_prj({
   main_title,
   img_big,
@@ -111,15 +107,17 @@ function print_main_project(main_prj) {
 }
 
 export default function Cpn_create_project() {
-  const [main_prj, setMain_prj] = useState(null);
-  console.log(1);
+  const [data_cr_prj, setData_cr_prj] = useState(null);
+ 
+  const location = useLocation();
+
   useEffect(() => {
-    if (main_prj === null) {
+    if (data_cr_prj === null) {
       axios
-        .get("http://localhost:5000/create_project/the-farm-family-project")
+        .get(`http://localhost:5000${location.pathname}`)
         .then((res) => res.data)
         .then((data) => {
-          setMain_prj(data);
+          setData_cr_prj(data);
         });
     }
   }, []);
@@ -132,5 +130,5 @@ export default function Cpn_create_project() {
   //   }
   // )
 
-  return <div>{print_main_project(main_prj)}</div>;
+  return <div>{print_main_project(data_cr_prj==null ? null : data_cr_prj[0])}</div>;
 }

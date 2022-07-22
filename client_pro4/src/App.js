@@ -23,7 +23,7 @@ function App_logged() {
         <Route path="/details" element={<Details />}>
 
         </Route>
-        <Route path="/create_project" element={<Create_project />}>
+        <Route path="/create_project/:slug" element={<Create_project />}>
 
         </Route>
       </Routes>

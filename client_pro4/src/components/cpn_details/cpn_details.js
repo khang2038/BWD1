@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import { Container } from "@material-ui/core";
 import './style_details.css';
 import $ from 'jquery';
@@ -21,9 +22,9 @@ function Cpn_potential_project() {
                         <img  src={potential_main} alt=""/>
                         <div className="title">
                             <h5>Coolmate : Menfashion - Shopping solution for men's wardrobe</h5>
-                            <a>A male fashion startup project from Vietnam. 
-                                Coolmate offers a convenient shopping solution for men.
-                                It is expected that Google will call for $3000 in the first round
+                            <a>A male fashion startup project from Vietnam . 
+                                Coolmate offers a convenient shopping solution for men . 
+                                It is expected that Google will call for $3000 in the first round 
                             </a>
                         </div>
                     </div>
@@ -40,7 +41,10 @@ function Cpn_potential_project() {
                         <div className="form_bl bl2">
                             <div className="title">
                                 <h5>Mood. Hard Enamel Pins</h5>
-                                <a href="/create_project/mood-hard-enamel-pins">A series of pins based on mu.andcoco's illustrations spreading peaceful and positive vibes only.</a>
+                                <Link
+                                to="/create_project/mood-hard-enamel-pins"
+                                >A series of pins based on mu.andcoco's illustrations spreading peaceful and positive vibes only.
+                                </Link>
                             </div>
                         </div>
                     </div>
