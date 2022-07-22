@@ -35,7 +35,7 @@ function Cpn_potential_project() {
                         <div className="form_bl bl1">
                             <div className="title">
                                 <h5>Bed Pillow | Adaptive ergonomics to improve your sleep</h5>
-                                <a href="/create_project/bed-pillow-or-adaptive-ergonomics-to-improve-your-sleep">Innovative design and high-quality materials for a proper rest in any position</a>
+                                <Link to="/create_project/bed-pillow-or-adaptive-ergonomics-to-improve-your-sleep">Innovative design and high-quality materials for a proper rest in any position</Link>
                             </div>
                         </div>
                         <div className="form_bl bl2">
@@ -52,7 +52,7 @@ function Cpn_potential_project() {
                         <div className="form_bl bl3">
                             <div className="title">
                                 <h5>DIGI SWAP || Upcycling film cameras into digital cameras</h5>
-                                <a href="/create_project/digi-swap-or-or-upcycling-film-cameras-into-digital-cameras">Patented adapter and app that upcycles film cameras allowing you to use the original camera settings to capture digital photos and video.</a>
+                                <Link to="/create_project/digi-swap-or-or-upcycling-film-cameras-into-digital-cameras">Patented adapter and app that upcycles film cameras allowing you to use the original camera settings to capture digital photos and video.</Link>
                             </div>
                         </div>
                         <div className="form_bl bl4">
@@ -88,12 +88,12 @@ function Cpn_art_project() {
                     <img  src={art_main} alt=""/>
                     <div className="title">
                         <h5>Restore Vietnam's ancient history</h5>
-                        <a href="/create_project/hoi-sinh-co-phuc-tuong-lai-noi-dai-tu-qua-khu">
+                        <Link to="/create_project/hoi-sinh-co-phuc-tuong-lai-noi-dai-tu-qua-khu">
                             Project on restoration, collection and research on ancient costume culture in different eras of Vietnam.
                             In order to highlight the unique characteristics of Vietnamese culture
                             <br/>
                             <span>By dhieuVN</span>
-                        </a>
+                        </Link>
                     </div>
                 </div>
                 <div className="progessbar"></div>

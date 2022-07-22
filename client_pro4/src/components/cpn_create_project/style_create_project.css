@@ -344,6 +344,12 @@ a{
     width: 62%;
 }
 
+.body_detail_prj .right_body_prj img{
+  padding: 0 0 20px 0;
+  height: 100%;
+  width: 100%;
+}
+
 .body_detail_prj .left_body_prj div{
     padding: 30px 50px;
     display: flex;
