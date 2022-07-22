@@ -97,7 +97,6 @@ function Cpn_art_project() {
             <div className="form_1-2" >
                 <div className="block">
                     <div className="form_bl bl1">
-                        <img src="img/imgdetail/art2.avif" alt=""/>
                         <div className="title">
                             <h5>Bibliotech Tarot | A cyberpunk scifi horror tarot deck</h5>
                             <p>Cyberpunk tarot card project by a talented young design team
@@ -107,7 +106,6 @@ function Cpn_art_project() {
                         </div>
                     </div>
                     <div className="form_bl bl2">
-                        <img src="img/imgdetail/art3.jpg" alt=""/>
                         <div className="title">
                             <h5>The Sanctuary</h5>
                             <p>Compassion in action. Help build a space that rebuilds lives.

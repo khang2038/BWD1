@@ -1,4 +1,6 @@
 
+import $ from "jquery";
+
 // scroll 
 var ctn_content_detail_prj = document.querySelector('.ctn_content_detail_prj');
 var header_detail_prj = document.querySelector('.header_detail_prj');

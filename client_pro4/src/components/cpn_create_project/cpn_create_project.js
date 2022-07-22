@@ -3,23 +3,29 @@ import "./style_create_project.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import $ from "jquery";
 import "animate.css";
-import axios from 'axios';
-import { useState , useEffect} from "react";
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 //main_prj
 const get_main_prj = () => {
-  axios.get('http://localhost:5000/create_project/the-farm-family-project')
-    .then((res) => res.data)
-}
+  axios
+    .get("http://localhost:5000/create_project/the-farm-family-project")
+    .then((res) => res.data);
+};
 
-
-
-function Ctn_main_prj() {
+function Ctn_main_prj({
+  main_title,
+  img_big,
+  main_content,
+  title_money_pledged,
+}) {
   return (
     <div className="ctn_main_prj">
       <div style={{ width: "90%" }}>
         <div className="prj_video_img">
-          <div className="main_prj_video"></div>
+          <div
+            className="main_prj_video"
+          > <img src={require(`../../public/img/imgproject/${img_big}`)} /> </div>
           <div className="main_prj_img">
             <ul>
               <li>
@@ -46,13 +52,13 @@ function Ctn_main_prj() {
 
         <div className="main_prj_content">
           <h5 style={{ color: "#427fb8", padding: "10px 0" }}>FUNDING</h5>
-          <h2 style={{ color: "black", fontWeight: "bold" }}></h2>
-          <h4 style={{ padding: "20px 0" }}></h4>
+          <h2 style={{ color: "black", fontWeight: "bold" }}>{main_title}</h2>
+          <h4 style={{ padding: "20px 0" }}>{main_content}</h4>
           <div className="ctn_statistic">
             <div className="ctn_pledged_backers">
               <div className="pledged">
                 $<span>0</span>
-                <div className="title">pledged of $ goal</div>
+                <div className="title">pledged of {title_money_pledged} $ goal</div>
               </div>
               <div className="backers">
                 <span>0</span>
@@ -64,15 +70,24 @@ function Ctn_main_prj() {
             <div className="complete"></div>
           </div>
           <div className="percent_complete">
-            <span>0</span> % of $
+            <span>0</span> % of {title_money_pledged} $
           </div>
           <div className="form_donate">
             <button className="support_this">SUPPORT THIS</button>
             <button className="follow">FOLLOW</button>
             <div className="ctn_social">
-              <i className="fa-brands fa-facebook" style={{ color: "#39579a" }}></i>
-              <i className="fa-brands fa-telegram" style={{ color: "#38b3f1" }}></i>
-              <i className="fa-brands fa-twitter" style={{ color: "#1d9bf0" }}></i>
+              <i
+                className="fa-brands fa-facebook"
+                style={{ color: "#39579a" }}
+              ></i>
+              <i
+                className="fa-brands fa-telegram"
+                style={{ color: "#38b3f1" }}
+              ></i>
+              <i
+                className="fa-brands fa-twitter"
+                style={{ color: "#1d9bf0" }}
+              ></i>
             </div>
           </div>
         </div>
@@ -84,14 +99,14 @@ function Ctn_main_prj() {
 function print_main_project(main_prj) {
   if (main_prj !== null) {
     return (
-      <Ctn_main_prj 
+      <Ctn_main_prj
         key={main_prj.key}
-        main_title={main_prj.title}
+        main_title={main_prj.main_title}
         img_big={main_prj.img_big}
         main_content={main_prj.main_content}
         title_money_pledged={main_prj.title_money_pledged}
       />
-    )
+    );
   }
 }
 
@@ -100,13 +115,14 @@ export default function Cpn_create_project() {
   console.log(1);
   useEffect(() => {
     if (main_prj === null) {
-        axios.get('http://localhost:5000/create_project/the-farm-family-project')
-          .then((res) => res.data)  
-          .then((data) => {
-            setMain_prj(data);
-          })
-      }
-  },[])
+      axios
+        .get("http://localhost:5000/create_project/the-farm-family-project")
+        .then((res) => res.data)
+        .then((data) => {
+          setMain_prj(data);
+        });
+    }
+  }, []);
 
   // useComponentWillMount(
   //   if (main_prj.data === null) {
@@ -114,11 +130,7 @@ export default function Cpn_create_project() {
   //       setMain_prj(res)
   //     })
   //   }
-  // ) 
+  // )
 
-  return (
-    <div>
-      {print_main_project(main_prj)}
-    </div>
-  );
+  return <div>{print_main_project(main_prj)}</div>;
 }
