@@ -11,7 +11,17 @@ function sleep(s) {
 export default function Cpn_header() {
   /* =============loadding================= */
   /*-----coi lại promise-------*/
-
+  function handle_user() {
+    var update1 = document.querySelector(`.user-drop`);
+    
+    if (update1.classList.contains('open1')){
+        update1.classList.remove('open1');
+    } 
+    else {
+        update1.classList.add('open1');
+    }
+    
+  }
 
   function onclick__home() {
     var ctn__loading__home = document.querySelector(".ctn__loading__body");
@@ -91,7 +101,7 @@ export default function Cpn_header() {
               onClick={onclick__projects}
             ></Link>
           </div>
-          <div className="the_right_nav">
+          <div className="the_right_nav" onClick={handle_user}>
             <img id="img_login" src="{{users.img_author}}" alt="" />
             <p>
               <i className="fa-solid fa-sort-down icon"></i>

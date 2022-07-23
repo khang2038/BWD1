@@ -8,6 +8,9 @@ import { useState, useEffect } from "react";
 //get slug
 import { useLocation } from 'react-router-dom'
 
+//import line chart
+import { Bar } from 'react-chartjs-2'
+
 //main_prj
 function Ctn_main_prj({
   main_title,
@@ -116,12 +119,74 @@ function print_block_content(content_prj) {
         key={content_prj.key}
         story_prj = {content_prj[1][0]}
         faq_prj = {content_prj[2]}
+        cmt_prj = {content_prj[3]}
       />
     );
   }
 }
 
 function Ctn_block_content(prj) {
+  
+    //------------statistic bieu do---------------
+    // const labels = [
+    //   '17/06',
+    //   '18/06',
+    //   '19/06',
+    //   '20/06',
+    //   '21/06',
+    //   '22/06',
+    //   '23/06',
+    //   '24/06',
+    //   '25/06',
+    // ];
+
+    // const data = {
+    //   labels: labels,
+    //   datasets: [{
+    //       label: 'Interaction of the day',
+    //       backgroundColor: 'rgb(255, 99, 132)',
+    //       borderColor: 'rgb(255, 99, 132)',
+    //       data: [2, 9, 5, 2, 16, 24,20,25,26],
+          
+    //   }]
+    // };
+
+    // const data2 = {
+    //   labels: labels,
+    //   datasets: [{
+    //       label: 'Cash flow the day',
+    //       backgroundColor: '#0099FF',
+    //       borderColor: '#0099FF',
+    //       data: [2, 4, 5, 8, 10, 6, 10, 12, 26],
+    //   }]
+    // };
+
+    // const config = {
+    //   type: 'line',
+    //   data: data,
+    //   options: {}
+    // };
+
+    // const config2 = {
+    //   type: 'line',
+    //   data: data2,
+    //   options: {}
+    // };
+
+    // const myChart = new Chart(
+    //   document.getElementById('myChart'),
+    //   config
+    // );
+
+    // const myChart_2 = new Chart(
+    //   document.getElementById('myChart_2'),
+    //   config2
+    // );
+
+
+
+
+//story + comment + faq
   
   function close_all_block() {
     var block_story = document.querySelector('.block_story');
@@ -253,39 +318,68 @@ function Ctn_block_content(prj) {
 
                 <div className="block_comments">
                     <h1>Comment</h1>
-                    <div className="comment_action">
-                        <div style={{display: 'flex',flexDirection: 'row'}}>
-                            
-                            <i className="fa-solid fa-photo-film img_comment" style={{color: "#319545"}}></i>
-
-                            <i className="fa-solid fa-face-grin-squint status_comment" style={{color: "#d2a32d"}}></i>
-                            <form method="POST" style={{width: '100%'}} action="/create_project/save_comment">
-                                <label for="comment"></label>
-                                <input name="comment" id="comment" style={{width: "80%"}} type="text" className="in_cmt" placeholder="Viết bình luận vào đây . "/>
-                                <button className="submit_comment">Send</button>
-                            </form>
-                        </div>
-                    </div>
-                    
-                    <div style={{margin: '30px 0',padding: '20px',border: '2px solid rgb(188, 172, 172)'}}>
-                        <div className="cmt_info">
-                            <div className="cmt_avatar">
-                                <img src={""} alt=""/>
-                            </div>
-                            <div className="cmt_name">
+                        <div className="comment_action">
+                            <div style={{display: 'flex',flexDirection: 'row'}}>
+                                
+                                <i className="fa-solid fa-photo-film img_comment" style={{color: "#319545"}}></i>
+    
+                                <i className="fa-solid fa-face-grin-squint status_comment" style={{color: "#d2a32d"}}></i>
+                                <form method="POST" style={{width: '100%'}} action="/create_project/save_comment">
+                                    <label for="comment"></label>
+                                    <input name="comment" id="comment" style={{width: "80%"}} type="text" className="in_cmt" placeholder="Viết bình luận vào đây . "/>
+                                    <button className="submit_comment">Send</button>
+                                </form>
                             </div>
                         </div>
-                        <div className="cmt_content">
-                        </div>
+                        
+                        {prj.cmt_prj.map((cmt) => {
+                          return (
+                            <div style={{margin: '30px 0',padding: '20px',border: '2px solid rgb(188, 172, 172)'}}>
+                                <div className="cmt_info">
+                                    <div className="cmt_avatar">
+                                        <img src={cmt.avatar} alt=""/>
+                                    </div>
+                                    <div className="cmt_name">
+                                      {cmt.name}
+                                    </div>
+                                </div>
+                                <div className="cmt_content">
+                                  {cmt.comment}
+                                </div>
+                            </div>
+                            )
+                          })}
+                        
                     </div>
-                    
-                </div>
 
                 <div className="block_statistic">
                     <div className="line_statistic">
                         <h2 style={{margin: "20px 0"}}><i className="fa-solid fa-sun" style={{margin: "0 10px"}}></i> INTERACTIVE</h2>
                         <div style={{width: "100%"}}>
-                            <canvas id="myChart"></canvas>
+                            {/* <Line 
+                            data={{
+                              labels : [
+                                '17/06',
+                                '18/06',
+                                '19/06',
+                                '20/06',
+                                '21/06',
+                                '22/06',
+                                '23/06',
+                                '24/06',
+                                '25/06',
+                              ],
+                              datasets: [{
+                                label: 'Interaction of the day',
+                                backgroundColor: 'rgb(255, 99, 132)',
+                                borderColor: 'rgb(255, 99, 132)',
+                                data: [2, 9, 5, 2, 16, 24,20,25,26],
+                              }]
+
+                            }} 
+                            height= {400}
+                            width={600}
+                            /> */}
                         </div>
                         <h2 style={{margin: '40px 0'}}><i className="fa-solid fa-sun" style={{margin: "0 10px"}}></i> CASH FLOW</h2>
                         <div style={{width: "100%"}}>

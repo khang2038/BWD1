@@ -12,8 +12,8 @@ const prj_history_i = document.querySelector('.wrapper .prj_history i');
 const prj_history_span = document.querySelector('.wrapper .prj_history span');
 
 const left_content = document.querySelector('.left_content');
-const right_content = document.querySelector('.right_content');
 const left_content_detail = document.querySelector('.left_content_detail');
+const right_content = document.querySelector('.right_content');
 const wrapper = document.querySelector('.wrapper');
 const wrapper_add_profile = document.querySelector('.wrapper .add_profile');
 

@@ -344,7 +344,7 @@ a{
     width: 62%;
 }
 
-.body_detail_prj .right_body_prj img{
+.body_detail_prj .right_body_prj .block_story img{
   padding: 0 0 20px 0;
   height: 100%;
   width: 100%;
@@ -468,6 +468,14 @@ a{
 
 .block_comments .cmt_content {
   padding: 20px;
+}
+
+.comment_action .submit_comment{
+  border-radius: 40px;
+  padding: 10px 10px;
+  border: 2px solid rgb(188 172 172);
+  font-size: 20px;
+  margin-left: 10px;
 }
 
 /*-----------comment_action------------*/

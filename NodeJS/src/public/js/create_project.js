@@ -1,4 +1,4 @@
-
+<script src='Chart.min.js'></script>
 // scroll 
 var ctn_content_detail_prj = document.querySelector('.ctn_content_detail_prj');
 var header_detail_prj = document.querySelector('.header_detail_prj');
