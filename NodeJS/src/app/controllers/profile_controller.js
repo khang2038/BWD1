@@ -9,6 +9,15 @@ let create_prj_db;
 class post_project_created_controller{
     
     async index(req,res,next){
+
+        res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+
+        res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+
+        res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+
+        res.setHeader('Access-Control-Allow-Credentials', true);
+
         await create_prj.find()
         .then(prj => {
             prj = mutipleMongooseToObject(prj);
@@ -16,15 +25,17 @@ class post_project_created_controller{
         })
         .catch(next);
 
-        res.render('profile/profile', {
-            title : 'profile',
-            style : 'swiper-bundle.min.css',
-            style2 : 'profile.css',
-            script1 : 'swiper-bundle.min.js',
-            script3 : 'profile.js',
-            create_prj : create_prj_db,
-            users:req.user
-        });
+        res.send(create_prj_db);
+
+        // res.render('profile/profile', {
+        //     title : 'profile',
+        //     style : 'swiper-bundle.min.css',
+        //     style2 : 'profile.css',
+        //     script1 : 'swiper-bundle.min.js',
+        //     script3 : 'profile.js',
+        //     create_prj : create_prj_db,
+        //     users:req.user
+        // });
     }
 
 }

@@ -1,8 +1,14 @@
 import React from "react";
 import "./cpn_profile.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import $ from "jquery";
+import $, { data } from "jquery";
 import "animate.css";
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { Swiper , SwiperSlide ,CarouselListIndex } from "swiper/react";
+import 'swiper/css';
+import {Virtual} from 'swiper';
+import 'swiper/css/virtual';
 
 function sleep(s){
     return new Promise(function(resolve) {
@@ -10,7 +16,171 @@ function sleep(s){
     })
 }
 
+function Ctn_profile_prj({img_big,main_title,main_content,slug}) {
+    return (
+        <SwiperSlide class="card_profile" style={{height: '600px',position: 'relative'}}>
+                <div class="image-content">
+                    <div class="card-image">
+                        <img style={{transition: 'transform 2s'}} src={require(`../../public/img/imgproject/${img_big}`)} alt="" class="card-img"/>
+                    </div>
+                </div>
+
+                <div class="card-content">
+                    <a href="create_project/{{this.slug}}" class="name">
+                        {main_title}
+                    </a>
+                    <p class="description">
+                        {main_content}
+                    </p>
+
+                    <button class="button" style={{position: 'absolute',bottom: '0'}}>View More</button>
+                </div>
+        </SwiperSlide>
+    )
+}
+
+function print_total_profile_project(total_project) {
+    if (total_project !== null) {
+        console.log(total_project);
+      return (
+        <Swiper modules={[Virtual]} spaceBetween={50} slidesPerView={2} virtual>
+      {total_project.map((total_project, index) => (
+        <SwiperSlide key={total_project.id} virtualIndex={index}>
+                                    <div class="image-content">
+                                         <div class="card-image">
+                                             <img style={{transition: 'transform 2s'}} src={require(`../../public/img/imgproject/${total_project.img_big}`)} alt="" class="card-img"/>
+                                         </div>
+                                    </div>
+
+                                     <div class="card-content">
+                                         <a href="create_project/{{this.slug}}" class="name">
+                                             {total_project.main_title}
+                                         </a>
+                                         <p class="description">
+                                             {total_project.main_content}
+                                         </p>
+
+                                        <button class="button" style={{position: 'absolute',bottom: '0'}}>View More</button>
+                                    </div>
+        </SwiperSlide>
+      ))}
+    </Swiper>
+    //     <Swiper
+    //   spaceBetween={50}
+    //   slidesPerView={3}
+    //   onSlideChange={() => console.log('slide change')}
+    //   onSwiper={(swiper) => console.log(swiper)}
+    // >
+    //   {
+    //                         total_project.map( (total_project,index) => (
+    //                             <SwiperSlide key={total_project.id} class="card_profile" style={{height: '600px',position: 'relative'}}>
+    //                                 <div class="image-content">
+    //                                     <div class="card-image">
+    //                                         <img style={{transition: 'transform 2s'}} src={require(`../../public/img/imgproject/${total_project.img_big}`)} alt="" class="card-img"/>
+    //                                     </div>
+    //                                 </div>
+
+    //                                 <div class="card-content">
+    //                                     <a href="create_project/{{this.slug}}" class="name">
+    //                                         {total_project.main_title}
+    //                                     </a>
+    //                                     <p class="description">
+    //                                         {total_project.main_content}
+    //                                     </p>
+
+    //                                     <button class="button" style={{position: 'absolute',bottom: '0'}}>View More</button>
+    //                                 </div>
+    //                             </SwiperSlide>
+    //                         ))
+    //                     }
+    // </Swiper>
+      );
+    }
+  }
+
 export default function Cpn_profile() {
+    const [data_total_prj , setData_total_prj] = useState(null);
+
+    useEffect(() => {
+        if (data_total_prj === null) {
+          axios
+            .get(`http://localhost:5000/profile`)
+                .then((res) => res.data)
+                .then((data) => {
+                    setData_total_prj(data);
+                });
+        }
+      }, []);
+//minimize
+
+
+
+    function btn_hide_close() {
+        var left_content = document.querySelector('.left_content');
+        var left_content_detail = document.querySelector('.left_content_detail');
+        var right_content = document.querySelector('.right_content');
+        var wrapper = document.querySelector('.wrapper');
+        var wrapper_add_profile = document.querySelector('.wrapper .add_profile');
+        var detail_my_project_statistic = document.querySelector('.detail_my_project_statistic');
+        var detail_statistic = document.querySelector('.detail_statistic');
+        sleep(0) 
+            .then(function() {
+                Object.assign(right_content.style, {
+                    animationName : 'close_right_profile',
+                    animationDuration: '2s',
+                    animationDirection: 'normal',
+                })
+                Object.assign(wrapper.style, {
+                    animationName : 'wrapper_content_profile',
+                    animationDuration: '2s',
+                    animationDirection: 'normal',
+                })
+                return sleep(300);
+            })
+            .then(function() {
+                Object.assign(wrapper.style, {
+                    justifyContent: 'space-around'
+                })
+                Object.assign(wrapper_add_profile.style, {
+                    display: 'flex',
+                })
+                Object.assign(right_content.style , {
+                    width : '100%',
+                })
+                Object.assign(detail_my_project_statistic.style , {
+                    width : '40%',
+                })
+                Object.assign(detail_statistic.style , {
+                    display : 'block',
+                    width : '40%',
+                })
+            })
+
+
+        
+        sleep(0)
+            .then(function() {
+                Object.assign(left_content.style, {
+                    animationName : 'close_left_profile',
+                    animationDuration: '2s',
+                    animationDirection: 'normal',
+                })
+                return sleep(300);
+            })
+            .then(function() {
+                Object.assign(left_content_detail.style, {
+                    display : 'none',
+                })
+                return sleep(1700);
+            })
+            .then(function() {
+                Object.assign(left_content.style, {
+                    display : 'none',
+                })
+
+            })      
+
+    }
     
     function trans_my_project() {
         var my_project_i = document.querySelector('.wrapper .my_project i');
@@ -194,6 +364,8 @@ export default function Cpn_profile() {
         })
     }
 
+    
+
     return (
         <div>
             <div style={{marginTop: '60px'}} class="content_profile">
@@ -292,8 +464,8 @@ export default function Cpn_profile() {
                                     <h2 style={{height: '30%'}}>
                                         <i class="fa-solid fa-id-badge" style={{marginRight: '20px'}}></i>Contact
                                     </h2>
-                                <ul>
-                                        <li style={{}}>
+                                    <ul>
+                                        <li style={{zIndex: '6'}}>
                                             <a href="https://www.facebook.com/hungpham7968">
                                                 <span>
                                                     <i class="fa-brands fa-facebook-f"></i>
@@ -301,7 +473,7 @@ export default function Cpn_profile() {
                                                 Facebook
                                             </a>
                                         </li>
-                                        <li style={{}}>
+                                        <li style={{zIndex: '5'}}>
                                             <a href="#">
                                                 <span>
                                                     <i class="fa-brands fa-telegram"></i>
@@ -309,7 +481,7 @@ export default function Cpn_profile() {
                                                 Telegram
                                             </a>
                                         </li>
-                                        <li style={{}}>
+                                        <li style={{zIndex: '4'}}>
                                             <a href="#">
                                                 <span>
                                                     <i class="fa-brands fa-twitter"></i>
@@ -317,7 +489,7 @@ export default function Cpn_profile() {
                                                 Twitter
                                             </a>
                                         </li>
-                                        <li style={{}}>
+                                        <li style={{zIndex: '3'}}>
                                             <a href="#">
                                                 <span>
                                                     <i class="fa-brands fa-instagram"></i>
@@ -334,31 +506,11 @@ export default function Cpn_profile() {
                                     <h2>
                                         My total projects
                                     </h2>  
+    
+                                    {
+                                        print_total_profile_project(data_total_prj == null ? null : data_total_prj)
+                                    }
 
-                                    <div class="slide-container swiper">
-                        <div class="slide-content">
-                            <div class="card-wrapper swiper-wrapper">
-                                <div class="card_profile swiper-slide" style={{height: '600px',position: 'relative'}}>
-                                    <div class="image-content">
-                                        <div class="card-image">
-                                            <img style={{transition: 'transform 2s'}} src="img/imgproject/{{this.img_big}}" alt="" class="card-img"/>
-                                        </div>
-                                    </div>
-
-                                    <div class="card-content">
-                                        <a href="create_project/{{this.slug}}" class="name"></a>
-                                        <p class="description"></p>
-
-                                        <button class="button" style={{position: 'absolute',bottom: '0'}}>View More</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-button-next swiper-navBtn"></div>
-                        <div class="swiper-button-prev swiper-navBtn"></div>
-                        <div class="swiper-pagination"></div>
-                                    </div>
                                     
                                 </div>
 
@@ -449,10 +601,35 @@ export default function Cpn_profile() {
                         </div>
 
             </div>
-        </div>
+                </div>
     
 
 
+            </div>
+
+             <div class="left_content" style={{display : 'flex', justifyContent: 'center'}}>
+                <div style={{width: '80%',margin: '0 auto', position: 'relative'}} class="left_content_detail">
+                    <div style={{width:'100%'}}>
+                        <div class="avatar_profile" style={{backgroundImage: 'url({{users.img_author}})'}}>
+                            
+                        </div>
+                    </div>
+
+                    <h2 class="name_user">
+                    </h2>
+
+                    <div class="title_user">
+                        “Các bạn phải có một ước mơ đủ lớn để có chỗ người khác tham gia vào. Chứ ước mơ của các bạn quá bé, bản thân các bạn ngồi đã chật rồi, chúng tôi không còn chỗ"
+                        <div class="edit">
+                            <button>Edit profile</button>
+                        </div>
+                    </div>
+
+                    <div class="btn_hide" onClick={btn_hide_close}>
+                    <i class="fa-solid fa-square-minus"></i>
+                    </div>
+
+                </div>
             </div>
         </div>
     )

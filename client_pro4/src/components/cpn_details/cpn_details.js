@@ -73,6 +73,7 @@ function Cpn_potential_project() {
                 <button>3</button>
                 <i className="fa-solid fa-forward"></i>
             </div>
+            <hr className='hr_detail'/>
  
         </div>
     )
@@ -151,6 +152,8 @@ function Cpn_art_project() {
             <button>3</button>
             <i className="fa-solid fa-forward"></i>
         </div>
+        <hr className='hr_detail'/>
+
     </div>
     )
 }
@@ -228,7 +231,7 @@ function Cpn_game_project() {
                 <button>3</button>
                 <i className="fa-solid fa-forward"></i>
             </div>
-            <hr/>
+            <hr className='hr_detail'/>
     </div>
     )
 }

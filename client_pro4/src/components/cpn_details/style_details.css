@@ -346,7 +346,7 @@ body.dark .switch::before{
 
 
 /*--------------potential_projects----------------*/
-hr {
+.hr_detail {
   opacity: 0.5;
   width: 80%;
   margin: 0 auto;
