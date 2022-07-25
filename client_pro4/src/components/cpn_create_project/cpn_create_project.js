@@ -95,6 +95,7 @@ function Ctn_main_prj({
   );
 }
 
+
 function print_main_project(main_prj) {
   if (main_prj !== null) {
     return (
@@ -223,6 +224,8 @@ function Ctn_block_content(prj) {
     block_statistic.classList.add('open');
   }
 
+
+//post data comment
   return (
     <div className="ctn_content_detail_prj">
         <div className="header_detail_prj">

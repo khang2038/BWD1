@@ -7,6 +7,7 @@ import Details from './pages/Details';
 import Home from './pages/Home';
 import Create_project from './pages/Create_project';
 import Profile from './pages/Profile';
+import Product from './pages/Product';
 import axios from 'axios';
 
 import * as actions from './redux/actions';
@@ -25,6 +26,9 @@ function App_logged() {
 
         </Route>
         <Route path="/profile" element={<Profile />}>
+
+        </Route>
+        <Route path="/product" element={<Product />}>
 
         </Route>
         <Route path="/create_project/:slug" element={<Create_project />}>
