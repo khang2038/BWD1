@@ -43,27 +43,51 @@ function print_total_profile_project(total_project) {
     if (total_project !== null) {
         console.log(total_project);
       return (
-        <Swiper modules={[Virtual]} spaceBetween={50} slidesPerView={2} virtual>
-      {total_project.map((total_project, index) => (
-        <SwiperSlide key={total_project.id} virtualIndex={index}>
-                                    <div class="image-content">
-                                         <div class="card-image">
-                                             <img style={{transition: 'transform 2s'}} src={require(`../../public/img/imgproject/${total_project.img_big}`)} alt="" class="card-img"/>
-                                         </div>
-                                    </div>
+        <Swiper 
+        modules={[Virtual]} 
+        spaceBetween={50} 
+        slidesPerView={2} 
+        virtual 
+        style={{
+            height: '660px',
+            maxWidth: '900px',
+            width: '100%',
+            padding: '40px 0',
+        }}>
+            <div class="slide-content"> 
+                    <div class="card-wrapper swiper-wrapper">
+                    {total_project.map((total_project, index) => (
+                    <SwiperSlide 
+                        key={total_project.id} 
+                        virtualIndex={index}
+                        style={{
+                            position: 'relative',
+                            borderRadius: '25px',
+                            // backgroundColor: '#FFF',
+                        }}>
+                            <div style={{backgroundColor: '#fff',borderRadius: '25px',width: '100%',height: '100%'}}>
+                                                <div class="image-content">
+                                                    <div class="card-image">
+                                                        <img style={{transition: 'transform 2s'}} src={require(`../../public/img/imgproject/${total_project.img_big}`)} alt="" class="card-img"/>
+                                                    </div>
+                                                </div>
 
-                                     <div class="card-content">
-                                         <a href="create_project/{{this.slug}}" class="name">
-                                             {total_project.main_title}
-                                         </a>
-                                         <p class="description">
-                                             {total_project.main_content}
-                                         </p>
+                                                <div class="card-content">
+                                                    <a href="create_project/{{this.slug}}" class="name">
+                                                        {total_project.main_title}
+                                                    </a>
+                                                    <p class="description">
+                                                        {total_project.main_content}
+                                                    </p>
 
-                                        <button class="button" style={{position: 'absolute',bottom: '0'}}>View More</button>
-                                    </div>
-        </SwiperSlide>
-      ))}
+                                                    <button class="button" style={{position: 'absolute',bottom: '0',zIndex: '1'}}>View More</button>
+                                                </div>
+                            </div>
+                    </SwiperSlide>
+                ))}
+                    </div>
+            </div>
+                
     </Swiper>
     //     <Swiper
     //   spaceBetween={50}
