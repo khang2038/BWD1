@@ -73,9 +73,10 @@ export default function Cpn_header() {
       <header>
         <div className="nav_pc">
           <div className="the_left_nav">
-            <div className="logo">
-              <p>PRO4</p>
-            </div>
+          <div class="logo_header">
+              <img class="logo1" src={require('../../public/img/img_logo/logo.jpg')} alt=""/>
+              <img class="logo2" src={require('../../public/img/img_logo/logo2.jpg')} alt="" style={{display: 'none'}}/>
+          </div>
             <div className="search">
               <i className="fa-solid fa-magnifying-glass icon"></i>
               <input type="text" placeholder="Search..." />

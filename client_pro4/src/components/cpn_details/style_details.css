@@ -1,56 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&family=Roboto:wght@900&display=swap');
-* {
-  padding: 0px;
-  margin: 0px;
-  box-sizing: border-box;
-}
-:root{
-  --primary-color-light:#F6F5FF;
-  --header-color:#fff;
-  --body-color:#ffffff;
-  --search-color:#ebebeb;
-  --nav-center-icon-color:#e0e0e0;
-  --page-color:#f7f7f7;
-  --the_left_page-color:#fff;
-  --text-the_left_page-color:#727272;
-  --toggle-color:#DDD;
-  --shadow-header-color:#dbdbdb;
-  --footer-end-color : #2a262c;
-  --footer-content-color : #666;
-  --footer-content-color-bright: #7b8490;
 
-  --tran-02:all 0.2s ease;
-  --tran-03:all 0.3s ease;
-  --tran-04:all 0.4s ease;
-  --tran-05:all 0.5s ease;
-}
-body.dark{
-  --primary-color-light:#F6F5FF;
-  --header-color:#242526;
-  --body-color:#18191A;
-  --search-color:#494949;
-  --nav-center-icon-color:#868383;
-  --page-color:#18191A;
-  --the_left_page-color:#242526;
-  --text-the_left_page-color:#CCC;
-  --toggle-color:#FFF;
-  --shadow-header-color:#383636;
-}
-body{
-  transition:var(--tran-04);
-  background-color:var(--page-color);
-}
-html{
-    font-family: 'Poppins', sans-serif;
-    font-size: 20px;
-    color: #5a5a5a;
-    background-color: var(--body-color);
-    text-rendering: optimizeLegibility;
-    scroll-behavior: smooth;
-}
 
 /* -------------page---------- */
-.page{
+.page_details{
     background-color:  var(--page-color);
     height: 100%;
     width: 100%;
@@ -219,7 +170,7 @@ body.dark .switch::before{
 
 .ctn__loading {
   animation: #fff linear 4s infinite;
-  background-image: url(../../public/img/Logo/PRO4-logos_black.png);
+  background-image: url(../../public/Logo/PRO4-logos_black.png);
   background-size: 60%;
   background-repeat: no-repeat;
   background-position-x: center;

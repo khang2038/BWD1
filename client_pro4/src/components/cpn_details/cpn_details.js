@@ -268,18 +268,18 @@ export default function Cpn_details() {
     }
 
     return (<Container maxWidth={false} className="" style={{margin:'0', padding: '0'}}>
-        <div className="page">
+        <div className="page_details">
             <ul className="the_left_page letf_page" onMouseOver={onmouseover_the_left_page} onMouseOut={onmouseout_the_left_page}>
             <div className="menu">
                     <li className="menu-feature-prj">
                         <a href="#featured">
-                            <i className="fa-brands fa-hotjar" style={{padding : '0 20px 0 0'}}></i>
+                            <i className="fa-brands fa-hotjar icon"></i>
                             <span>Featured</span>
                         </a>
                     </li>
                     <li className="menu-game">
                         <a href="#game">
-                            <i className="fa-solid fa-gamepad icon"></i>
+                            <i className="fa-solid fa-gamepad icon" ></i>
                             <span>Game</span>
                         </a>
                     </li>
@@ -291,7 +291,7 @@ export default function Cpn_details() {
                     </li>
                     <li className="menu-Art">
                         <a href="#art">
-                            <i className="fa-brands fa-artstation" style={{padding : '0 20px 0 0'}}></i>
+                            <i className="fa-brands fa-artstation icon"></i>
                             <span>Art</span>
                         </a>
                     </li>

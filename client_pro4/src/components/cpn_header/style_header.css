@@ -10,6 +10,18 @@ header{
     background-color:var(--header-color);
   }
   /* mobile nav */
+
+  .logo_header{
+    width: 110px;
+    height: 100%;
+    margin-right: 20px;
+  }
+  
+  .logo_header img {
+   width: 90%;
+   height: 100%;
+  }
+
   .nav_pc{
     display: flex;
     justify-content: space-between;
@@ -314,7 +326,7 @@ header{
 
 .ctn__loading {
   animation: #fff linear 4s infinite;
-  background-image: url(../../public/img/Logo/PRO4-logos_black.png);
+  background-image: url(../../public/Logo/PRO4-logos_black.png);
   background-size: 60%;
   background-repeat: no-repeat;
   background-position-x: center;
