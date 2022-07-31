@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import Create_project from './pages/Create_project';
 import Profile from './pages/Profile';
 import Product from './pages/Product';
+import Wallet from './pages/Wallet';
 import axios from 'axios';
 
 import * as actions from './redux/actions';
@@ -20,6 +21,9 @@ function App_logged() {
         
       <Routes>
         <Route path="/homepage" element={<Homepage />}>
+
+        </Route>
+        <Route path="/wallet" element={<Wallet />}>
 
         </Route>
         <Route path="/details" element={<Details />}>

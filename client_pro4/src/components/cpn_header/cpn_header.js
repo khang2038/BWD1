@@ -116,7 +116,7 @@ export default function Cpn_header() {
                   <a href="/profile"> Profile </a>
                 </li>
                 <li>
-                  <a href="#"> Statistic </a>
+                  <a href="/wallet"> Wallet </a>
                 </li>
                 <li>
                   <a href="/post_project_created"> Add new project </a>

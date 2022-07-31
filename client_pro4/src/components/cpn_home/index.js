@@ -15,7 +15,7 @@ import project3 from "~/public/img/imghome/project3.avif";
 import project4 from "~/public/img/imghome/project4.avif";
 import project5 from "~/public/img/imghome/project5.avif";
 import project6 from "~/public/img/imghome/project6.avif";
-import "../../public/js/homepage.js";
+// import "../../public/js/homepage.js";
 
 //trans_pre_aft_modal_card
 //promise

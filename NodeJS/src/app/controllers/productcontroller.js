@@ -2,20 +2,20 @@ const product=require('../models/product')
 const {mongooseToObject}= require('../../util/mongoose')
 class productcontroller{
     index(req,res,next){
+        res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+
+        res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+
+        res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+
+        res.setHeader('Access-Control-Allow-Credentials', true);
+
         product.find({})
             .then(products=>{
                 products=products.map(product => product.toObject() )
                 products.reverse();
-                res.render('product',{
-                                        title: 'Product',
-                                        style:'styleproduct.css',
-                                        style2:'queriesproduct.css',
-                                        script1:'scriptproduct.js',
-                                        script2:'jquery.waypoints.min.js',
-                                        products: products,
-                                        users:req.user
-                                        })}
-                    )
+                res.send(products.reverse());
+                })
             .catch(next);
     }
     edit(req,res, next){
