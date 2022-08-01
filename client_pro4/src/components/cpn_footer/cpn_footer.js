@@ -2,7 +2,8 @@ import React from 'react';
 import './style_footer.css';
 
 function Cpn_footer_1() {
-    return (<div className="ctn__footer">
+    return (
+    <div className="ctn__footer">
         <div className="ctn__footer__content">
             <div className="footer__colum f__strart">
                 <a href="../Login/signup.html">Get Started</a>
@@ -85,7 +86,8 @@ function Cpn_footer_1() {
                 </p>
             </div>
         </div>
-    </div>)
+    </div>
+    )
 }
 
 function Cpn_footer_res() {

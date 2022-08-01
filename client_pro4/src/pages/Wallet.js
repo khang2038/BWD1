@@ -8,6 +8,6 @@ export default function Wallet() {
   return <Container maxWidth={false} className="" style={{margin:'0', padding: '0',backgroundColor: 'white',}}>
     <Cpn_wallet />
     <Cpn_gototop />
-    <Cpn_footer />
+    {/* <Cpn_footer /> */}
   </Container>
 }

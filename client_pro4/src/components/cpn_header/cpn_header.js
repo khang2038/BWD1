@@ -69,7 +69,7 @@ export default function Cpn_header() {
   }
 
   return (
-    <div>
+    <div style={{position : 'absolute', zIndex : '3'}}>
       <header>
         <div className="nav_pc">
           <div className="the_left_nav">
