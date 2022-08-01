@@ -114,7 +114,7 @@ export default function Cpn_product() {
   useEffect(() => {
     if (data_product == null) {
       // console.log(1);
-      axios
+      axios 
         .get(`http://localhost:5000/product`)
         .then((res) => res.data)
         .then((data) => {
@@ -152,7 +152,7 @@ export default function Cpn_product() {
       <div class="page">
         <ul class="the_left_page_product letf_page">
           <div class="menu">
-            <a href="create">
+            <a href="add_product">
               {" "}
               <li class="menu-create">
                 <i

@@ -9,6 +9,7 @@ import Create_project from './pages/Create_project';
 import Profile from './pages/Profile';
 import Product from './pages/Product';
 import Wallet from './pages/Wallet';
+import Add_product from './pages/Add_product';
 import axios from 'axios';
 
 import * as actions from './redux/actions';
@@ -20,6 +21,9 @@ function App_logged() {
       <Cpn_header />
         
       <Routes>
+        <Route path="/add_product" element={<Add_product />}>
+
+        </Route>
         <Route path="/homepage" element={<Homepage />}>
 
         </Route>

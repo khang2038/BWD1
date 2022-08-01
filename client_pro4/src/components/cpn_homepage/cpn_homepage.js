@@ -562,6 +562,7 @@ function Highlights() {
 }
 
 export default function Cpn_homepage() {
+  
   function handle_user() {
     var update1 = document.querySelector(`.user-drop`);
 
