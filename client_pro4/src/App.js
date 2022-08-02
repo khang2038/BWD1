@@ -10,17 +10,30 @@ import Profile from './pages/Profile';
 import Product from './pages/Product';
 import Wallet from './pages/Wallet';
 import Add_product from './pages/Add_product';
+import Login from './pages/Login';
 import axios from 'axios';
 
 import * as actions from './redux/actions';
+import AppContext from './components/AppContext';
+import AppReducer from './reducers/AppReducer';
+import { useReducer } from 'react';
 
 function App_logged() {
+  const initialState = {user : null,posts : []}
+
+  const [state_user, dispatch] = useReducer(AppReducer, initialState);
 
   return (
+    <AppContext.Provider value={{state_user, dispatch}}>
+
     <Container maxWidth={false} className="" style={{margin:'0', padding: '0'}}>
+
       <Cpn_header />
         
       <Routes>
+        <Route path="/login" element={<Login />}>
+          
+        </Route>
         <Route path="/add_product" element={<Add_product />}>
 
         </Route>
@@ -43,7 +56,9 @@ function App_logged() {
 
         </Route>
       </Routes>
-  </Container>
+    </Container>
+
+    </AppContext.Provider>
   )
 }
 

@@ -504,7 +504,7 @@ export default function Cpn_home() {
         <div className="the_right_nav">
           <div className="login_nav">
             <i className="fa-solid fa-right-to-bracket icon"></i>
-            <a href="Login">Login</a>
+            <a href="login">Login</a>
           </div>
         </div>
         {/* 

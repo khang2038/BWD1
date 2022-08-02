@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState ,useContext} from "react";
 import { Link } from "react-router-dom";
 import "./style_header.css";
+import AppContext from "../AppContext";
 
 function sleep(s) {
     return new Promise(function (resolve) {
@@ -9,6 +10,51 @@ function sleep(s) {
   }
 
 export default function Cpn_header() {
+  const {state_user} = useContext(AppContext); 
+  console.log(state_user);
+
+  function check_user_null(user) {
+    if (user==null) {
+      return (
+        <div class="the_right_nav">
+            <div class="login_nav">
+                <i class="fa-solid fa-right-to-bracket icon"></i>
+                <a href="Login" style={{textDecoration: 'none'}}>Login</a>
+            </div> 
+        </div> 
+      )
+    }
+    else {
+      return (
+        <div className="the_right_nav" onClick={handle_user}>
+            <img id="img_login" src={user.temp.img_author} alt="" />
+            <p>
+              {user.temp.name_author}
+              <i className="fa-solid fa-sort-down icon"></i>
+            </p>
+            <ul className="user-drop">
+              <i className="fa-solid fa-xmark project_close ">
+                {" "}
+              </i>
+              <div className="menu_drop">
+                <li>
+                  <a href="/profile"> Profile </a>
+                </li>
+                <li>
+                  <a href="/wallet"> Wallet </a>
+                </li>
+                <li>
+                  <a href="/post_project_created"> Add new project </a>
+                </li>
+                <li>
+                  <a href="home"> Logout </a>
+                </li>
+              </div>
+            </ul>
+        </div>
+      )
+    }
+  }
   /* =============loadding================= */
   /*-----coi lại promise-------*/
   function handle_user() {
@@ -102,31 +148,12 @@ export default function Cpn_header() {
               onClick={onclick__projects}
             ></Link>
           </div>
-          <div className="the_right_nav" onClick={handle_user}>
-            <img id="img_login" src="{{users.img_author}}" alt="" />
-            <p>
-              <i className="fa-solid fa-sort-down icon"></i>
-            </p>
-            <ul className="user-drop">
-              <i className="fa-solid fa-xmark project_close ">
-                {" "}
-              </i>
-              <div className="menu_drop">
-                <li>
-                  <a href="/profile"> Profile </a>
-                </li>
-                <li>
-                  <a href="/wallet"> Wallet </a>
-                </li>
-                <li>
-                  <a href="/post_project_created"> Add new project </a>
-                </li>
-                <li>
-                  <a href="home"> Logout </a>
-                </li>
-              </div>
-            </ul>
-          </div>
+
+          {
+            check_user_null(state_user.user)
+          }
+
+
         </div>
         <div className="mobile_nav">
           <div className="navtren">
