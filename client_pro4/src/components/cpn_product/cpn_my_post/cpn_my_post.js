@@ -22,59 +22,65 @@ export default function Cpn_my_post() {
       });
   }, []);
 
-  function print_post_user(total_post) {
-    if (total_post!=null) {
-        return (
-          <div>
-            {total_post.map((post) => {
-              if (state_user.user.temp.name_author == post.name_author) {
-                return (
-                  <div class={`Infor ${post.name}`}>
-                    <div class="author">
-                      <img src={`${post.img_author}`} alt="" />
-                      <div class="infor_author">
-                        <span>{post.name_author}</span>
-                        <p>
-                          1m <i class="fa-solid fa-earth-americas icon 3"></i>
-                        </p>
-                      </div>
-                    </div>
-                    <div class="info-des">
-                      <p>{post.infor}</p>
-                      <div class="img-App">
-                        <img src={post.img1} alt="" />
-                      </div>
-                    </div>
-                    <hr />
-                    <div class="decription">
-                      <div class="emotion">
-                        <i class="heart fa-heart fa-regular"></i>
-                        <i class="fa-regular fa-comment"></i>
-                        <i class="fa-solid fa-share-nodes"></i>
-                      </div>
-                      <div class="donate-investment">
-                        <a href="donate">
-                          <p class="donate">Donate</p>
-                        </a>
-                        <p class="investment">Investment</p>
-                      </div>
-                    </div>
+  //handle update
+ 
+  function handle_update() {
+      var update1 = document.querySelector(`.update-drop`);
     
-                    {/* {{!-- update&dele --}} */}
-                    <label for="project-input" class="drop-bars-btn">
-                      <i class="fa-solid fa-bars"></i>
-                    </label>
-                    <input
-                      type="checkbox"
-                      name=""
-                      hidden="true"
-                      class="project__input"
-                      id="project-input"
-                    />
-                    <ul class="update-drop">
-                      <label for="project-input">
-                        <i class="fa-solid fa-xmark project_close "> </i>{" "}
-                      </label>
+      if (update1.classList.contains('open_up_del')){
+          update1.classList.remove('open_up_del');
+      } 
+      else {
+          update1.classList.add('open_up_del');
+      }
+      
+  }
+
+  function print_post_user(total_post) {
+    if (total_post != null) {
+      return (
+        <div>
+          {total_post.map((post) => {
+            if (state_user.user.temp.name_author == post.name_author) {
+              return (
+                <div key={post._id} class={`Infor ${post.name}`}>
+                  <div class="author">
+                    <img src={`${post.img_author}`} alt="" />
+                    <div class="infor_author">
+                      <span>{post.name_author}</span>
+                      <p>
+                        1m <i class="fa-solid fa-earth-americas icon 3"></i>
+                      </p>
+                    </div>
+                  </div>
+                  <div class="info-des">
+                    <p>{post.infor}</p>
+                    <div class="img-App">
+                      <img src={post.img1} alt="" />
+                    </div>
+                  </div>
+                  <hr />
+                  <div class="decription">
+                    <div class="emotion">
+                      <i class="heart fa-heart fa-regular"></i>
+                      <i class="fa-regular fa-comment"></i>
+                      <i class="fa-solid fa-share-nodes"></i>
+                    </div>
+                    <div class="donate-investment">
+                      <a href="donate">
+                        <p class="donate">Donate</p>
+                      </a>
+                      <p class="investment">Investment</p>
+                    </div>
+                  </div>
+
+                  {/* {{!-- update&dele --}} */}
+                  <label for="project-input" class="drop-bars-btn" style={{display: 'flex', flexDirection: 'column'}}>
+                    <div style={{display: 'flex', justifyContent : 'flex-end', marginBottom: '20px'}}>
+                      <i class="fa-solid fa-bars handle_nav_up_del" onClick={handle_update} style={{float : 'right'}}></i>
+
+                    </div>
+                    <ul class="update-drop open_up_del" style={{ listStyle: "none" }}>
                       <div class="menu_drop">
                         <li>
                           <a href="/product/{{this._id}}/edit"> Update </a>
@@ -86,21 +92,29 @@ export default function Cpn_my_post() {
                         </li>
                       </div>
                     </ul>
-    
-                    {/* <!--comment--> */}
-                    <div class="ctn_comment" style={{ height: "100px" }}>
-                      <div class="bl__ctn_comment" style={{ width: "90%" }}>
-                        <div class="avatar"></div>
-                        <input type="text" placeholder="Viết bình luận ... " />
-                      </div>
+                  </label>
+                  <input
+                    type="checkbox"
+                    name=""
+                    hidden="true"
+                    class="project__input"
+                    id="project-input"
+                  />
+
+                  {/* <!--comment--> */}
+                  <div class="ctn_comment" style={{ height: "100px" }}>
+                    <div class="bl__ctn_comment" style={{ width: "90%" }}>
+                      <div class="avatar"></div>
+                      <input type="text" placeholder="Viết bình luận ... " />
                     </div>
-                    {/* <!--end_comment-->     */}
                   </div>
-                )
-              }
-            })}
-          </div>
-        )
+                  {/* <!--end_comment-->     */}
+                </div>
+              );
+            }
+          })}
+        </div>
+      );
     }
   }
 

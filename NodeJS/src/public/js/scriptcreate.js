@@ -427,7 +427,6 @@ function handle_comment(class1) {
  
 function handle_update(class1) {
     console.log(class1);
-     var checkupdate= $('#project-input').prop('checked');
     var update1 = document.querySelector(`.${class1} .update-drop`);
     
     if (update1.classList.contains('open')){

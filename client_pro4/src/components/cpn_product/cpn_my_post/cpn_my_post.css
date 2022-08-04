@@ -95,9 +95,31 @@ form{
     font-size:25px;
     font-weight:600;
 }
+
+/*handle up del*/
+
+.update-drop {
+    opacity: 0;
+    background-color: white;
+    width: 0;
+    height: 0;
+}
+
+.update-drop li{
+   
+    padding: 10px 30px;
+    border: 1px solid rgb(172, 162, 162);
+}
+
+.open_up_del {
+    width: auto;
+    height: auto;
+    opacity: 1;
+}
+
 .infor p{
     text-align:center;
-      margin-bottom: 2%;
+    margin-bottom: 2%;
 }
 .infor input{
     width: 100%;
