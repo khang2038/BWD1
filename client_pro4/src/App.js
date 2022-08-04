@@ -17,6 +17,7 @@ import * as actions from './redux/actions';
 import AppContext from './components/AppContext';
 import AppReducer from './reducers/AppReducer';
 import { useReducer } from 'react';
+import My_post from './pages/My_post';
 
 function App_logged() {
   const initialState = {user : null,posts : []}
@@ -34,13 +35,19 @@ function App_logged() {
         <Route path="/" element={<Homepage />}>
           
         </Route>
+        <Route path="/homepage" element={<Homepage />}>
+
+        </Route>
         <Route path="/login" element={<Login />}>
           
+        </Route>
+        <Route path="/product" element={<Product />}>
+
         </Route>
         <Route path="/add_product" element={<Add_product />}>
 
         </Route>
-        <Route path="/homepage" element={<Homepage />}>
+        <Route path="/my_post" element={<My_post />}>
 
         </Route>
         <Route path="/wallet" element={<Wallet />}>
@@ -50,9 +57,6 @@ function App_logged() {
 
         </Route>
         <Route path="/profile" element={<Profile />}>
-
-        </Route>
-        <Route path="/product" element={<Product />}>
 
         </Route>
         <Route path="/create_project/:slug" element={<Create_project />}>
