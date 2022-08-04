@@ -11,6 +11,7 @@ import Product from './pages/Product';
 import Wallet from './pages/Wallet';
 import Add_product from './pages/Add_product';
 import Login from './pages/Login';
+import Edit from './pages/Edit';
 import axios from 'axios';
 
 import * as actions from './redux/actions';
@@ -44,8 +45,11 @@ function App_logged() {
         <Route path="/product" element={<Product />}>
 
         </Route>
-        <Route path="/add_product" element={<Add_product />}>
+        <Route path="/product/:id/edit" element={<Edit />}>
 
+        </Route>
+        <Route path="/add_product" element={<Add_product />}>
+        
         </Route>
         <Route path="/my_post" element={<My_post />}>
 

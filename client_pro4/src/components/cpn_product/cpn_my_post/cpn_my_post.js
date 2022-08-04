@@ -83,7 +83,7 @@ export default function Cpn_my_post() {
                     <ul class="update-drop open_up_del" style={{ listStyle: "none" }}>
                       <div class="menu_drop">
                         <li>
-                          <a href="/product/{{this._id}}/edit"> Update </a>
+                          <Link to={`../product/${post._id}/edit`}> Update </Link>
                         </li>
                         <li>
                           <p id="b4" class="{{this._id}}">

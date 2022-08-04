@@ -75,7 +75,7 @@ function route(app){
                email:req.body.email,
                password:req.body.password,
                name_author:req.body.name,
-               img_author:req.body.img_author
+               img_author:req.body.img_author,
            })
          tk.save()
             .then(()=> res.redirect('login'))

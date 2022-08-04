@@ -27,7 +27,7 @@ class productcontroller{
                                         script1:'../../../css/scriptproduct.js',
                                         script2:'jquery.waypoints.min.js',
                                         Product:mongooseToObject(Product),
-                                        users:req.user
+                                        users : req.user
                                         }))   
     }
     }
