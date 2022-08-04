@@ -11,7 +11,6 @@ function sleep(s) {
 
 export default function Cpn_header() {
   const {state_user} = useContext(AppContext); 
-  console.log(state_user);
 
   function check_user_null(user) {
     if (user==null) {
@@ -38,13 +37,13 @@ export default function Cpn_header() {
               </i>
               <div className="menu_drop">
                 <li>
-                  <a href="/profile"> Profile </a>
+                  <Link to="/profile"> Profile </Link>
                 </li>
                 <li>
-                  <a href="/wallet"> Wallet </a>
+                  <Link to="/wallet"> Wallet </Link>
                 </li>
                 <li>
-                  <a href="/post_project_created"> Add new project </a>
+                  <Link to="/post_project_created"> Add new project </Link>
                 </li>
                 <li>
                   <a href="home"> Logout </a>

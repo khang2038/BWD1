@@ -257,10 +257,10 @@ hr{
   display:flex;
   margin-left: 12%;
   margin-top:10%;
-  font-size: 16px ;
+  font-size: 16px;
   
 }
-li{
+.the_right_page li{
   list-style: none;
   margin-bottom: 30px;
   margin-top: 10px;

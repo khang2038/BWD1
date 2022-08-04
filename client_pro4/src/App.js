@@ -31,6 +31,9 @@ function App_logged() {
       <Cpn_header />
         
       <Routes>
+        <Route path="/" element={<Homepage />}>
+          
+        </Route>
         <Route path="/login" element={<Login />}>
           
         </Route>

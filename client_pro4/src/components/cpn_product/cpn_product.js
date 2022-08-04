@@ -6,6 +6,8 @@ import "animate.css";
 import { useEffect, useState } from "react";
 import axios
  from "axios";
+import { Link } from "react-router-dom";
+
 
 const body = document.querySelector("body");
 
@@ -111,17 +113,16 @@ function print_Ctn_product_get_data(data_product) {
 export default function Cpn_product() {
   const [data_product, setData_product] = useState(null);
 
-  useEffect(() => {
-    if (data_product == null) {
-      // console.log(1);
-      axios 
-        .get(`http://localhost:5000/product`)
-        .then((res) => res.data)
-        .then((data) => {
-          setData_product(data);
-        });
-    }
-  }, []);
+  axios 
+    .get(`http://localhost:5000/product`)
+    .then((res) => res.data)
+    .then((data) => {
+      setData_product(data);
+    });
+
+  // useEffect(() => {
+    
+  // }, []);
 
   function handle_light_dark() {
     body.classList.toggle("dark");
@@ -152,7 +153,7 @@ export default function Cpn_product() {
       <div class="page">
         <ul class="the_left_page_product letf_page">
           <div class="menu">
-            <a href="add_product">
+            <Link to="../add_product">
               {" "}
               <li class="menu-create">
                 <i
@@ -161,8 +162,8 @@ export default function Cpn_product() {
                 ></i>
                 <span>POST PROJECT</span>
               </li>
-            </a>
-            <a href="me">
+            </Link>
+            <Link to="me">
               {" "}
               <li class="menu-me">
                 <i
@@ -171,41 +172,41 @@ export default function Cpn_product() {
                 ></i>
                 <span>MY PROJECT</span>
               </li>
-            </a>
-            <a href="Game">
+            </Link>
+            <Link to="Game">
               {" "}
               <li class="menu-game">
                 <i class="fa-solid fa-gamepad icon"></i>
                 <span>Game</span>
               </li>
-            </a>
-            <a href="App">
+            </Link>
+            <Link to="App">
               <li class="menu-app">
                 <i class="fa-brands fa-app-store icon"></i>
                 <span>App</span>
               </li>
-            </a>
-            <a href="Ai">
+            </Link>
+            <Link to="Ai">
               {" "}
               <li class="menu-AI">
                 <i class="fa-solid fa-robot icon"></i>
                 <span>AI</span>
               </li>
-            </a>
-            <a href="costume">
+            </Link>
+            <Link to="costume">
               <li class="menu-costume">
                 <i class="fa-solid fa-shirt icon"></i>
                 <span>Costume</span>
               </li>
-            </a>
-            <a href="ecommerce">
+            </Link>
+            <Link to="ecommerce">
               {" "}
               <li class="menu-ecommerce">
                 <i class="fa-brands fa-shopify icon"></i>
                 <span>Ecommerce</span>
               </li>
-            </a>
-            <a href="home">
+            </Link>
+            <Link to="home">
               {" "}
               <li class="menu-logout">
                 <i
@@ -214,7 +215,7 @@ export default function Cpn_product() {
                 ></i>
                 <span>Log out</span>
               </li>
-            </a>
+            </Link>
           </div>
           <li class="mode">
             <div class="moon-sun">

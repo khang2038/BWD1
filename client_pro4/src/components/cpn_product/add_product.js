@@ -1,14 +1,46 @@
-import React from "react";
+import React ,{useContext} from "react";
 import "./add_product.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import $ from "jquery";
 import "animate.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import AppContext from "../AppContext";
+import { useNavigate } from "react-router";
 
 const body = document.querySelector("body");
 
 export default function Cpn_add_product() {
+  const {state_user} = useContext(AppContext);
+  const [productInput, setProductInput] = useState({name : "",name_author : `${state_user.user.temp.name_author}`, img_author : `${state_user.user.temp.img_author}` , infor : "", img1 : "" });
+  const navigate = useNavigate();
+
+  const onChangeHandle = (e) => {
+    setProductInput({...productInput, [e.target.name] : e.target.value});
+  }
+
+  const onSubmitHandle = (e) => {
+    try {
+      e.preventDefault();
+      var name = productInput.name;
+      var name_author = productInput.name_author;
+      var img_author = productInput.img_author;
+      var infor = productInput.infor;
+      var img1 = productInput.img1;
+
+      console.log(123);
+      axios.post('/store',{name,name_author,img_author,infor,img1})
+          .then((res) =>{
+            return res.data;
+          });
+      navigate('../product',{replace : true});
+      
+    } catch (error) {
+      // setErrorMessage(error.response.data.message);
+    }
+  }
+
+
   return (
     <div>
       <div
@@ -21,16 +53,16 @@ export default function Cpn_add_product() {
             style={{width: '100%',display : 'flex',justifyContent: 'center'}}
           >
             <div style={{width: '100%', display: 'flex', flexDirection: 'row'}}>
-              <img src="{{users.img_author}}" alt="" />
+              <img src={state_user.user.temp.img_author} alt="" />
               <div class="infor_author">
-                <h3></h3>
+                <h3>{state_user.user.temp.name_author}</h3>
                 <p>
                   public <i class="fa-solid fa-earth-americas icon 3"></i>{" "}
                 </p>
               </div>
             </div>
           </div>
-          <form method="POST" action="store">
+          <form method="POST" onSubmit={onSubmitHandle}>
             <div style={{width: '100%', display : 'flex', flexDirection: 'column',margin : '0 30px'}}>
               <div class="infor">
                 <input
@@ -39,6 +71,8 @@ export default function Cpn_add_product() {
                   class="form-control"
                   id="name"
                   name="name"
+                  value={productInput.name}
+                  onChange={onChangeHandle}
                 />
                 <span>Name project</span>
               </div>
@@ -73,6 +107,8 @@ export default function Cpn_add_product() {
                   class="form-control"
                   id="infor"
                   name="infor"
+                  value={productInput.infor}
+                  onChange={onChangeHandle}
                 />
                 <span>Description</span>
               </div>
@@ -84,6 +120,8 @@ export default function Cpn_add_product() {
                   class="form-control"
                   id="img1"
                   name="img1"
+                  value={productInput.img1}
+                  onChange={onChangeHandle}
                 />
                 <span>Copy link image for here</span>
               </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./cpn_profile.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import $, { data } from "jquery";
@@ -9,6 +9,7 @@ import { Swiper , SwiperSlide ,CarouselListIndex } from "swiper/react";
 import 'swiper/css';
 import {Virtual} from 'swiper';
 import 'swiper/css/virtual';
+import AppContext from "../AppContext";
 
 function sleep(s){
     return new Promise(function(resolve) {
@@ -124,7 +125,7 @@ function print_total_profile_project(total_project) {
 
 export default function Cpn_profile() {
     const [data_total_prj , setData_total_prj] = useState(null);
-
+    const {state_user} = useContext(AppContext);
     useEffect(() => {
         if (data_total_prj === null) {
           axios
@@ -437,7 +438,7 @@ export default function Cpn_profile() {
                                                     Name
                                                 </td>
                                                 <td class="user_name" >
-                                                    Phạm Thanh Hưng
+                                                    {state_user.user.temp.name_author}
                                                 </td>
                                             </tr>
                                             <tr>
@@ -469,7 +470,7 @@ export default function Cpn_profile() {
                                                     Email
                                                 </td>
                                                 <td class="user_email">
-                                                    sharkhung@cenland.com.vn
+                                                    gianglt.21it@vku.udn.vn
                                                 </td>
                                             </tr>
                                             <tr>
@@ -633,10 +634,9 @@ export default function Cpn_profile() {
 
              <div class="left_content" style={{display : 'flex', justifyContent: 'center'}}>
                 <div style={{width: '80%',margin: '0 auto', position: 'relative'}} class="left_content_detail">
-                    <div style={{width:'100%'}}>
-                        <div class="avatar_profile" style={{backgroundImage: 'url({{users.img_author}})'}}>
+                    <div style={{width:'100%', display: 'flex', justifyContent: 'center'}}>
+                        <img class="avatar_profile" src={state_user.user.temp.img_author}/>
                             
-                        </div>
                     </div>
 
                     <h2 class="name_user">

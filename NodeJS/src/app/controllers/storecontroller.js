@@ -7,9 +7,10 @@ class storecontroller{
         product.save()
             .then(()=> res.redirect('product'))
             .catch(error => {
-
+                
             })
         }
+
     update(req,res,next){
         Product.updateOne({_id:req.params.id},req.body)
             .then(()=> res.redirect('../../me'))
