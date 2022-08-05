@@ -28,7 +28,6 @@ export default function Cpn_add_product() {
       var infor = productInput.infor;
       var img1 = productInput.img1;
 
-      console.log(123);
       axios.post('/store',{name,name_author,img_author,infor,img1})
           
       navigate('../product',{replace : true});

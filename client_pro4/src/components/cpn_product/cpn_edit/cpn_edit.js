@@ -81,6 +81,7 @@ export default function Cpn_edit() {
             </div>
           </div>
         </div>
+        
         <form method="POST" onSubmit={onSubmitHandle}>
           <div
             style={{

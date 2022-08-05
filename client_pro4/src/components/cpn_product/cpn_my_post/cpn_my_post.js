@@ -1,17 +1,21 @@
 import React, { useContext } from "react";
 import "./cpn_my_post.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import $, { data } from "jquery";
+import $, { data, event } from "jquery";
 import "animate.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Cpn_left_nav from "../../../components/cpn_product/cpn_left_nav/cpn_left_nav";
 import AppContext from "../../AppContext";
+import swal from 'sweetalert';
+import { useNavigate } from "react-router";
+
 
 export default function Cpn_my_post() {
   const { state_user } = useContext(AppContext);
   const [data_product, setData_product] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios
@@ -35,6 +39,15 @@ export default function Cpn_my_post() {
       }
       
   }
+
+  
+  function delete_p(e){
+    e.preventDefault();
+
+    axios.delete(`/store/${e.target.className}`);
+
+    navigate('../product',{replace : true});
+  };
 
   function print_post_user(total_post) {
     if (total_post != null) {
@@ -86,7 +99,7 @@ export default function Cpn_my_post() {
                           <Link to={`../product/${post._id}/edit`}> Update </Link>
                         </li>
                         <li>
-                          <p id="b4" class="{{this._id}}">
+                          <p id="b4" class={`${post._id}`} onClick={delete_p}>
                             Delete
                           </p>
                         </li>
@@ -118,14 +131,20 @@ export default function Cpn_my_post() {
     }
   }
 
+  
+
   return (
     <div>
       <div class="page">
         <Cpn_left_nav />
         <div class="center_page">
           {print_post_user(data_product == null ? null : data_product)}
+
         </div>
+
       </div>
+      <form method="POST" name="delete_form"></form>
+
     </div>
   );
 }
