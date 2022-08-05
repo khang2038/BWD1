@@ -229,3 +229,7 @@ a{
   display: flex;
   justify-content: center;
 }
+
+.center_page {
+  min-height: 100vh;
+}

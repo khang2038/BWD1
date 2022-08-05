@@ -11,6 +11,7 @@ import Product from './pages/Product';
 import Wallet from './pages/Wallet';
 import Add_product from './pages/Add_product';
 import Login from './pages/Login';
+import Type_product from './pages/Type_product';
 import Edit from './pages/Edit';
 import axios from 'axios';
 
@@ -52,6 +53,9 @@ function App_logged() {
         
         </Route>
         <Route path="/my_post" element={<My_post />}>
+
+        </Route>
+        <Route path="/type_product/:slug" element={<Type_product />}>
 
         </Route>
         <Route path="/wallet" element={<Wallet />}>

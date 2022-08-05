@@ -56,33 +56,33 @@ export default function Cpn_left_nav() {
                 <span>MY PROJECT</span>
               </li>
             </Link>
-            <Link to="Game">
+            <Link to="/type_product/Game">
               {" "}
               <li class="menu-game">
                 <i class="fa-solid fa-gamepad icon"></i>
                 <span>Game</span>
               </li>
             </Link>
-            <Link to="App">
+            <Link to="/type_product/App">
               <li class="menu-app">
                 <i class="fa-brands fa-app-store icon"></i>
                 <span>App</span>
               </li>
             </Link>
-            <Link to="Ai">
+            <Link to="/type_product/Ai">
               {" "}
               <li class="menu-AI">
                 <i class="fa-solid fa-robot icon"></i>
                 <span>AI</span>
               </li>
             </Link>
-            <Link to="costume">
+            <Link to="/type_product/costume">
               <li class="menu-costume">
                 <i class="fa-solid fa-shirt icon"></i>
                 <span>Costume</span>
               </li>
             </Link>
-            <Link to="ecommerce">
+            <Link to="/type_product/ecommerce">
               {" "}
               <li class="menu-ecommerce">
                 <i class="fa-brands fa-shopify icon"></i>

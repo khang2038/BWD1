@@ -71,7 +71,7 @@ export default function Cpn_add_product() {
                   value={productInput.name}
                   onChange={onChangeHandle}
                 />
-                <span>Name project</span>
+                <span>PROJECT KEYWORDS</span>
               </div>
               <div hidden="true">
                 <label for="name_author" class="form-label">
