@@ -1,3 +1,5 @@
+import $ from "jquery";
+
 
 // choose_image
 var path_image;
@@ -50,78 +52,10 @@ function click_main_trans_faq() {
     })
 }
 
-
-
-// click_main_trans_faq();
-
-
-
-// handle nav header 
-const over_view = document.querySelector('.main_post');
-const faq = document.querySelector('.FAQ_post');
-const story = document.querySelector('.story_post');
-
-function close_all() {
-    Object.assign(over_view.style , {
-        display : 'none',
-    })
-    Object.assign(story.style , {
-        display : 'none',
-    })
-    // Object.assign(rewards.style , {
-    //     display : 'none',
-    // })
-    Object.assign(faq.style , {
-        display : 'none',
-    })
-}
-
-function open_over_view() {
-    close_all();
-    Object.assign(over_view.style , {
-        display : 'flex',
-    })
-}
-
-function open_story() {
-    close_all();
-    Object.assign(story.style , {
-        display : 'flex',
-    })
-}
-
-// function open_rewards() {
-//     close_all();
-//     Object.assign(rewards.style , {
-//         display : 'flex',
-//     })
-// }
-
-function open_faq() {
-    close_all();
-    Object.assign(faq.style , {
-        display : 'flex',
-    })
-}
-
-
 //~~~~~~~   handle add story    ~~~~~~~~~~~
 let id_image = 0,id_title = 0,id_content = 0;
 let input_add_str = document.querySelector('.input_add_str');
 let data_story = "";
-// let data_add_title =
-//     `<input name="title${id_title}" type="text" style="width: 90%;font-size : 40px; padding: 10px;margin: 10px;">
-//     `;
-// let data_add_content = 
-//     `<input name="content${id_content}" type="text" style="width: 90%;font-size : 20px; padding: 10px;margin: 10px;">
-//     `;
-// let data_add_image = 
-//     `<div style="display: flex; flex-direction: column;">
-//     <img style="margin: 0 auto; z-index: 1" src="" alt="" id="image_${id_image}" width="300" height="300">
-//     <input style="width: 80%;margin: 20px auto 60px auto;" type="file" class="form-control" id="img_big" name="img_big" onchange=chooseFile_story(this)
-//             accept="image/gif , image/jpeg, image/png">
-//     </div>
-//     `
 
 function add_story_title() {
     id_title++; 
@@ -305,38 +239,33 @@ $(document).ready(function(){
 
 
 // PREVIEW MODAL
-const preview = document.querySelector('#modal_preview');
+// const preview = document.querySelector('#modal_preview');
 
-function onClick_close_preview() {
-    Object.assign(preview.style, {
-        display: 'none',
-    })
-}
+// function onClick_close_preview() {
+//     Object.assign(preview.style, {
+//         display: 'none',
+//     })
+// }
 
-jQuery(document).ready(($) =>{
-    BookPostingPreview()
+// jQuery(document).ready(($) =>{
+//     BookPostingPreview()
     
-    function BookPostingPreview() {
-        $('#preview').on('click', () => {
-            $('#modal_preview .info_preview h2').text($('#main_title').val());
-            $('#modal_preview .info_preview h4').text($('#main_content').val());
-            $('#modal_preview .info_preview .ctn_pledged_backers .pledged .title').text(`pledged of $` + $('#title_money_pledged').val() + ` goal`);
-            $('#modal_preview .info_preview .percent_complete').text(`0 % of ` + $('#title_money_pledged').val() + ` $`);
+//     function BookPostingPreview() {
+//         $('#preview').on('click', () => {
+//             $('#modal_preview .info_preview h2').text($('#main_title').val());
+//             $('#modal_preview .info_preview h4').text($('#main_content').val());
+//             $('#modal_preview .info_preview .ctn_pledged_backers .pledged .title').text(`pledged of $` + $('#title_money_pledged').val() + ` goal`);
+//             $('#modal_preview .info_preview .percent_complete').text(`0 % of ` + $('#title_money_pledged').val() + ` $`);
            
-            $('.main_prj_video').attr('src',$('#image').attr('src'));
+//             $('.main_prj_video').attr('src',$('#image').attr('src'));
 
-            $('#modal_preview').css({
-                'display': 'flex',
-            })
-             
-            // setTimeout(() => {
-            //     $('.form-posting > form > button[type="submit"]').css({
-            //         'display': 'block',
-            //     })
-            // }, 1000);        
-        })     
-    }
-})
+//             $('#modal_preview').css({
+//                 'display': 'flex',
+//             })
+                 
+//         })     
+//     }
+// })
 
 
 

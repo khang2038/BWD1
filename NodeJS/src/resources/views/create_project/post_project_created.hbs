@@ -117,7 +117,9 @@
 </div>
 
 <div class="main_post">
-  <div style="position:relative;display: flex; flex-direction: column;width: 70%;">
+  <div
+    style="position:relative;display: flex; flex-direction: column;width: 70%;"
+  >
     <form method="POST" action="/post_project_created/store">
       <div class="form-group">
         <div style="display: flex; flex-direction: column;">
@@ -238,12 +240,15 @@
     </form>
 
     <div id="modal_preview">
-      <div style="display: flex;justify-content: right;" onclick=onClick_close_preview()>
+      <div
+        style="display: flex;justify-content: right;"
+        onclick="onClick_close_preview()"
+      >
         <i class="fa-solid fa-circle-xmark" style="font-size: 30px;"></i>
       </div>
       <div style="display: flex;justify-content: space-around;">
         <div class="img_preview">
-            <img class="main_prj_video">
+          <img class="main_prj_video" />
         </div>
         <div class="info_preview">
           <h5>FUNDING</h5>
@@ -267,7 +272,7 @@
             </div>
           </div>
           <div class="percent_complete">
-            
+
           </div>
           <div class="form_donate">
             <button class="support_this">
@@ -292,7 +297,8 @@
     ><i
         class="fa-solid fa-eye"
         style="margin: 0 20px;border-radius: 10px;"
-      ></i>PREVIEW</button>
+      ></i>PREVIEW
+    </button>
 
   </div>
 </div>

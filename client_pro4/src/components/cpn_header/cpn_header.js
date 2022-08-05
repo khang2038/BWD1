@@ -43,7 +43,7 @@ export default function Cpn_header() {
                   <Link to="/wallet"> Wallet </Link>
                 </li>
                 <li>
-                  <Link to="/post_project_created"> Add new project </Link>
+                  <Link to="/add_project"> Add new project </Link>
                 </li>
                 <li>
                   <a href="home"> Logout </a>
