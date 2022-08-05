@@ -16,6 +16,7 @@ class storecontroller{
             .then(()=> res.redirect('../../me'))
             .catch(next);
         }   
+        
     delete(req,res,next){
         Product.deleteOne({_id:req.params.id})
             .then(()=> res.redirect('../../me'))

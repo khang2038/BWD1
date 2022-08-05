@@ -30,9 +30,7 @@ export default function Cpn_add_product() {
 
       console.log(123);
       axios.post('/store',{name,name_author,img_author,infor,img1})
-          .then((res) =>{
-            return res.data;
-          });
+          
       navigate('../product',{replace : true});
       
     } catch (error) {

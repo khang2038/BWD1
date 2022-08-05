@@ -7,15 +7,16 @@ import { Link } from "react-router-dom";
 import AppContext from "../../AppContext";
 import axios from "axios";
 import { useLocation,useParams } from 'react-router-dom'
+import { useNavigate } from "react-router";
 
 
 export default function Cpn_edit() {
   const { state_user } = useContext(AppContext);
-  const [data_product_checked, setData_product_checked] = useState(null);
   const location = useLocation();
+  const navigate = useNavigate();
   const params = useParams();
-  console.log(data_product_checked);
-
+  const [productInput, setProductInput] = useState({_id : "",name : "",name_author : `${state_user.user.temp.name_author}`, img_author : `${state_user.user.temp.img_author}` , infor : "", img1 : "" });
+  
   useEffect(() => {
     axios
       .get(`http://localhost:5000/product`)
@@ -23,11 +24,34 @@ export default function Cpn_edit() {
       .then((data) => {
         data.map((rs) => {
           if (rs._id==params.id) {
-            setData_product_checked(rs);
+            setProductInput({_id : rs._id,name : rs.name,name_author : `${state_user.user.temp.name_author}`, img_author : `${state_user.user.temp.img_author}` , infor : rs.infor, img1 : rs.img1 });
           }
         })
       });
   }, []);
+
+  const onChangeHandle = (e) => {
+    setProductInput({...productInput, [e.target.name] : e.target.value});
+  }
+
+  const onSubmitHandle = (e) => {
+    try {
+      e.preventDefault();
+      var _id = productInput._id;
+      var name = productInput.name;
+      var name_author = productInput.name_author;
+      var img_author = productInput.img_author;
+      var infor = productInput.infor;
+      var img1 = productInput.img1;
+
+      axios.put(`/store/${_id}`,{_id,name,name_author,img_author,infor,img1})
+     
+      navigate('../product',{replace : true});
+      
+    } catch (error) {
+      // setErrorMessage(error.response.data.message);
+    }
+  }
 
   return (
     <div
@@ -57,7 +81,7 @@ export default function Cpn_edit() {
             </div>
           </div>
         </div>
-        <form method="POST" action="../../../store/{{Product._id}}?_method=PUT">
+        <form method="POST" onSubmit={onSubmitHandle}>
           <div
             style={{
               width: "100%",
@@ -68,12 +92,14 @@ export default function Cpn_edit() {
           >
             <div class="infor">
               <input
-                value={data_product_checked==null? '' :data_product_checked.name}
+                value={productInput.name}
                 required="required"
                 type="text"
                 class="form-control"
                 id="name"
                 name="name"
+
+                onChange={onChangeHandle}
               />
               <span>Name project</span>
             </div>
@@ -103,18 +129,20 @@ export default function Cpn_edit() {
             </div>
             <div class="infor">
               <input
-                value={data_product_checked==null? '' :data_product_checked.infor}
+                value={productInput.infor}
                 required="required"
                 type="text"
                 class="form-control"
                 id="infor"
                 name="infor"
+
+                onChange={onChangeHandle}
               />
               <span>Description</span>
             </div>
             <div class="infor">
               <input
-                value={data_product_checked==null? '' :data_product_checked.img1}
+                value={productInput.img1}
                 style={{
                   height: "30px",
                   padding: "40px 0 150px 30px",
@@ -125,6 +153,8 @@ export default function Cpn_edit() {
                 class="form-control"
                 id="img1"
                 name="img1"
+
+                onChange={onChangeHandle}
               />
               <span>Copy link image for here</span>
             </div>
