@@ -15,18 +15,41 @@ export default function Cpn_add_project() {
     id_content = 0,
     id_faq = 0;
 
-  let slug_temp = "";
-
   const [projectInput, setProjectInput] = useState({
     img_big: "",
     main_title: "",
     main_content: "",
     title_money_pledged: "",
   });
+
   const [faqInput, setFaqInput] = useState({
     question1: "",
     question2: "",
     question3: "",
+  });
+
+  const [storyInput, setStoryInput] = useState({
+    image1 : "", 
+    image2 : "",
+    image3 : "",
+    image4 : "",
+    image5 : "",
+    image6 : "",
+    image7 : "",
+    title1 : "",
+    title2 : "",
+    title3 : "",
+    title4 : "",
+    title5 : "",
+    title6 : "",
+    title7 : "",
+    content1 : "",
+    content2 : "",
+    content3 : "",
+    content4 : "",
+    content5 : "",
+    content6 : "",
+    content7 : "",
   });
 
   const onChangeHandle = (e) => {
@@ -35,6 +58,10 @@ export default function Cpn_add_project() {
 
   const onChangeHandle_faq = (e) => {
     setFaqInput({ ...faqInput, [e.target.name]: e.target.value });
+  };
+
+  const onChangeHandle_story = (e) => {
+    setStoryInput({ ...storyInput, [e.target.name]: e.target.value });
   };
 
   const onSubmitHandle_main = (e) => {
@@ -77,6 +104,9 @@ export default function Cpn_add_project() {
       // setErrorMessage(error.response.data.message);
     }
   };
+
+
+
 
   function removeVietnameseTones(str) {
     str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, "a");
@@ -123,6 +153,66 @@ export default function Cpn_add_project() {
         };
 
         reader.readAsDataURL(fileInput.files[0]);
+      }
+    });
+    $("#input_image1").change(function () {
+      var fileInput = this;
+      if (fileInput.files && fileInput.files[0]) {
+        var reader1 = new FileReader();
+
+        reader1.onload = function (e) {
+          $("#image1").attr("src", e.target.result);
+        };
+
+        reader1.readAsDataURL(fileInput.files[0]);
+      }
+    });
+    $("#input_image2").change(function () {
+      var fileInput = this;
+      if (fileInput.files && fileInput.files[0]) {
+        var reader2 = new FileReader();
+
+        reader2.onload = function (e) {
+          $("#image2").attr("src", e.target.result);
+        };
+
+        reader2.readAsDataURL(fileInput.files[0]);
+      }
+    });
+    $("#input_image3").change(function () {
+      var fileInput = this;
+      if (fileInput.files && fileInput.files[0]) {
+        var reader3 = new FileReader();
+
+        reader3.onload = function (e) {
+          $("#image3").attr("src", e.target.result);
+        };
+
+        reader3.readAsDataURL(fileInput.files[0]);
+      }
+    });
+    $("#input_image4").change(function () {
+      var fileInput = this;
+      if (fileInput.files && fileInput.files[0]) {
+        var reader4 = new FileReader();
+
+        reader4.onload = function (e) {
+          $("#image4").attr("src", e.target.result);
+        };
+
+        reader4.readAsDataURL(fileInput.files[0]);
+      }
+    });
+    $("#input_image5").change(function () {
+      var fileInput = this;
+      if (fileInput.files && fileInput.files[0]) {
+        var reader5 = new FileReader();
+
+        reader5.onload = function (e) {
+          $("#image5").attr("src", e.target.result);
+        };
+
+        reader5.readAsDataURL(fileInput.files[0]);
       }
     });
   });
@@ -663,7 +753,39 @@ export default function Cpn_add_project() {
           </div>
           <div style={{ width: "80%" }}>
             <form method="POST" action="/post_project_created/story">
-              <div class="input_add_str"></div>
+              <div class="input_add_str">
+                <div style={{display: 'flex', flexDirection: 'column'}}>
+                  
+                  <img style={{margin: '0 auto', zIndex: '1'}} src="" alt="" id="image1" width="300" height="300"/>
+                  <input name="image1" style={{width: '80%',margin: '20px auto 60px auto'}} type="file" class="form-control" id="input_image1"
+                      accept="image/gif , image/jpeg, image/png" placeholder="image"/>
+                  
+                  <textarea name="title1" type="text" style={{height: '80px',borderRadius:'20px',width: '80%',fontSize : '30px', padding: '20px',margin: '10px'}} placeholder="Title"></textarea>
+                  
+                  <img style={{margin: '0 auto', zIndex: '1'}} src="" alt="" id="image2" width="300" height="300"/>
+                  <input name="image2" style={{width: '80%',margin: '20px auto 60px auto'}} type="file" class="form-control" id="input_image2"
+                      accept="image/gif , image/jpeg, image/png" placeholder="image"/>
+
+                  <textarea name="content1" type="text" style={{borderRadius: '10px', height: '20px',wordBreak: 'break-word', width: '90%',fontSize : '20px', padding: '30px 10px 140px 30px',margin: '10px'}} placeholder="Content"></textarea>
+                  <textarea name="content2" type="text" style={{borderRadius: '10px', height: '20px',wordBreak: 'break-word', width: '90%',fontSize : '20px', padding: '30px 10px 140px 30px',margin: '10px'}} placeholder="Content"></textarea>
+
+                  <textarea name="title2" type="text" style={{height: '80px',borderRadius:'20px',width: '80%',fontSize : '30px', padding: '20px',margin: '10px'}} placeholder="Title"></textarea>
+                  <textarea name="content3" type="text" style={{borderRadius: '10px', height: '20px',wordBreak: 'break-word', width: '90%',fontSize : '20px', padding: '30px 10px 140px 30px',margin: '10px'}} placeholder="Content"></textarea>
+                  <img style={{margin: '0 auto', zIndex: '1'}} src="" alt="" id="image3" width="300" height="300"/>
+                  <input name="image3" style={{width: '80%',margin: '20px auto 60px auto'}} type="file" class="form-control" id="input_image3"
+                      accept="image/gif , image/jpeg, image/png" placeholder="image"/>
+                  
+                  <img style={{margin: '0 auto', zIndex: '1'}} src="" alt="" id="image4" width="300" height="300"/>
+                  <input name="image4" style={{width: '80%',margin: '20px auto 60px auto'}} type="file" class="form-control" id="input_image4"
+                      accept="image/gif , image/jpeg, image/png" placeholder="image"/>
+
+                  <textarea name="title3" type="text" style={{height: '80px',borderRadius:'20px',width: '80%',fontSize : '30px', padding: '20px',margin: '10px'}} placeholder="Title"></textarea>
+                  <textarea name="content4" type="text" style={{borderRadius: '10px', height: '20px',wordBreak: 'break-word', width: '90%',fontSize : '20px', padding: '30px 10px 140px 30px',margin: '10px'}} placeholder="Content"></textarea>
+                  <img style={{margin: '0 auto', zIndex: '1'}} src="" alt="" id="image5" width="300" height="300"/>
+                  <input name="image5" style={{width: '80%',margin: '20px auto 60px auto'}} type="file" class="form-control" id="input_image5"
+                      accept="image/gif , image/jpeg, image/png" placeholder="image"/>
+                </div>
+              </div>
               <button type="submit">SEND</button>
             </form>
           </div>
