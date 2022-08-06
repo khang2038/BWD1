@@ -105,7 +105,34 @@ export default function Cpn_add_project() {
     }
   };
 
+  const onSubmitHandle_story = (e) => {
+    try {
+      e.preventDefault();
+      var image1 = storyInput.image1;
+      var image2 = storyInput.image2;
+      var image3 = storyInput.image3;
+      var image5 = storyInput.image5;
+      var image4 = storyInput.image4;
+      var title1 = storyInput.title1;
+      var title2 = storyInput.title2;
+      var title3 = storyInput.title3;
+      var content1 = storyInput.content1;
+      var content2 = storyInput.content2;
+      var content3 = storyInput.content3;
+      var content4 = storyInput.content4;
+      var slug_temp = removeVietnameseTones(projectInput.main_title);
+      slug_temp=slug_temp.replace(/ /g,'-');
 
+      axios.post("/post_project_created/story", {
+        image1,image2,image3,image4,image5,
+        title1,title2,title3,
+        content1,content2,content3,content4,
+        slug_temp
+      });
+    } catch (error) {
+      // setErrorMessage(error.response.data.message);
+    }
+  };
 
 
   function removeVietnameseTones(str) {
@@ -752,37 +779,37 @@ export default function Cpn_add_project() {
             </button>
           </div>
           <div style={{ width: "80%" }}>
-            <form method="POST" action="/post_project_created/story">
+            <form method="POST" onSubmit={onSubmitHandle_story}>
               <div class="input_add_str">
                 <div style={{display: 'flex', flexDirection: 'column'}}>
                   
                   <img style={{margin: '0 auto', zIndex: '1'}} src="" alt="" id="image1" width="300" height="300"/>
-                  <input name="image1" style={{width: '80%',margin: '20px auto 60px auto'}} type="file" class="form-control" id="input_image1"
+                  <input onChange={onChangeHandle_story} name="image1" style={{width: '80%',margin: '20px auto 60px auto'}} type="file" class="form-control" id="input_image1"
                       accept="image/gif , image/jpeg, image/png" placeholder="image"/>
                   
-                  <textarea name="title1" type="text" style={{height: '80px',borderRadius:'20px',width: '80%',fontSize : '30px', padding: '20px',margin: '10px'}} placeholder="Title"></textarea>
+                  <textarea onChange={onChangeHandle_story} name="title1" type="text" style={{height: '80px',borderRadius:'20px',width: '80%',fontSize : '30px', padding: '20px',margin: '10px'}} placeholder="Title"></textarea>
                   
                   <img style={{margin: '0 auto', zIndex: '1'}} src="" alt="" id="image2" width="300" height="300"/>
-                  <input name="image2" style={{width: '80%',margin: '20px auto 60px auto'}} type="file" class="form-control" id="input_image2"
+                  <input onChange={onChangeHandle_story} name="image2" style={{width: '80%',margin: '20px auto 60px auto'}} type="file" class="form-control" id="input_image2"
                       accept="image/gif , image/jpeg, image/png" placeholder="image"/>
 
-                  <textarea name="content1" type="text" style={{borderRadius: '10px', height: '20px',wordBreak: 'break-word', width: '90%',fontSize : '20px', padding: '30px 10px 140px 30px',margin: '10px'}} placeholder="Content"></textarea>
-                  <textarea name="content2" type="text" style={{borderRadius: '10px', height: '20px',wordBreak: 'break-word', width: '90%',fontSize : '20px', padding: '30px 10px 140px 30px',margin: '10px'}} placeholder="Content"></textarea>
+                  <textarea onChange={onChangeHandle_story} name="content1" type="text" style={{borderRadius: '10px', height: '20px',wordBreak: 'break-word', width: '90%',fontSize : '20px', padding: '30px 10px 140px 30px',margin: '10px'}} placeholder="Content"></textarea>
+                  <textarea onChange={onChangeHandle_story} name="content2" type="text" style={{borderRadius: '10px', height: '20px',wordBreak: 'break-word', width: '90%',fontSize : '20px', padding: '30px 10px 140px 30px',margin: '10px'}} placeholder="Content"></textarea>
 
-                  <textarea name="title2" type="text" style={{height: '80px',borderRadius:'20px',width: '80%',fontSize : '30px', padding: '20px',margin: '10px'}} placeholder="Title"></textarea>
-                  <textarea name="content3" type="text" style={{borderRadius: '10px', height: '20px',wordBreak: 'break-word', width: '90%',fontSize : '20px', padding: '30px 10px 140px 30px',margin: '10px'}} placeholder="Content"></textarea>
+                  <textarea onChange={onChangeHandle_story} name="title2" type="text" style={{height: '80px',borderRadius:'20px',width: '80%',fontSize : '30px', padding: '20px',margin: '10px'}} placeholder="Title"></textarea>
+                  <textarea onChange={onChangeHandle_story} name="content3" type="text" style={{borderRadius: '10px', height: '20px',wordBreak: 'break-word', width: '90%',fontSize : '20px', padding: '30px 10px 140px 30px',margin: '10px'}} placeholder="Content"></textarea>
                   <img style={{margin: '0 auto', zIndex: '1'}} src="" alt="" id="image3" width="300" height="300"/>
-                  <input name="image3" style={{width: '80%',margin: '20px auto 60px auto'}} type="file" class="form-control" id="input_image3"
+                  <input onChange={onChangeHandle_story} name="image3" style={{width: '80%',margin: '20px auto 60px auto'}} type="file" class="form-control" id="input_image3"
                       accept="image/gif , image/jpeg, image/png" placeholder="image"/>
                   
                   <img style={{margin: '0 auto', zIndex: '1'}} src="" alt="" id="image4" width="300" height="300"/>
-                  <input name="image4" style={{width: '80%',margin: '20px auto 60px auto'}} type="file" class="form-control" id="input_image4"
+                  <input onChange={onChangeHandle_story} name="image4" style={{width: '80%',margin: '20px auto 60px auto'}} type="file" class="form-control" id="input_image4"
                       accept="image/gif , image/jpeg, image/png" placeholder="image"/>
 
-                  <textarea name="title3" type="text" style={{height: '80px',borderRadius:'20px',width: '80%',fontSize : '30px', padding: '20px',margin: '10px'}} placeholder="Title"></textarea>
-                  <textarea name="content4" type="text" style={{borderRadius: '10px', height: '20px',wordBreak: 'break-word', width: '90%',fontSize : '20px', padding: '30px 10px 140px 30px',margin: '10px'}} placeholder="Content"></textarea>
+                  <textarea onChange={onChangeHandle_story} name="title3" type="text" style={{height: '80px',borderRadius:'20px',width: '80%',fontSize : '30px', padding: '20px',margin: '10px'}} placeholder="Title"></textarea>
+                  <textarea onChange={onChangeHandle_story} name="content4" type="text" style={{borderRadius: '10px', height: '20px',wordBreak: 'break-word', width: '90%',fontSize : '20px', padding: '30px 10px 140px 30px',margin: '10px'}} placeholder="Content"></textarea>
                   <img style={{margin: '0 auto', zIndex: '1'}} src="" alt="" id="image5" width="300" height="300"/>
-                  <input name="image5" style={{width: '80%',margin: '20px auto 60px auto'}} type="file" class="form-control" id="input_image5"
+                  <input onChange={onChangeHandle_story} name="image5" style={{width: '80%',margin: '20px auto 60px auto'}} type="file" class="form-control" id="input_image5"
                       accept="image/gif , image/jpeg, image/png" placeholder="image"/>
                 </div>
               </div>

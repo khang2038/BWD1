@@ -79,14 +79,8 @@ class post_project_created_controller{
     story(req, res, next) {
         //do chua nhap main_title ben phan 1 
         const temp = req.body;
-        temp.slug_temp = slug_present;
         const story = new Storys(temp);
         story.save();
-        let temp1 = temp.slug_temp;
-        temp1 = removeVietnameseTones(temp1);
-        temp1 = temp1.replace(/ /g,'-');
-        
-        res.redirect(`/create_project/${temp1}`);
     }
 }
 
