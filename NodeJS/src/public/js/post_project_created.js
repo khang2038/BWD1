@@ -15,6 +15,9 @@ function chooseFile(fileInput) {
 }
 
 
+function test() {
+    console.log(123);
+}
 
 //add FAQ
 let question_FAQ = document.querySelector('.question_FAQ');
@@ -23,8 +26,8 @@ let btn_next = `<button>NEXT</button>`;
 let data_add_btn =
     `<div style="width: 100%;">
         <div class="add_FAQ" style="margin : 30px 0;">
-            <input type="text" name="question" id="question">
-          
+            <input type="text" name="question" id="question" onclick="test()">
+
         </div>
     </div>`;
 

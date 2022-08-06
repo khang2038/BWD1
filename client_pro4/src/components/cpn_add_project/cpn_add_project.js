@@ -10,50 +10,260 @@ import { Link } from "react-router-dom";
 const body = document.querySelector("body");
 
 export default function Cpn_add_project() {
+  let id_image = 0,
+    id_title = 0,
+    id_content = 0,
+    id_faq = 0;
 
-    // handle nav header 
+  let slug_temp = "";
 
-    function close_all() {
-        if (document.querySelector('.main_post')) {
-            Object.assign(document.querySelector('.main_post').style , {
-                display : 'none',
-            })
-            Object.assign(document.querySelector('.story_post').style , {
-                display : 'none',
-            })
-            Object.assign(document.querySelector('.FAQ_post').style , {
-                display : 'none',
-            })
-        }
+  const [projectInput, setProjectInput] = useState({
+    img_big: "",
+    main_title: "",
+    main_content: "",
+    title_money_pledged: "",
+  });
+  const [faqInput, setFaqInput] = useState({
+    question1: "",
+    question2: "",
+    question3: "",
+  });
+
+  const onChangeHandle = (e) => {
+    setProjectInput({ ...projectInput, [e.target.name]: e.target.value });
+  };
+
+  const onChangeHandle_faq = (e) => {
+    setFaqInput({ ...faqInput, [e.target.name]: e.target.value });
+  };
+
+  const onSubmitHandle_main = (e) => {
+    try {
+      e.preventDefault();
+      var img_big = projectInput.img_big;
+      var main_title = projectInput.main_title;
+      var main_content = projectInput.main_content;
+      var title_money_pledged = projectInput.title_money_pledged;
+
+      axios.post("/post_project_created/store", {
+        img_big,
+        main_title,
+        main_content,
+        title_money_pledged,
+      });
+    } catch (error) {
+      // setErrorMessage(error.response.data.message);
     }
+  };
 
-    function open_over_view() {
-        close_all();
-        if (document.querySelector('.main_post')){
-            Object.assign(document.querySelector('.main_post').style , {
-                display : 'flex',
-            })
-        }
-    }    
+  const onSubmitHandle_faq = (e) => {
+    try {
+      e.preventDefault();
+      var question_data = [];
+      var slug_temp = removeVietnameseTones(projectInput.main_title);
+      slug_temp=slug_temp.replace(/ /g,'-');
 
-    function open_story() {
-        close_all();
-        if (document.querySelector('.story_post')) {
-            Object.assign(document.querySelector('.story_post').style , {
-                display : 'flex',
-            })
-        }
+      var question=faqInput.question1;
+      question_data.push({question,slug_temp});
+      question=faqInput.question2;
+      question_data.push({question,slug_temp});
+      question=faqInput.question3;
+      question_data.push({question,slug_temp});
+      // var slug_temp = projectInput.main_title;
+      console.log(question);
+
+      axios.post("/post_project_created/faq", { question_data });
+    } catch (error) {
+      // setErrorMessage(error.response.data.message);
     }
+  };
 
-    function open_faq() {
-        close_all();
-        if (document.querySelector('.FAQ_post')) {
-            Object.assign(document.querySelector('.FAQ_post').style , {
-                display : 'flex',
-            })
-        }
+  function removeVietnameseTones(str) {
+    str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, "a");
+    str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g, "e");
+    str = str.replace(/ì|í|ị|ỉ|ĩ/g, "i");
+    str = str.replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g, "o");
+    str = str.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g, "u");
+    str = str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g, "y");
+    str = str.replace(/đ/g, "d");
+    str = str.replace(/À|Á|Ạ|Ả|Ã|Â|Ầ|Ấ|Ậ|Ẩ|Ẫ|Ă|Ằ|Ắ|Ặ|Ẳ|Ẵ/g, "a");
+    str = str.replace(/È|É|Ẹ|Ẻ|Ẽ|Ê|Ề|Ế|Ệ|Ể|Ễ/g, "e");
+    str = str.replace(/Ì|Í|Ị|Ỉ|Ĩ/g, "i");
+    str = str.replace(/Ò|Ó|Ọ|Ỏ|Õ|Ô|Ồ|Ố|Ộ|Ổ|Ỗ|Ơ|Ờ|Ớ|Ợ|Ở|Ỡ/g, "o");
+    str = str.replace(/Ù|Ú|Ụ|Ủ|Ũ|Ư|Ừ|Ứ|Ự|Ử|Ữ/g, "u");
+    str = str.replace(/Ỳ|Ý|Ỵ|Ỷ|Ỹ/g, "y");
+    str = str.replace(/Đ/g, "d");
+    str = str.replace(/H/g, "h");
+    // Some system encode vietnamese combining accent as individual utf-8 characters
+    // Một vài bộ encode coi các dấu mũ, dấu chữ như một kí tự riêng biệt nên thêm hai dòng này
+    str = str.replace(/\u0300|\u0301|\u0303|\u0309|\u0323/g, ""); // ̀ ́ ̃ ̉ ̣  huyền, sắc, ngã, hỏi, nặng
+    str = str.replace(/\u02C6|\u0306|\u031B/g, ""); // ˆ ̆ ̛  Â, Ê, Ă, Ơ, Ư
+    // Remove extra spaces
+    // Bỏ các khoảng trắng liền nhau
+    str = str.replace(
+      /!|@|%|\^|\*|\(|\)|\+|\=|\<|\>|\?|\/|,|\.|\:|\;|\'|\"|\&|\#|\[|\]|~|\$|_|`|-|{|}|\||\\/g,
+      ""
+    );
+    str = str.replace(/ + /g, " ");
+    str = str.trim();
+
+    // Remove punctuations
+    // Bỏ dấu câu, kí tự đặc biệt
+    return str;
+  }
+
+  $(function () {
+    $("#img_big").change(function () {
+      var fileInput = this;
+      if (fileInput.files && fileInput.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+          $("#image").attr("src", e.target.result);
+        };
+
+        reader.readAsDataURL(fileInput.files[0]);
+      }
+    });
+  });
+
+  // handle nav header
+
+  function close_all() {
+    if (document.querySelector(".main_post")) {
+      Object.assign(document.querySelector(".main_post").style, {
+        display: "none",
+      });
+      Object.assign(document.querySelector(".story_post").style, {
+        display: "none",
+      });
+      Object.assign(document.querySelector(".FAQ_post").style, {
+        display: "none",
+      });
     }
-    
+  }
+
+  function open_over_view() {
+    close_all();
+    if (document.querySelector(".main_post")) {
+      Object.assign(document.querySelector(".main_post").style, {
+        display: "flex",
+      });
+    }
+  }
+
+  function open_story() {
+    close_all();
+    if (document.querySelector(".story_post")) {
+      Object.assign(document.querySelector(".story_post").style, {
+        display: "flex",
+      });
+    }
+  }
+
+  function open_faq() {
+    close_all();
+    if (document.querySelector(".FAQ_post")) {
+      Object.assign(document.querySelector(".FAQ_post").style, {
+        display: "flex",
+      });
+    }
+  }
+
+  // PREVIEW MODAL
+
+  function onClick_close_preview() {
+    var preview = document.querySelector("#modal_preview");
+    if (document.querySelector("#modal_preview")) {
+      Object.assign(preview.style, {
+        display: "none",
+      });
+    }
+  }
+
+  $(document).ready(() => {
+    ProjectPostingPreview();
+
+    function ProjectPostingPreview() {
+      $("#preview").on("click", () => {
+        $("#modal_preview .info_preview h2").text($("#main_title").val());
+        $("#modal_preview .info_preview h4").text($("#main_content").val());
+        $(
+          "#modal_preview .info_preview .ctn_pledged_backers .pledged .title"
+        ).text(`pledged of $` + $("#title_money_pledged").val() + ` goal`);
+        $("#modal_preview .info_preview .percent_complete").text(
+          `0 % of ` + $("#title_money_pledged").val() + ` $`
+        );
+
+        $(".main_prj_video").attr("src", $("#image").attr("src"));
+
+        $("#modal_preview").css({
+          display: "flex",
+        });
+      });
+    }
+  });
+
+  //FAQ
+  function add_faq() {
+    let question_FAQ = document.querySelector(".question_FAQ");
+    id_faq++;
+    const div_faq = document.createElement("div");
+    // div_faq.innerHTML = `<textarea onchange="test()" id="question" name="question" type="text" style="height: 80px;border_radius:20px;width: 80%;font-size : 30px; padding: 20px;margin: 10px;" placeholder="Write for question"></textarea>`;
+    div_faq.innerHTML =
+      "<textarea onChange={" +
+      onChangeHandle_faq() +
+      "} name='question' type='text' ></textarea>";
+    question_FAQ.appendChild(div_faq);
+  }
+
+  //story
+  function add_story_title() {
+    let input_add_str = document.querySelector(".input_add_str");
+    id_title++;
+    const div_title = document.createElement("div");
+    div_title.innerHTML = `<textarea name="title${id_title}" type="text" style="height: 80px;border_radius:20px;width: 80%;font-size : 30px; padding: 20px;margin: 10px;" placeholder="Title"></textarea>`;
+    input_add_str.appendChild(div_title);
+  }
+
+  function add_story_content() {
+    let input_add_str = document.querySelector(".input_add_str");
+    id_content++;
+    const div_content = document.createElement("div");
+    div_content.innerHTML = `<textarea name="content${id_content}" type="text" style="border-radius: 10px; height: 20px;word-break: break-word; width: 90%;font-size : 20px; padding: 30px 10px 140px 30px;margin: 10px;" placeholder="Content"></textarea>`;
+    input_add_str.appendChild(div_content);
+  }
+
+  function add_story_image() {
+    let input_add_str = document.querySelector(".input_add_str");
+    id_image++;
+    const div_image = document.createElement("div");
+    div_image.innerHTML = `<div style="display: flex; flex-direction: column;">
+    <img style="margin: 0 auto; z-index: 1" src="" alt="" id="image_${id_image}" width="300" height="300">
+    <input name="image${id_image}" style="width: 80%;margin: 20px auto 60px auto;" type="file" class="form-control" id="img_big" name="img_big"
+            accept="image/gif , image/jpeg, image/png" placeholder="image">
+    </div>
+    `;
+    input_add_str.appendChild(div_image);
+  }
+
+  // $(document).ready(function () {
+  //   $(window).scroll(function () {
+
+  //     if (button_add_str_top + 455.52 < ctn_footer_top) {
+  //       var button_add_str = document.querySelector('.story_post .button_add_str');
+  //       var button_add_str_top = $(".button_add_str").offset().top;
+  //       var ctn_footer_top = $(".ctn__footer").offset().top;
+  //       Object.assign(button_add_str.style, {
+  //         display: "flex",
+  //       });
+  //     } else {
+  //       Object.assign(button_add_str.style, {
+  //         display: "none",
+  //       });
+  //     }
+  //   });
+  // });
 
   return (
     <div>
@@ -87,7 +297,7 @@ export default function Cpn_add_project() {
             width: "70%",
           }}
         >
-          <form method="POST" action="/post_project_created/store">
+          <form method="POST" onSubmit={onSubmitHandle_main}>
             <div class="form-group">
               <div style={{ display: "flex", flexDirection: "column" }}>
                 <label
@@ -124,7 +334,7 @@ export default function Cpn_add_project() {
                   class="form-control"
                   id="img_big"
                   name="img_big"
-                  onchange="chooseFile(this)"
+                  onChange={onChangeHandle}
                   accept="image/gif , image/jpeg, image/png"
                 />
               </div>
@@ -167,6 +377,7 @@ export default function Cpn_add_project() {
                       border: "2px solid rgb(189, 167, 167)",
                     }}
                     placeholder=""
+                    onChange={onChangeHandle}
                   />
                   <span>Write about project title</span>
                 </div>
@@ -209,6 +420,7 @@ export default function Cpn_add_project() {
                       border: "2px solid rgb(189, 167, 167)",
                     }}
                     placeholder=""
+                    onChange={onChangeHandle}
                   />
                   <span>Write about general introduction</span>
                 </div>
@@ -255,6 +467,7 @@ export default function Cpn_add_project() {
                       border: "2px solid rgb(189, 167, 167)",
                     }}
                     placeholder=""
+                    onChange={onChangeHandle}
                   />
                   <span>Write about funding goal</span>
                 </div>
@@ -266,7 +479,8 @@ export default function Cpn_add_project() {
                   borderRadius: "10px",
                   border: "2px solid rgb(179, 164, 164)",
                 }}
-                onclick="open_faq()"
+                onClick={open_faq}
+                type="submit"
               >
                 <i
                   class="fa-solid fa-arrow-right-to-bracket"
@@ -280,7 +494,7 @@ export default function Cpn_add_project() {
           <div id="modal_preview">
             <div
               style={{ display: "flex", justifyContent: "right" }}
-              onclick="onClick_close_preview()"
+              onClick={onClick_close_preview}
             >
               <i
                 class="fa-solid fa-circle-xmark"
@@ -360,21 +574,63 @@ export default function Cpn_add_project() {
                 border: "2px solid rgb(183, 170, 170)",
                 borderRadius: "10px",
               }}
-              onclick="add_FAQ()"
+              onClick={add_faq}
             >
               <i class="fa-solid fa-plus"></i>
               ADD QUESTION
             </button>
           </div>
-          <form
-            class="ctn_FAQ"
-            method="POST"
-            action="/post_project_created/faq"
-          >
-            <div class="question_FAQ"></div>
+          <form class="ctn_FAQ" method="POST" onSubmit={onSubmitHandle_faq}>
+            <div class="question_FAQ">
+              <textarea
+                onChange={onChangeHandle_faq}
+                id="question"
+                name="question1"
+                type="text"
+                style={{
+                  height: "80px",
+                  borderRadius: "20px",
+                  width: "80%",
+                  fontSize: "30px",
+                  padding: "20px",
+                  margin: "10px",
+                }}
+                placeholder="Write for question"
+              ></textarea>
+              <textarea
+                onChange={onChangeHandle_faq}
+                id="question"
+                name="question2"
+                type="text"
+                style={{
+                  height: "80px",
+                  borderRadius: "20px",
+                  width: "80%",
+                  fontSize: "30px",
+                  padding: "20px",
+                  margin: "10px",
+                }}
+                placeholder="Write for question"
+              ></textarea>
+              <textarea
+                onChange={onChangeHandle_faq}
+                id="question"
+                name="question3"
+                type="text"
+                style={{
+                  height: "80px",
+                  borderRadius: "20px",
+                  width: "80%",
+                  fontSize: "30px",
+                  padding: "20px",
+                  margin: "10px",
+                }}
+                placeholder="Write for question"
+              ></textarea>
+            </div>
             <button
               type="submit"
-              onclick="open_story()"
+              onClick={open_story}
               style={{
                 fontSize: "30px",
                 padding: "10px 20px",
@@ -389,23 +645,23 @@ export default function Cpn_add_project() {
         </div>
       </div>
 
-      <div class="story_post" style={{minHeight: '274px'}}>
-        <div style={{width: '80%',display : 'flex',justifyContent: 'right'}}>
+      <div class="story_post" style={{ minHeight: "274px" }}>
+        <div style={{ width: "80%", display: "flex", justifyContent: "right" }}>
           <div class="button_add_str">
-            <button onclick="add_story_title()">
+            <button onClick={add_story_title}>
               <i class="fa-solid fa-plus"></i>
               ADD TITLE
             </button>
-            <button onclick="add_story_content()">
+            <button onClick={add_story_content}>
               <i class="fa-solid fa-plus"></i>
               ADD CONTENT
             </button>
-            <button onclick="add_story_image()">
+            <button onClick={add_story_image}>
               <i class="fa-solid fa-plus"></i>
               ADD IMAGE
             </button>
           </div>
-          <div style={{width : '80%'}}>
+          <div style={{ width: "80%" }}>
             <form method="POST" action="/post_project_created/story">
               <div class="input_add_str"></div>
               <button type="submit">SEND</button>
@@ -414,11 +670,9 @@ export default function Cpn_add_project() {
         </div>
       </div>
 
-      <div class="rewards_post">
+      <div class="rewards_post"></div>
 
-      </div>
-
-      <div style={{height: '200px'}}></div>
+      <div style={{ height: "200px" }}></div>
     </div>
   );
 }
