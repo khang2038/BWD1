@@ -9,6 +9,11 @@ import axios from "axios";
 import { useLocation,useParams } from 'react-router-dom'
 import { useNavigate } from "react-router";
 
+function sleep(s) {
+  return new Promise(function (resolve) {
+    setTimeout(resolve, s);
+  });
+}
 
 export default function Cpn_edit() {
   const { state_user } = useContext(AppContext);
@@ -37,6 +42,8 @@ export default function Cpn_edit() {
   const onSubmitHandle = (e) => {
     try {
       e.preventDefault();
+    var ctn__loading__home = document.querySelector(".ctn__loading__body");
+
       var _id = productInput._id;
       var name = productInput.name;
       var name_author = productInput.name_author;
@@ -44,9 +51,18 @@ export default function Cpn_edit() {
       var infor = productInput.infor;
       var img1 = productInput.img1;
 
-      axios.put(`/store/${_id}`,{_id,name,name_author,img_author,infor,img1})
-     
-      navigate('../product',{replace : true});
+      sleep()
+        .then(function() {
+          ctn__loading__home.classList.add("open__load");
+          
+          axios.put(`/store/${_id}`,{_id,name,name_author,img_author,infor,img1})
+          return sleep(1000)
+        })
+        .then(function() {
+          ctn__loading__home.classList.remove("open__load");
+
+          navigate('../product',{replace : true});
+        })
       
     } catch (error) {
       // setErrorMessage(error.response.data.message);
@@ -164,6 +180,11 @@ export default function Cpn_edit() {
             </button>
           </div>
         </form>
+      </div>
+      <div className="ctn__loading__body">
+        <div className="ctn__loading">
+          <div className="ctn__loading__content"></div>
+        </div>
       </div>
     </div>
   );

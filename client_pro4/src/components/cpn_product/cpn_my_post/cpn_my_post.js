@@ -12,6 +12,12 @@ import swal from 'sweetalert';
 import { useNavigate } from "react-router";
 
 
+function sleep(s) {
+  return new Promise(function (resolve) {
+    setTimeout(resolve, s);
+  });
+}
+
 export default function Cpn_my_post() {
   const { state_user } = useContext(AppContext);
   const [data_product, setData_product] = useState(null);
@@ -43,10 +49,18 @@ export default function Cpn_my_post() {
   
   function delete_p(e){
     e.preventDefault();
+    var ctn__loading__home = document.querySelector(".ctn__loading__body");
 
-    axios.delete(`/store/${e.target.className}`);
-
-    navigate('../product',{replace : true});
+    sleep() 
+      .then(function() {
+        ctn__loading__home.classList.add("open__load");
+        axios.delete(`/store/${e.target.className}`);
+        return sleep(1000)
+      })
+      .then(function() {
+        ctn__loading__home.classList.remove("open__load");
+        navigate('../product',{replace : true});
+      })
   };
 
   function print_post_user(total_post) {
@@ -144,7 +158,11 @@ export default function Cpn_my_post() {
 
       </div>
       <form method="POST" name="delete_form"></form>
-
+      <div className="ctn__loading__body">
+        <div className="ctn__loading">
+          <div className="ctn__loading__content"></div>
+        </div>
+      </div>
     </div>
   );
 }
