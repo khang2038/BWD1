@@ -16,7 +16,7 @@ export default function Cpn_my_post() {
   const { state_user } = useContext(AppContext);
   const [data_product, setData_product] = useState(null);
   const navigate = useNavigate();
-
+  
   useEffect(() => {
     axios
       .get(`http://localhost:5000/product`)

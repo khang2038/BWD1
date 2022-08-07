@@ -1,7 +1,7 @@
 import React from "react";
 import "./style_product.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import $ from "jquery";
+import $, { data } from "jquery";
 import "animate.css";
 import { useEffect, useState } from "react";
 import axios
@@ -29,8 +29,26 @@ function check_link_data(temp) {
   return false;
 }
 
-
 function Ctn_product_get_data(get) {
+  function handle_heart(class1) {
+    var heart = document.querySelector(`.${class1} .heart`);
+    console.log("abc");
+    // if (heart.classList.contains('fa-regular')) {
+    //     heart.classList.remove('fa-regular');
+    //     heart.classList.add('fa-solid');
+    //     Object.assign(heart.style , {
+    //         color : 'red',
+    //     })
+    // }
+    // else {
+    //     heart.classList.remove('fa-solid');
+    //     heart.classList.add('fa-regular');
+    //     Object.assign(heart.style , {
+    //         color : 'black',
+    //     })
+    // }
+  }
+
   return (
     <div class={`Infor ${get.product.name}`}>
       <div class="author">
@@ -62,7 +80,7 @@ function Ctn_product_get_data(get) {
       <hr />
       <div class="decription">
         <div class="emotion">
-          <i class="heart fa-heart fa-regular"></i>
+          <i class="heart fa-heart fa-regular" onClick={console.log(452)}></i>
           <i class="fa-regular fa-comment"></i>
           <i class="fa-solid fa-share-nodes"></i>
         </div>
@@ -103,7 +121,6 @@ function print_Ctn_product_get_data(data_product) {
               product = {temp}
             />
           )
-            // console.log(1);
           )
         }
       </div>
@@ -114,18 +131,15 @@ function print_Ctn_product_get_data(data_product) {
 export default function Cpn_product() {
   const [data_product, setData_product] = useState(null);
 
-  axios 
-    .get(`http://localhost:5000/product`)
-    .then((res) => res.data)
-    .then((data) => {
-      setData_product(data);
-    });
 
-  // useEffect(() => {
-    
-  // }, []);
-
-  
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/product`)
+      .then((res) => res.data)
+      .then((data) => {
+        setData_product(data)
+      });
+  }, []);
 
   return (
     <div>
@@ -187,7 +201,7 @@ export default function Cpn_product() {
             <div class="decription">
               <div class="emotion">
                 <i class="fa-regular fa-heart"></i>
-                <i class="fa-regular fa-comment comment" onClick></i>
+                <i class="fa-regular fa-comment comment"></i>
                 <i class="fa-solid fa-share-nodes"></i>
               </div>
               <div class="donate-investment">

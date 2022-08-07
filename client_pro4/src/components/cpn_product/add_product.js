@@ -7,8 +7,15 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import AppContext from "../AppContext";
 import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 
 const body = document.querySelector("body");
+
+function sleep(s) {
+  return new Promise(function (resolve) {
+    setTimeout(resolve, s);
+  });
+}
 
 export default function Cpn_add_product() {
   const {state_user} = useContext(AppContext);
@@ -27,10 +34,26 @@ export default function Cpn_add_product() {
       var img_author = productInput.img_author;
       var infor = productInput.infor;
       var img1 = productInput.img1;
+      var ctn__loading__home = document.querySelector(".ctn__loading__body");
 
-      axios.post('/store',{name,name_author,img_author,infor,img1})
+      sleep(0)
+        .then(function() {
+          axios.post('/store',{name,name_author,img_author,infor,img1})
+          ctn__loading__home.classList.add("open__load");
+          return sleep(1000)
+        }
+        )
+        .then(function() {
+          ctn__loading__home.classList.remove("open__load");
+
+          var temp_to_product= document.querySelector('.temp_to_product');
+          temp_to_product.click();
+        }
+        )
           
-      navigate('../product',{replace : true});
+      // navigate('../product',{replace : false});
+
+      
       
     } catch (error) {
       // setErrorMessage(error.response.data.message);
@@ -125,8 +148,14 @@ export default function Cpn_add_product() {
               <button type="submit" class="btn btn-primary">
                 Post
               </button>
+              <Link to={'../product'} className="temp_to_product"></Link>
             </div>
           </form>
+        </div>
+      </div>
+      <div className="ctn__loading__body">
+        <div className="ctn__loading">
+          <div className="ctn__loading__content"></div>
         </div>
       </div>
     </div>

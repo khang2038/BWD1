@@ -97,3 +97,75 @@ form button:hover{
     filter:brightness(130%);
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /*=============loading==================*/
+ .ctn__loading__body {
+    position: fixed;
+    top:0;
+    right:0;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(181, 181, 181, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+  }
+  
+  .ctn__loading__body.open__load {
+    animation-delay: 5s;
+    display: flex;
+  }
+  
+  .ctn__loading {
+    animation: #fff linear 4s infinite;
+    background-image: url(../../public/Logo/PRO4-logos_black.png);
+    background-size: 60%;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+  
+  }
+  
+  .ctn__loading__content {
+    position: relative;
+    width: 130px;
+    height: 130px;
+    border: 13px solid #8730fab1;
+    border-radius: 50%;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    animation: rotate1 linear 2s infinite;
+  }
+  
+  .ctn__loading__content::before {
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    border: 13px solid #07acfea7 ;
+    border-radius: 50%;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    animation: rotate2 linear 2s infinite;
+  }
