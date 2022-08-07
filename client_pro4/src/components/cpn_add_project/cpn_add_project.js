@@ -6,14 +6,26 @@ import "animate.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router";
+
 
 const body = document.querySelector("body");
+
+//promise
+function sleep(s) {
+  return new Promise(function (resolve) {
+    setTimeout(resolve, s);
+  });
+}
 
 export default function Cpn_add_project() {
   let id_image = 0,
     id_title = 0,
     id_content = 0,
     id_faq = 0;
+
+  const navigate = useNavigate();
+  
 
   const [projectInput, setProjectInput] = useState({
     img_big: "",
@@ -52,6 +64,40 @@ export default function Cpn_add_project() {
     content7 : "",
   });
 
+  function removeVietnameseTones(str) {
+    str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, "a");
+    str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g, "e");
+    str = str.replace(/ì|í|ị|ỉ|ĩ/g, "i");
+    str = str.replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g, "o");
+    str = str.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g, "u");
+    str = str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g, "y");
+    str = str.replace(/đ/g, "d");
+    str = str.replace(/À|Á|Ạ|Ả|Ã|Â|Ầ|Ấ|Ậ|Ẩ|Ẫ|Ă|Ằ|Ắ|Ặ|Ẳ|Ẵ/g, "a");
+    str = str.replace(/È|É|Ẹ|Ẻ|Ẽ|Ê|Ề|Ế|Ệ|Ể|Ễ/g, "e");
+    str = str.replace(/Ì|Í|Ị|Ỉ|Ĩ/g, "i");
+    str = str.replace(/Ò|Ó|Ọ|Ỏ|Õ|Ô|Ồ|Ố|Ộ|Ổ|Ỗ|Ơ|Ờ|Ớ|Ợ|Ở|Ỡ/g, "o");
+    str = str.replace(/Ù|Ú|Ụ|Ủ|Ũ|Ư|Ừ|Ứ|Ự|Ử|Ữ/g, "u");
+    str = str.replace(/Ỳ|Ý|Ỵ|Ỷ|Ỹ/g, "y");
+    str = str.replace(/Đ/g, "d");
+    str = str.replace(/H/g, "h");
+    // Some system encode vietnamese combining accent as individual utf-8 characters
+    // Một vài bộ encode coi các dấu mũ, dấu chữ như một kí tự riêng biệt nên thêm hai dòng này
+    str = str.replace(/\u0300|\u0301|\u0303|\u0309|\u0323/g, ""); // ̀ ́ ̃ ̉ ̣  huyền, sắc, ngã, hỏi, nặng
+    str = str.replace(/\u02C6|\u0306|\u031B/g, ""); // ˆ ̆ ̛  Â, Ê, Ă, Ơ, Ư
+    // Remove extra spaces
+    // Bỏ các khoảng trắng liền nhau
+    str = str.replace(
+      /!|@|%|\^|\*|\(|\)|\+|\=|\<|\>|\?|\/|,|\.|\:|\;|\'|\"|\&|\#|\[|\]|~|\$|_|`|-|{|}|\||\\/g,
+      ""
+    );
+    str = str.replace(/ + /g, " ");
+    str = str.trim();
+
+    // Remove punctuations
+    // Bỏ dấu câu, kí tự đặc biệt
+    return str;
+  }
+
   const onChangeHandle = (e) => {
     setProjectInput({ ...projectInput, [e.target.name]: e.target.value });
   };
@@ -71,6 +117,11 @@ export default function Cpn_add_project() {
       var main_title = projectInput.main_title;
       var main_content = projectInput.main_content;
       var title_money_pledged = projectInput.title_money_pledged;
+
+      if(img_big.match(/fakepath/)) {
+        // update the file-path text using case-insensitive regex
+        img_big = img_big.replace(/C:\\fakepath\\/i, '');
+      }
 
       axios.post("/post_project_created/store", {
         img_big,
@@ -106,13 +157,17 @@ export default function Cpn_add_project() {
   };
 
   const onSubmitHandle_story = (e) => {
+    
     try {
       e.preventDefault();
+
+      var ctn_loading = document.querySelector(".ctn__loading__body");
+
       var image1 = storyInput.image1;
       var image2 = storyInput.image2;
       var image3 = storyInput.image3;
-      var image5 = storyInput.image5;
       var image4 = storyInput.image4;
+      var image5 = storyInput.image5;
       var title1 = storyInput.title1;
       var title2 = storyInput.title2;
       var title3 = storyInput.title3;
@@ -123,51 +178,39 @@ export default function Cpn_add_project() {
       var slug_temp = removeVietnameseTones(projectInput.main_title);
       slug_temp=slug_temp.replace(/ /g,'-');
 
-      axios.post("/post_project_created/story", {
-        image1,image2,image3,image4,image5,
-        title1,title2,title3,
-        content1,content2,content3,content4,
-        slug_temp
-      });
+      if(image1.match(/fakepath/)) {
+        // update the file-path text using case-insensitive regex
+        image1 = image1.replace(/C:\\fakepath\\/i, '');
+        image2 = image2.replace(/C:\\fakepath\\/i, '');
+        image3 = image3.replace(/C:\\fakepath\\/i, '');
+        image4 = image4.replace(/C:\\fakepath\\/i, '');
+        image5 = image5.replace(/C:\\fakepath\\/i, '');
+      }
+      
+      sleep(0) 
+        .then(function() {
+          ctn_loading.classList.add("open__load");
+          axios.post("/post_project_created/story", {
+            image1,image2,image3,image4,image5,
+            title1,title2,title3,
+            content1,content2,content3,content4,
+            slug_temp
+          });
+          return sleep(1000)
+        })
+        .then(function() {
+          ctn_loading.classList.remove("open__load");
+          navigate(`../create_project/${slug_temp}`);
+
+        })
+
     } catch (error) {
       // setErrorMessage(error.response.data.message);
     }
   };
 
 
-  function removeVietnameseTones(str) {
-    str = str.replace(/à|á|ạ|ả|ã|â|ầ|ấ|ậ|ẩ|ẫ|ă|ằ|ắ|ặ|ẳ|ẵ/g, "a");
-    str = str.replace(/è|é|ẹ|ẻ|ẽ|ê|ề|ế|ệ|ể|ễ/g, "e");
-    str = str.replace(/ì|í|ị|ỉ|ĩ/g, "i");
-    str = str.replace(/ò|ó|ọ|ỏ|õ|ô|ồ|ố|ộ|ổ|ỗ|ơ|ờ|ớ|ợ|ở|ỡ/g, "o");
-    str = str.replace(/ù|ú|ụ|ủ|ũ|ư|ừ|ứ|ự|ử|ữ/g, "u");
-    str = str.replace(/ỳ|ý|ỵ|ỷ|ỹ/g, "y");
-    str = str.replace(/đ/g, "d");
-    str = str.replace(/À|Á|Ạ|Ả|Ã|Â|Ầ|Ấ|Ậ|Ẩ|Ẫ|Ă|Ằ|Ắ|Ặ|Ẳ|Ẵ/g, "a");
-    str = str.replace(/È|É|Ẹ|Ẻ|Ẽ|Ê|Ề|Ế|Ệ|Ể|Ễ/g, "e");
-    str = str.replace(/Ì|Í|Ị|Ỉ|Ĩ/g, "i");
-    str = str.replace(/Ò|Ó|Ọ|Ỏ|Õ|Ô|Ồ|Ố|Ộ|Ổ|Ỗ|Ơ|Ờ|Ớ|Ợ|Ở|Ỡ/g, "o");
-    str = str.replace(/Ù|Ú|Ụ|Ủ|Ũ|Ư|Ừ|Ứ|Ự|Ử|Ữ/g, "u");
-    str = str.replace(/Ỳ|Ý|Ỵ|Ỷ|Ỹ/g, "y");
-    str = str.replace(/Đ/g, "d");
-    str = str.replace(/H/g, "h");
-    // Some system encode vietnamese combining accent as individual utf-8 characters
-    // Một vài bộ encode coi các dấu mũ, dấu chữ như một kí tự riêng biệt nên thêm hai dòng này
-    str = str.replace(/\u0300|\u0301|\u0303|\u0309|\u0323/g, ""); // ̀ ́ ̃ ̉ ̣  huyền, sắc, ngã, hỏi, nặng
-    str = str.replace(/\u02C6|\u0306|\u031B/g, ""); // ˆ ̆ ̛  Â, Ê, Ă, Ơ, Ư
-    // Remove extra spaces
-    // Bỏ các khoảng trắng liền nhau
-    str = str.replace(
-      /!|@|%|\^|\*|\(|\)|\+|\=|\<|\>|\?|\/|,|\.|\:|\;|\'|\"|\&|\#|\[|\]|~|\$|_|`|-|{|}|\||\\/g,
-      ""
-    );
-    str = str.replace(/ + /g, " ");
-    str = str.trim();
-
-    // Remove punctuations
-    // Bỏ dấu câu, kí tự đặc biệt
-    return str;
-  }
+  
 
   $(function () {
     $("#img_big").change(function () {
@@ -713,6 +756,7 @@ export default function Cpn_add_project() {
                   margin: "10px",
                 }}
                 placeholder="Write for question"
+                autocomplete="on"
               ></textarea>
               <textarea
                 onChange={onChangeHandle_faq}
@@ -822,6 +866,12 @@ export default function Cpn_add_project() {
       <div class="rewards_post"></div>
 
       <div style={{ height: "200px" }}></div>
+
+      <div className="ctn__loading__body">
+        <div className="ctn__loading">
+          <div className="ctn__loading__content"></div>
+        </div>
+      </div>
     </div>
   );
 }
