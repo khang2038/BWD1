@@ -1,9 +1,9 @@
 
-const close_open_user = document.querySelector('.close_open_user');
-const leftSide = document.querySelector('.leftSide');
-const rightSide = document.querySelector('.rightSide');
-const rightSide_button =document.querySelector('.rightSide .header button')
-const nav_icons = document.querySelector('.nav_icons');
+var close_open_user = document.querySelector('.close_open_user');
+var leftSide = document.querySelector('.leftSide');
+var rightSide = document.querySelector('.rightSide');
+var rightSide_button =document.querySelector('.rightSide .header button')
+var nav_icons = document.querySelector('.nav_icons');
 
 function sleep(s){
     return new Promise(function(resolve) {

@@ -10,6 +10,8 @@ import 'swiper/css';
 import {Virtual} from 'swiper';
 import 'swiper/css/virtual';
 import AppContext from "../AppContext";
+import { Link } from "react-router-dom";
+
 
 function sleep(s){
     return new Promise(function(resolve) {
@@ -27,9 +29,9 @@ function Ctn_profile_prj({img_big,main_title,main_content,slug}) {
                 </div>
 
                 <div class="card-content">
-                    <a href="create_project/{{this.slug}}" class="name">
+                    <Link to={`../create_project/${slug}`} className="name">
                         {main_title}
-                    </a>
+                    </Link>
                     <p class="description">
                         {main_content}
                     </p>
@@ -74,9 +76,9 @@ function print_total_profile_project(total_project) {
                                                 </div>
 
                                                 <div class="card-content">
-                                                    <a href="create_project/{{this.slug}}" class="name">
+                                                    <Link to={`../create_project/${total_project.slug}`} className="name">
                                                         {total_project.main_title}
-                                                    </a>
+                                                    </Link>
                                                     <p class="description">
                                                         {total_project.main_content}
                                                     </p>

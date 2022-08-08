@@ -107,7 +107,7 @@ export default function Cpn_my_post() {
                       <i class="fa-solid fa-bars handle_nav_up_del" onClick={handle_update} style={{float : 'right'}}></i>
 
                     </div>
-                    <ul class="update-drop open_up_del" style={{ listStyle: "none" }}>
+                    <ul class="update-drop" style={{ listStyle: "none" }}>
                       <div class="menu_drop">
                         <li>
                           <Link to={`../product/${post._id}/edit`}> Update </Link>

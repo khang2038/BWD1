@@ -80,7 +80,7 @@ function Ctn_product_get_data(get) {
       <hr />
       <div class="decription">
         <div class="emotion">
-          <i class="heart fa-heart fa-regular" onClick={console.log(452)}></i>
+          <i class="heart fa-heart fa-regular"></i>
           <i class="fa-regular fa-comment"></i>
           <i class="fa-solid fa-share-nodes"></i>
         </div>
@@ -88,9 +88,9 @@ function Ctn_product_get_data(get) {
           <a href="donate">
             <p class="donate">Donate</p>
           </a>
-          <a href="mess" class="investment">
+          <Link to={'../chat'} class="investment">
             Investment
-          </a>
+          </Link>
         </div>
       </div>
 

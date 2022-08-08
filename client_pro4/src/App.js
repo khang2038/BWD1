@@ -13,6 +13,7 @@ import Add_product from './pages/Add_product';
 import Login from './pages/Login';
 import Type_product from './pages/Type_product';
 import Edit from './pages/Edit';
+import Chat from './pages/Chat';
 import axios from 'axios';
 
 import * as actions from './redux/actions';
@@ -58,6 +59,9 @@ function App_logged() {
         </Route>
         <Route path="/type_product/:slug" element={<Type_product />}>
 
+        </Route>
+        <Route path="/chat" element={<Chat/>}>
+        
         </Route>
         <Route path="/wallet" element={<Wallet />}>
 
