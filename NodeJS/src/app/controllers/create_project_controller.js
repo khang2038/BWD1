@@ -113,10 +113,8 @@ class create_project_controller{
     save_comment(req , res ,next) {
 
         const temp = req.body;
-
-        temp.slug_temp = slug_val;
-        temp.avatar = req.user.img_author;
-        temp.name = req.user.name_author;
+        //object len 4 nha
+       
         // res.json(req.user);
         // slug_present = req.body.main_title;
         const project_comment = new Project_comment(temp);
