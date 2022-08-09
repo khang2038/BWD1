@@ -31,7 +31,7 @@ export default function Cpn_add_product() {
   
   const showToast = type => {
     switch(type) {
-      case 'success':
+      case 'success_add_post':
         toastProperties = {
           id: list.length+1,
           title: 'NEW NOTIFICATION ! ',
@@ -186,7 +186,7 @@ export default function Cpn_add_product() {
               <Link to={'../product'} className="temp_to_product"></Link>
             </div>
           </form>
-              <Button handleClick={() => showToast('success')}></Button>
+              <Button handleClick={() => showToast('success_add_post')}></Button>
               <Toast toastlist={list} position="buttom-right" setList={setList} />
         </div>
       </div>

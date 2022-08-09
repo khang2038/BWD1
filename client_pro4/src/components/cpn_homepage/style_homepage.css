@@ -606,6 +606,7 @@ header .close:hover i{
 }
 
 .card_project .form_card_project {
+  border-radius: 20px;
   background-color: white;
   width: 23%;
   text-align: left;
@@ -614,7 +615,6 @@ header .close:hover i{
   padding: 0px 0 10px 0;
   /* border-radius: 20px; */
   border: #ebeaf1 solid 2px;
-  border-radius: 20px;
   box-shadow: 0 1px 10px 1px #9e9e9e91;
   overflow: hidden;
   /* transform: translateX(2000px); */
@@ -862,15 +862,41 @@ header .close:hover i{
 }
 
 .content1 .info_content button{
-  font-size: 30px;
-  margin: 0 0 20px 60%;
-  padding: 10px;
+  margin-left: 60%;
+  padding: 20px 40px;
+	background: none;
+	border: none;
   border-radius: 10px;
-  background-color: white;
+	position: relative;
+	text-transform: uppercase;
+	font-weight: bold;
+	letter-spacing: 3px;
+	cursor: pointer;
 }
 
-.content1 .info_content button a{
-  
+.content1 .info_content button:before,
+.content1 .info_content button:after{
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border: 2px solid #000;
+  transition: transform .2s;
+}
+		
+.content1 .info_content button:after{
+  transform: translate(3px, 3px);	
+}
+.content1 .info_content button:before{
+  transform: translate(-3px, -3px)
+}
+.content1 .info_content button:hover:after{
+  transform: translate(0);
+}
+.content1 .info_content button:hover:before{
+  transform: translate(0);
 }
 
 .content1 .info_content button:hover{

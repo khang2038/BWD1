@@ -787,13 +787,6 @@ header .close:hover i{
   transform: translate(0);
 }
 
-
-
-
-.content .info_content button a{
-  
-}
-
 .content .info_content button:hover{
   cursor: pointer;
   background-color: rgb(249, 247, 247);

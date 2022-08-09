@@ -4,7 +4,6 @@ import {Routes,Route} from 'react-router-dom';
 import Homepage from './pages/Homepage';
 import Cpn_header from '~/components/cpn_header/cpn_header.js';
 import Details from './pages/Details';
-import Home from './pages/Home';
 import Create_project from './pages/Create_project';
 import Profile from './pages/Profile';
 import Product from './pages/Product';
@@ -13,6 +12,7 @@ import Add_product from './pages/Add_product';
 import Login from './pages/Login';
 import Type_product from './pages/Type_product';
 import Edit from './pages/Edit';
+import Sign_up from './pages/Sign_up';
 import Chat from './pages/Chat';
 import axios from 'axios';
 
@@ -43,6 +43,9 @@ function App_logged() {
 
         </Route>
         <Route path="/login" element={<Login />}>
+          
+        </Route>
+        <Route path="/sign_up" element={<Sign_up />}>
           
         </Route>
         <Route path="/product" element={<Product />}>

@@ -112,7 +112,7 @@ export default function Cpn_login() {
               <button type="submit">Sign In</button>
               <p class="mention-sign-up">
                 Need a account?
-                <a class="sign-up" href="signup">
+                <a class="sign-up" href="sign_up">
                   Sign up
                 </a>
               </p>
