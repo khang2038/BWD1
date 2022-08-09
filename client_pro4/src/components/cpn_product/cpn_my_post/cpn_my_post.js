@@ -10,7 +10,8 @@ import Cpn_left_nav from "../../../components/cpn_product/cpn_left_nav/cpn_left_
 import AppContext from "../../AppContext";
 import swal from 'sweetalert';
 import { useNavigate } from "react-router";
-
+import Button from '../../cpn_toast_message/button/Button'
+import Toast from '../../cpn_toast_message/toast/Toast'
 
 function sleep(s) {
   return new Promise(function (resolve) {
@@ -22,6 +23,8 @@ export default function Cpn_my_post() {
   const { state_user } = useContext(AppContext);
   const [data_product, setData_product] = useState(null);
   const navigate = useNavigate();
+  const [list, setList] = useState([]);
+  let toastProperties = null;
   
   useEffect(() => {
     axios
@@ -31,6 +34,34 @@ export default function Cpn_my_post() {
         setData_product(data);
       });
   }, []);
+
+
+  //=============-------------message (post)------------------====================
+  
+  const showToast = type => {
+    switch(type) {
+      case 'success_add_post':
+        toastProperties = {
+          id: list.length+1,
+          title: 'NEW NOTIFICATION ! ',
+          description: 'Successfully added post',
+          backgroundColor: '#5cb85c'
+        }
+        break;
+      case 'success_delete_post':
+        toastProperties = {
+          id: list.length+1,
+          title: 'NEW NOTIFICATION ! ',
+          description: 'Successfully delete post',
+          backgroundColor: '#5cb85c'
+        }
+        break;
+        
+      default:
+        toastProperties = [];
+    }
+    setList([...list, toastProperties]);
+  };
 
   //handle update
  
@@ -50,11 +81,17 @@ export default function Cpn_my_post() {
   function delete_p(e){
     e.preventDefault();
     var ctn__loading__home = document.querySelector(".ctn__loading__body");
+    var btn_toast = document.querySelector('.btn_toast');
 
     sleep() 
       .then(function() {
-        ctn__loading__home.classList.add("open__load");
         axios.delete(`/store/${e.target.className}`);
+        btn_toast.click();
+        return sleep(1000)
+      })
+      .then(function() {
+        ctn__loading__home.classList.add("open__load");
+
         return sleep(1000)
       })
       .then(function() {
@@ -117,6 +154,7 @@ export default function Cpn_my_post() {
                             Delete
                           </p>
                         </li>
+                        
                       </div>
                     </ul>
                   </label>
@@ -158,11 +196,14 @@ export default function Cpn_my_post() {
 
       </div>
       <form method="POST" name="delete_form"></form>
+      <Button handleClick={() => showToast('success_delete_post')}></Button>
+      <Toast toastlist={list} position="buttom-right" setList={setList} />
       <div className="ctn__loading__body">
         <div className="ctn__loading">
           <div className="ctn__loading__content"></div>
         </div>
       </div>
+      
     </div>
   );
 }

@@ -8,6 +8,8 @@ import AppContext from "../../AppContext";
 import axios from "axios";
 import { useLocation,useParams } from 'react-router-dom'
 import { useNavigate } from "react-router";
+import Button from '../../cpn_toast_message/button/Button'
+import Toast from '../../cpn_toast_message/toast/Toast'
 
 function sleep(s) {
   return new Promise(function (resolve) {
@@ -21,7 +23,9 @@ export default function Cpn_edit() {
   const navigate = useNavigate();
   const params = useParams();
   const [productInput, setProductInput] = useState({_id : "",name : "",name_author : `${state_user.user.temp.name_author}`, img_author : `${state_user.user.temp.img_author}` , infor : "", img1 : "" });
-  
+  const [list, setList] = useState([]);
+  let toastProperties = null;
+
   useEffect(() => {
     axios
       .get(`http://localhost:5000/product`)
@@ -35,6 +39,41 @@ export default function Cpn_edit() {
       });
   }, []);
 
+  const showToast = type => {
+    switch(type) {
+      case 'success_add_post':
+        toastProperties = {
+          id: list.length+1,
+          title: 'NEW NOTIFICATION ! ',
+          description: 'Successfully added post',
+          backgroundColor: '#5cb85c'
+        }
+        break;
+      case 'success_delete_post':
+        toastProperties = {
+          id: list.length+1,
+          title: 'NEW NOTIFICATION ! ',
+          description: 'Successfully delete post',
+          backgroundColor: '#5cb85c'
+        }
+        break;
+      
+      case 'update_delete_post':
+        toastProperties = {
+          id: list.length+1,
+          title: 'NEW NOTIFICATION ! ',
+          description: 'Successfully update post',
+          backgroundColor: '#5cb85c'
+        }
+        break;
+
+      default:
+        toastProperties = [];
+    }
+    setList([...list, toastProperties]);
+  };
+
+
   const onChangeHandle = (e) => {
     setProductInput({...productInput, [e.target.name] : e.target.value});
   }
@@ -42,7 +81,8 @@ export default function Cpn_edit() {
   const onSubmitHandle = (e) => {
     try {
       e.preventDefault();
-    var ctn__loading__home = document.querySelector(".ctn__loading__body");
+      var ctn__loading__home = document.querySelector(".ctn__loading__body");
+      var btn_toast = document.querySelector('.btn_toast');
 
       var _id = productInput._id;
       var name = productInput.name;
@@ -53,9 +93,13 @@ export default function Cpn_edit() {
 
       sleep()
         .then(function() {
-          ctn__loading__home.classList.add("open__load");
-          
           axios.put(`/store/${_id}`,{_id,name,name_author,img_author,infor,img1})
+          btn_toast.click();
+          return sleep(1000)
+        })
+        .then(function() {
+          ctn__loading__home.classList.add("open__load");
+
           return sleep(1000)
         })
         .then(function() {
@@ -178,9 +222,12 @@ export default function Cpn_edit() {
             <button type="submit" class="btn btn-primary">
               Update
             </button>
+
           </div>
         </form>
       </div>
+          <Button handleClick={() => showToast('update_delete_post')}></Button>
+          <Toast toastlist={list} position="buttom-right" setList={setList} />
       <div className="ctn__loading__body">
         <div className="ctn__loading">
           <div className="ctn__loading__content"></div>
