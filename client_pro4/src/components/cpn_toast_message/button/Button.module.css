@@ -1,0 +1,6 @@
+.button {
+  text-transform: uppercase;
+  cursor: pointer;
+  padding : 0 ;
+  margin: 10px;
+}

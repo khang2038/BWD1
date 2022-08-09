@@ -196,6 +196,9 @@ function Ctn_block_content(prj) {
         name,
       });
 
+      document.querySelector('#comment').value="";
+      
+
       // navigate(`../create_project/${slug_temp}`,{replace : false});
       // var temp_to_product= document.querySelector('.temp_to_product');
       // temp_to_product.click();

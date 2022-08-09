@@ -8,6 +8,8 @@ import axios from "axios";
 import AppContext from "../AppContext";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
+import Button from '../cpn_toast_message/button/Button'
+import Toast from '../cpn_toast_message/toast/Toast'
 
 const body = document.querySelector("body");
 
@@ -21,6 +23,31 @@ export default function Cpn_add_product() {
   const {state_user} = useContext(AppContext);
   const [productInput, setProductInput] = useState({name : "",name_author : `${state_user.user.temp.name_author}`, img_author : `${state_user.user.temp.img_author}` , infor : "", img1 : "" });
   const navigate = useNavigate();
+  const [list, setList] = useState([]);
+  let toastProperties = null;
+
+
+  //=============-------------message (post)------------------====================
+  
+  const showToast = type => {
+    switch(type) {
+      case 'success':
+        toastProperties = {
+          id: list.length+1,
+          title: 'NEW NOTIFICATION ! ',
+          description: 'Successfully added post',
+          backgroundColor: '#5cb85c'
+        }
+        break;
+      default:
+        toastProperties = [];
+    }
+    setList([...list, toastProperties]);
+  };
+
+  
+
+  //=================================================
 
   const onChangeHandle = (e) => {
     setProductInput({...productInput, [e.target.name] : e.target.value});
@@ -35,18 +62,24 @@ export default function Cpn_add_product() {
       var infor = productInput.infor;
       var img1 = productInput.img1;
       var ctn__loading__home = document.querySelector(".ctn__loading__body");
+      var btn_toast = document.querySelector('.btn_toast');
 
       sleep(0)
         .then(function() {
           axios.post('/store',{name,name_author,img_author,infor,img1})
-          ctn__loading__home.classList.add("open__load");
-          return sleep(1000)
+          btn_toast.click();
+          return sleep(1000);
         }
         )
+        .then(function() {
+          ctn__loading__home.classList.add("open__load");
+          return sleep(1000)
+        })
         .then(function() {
           ctn__loading__home.classList.remove("open__load");
 
           navigate('../product',{replace : false});
+
           // var temp_to_product= document.querySelector('.temp_to_product');
           // temp_to_product.click();
         }
@@ -145,12 +178,16 @@ export default function Cpn_add_product() {
                 />
                 <span>Copy link image for here</span>
               </div>
-              <button type="submit" class="btn btn-primary">
-                Post
-              </button>
+                <button type="submit" class="btn btn-primary">
+                  Post
+                </button>
+              
+
               <Link to={'../product'} className="temp_to_product"></Link>
             </div>
           </form>
+              <Button handleClick={() => showToast('success')}></Button>
+              <Toast toastlist={list} position="buttom-right" setList={setList} />
         </div>
       </div>
       <div className="ctn__loading__body">
@@ -158,6 +195,7 @@ export default function Cpn_add_product() {
           <div className="ctn__loading__content"></div>
         </div>
       </div>
+      
     </div>
   );
 }

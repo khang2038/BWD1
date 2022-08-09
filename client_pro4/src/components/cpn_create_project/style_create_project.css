@@ -477,6 +477,10 @@ a{
   margin-left: 10px;
 }
 
+.comment_action .submit_comment:hover{
+  cursor: pointer;
+}
+
 /*-----------comment_action------------*/
 
 
