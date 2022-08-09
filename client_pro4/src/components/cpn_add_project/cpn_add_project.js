@@ -482,7 +482,7 @@ export default function Cpn_add_project() {
                 </p>
                 <img
                   style={{ margin: "20px 50px", margin: "0 auto", zIndex: "1" }}
-                  src=""
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNZo8HJXlzsEbcnfi6ciTTC9I1SF8Pb0wY6A&usqp=CAU"
                   alt=""
                   id="image"
                   width="300"
@@ -827,13 +827,13 @@ export default function Cpn_add_project() {
               <div class="input_add_str">
                 <div style={{display: 'flex', flexDirection: 'column'}}>
                   
-                  <img style={{margin: '0 auto', zIndex: '1'}} src="" alt="" id="image1" width="300" height="300"/>
+                  <img style={{margin: '0 auto', zIndex: '1'}} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNZo8HJXlzsEbcnfi6ciTTC9I1SF8Pb0wY6A&usqp=CAU" alt="" id="image1" width="300" height="300"/>
                   <input onChange={onChangeHandle_story} name="image1" style={{width: '80%',margin: '20px auto 60px auto'}} type="file" class="form-control" id="input_image1"
                       accept="image/gif , image/jpeg, image/png" placeholder="image"/>
                   
                   <textarea onChange={onChangeHandle_story} name="title1" type="text" style={{height: '80px',borderRadius:'20px',width: '80%',fontSize : '30px', padding: '20px',margin: '10px'}} placeholder="Title"></textarea>
                   
-                  <img style={{margin: '0 auto', zIndex: '1'}} src="" alt="" id="image2" width="300" height="300"/>
+                  <img style={{margin: '0 auto', zIndex: '1'}} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNZo8HJXlzsEbcnfi6ciTTC9I1SF8Pb0wY6A&usqp=CAU" alt="" id="image2" width="300" height="300"/>
                   <input onChange={onChangeHandle_story} name="image2" style={{width: '80%',margin: '20px auto 60px auto'}} type="file" class="form-control" id="input_image2"
                       accept="image/gif , image/jpeg, image/png" placeholder="image"/>
 
@@ -842,17 +842,17 @@ export default function Cpn_add_project() {
 
                   <textarea onChange={onChangeHandle_story} name="title2" type="text" style={{height: '80px',borderRadius:'20px',width: '80%',fontSize : '30px', padding: '20px',margin: '10px'}} placeholder="Title"></textarea>
                   <textarea onChange={onChangeHandle_story} name="content3" type="text" style={{borderRadius: '10px', height: '20px',wordBreak: 'break-word', width: '90%',fontSize : '20px', padding: '30px 10px 140px 30px',margin: '10px'}} placeholder="Content"></textarea>
-                  <img style={{margin: '0 auto', zIndex: '1'}} src="" alt="" id="image3" width="300" height="300"/>
+                  <img style={{margin: '0 auto', zIndex: '1'}} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNZo8HJXlzsEbcnfi6ciTTC9I1SF8Pb0wY6A&usqp=CAU" alt="" id="image3" width="300" height="300"/>
                   <input onChange={onChangeHandle_story} name="image3" style={{width: '80%',margin: '20px auto 60px auto'}} type="file" class="form-control" id="input_image3"
                       accept="image/gif , image/jpeg, image/png" placeholder="image"/>
                   
-                  <img style={{margin: '0 auto', zIndex: '1'}} src="" alt="" id="image4" width="300" height="300"/>
+                  <img style={{margin: '0 auto', zIndex: '1'}} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNZo8HJXlzsEbcnfi6ciTTC9I1SF8Pb0wY6A&usqp=CAU" alt="" id="image4" width="300" height="300"/>
                   <input onChange={onChangeHandle_story} name="image4" style={{width: '80%',margin: '20px auto 60px auto'}} type="file" class="form-control" id="input_image4"
                       accept="image/gif , image/jpeg, image/png" placeholder="image"/>
 
                   <textarea onChange={onChangeHandle_story} name="title3" type="text" style={{height: '80px',borderRadius:'20px',width: '80%',fontSize : '30px', padding: '20px',margin: '10px'}} placeholder="Title"></textarea>
                   <textarea onChange={onChangeHandle_story} name="content4" type="text" style={{borderRadius: '10px', height: '20px',wordBreak: 'break-word', width: '90%',fontSize : '20px', padding: '30px 10px 140px 30px',margin: '10px'}} placeholder="Content"></textarea>
-                  <img style={{margin: '0 auto', zIndex: '1'}} src="" alt="" id="image5" width="300" height="300"/>
+                  <img style={{margin: '0 auto', zIndex: '1'}} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNZo8HJXlzsEbcnfi6ciTTC9I1SF8Pb0wY6A&usqp=CAU" alt="" id="image5" width="300" height="300"/>
                   <input onChange={onChangeHandle_story} name="image5" style={{width: '80%',margin: '20px auto 60px auto'}} type="file" class="form-control" id="input_image5"
                       accept="image/gif , image/jpeg, image/png" placeholder="image"/>
                 </div>

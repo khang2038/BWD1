@@ -82,7 +82,7 @@ export default function Cpn_left_nav() {
                 <span>Costume</span>
               </li>
             </Link>
-            <Link to="/type_product/ecommerce">
+            <Link to="/type_product/Ecommerce">
               {" "}
               <li class="menu-ecommerce">
                 <i class="fa-brands fa-shopify icon"></i>
