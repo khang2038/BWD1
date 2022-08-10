@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import axios
  from "axios";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router";
 
 import Cpn_left_nav from "./cpn_left_nav/cpn_left_nav";
 
@@ -130,7 +131,7 @@ function print_Ctn_product_get_data(data_product) {
 
 export default function Cpn_product() {
   const [data_product, setData_product] = useState(null);
-
+  const navigate = useNavigate();
 
   useEffect(() => {
     axios
@@ -140,6 +141,13 @@ export default function Cpn_product() {
         setData_product(data)
       });
   }, []);
+
+
+  // function trans_profile_user(e) {
+  //   e.preventDefault();
+  //   console.log(123);
+  //   navigate(`../profile_user/${slug}`)
+  // }
 
   return (
     <div>
@@ -373,7 +381,9 @@ export default function Cpn_product() {
             <p class="ranking"> Investor Rankings </p>
             <li class="Investor 1">
               <div className="profile_tran_hoang" style={{boxShadow: '0 3px 0px 0px #9e9e9e91'}}>
-                <i class="fa-solid fa-id-badge" style={{padding: '10px',fontSize : '30px'}}></i>
+                <Link to={'../profile_user/tran_hoang'}>
+                  <i class="fa-solid fa-id-badge" style={{padding: '10px',fontSize : '30px'}}></i>
+                </Link>
                 <i class="fa-solid fa-message" style={{padding: '10px',fontSize : '30px'}}></i>
               </div>
               <img

@@ -6,6 +6,7 @@ import Cpn_header from '~/components/cpn_header/cpn_header.js';
 import Details from './pages/Details';
 import Create_project from './pages/Create_project';
 import Profile from './pages/Profile';
+import Profile_user from './pages/Profile_user';
 import Product from './pages/Product';
 import Wallet from './pages/Wallet';
 import Add_product from './pages/Add_product';
@@ -73,6 +74,9 @@ function App_logged() {
 
         </Route>
         <Route path="/profile" element={<Profile />}>
+
+        </Route>
+        <Route path="/profile_user/:slug" element={<Profile_user />}>
 
         </Route>
         <Route path="/create_project/:slug" element={<Create_project />}>
