@@ -18,6 +18,8 @@ const User = require('../app/models/user');
 const create_project = require('./create_project');
 const post_project_created = require('./post_project_created');
 const profile = require('./profile');
+const conversationrouter=require("./conversations")
+const messagerouter=require("./messages")
 const initPassportLocal = require("../app/auth/passportLocal");
 const wallet = require('./wallet');
 
@@ -34,6 +36,8 @@ function route(app){
 
     app.use('/product',productrouter);
     app.use('/mess',messrouter);
+    app.use('/conversation',conversationrouter)
+    app.use('/message',messagerouter)
 
     app.get('/homepage', (req, res, next) => {
       res.render('homepage',{
