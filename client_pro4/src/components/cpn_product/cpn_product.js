@@ -89,7 +89,7 @@ function Ctn_product_get_data(get) {
           <a href="donate">
             <p class="donate">Donate</p>
           </a>
-          <Link to={'../chat'} class="investment">
+          <Link to={'../Mess'} class="investment">
             Investment
           </Link>
         </div>

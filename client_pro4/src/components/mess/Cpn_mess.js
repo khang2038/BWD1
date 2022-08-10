@@ -9,7 +9,7 @@ import ChatOnline from "../chatOnline/ChatOnline";
 export default function CpnMess(){
     const {state_user} = useContext(AppContext);
     
-    console.log(state_user.user);
+    console.log(state_user);
     return(
         <div className="mess">
             <div className="chatMenu">
