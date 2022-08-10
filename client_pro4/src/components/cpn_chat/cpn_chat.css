@@ -1,3 +1,4 @@
+/*
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
 
 .main_page{
@@ -17,7 +18,7 @@
     display:flex;
     justify-content: space-between;
     /* display:none; */
-    border-right:1px solid rgba(0,0,0,0.2);
+/*    border-right:1px solid rgba(0,0,0,0.2);
 }
 
 .container .leftSide{

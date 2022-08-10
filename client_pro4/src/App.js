@@ -23,6 +23,7 @@ import AppReducer from './reducers/AppReducer';
 import { useReducer } from 'react';
 import My_post from './pages/My_post';
 import Add_project from './pages/Add_project';
+import Mess from './pages/Mess'
 
 function App_logged() {
   const initialState = {user : null,posts : []}
@@ -84,6 +85,10 @@ function App_logged() {
         </Route>
         <Route path="/add_project" element={<Add_project />}>
 
+        </Route>
+
+        <Route path="/Mess" element={<Mess />}>
+          
         </Route>
       </Routes>
     </Container>
