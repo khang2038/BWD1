@@ -372,6 +372,10 @@ export default function Cpn_product() {
           <ul class="investor_rankings">
             <p class="ranking"> Investor Rankings </p>
             <li class="Investor 1">
+              <div className="profile_tran_hoang" style={{boxShadow: '0 3px 0px 0px #9e9e9e91'}}>
+                <i class="fa-solid fa-id-badge" style={{padding: '10px',fontSize : '30px'}}></i>
+                <i class="fa-solid fa-message" style={{padding: '10px',fontSize : '30px'}}></i>
+              </div>
               <img
                 src={require("../../public/content/277822595_675257793692053_156162619594281754_n.jpg")}
                 alt=""
@@ -403,10 +407,16 @@ export default function Cpn_product() {
               </div>
             </li>
             <li class="Investor 2">
+              <div className="profile_hung" style={{boxShadow: '0 3px 0px 0px #9e9e9e91'}}>
+                <i class="fa-solid fa-id-badge" style={{padding: '10px',fontSize : '30px'}}></i>
+                <i class="fa-solid fa-message" style={{padding: '10px',fontSize : '30px'}}></i>
+              </div>
+
               <img
                 src={require("../../public/content/shark-hung-la-ai.jpg")}
                 alt=""
               />
+              
               <div class="infor_Investor">
                 <span>Phạm Thanh Hưng</span>
                 <div class="star">
@@ -431,6 +441,10 @@ export default function Cpn_product() {
               </div>
             </li>
             <li class="Investor 3">
+              <div className="profile_elon_musk" style={{boxShadow: '0 3px 0px 0px #9e9e9e91'}}>
+                <i class="fa-solid fa-id-badge" style={{padding: '10px',fontSize : '30px'}}></i>
+                <i class="fa-solid fa-message" style={{padding: '10px',fontSize : '30px'}}></i>
+              </div>
               <img
                 src={require("../../public/content/ElonMusk-2017-stageshot-9046-1650013535.jpg")}
                 alt=""
