@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Container } from "@material-ui/core";
 import "./style_details.css";
+import "./responsive_detail.css";
 import $ from "jquery";
-
 import potential_main from "~/public/img/imgdetail/pp1.png";
 import art_main from "~/public/img/imgdetail/art1.jpg";
 import game_main from "~/public/img/imgdetail/game1.jpg";
@@ -84,11 +84,13 @@ function Cpn_potential_project() {
       </div>
 
       <div className="featured_projects_bars bars">
-        <i className="fa-solid fa-backward"></i>
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <i className="fa-solid fa-forward"></i>
+        <div style={{backgroundColor: '#eaecef'}}>
+          <i className="fa-solid fa-backward"></i>
+          <button>1</button>
+          <button>2</button>
+          <button>3</button>
+          <i className="fa-solid fa-forward"></i>
+        </div>
       </div>
       <hr className="hr_detail" />
     </div>
@@ -168,11 +170,13 @@ function Cpn_art_project() {
         </div>
       </div>
       <div className="art_projects_bars bars">
-        <i className="fa-solid fa-backward"></i>
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <i className="fa-solid fa-forward"></i>
+          <div style={{backgroundColor: '#eaecef'}}>
+              <i className="fa-solid fa-backward"></i>
+              <button>1</button>
+              <button>2</button>
+              <button>3</button>
+              <i className="fa-solid fa-forward"></i>
+          </div>
       </div>
       <hr className="hr_detail" />
     </div>
@@ -258,11 +262,13 @@ function Cpn_game_project() {
         </div>
       </div>
       <div className="game_projects_bars bars">
-        <i className="fa-solid fa-backward"></i>
-        <button>1</button>
-        <button>2</button>
-        <button>3</button>
-        <i className="fa-solid fa-forward"></i>
+            <div style={{backgroundColor: '#eaecef'}}>
+              <i className="fa-solid fa-backward"></i>
+              <button>1</button>
+              <button>2</button>
+              <button>3</button>
+              <i className="fa-solid fa-forward"></i>
+            </div>
       </div>
       <hr className="hr_detail" />
     </div>

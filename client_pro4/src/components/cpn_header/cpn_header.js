@@ -193,12 +193,12 @@ export default function Cpn_header() {
           </div>
           <div className="navduoi">
             <div className="the_center_nav">
-              <a id="homepage_mobile" className="fa-solid fa-house icon 1"></a>
-              <a id="product_mobile" className="fa-brands fa-atlassian icon 2"></a>
-              <a
+              <Link to={'homepage'} id="homepage_mobile" className="fa-solid fa-house icon 1"></Link>
+              <Link to={'product'} id="product_mobile" className="fa-brands fa-atlassian icon 2"></Link>
+              <Link to={'details'}
                 id="projects_mobile"
                 className="fa-solid fa-earth-americas icon 3"
-              ></a>
+              ></Link>
             </div>
             <label htmlFor="nav-mobile-input" className="nav_bars-btn">
               <i className="fa-solid fa-bars"></i>
