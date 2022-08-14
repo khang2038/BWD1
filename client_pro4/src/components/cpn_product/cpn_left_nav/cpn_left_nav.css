@@ -192,6 +192,7 @@
     display: flex;
     margin-left: 10px;
     flex-direction: column;
+    align-content: center;
  }
  .author .infor_author span{
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;

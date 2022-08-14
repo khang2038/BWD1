@@ -9,8 +9,34 @@ function sleep(s) {
     });
   }
 
+const body = document.querySelector("body");
+
 export default function Cpn_header() {
   const {state_user} = useContext(AppContext); 
+
+  function handle_light_dark() {
+    body.classList.toggle("dark");
+    var logo1 = document.querySelector(".mobile_nav .logo1");
+    var logo2 = document.querySelector(".mobile_nav .logo2");
+    if (body.classList.contains("dark")) {
+      Object.assign(logo1.style, {
+        display: "none",
+      });
+      Object.assign(logo2.style, {
+        display: "block",
+      });
+
+      // modeText.innerText="Light Mode";
+    } else {
+      Object.assign(logo2.style, {
+        display: "none",
+      });
+      Object.assign(logo1.style, {
+        display: "block",
+      });
+      // modeText.innerText="Dark Mode";
+    }
+  }
 
   function check_user_null(user) {
     if (user==null) {
@@ -54,6 +80,7 @@ export default function Cpn_header() {
       )
     }
   }
+
   /* =============loadding================= */
   /*-----coi lại promise-------*/
   function handle_user() {
@@ -156,8 +183,9 @@ export default function Cpn_header() {
         </div>
         <div className="mobile_nav">
           <div className="navtren">
-            <div className="logo">
-              <p>PRO4</p>
+            <div class="logo_header">
+                <img class="logo1" src={require('../../public/img/img_logo/logo.jpg')} alt=""/>
+                <img class="logo2" src={require('../../public/img/img_logo/logo2.jpg')} alt="" style={{display: 'none'}}/>
             </div>
             <div className="search">
               <i className="fa-solid fa-magnifying-glass icon tk"></i>
@@ -177,6 +205,7 @@ export default function Cpn_header() {
             </label>
           </div>
         </div>
+
         <input
           type="checkbox"
           name=""
@@ -230,7 +259,7 @@ export default function Cpn_header() {
               <i className="fa-solid fa-sun sun"></i>
             </div>
             <span className="mode-text">Dark Mode</span>
-            <div className="toggle-switch">
+            <div className="toggle-switch" onClick={handle_light_dark}>
               <span className="switch"></span>
             </div>
           </li>
