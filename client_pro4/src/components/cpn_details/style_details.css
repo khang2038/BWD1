@@ -363,7 +363,7 @@ body.dark .switch::before{
 .img_w_title .title {
   position: absolute;
   padding: 3%;
-  height: 45%;
+  /* height: 45%; */
   bottom: 0%;
   width: 100%;
   background-image: linear-gradient(95deg, #485461 0%, #28313b 74%);
@@ -672,6 +672,7 @@ body.dark .switch::before{
 }
 
 .bars i{
+  margin: auto 20px;
   background-color: #eaecef;
 }
 

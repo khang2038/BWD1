@@ -163,13 +163,13 @@
  
 }
 
-.icon {
+.content_profile .icon {
 	margin: 0 20px;
 	cursor: pointer;
 	position: relative;
 }
 
-.icon i {
+.content_profile .icon i {
 	height: 60px;
 	width: 60px;
 	border-radius: 50% ;
@@ -182,7 +182,7 @@
 
 }
 
-.icon .tooltip {
+.content_profile .icon .tooltip {
 	position: absolute;
 	top: 0;
 	left: 160px;
@@ -208,17 +208,17 @@
 } */
 
 .tooltip,
-.icon i {
+.content_profile .icon i {
 	transition: 0.3s;
 }
 
-.icon:hover .tooltip {
+.content_profile .icon:hover .tooltip {
 	opacity: 1;
 	pointer-events: auto;
 	top: 0px;
 }
 
-.icon:hover i {
+.content_profile .icon:hover i {
 	color: white;
 }
 

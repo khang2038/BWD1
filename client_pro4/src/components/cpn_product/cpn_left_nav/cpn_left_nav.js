@@ -1,5 +1,6 @@
 import React from "react";
 import "./cpn_left_nav.css";
+import "../style_responsive_of_product/product_responsive.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import $ from "jquery";
 import "animate.css";
@@ -31,7 +32,7 @@ export default function Cpn_left_nav() {
           });
           // modeText.innerText="Dark Mode";
         }
-      }
+    }
 
     return (
         <ul class="the_left_page_product letf_page">
