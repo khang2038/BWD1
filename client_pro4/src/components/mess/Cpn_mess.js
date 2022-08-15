@@ -13,6 +13,7 @@ export default function CpnMess(){
     const [currentchat,setcurrentchat]=useState(null);
     const [messages,setmessages]=useState([]);
     const [newmessage,setnewmessage]=useState("");
+    const scrollRef=useRef();
 
     useEffect(()=>{
         const getConversation=async ()=>{
@@ -51,10 +52,16 @@ export default function CpnMess(){
 
             const res=await axios.post("/message",message)
             setmessages([...messages,res.data])
+            setnewmessage("")
+
          }catch(err){
             console.log(err)
          }
     }
+
+    useEffect(()=>{
+        scrollRef.current?.scrollIntoView({behavior:"smooth"})
+    },[messages])
 
     return(
         <div className="mess">
@@ -75,7 +82,9 @@ export default function CpnMess(){
                     <>
                     <div className="chatBoxTop">
                        {messages.map(m=>(
-                           <Messa message={m} own={m.sender === state_user.user.temp._id} />
+                           <div ref={scrollRef}> 
+                                <Messa message={m} own={m.sender === state_user.user.temp._id} />
+                           </div> 
                        ))} 
                     </div>
                     <div className="chatBoxBottom">
