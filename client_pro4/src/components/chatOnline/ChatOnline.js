@@ -1,29 +1,47 @@
+import axios from "axios"
+import { useEffect, useState } from "react"
 import "./chatOnline.css"
 
-export default function ChatOnline(){
+
+
+
+export default function ChatOnline({onlineUsers,currentId,setcurrentchat}){
+    const [friends,setfriends]=useState([])
+    const [onlinefriends,setOnlinefriends]=useState([])
+
+    useEffect(()=>{
+         const getFriends = async ()=>{
+              const res = await axios.get("/login")
+              setfriends(res.data)  
+         }
+        getFriends(); 
+    },[])
+
+    useEffect(()=>{
+        setOnlinefriends(friends)
+    },[friends])
+
+    const handleClick = async (user)=>{
+        try{
+            const res=await axios.get(`/conversation/find/${currentId}/${user._id}`)
+            setcurrentchat(res.data);
+        }catch(err){
+            console.log(err)
+        }
+    }
+
     return(
         <div className="chatOnline">
-            <div className="chatOnlineFriend">
-                <div className="chatOnlineImgContainer">
-                    <img className="chatOnlineImg" src="https://storage.googleapis.com/pik-buk/inspitrip/2019_1dae4334-8ae5-4f4f-bcbb-ae9c9a836706.jpg?w=800" alt=""/>
-                    <div className="chatOnlineBadge"></div>
+            {onlinefriends.map(o=>(
+                <div className="chatOnlineFriend" onClick={()=>handleClick(o)}>
+                    <div className="chatOnlineImgContainer">
+                        <img className="chatOnlineImg" src={o?.img_author} alt=""/>
+                        <div className="chatOnlineBadge"></div>
+                    </div>
+                    <span className="chatOnlineName"> {o?.name_author} </span>
                 </div>
-                <span className="chatOnlineName"> Khang </span>
-            </div>
-            <div className="chatOnlineFriend">
-                <div className="chatOnlineImgContainer">
-                    <img className="chatOnlineImg" src="https://storage.googleapis.com/pik-buk/inspitrip/2019_1dae4334-8ae5-4f4f-bcbb-ae9c9a836706.jpg?w=800" alt=""/>
-                    <div className="chatOnlineBadge"></div>
-                </div>
-                <span className="chatOnlineName"> Khang </span>
-            </div>
-            <div className="chatOnlineFriend">
-                <div className="chatOnlineImgContainer">
-                    <img className="chatOnlineImg" src="https://storage.googleapis.com/pik-buk/inspitrip/2019_1dae4334-8ae5-4f4f-bcbb-ae9c9a836706.jpg?w=800" alt=""/>
-                    <div className="chatOnlineBadge"></div>
-                </div>
-                <span className="chatOnlineName"> Khang </span>
-            </div>
+            ))} 
+         
         </div>
     )
 }

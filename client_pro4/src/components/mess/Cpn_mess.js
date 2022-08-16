@@ -15,6 +15,7 @@ export default function CpnMess(){
     const [messages,setmessages]=useState([]);
     const [newmessage,setnewmessage]=useState("");
     const [arrivalmessage,setArrivalmessage]=useState(null);
+    const [onlineUsers,setOnlineUser]=useState([]);
     const socket = useRef(io("ws://localhost:8900"))
     const scrollRef=useRef();
 
@@ -37,7 +38,7 @@ export default function CpnMess(){
     useEffect(()=>{
          socket.current.emit("addUser", state_user.user.temp._id )
          socket.current.on("getUsers",users=>{
-            console.log(users)
+            setOnlineUser(users)
          })
     },[state_user.user.temp])
 
@@ -137,7 +138,7 @@ export default function CpnMess(){
             </div>
             <div className="chatOnline">
                 <div className="chatOnlineWrapper">
-                    <ChatOnline />
+                    <ChatOnline onlineUsers={onlineUsers} currentId={state_user.user.temp._id} setcurrentchat={setcurrentchat}/>
                 </div>
             </div>
         </div>    
