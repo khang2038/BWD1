@@ -16,7 +16,7 @@ $(document).ready(function(){
         var ctn_footer_top = $('.ctn__footer').offset().top;
 
         if (ctn_content_detail_prj_top<body) {
-            if (ctn_footer_top-header_top<=screen.height) {
+            if (ctn_footer_top-header_top<=window.screen.height) {
                 Object.assign(left_body_prj.style , {
                     position: "initial",
                     display: 'none',

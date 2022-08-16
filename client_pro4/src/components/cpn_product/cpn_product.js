@@ -72,13 +72,13 @@ function Ctn_product_get_data(get) {
         <div class="img-App">
           {
             validURL(get.product.img1)==false && check_link_data(get.product.img1)==false ? 
-            <img src={require(`../../public/${get.product.img1}`)} />
+            <img style={{borderRadius : '10px'}} src={require(`../../public/${get.product.img1}`)} />
             : 
-            <img src={get.product.img1} alt=""/>
+            <img style={{borderRadius : '10px'}} src={get.product.img1} alt=""/>
           }
         </div>
       </div>
-      <hr />
+      <hr style={{marginTop: '10px'}}/>
       <div class="decription">
         <div class="emotion">
           <i class="heart fa-heart fa-regular"></i>
@@ -86,9 +86,16 @@ function Ctn_product_get_data(get) {
           <i class="fa-solid fa-share-nodes"></i>
         </div>
         <div class="donate-investment">
-          <a href="donate">
-            <p class="donate">Donate</p>
-          </a>
+          {
+            get.product.slug=="" ?
+            <Link to="../homepage">
+              <p class="donate">Access</p>
+            </Link>
+            :
+            <Link to={`../create_project/${get.product.slug}`}>
+              <p class="donate">Access</p>
+            </Link>
+          }
           <Link to={'../Mess'} class="investment">
             Investment
           </Link>
@@ -213,9 +220,9 @@ export default function Cpn_product() {
                 <i class="fa-solid fa-share-nodes"></i>
               </div>
               <div class="donate-investment">
-                <a href="donate">
-                  <p class="donate">Donate</p>
-                </a>
+                <Link to="../donate">
+                  <p class="donate">Access</p>
+                </Link>
                 <p class="investment">Investment</p>
               </div>
             </div>
@@ -277,10 +284,10 @@ export default function Cpn_product() {
                 <i class="fa-solid fa-share-nodes"></i>
               </div>
               <div class="donate-investment">
-                <a href="donate">
+                <Link to="../donate">
                   {" "}
-                  <p class="donate">Donate</p>{" "}
-                </a>
+                  <p class="donate">Access</p>{" "}
+                </Link>
                 <p class="investment">Investment</p>
               </div>
             </div>
@@ -356,10 +363,10 @@ export default function Cpn_product() {
                 <i class="fa-solid fa-share-nodes"></i>
               </div>
               <div class="donate-investment">
-                <a href="donate">
+                <Link to="../donate">
                   {" "}
-                  <p class="donate">Donate</p>{" "}
-                </a>
+                  <p class="donate">Access</p>{" "}
+                </Link>
                 <p class="investment">Investment</p>
               </div>
             </div>

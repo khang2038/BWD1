@@ -61,12 +61,13 @@ export default function Cpn_add_product() {
       var img_author = productInput.img_author;
       var infor = productInput.infor;
       var img1 = productInput.img1;
+      var slug = "";
       var ctn__loading__home = document.querySelector(".ctn__loading__body");
       var btn_toast = document.querySelector('.btn_toast');
 
       sleep(0)
         .then(function() {
-          axios.post('/store',{name,name_author,img_author,infor,img1})
+          axios.post('/store',{name,name_author,img_author,infor,img1,slug})
           btn_toast.click();
           return sleep(1000);
         }

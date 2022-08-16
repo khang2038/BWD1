@@ -10,6 +10,7 @@ const product = new Schema({
   img2 : {type:String},
   img3 : {type:String},
   video : {type:String},
+  slug : {type:String},
   createdAt:{type:Date,default:Date.now},
   updateAt: {type:Date,default:Date.now}
 });
