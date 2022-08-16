@@ -19,9 +19,10 @@
 .messaText{
     padding:10px;
     border-radius: 20px;
-    background-color: #5597ee;
+    background-color:rgb(235, 230, 230) ;
     max-width: 300px;
-    color: aliceblue;
+   
+    color: black;
 }
 .messaBottom{
     font-size: 12px;
@@ -32,6 +33,6 @@
     align-items: flex-end;
 }
 .messa.own .messaText{
-    background-color: rgb(235, 230, 230);
-    color: black;
+    background-color: #5597ee;
+    color: aliceblue;
 }
