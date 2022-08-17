@@ -3,11 +3,13 @@ import "./style_product.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import $, { data } from "jquery";
 import "animate.css";
-import { useEffect, useState } from "react";
+import { useEffect, useState ,useContext} from "react";
 import axios
  from "axios";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router";
+import AppContext from "../AppContext";
+
 
 import Cpn_left_nav from "./cpn_left_nav/cpn_left_nav";
 
@@ -31,27 +33,37 @@ function check_link_data(temp) {
 }
 
 function Ctn_product_get_data(get) {
-  function handle_heart(class1) {
+  function handle_heart(event ,class1) {
     var heart = document.querySelector(`.${class1} .heart`);
-    console.log("abc");
-    // if (heart.classList.contains('fa-regular')) {
-    //     heart.classList.remove('fa-regular');
-    //     heart.classList.add('fa-solid');
-    //     Object.assign(heart.style , {
-    //         color : 'red',
-    //     })
-    // }
-    // else {
-    //     heart.classList.remove('fa-solid');
-    //     heart.classList.add('fa-regular');
-    //     Object.assign(heart.style , {
-    //         color : 'black',
-    //     })
-    // }
+    if (heart.classList.contains('fa-regular')) {
+        heart.classList.remove('fa-regular');
+        heart.classList.add('fa-solid');
+        Object.assign(heart.style , {
+            color : 'red',
+        })
+    }
+    else {
+        heart.classList.remove('fa-solid');
+        heart.classList.add('fa-regular');
+        Object.assign(heart.style , {
+            color : 'black',
+        })
+    }
+  }
+
+
+  function click_cmt(event , class_temp) {
+    var ctn_comment = document.querySelector(`.${class_temp} .ctn_comment`);
+    if (ctn_comment.classList.contains('open_cmt')) {
+      ctn_comment.classList.remove('open_cmt');
+    }
+    else {
+      ctn_comment.classList.add('open_cmt');
+    }
   }
 
   return (
-    <div class={`Infor ${get.product.name}`}>
+    <div class={`Infor ${get.product.slug}`}>
       <div class="author">
         {
           validURL(get.product.img_author)==false && check_link_data(get.product.img_author)==false ? 
@@ -73,7 +85,7 @@ function Ctn_product_get_data(get) {
           {
             validURL(get.product.img1)==false && check_link_data(get.product.img1)==false ? 
             <img style={{borderRadius : '10px'}} src={require(`../../public/${get.product.img1}`)} />
-            : 
+            :
             <img style={{borderRadius : '10px'}} src={get.product.img1} alt=""/>
           }
         </div>
@@ -81,8 +93,8 @@ function Ctn_product_get_data(get) {
       <hr style={{marginTop: '10px'}}/>
       <div class="decription">
         <div class="emotion">
-          <i class="heart fa-heart fa-regular"></i>
-          <i class="fa-regular fa-comment"></i>
+          <i class="heart fa-heart fa-regular" onClick={(event) => handle_heart(event, get.product.slug)}></i>
+          <i class="fa-regular fa-comment" onClick={(event) => click_cmt(event , get.product.slug)}></i>
           <i class="fa-solid fa-share-nodes"></i>
         </div>
         <div class="donate-investment">
@@ -107,7 +119,7 @@ function Ctn_product_get_data(get) {
 
       <div class="ctn_comment" style={{ height: "100px" }}>
         <div class="bl__ctn_comment" style={{ width: "90%" }}>
-          <img class="avatar" src="" />
+          <img src={get.state_user.user.temp.img_author} class="avatar" />
           <form action="">
             <input type="text" placeholder="Write a comment ... " />
             <button>
@@ -120,7 +132,7 @@ function Ctn_product_get_data(get) {
   );
 }
 
-function print_Ctn_product_get_data(data_product) {
+function print_Ctn_product_get_data(data_product,state_user) {
   if (data_product !== null) {
     data_product=data_product.reverse();
     return (
@@ -130,6 +142,7 @@ function print_Ctn_product_get_data(data_product) {
             <Ctn_product_get_data
               key={temp._id}
               product = {temp}
+              state_user = {state_user}
             />
           )
           )
@@ -142,6 +155,8 @@ function print_Ctn_product_get_data(data_product) {
 export default function Cpn_product() {
   const [data_product, setData_product] = useState(null);
   const navigate = useNavigate();
+  const {state_user} = useContext(AppContext); 
+
 
   useEffect(() => {
     axios
@@ -166,7 +181,7 @@ export default function Cpn_product() {
 
         <div class="center_page">
           {
-              print_Ctn_product_get_data(data_product)
+              print_Ctn_product_get_data(data_product , state_user)
           }
           <div class="Infor AI">
             <div class="author">
