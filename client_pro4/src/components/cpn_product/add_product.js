@@ -78,7 +78,7 @@ export default function Cpn_add_product() {
         })
         .then(function() {
           ctn__loading__home.classList.remove("open__load");
-
+          console.log(btn_toast);
           navigate('../product',{replace : false});
           
           // var temp_to_product= document.querySelector('.temp_to_product');

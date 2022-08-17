@@ -90,7 +90,9 @@ function Ctn_product_get_data(get) {
             get.product.slug=="" ?
             <div>
               <p class="donate">Access</p>
-              {/* <div className="page_product_not_data open"></div> */}
+              <div className="page_product_not_data">
+                <hr />
+              </div>
             </div>
             :
             <Link to={`../create_project/${get.product.slug}`}>

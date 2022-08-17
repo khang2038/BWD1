@@ -65,29 +65,27 @@ export default function Cpn_my_post() {
 
   //handle update
  
-  function handle_update() {
-      var update1 = document.querySelector(`.update-drop`);
-      if (update1.classList.contains('open_up_del')){
-        update1.classList.remove('open_up_del');
-        console.log(1);
-      } 
-      else {
-        update1.classList.add('open_up_del');
-        console.log(2);
+  function handle_update(event , class_temp) {
+    // console.log(class_temp);
 
-      }
-      
+    var update1 = document.querySelector(`.${class_temp} .update-drop`);
+    console.log(update1);
+    if (update1.classList.contains('open_up_del')){
+      update1.classList.remove('open_up_del');
+    } 
+    else {
+      update1.classList.add('open_up_del');
+    }
   }
 
   
-  function delete_p(e){
-    e.preventDefault();
+  function delete_p(event , _id){
+    event.preventDefault();
     var ctn__loading__home = document.querySelector(".ctn__loading__body");
     var btn_toast = document.querySelector('.btn_toast');
-
     sleep() 
       .then(function() {
-        axios.delete(`/store/${e.target.className}`);
+        axios.delete(`/store/${_id}`);
         btn_toast.click();
         return sleep(1000)
       })
@@ -108,8 +106,9 @@ export default function Cpn_my_post() {
         <div>
           {total_post.map((post) => {
             if (state_user.user.temp.name_author == post.name_author) {
+              // console.log(post._id);
               return (
-                <div key={post._id} class={`Infor ${post.name}`}>
+                <div key={post._id} class={`Infor ${post.slug}`}>
                   <div class="author">
                     <img src={`${post.img_author}`} alt="" />
                     <div class="infor_author">
@@ -143,20 +142,18 @@ export default function Cpn_my_post() {
                   {/* {{!-- update&dele --}} */}
                   <label for="project-input" class="drop-bars-btn" style={{display: 'flex', flexDirection: 'column'}}>
                     <div style={{display: 'flex', justifyContent : 'flex-end', marginBottom: '20px'}}>
-                      <i class="fa-solid fa-bars handle_nav_up_del" onClick={handle_update} style={{float : 'right'}}></i>
-
+                      <i class="fa-solid fa-bars handle_nav_up_del" onClick={event => handle_update(event , post.slug)} style={{float : 'right'}}></i>
                     </div>
-                    <ul class="update-drop" style={{listStyle: "none" }}>
+                    <ul className="update-drop" style={{listStyle: "none" }}>
                       <div class="menu_drop">
                         <li>
                           <Link to={`../product/${post._id}/edit`}> Update </Link>
                         </li>
                         <li>
-                          <p id="b4" class={`${post._id}`} onClick={delete_p}>
+                          <p id="b4" /*class={`${post._id}`}*/ onClick={event => delete_p(event , post._id)}>
                             Delete
                           </p>
                         </li>
-                        
                       </div>
                     </ul>
                   </label>

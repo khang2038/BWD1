@@ -1,5 +1,6 @@
 import { useCallback ,useEffect} from 'react'
 import styles from './Toast.module.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Toast = ({ toastlist, position, setList }) => {
 
@@ -30,9 +31,12 @@ const Toast = ({ toastlist, position, setList }) => {
             style={{ backgroundColor: toast.backgroundColor}}
           >
             <button onClick={() => deleteToast(toast.id)}>X</button>
-            <div>
-              <p className={styles.title}>{toast.title}</p>
-              <p className={styles.description}>{toast.description}</p>
+            <div style={{display : 'flex', flexDirection : 'row'}}>
+              <i class="fa-solid fa-circle-check"></i>
+              <div>
+                <p className={styles.title}>{toast.title}</p>
+                <p className={styles.description}>{toast.description}</p>
+              </div>
             </div>
           </div>
         ))

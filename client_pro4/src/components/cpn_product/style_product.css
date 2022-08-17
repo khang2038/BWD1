@@ -342,20 +342,22 @@ a{
 }
 
 /*-------------------------------------page_product_not_data----------------------------------*/
-/* .page_product_not_data {
+.page_product_not_data {
   display: none;
 
 }
 
-.page_product_not_data.open{
+.page_product_not_data.open_ms_soon{
   position: fixed;
-  top: 20%;
-  left: 10%;
-  height: 100px;
-  width: 100px;
-  background-color: #b5e1c4;
+  z-index: 4;
+  top: 30%;
+  left: 25%;
+  height: 30%;
+  width: 50%;
+  background-color: #dae8de;
   display: flex;
-} */
+  flex-direction: column;
+}
 
 
 
