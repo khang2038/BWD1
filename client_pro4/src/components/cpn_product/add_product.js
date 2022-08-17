@@ -80,7 +80,7 @@ export default function Cpn_add_product() {
           ctn__loading__home.classList.remove("open__load");
 
           navigate('../product',{replace : false});
-
+          
           // var temp_to_product= document.querySelector('.temp_to_product');
           // temp_to_product.click();
         }

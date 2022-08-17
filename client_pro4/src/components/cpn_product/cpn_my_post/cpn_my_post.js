@@ -67,12 +67,14 @@ export default function Cpn_my_post() {
  
   function handle_update() {
       var update1 = document.querySelector(`.update-drop`);
-    
       if (update1.classList.contains('open_up_del')){
-          update1.classList.remove('open_up_del');
+        update1.classList.remove('open_up_del');
+        console.log(1);
       } 
       else {
-          update1.classList.add('open_up_del');
+        update1.classList.add('open_up_del');
+        console.log(2);
+
       }
       
   }
@@ -144,7 +146,7 @@ export default function Cpn_my_post() {
                       <i class="fa-solid fa-bars handle_nav_up_del" onClick={handle_update} style={{float : 'right'}}></i>
 
                     </div>
-                    <ul class="update-drop" style={{ listStyle: "none" }}>
+                    <ul class="update-drop" style={{listStyle: "none" }}>
                       <div class="menu_drop">
                         <li>
                           <Link to={`../product/${post._id}/edit`}> Update </Link>
