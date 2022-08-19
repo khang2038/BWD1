@@ -1,15 +1,30 @@
 import "./messa.css"
 import {format} from "timeago.js"
+import { useEffect, useState } from "react"
+import axios from "axios"
+
 
 export default function Messa({message,own}){
+    const [friends,setfriends]=useState([])
+    
+    useEffect(()=>{
+        const getFriends = async ()=>{
+             const res = await axios.get("/login")
+             setfriends(res.data)  
+        }
+       getFriends(); 
+   },[])
+
+   const userone =friends.find(member=> member._id===message.sender)
+
     return(
         <div className={own ? "messa own" : "messa"}>
             <div className="messaTop">
-                {/* <img
+                 <img
                     className="messaImg"
-                    src="https://storage.googleapis.com/pik-buk/inspitrip/2019_1dae4334-8ae5-4f4f-bcbb-ae9c9a836706.jpg?w=800"
+                    src={userone?.img_author}
                     alt="" 
-                /> */}
+                /> 
                 <p className="messaText">{message?.text}</p>
             </div>
 
