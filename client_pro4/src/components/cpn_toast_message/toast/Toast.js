@@ -32,7 +32,9 @@ const Toast = ({ toastlist, position, setList }) => {
           >
             <button onClick={() => deleteToast(toast.id)}>X</button>
             <div style={{display : 'flex', flexDirection : 'row'}}>
-              <i class="fa-solid fa-circle-check"></i>
+              <div style={{display : 'flex' , alignItems : 'center'}}>
+                <i class="fa-solid fa-circle-check" style={{fontSize : '30px', margin : '0 15px'}}></i>
+              </div>
               <div>
                 <p className={styles.title}>{toast.title}</p>
                 <p className={styles.description}>{toast.description}</p>

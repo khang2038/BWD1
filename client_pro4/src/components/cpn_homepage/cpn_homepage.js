@@ -580,17 +580,61 @@ export default function Cpn_homepage() {
       <div className="introduce__web">
         <div className="ctn__content">
           <h1 className="content__title">Welcome to PRO4</h1>
-          <p>
+          <p className="tt_home">
             A place to call for crowdfunding promote potential and creativity
             projects
           </p>
           <div className="btn">
-            <button>GO TO FUNDRAISE</button>
+            <button>
+              <p>
+                GO TO FUNDRAISE
+              </p>
+            </button>
           </div>
         </div>
 
         <div className="ctn__image">
+          <div className="ms_home_1">
+            <div>
+              <div style={{margin : '10px 20px'}} className="">
+                <img style={{width: '100%', height : '50px'}} src={require('../../public/img/imghome/img_home_ms/crown.png')}/>
+              </div>
+              {/* <img style={{backgroundColor : "#fff" , padding: '5px', borderRadius : '20px',}} src={require('../../public/img/imghome/img_home_ms/s.webp')} />  */}
+            </div>
+
+            <div style={{display : 'flex', alignItems : 'center' ,width : '2px'}}>
+              <div style={{width : '100%', height : '50%', backgroundColor : '#b1afaf'}}></div>
+            </div>
+
+            <div style={{display: 'flex', alignItems : 'center', marginLeft : '20px'}}>
+              <div style={{display: 'flex', flexDirection : 'column'}}>
+                <p>Web</p>
+                <p>Crowdfunding</p>
+              </div>
+            </div>
+          </div>
           <img src={pro4} alt="" />
+          <div className="ms_home_2">
+          <div>
+              <div style={{margin : '10px 20px 10px 0'}} className="">
+                <img style={{width: '40px', height : '40px'}} src={require('../../public/img/imghome/img_home_ms/thumbup.png')}/>
+              </div>
+              {/* <img style={{backgroundColor : "#fff" , padding: '5px', borderRadius : '20px',}} src={require('../../public/img/imghome/img_home_ms/s.webp')} />  */}
+            </div>
+
+            <div style={{display : 'flex', alignItems : 'center' ,width : '2px'}}>
+              <div style={{width : '100%', height : '50%', backgroundColor : '#b1afaf'}}></div>
+            </div>
+
+            <div style={{display: 'flex', alignItems : 'center', marginLeft : '20px'}}>
+              <div style={{display: 'flex', flexDirection : 'column'}}>
+                <p>The best</p>
+                <p>Working space</p>
+              </div>
+            </div>
+          </div>
+          <div className="bg_cl_blur_blue"></div>
+          <div className="bg_cl_blur_pink"></div>
         </div>
 
         <div className="background_1"></div>
