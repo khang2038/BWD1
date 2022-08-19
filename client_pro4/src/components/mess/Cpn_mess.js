@@ -123,7 +123,7 @@ export default function CpnMess(){
                        {messages.map(m=>(
                            <div ref={scrollRef}> 
                                 <Messa message={m} own={m.sender === state_user.user.temp._id} />
-                           </div> 
+                           </div>
                        ))} 
                     </div>
                     <div className="chatBoxBottom">

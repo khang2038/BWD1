@@ -94,7 +94,7 @@ html{
   padding: 0 20%;
 }
 
-.introduce__web .ctn__content p{
+.introduce__web .ctn__content .tt_home{
   line-height: 1.5;
   padding: 20px 5% 20px 20%;
   text-align: left;
@@ -103,22 +103,44 @@ html{
 
 }
 
-.introduce__web .ctn__content p{
-  /* display: none; */
-}
-
 .ctn__content .btn {
   padding: 0 20%;
   text-align: left;
 }
 
 .ctn__content .btn button{
-  font-size: 16px; 
   padding: 15px; 
   background-color: black; 
-  color : white; 
   border-radius: 28px;
   font-weight: 600;
+  width: calc(180px + 30px + 4px);
+}
+
+.ctn__content .btn button p{
+  font-size: 16px; 
+  color : white; 
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typewriter 4s steps(40) 1s 1 normal both,
+  blinkTextCursor 500ms steps(40) infinite normal;
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 180px;
+  }
+}
+
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: rgba(255,255,255,0.75);
+  }
+  to{
+    border-right-color: transparent;
+  }
 }
 
 .space_1{
@@ -136,10 +158,66 @@ html{
   display: flex;
   justify-content: center;
   padding: 100px 0;
+  position: relative;
 }
 
 .introduce__web .ctn__image img{
   width: 75%;
+}
+
+
+.ms_home_1 {
+  background-image: linear-gradient(180deg, #b8dbfa, #c1def8, #ecf6ff);
+  position: absolute;
+  /* font-size: 25px; */
+  font-weight: bold;
+  /* text-align: center; */
+  top: 15%;
+  left: -5%;
+  /* width: 34%; */
+  padding: 10px 30px;
+  border-radius: 20px 60px 0 60px;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 1px 9px 2px #61929b91; 
+}
+
+.ms_home_2 {
+  background-color: #ecf6ff;
+  position: absolute;
+  /* font-size: 25px; */
+  font-weight: bold;
+  /* text-align: center; */
+  bottom: 8%;
+  left: 12%;
+  /* width: 34%; */
+  padding: 20px 30px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  box-shadow: 0 1px 9px 2px #61929b91; 
+}
+
+.bg_cl_blur_blue{
+  border-radius: 50%;
+  background-color: #4295ff;
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  top: 10%;
+  right: 20%;
+  filter: blur(80px);
+}
+
+.bg_cl_blur_pink{
+  border-radius: 50%;
+  background-color: #ffd6e6;
+  position: absolute;
+  height: 100px;
+  width: 200px;
+  bottom: 25%;
+  left: 0%;
+  filter: blur(75px);
 }
 
 /*-------------background-------------------*/
