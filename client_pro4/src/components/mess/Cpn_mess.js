@@ -4,6 +4,7 @@ import "./Cpn_mess.css"
 import AppContext from "../AppContext";
 import Conversation from "../conversations/Conversations";
 import Messa from "../messa/messa";
+import "@fortawesome/fontawesome-free/css/all.min.css"
 import ChatOnline from "../chatOnline/ChatOnline";
 import axios from "axios"
 import {io} from "socket.io-client"
@@ -102,7 +103,10 @@ export default function CpnMess(){
         <div className="mess">
             <div className="chatMenu">
                 <div className="chatMenuWrapper">
-                    <input placeholder="search for friend" className="chatMenuInput"></input>
+                    <div className="search_chat"> 
+                        <i className="fa-solid fa-magnifying-glass icon"></i>
+                        <input placeholder="search for friend..." className="chatMenuInput"></input>
+                    </div> 
                     {conversation.map((c)=>(
                         <div onClick={()=>setcurrentchat(c)}>
                             <Conversation conversation={c} currentUser={state_user.user.temp} />
@@ -123,15 +127,19 @@ export default function CpnMess(){
                        ))} 
                     </div>
                     <div className="chatBoxBottom">
-                        <textarea
+                        <i class="fa-solid fa-face-grin"></i>
+                        <i class="fa-solid fa-microphone"></i>
+                        <i class="fa-solid fa-image"></i>
+                        <input
                          className="chatMessageInput" 
                          placeholder="write something..."
                          onChange={(e)=>setnewmessage(e.target.value)}
                          value={newmessage}
                          >
 
-                         </textarea>
-                        <button className="chatSubmitButton" onClick={handleSubmit}>Send</button>
+                         </input>
+                        <i className="fa-solid fa-paper-plane chatSubmitButton" onClick={handleSubmit} ></i>
+                        {/* <button className="chatSubmitButton" onClick={handleSubmit}>Send</button> */}
                     </div>
                     </>:<span className="noConversationtext">Open a conversation to start a chat </span>}
                 </div>
