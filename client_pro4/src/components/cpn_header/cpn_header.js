@@ -54,7 +54,7 @@ export default function Cpn_header() {
             <img id="img_login" src={user.temp.img_author} alt="" />
             <p>
               {user.temp.name_author}
-              <i className="fa-solid fa-sort-down icon"></i>
+              <i style={{marginLeft : '10px'}} className="fa-solid fa-sort-down icon"></i>
             </p>
             <ul className="user-drop">
               <i className="fa-solid fa-xmark project_close ">
