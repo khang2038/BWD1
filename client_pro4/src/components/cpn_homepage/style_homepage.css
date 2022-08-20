@@ -207,6 +207,7 @@ html{
   top: 10%;
   right: 20%;
   filter: blur(80px);
+  z-index: 0;
 }
 
 .bg_cl_blur_pink{
@@ -220,6 +221,16 @@ html{
   filter: blur(75px);
 }
 
+.bg_cl_blur_pink_1{
+  border-radius: 50%;
+  background-color: #ffd6e6;
+  position: absolute;
+  height: 100px;
+  width: 200px;
+  top: 0%;
+  right: 5%;
+  filter: blur(75px);
+}
 /*-------------background-------------------*/
 .background_1{
   width: 50%;
@@ -268,11 +279,17 @@ html{
   z-index: 1;
   padding: 30px 0 60px 0;
   display: none;
+  position: relative;
 }
 
 .our_impact h1{
   text-align: center;
   padding: 60px 10%;
+}
+
+.our_impact .card h1{
+  text-align: center;
+  padding: 30px 10%;
 }
 
 .card {
@@ -399,6 +416,7 @@ html{
   padding: 30px 0 60px 0;
   z-index: 1;
   /* display: none; */
+  position: relative;
 }
 
 .highlights .title{

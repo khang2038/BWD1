@@ -13,7 +13,6 @@ const body = document.querySelector("body");
 
 export default function Cpn_header() {
   const {state_user} = useContext(AppContext); 
-
   function handle_light_dark() {
     body.classList.toggle("dark");
     var logo1 = document.querySelector(".mobile_nav .logo1");
@@ -161,18 +160,40 @@ export default function Cpn_header() {
               to="/homepage"
               onClick={onclick__home}
             ></Link>
-            <Link
-              id="product"
-              className="fa-solid fa-earth-americas icon 2"
-              to="/product"
-              onClick={onclick__product}
-            ></Link>
-            <Link
-              id="projects"
-              className="fa-solid fa-circle-dollar-to-slot icon 3"
-              to="/details"
-              onClick={onclick__projects}
-            ></Link>
+            {
+              state_user.user != null 
+              ?
+              <Link
+                id="product"
+                className="fa-solid fa-earth-americas icon 2"
+                to="/product"
+                onClick={onclick__product}
+              ></Link>
+              :
+              <Link
+                id="product"
+                className="fa-solid fa-earth-americas icon 2"
+                to="/login"
+                // onClick={onclick__product}
+              ></Link>
+            }
+            {
+              state_user.user != null 
+              ?
+              <Link
+                id="projects"
+                className="fa-solid fa-circle-dollar-to-slot icon 3"
+                to="/details"
+                onClick={onclick__projects}
+              ></Link>
+              : 
+              <Link 
+                id="projects"
+                className="fa-solid fa-circle-dollar-to-slot icon 3"
+                to="/login"
+                // onClick={onclick__projects}
+              />
+            }
           </div>
 
           {
