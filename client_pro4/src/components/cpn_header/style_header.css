@@ -185,6 +185,9 @@ header{
       outline:none;
       background-color: var(--search-color);
   }
+  .search input::placeholder{
+    color: #bebebe;
+  }
   .search .icon{
      font-size:16px;
      margin-right: 5px;
