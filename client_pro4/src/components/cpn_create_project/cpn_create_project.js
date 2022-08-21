@@ -152,7 +152,7 @@ function Cpn_comment_of_prj(get) {
 }
 
 function print_comment_of_prj(cmt_of_prj) {
-  console.log(cmt_of_prj);
+  // console.log(cmt_of_prj);
   if (cmt_of_prj !== null) {
     // cmt_of_prj = cmt_of_prj.reverse();
     return (
@@ -196,8 +196,7 @@ function Ctn_block_content(prj) {
         name,
       });
 
-      document.querySelector('#comment').value="";
-      
+      document.querySelector("#comment").value = "";
 
       // navigate(`../create_project/${slug_temp}`,{replace : false});
       // var temp_to_product= document.querySelector('.temp_to_product');
@@ -430,7 +429,6 @@ function Ctn_block_content(prj) {
             </div>
 
             {print_comment_of_prj(prj.cmt_prj)}
-            
           </div>
 
           <div className="block_statistic">
@@ -495,19 +493,17 @@ export default function Cpn_create_project() {
 
   const location = useLocation();
 
+  //fix
 
-  //fix 
-  
   axios
-        .get(`http://localhost:5000${location.pathname}`)
-        .then((res) => res.data)
-        .then((data) => {
-          setData_cr_prj(data);
-        });
+    .get(`http://localhost:5000${location.pathname}`)
+    .then((res) => res.data)
+    .then((data) => {
+      setData_cr_prj(data);
+    });
 
   useEffect(() => {
     if (data_cr_prj === null) {
-      
     }
   }, []);
 
@@ -519,61 +515,53 @@ export default function Cpn_create_project() {
   //   }
   // )
 
-  $(document).ready(function(){
-    $(window).scroll(function(){
-        var left_body_prj = document.querySelector('.left_body_prj');
-        var header_detail_prj = document.querySelector('.header_detail_prj');
-        var body_detail_prj = document.querySelector('.body_detail_prj');
-        var right_body_prj = document.querySelector('.right_body_prj');
+  $(document).ready(function () {
+    $(window).scroll(function () {
+      var left_body_prj = document.querySelector(".left_body_prj");
+      var header_detail_prj = document.querySelector(".header_detail_prj");
+      var body_detail_prj = document.querySelector(".body_detail_prj");
+      var right_body_prj = document.querySelector(".right_body_prj");
 
-        var body = $('html, body').scrollTop();
-        var ctn_content_detail_prj_top = $('.ctn_content_detail_prj').offset().top;
-        var header_top = $('header').offset().top; 
-        var ctn_footer_top = $('.ctn__footer').offset().top;
+      var body = $("html, body").scrollTop();
+      var ctn_content_detail_prj_top = $(".ctn_content_detail_prj").offset()
+        .top;
+      var header_top = $("header").offset().top;
+      var ctn_footer_top = $(".ctn__footer").offset().top;
 
-        if (ctn_content_detail_prj_top<body) {
-            if (ctn_footer_top-header_top<=window.screen.height) {
-                Object.assign(left_body_prj.style , {
-                    position: "initial",
-                    display: 'none',
-                })
-            }
-            else {
-                Object.assign(left_body_prj.style , {
-                    position: "fixed",
-                    display: 'block',
-                })
-            }
-            Object.assign(header_detail_prj.style , {
-
-            })
-            Object.assign(body_detail_prj.style , {
-                justifyContent : 'flex-end',
-            })
-            Object.assign(left_body_prj.style , {
-                position: 'fixed',
-                top: '120px',
-                left: '0',
-            })
-            Object.assign(right_body_prj.style , {
-                
-            })
-        } else if (ctn_content_detail_prj_top>=body) {
-            Object.assign(body_detail_prj.style , {
-                justifyContent : 'center',
-            })
-            Object.assign(left_body_prj.style , {
-                position: "initial",
-                display: 'block',
-            })
-            Object.assign(right_body_prj.style , {
-                
-            })
-        } 
-        
-
-    })
-})
+      if (ctn_content_detail_prj_top < body) {
+        if (ctn_footer_top - header_top <= window.screen.height) {
+          Object.assign(left_body_prj.style, {
+            position: "initial",
+            display: "none",
+          });
+        } else {
+          Object.assign(left_body_prj.style, {
+            position: "fixed",
+            display: "block",
+          });
+        }
+        Object.assign(header_detail_prj.style, {});
+        Object.assign(body_detail_prj.style, {
+          justifyContent: "flex-end",
+        });
+        Object.assign(left_body_prj.style, {
+          position: "fixed",
+          top: "120px",
+          left: "0",
+        });
+        Object.assign(right_body_prj.style, {});
+      } else if (ctn_content_detail_prj_top >= body) {
+        Object.assign(body_detail_prj.style, {
+          justifyContent: "center",
+        });
+        Object.assign(left_body_prj.style, {
+          position: "initial",
+          display: "block",
+        });
+        Object.assign(right_body_prj.style, {});
+      }
+    });
+  });
 
   return (
     <div>

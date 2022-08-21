@@ -13,7 +13,7 @@
 // }
 
 // export default function () {
-//   const {state_user} = useContext(AppContext); 
+//   const {state_user} = useContext(AppContext);
 
 //   function close_user() {
 //     var leftSide = document.querySelector(".leftSide");

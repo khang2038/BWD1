@@ -8,7 +8,6 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router";
 
-
 const body = document.querySelector("body");
 
 //promise
@@ -25,7 +24,6 @@ export default function Cpn_add_project() {
     id_faq = 0;
 
   const navigate = useNavigate();
-  
 
   const [projectInput, setProjectInput] = useState({
     img_big: "",
@@ -41,27 +39,27 @@ export default function Cpn_add_project() {
   });
 
   const [storyInput, setStoryInput] = useState({
-    image1 : "", 
-    image2 : "",
-    image3 : "",
-    image4 : "",
-    image5 : "",
-    image6 : "",
-    image7 : "",
-    title1 : "",
-    title2 : "",
-    title3 : "",
-    title4 : "",
-    title5 : "",
-    title6 : "",
-    title7 : "",
-    content1 : "",
-    content2 : "",
-    content3 : "",
-    content4 : "",
-    content5 : "",
-    content6 : "",
-    content7 : "",
+    image1: "",
+    image2: "",
+    image3: "",
+    image4: "",
+    image5: "",
+    image6: "",
+    image7: "",
+    title1: "",
+    title2: "",
+    title3: "",
+    title4: "",
+    title5: "",
+    title6: "",
+    title7: "",
+    content1: "",
+    content2: "",
+    content3: "",
+    content4: "",
+    content5: "",
+    content6: "",
+    content7: "",
   });
 
   function removeVietnameseTones(str) {
@@ -118,9 +116,9 @@ export default function Cpn_add_project() {
       var main_content = projectInput.main_content;
       var title_money_pledged = projectInput.title_money_pledged;
 
-      if(img_big.match(/fakepath/)) {
+      if (img_big.match(/fakepath/)) {
         // update the file-path text using case-insensitive regex
-        img_big = img_big.replace(/C:\\fakepath\\/i, '');
+        img_big = img_big.replace(/C:\\fakepath\\/i, "");
       }
 
       axios.post("/post_project_created/store", {
@@ -139,14 +137,14 @@ export default function Cpn_add_project() {
       e.preventDefault();
       var question_data = [];
       var slug_temp = removeVietnameseTones(projectInput.main_title);
-      slug_temp=slug_temp.replace(/ /g,'-');
+      slug_temp = slug_temp.replace(/ /g, "-");
 
-      var question=faqInput.question1;
-      question_data.push({question,slug_temp});
-      question=faqInput.question2;
-      question_data.push({question,slug_temp});
-      question=faqInput.question3;
-      question_data.push({question,slug_temp});
+      var question = faqInput.question1;
+      question_data.push({ question, slug_temp });
+      question = faqInput.question2;
+      question_data.push({ question, slug_temp });
+      question = faqInput.question3;
+      question_data.push({ question, slug_temp });
       // var slug_temp = projectInput.main_title;
       console.log(question);
 
@@ -157,7 +155,6 @@ export default function Cpn_add_project() {
   };
 
   const onSubmitHandle_story = (e) => {
-    
     try {
       e.preventDefault();
 
@@ -176,41 +173,45 @@ export default function Cpn_add_project() {
       var content3 = storyInput.content3;
       var content4 = storyInput.content4;
       var slug_temp = removeVietnameseTones(projectInput.main_title);
-      slug_temp=slug_temp.replace(/ /g,'-');
+      slug_temp = slug_temp.replace(/ /g, "-");
 
-      if(image1.match(/fakepath/)) {
+      if (image1.match(/fakepath/)) {
         // update the file-path text using case-insensitive regex
-        image1 = image1.replace(/C:\\fakepath\\/i, '');
-        image2 = image2.replace(/C:\\fakepath\\/i, '');
-        image3 = image3.replace(/C:\\fakepath\\/i, '');
-        image4 = image4.replace(/C:\\fakepath\\/i, '');
-        image5 = image5.replace(/C:\\fakepath\\/i, '');
+        image1 = image1.replace(/C:\\fakepath\\/i, "");
+        image2 = image2.replace(/C:\\fakepath\\/i, "");
+        image3 = image3.replace(/C:\\fakepath\\/i, "");
+        image4 = image4.replace(/C:\\fakepath\\/i, "");
+        image5 = image5.replace(/C:\\fakepath\\/i, "");
       }
-      
-      sleep(0) 
-        .then(function() {
+
+      sleep(0)
+        .then(function () {
           ctn_loading.classList.add("open__load");
           axios.post("/post_project_created/story", {
-            image1,image2,image3,image4,image5,
-            title1,title2,title3,
-            content1,content2,content3,content4,
-            slug_temp
+            image1,
+            image2,
+            image3,
+            image4,
+            image5,
+            title1,
+            title2,
+            title3,
+            content1,
+            content2,
+            content3,
+            content4,
+            slug_temp,
           });
-          return sleep(1000)
+          return sleep(1000);
         })
-        .then(function() {
+        .then(function () {
           ctn_loading.classList.remove("open__load");
           navigate(`../create_project/${slug_temp}`);
-
-        })
-
+        });
     } catch (error) {
       // setErrorMessage(error.response.data.message);
     }
   };
-
-
-  
 
   $(function () {
     $("#img_big").change(function () {
@@ -285,6 +286,42 @@ export default function Cpn_add_project() {
         reader5.readAsDataURL(fileInput.files[0]);
       }
     });
+    $("#input_image6").change(function () {
+      var fileInput = this;
+      if (fileInput.files && fileInput.files[0]) {
+        var reader6 = new FileReader();
+
+        reader6.onload = function (e) {
+          $("#image6").attr("src", e.target.result);
+        };
+
+        reader6.readAsDataURL(fileInput.files[0]);
+      }
+    });
+    $("#input_image7").change(function () {
+      var fileInput = this;
+      if (fileInput.files && fileInput.files[0]) {
+        var reader7 = new FileReader();
+
+        reader7.onload = function (e) {
+          $("#image7").attr("src", e.target.result);
+        };
+
+        reader7.readAsDataURL(fileInput.files[0]);
+      }
+    });
+    $("#input_image8").change(function () {
+      var fileInput = this;
+      if (fileInput.files && fileInput.files[0]) {
+        var reader8 = new FileReader();
+
+        reader8.onload = function (e) {
+          $("#image8").attr("src", e.target.result);
+        };
+
+        reader8.readAsDataURL(fileInput.files[0]);
+      }
+    });
   });
 
   // handle nav header
@@ -340,8 +377,17 @@ export default function Cpn_add_project() {
       });
     }
   }
+  function onClick_close_previewStory() {
+    var previewStory = document.querySelector("#modal_preview_story");
+    if (previewStory) {
+      Object.assign(previewStory.style, {
+        display: "none",
+      });
+    }
+  }
 
   $(document).ready(() => {
+    // overview
     ProjectPostingPreview();
 
     function ProjectPostingPreview() {
@@ -358,6 +404,51 @@ export default function Cpn_add_project() {
         $(".main_prj_video").attr("src", $("#image").attr("src"));
 
         $("#modal_preview").css({
+          display: "flex",
+        });
+      });
+    }
+
+    // story
+    ProjectPostingStoryPreview();
+    function ProjectPostingStoryPreview() {
+      $("#previewStory").on("click", () => {
+        $("#preview_story_header1").text($("#form_story #input_story_1").val());
+        $("#preview_story_desc1").text($("#form_story #input_story_2").val());
+        $("#preview_story_desc2").text($("#form_story #input_story_3").val());
+        $("#preview_story_header2").text($("#form_story #input_story_4").val());
+        $("#preview_story_desc3").text($("#form_story #input_story_5").val());
+        $("#preview_story_desc4").text($("#form_story #input_story_6").val());
+        $("#preview_story_desc5").text($("#form_story #input_story_7").val());
+        $("#preview_story_img1").attr(
+          "src",
+          $("#form_story #image1").attr("src")
+        );
+        $("#preview_story_img2").attr(
+          "src",
+          $("#form_story #image2").attr("src")
+        );
+        $("#preview_story_img3").attr(
+          "src",
+          $("#form_story #image3").attr("src")
+        );
+        $("#preview_story_img4").attr(
+          "src",
+          $("#form_story #image4").attr("src")
+        );
+        $("#preview_story_img5").attr(
+          "src",
+          $("#form_story #image5").attr("src")
+        );
+        //  $("#modal_preview .info_preview h4").text($("#main_content").val());
+        //  $(
+        //    "#modal_preview .info_preview .ctn_pledged_backers .pledged .title"
+        //  ).text(`pledged of $` + $("#title_money_pledged").val() + ` goal`);
+        //  $("#modal_preview .info_preview .percent_complete").text(
+        //    `0 % of ` + $("#title_money_pledged").val() + ` $`
+        //  );
+
+        $("#modal_preview_story").css({
           display: "flex",
         });
       });
@@ -447,7 +538,7 @@ export default function Cpn_add_project() {
           </div>
         </ul>
       </div>
-
+      {/* over view */}
       <div class="main_post">
         <div
           style={{
@@ -805,7 +896,7 @@ export default function Cpn_add_project() {
           </form>
         </div>
       </div>
-
+      {/* story */}
       <div class="story_post" style={{ minHeight: "274px" }}>
         <div style={{ width: "80%", display: "flex", justifyContent: "right" }}>
           <div class="button_add_str">
@@ -822,43 +913,311 @@ export default function Cpn_add_project() {
               ADD IMAGE
             </button>
           </div>
-          <div style={{ width: "80%" }}>
-            <form method="POST" onSubmit={onSubmitHandle_story}>
+          <div style={{ width: "80%", position: "relative" }}>
+            <form method="POST" onSubmit={onSubmitHandle_story} id="form_story">
               <div class="input_add_str">
-                <div style={{display: 'flex', flexDirection: 'column'}}>
-                  
-                  <img style={{margin: '0 auto', zIndex: '1'}} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNZo8HJXlzsEbcnfi6ciTTC9I1SF8Pb0wY6A&usqp=CAU" alt="" id="image1" width="300" height="300"/>
-                  <input onChange={onChangeHandle_story} name="image1" style={{width: '80%',margin: '20px auto 60px auto'}} type="file" class="form-control" id="input_image1"
-                      accept="image/gif , image/jpeg, image/png" placeholder="image"/>
-                  
-                  <textarea onChange={onChangeHandle_story} name="title1" type="text" style={{height: '80px',borderRadius:'20px',width: '80%',fontSize : '30px', padding: '20px',margin: '10px'}} placeholder="Title"></textarea>
-                  
-                  <img style={{margin: '0 auto', zIndex: '1'}} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNZo8HJXlzsEbcnfi6ciTTC9I1SF8Pb0wY6A&usqp=CAU" alt="" id="image2" width="300" height="300"/>
-                  <input onChange={onChangeHandle_story} name="image2" style={{width: '80%',margin: '20px auto 60px auto'}} type="file" class="form-control" id="input_image2"
-                      accept="image/gif , image/jpeg, image/png" placeholder="image"/>
+                <div style={{ display: "flex", flexDirection: "column" }}>
+                  <img
+                    style={{ margin: "0 auto", zIndex: "1" }}
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNZo8HJXlzsEbcnfi6ciTTC9I1SF8Pb0wY6A&usqp=CAU"
+                    alt=""
+                    id="image1"
+                    width="300"
+                    height="300"
+                  />
+                  <input
+                    onChange={onChangeHandle_story}
+                    name="image1"
+                    style={{ width: "80%", margin: "20px auto 60px auto" }}
+                    type="file"
+                    class="form-control"
+                    id="input_image1"
+                    accept="image/gif , image/jpeg, image/png"
+                    placeholder="image"
+                  />
 
-                  <textarea onChange={onChangeHandle_story} name="content1" type="text" style={{borderRadius: '10px', height: '20px',wordBreak: 'break-word', width: '90%',fontSize : '20px', padding: '30px 10px 140px 30px',margin: '10px'}} placeholder="Content"></textarea>
-                  <textarea onChange={onChangeHandle_story} name="content2" type="text" style={{borderRadius: '10px', height: '20px',wordBreak: 'break-word', width: '90%',fontSize : '20px', padding: '30px 10px 140px 30px',margin: '10px'}} placeholder="Content"></textarea>
+                  <textarea
+                    onChange={onChangeHandle_story}
+                    name="title1"
+                    type="text"
+                    style={{
+                      height: "80px",
+                      borderRadius: "20px",
+                      width: "80%",
+                      fontSize: "30px",
+                      padding: "20px",
+                      margin: "10px",
+                    }}
+                    placeholder="Title"
+                    id="input_story_1"
+                  ></textarea>
 
-                  <textarea onChange={onChangeHandle_story} name="title2" type="text" style={{height: '80px',borderRadius:'20px',width: '80%',fontSize : '30px', padding: '20px',margin: '10px'}} placeholder="Title"></textarea>
-                  <textarea onChange={onChangeHandle_story} name="content3" type="text" style={{borderRadius: '10px', height: '20px',wordBreak: 'break-word', width: '90%',fontSize : '20px', padding: '30px 10px 140px 30px',margin: '10px'}} placeholder="Content"></textarea>
-                  <img style={{margin: '0 auto', zIndex: '1'}} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNZo8HJXlzsEbcnfi6ciTTC9I1SF8Pb0wY6A&usqp=CAU" alt="" id="image3" width="300" height="300"/>
-                  <input onChange={onChangeHandle_story} name="image3" style={{width: '80%',margin: '20px auto 60px auto'}} type="file" class="form-control" id="input_image3"
-                      accept="image/gif , image/jpeg, image/png" placeholder="image"/>
-                  
-                  <img style={{margin: '0 auto', zIndex: '1'}} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNZo8HJXlzsEbcnfi6ciTTC9I1SF8Pb0wY6A&usqp=CAU" alt="" id="image4" width="300" height="300"/>
-                  <input onChange={onChangeHandle_story} name="image4" style={{width: '80%',margin: '20px auto 60px auto'}} type="file" class="form-control" id="input_image4"
-                      accept="image/gif , image/jpeg, image/png" placeholder="image"/>
+                  <img
+                    style={{ margin: "0 auto", zIndex: "1" }}
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNZo8HJXlzsEbcnfi6ciTTC9I1SF8Pb0wY6A&usqp=CAU"
+                    alt=""
+                    id="image2"
+                    width="300"
+                    height="300"
+                  />
+                  <input
+                    onChange={onChangeHandle_story}
+                    name="image2"
+                    style={{ width: "80%", margin: "20px auto 60px auto" }}
+                    type="file"
+                    class="form-control"
+                    id="input_image2"
+                    accept="image/gif , image/jpeg, image/png"
+                    placeholder="image"
+                  />
 
-                  <textarea onChange={onChangeHandle_story} name="title3" type="text" style={{height: '80px',borderRadius:'20px',width: '80%',fontSize : '30px', padding: '20px',margin: '10px'}} placeholder="Title"></textarea>
-                  <textarea onChange={onChangeHandle_story} name="content4" type="text" style={{borderRadius: '10px', height: '20px',wordBreak: 'break-word', width: '90%',fontSize : '20px', padding: '30px 10px 140px 30px',margin: '10px'}} placeholder="Content"></textarea>
-                  <img style={{margin: '0 auto', zIndex: '1'}} src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNZo8HJXlzsEbcnfi6ciTTC9I1SF8Pb0wY6A&usqp=CAU" alt="" id="image5" width="300" height="300"/>
-                  <input onChange={onChangeHandle_story} name="image5" style={{width: '80%',margin: '20px auto 60px auto'}} type="file" class="form-control" id="input_image5"
-                      accept="image/gif , image/jpeg, image/png" placeholder="image"/>
+                  <textarea
+                    onChange={onChangeHandle_story}
+                    name="content1"
+                    type="text"
+                    style={{
+                      borderRadius: "10px",
+                      height: "20px",
+                      wordBreak: "break-word",
+                      width: "90%",
+                      fontSize: "20px",
+                      padding: "30px 10px 140px 30px",
+                      margin: "10px",
+                    }}
+                    placeholder="Content"
+                    id="input_story_2"
+                  ></textarea>
+                  <textarea
+                    onChange={onChangeHandle_story}
+                    name="content2"
+                    type="text"
+                    style={{
+                      borderRadius: "10px",
+                      height: "20px",
+                      wordBreak: "break-word",
+                      width: "90%",
+                      fontSize: "20px",
+                      padding: "30px 10px 140px 30px",
+                      margin: "10px",
+                    }}
+                    placeholder="Content"
+                    id="input_story_3"
+                  ></textarea>
+
+                  <textarea
+                    onChange={onChangeHandle_story}
+                    name="title2"
+                    type="text"
+                    style={{
+                      height: "80px",
+                      borderRadius: "20px",
+                      width: "80%",
+                      fontSize: "30px",
+                      padding: "20px",
+                      margin: "10px",
+                    }}
+                    placeholder="Title"
+                    id="input_story_4"
+                  ></textarea>
+                  <textarea
+                    onChange={onChangeHandle_story}
+                    name="content3"
+                    type="text"
+                    style={{
+                      borderRadius: "10px",
+                      height: "20px",
+                      wordBreak: "break-word",
+                      width: "90%",
+                      fontSize: "20px",
+                      padding: "30px 10px 140px 30px",
+                      margin: "10px",
+                    }}
+                    placeholder="Content"
+                    id="input_story_5"
+                  ></textarea>
+                  <img
+                    style={{ margin: "0 auto", zIndex: "1" }}
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNZo8HJXlzsEbcnfi6ciTTC9I1SF8Pb0wY6A&usqp=CAU"
+                    alt=""
+                    id="image3"
+                    width="300"
+                    height="300"
+                  />
+                  <input
+                    onChange={onChangeHandle_story}
+                    name="image3"
+                    style={{ width: "80%", margin: "20px auto 60px auto" }}
+                    type="file"
+                    class="form-control"
+                    id="input_image3"
+                    accept="image/gif , image/jpeg, image/png"
+                    placeholder="image"
+                  />
+
+                  <img
+                    style={{ margin: "0 auto", zIndex: "1" }}
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNZo8HJXlzsEbcnfi6ciTTC9I1SF8Pb0wY6A&usqp=CAU"
+                    alt=""
+                    id="image4"
+                    width="300"
+                    height="300"
+                  />
+                  <input
+                    onChange={onChangeHandle_story}
+                    name="image4"
+                    style={{ width: "80%", margin: "20px auto 60px auto" }}
+                    type="file"
+                    class="form-control"
+                    id="input_image4"
+                    accept="image/gif , image/jpeg, image/png"
+                    placeholder="image"
+                  />
+
+                  <textarea
+                    onChange={onChangeHandle_story}
+                    name="title3"
+                    type="text"
+                    style={{
+                      height: "80px",
+                      borderRadius: "20px",
+                      width: "80%",
+                      fontSize: "30px",
+                      padding: "20px",
+                      margin: "10px",
+                    }}
+                    placeholder="Title"
+                    id="input_story_6"
+                  ></textarea>
+                  <textarea
+                    onChange={onChangeHandle_story}
+                    name="content4"
+                    type="text"
+                    style={{
+                      borderRadius: "10px",
+                      height: "20px",
+                      wordBreak: "break-word",
+                      width: "90%",
+                      fontSize: "20px",
+                      padding: "30px 10px 140px 30px",
+                      margin: "10px",
+                    }}
+                    placeholder="Content"
+                    id="input_story_7"
+                  ></textarea>
+                  <img
+                    style={{ margin: "0 auto", zIndex: "1" }}
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNZo8HJXlzsEbcnfi6ciTTC9I1SF8Pb0wY6A&usqp=CAU"
+                    alt=""
+                    id="image5"
+                    width="300"
+                    height="300"
+                  />
+                  <input
+                    onChange={onChangeHandle_story}
+                    name="image5"
+                    style={{ width: "80%", margin: "20px auto 60px auto" }}
+                    type="file"
+                    class="form-control"
+                    id="input_image5"
+                    accept="image/gif , image/jpeg, image/png"
+                    placeholder="image"
+                  />
                 </div>
               </div>
               <button type="submit">SEND</button>
             </form>
+
+            {/* modal */}
+            <div className="ctn_content_detail_prj" id="modal_preview_story">
+              <div
+                style={{ display: "flex", justifyContent: "right" }}
+                onClick={onClick_close_previewStory}
+              >
+                <i
+                  class="fa-solid fa-circle-xmark"
+                  style={{ fontSize: "30px" }}
+                ></i>
+              </div>
+              <div className="header_detail_prj">
+                {/* onClick={open_story} */}
+                <div className="story">Story</div>
+                {/* onClick={open_FAQ} */}
+                <div className="FAQ">FAQ</div>
+                {/* onClick={open_comments} */}
+                <div className="comments">Comments</div>
+                {/* onClick={open_statistic} */}
+                <div className="statistic">Statistic</div>
+              </div>
+              {/* body */}
+              <div className="body_detail_prj">
+                <div className="left_body_prj">
+                  <div className="connect">
+                    <i className="fa-brands fa-connectdevelop"></i>
+                    <p>PRO4 connects creators with backers to fund projects.</p>
+                  </div>
+                  <div className="easy">
+                    <i className="fa-brands fa-stack-exchange"></i>
+                    <p>Easy exchange environment for startups.</p>
+                  </div>
+                  <div className="target">
+                    <i
+                      className="fa-solid fa-comments-dollar"
+                      style={{ color: "rgb(134, 134, 100)" }}
+                    ></i>
+                    <p>
+                      You’re only charged if the project meets its funding goal
+                      by the campaign deadline.
+                    </p>
+                  </div>
+                </div>
+                <div className="right_body_prj">
+                  <div className="block_story open">
+                    <h1>Story</h1>
+                    <div>
+                      <div className="img_story" alt="">
+                        <img id="preview_story_img1" />
+                      </div>
+                      <h2 id="preview_story_header1"></h2>
+                      <div className="img_story" style={{}}>
+                        <img id="preview_story_img2" />
+                      </div>
+
+                      <p id="preview_story_desc1"></p>
+                      <p id="preview_story_desc2"></p>
+                      <h2 id="preview_story_header2"></h2>
+                      <p id="preview_story_desc3"></p>
+                      <div className="img_story" style={{}}>
+                        <img id="preview_story_img3" />
+                      </div>
+                      <div className="img_story" style={{}}>
+                        <img id="preview_story_img4" />
+                      </div>
+
+                      <p id="preview_story_desc4"></p>
+                      <p id="preview_story_desc5"></p>
+                      <div className="img_story" style={{}}>
+                        <img id="preview_story_img5" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button
+              id="previewStory"
+              style={{
+                padding: "10px 20px",
+                borderRadius: "10px",
+                border: "2px solid rgb(179, 164, 164)",
+              }}
+            >
+              <i
+                class="fa-solid fa-eye"
+                style={{ margin: "0 20px", borderRadius: "10px" }}
+              ></i>
+              PREVIEW
+            </button>
           </div>
         </div>
       </div>
