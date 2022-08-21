@@ -17,6 +17,7 @@ export default function CpnMess(){
     const [newmessage,setnewmessage]=useState("");
     const [arrivalmessage,setArrivalmessage]=useState(null);
     const [onlineUsers,setOnlineUser]=useState([]);
+    const [voice,setvoice]=useState(false);
     const socket = useRef(io("ws://localhost:8900"))
     const scrollRef=useRef();
 
@@ -67,6 +68,28 @@ export default function CpnMess(){
         getMessages()
     },[currentchat])
 
+    useEffect(()=>{
+      const getvoice = ()=>{  
+        if(voice){
+            window.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
+            const recognition= new window.SpeechRecognition()
+
+            recognition.interimResults = true;
+
+            recognition.addEventListener('result',(e)=>{
+                const text = Array.from(e.results)
+                    .map(result => result[0])
+                    .map(result => result.transcript)
+                    .join('');
+                setnewmessage(text)    
+            })
+            recognition.start()
+        }
+        }
+       getvoice()   
+    },[voice])
+
+    console.log(voice)
 
     const handleSubmit = async (e)=>{
          e.preventDefault();
@@ -99,6 +122,10 @@ export default function CpnMess(){
         scrollRef.current?.scrollIntoView({behavior:"smooth"})
     },[messages])
 
+    const handlevoice = ()=>{
+        setvoice(!voice)
+    }
+
     return(
         <div className="mess">
             <div className="chatMenu">
@@ -128,7 +155,7 @@ export default function CpnMess(){
                     </div>
                     <div className="chatBoxBottom">
                         <i class="fa-solid fa-face-grin"></i>
-                        <i class="fa-solid fa-microphone"></i>
+                        <i class="fa-solid fa-microphone" onClick={handlevoice}></i>
                         <i class="fa-solid fa-image"></i>
                         <input
                          className="chatMessageInput" 
