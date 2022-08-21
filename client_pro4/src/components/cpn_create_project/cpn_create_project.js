@@ -121,7 +121,7 @@ function print_block_content(content_prj) {
     return (
       <Ctn_block_content
         key={content_prj.key}
-        story_prj={content_prj[1][0]}
+        story_prj={content_prj[1]}
         faq_prj={content_prj[2]}
         cmt_prj={content_prj[3]}
       />
@@ -174,6 +174,9 @@ function Ctn_block_content(prj) {
     avatar: "",
     name: "",
   });
+
+  console.log(prj);
+
   const { state_user } = useContext(AppContext);
   const navigate = useNavigate();
 
@@ -197,71 +200,10 @@ function Ctn_block_content(prj) {
       });
 
       document.querySelector("#comment").value = "";
-
-      // navigate(`../create_project/${slug_temp}`,{replace : false});
-      // var temp_to_product= document.querySelector('.temp_to_product');
-      // temp_to_product.click();
     } catch (error) {
       // setErrorMessage(error.response.data.message);
     }
   };
-  //------------statistic bieu do---------------
-  // const labels = [
-  //   '17/06',
-  //   '18/06',
-  //   '19/06',
-  //   '20/06',
-  //   '21/06',
-  //   '22/06',
-  //   '23/06',
-  //   '24/06',
-  //   '25/06',
-  // ];
-
-  // const data = {
-  //   labels: labels,
-  //   datasets: [{
-  //       label: 'Interaction of the day',
-  //       backgroundColor: 'rgb(255, 99, 132)',
-  //       borderColor: 'rgb(255, 99, 132)',
-  //       data: [2, 9, 5, 2, 16, 24,20,25,26],
-
-  //   }]
-  // };
-
-  // const data2 = {
-  //   labels: labels,
-  //   datasets: [{
-  //       label: 'Cash flow the day',
-  //       backgroundColor: '#0099FF',
-  //       borderColor: '#0099FF',
-  //       data: [2, 4, 5, 8, 10, 6, 10, 12, 26],
-  //   }]
-  // };
-
-  // const config = {
-  //   type: 'line',
-  //   data: data,
-  //   options: {}
-  // };
-
-  // const config2 = {
-  //   type: 'line',
-  //   data: data2,
-  //   options: {}
-  // };
-
-  // const myChart = new Chart(
-  //   document.getElementById('myChart'),
-  //   config
-  // );
-
-  // const myChart_2 = new Chart(
-  //   document.getElementById('myChart_2'),
-  //   config2
-  // );
-
-  //story + comment + faq
 
   function close_all_block() {
     var block_story = document.querySelector(".block_story");
@@ -339,42 +281,46 @@ function Ctn_block_content(prj) {
         <div className="right_body_prj">
           <div className="block_story open">
             <h1>Story</h1>
-            <div>
-              <div className="img_story">
-                <img
-                  src={require(`../../public/img/imgproject/${prj.story_prj.image1}`)}
-                />
-              </div>
-              <h2>{prj.story_prj.title1}</h2>
-              <div className="img_story" style={{}}>
-                <img
-                  src={require(`../../public/img/imgproject/${prj.story_prj.image2}`)}
-                />
-              </div>
+            {prj.story_prj.map((str) => {
+              return (
+                <div>
+                  <div className="img_story">
+                    <img
+                      src={require(`../../public/img/imgproject/${str.image1}`)}
+                    />
+                  </div>
+                  <h2>{str.title1}</h2>
+                  <div className="img_story" style={{}}>
+                    <img
+                      src={require(`../../public/img/imgproject/${str.image2}`)}
+                    />
+                  </div>
 
-              <p>{prj.story_prj.content1}</p>
-              <p>{prj.story_prj.content2}</p>
-              <h2>{prj.story_prj.title2}</h2>
-              <p>{prj.story_prj.content3}</p>
-              <div className="img_story" style={{}}>
-                <img
-                  src={require(`../../public/img/imgproject/${prj.story_prj.image3}`)}
-                />
-              </div>
-              <div className="img_story" style={{}}>
-                <img
-                  src={require(`../../public/img/imgproject/${prj.story_prj.image4}`)}
-                />
-              </div>
+                  <p>{str.content1}</p>
+                  <p>{str.content2}</p>
+                  <h2>{str.title2}</h2>
+                  <p>{str.content3}</p>
+                  <div className="img_story" style={{}}>
+                    <img
+                      src={require(`../../public/img/imgproject/${str.image3}`)}
+                    />
+                  </div>
+                  <div className="img_story" style={{}}>
+                    <img
+                      src={require(`../../public/img/imgproject/${str.image4}`)}
+                    />
+                  </div>
 
-              <p>{prj.story_prj.content4}</p>
-              <p>{prj.story_prj.content5}</p>
-              <div className="img_story" style={{}}>
-                <img
-                  src={require(`../../public/img/imgproject/${prj.story_prj.image5}`)}
-                />
-              </div>
-            </div>
+                  <p>{str.content4}</p>
+                  <p>{str.content5}</p>
+                  <div className="img_story" style={{}}>
+                    <img
+                      src={require(`../../public/img/imgproject/${str.image5}`)}
+                    />
+                  </div>
+                </div>
+              );
+            })}
           </div>
 
           <div className="block_FAQ">
@@ -502,10 +448,10 @@ export default function Cpn_create_project() {
       setData_cr_prj(data);
     });
 
-  useEffect(() => {
-    if (data_cr_prj === null) {
-    }
-  }, []);
+  // useEffect(() => {
+  //   if (data_cr_prj === null) {
+  //   }
+  // }, []);
 
   // useComponentWillMount(
   //   if (main_prj.data === null) {
