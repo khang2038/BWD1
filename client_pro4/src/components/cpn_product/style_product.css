@@ -42,7 +42,7 @@
 }
 .investor_rankings{
   position:fixed;
-  width: 25%;
+  width: 27%;
 }
 .Investor img{
   width:50px;
@@ -52,8 +52,8 @@
 }
 .Investor{
   display:flex;
-  margin-left: 12%;
-  margin-top:10%;
+  margin-left: 9%;
+  /* margin-top:10%; */
   font-size: 16px;
   
 }
@@ -69,7 +69,7 @@
 
 .Investor:hover .profile_tran_hoang{
   cursor: pointer;
-  margin-right: 20px;
+  margin: 0 20px;
   animation-name: trans_options;
   animation-duration: 2s;
   animation-direction: normal;
@@ -93,7 +93,7 @@
 
 .Investor:hover .profile_hung{
   cursor: pointer;
-  margin-right: 20px;
+  margin: 0 20px;
 
   animation-name: trans_options;
   animation-duration: 2s;
@@ -118,7 +118,7 @@
 
 .Investor:hover .profile_elon_musk{
   cursor: pointer;
-  margin-right: 20px;
+  margin: 0 20px;
 
   animation-name: trans_options;
   animation-duration: 2s;
@@ -165,8 +165,14 @@
 
 .the_right_page li{
   list-style: none;
-  margin-bottom: 30px;
-  margin-top: 10px;
+  padding-bottom: 20px;
+  padding-top: 10px;
+  border-radius: 10px;
+}
+
+.the_right_page li:hover{
+  background-color: var(--nav-center-icon-color);
+  cursor: pointer;
 }
 
 .Investor span{
@@ -184,7 +190,7 @@
 
 .Top_project{
    margin-top:10px;
-   top:350px;
+   top:48%;
 }
 
 .Project {

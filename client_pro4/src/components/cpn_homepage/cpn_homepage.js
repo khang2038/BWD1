@@ -239,6 +239,8 @@ function Highlights() {
 
   return (
     <div className="highlights">
+      <div className="bg_cl_blur_pink_1"></div>
+
       <h1 className="title">Featured projects</h1>
       <i className="pre_card fa-solid fa-angle-left" onClick={trans_pre_card}></i>
       <i className="aft_card fa-solid fa-angle-right" onClick={trans_aft_card}></i>
@@ -662,6 +664,9 @@ export default function Cpn_homepage() {
 
       <div className="our_impact">
         <h1>Our Impact</h1>
+        <div className="bg_cl_blur_blue" style={{backgroundColor: 'rgb(130 185 255)'}}></div>
+        <div className="bg_cl_blur_pink" style={{bottom: '-10%', left : '10%'}}></div>
+
         <div className="card">
           <div className="form_card">
             <img src={project_fund} alt="" />
