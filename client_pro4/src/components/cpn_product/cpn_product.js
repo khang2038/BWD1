@@ -51,6 +51,13 @@ function Ctn_product_get_data(get) {
     }
   }
 
+  const str=get.product.infor;
+  const strcut=str.substr(0,200)+"..."
+  const  [isShowreadmore,setisShowreadmore]=useState(false)
+
+  const toogle=()=>{
+    setisShowreadmore(prev => !prev)
+  }
 
   function click_cmt(event , class_temp) {
     var ctn_comment = document.querySelector(`.${class_temp} .ctn_comment`);
@@ -80,7 +87,7 @@ function Ctn_product_get_data(get) {
         </div>
       </div>
       <div class="info-des">
-        <p>{get.product.infor}</p>
+        <p>{ isShowreadmore ? str : strcut  } <span onClick={toogle} >Read more</span> </p>
         <div class="img-App">
           {
             validURL(get.product.img1)==false && check_link_data(get.product.img1)==false ? 
