@@ -37,6 +37,8 @@ function Cpn_potential_project() {
         <div className="form_1-2">
           <div className="block">
             <div className="form_bl bl1">
+              <img src="img/imgdetail/feature_prj_2.avif" alt="" />
+
               <div className="title">
                 <h5>Bed Pillow | Adaptive ergonomics to improve your sleep</h5>
                 <Link to="/create_project/bed-pillow-or-adaptive-ergonomics-to-improve-your-sleep">
@@ -57,6 +59,7 @@ function Cpn_potential_project() {
           </div>
           <div className="block">
             <div className="form_bl bl3">
+              <img src="img/imgdetail/feature_prj_3.avif" alt="" />
               <div className="title">
                 <h5>
                   DIGI SWAP || Upcycling film cameras into digital cameras
@@ -84,7 +87,7 @@ function Cpn_potential_project() {
       </div>
 
       <div className="featured_projects_bars bars">
-        <div style={{backgroundColor: '#eaecef'}}>
+        <div style={{border: '2px solid rgb(121 152 183)',borderRadius: '100px',backgroundColor: '#eaecef'}}>
           <i className="fa-solid fa-backward"></i>
           <button>1</button>
           <button>2</button>
@@ -121,6 +124,8 @@ function Cpn_art_project() {
         <div className="form_1-2">
           <div className="block">
             <div className="form_bl bl1">
+              <img src="img/imgdetail/art2.avif" alt="" />
+
               <div className="title">
                 <h5>Bibliotech Tarot | A cyberpunk scifi horror tarot deck</h5>
                 <p>
@@ -131,6 +136,7 @@ function Cpn_art_project() {
               </div>
             </div>
             <div className="form_bl bl2">
+
               <div className="title">
                 <h5>The Sanctuary</h5>
                 <p>
@@ -143,7 +149,8 @@ function Cpn_art_project() {
           </div>
           <div className="block">
             <div className="form_bl bl3">
-              <img src="img/imgdetail/art4.avif" alt="" />
+              {/* <img src={require('../../public/img/imgdetail/art4.avif')} alt="" /> */}
+
               <div className="title">
                 <h5>Witness : a creative hub in Oakland CA</h5>
                 <p>
@@ -170,7 +177,7 @@ function Cpn_art_project() {
         </div>
       </div>
       <div className="art_projects_bars bars">
-          <div style={{backgroundColor: '#eaecef'}}>
+          <div style={{border: '2px solid rgb(121 152 183)',borderRadius: '100px',backgroundColor: '#eaecef'}}>
               <i className="fa-solid fa-backward"></i>
               <button>1</button>
               <button>2</button>
@@ -262,7 +269,7 @@ function Cpn_game_project() {
         </div>
       </div>
       <div className="game_projects_bars bars">
-            <div style={{backgroundColor: '#eaecef'}}>
+            <div style={{border: '2px solid rgb(121 152 183)',borderRadius: '100px',backgroundColor: '#eaecef'}}>
               <i className="fa-solid fa-backward"></i>
               <button>1</button>
               <button>2</button>
@@ -357,7 +364,7 @@ export default function Cpn_details() {
               </a>
             </li>
             <li className="menu-app">
-              <a href="">
+              <a href="#">
                 <i className="fa-brands fa-app-store icon"></i>
                 <span>App</span>
               </a>
@@ -369,7 +376,7 @@ export default function Cpn_details() {
               </a>
             </li>
             <li className="menu-costume">
-              <a href="">
+              <a href="#">
                 <i className="fa-solid fa-shirt icon"></i>
                 <span>Costume</span>
               </a>
@@ -395,6 +402,7 @@ export default function Cpn_details() {
         </div>
 
         <br />
+        {/* <hr /> */}
         <br />
 
         <Cpn_potential_project />
