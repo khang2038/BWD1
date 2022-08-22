@@ -1,13 +1,4 @@
 
-:root {
-    --search-color:#ebebeb;
-    --primary-font : 'Poppins', sans-serif;
-    --login-primary-color : #fff;
-    --shadow-header-color:#dbdbdb;
-    --background-primary-color: #84adc6;
-    --background-secondary-color: #18c2c4;
-    --darker-background-secondary-color: #149b9e;
-}
 
 .main-container {
     display: flex;
