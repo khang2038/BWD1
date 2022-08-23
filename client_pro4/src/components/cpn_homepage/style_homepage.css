@@ -49,6 +49,7 @@ body.dark{
   --text-the_left_page-color:#CCC;
   --toggle-color:#FFF;
   --shadow-header-color:#383636;
+  --text-readmore:#ebe8ec;
 }
 body{
   transition:var(--tran-04);

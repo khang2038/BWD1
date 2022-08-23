@@ -112,12 +112,3 @@
 i{
     cursor: pointer;
 }
-.info-des span{
-    cursor: pointer;
-    color: black;
-    /* font-weight: 580; */
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-.info-des span:hover{
-    text-decoration: underline;
-}

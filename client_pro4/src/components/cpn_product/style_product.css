@@ -12,6 +12,7 @@
   --footer-end-color : #2a262c;
   --footer-content-color : #666;
   --footer-content-color-bright: #7b8490;
+  --text-readmore:#242125;
 
   --tran-02:all 0.2s ease;
   --tran-03:all 0.3s ease;
@@ -365,7 +366,15 @@ a{
   flex-direction: column;
 }
 
-
+.info-des span{
+  cursor: pointer;
+  color: var(--text-readmore);
+  /* font-weight: 580; */
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.info-des span:hover{
+  text-decoration: underline;
+}
 
 
 
