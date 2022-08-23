@@ -327,6 +327,7 @@ export default function Cpn_add_project() {
   // handle nav header
 
   function close_all() {
+    // close main post
     if (document.querySelector(".main_post")) {
       Object.assign(document.querySelector(".main_post").style, {
         display: "none",
@@ -368,6 +369,37 @@ export default function Cpn_add_project() {
   }
 
   // PREVIEW MODAL
+  // close all tab into modal
+  function close_all_tab_into_modal() {
+    // close main post
+    if (document.querySelector(".modal_preview_story")) {
+      Object.assign(document.querySelector(".body_detail_prj").style, {
+        display: "none",
+      });
+      Object.assign(document.querySelector(".overview_into_review").style, {
+        display: "none",
+      });
+    }
+  }
+
+  // open tab modal overview
+  function open_tab_modal_overview() {
+    close_all_tab_into_modal();
+    if (document.querySelector(".overview_into_review")) {
+      Object.assign(document.querySelector("").style, {
+        display: "flex",
+      });
+    }
+  }
+  // open tab modal story
+  function open_tab_modal_story() {
+    close_all_tab_into_modal();
+    if (document.querySelector(".overview_into_review")) {
+      Object.assign(document.querySelector("").style, {
+        display: "flex",
+      });
+    }
+  }
 
   function onClick_close_preview() {
     var preview = document.querySelector("#modal_preview");
@@ -1197,6 +1229,56 @@ export default function Cpn_add_project() {
                       <p id="preview_story_desc5"></p>
                       <div className="img_story" style={{}}>
                         <img id="preview_story_img5" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* overview modal into review */}
+              <div className="overview_into_review" id="modal_preview">
+                <div
+                  style={{ display: "flex", justifyContent: "space-around" }}
+                >
+                  <div class="img_preview">
+                    <img class="main_prj_video" />
+                  </div>
+                  <div class="info_preview">
+                    <h5>FUNDING</h5>
+                    <h2></h2>
+                    <h4></h4>
+                    <div class="ctn_statistic">
+                      <div class="ctn_pledged_backers">
+                        <div class="pledged">
+                          $<span>0</span>
+                          <div class="title"></div>
+                        </div>
+                        <div class="backers">
+                          <span>0</span>
+                          <div class="title">backers</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="complete_figures">
+                      <div class="complete"></div>
+                    </div>
+                    <div class="percent_complete"></div>
+                    <div class="form_donate">
+                      <button class="support_this">SUPPORT THIS</button>
+                      <button class="follow">FOLLOW</button>
+                      <div class="ctn_social">
+                        <i
+                          class="fa-brands fa-facebook"
+                          style={{ color: "#39579a" }}
+                        ></i>
+                        <i
+                          class="fa-brands fa-telegram"
+                          style={{ color: "#38b3f1" }}
+                        ></i>
+                        <i
+                          class="fa-brands fa-twitter"
+                          style={{ color: "#1d9bf0" }}
+                        ></i>
                       </div>
                     </div>
                   </div>

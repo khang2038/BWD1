@@ -1,5 +1,6 @@
 import React from "react";
 import "./style_homepage.css";
+import "../style_pro4.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import $ from "jquery";
 import "animate.css";
