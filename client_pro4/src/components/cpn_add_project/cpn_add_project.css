@@ -183,8 +183,28 @@
 
 /*==================PREVIEW==================*/
 
-/* test modal */
+/* modal preview */
+#modal_preview {
+  position: fixed;
+  top: 80px;
+  left: 100px;
+  right: 100px;
+  bottom: 20px;
+  background-color: white;
+  border: 2px solid #000000;
+  z-index: 1;
+  padding: 30px;
+  flex-direction: column;
+  display: none;
+}
+.overview_into_review {
+  border: none !important;
+}
 
+#modal_preview > div i:hover {
+  cursor: pointer;
+}
+/* preview_story */
 #modal_preview_story {
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -349,24 +369,6 @@ a {
   object-fit: cover;
   width: 100%;
   margin: 20px;
-}
-/* end test */
-#modal_preview {
-  position: fixed;
-  top: 80px;
-  left: 100px;
-  right: 100px;
-  bottom: 20px;
-  background-color: white;
-  border: 2px solid #000000;
-  z-index: 1;
-  padding: 30px;
-  flex-direction: column;
-  display: none;
-}
-
-#modal_preview > div i:hover {
-  cursor: pointer;
 }
 
 /*----preview_img----*/

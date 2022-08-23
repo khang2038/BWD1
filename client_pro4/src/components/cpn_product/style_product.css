@@ -1,3 +1,27 @@
+<<<<<<< HEAD
+:root{
+  --primary-color-light:#F6F5FF;
+  --header-color:#fff;
+  --body-color:#ffffff;
+  --search-color:#ebebeb;
+  --nav-center-icon-color:#e0e0e0;
+  --page-color:#eff3f6;
+  --the_left_page-color:#fff;
+  --text-the_left_page-color:#727272;
+  --toggle-color:#DDD;
+  --shadow-header-color:#dbdbdb;
+  --footer-end-color : #2a262c;
+  --footer-content-color : #666;
+  --footer-content-color-bright: #7b8490;
+  --text-readmore:#242125;
+
+  --tran-02:all 0.2s ease;
+  --tran-03:all 0.3s ease;
+  --tran-04:all 0.4s ease;
+  --tran-05:all 0.5s ease;
+}
+=======
+>>>>>>> 5a73305ed4edf4fde9602287d6ec535029d43d3f
 
 /* -------------page---------- */
 .page{
@@ -345,7 +369,15 @@ a{
   flex-direction: column;
 }
 
-
+.info-des span{
+  cursor: pointer;
+  color: var(--text-readmore);
+  /* font-weight: 580; */
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.info-des span:hover{
+  text-decoration: underline;
+}
 
 
 
