@@ -16,7 +16,13 @@ const body = document.querySelector("body");
 function Cpn_potential_project() {
   return (
     <div className="potential_projects pp_featured" id="featured">
-      <h4>FEATURED PROJECT</h4>
+      <div class="container">
+          <a href="#">
+              <div class="btn">
+                  FEATURED PROJECT
+              </div>
+          </a>
+      </div>
       <div className="form">
         <div className="form_1-1">
           <div className="img_w_title">

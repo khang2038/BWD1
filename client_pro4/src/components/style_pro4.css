@@ -19,7 +19,11 @@
   box-sizing: border-box;
 }
 :root {
-
+    --black: #333333;
+    --colorPrimary: #9CDDE6;
+    --colorSecondary: #FFF3C9;
+    --color-text : #333;
+    --color-text-reverse : #fff;
     --color-page-details : linear-gradient(90deg, #ffffff, #e5ffff ,#fff, #e5ffff ,#ffffff);
     --background-primary-color: #84adc6;
     --background-secondary-color: #18c2c4;
@@ -44,8 +48,12 @@
     --tran-03: all 0.3s ease;
     --tran-04: all 0.4s ease;
     --tran-05: all 0.5s ease;
+
+   
 }
 body.dark {
+  --color-text : #fff;
+  --color-text-reverse : #fff;
   --color-page-details : linear-gradient(90deg, #18191a, #18191a);
   --primary-color-light: #f6f5ff;
   --header-color: #242526;

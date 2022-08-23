@@ -239,7 +239,7 @@ body.dark .switch::before{
   /* background-color: #b9c8cb; */
   padding: 90px 3% 40px 3%;
   width: 100%;
-  height: 400px;
+  height: 425px;
 }
 
 
@@ -332,6 +332,7 @@ body.dark .switch::before{
 
 .potential_projects h4{
   padding: 50px 0 10px 5%;
+  color : var(--color-text);
 }
 
 .form {
@@ -917,3 +918,58 @@ body.dark .switch::before{
 
 
 
+
+
+/*button*/
+.potential_projects .container {
+	width: 720px;
+}
+
+.potential_projects a {
+	text-transform: uppercase;
+	text-decoration: none;
+	font-weight: 700;
+}
+
+.potential_projects .btn {
+    position: relative;
+    letter-spacing: 0.25em;
+    margin: 0 auto;
+    padding: 1rem 2.5rem;
+    background: transparent;
+    outline: none;
+    font-size: 28px;
+    color: var(--black);
+}
+.potential_projects .btn::after,.btn::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    transform: skewX(30deg);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: -2;
+}
+
+.potential_projects .btn::before {
+    background-color: #9CDDE6;
+    top: -1rem;
+    left: 0rem;
+}
+.potential_projects .btn::after{
+    background-color: #FFF3C9;
+    top: 1rem;
+    left: 8rem;
+}
+.potential_projects .btn:hover::before,
+.potential_projects .btn:hover::after {
+    top: 0;
+    transform: skewx(0deg);
+}
+
+.potential_projects .btn:hover::after {
+    left: 0rem;
+}
+.potential_projects .btn:hover::before {
+    left: 8.75rem;
+}
