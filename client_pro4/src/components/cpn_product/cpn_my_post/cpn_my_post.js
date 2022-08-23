@@ -19,6 +19,23 @@ function sleep(s) {
   });
 }
 
+function validURL(str) {
+  var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
+    '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
+    '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
+    '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
+    '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
+    '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+  return !!pattern.test(str);
+}
+
+function check_link_data(temp) {
+  if (temp[0]=='d' && temp[1]=='a' && temp[2]=='t' && temp[3]=='a') {
+    return true;
+  }
+  return false;
+}
+
 export default function Cpn_my_post() {
   const { state_user } = useContext(AppContext);
   const [data_product, setData_product] = useState(null);
@@ -121,7 +138,12 @@ export default function Cpn_my_post() {
                   <div class="info-des">
                     <p>{post.infor}</p>
                     <div class="img-App">
-                      <img src={post.img1} alt="" />
+                    {
+                      validURL(post.img1)==false && check_link_data(post.img1)==false ? 
+                      <img style={{borderRadius : '10px'}} src={require(`../../../public/${post.img1}`)} />
+                      :
+                      <img style={{borderRadius : '10px'}} src={post.img1} alt=""/>
+                    }
                     </div>
                   </div>
                   <hr />
