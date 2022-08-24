@@ -16,13 +16,11 @@ const body = document.querySelector("body");
 function Cpn_potential_project() {
   return (
     <div className="potential_projects pp_featured" id="featured">
-      <div class="container">
-          <a href="#">
-              <div class="btn">
-                  FEATURED PROJECT
-              </div>
-          </a>
-      </div>
+      <h3 class="title-comm">
+        <span class="title-holder">
+          FEATURED PROJECT
+        </span>
+      </h3>
       <div className="form">
         <div className="form_1-1">
           <div className="img_w_title">
@@ -101,7 +99,7 @@ function Cpn_potential_project() {
           <i className="fa-solid fa-forward"></i>
         </div>
       </div>
-      <hr className="hr_detail" />
+      {/* <hr className="hr_detail" /> */}
     </div>
   );
 }
@@ -109,7 +107,11 @@ function Cpn_potential_project() {
 function Cpn_art_project() {
   return (
     <div className="potential_projects pp_art" id="art">
-      <h4>ART</h4>
+      <h3 class="title-comm">
+        <span class="title-holder">
+          ART PROJECT
+        </span>
+      </h3>
       <div className="form">
         <div className="form_1-1">
           <div className="img_w_title">
@@ -191,7 +193,7 @@ function Cpn_art_project() {
               <i className="fa-solid fa-forward"></i>
           </div>
       </div>
-      <hr className="hr_detail" />
+      {/* <hr className="hr_detail" /> */}
     </div>
   );
 }
@@ -199,7 +201,11 @@ function Cpn_art_project() {
 function Cpn_game_project() {
   return (
     <div className="potential_projects pp_game" id="game">
-      <h4>GAME PROJECT</h4>
+      <h3 class="title-comm">
+        <span class="title-holder">
+          GAME PROJECT
+        </span>
+      </h3>
       <div className="form">
         <div className="form_1-1">
           <div className="img_w_title">
@@ -283,7 +289,7 @@ function Cpn_game_project() {
               <i className="fa-solid fa-forward"></i>
             </div>
       </div>
-      <hr className="hr_detail" />
+      {/* <hr className="hr_detail" /> */}
     </div>
   );
 }
