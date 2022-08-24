@@ -372,13 +372,17 @@ export default function Cpn_add_project() {
   // close all tab into modal
   function close_all_tab_into_modal() {
     // close main post
-    if (document.querySelector(".modal_preview_story")) {
-      Object.assign(document.querySelector(".body_detail_prj").style, {
-        display: "none",
-      });
+    if (document.querySelector("#modal_preview_story")) {
       Object.assign(document.querySelector(".overview_into_review").style, {
         display: "none",
       });
+      Object.assign(
+        document.querySelector(".ctn_content_detail_prj .body_detail_prj")
+          .style,
+        {
+          display: "none",
+        }
+      );
     }
   }
 
@@ -386,7 +390,7 @@ export default function Cpn_add_project() {
   function open_tab_modal_overview() {
     close_all_tab_into_modal();
     if (document.querySelector(".overview_into_review")) {
-      Object.assign(document.querySelector("").style, {
+      Object.assign(document.querySelector(".overview_into_review").style, {
         display: "flex",
       });
     }
@@ -394,10 +398,14 @@ export default function Cpn_add_project() {
   // open tab modal story
   function open_tab_modal_story() {
     close_all_tab_into_modal();
-    if (document.querySelector(".overview_into_review")) {
-      Object.assign(document.querySelector("").style, {
-        display: "flex",
-      });
+    if (document.querySelector(".body_detail_prj")) {
+      Object.assign(
+        document.querySelector(".ctn_content_detail_prj .body_detail_prj")
+          .style,
+        {
+          display: "flex",
+        }
+      );
     }
   }
 
@@ -421,7 +429,6 @@ export default function Cpn_add_project() {
   $(document).ready(() => {
     // overview
     ProjectPostingPreview();
-
     function ProjectPostingPreview() {
       $("#preview").on("click", () => {
         $("#modal_preview .info_preview h2").text($("#main_title").val());
@@ -432,19 +439,17 @@ export default function Cpn_add_project() {
         $("#modal_preview .info_preview .percent_complete").text(
           `0 % of ` + $("#title_money_pledged").val() + ` $`
         );
-
         $(".main_prj_video").attr("src", $("#image").attr("src"));
-
         $("#modal_preview").css({
           display: "flex",
         });
       });
     }
-
     // story
     ProjectPostingStoryPreview();
     function ProjectPostingStoryPreview() {
       $("#previewStory").on("click", () => {
+        // render data to preview story
         $("#preview_story_header1").text($("#form_story #input_story_1").val());
         $("#preview_story_desc1").text($("#form_story #input_story_2").val());
         $("#preview_story_desc2").text($("#form_story #input_story_3").val());
@@ -472,17 +477,23 @@ export default function Cpn_add_project() {
           "src",
           $("#form_story #image5").attr("src")
         );
-        //  $("#modal_preview .info_preview h4").text($("#main_content").val());
-        //  $(
-        //    "#modal_preview .info_preview .ctn_pledged_backers .pledged .title"
-        //  ).text(`pledged of $` + $("#title_money_pledged").val() + ` goal`);
-        //  $("#modal_preview .info_preview .percent_complete").text(
-        //    `0 % of ` + $("#title_money_pledged").val() + ` $`
-        //  );
-
         $("#modal_preview_story").css({
           display: "flex",
         });
+        // render data to preview overview
+        $(".overview_into_review .info_preview h2").text(
+          $("#main_title").val()
+        );
+        $(".overview_into_review .info_preview h4").text(
+          $("#main_content").val()
+        );
+        $(
+          ".overview_into_review .info_preview .ctn_pledged_backers .pledged .title"
+        ).text(`pledged of $` + $("#title_money_pledged").val() + ` goal`);
+        $(".overview_into_review .info_preview .percent_complete").text(
+          `0 % of ` + $("#title_money_pledged").val() + ` $`
+        );
+        $(".main_prj_video").attr("src", $("#image").attr("src"));
       });
     }
   });
@@ -784,10 +795,11 @@ export default function Cpn_add_project() {
                 style={{ fontSize: "30px" }}
               ></i>
             </div>
-            <div style={{ display: "flex", justifyContent: "space-around" }}>
+            <div className="modal_preview_body">
               <div class="img_preview">
                 <img class="main_prj_video" />
               </div>
+
               <div class="info_preview">
                 <h5>FUNDING</h5>
                 <h2></h2>
@@ -1159,10 +1171,11 @@ export default function Cpn_add_project() {
               <button type="submit">SEND</button>
             </form>
 
-            {/* modal */}
+            {/* modal story */}
             <div className="ctn_content_detail_prj" id="modal_preview_story">
               <div
-                style={{ display: "flex", justifyContent: "right" }}
+                className="modal_preview_btn_close"
+                // style={{ display: "flex", justifyContent: "right" }}
                 onClick={onClick_close_previewStory}
               >
                 <i
@@ -1172,15 +1185,25 @@ export default function Cpn_add_project() {
               </div>
               <div className="header_detail_prj">
                 {/* onClick={open_story} */}
-                <div className="story">Story</div>
+                <div
+                  className="story"
+                  onClick={() => open_tab_modal_overview()}
+                >
+                  OverView
+                </div>
                 {/* onClick={open_FAQ} */}
                 <div className="FAQ">FAQ</div>
                 {/* onClick={open_comments} */}
-                <div className="comments">Comments</div>
+                <div
+                  className="comments"
+                  onClick={() => open_tab_modal_story()}
+                >
+                  Story
+                </div>
                 {/* onClick={open_statistic} */}
                 <div className="statistic">Statistic</div>
               </div>
-              {/* body */}
+              {/* overview modal into overview */}
               <div className="body_detail_prj">
                 <div className="left_body_prj">
                   <div className="connect">
@@ -1236,7 +1259,7 @@ export default function Cpn_add_project() {
               </div>
 
               {/* overview modal into review */}
-              <div className="overview_into_review" id="modal_preview">
+              <div className="overview_into_review">
                 <div
                   style={{ display: "flex", justifyContent: "space-around" }}
                 >
