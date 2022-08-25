@@ -167,6 +167,10 @@
 .story_post button:hover {
   cursor: pointer;
 }
+/* input image */
+.input_image {
+  border: 2px dashed;
+}
 /*------input_add_str------*/
 
 .story_post .input_add_str {

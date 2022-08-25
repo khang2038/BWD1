@@ -620,13 +620,13 @@ export default function Cpn_add_project() {
                 <label
                   htmlFor="img_big"
                   style={{
-                    margin: "20px 50px",
                     margin: "0 auto",
                     zIndex: "1",
                   }}
                 >
                   <img
                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNZo8HJXlzsEbcnfi6ciTTC9I1SF8Pb0wY6A&usqp=CAU"
+                    style={{ border: "2px dashed" }}
                     alt=""
                     id="image"
                     width="300"
@@ -647,9 +647,7 @@ export default function Cpn_add_project() {
                   accept="image/gif , image/jpeg, image/png"
                 />
               </div>
-
-              <hr style={{ width: "70%", margin: "0 auto" }} />
-
+              <hr style={{ width: "70%", margin: "60px auto 0px" }} />
               <div
                 style={{
                   display: "flex",
@@ -699,7 +697,6 @@ export default function Cpn_add_project() {
                 </div> */}
               </div>
               <hr style={{ width: "70%", margin: "60px auto 0 " }} />
-
               <div
                 style={{
                   display: "flex",
@@ -748,9 +745,7 @@ export default function Cpn_add_project() {
                   <span>Write about general introduction</span>
                 </div> */}
               </div>
-
               <hr style={{ width: "70%", margin: "60px auto 0 " }} />
-
               <div
                 style={{
                   display: "flex",
@@ -975,7 +970,11 @@ export default function Cpn_add_project() {
                 <div style={{ display: "flex", flexDirection: "column" }}>
                   <label
                     htmlFor="input_image1"
-                    style={{ margin: "0 auto", zIndex: "1" }}
+                    style={{
+                      padding: "0 160px",
+                      margin: "0 auto",
+                      zIndex: "1",
+                    }}
                   >
                     <img
                       src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNZo8HJXlzsEbcnfi6ciTTC9I1SF8Pb0wY6A&usqp=CAU"
@@ -983,6 +982,7 @@ export default function Cpn_add_project() {
                       id="image1"
                       width="300"
                       height="300"
+                      className="input_image"
                     />
                   </label>
                   <input
@@ -1011,7 +1011,11 @@ export default function Cpn_add_project() {
                   <hr style={{ width: "70%", margin: "60px auto" }} />
                   <label
                     htmlFor="input_image2"
-                    style={{ margin: "0 auto", zIndex: "1" }}
+                    style={{
+                      padding: "0 160px",
+                      margin: "0 auto",
+                      zIndex: "1",
+                    }}
                   >
                     <img
                       src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNZo8HJXlzsEbcnfi6ciTTC9I1SF8Pb0wY6A&usqp=CAU"
@@ -1019,6 +1023,7 @@ export default function Cpn_add_project() {
                       id="image2"
                       width="300"
                       height="300"
+                      className="input_image"
                     />
                   </label>
                   <input
@@ -1067,7 +1072,11 @@ export default function Cpn_add_project() {
                   <hr style={{ width: "70%", margin: "60px auto" }} />
                   <label
                     htmlFor="input_image3"
-                    style={{ margin: "0 auto", zIndex: "1" }}
+                    style={{
+                      padding: "0 160px",
+                      margin: "0 auto",
+                      zIndex: "1",
+                    }}
                   >
                     <img
                       src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNZo8HJXlzsEbcnfi6ciTTC9I1SF8Pb0wY6A&usqp=CAU"
@@ -1075,6 +1084,7 @@ export default function Cpn_add_project() {
                       id="image3"
                       width="300"
                       height="300"
+                      className="input_image"
                     />
                   </label>
                   <input
@@ -1094,7 +1104,11 @@ export default function Cpn_add_project() {
                   <hr style={{ width: "70%", margin: "60px auto" }} />
                   <label
                     htmlFor="input_image4"
-                    style={{ margin: "0 auto", zIndex: "1" }}
+                    style={{
+                      padding: "0 160px",
+                      margin: "0 auto",
+                      zIndex: "1",
+                    }}
                   >
                     <img
                       src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNZo8HJXlzsEbcnfi6ciTTC9I1SF8Pb0wY6A&usqp=CAU"
@@ -1102,6 +1116,7 @@ export default function Cpn_add_project() {
                       id="image4"
                       width="300"
                       height="300"
+                      className="input_image"
                     />
                   </label>
                   <input
@@ -1135,7 +1150,11 @@ export default function Cpn_add_project() {
                   <hr style={{ width: "70%", margin: "60px auto" }} />
                   <label
                     htmlFor="input_image5"
-                    style={{ margin: "0 auto", zIndex: "1" }}
+                    style={{
+                      padding: "0 160px",
+                      margin: "0 auto 40px",
+                      zIndex: "1",
+                    }}
                   >
                     <img
                       src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNZo8HJXlzsEbcnfi6ciTTC9I1SF8Pb0wY6A&usqp=CAU"
@@ -1143,6 +1162,7 @@ export default function Cpn_add_project() {
                       id="image5"
                       width="300"
                       height="300"
+                      className="input_image"
                     />
                   </label>
                   <input
@@ -1155,7 +1175,7 @@ export default function Cpn_add_project() {
                     }}
                     type="file"
                     class="form-control"
-                    id="input_image5"
+                    id="input_image5 "
                     accept="image/gif , image/jpeg, image/png"
                     placeholder="image"
                   />
