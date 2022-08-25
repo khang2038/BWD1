@@ -12,6 +12,7 @@ import AppContext from "../AppContext";
 
 
 import Cpn_left_nav from "./cpn_left_nav/cpn_left_nav";
+import ComponentDidMount from "../scroll_top/win_scroll_top";
 
 const body = document.querySelector("body");
 
@@ -184,6 +185,7 @@ export default function Cpn_product() {
 
   return (
     <div>
+      <ComponentDidMount />
       <div class="page">
         <Cpn_left_nav />
 

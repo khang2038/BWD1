@@ -10,6 +10,7 @@ import game_main from "~/public/img/imgdetail/game1.jpg";
 import Ctn_footer from "../cpn_footer/cpn_footer.js";
 import Cpn_messenger from "../cpn_messenger/cpn_messenger";
 import Cpn_gototop from "../cpn_gototop/cpn_gototop";
+import ComponentDidMount from "../scroll_top/win_scroll_top";
 
 const body = document.querySelector("body");
 
@@ -356,7 +357,9 @@ export default function Cpn_details() {
       className=""
       style={{ margin: "0", padding: "0" }}
     >
+        <ComponentDidMount />
       <div className="page_details">
+
         <ul
           className="the_left_page letf_page"
           onMouseOver={onmouseover_the_left_page}

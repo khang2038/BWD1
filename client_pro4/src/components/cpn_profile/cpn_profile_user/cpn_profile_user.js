@@ -13,6 +13,7 @@ import "swiper/css/virtual";
 import AppContext from "../../AppContext";
 import { Link } from "react-router-dom";
 import { useLocation , useParams } from "react-router-dom";
+import ComponentDidMount from "../../scroll_top/win_scroll_top";
 
 
 
@@ -441,6 +442,7 @@ function sleep(s) {
   
     return (
       <div>
+        <ComponentDidMount />
         <div style={{ marginTop: "60px" }} class="content_profile">
           <div class="right_content">
             <div class="nav" style={{ display: "flex", flexDirection: "column" }}>

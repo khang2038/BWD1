@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{useEffect} from "react";
 import "./style_homepage.css";
 import "../style_pro4.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
@@ -19,6 +19,8 @@ import project6 from "~/public/img/imghome/project6.avif";
 // import "../../public/js/homepage.js";
 import Cpn_gototop from "../cpn_gototop/cpn_gototop";
 import Cpn_messenger from "../cpn_messenger/cpn_messenger";
+import { Cpn_loading } from "../cpn_loading/cpn_loading";
+import ComponentDidMount from "../scroll_top/win_scroll_top";
 
 //trans_pre_aft_modal_card
 //promise
@@ -565,6 +567,10 @@ function Highlights() {
 }
 
 export default function Cpn_homepage() {
+
+  // useEffect(() => {
+  //   window.scrollTo(0, 0)
+  // }, [])
   
   function handle_user() {
     var update1 = document.querySelector(`.user-drop`);
@@ -580,6 +586,7 @@ export default function Cpn_homepage() {
 
   return (
     <div>
+      <ComponentDidMount />
       <div className="introduce__web">
         <div className="ctn__content">
           <h1 className="content__title">Welcome to PRO4</h1>
@@ -734,6 +741,7 @@ export default function Cpn_homepage() {
 
       <Highlights />
       <Cpn_gototop />
+      {/* <Cpn_loading /> */}
     </div>
   );
 }

@@ -12,6 +12,7 @@ import swal from 'sweetalert';
 import { useNavigate } from "react-router";
 import Button from '../../cpn_toast_message/button/Button'
 import Toast from '../../cpn_toast_message/toast/Toast'
+import ComponentDidMount from "../../scroll_top/win_scroll_top";
 
 function sleep(s) {
   return new Promise(function (resolve) {
@@ -208,6 +209,7 @@ export default function Cpn_my_post() {
 
   return (
     <div>
+      <ComponentDidMount />
       <div class="page">
         <Cpn_left_nav />
         <div class="center_page">

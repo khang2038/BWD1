@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router";
+import ComponentDidMount from "../scroll_top/win_scroll_top";
 
 const body = document.querySelector("body");
 
@@ -561,6 +562,7 @@ export default function Cpn_add_project() {
 
   return (
     <div>
+      <ComponentDidMount />
       <div class="nav_main_post">
         <ul>
           <div class="over_view" onClick={open_over_view}>
@@ -1331,11 +1333,6 @@ export default function Cpn_add_project() {
 
       <div style={{ height: "200px" }}></div>
 
-      <div className="ctn__loading__body">
-        <div className="ctn__loading">
-          <div className="ctn__loading__content"></div>
-        </div>
-      </div>
     </div>
   );
 }
