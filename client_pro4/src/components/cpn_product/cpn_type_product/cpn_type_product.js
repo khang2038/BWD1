@@ -8,6 +8,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import Cpn_left_nav from "../cpn_left_nav/cpn_left_nav.js";
 import { useLocation,useParams } from "react-router-dom";
+import ComponentDidMount from '../../scroll_top/win_scroll_top';
 
 const body = document.querySelector("body");
 
@@ -123,6 +124,7 @@ export default function Cpn_type_product() {
 
   return (
     <div>
+      <ComponentDidMount />
       <div className="page">
         <Cpn_left_nav />
         <div class="center_page" style={{width: '510px'}}>

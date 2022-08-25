@@ -4,6 +4,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import $ from "jquery";
 import "animate.css";
 import Cpn_footer from "../../components/cpn_footer/cpn_footer.js";
+import ComponentDidMount from "../scroll_top/win_scroll_top";
 
 //promise sleep
 function sleep(s) {
@@ -54,6 +55,7 @@ export default function cpn_wallet() {
 
   return (
     <div>
+      <ComponentDidMount />
       <div style={{ width: "100%", height: "80px", zIndex: "1" }}>
         <img
           src={require("../../public/img/imgbackground/background_page_3.webp")}

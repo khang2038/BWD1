@@ -10,19 +10,18 @@ import game_main from "~/public/img/imgdetail/game1.jpg";
 import Ctn_footer from "../cpn_footer/cpn_footer.js";
 import Cpn_messenger from "../cpn_messenger/cpn_messenger";
 import Cpn_gototop from "../cpn_gototop/cpn_gototop";
+import ComponentDidMount from "../scroll_top/win_scroll_top";
 
 const body = document.querySelector("body");
 
 function Cpn_potential_project() {
   return (
     <div className="potential_projects pp_featured" id="featured">
-      <div class="container">
-          <a href="#">
-              <div class="btn">
-                  FEATURED PROJECT
-              </div>
-          </a>
-      </div>
+      <h3 class="title-comm">
+        <span class="title-holder">
+          FEATURED PROJECT
+        </span>
+      </h3>
       <div className="form">
         <div className="form_1-1">
           <div className="img_w_title">
@@ -101,7 +100,7 @@ function Cpn_potential_project() {
           <i className="fa-solid fa-forward"></i>
         </div>
       </div>
-      <hr className="hr_detail" />
+      {/* <hr className="hr_detail" /> */}
     </div>
   );
 }
@@ -109,7 +108,11 @@ function Cpn_potential_project() {
 function Cpn_art_project() {
   return (
     <div className="potential_projects pp_art" id="art">
-      <h4>ART</h4>
+      <h3 class="title-comm">
+        <span class="title-holder">
+          ART PROJECT
+        </span>
+      </h3>
       <div className="form">
         <div className="form_1-1">
           <div className="img_w_title">
@@ -191,7 +194,7 @@ function Cpn_art_project() {
               <i className="fa-solid fa-forward"></i>
           </div>
       </div>
-      <hr className="hr_detail" />
+      {/* <hr className="hr_detail" /> */}
     </div>
   );
 }
@@ -199,7 +202,11 @@ function Cpn_art_project() {
 function Cpn_game_project() {
   return (
     <div className="potential_projects pp_game" id="game">
-      <h4>GAME PROJECT</h4>
+      <h3 class="title-comm">
+        <span class="title-holder">
+          GAME PROJECT
+        </span>
+      </h3>
       <div className="form">
         <div className="form_1-1">
           <div className="img_w_title">
@@ -283,7 +290,7 @@ function Cpn_game_project() {
               <i className="fa-solid fa-forward"></i>
             </div>
       </div>
-      <hr className="hr_detail" />
+      {/* <hr className="hr_detail" /> */}
     </div>
   );
 }
@@ -350,7 +357,9 @@ export default function Cpn_details() {
       className=""
       style={{ margin: "0", padding: "0" }}
     >
+        <ComponentDidMount />
       <div className="page_details">
+
         <ul
           className="the_left_page letf_page"
           onMouseOver={onmouseover_the_left_page}

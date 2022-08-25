@@ -10,6 +10,7 @@ import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
 import Button from '../cpn_toast_message/button/Button'
 import Toast from '../cpn_toast_message/toast/Toast'
+import ComponentDidMount from "../scroll_top/win_scroll_top";
 
 const body = document.querySelector("body");
 
@@ -130,6 +131,7 @@ export default function Cpn_add_product() {
 
   return (
     <div>
+      <ComponentDidMount />
       <div
         class="body_create_prj"
         style={{display: 'flex', justifyContent: 'center', marginTop : '80px'}}

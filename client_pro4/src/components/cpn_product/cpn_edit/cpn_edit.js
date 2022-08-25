@@ -1,4 +1,4 @@
-import React ,{useContext,useEffect,useState} from "react";
+import React ,{Component, useContext,useEffect,useState} from "react";
 import "./cpn_edit.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import $ from "jquery";
@@ -10,6 +10,8 @@ import { useLocation,useParams } from 'react-router-dom'
 import { useNavigate } from "react-router";
 import Button from '../../cpn_toast_message/button/Button'
 import Toast from '../../cpn_toast_message/toast/Toast'
+import ComponentDidMount from '../../scroll_top/win_scroll_top';
+
 
 function sleep(s) {
   return new Promise(function (resolve) {
@@ -118,6 +120,7 @@ export default function Cpn_edit() {
       class="body_create_prj"
       style={{ display: "flex", justifyContent: "center", marginTop: "80px" }}
     >
+      <ComponentDidMount />
       <div
         style={{
           padding: "20px",

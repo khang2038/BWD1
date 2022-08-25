@@ -12,6 +12,7 @@ import AppContext from "../AppContext";
 
 //import line chart
 import { Bar } from "react-chartjs-2";
+import ComponentDidMount from "../scroll_top/win_scroll_top";
 
 //main_prj
 function Ctn_main_prj({
@@ -511,6 +512,7 @@ export default function Cpn_create_project() {
 
   return (
     <div>
+      <ComponentDidMount />
       {print_main_project(data_cr_prj == null ? null : data_cr_prj[0])}
       {print_block_content(data_cr_prj == null ? null : data_cr_prj)}
     </div>
