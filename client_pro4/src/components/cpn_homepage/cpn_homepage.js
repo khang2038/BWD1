@@ -30,32 +30,28 @@ function sleep(s) {
 
 function Highlights() {
   function hide_gototop() {
-    var myBtn = document.querySelector('#myBtn');
-    Object.assign(myBtn.style , {
-      opacity : 0,
-    })
-  }  
-  
-  function show_gototop(){
-    var myBtn = document.querySelector('#myBtn');
-    Object.assign(myBtn.style , {
-      opacity : 1,
-    })
+    var myBtn = document.querySelector("#myBtn");
+    Object.assign(myBtn.style, {
+      opacity: 0,
+    });
+  }
+
+  function show_gototop() {
+    var myBtn = document.querySelector("#myBtn");
+    Object.assign(myBtn.style, {
+      opacity: 1,
+    });
   }
 
   function handle_animate_modal() {
-    $('.info_img').addClass("animate__animated animate__bounceInLeft");
-    $('.info_content').addClass(
-      "animate__animated animate__bounceInRight"
-    );
+    $(".info_img").addClass("animate__animated animate__bounceInLeft");
+    $(".info_content").addClass("animate__animated animate__bounceInRight");
   }
 
   $(document).ready(function () {
     $(window).scroll(function () {
       var body = $("html,body").scrollTop();
       var width_screen = window.innerWidth;
-      console.log(width_screen);
-      console.log(body);
       if (body >= 100 && body < 200 && width_screen > 739) {
       } else if (body > 400 && body < 900) {
         Object.assign(document.querySelector(".our_impact").style, {
@@ -185,7 +181,6 @@ function Highlights() {
     modal_2.classList.add("open");
     handle_animate_modal();
     hide_gototop();
-
   }
 
   function open_prj_3() {
@@ -193,7 +188,6 @@ function Highlights() {
     modal_3.classList.add("open");
     handle_animate_modal();
     hide_gototop();
-
   }
 
   function open_prj_4() {
@@ -201,7 +195,6 @@ function Highlights() {
     modal_4.classList.add("open");
     handle_animate_modal();
     hide_gototop();
-
   }
 
   function open_prj_5() {
@@ -209,7 +202,6 @@ function Highlights() {
     modal_5.classList.add("open");
     handle_animate_modal();
     hide_gototop();
-
   }
 
   function open_prj_6() {
@@ -217,7 +209,6 @@ function Highlights() {
     modal_6.classList.add("open");
     handle_animate_modal();
     hide_gototop();
-
   }
   //close
   function close_prj() {
@@ -243,8 +234,14 @@ function Highlights() {
       <div className="bg_cl_blur_pink_1"></div>
 
       <h1 className="title">Featured projects</h1>
-      <i className="pre_card fa-solid fa-angle-left" onClick={trans_pre_card}></i>
-      <i className="aft_card fa-solid fa-angle-right" onClick={trans_aft_card}></i>
+      <i
+        className="pre_card fa-solid fa-angle-left"
+        onClick={trans_pre_card}
+      ></i>
+      <i
+        className="aft_card fa-solid fa-angle-right"
+        onClick={trans_aft_card}
+      ></i>
       <div className="card_project">
         <div className="form_card_project" onClick={open_prj_1}>
           <div>
@@ -387,10 +384,10 @@ function Highlights() {
 
               <h4>
                 {" "}
-                <i className="ti-star"> </i> Go wild! Have adventures with friends
-                and stay connected no matter how intense the action gets! With
-                Pruto, revolutionize the way you communicate with your
-                companions while enjoying outdoor activities.{" "}
+                <i className="ti-star"> </i> Go wild! Have adventures with
+                friends and stay connected no matter how intense the action
+                gets! With Pruto, revolutionize the way you communicate with
+                your companions while enjoying outdoor activities.{" "}
               </h4>
             </ul>
 
@@ -433,10 +430,10 @@ function Highlights() {
 
               <h4>
                 {" "}
-                <i className="ti-star"> </i> As an avid outdoorsman, it was hard to
-                reconcile the fact that every amazing day in the woods, would be
-                punctuated by a miserable night. I designed the Haven Tent with
-                the goal of, making sleep the highlight of camping.{" "}
+                <i className="ti-star"> </i> As an avid outdoorsman, it was hard
+                to reconcile the fact that every amazing day in the woods, would
+                be punctuated by a miserable night. I designed the Haven Tent
+                with the goal of, making sleep the highlight of camping.{" "}
               </h4>
             </ul>
 
@@ -469,15 +466,15 @@ function Highlights() {
             <ul className="content_details">
               <h4>
                 {" "}
-                <i className="ti-star"> </i>The Farm Family Project, will be a book
-                of 42 photographs of farm animal portraiture I've taken over the
-                last 15 years.{" "}
+                <i className="ti-star"> </i>The Farm Family Project, will be a
+                book of 42 photographs of farm animal portraiture I've taken
+                over the last 15 years.{" "}
               </h4>
               <h4>
                 {" "}
-                <i className="ti-star"> </i>Publishing a book will allow more people
-                to see these beautiful animals as I see them, and bring more
-                people into the conversation.{" "}
+                <i className="ti-star"> </i>Publishing a book will allow more
+                people to see these beautiful animals as I see them, and bring
+                more people into the conversation.{" "}
               </h4>
             </ul>
 
@@ -565,7 +562,6 @@ function Highlights() {
 }
 
 export default function Cpn_homepage() {
-  
   function handle_user() {
     var update1 = document.querySelector(`.user-drop`);
 
@@ -575,8 +571,6 @@ export default function Cpn_homepage() {
       update1.classList.add("open1");
     }
   }
-
-
 
   return (
     <div>
@@ -589,9 +583,7 @@ export default function Cpn_homepage() {
           </p>
           <div className="btn">
             <button>
-              <p>
-                GO TO FUNDRAISE
-              </p>
+              <p>GO TO FUNDRAISE</p>
             </button>
           </div>
         </div>
@@ -599,18 +591,35 @@ export default function Cpn_homepage() {
         <div className="ctn__image">
           <div className="ms_home_1">
             <div>
-              <div style={{margin : '10px 20px'}} className="">
-                <img style={{width: '100%', height : '50px'}} src={require('../../public/img/imghome/img_home_ms/crown.png')}/>
+              <div style={{ margin: "10px 20px" }} className="">
+                <img
+                  style={{ width: "100%", height: "50px" }}
+                  src={require("../../public/img/imghome/img_home_ms/crown.png")}
+                />
               </div>
               {/* <img style={{backgroundColor : "#fff" , padding: '5px', borderRadius : '20px',}} src={require('../../public/img/imghome/img_home_ms/s.webp')} />  */}
             </div>
 
-            <div style={{display : 'flex', alignItems : 'center' ,width : '2px'}}>
-              <div style={{width : '100%', height : '50%', backgroundColor : '#b1afaf'}}></div>
+            <div
+              style={{ display: "flex", alignItems: "center", width: "2px" }}
+            >
+              <div
+                style={{
+                  width: "100%",
+                  height: "50%",
+                  backgroundColor: "#b1afaf",
+                }}
+              ></div>
             </div>
 
-            <div style={{display: 'flex', alignItems : 'center', marginLeft : '20px'}}>
-              <div style={{display: 'flex', flexDirection : 'column'}}>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                marginLeft: "20px",
+              }}
+            >
+              <div style={{ display: "flex", flexDirection: "column" }}>
                 <p>Web</p>
                 <p>Crowdfunding</p>
               </div>
@@ -618,19 +627,36 @@ export default function Cpn_homepage() {
           </div>
           <img src={pro4} alt="" />
           <div className="ms_home_2">
-          <div>
-              <div style={{margin : '10px 20px 10px 0'}} className="">
-                <img style={{width: '40px', height : '40px'}} src={require('../../public/img/imghome/img_home_ms/thumbup.png')}/>
+            <div>
+              <div style={{ margin: "10px 20px 10px 0" }} className="">
+                <img
+                  style={{ width: "40px", height: "40px" }}
+                  src={require("../../public/img/imghome/img_home_ms/thumbup.png")}
+                />
               </div>
               {/* <img style={{backgroundColor : "#fff" , padding: '5px', borderRadius : '20px',}} src={require('../../public/img/imghome/img_home_ms/s.webp')} />  */}
             </div>
 
-            <div style={{display : 'flex', alignItems : 'center' ,width : '2px'}}>
-              <div style={{width : '100%', height : '50%', backgroundColor : '#b1afaf'}}></div>
+            <div
+              style={{ display: "flex", alignItems: "center", width: "2px" }}
+            >
+              <div
+                style={{
+                  width: "100%",
+                  height: "50%",
+                  backgroundColor: "#b1afaf",
+                }}
+              ></div>
             </div>
 
-            <div style={{display: 'flex', alignItems : 'center', marginLeft : '20px'}}>
-              <div style={{display: 'flex', flexDirection : 'column'}}>
+            <div
+              style={{
+                display: "flex",
+                alignItems: "center",
+                marginLeft: "20px",
+              }}
+            >
+              <div style={{ display: "flex", flexDirection: "column" }}>
                 <p>The best</p>
                 <p>Working space</p>
               </div>
@@ -643,12 +669,8 @@ export default function Cpn_homepage() {
         <div className="background_1"></div>
         <div className="background_2"></div>
         <div className="background_3"></div>
-
-
       </div>
 
-      
-    
       {/* RES_MOBILE  */}
       <div className="introduce__web-mobile">
         <div className="ctn__content-mobile">
@@ -665,8 +687,14 @@ export default function Cpn_homepage() {
 
       <div className="our_impact">
         <h1>Our Impact</h1>
-        <div className="bg_cl_blur_blue" style={{backgroundColor: 'rgb(130 185 255)'}}></div>
-        <div className="bg_cl_blur_pink" style={{bottom: '-10%', left : '10%'}}></div>
+        <div
+          className="bg_cl_blur_blue"
+          style={{ backgroundColor: "rgb(130 185 255)" }}
+        ></div>
+        <div
+          className="bg_cl_blur_pink"
+          style={{ bottom: "-10%", left: "10%" }}
+        ></div>
 
         <div className="card">
           <div className="form_card">

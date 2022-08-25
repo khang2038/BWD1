@@ -61,20 +61,16 @@
   font-size: 30px;
 }
 
-.main_post form input {
+/* .main_post form input {
   font-size: 30px;
   width: 100%;
-}
+} */
 
 .main_post form button {
   margin: 0px 50px 60px 70%;
   font-size: 30px;
 }
-
-.main_post .form-group .form-control {
-  transition: 0.5s;
-}
-
+/* 
 .main_post .form-group span {
   position: absolute;
   left: 0;
@@ -84,24 +80,24 @@
   text-transform: uppercase;
   transition: 0.5s;
 }
-
+.main_post .form-group .form-control {
+  transition: 0.5s;
+}
 .main_post .form-control:valid ~ span,
 .main_post .form-control:focus ~ span {
   color: black;
   transform: translateX(40px) translateY(-7px);
   font-size: 0.75em;
   padding: 0 20px;
-  /* background: #1d2b3a; */
   background-color: white;
   border-left: 1px solid black;
   border-right: 1px solid black;
   letter-spacing: 0.2em;
 }
-
 .main_post .form-control:valid,
 .main_post .form-control:focus {
   border: 1px solid #00dfc4;
-}
+} */
 /*----------------FAQ_post------------------*/
 
 .FAQ_post {

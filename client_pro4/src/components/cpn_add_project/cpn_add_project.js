@@ -7,7 +7,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router";
-
+import Input, { Textarea } from "../Input/cpn_input";
+import img_blank from "../../public/img/img_blank/img_blank.jpg";
 const body = document.querySelector("body");
 
 //promise
@@ -614,16 +615,28 @@ export default function Cpn_add_project() {
                   Your image should be at least 1024x576 pixels. It will be
                   cropped to a 16:9 ratio.
                 </p>
-                <img
-                  style={{ margin: "20px 50px", margin: "0 auto", zIndex: "1" }}
-                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNZo8HJXlzsEbcnfi6ciTTC9I1SF8Pb0wY6A&usqp=CAU"
-                  alt=""
-                  id="image"
-                  width="300"
-                  height="300"
-                />
+                <label
+                  htmlFor="img_big"
+                  style={{
+                    margin: "20px 50px",
+                    margin: "0 auto",
+                    zIndex: "1",
+                  }}
+                >
+                  <img
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNZo8HJXlzsEbcnfi6ciTTC9I1SF8Pb0wY6A&usqp=CAU"
+                    alt=""
+                    id="image"
+                    width="300"
+                    height="300"
+                  />
+                </label>
                 <input
-                  style={{ width: "80%", margin: "20px auto 60px auto" }}
+                  style={{
+                    width: "80%",
+                    margin: "20px auto 60px auto",
+                    display: "none",
+                  }}
                   type="file"
                   class="form-control"
                   id="img_big"
@@ -657,7 +670,14 @@ export default function Cpn_add_project() {
                   understand your project. Both will appear on your project and
                   pre-launch pages.
                 </p>
-                <div style={{ position: "relative" }}>
+                {/* edit input */}
+                <Input
+                  idInput="main_title"
+                  nameInput="main_title"
+                  onChange={onChangeHandle}
+                  placeholder="Write about project title"
+                ></Input>
+                {/* <div style={{ position: "relative" }}>
                   <input
                     required="required"
                     type="text"
@@ -674,8 +694,9 @@ export default function Cpn_add_project() {
                     onChange={onChangeHandle}
                   />
                   <span>Write about project title</span>
-                </div>
+                </div> */}
               </div>
+              <hr style={{ width: "70%", margin: "60px auto 0 " }} />
 
               <div
                 style={{
@@ -699,7 +720,13 @@ export default function Cpn_add_project() {
                   on category pages, search results, or in emails we send to our
                   community.
                 </p>
-                <div style={{ position: "relative" }}>
+                <Input
+                  idInput="main_content"
+                  nameInput="main_content"
+                  onChange={onChangeHandle}
+                  placeholder="Write about general introduction"
+                ></Input>
+                {/* <div style={{ position: "relative" }}>
                   <input
                     required="required"
                     type="text"
@@ -717,10 +744,10 @@ export default function Cpn_add_project() {
                     onChange={onChangeHandle}
                   />
                   <span>Write about general introduction</span>
-                </div>
+                </div> */}
               </div>
 
-              <hr style={{ width: "70%", margin: "0 auto" }} />
+              <hr style={{ width: "70%", margin: "60px auto 0 " }} />
 
               <div
                 style={{
@@ -747,7 +774,13 @@ export default function Cpn_add_project() {
                   Funding is all-or-nothing. If you don’t meet your goal, you
                   won’t receive any money.
                 </p>
-                <div style={{ position: "relative" }}>
+                <Input
+                  idInput="title_money_pledged"
+                  nameInput="title_money_pledged"
+                  onChange={onChangeHandle}
+                  placeholder="Write about funding goal"
+                ></Input>
+                {/* <div style={{ position: "relative" }}>
                   <input
                     required="required"
                     type="text"
@@ -764,7 +797,7 @@ export default function Cpn_add_project() {
                     onChange={onChangeHandle}
                   />
                   <span>Write about funding goal</span>
-                </div>
+                </div> */}
               </div>
               <button
                 style={{
@@ -868,6 +901,7 @@ export default function Cpn_add_project() {
                 padding: "10px 20px",
                 border: "2px solid rgb(183, 170, 170)",
                 borderRadius: "10px",
+                marginBottom: "40px",
               }}
               onClick={add_faq}
             >
@@ -877,52 +911,26 @@ export default function Cpn_add_project() {
           </div>
           <form class="ctn_FAQ" method="POST" onSubmit={onSubmitHandle_faq}>
             <div class="question_FAQ">
-              <textarea
-                onChange={onChangeHandle_faq}
-                id="question"
+              <Textarea
+                placeholder="nemo commodi tempora accusamus molestiae ipsam ad sed veniam cum"
                 name="question1"
-                type="text"
-                style={{
-                  height: "80px",
-                  borderRadius: "20px",
-                  width: "80%",
-                  fontSize: "30px",
-                  padding: "20px",
-                  margin: "10px",
-                }}
-                placeholder="Write for question"
-                autocomplete="on"
-              ></textarea>
-              <textarea
+                idArea="question"
                 onChange={onChangeHandle_faq}
-                id="question"
+              ></Textarea>
+              <hr style={{ width: "70%", margin: "60px auto" }} />
+              <Textarea
+                placeholder="nemo commodi tempora accusamus molestiae ipsam ad sed veniam cum"
                 name="question2"
-                type="text"
-                style={{
-                  height: "80px",
-                  borderRadius: "20px",
-                  width: "80%",
-                  fontSize: "30px",
-                  padding: "20px",
-                  margin: "10px",
-                }}
-                placeholder="Write for question"
-              ></textarea>
-              <textarea
+                idArea="question"
                 onChange={onChangeHandle_faq}
-                id="question"
+              ></Textarea>
+              <hr style={{ width: "70%", margin: "60px auto " }} />
+              <Textarea
+                placeholder="nemo commodi tempora accusamus molestiae ipsam ad sed veniam cum"
                 name="question3"
-                type="text"
-                style={{
-                  height: "80px",
-                  borderRadius: "20px",
-                  width: "80%",
-                  fontSize: "30px",
-                  padding: "20px",
-                  margin: "10px",
-                }}
-                placeholder="Write for question"
-              ></textarea>
+                idArea="question"
+                onChange={onChangeHandle_faq}
+              ></Textarea>
             </div>
             <button
               type="submit"
@@ -932,6 +940,8 @@ export default function Cpn_add_project() {
                 padding: "10px 20px",
                 border: "2px solid rgb(183, 170, 170)",
                 borderRadius: "10px",
+                marginTop: "40px",
+                float: "right",
               }}
             >
               <i class="fa-solid fa-arrow-right-to-bracket"></i>
@@ -961,205 +971,186 @@ export default function Cpn_add_project() {
             <form method="POST" onSubmit={onSubmitHandle_story} id="form_story">
               <div class="input_add_str">
                 <div style={{ display: "flex", flexDirection: "column" }}>
-                  <img
+                  <label
+                    htmlFor="input_image1"
                     style={{ margin: "0 auto", zIndex: "1" }}
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNZo8HJXlzsEbcnfi6ciTTC9I1SF8Pb0wY6A&usqp=CAU"
-                    alt=""
-                    id="image1"
-                    width="300"
-                    height="300"
-                  />
+                  >
+                    <img
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNZo8HJXlzsEbcnfi6ciTTC9I1SF8Pb0wY6A&usqp=CAU"
+                      alt=""
+                      id="image1"
+                      width="300"
+                      height="300"
+                    />
+                  </label>
                   <input
                     onChange={onChangeHandle_story}
                     name="image1"
-                    style={{ width: "80%", margin: "20px auto 60px auto" }}
+                    style={{
+                      width: "80%",
+                      margin: "20px auto 60px auto",
+                      display: "none",
+                    }}
                     type="file"
                     class="form-control"
                     id="input_image1"
                     accept="image/gif , image/jpeg, image/png"
                     placeholder="image"
                   />
-
-                  <textarea
+                  <hr style={{ width: "70%", margin: "60px auto" }} />
+                  <Textarea
                     onChange={onChangeHandle_story}
                     name="title1"
                     type="text"
-                    style={{
-                      height: "80px",
-                      borderRadius: "20px",
-                      width: "80%",
-                      fontSize: "30px",
-                      padding: "20px",
-                      margin: "10px",
-                    }}
-                    placeholder="Title"
-                    id="input_story_1"
-                  ></textarea>
-
-                  <img
+                    row="10"
+                    placeholder="voluptatem voluptate iusto laborum deserunt temporibus commodi, voluptatum quo?"
+                    idArea="input_story_1"
+                  ></Textarea>
+                  <hr style={{ width: "70%", margin: "60px auto" }} />
+                  <label
+                    htmlFor="input_image2"
                     style={{ margin: "0 auto", zIndex: "1" }}
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNZo8HJXlzsEbcnfi6ciTTC9I1SF8Pb0wY6A&usqp=CAU"
-                    alt=""
-                    id="image2"
-                    width="300"
-                    height="300"
-                  />
+                  >
+                    <img
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNZo8HJXlzsEbcnfi6ciTTC9I1SF8Pb0wY6A&usqp=CAU"
+                      alt=""
+                      id="image2"
+                      width="300"
+                      height="300"
+                    />
+                  </label>
                   <input
                     onChange={onChangeHandle_story}
                     name="image2"
-                    style={{ width: "80%", margin: "20px auto 60px auto" }}
+                    style={{
+                      width: "80%",
+                      margin: "20px auto 60px auto",
+                      display: "none",
+                    }}
                     type="file"
                     class="form-control"
                     id="input_image2"
                     accept="image/gif , image/jpeg, image/png"
                     placeholder="image"
                   />
-
-                  <textarea
+                  <hr style={{ width: "70%", margin: "60px auto" }} />
+                  <Textarea
                     onChange={onChangeHandle_story}
                     name="content1"
                     type="text"
-                    style={{
-                      borderRadius: "10px",
-                      height: "20px",
-                      wordBreak: "break-word",
-                      width: "90%",
-                      fontSize: "20px",
-                      padding: "30px 10px 140px 30px",
-                      margin: "10px",
-                    }}
-                    placeholder="Content"
-                    id="input_story_2"
-                  ></textarea>
-                  <textarea
+                    placeholder="voluptatem voluptate iusto laborum deserunt temporibus commodi, voluptatum quo?"
+                    idArea="input_story_2"
+                  ></Textarea>{" "}
+                  <hr style={{ width: "70%", margin: "60px auto" }} />
+                  <Textarea
                     onChange={onChangeHandle_story}
                     name="content2"
-                    type="text"
-                    style={{
-                      borderRadius: "10px",
-                      height: "20px",
-                      wordBreak: "break-word",
-                      width: "90%",
-                      fontSize: "20px",
-                      padding: "30px 10px 140px 30px",
-                      margin: "10px",
-                    }}
                     placeholder="Content"
-                    id="input_story_3"
-                  ></textarea>
-
-                  <textarea
+                    idArea="input_story_3"
+                  ></Textarea>{" "}
+                  <hr style={{ width: "70%", margin: "60px auto" }} />
+                  <Textarea
                     onChange={onChangeHandle_story}
                     name="title2"
-                    type="text"
-                    style={{
-                      height: "80px",
-                      borderRadius: "20px",
-                      width: "80%",
-                      fontSize: "30px",
-                      padding: "20px",
-                      margin: "10px",
-                    }}
                     placeholder="Title"
-                    id="input_story_4"
-                  ></textarea>
-                  <textarea
+                    idArea="input_story_4"
+                  ></Textarea>{" "}
+                  <hr style={{ width: "70%", margin: "60px auto" }} />
+                  <Textarea
                     onChange={onChangeHandle_story}
                     name="content3"
-                    type="text"
-                    style={{
-                      borderRadius: "10px",
-                      height: "20px",
-                      wordBreak: "break-word",
-                      width: "90%",
-                      fontSize: "20px",
-                      padding: "30px 10px 140px 30px",
-                      margin: "10px",
-                    }}
                     placeholder="Content"
-                    id="input_story_5"
-                  ></textarea>
-                  <img
+                    idArea="input_story_5"
+                  ></Textarea>{" "}
+                  <hr style={{ width: "70%", margin: "60px auto" }} />
+                  <label
+                    htmlFor="input_image3"
                     style={{ margin: "0 auto", zIndex: "1" }}
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNZo8HJXlzsEbcnfi6ciTTC9I1SF8Pb0wY6A&usqp=CAU"
-                    alt=""
-                    id="image3"
-                    width="300"
-                    height="300"
-                  />
+                  >
+                    <img
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNZo8HJXlzsEbcnfi6ciTTC9I1SF8Pb0wY6A&usqp=CAU"
+                      alt=""
+                      id="image3"
+                      width="300"
+                      height="300"
+                    />
+                  </label>
                   <input
                     onChange={onChangeHandle_story}
                     name="image3"
-                    style={{ width: "80%", margin: "20px auto 60px auto" }}
+                    style={{
+                      width: "80%",
+                      margin: "20px auto 60px auto",
+                      display: "none",
+                    }}
                     type="file"
                     class="form-control"
                     id="input_image3"
                     accept="image/gif , image/jpeg, image/png"
                     placeholder="image"
-                  />
-
-                  <img
+                  />{" "}
+                  <hr style={{ width: "70%", margin: "60px auto" }} />
+                  <label
+                    htmlFor="input_image4"
                     style={{ margin: "0 auto", zIndex: "1" }}
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNZo8HJXlzsEbcnfi6ciTTC9I1SF8Pb0wY6A&usqp=CAU"
-                    alt=""
-                    id="image4"
-                    width="300"
-                    height="300"
-                  />
+                  >
+                    <img
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNZo8HJXlzsEbcnfi6ciTTC9I1SF8Pb0wY6A&usqp=CAU"
+                      alt=""
+                      id="image4"
+                      width="300"
+                      height="300"
+                    />
+                  </label>
                   <input
                     onChange={onChangeHandle_story}
                     name="image4"
-                    style={{ width: "80%", margin: "20px auto 60px auto" }}
+                    style={{
+                      width: "80%",
+                      margin: "20px auto 60px auto",
+                      display: "none",
+                    }}
                     type="file"
                     class="form-control"
                     id="input_image4"
                     accept="image/gif , image/jpeg, image/png"
                     placeholder="image"
-                  />
-
-                  <textarea
+                  />{" "}
+                  <hr style={{ width: "70%", margin: "60px auto" }} />
+                  <Textarea
                     onChange={onChangeHandle_story}
                     name="title3"
-                    type="text"
-                    style={{
-                      height: "80px",
-                      borderRadius: "20px",
-                      width: "80%",
-                      fontSize: "30px",
-                      padding: "20px",
-                      margin: "10px",
-                    }}
                     placeholder="Title"
-                    id="input_story_6"
-                  ></textarea>
-                  <textarea
+                    idArea="input_story_6"
+                  ></Textarea>{" "}
+                  <hr style={{ width: "70%", margin: "60px auto" }} />
+                  <Textarea
                     onChange={onChangeHandle_story}
                     name="content4"
-                    type="text"
-                    style={{
-                      borderRadius: "10px",
-                      height: "20px",
-                      wordBreak: "break-word",
-                      width: "90%",
-                      fontSize: "20px",
-                      padding: "30px 10px 140px 30px",
-                      margin: "10px",
-                    }}
                     placeholder="Content"
-                    id="input_story_7"
-                  ></textarea>
-                  <img
+                    idArea="input_story_7"
+                  ></Textarea>{" "}
+                  <hr style={{ width: "70%", margin: "60px auto" }} />
+                  <label
+                    htmlFor="input_image5"
                     style={{ margin: "0 auto", zIndex: "1" }}
-                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNZo8HJXlzsEbcnfi6ciTTC9I1SF8Pb0wY6A&usqp=CAU"
-                    alt=""
-                    id="image5"
-                    width="300"
-                    height="300"
-                  />
+                  >
+                    <img
+                      src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNZo8HJXlzsEbcnfi6ciTTC9I1SF8Pb0wY6A&usqp=CAU"
+                      alt=""
+                      id="image5"
+                      width="300"
+                      height="300"
+                    />
+                  </label>
                   <input
                     onChange={onChangeHandle_story}
                     name="image5"
-                    style={{ width: "80%", margin: "20px auto 60px auto" }}
+                    style={{
+                      width: "80%",
+                      margin: "20px auto 60px auto",
+                      display: "none",
+                    }}
                     type="file"
                     class="form-control"
                     id="input_image5"
@@ -1168,7 +1159,18 @@ export default function Cpn_add_project() {
                   />
                 </div>
               </div>
-              <button type="submit">SEND</button>
+              <button
+                style={{
+                  padding: "10px 20px",
+                  fontSize: "30px",
+                  borderRadius: "10px",
+                  border: "2px solid rgb(179, 164, 164)",
+                  float: "right",
+                }}
+                type="submit"
+              >
+                SEND
+              </button>
             </form>
 
             {/* modal story */}
@@ -1313,6 +1315,7 @@ export default function Cpn_add_project() {
               id="previewStory"
               style={{
                 padding: "10px 20px",
+                fontSize: "30px",
                 borderRadius: "10px",
                 border: "2px solid rgb(179, 164, 164)",
               }}
