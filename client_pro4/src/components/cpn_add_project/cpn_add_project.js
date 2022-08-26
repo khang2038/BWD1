@@ -563,7 +563,7 @@ export default function Cpn_add_project() {
 
   return (
     <div>
-      <ComponentDidMount />
+      {/* <ComponentDidMount /> */}
       <div class="nav_main_post">
         <ul>
           <div class="over_view" onClick={open_over_view}>
