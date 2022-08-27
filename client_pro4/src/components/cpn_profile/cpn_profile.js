@@ -12,6 +12,7 @@ import "swiper/css/virtual";
 import AppContext from "../AppContext";
 import { Link } from "react-router-dom";
 import ComponentDidMount from "../scroll_top/win_scroll_top";
+import Cpn_pf_statistic from "./cpn_statistic/cpn_pf_statistic"
 
 function sleep(s) {
   return new Promise(function (resolve) {
@@ -555,7 +556,9 @@ export default function Cpn_profile() {
 
                 <hr style={{ width: "60%", margin: "0 auto" }} />
 
-                <h2 style={{ margin: "30px 0" }}>Progress project</h2>
+                <Cpn_pf_statistic />
+
+                {/* <h2 style={{ margin: "30px 0" }}>Progress project</h2>
 
                 <div class="project_progress">
                   <div style={{ listStyle: "none" }}>
@@ -605,7 +608,7 @@ export default function Cpn_profile() {
                       </li>
                     </ul>
                   </div>
-                </div>
+                </div> */}
 
                 <div class="my_project_statistic">
                   <h2

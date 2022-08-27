@@ -15,12 +15,9 @@
 -sửa link ảnh http
 -hiển thị thông báo khi thêm project (alert ,attempt)
 -ngày 8/9 Nhờ anh Bảo Anh sửa giùm lỗi chính tả
-
-
--scrollTOp khi chuyển trang
-(componentDidMount() {
-  window.scrollTo(0, 0)
-}
+-deploy
+-fixed trang created project
+-ask font chu
 
 
 -Giải quyêt đúng vấn đề gọi vốn cộng đồng crowd funding:
@@ -37,6 +34,7 @@ ok : socket
 ok : voice chat
 
 giang:
+ok : scrollTOp khi chuyển trang
 ok : built toàn bộ web qua react (còn thiếu thống kê)
 ok : preview story (cả 3 phần) truoc khi đăng
 ok : ds btn details trang 1

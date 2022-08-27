@@ -22,7 +22,9 @@
     "mongoose-slug-generator": "^1.0.4",
     "passport": "^0.6.0",
     "passport-google-oauth20": "^2.0.0",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "react-apexcharts": "^1.4.0",
+    "react-circular-progressbar": "^2.1.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.19"
