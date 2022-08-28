@@ -2,6 +2,7 @@ import React, { useState ,useContext} from "react";
 import { Link } from "react-router-dom";
 import "./style_header.css";
 import AppContext from "../AppContext";
+import { Cpn_loading } from "../cpn_loading/cpn_loading";
 
 function sleep(s) {
     return new Promise(function (resolve) {
@@ -13,6 +14,8 @@ const body = document.querySelector("body");
 
 export default function Cpn_header() {
   const {state_user} = useContext(AppContext); 
+  const [loading , setLoading] = useState(false);
+
   function handle_light_dark() {
     body.classList.toggle("dark");
     var logo1 = document.querySelector(".mobile_nav .logo1");
@@ -99,11 +102,11 @@ export default function Cpn_header() {
     var homepage = document.querySelector("#homepage");
     sleep(0)
       .then(function () {
-        ctn__loading__home.classList.add("open__load");
-        return sleep(500);
+        // setLoading(true);
+        return sleep(3000);
       })
       .then(function () {
-        ctn__loading__home.classList.remove("open__load");
+        // setLoading(false);
         homepage.href = "homepage";
         // homepage.click();
       });
@@ -114,11 +117,11 @@ export default function Cpn_header() {
     var product = document.querySelector("#product");
     sleep(0)
       .then(function () {
-        ctn__loading__home.classList.add("open__load");
-        return sleep(500);
+        // setLoading(true);
+        return sleep(3000);
       })
       .then(function () {
-        ctn__loading__home.classList.remove("open__load");
+        // setLoading(false);
         product.href = "Product";
         // product.click();
       });
@@ -129,11 +132,11 @@ export default function Cpn_header() {
     var projects = document.querySelector("#projects");
     sleep(0)
       .then(function () {
-        ctn__loading__home.classList.add("open__load");
-        return sleep(500);
+        // setLoading(true);
+        return sleep(3000);
       })
       .then(function () {
-        ctn__loading__home.classList.remove("open__load");
+        // setLoading(false);
         projects.href = "detail";
         // projects.click();
       });
@@ -141,6 +144,7 @@ export default function Cpn_header() {
 
   return (
     <div style={{position : 'absolute', zIndex : '3'}}>
+      {loading ? <Cpn_loading/> : null}
       <header>
         <div className="nav_pc">
           <div className="the_left_nav">

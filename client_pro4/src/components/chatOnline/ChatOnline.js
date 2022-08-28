@@ -29,7 +29,7 @@ export default function ChatOnline({onlineUsers,currentId,setcurrentchat}){
             console.log(err)
         }
     }
-
+    
     return(
         <div className="chatOnline">
             {onlinefriends.map(o=>(

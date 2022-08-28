@@ -769,7 +769,7 @@ export default function Cpn_homepage() {
 
       <Highlights />
       <Cpn_gototop />
-      {/* <Cpn_loading /> */}
+      
     </div>
   );
 }
