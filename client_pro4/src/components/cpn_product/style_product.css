@@ -1,7 +1,7 @@
 
 /* -------------page---------- */
 .page{
-    background-color:  var(--page-color);
+    background-image: var(--color-page-product);
     height:100%;
     width:100%;
     display: flex;

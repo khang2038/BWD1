@@ -99,6 +99,7 @@ export default function Cpn_add_project() {
   }
 
   const onChangeHandle = (e) => {
+    console.log(e.target.name);
     setProjectInput({ ...projectInput, [e.target.name]: e.target.value });
   };
 
@@ -117,6 +118,8 @@ export default function Cpn_add_project() {
       var main_title = projectInput.main_title;
       var main_content = projectInput.main_content;
       var title_money_pledged = projectInput.title_money_pledged;
+
+      
 
       if (img_big.match(/fakepath/)) {
         // update the file-path text using case-insensitive regex
@@ -673,7 +676,7 @@ export default function Cpn_add_project() {
                 {/* edit input */}
                 <Input
                   idInput="main_title"
-                  nameInput="main_title"
+                  name="main_title"
                   onChange={onChangeHandle}
                   placeholder="Write about project title"
                 ></Input>
@@ -721,7 +724,7 @@ export default function Cpn_add_project() {
                 </p>
                 <Input
                   idInput="main_content"
-                  nameInput="main_content"
+                  name="main_content"
                   onChange={onChangeHandle}
                   placeholder="Write about general introduction"
                 ></Input>
@@ -773,7 +776,7 @@ export default function Cpn_add_project() {
                 </p>
                 <Input
                   idInput="title_money_pledged"
-                  nameInput="title_money_pledged"
+                  name="title_money_pledged"
                   onChange={onChangeHandle}
                   placeholder="Write about funding goal"
                 ></Input>

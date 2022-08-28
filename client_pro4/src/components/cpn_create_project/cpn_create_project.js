@@ -515,6 +515,7 @@ export default function Cpn_create_project() {
       {/* <ComponentDidMount /> */}
       {print_main_project(data_cr_prj == null ? null : data_cr_prj[0])}
       {print_block_content(data_cr_prj == null ? null : data_cr_prj)}
+      
     </div>
   );
 }
