@@ -20,6 +20,7 @@ export default function Cpn_login() {
     .get(`http://103.170.120.155:5000/login`)
       .then((res) => res.data)
       .then((data) => {
+        console.log(123);
         setCheckUser(data);
       })
 
