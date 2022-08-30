@@ -450,7 +450,7 @@ export default function Cpn_create_project() {
   //fix
 
   axios
-    .get(`http://localhost:5000${location.pathname}`)
+    .get(`http://103.170.120.155:5000${location.pathname}`)
     .then((res) => res.data)
     .then((data) => {
       setData_cr_prj(data);
