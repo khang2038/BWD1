@@ -11,7 +11,7 @@ import { useNavigate } from "react-router";
 import Button from '../../cpn_toast_message/button/Button'
 import Toast from '../../cpn_toast_message/toast/Toast'
 import ComponentDidMount from '../../scroll_top/win_scroll_top';
-
+import { Cpn_loading } from "../../cpn_loading/cpn_loading";
 
 function sleep(s) {
   return new Promise(function (resolve) {
@@ -27,6 +27,7 @@ export default function Cpn_edit() {
   const [productInput, setProductInput] = useState({_id : "",name : "",name_author : `${state_user.user.temp.name_author}`, img_author : `${state_user.user.temp.img_author}` , infor : "", img1 : "" });
   const [list, setList] = useState([]);
   let toastProperties = null;
+  const [loading ,setLoading ] = useState(false);
 
   useEffect(() => {
     axios
@@ -97,16 +98,15 @@ export default function Cpn_edit() {
         .then(function() {
           axios.put(`/store/${_id}`,{_id,name,name_author,img_author,infor,img1})
           btn_toast.click();
+          setLoading(true);
           return sleep(1000)
         })
         .then(function() {
-          ctn__loading__home.classList.add("open__load");
 
-          return sleep(1000)
+          return sleep(2000)
         })
         .then(function() {
-          ctn__loading__home.classList.remove("open__load");
-
+          setLoading(false);
           navigate('../product',{replace : true});
         })
       
@@ -121,6 +121,8 @@ export default function Cpn_edit() {
       style={{ display: "flex", justifyContent: "center", marginTop: "80px" }}
     >
       <ComponentDidMount />
+      {loading ? <Cpn_loading/> : null} 
+
       <div
         style={{
           padding: "20px",

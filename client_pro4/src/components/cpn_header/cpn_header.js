@@ -107,7 +107,7 @@ export default function Cpn_header() {
       })
       .then(function () {
         // setLoading(false);
-        homepage.href = "homepage";
+        // homepage.href = "homepage";
         // homepage.click();
       });
   }
@@ -122,7 +122,7 @@ export default function Cpn_header() {
       })
       .then(function () {
         // setLoading(false);
-        product.href = "Product";
+        // product.href = "Product";
         // product.click();
       });
   }
@@ -137,14 +137,14 @@ export default function Cpn_header() {
       })
       .then(function () {
         // setLoading(false);
-        projects.href = "detail";
+        // projects.href = "detail";
         // projects.click();
       });
   }
 
   return (
     <div style={{position : 'absolute', zIndex : '3'}}>
-      {loading ? <Cpn_loading/> : null}
+      {loading ? <Cpn_loading/> : null} 
       <header>
         <div className="nav_pc">
           <div className="the_left_nav">

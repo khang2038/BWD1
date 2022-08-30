@@ -13,6 +13,7 @@ import { useNavigate } from "react-router";
 import Button from '../../cpn_toast_message/button/Button'
 import Toast from '../../cpn_toast_message/toast/Toast'
 import ComponentDidMount from "../../scroll_top/win_scroll_top";
+import { Cpn_loading } from "../../cpn_loading/cpn_loading";
 
 function sleep(s) {
   return new Promise(function (resolve) {
@@ -43,6 +44,7 @@ export default function Cpn_my_post() {
   const navigate = useNavigate();
   const [list, setList] = useState([]);
   let toastProperties = null;
+  const [ loading , setLoading ] = useState(false);
   
   useEffect(() => {
     axios
@@ -105,15 +107,15 @@ export default function Cpn_my_post() {
       .then(function() {
         axios.delete(`/store/${_id}`);
         btn_toast.click();
+        setLoading(true);
         return sleep(1000)
       })
       .then(function() {
-        ctn__loading__home.classList.add("open__load");
 
-        return sleep(1000)
+        return sleep(2000)
       })
       .then(function() {
-        ctn__loading__home.classList.remove("open__load");
+        setLoading(false);
         navigate('../product',{replace : true});
       })
   };
@@ -210,10 +212,11 @@ export default function Cpn_my_post() {
   return (
     <div>
       <ComponentDidMount />
+      {loading ? <Cpn_loading/> : null}
       <div class="page">
         <Cpn_left_nav />
         <div class="center_page">
-          {print_post_user(data_product == null ? null : data_product)}
+          {print_post_user(data_product == null ? null : data_product.reverse())}
 
         </div>
 
@@ -221,11 +224,6 @@ export default function Cpn_my_post() {
       <form method="POST" name="delete_form"></form>
       <Button handleClick={() => showToast('success_delete_post')}></Button>
       <Toast toastlist={list} position="buttom-right" setList={setList} />
-      <div className="ctn__loading__body">
-        <div className="ctn__loading">
-          <div className="ctn__loading__content"></div>
-        </div>
-      </div>
       
     </div>
   );

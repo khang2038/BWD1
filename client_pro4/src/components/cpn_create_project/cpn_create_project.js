@@ -176,8 +176,6 @@ function Ctn_block_content(prj) {
     name: "",
   });
 
-  console.log(prj);
-
   const { state_user } = useContext(AppContext);
   const navigate = useNavigate();
 
@@ -189,7 +187,7 @@ function Ctn_block_content(prj) {
     try {
       e.preventDefault();
       var comment = commentInput.comment;
-      var slug_temp = prj.story_prj.slug;
+      var slug_temp = prj.story_prj[0].slug;
       var avatar = state_user.user.temp.img_author;
       var name = state_user.user.temp.name_author;
 

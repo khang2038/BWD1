@@ -11,6 +11,7 @@ import { Link } from "react-router-dom";
 import Button from '../cpn_toast_message/button/Button'
 import Toast from '../cpn_toast_message/toast/Toast'
 import ComponentDidMount from "../scroll_top/win_scroll_top";
+import { Cpn_loading } from "../cpn_loading/cpn_loading";
 
 const body = document.querySelector("body");
 
@@ -56,6 +57,8 @@ export default function Cpn_add_product() {
   const [productInput, setProductInput] = useState({name : "",name_author : `${state_user.user.temp.name_author}`, img_author : `${state_user.user.temp.img_author}` , infor : "", img1 : "" });
   const navigate = useNavigate();
   const [list, setList] = useState([]);
+  const [loading, setLoading ] = useState(false);
+
   let toastProperties = null;
 
 
@@ -103,15 +106,16 @@ export default function Cpn_add_product() {
         .then(function() {
           axios.post('/store',{name,name_author,img_author,infor,img1,slug})
           btn_toast.click();
+          setLoading(true);
           return sleep(1000);
         }
         )
         .then(function() {
-          ctn__loading__home.classList.add("open__load");
-          return sleep(1000)
+          return sleep(2000)
         })
         .then(function() {
-          ctn__loading__home.classList.remove("open__load");
+          // ctn__loading__home.classList.remove("open__load");
+          setLoading(false);
           console.log(btn_toast);
           navigate('../product',{replace : false});
           
@@ -132,6 +136,8 @@ export default function Cpn_add_product() {
   return (
     <div>
       <ComponentDidMount />
+      {loading ? <Cpn_loading/> : null} 
+
       <div
         class="body_create_prj"
         style={{display: 'flex', justifyContent: 'center', marginTop : '80px'}}
