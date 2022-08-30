@@ -130,7 +130,7 @@ export default function Cpn_profile() {
   useEffect(() => {
     if (data_total_prj === null) {
       axios
-        .get(`http://localhost:5000/profile`)
+        .get(`http://103.170.120.155:5000/profile`)
         .then((res) => res.data)
         .then((data) => {
           setData_total_prj(data);

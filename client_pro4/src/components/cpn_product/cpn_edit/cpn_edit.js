@@ -31,7 +31,7 @@ export default function Cpn_edit() {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/product`)
+      .get(`http://103.170.120.155:5000/product`)
       .then((res) => res.data)
       .then((data) => {
         data.map((rs) => {

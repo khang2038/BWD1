@@ -586,7 +586,7 @@ export default function Cpn_homepage() {
           <h1 className="content__title">Welcome to PRO4</h1>
           <p className="tt_home">
             A place to call for crowdfunding promote potential and creativity
-            projects
+            project
           </p>
           <div className="btn">
             <button>
