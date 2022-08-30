@@ -11,7 +11,8 @@ import { useNavigate } from "react-router";
 import AppContext from "../AppContext";
 
 //import line chart
-import { Bar } from "react-chartjs-2";
+import Cpn_Chart from "../cpn_chart/cpn_chart";
+// import { Bar } from "react-chartjs-2";
 // import ComponentDidMount from "../scroll_top/win_scroll_top";
 
 //main_prj
@@ -27,7 +28,10 @@ function Ctn_main_prj({
         <div className="prj_video_img">
           <div className="main_prj_video">
             {" "}
-            <img style={{borderRadius : '40px'}} src={require(`../../public/img/imgproject/${img_big}`)} />{" "}
+            <img
+              style={{ borderRadius: "40px" }}
+              src={require(`../../public/img/imgproject/${img_big}`)}
+            />{" "}
           </div>
           {/* <div className="main_prj_img">
             <ul>
@@ -285,15 +289,14 @@ function Ctn_block_content(prj) {
                 <div>
                   <div className="img_story">
                     <img
-                      style={{borderRadius : '20px'}}
+                      style={{ borderRadius: "20px" }}
                       src={require(`../../public/img/imgproject/${str.image1}`)}
                     />
                   </div>
                   <h2>{str.title1}</h2>
                   <div className="img_story" style={{}}>
                     <img
-                      style={{borderRadius : '20px'}}
-
+                      style={{ borderRadius: "20px" }}
                       src={require(`../../public/img/imgproject/${str.image2}`)}
                     />
                   </div>
@@ -304,15 +307,13 @@ function Ctn_block_content(prj) {
                   <p>{str.content3}</p>
                   <div className="img_story" style={{}}>
                     <img
-                      style={{borderRadius : '20px'}}
-
+                      style={{ borderRadius: "20px" }}
                       src={require(`../../public/img/imgproject/${str.image3}`)}
                     />
                   </div>
                   <div className="img_story" style={{}}>
                     <img
-                      style={{borderRadius : '20px'}}
-
+                      style={{ borderRadius: "20px" }}
                       src={require(`../../public/img/imgproject/${str.image4}`)}
                     />
                   </div>
@@ -321,8 +322,7 @@ function Ctn_block_content(prj) {
                   <p>{str.content5}</p>
                   <div className="img_story" style={{}}>
                     <img
-                      style={{borderRadius : '20px'}}
-
+                      style={{ borderRadius: "20px" }}
                       src={require(`../../public/img/imgproject/${str.image5}`)}
                     />
                   </div>
@@ -392,37 +392,14 @@ function Ctn_block_content(prj) {
                 INTERACTIVE
               </h2>
               <div style={{ width: "100%" }}>
-                {/* <Line 
-                            data={{
-                              labels : [
-                                '17/06',
-                                '18/06',
-                                '19/06',
-                                '20/06',
-                                '21/06',
-                                '22/06',
-                                '23/06',
-                                '24/06',
-                                '25/06',
-                              ],
-                              datasets: [{
-                                label: 'Interaction of the day',
-                                backgroundColor: 'rgb(255, 99, 132)',
-                                borderColor: 'rgb(255, 99, 132)',
-                                data: [2, 9, 5, 2, 16, 24,20,25,26],
-                              }]
-
-                            }} 
-                            height= {400}
-                            width={600}
-                            /> */}
+                <Cpn_Chart data="dataInteractive" />
               </div>
               <h2 style={{ margin: "40px 0" }}>
                 <i className="fa-solid fa-sun" style={{ margin: "0 10px" }}></i>{" "}
                 CASH FLOW
               </h2>
               <div style={{ width: "100%" }}>
-                <canvas id="myChart_2"></canvas>
+                <Cpn_Chart data="dataCash" />
               </div>
             </div>
           </div>
@@ -522,7 +499,6 @@ export default function Cpn_create_project() {
       {/* <ComponentDidMount /> */}
       {print_main_project(data_cr_prj == null ? null : data_cr_prj[0])}
       {print_block_content(data_cr_prj == null ? null : data_cr_prj)}
-      
     </div>
   );
 }

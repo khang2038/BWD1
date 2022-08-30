@@ -3,13 +3,11 @@ import "./style_product.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import $, { data } from "jquery";
 import "animate.css";
-import { useEffect, useState ,useContext} from "react";
-import axios
- from "axios";
+import { useEffect, useState, useContext } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router";
 import AppContext from "../AppContext";
-
 
 import Cpn_left_nav from "./cpn_left_nav/cpn_left_nav";
 import ComponentDidMount from "../scroll_top/win_scroll_top";
@@ -17,69 +15,69 @@ import ComponentDidMount from "../scroll_top/win_scroll_top";
 const body = document.querySelector("body");
 
 function validURL(str) {
-  var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
-    '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
-    '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
-    '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
-    '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
-    '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+  var pattern = new RegExp(
+    "^(https?:\\/\\/)?" + // protocol
+      "((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|" + // domain name
+      "((\\d{1,3}\\.){3}\\d{1,3}))" + // OR ip (v4) address
+      "(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*" + // port and path
+      "(\\?[;&a-z\\d%_.~+=-]*)?" + // query string
+      "(\\#[-a-z\\d_]*)?$",
+    "i"
+  ); // fragment locator
   return !!pattern.test(str);
 }
 
 function check_link_data(temp) {
-  if (temp[0]=='d' && temp[1]=='a' && temp[2]=='t' && temp[3]=='a') {
+  if (temp[0] == "d" && temp[1] == "a" && temp[2] == "t" && temp[3] == "a") {
     return true;
   }
   return false;
 }
 
 function Ctn_product_get_data(get) {
-  function handle_heart(event ,class1) {
+  function handle_heart(event, class1) {
     var heart = document.querySelector(`.${class1} .heart`);
-    if (heart.classList.contains('fa-regular')) {
-        heart.classList.remove('fa-regular');
-        heart.classList.add('fa-solid');
-        Object.assign(heart.style , {
-            color : 'red',
-        })
-    }
-    else {
-        heart.classList.remove('fa-solid');
-        heart.classList.add('fa-regular');
-        Object.assign(heart.style , {
-            color : 'black',
-        })
+    if (heart.classList.contains("fa-regular")) {
+      heart.classList.remove("fa-regular");
+      heart.classList.add("fa-solid");
+      Object.assign(heart.style, {
+        color: "red",
+      });
+    } else {
+      heart.classList.remove("fa-solid");
+      heart.classList.add("fa-regular");
+      Object.assign(heart.style, {
+        color: "black",
+      });
     }
   }
 
-  const str=get.product.infor;
-  const strcut=str.substr(0,200)+"..."
-  const  [isShowreadmore,setisShowreadmore]=useState(false)
-  
+  const str = get.product.infor;
+  const strcut = str.substr(0, 200) + "...";
+  const [isShowreadmore, setisShowreadmore] = useState(false);
 
-  const toogle=()=>{
-    setisShowreadmore(prev => !prev);
-  }
+  const toogle = () => {
+    setisShowreadmore((prev) => !prev);
+  };
 
-  function click_cmt(event , class_temp) {
+  function click_cmt(event, class_temp) {
     var ctn_comment = document.querySelector(`.${class_temp} .ctn_comment`);
-    if (ctn_comment.classList.contains('open_cmt')) {
-      ctn_comment.classList.remove('open_cmt');
-    }
-    else {
-      ctn_comment.classList.add('open_cmt');
+    if (ctn_comment.classList.contains("open_cmt")) {
+      ctn_comment.classList.remove("open_cmt");
+    } else {
+      ctn_comment.classList.add("open_cmt");
     }
   }
 
   return (
     <div class={`Infor ${get.product.slug}`}>
       <div class="author">
-        {
-          validURL(get.product.img_author)==false && check_link_data(get.product.img_author)==false ? 
+        {validURL(get.product.img_author) == false &&
+        check_link_data(get.product.img_author) == false ? (
           <img src={require(`../../public/${get.product.img_author}`)} />
-          : 
-          <img src={get.product.img_author} alt=""/>
-        }
+        ) : (
+          <img src={get.product.img_author} alt="" />
+        )}
 
         <div class="infor_author">
           <span>{get.product.name_author}</span>
@@ -89,38 +87,53 @@ function Ctn_product_get_data(get) {
         </div>
       </div>
       <div class="info-des">
-        <p>{ isShowreadmore ? str   : strcut  }  <span onClick={toogle} >{isShowreadmore ? "" : "Read more"}</span> </p>
+        <p>
+          {isShowreadmore ? str : strcut}{" "}
+          <span onClick={toogle}>{isShowreadmore ? "" : "Read more"}</span>{" "}
+        </p>
         <div class="img-App">
-          {
-            validURL(get.product.img1)==false && check_link_data(get.product.img1)==false ? 
-            <img style={{borderRadius : '10px'}} src={require(`../../public/${get.product.img1}`)} />
-            :
-            <img style={{borderRadius : '10px'}} src={get.product.img1} alt=""/>
-          }
+          {validURL(get.product.img1) == false &&
+          check_link_data(get.product.img1) == false ? (
+            <img
+              style={{ borderRadius: "10px" }}
+              src={require(`../../public/${get.product.img1}`)}
+            />
+          ) : (
+            <img
+              style={{ borderRadius: "10px" }}
+              src={get.product.img1}
+              alt=""
+            />
+          )}
         </div>
       </div>
-      <hr style={{marginTop: '10px'}}/>
+      <hr style={{ marginTop: "10px" }} />
       <div class="decription">
         <div class="emotion">
-          <i class="heart fa-heart fa-regular" onClick={(event) => handle_heart(event, get.product.slug)}></i>
-          <i class="fa-regular fa-comment" onClick={(event) => click_cmt(event , get.product.slug)}></i>
+          <i
+            class="heart fa-heart fa-regular"
+            onClick={(event) => handle_heart(event, get.product.slug)}
+          ></i>
+          <i
+            class="fa-regular fa-comment"
+            onClick={(event) => click_cmt(event, get.product.slug)}
+          ></i>
           <i class="fa-solid fa-share-nodes"></i>
         </div>
         <div class="donate-investment">
-          {
-            get.product.slug=="" ?
+          {get.product.slug == "" ? (
             <div>
               <p class="donate">Access</p>
               <div className="page_product_not_data">
                 <hr />
               </div>
             </div>
-            :
+          ) : (
             <Link to={`../create_project/${get.product.slug}`}>
               <p class="donate">Access</p>
             </Link>
-          }
-          <Link to={'../Mess'} class="investment">
+          )}
+          <Link to={"../Mess"} class="investment">
             Investment
           </Link>
         </div>
@@ -141,21 +154,18 @@ function Ctn_product_get_data(get) {
   );
 }
 
-function print_Ctn_product_get_data(data_product,state_user) {
+function print_Ctn_product_get_data(data_product, state_user) {
   if (data_product !== null) {
-    data_product=data_product.reverse();
+    data_product = data_product.reverse();
     return (
       <div>
-        {
-          data_product.map(temp => (
-            <Ctn_product_get_data
-              key={temp._id}
-              product = {temp}
-              state_user = {state_user}
-            />
-          )
-          )
-        }
+        {data_product.map((temp) => (
+          <Ctn_product_get_data
+            key={temp._id}
+            product={temp}
+            state_user={state_user}
+          />
+        ))}
       </div>
     );
   }
@@ -164,18 +174,16 @@ function print_Ctn_product_get_data(data_product,state_user) {
 export default function Cpn_product() {
   const [data_product, setData_product] = useState(null);
   const navigate = useNavigate();
-  const {state_user} = useContext(AppContext); 
-
+  const { state_user } = useContext(AppContext);
 
   useEffect(() => {
     axios
       .get(`http://localhost:5000/product`)
       .then((res) => res.data)
       .then((data) => {
-        setData_product(data)
+        setData_product(data);
       });
   }, []);
-
 
   // function trans_profile_user(e) {
   //   e.preventDefault();
@@ -190,9 +198,7 @@ export default function Cpn_product() {
         <Cpn_left_nav />
 
         <div class="center_page">
-          {
-              print_Ctn_product_get_data(data_product , state_user)
-          }
+          {print_Ctn_product_get_data(data_product, state_user)}
           <div class="Infor AI">
             <div class="author">
               <img
@@ -415,11 +421,20 @@ export default function Cpn_product() {
           <ul class="investor_rankings">
             <p class="ranking"> Investor Rankings </p>
             <li class="Investor 1">
-              <div className="profile_tran_hoang" style={{boxShadow: '0 3px 0px 0px #9e9e9e91'}}>
-                <Link to={'../profile_user/tran_hoang'}>
-                  <i class="fa-solid fa-id-badge" style={{padding: '10px',fontSize : '30px'}}></i>
+              <div
+                className="profile_tran_hoang"
+                style={{ boxShadow: "0 3px 0px 0px #9e9e9e91" }}
+              >
+                <Link to={"../profile_user/tran_hoang"}>
+                  <i
+                    class="fa-solid fa-id-badge"
+                    style={{ padding: "10px", fontSize: "30px" }}
+                  ></i>
                 </Link>
-                <i class="fa-solid fa-message" style={{padding: '10px',fontSize : '30px'}}></i>
+                <i
+                  class="fa-solid fa-message"
+                  style={{ padding: "10px", fontSize: "30px" }}
+                ></i>
               </div>
               <img
                 src={require("../../public/content/277822595_675257793692053_156162619594281754_n.jpg")}
@@ -452,16 +467,25 @@ export default function Cpn_product() {
               </div>
             </li>
             <li class="Investor 2">
-              <div className="profile_hung" style={{boxShadow: '0 3px 0px 0px #9e9e9e91'}}>
-                <i class="fa-solid fa-id-badge" style={{padding: '10px',fontSize : '30px'}}></i>
-                <i class="fa-solid fa-message" style={{padding: '10px',fontSize : '30px'}}></i>
+              <div
+                className="profile_hung"
+                style={{ boxShadow: "0 3px 0px 0px #9e9e9e91" }}
+              >
+                <i
+                  class="fa-solid fa-id-badge"
+                  style={{ padding: "10px", fontSize: "30px" }}
+                ></i>
+                <i
+                  class="fa-solid fa-message"
+                  style={{ padding: "10px", fontSize: "30px" }}
+                ></i>
               </div>
 
               <img
                 src={require("../../public/content/shark-hung-la-ai.jpg")}
                 alt=""
               />
-              
+
               <div class="infor_Investor">
                 <span>Phạm Thanh Hưng</span>
                 <div class="star">
@@ -486,9 +510,18 @@ export default function Cpn_product() {
               </div>
             </li>
             <li class="Investor 3">
-              <div className="profile_elon_musk" style={{boxShadow: '0 3px 0px 0px #9e9e9e91'}}>
-                <i class="fa-solid fa-id-badge" style={{padding: '10px',fontSize : '30px'}}></i>
-                <i class="fa-solid fa-message" style={{padding: '10px',fontSize : '30px'}}></i>
+              <div
+                className="profile_elon_musk"
+                style={{ boxShadow: "0 3px 0px 0px #9e9e9e91" }}
+              >
+                <i
+                  class="fa-solid fa-id-badge"
+                  style={{ padding: "10px", fontSize: "30px" }}
+                ></i>
+                <i
+                  class="fa-solid fa-message"
+                  style={{ padding: "10px", fontSize: "30px" }}
+                ></i>
               </div>
               <img
                 src={require("../../public/content/ElonMusk-2017-stageshot-9046-1650013535.jpg")}

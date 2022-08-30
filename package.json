@@ -1,12 +1,13 @@
 {
   "dependencies": {
+    "chart.js": "^3.9.1",
     "mongoose-slug-generator": "^1.0.4",
-    "react-app-rewired": "^2.2.1"
+    "react-app-rewired": "^2.2.1",
+    "react-chartjs-2": "^4.3.1"
   },
   "name": "bwd1",
   "version": "1.0.0",
   "main": "datausercontroller.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
