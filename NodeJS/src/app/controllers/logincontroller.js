@@ -3,7 +3,7 @@ const user=require('../models/user');
 class logincontroller{
 
     index(req,res,next){
-        res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000');
+        res.setHeader('Access-Control-Allow-Origin', 'http://103.170.120.155:3000');
 
         res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
 

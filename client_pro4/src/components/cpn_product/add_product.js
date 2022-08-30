@@ -111,7 +111,7 @@ export default function Cpn_add_product() {
         }
         )
         .then(function() {
-          return sleep(2000)
+          return sleep(1000)
         })
         .then(function() {
           // ctn__loading__home.classList.remove("open__load");

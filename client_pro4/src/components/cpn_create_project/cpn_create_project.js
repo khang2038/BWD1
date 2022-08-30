@@ -27,9 +27,9 @@ function Ctn_main_prj({
         <div className="prj_video_img">
           <div className="main_prj_video">
             {" "}
-            <img src={require(`../../public/img/imgproject/${img_big}`)} />{" "}
+            <img style={{borderRadius : '40px'}} src={require(`../../public/img/imgproject/${img_big}`)} />{" "}
           </div>
-          <div className="main_prj_img">
+          {/* <div className="main_prj_img">
             <ul>
               <li>
                 <img src alt="" />
@@ -50,7 +50,7 @@ function Ctn_main_prj({
                 <img src alt="" />
               </li>
             </ul>
-          </div>
+          </div> */}
         </div>
 
         <div className="main_prj_content">
@@ -60,7 +60,7 @@ function Ctn_main_prj({
           <div className="ctn_statistic">
             <div className="ctn_pledged_backers">
               <div className="pledged">
-                $<span>0</span>
+                $<span>9800</span>
                 <div className="title">
                   pledged of {title_money_pledged} $ goal
                 </div>
@@ -75,7 +75,7 @@ function Ctn_main_prj({
             <div className="complete"></div>
           </div>
           <div className="percent_complete">
-            <span>0</span> % of {title_money_pledged} $
+            <span>9800</span> % of {title_money_pledged} $
           </div>
           <div className="form_donate">
             <button className="support_this">SUPPORT THIS</button>
@@ -285,12 +285,15 @@ function Ctn_block_content(prj) {
                 <div>
                   <div className="img_story">
                     <img
+                      style={{borderRadius : '20px'}}
                       src={require(`../../public/img/imgproject/${str.image1}`)}
                     />
                   </div>
                   <h2>{str.title1}</h2>
                   <div className="img_story" style={{}}>
                     <img
+                      style={{borderRadius : '20px'}}
+
                       src={require(`../../public/img/imgproject/${str.image2}`)}
                     />
                   </div>
@@ -301,11 +304,15 @@ function Ctn_block_content(prj) {
                   <p>{str.content3}</p>
                   <div className="img_story" style={{}}>
                     <img
+                      style={{borderRadius : '20px'}}
+
                       src={require(`../../public/img/imgproject/${str.image3}`)}
                     />
                   </div>
                   <div className="img_story" style={{}}>
                     <img
+                      style={{borderRadius : '20px'}}
+
                       src={require(`../../public/img/imgproject/${str.image4}`)}
                     />
                   </div>
@@ -314,6 +321,8 @@ function Ctn_block_content(prj) {
                   <p>{str.content5}</p>
                   <div className="img_story" style={{}}>
                     <img
+                      style={{borderRadius : '20px'}}
+
                       src={require(`../../public/img/imgproject/${str.image5}`)}
                     />
                   </div>

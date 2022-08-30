@@ -17,7 +17,7 @@ export default function Cpn_login() {
   const navigate = useNavigate();
 
   axios 
-    .get(`http://localhost:5000/login`)
+    .get(`http://103.170.120.155:5000/login`)
       .then((res) => res.data)
       .then((data) => {
         setCheckUser(data);

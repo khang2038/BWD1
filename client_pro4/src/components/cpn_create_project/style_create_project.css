@@ -20,6 +20,7 @@
 }
 
 .ctn_main_prj .main_prj_video {
+    margin : auto 0;
     width: 100%;
     height: 80%;
     background-size: 100%;

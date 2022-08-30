@@ -103,7 +103,7 @@ export default function Cpn_edit() {
         })
         .then(function() {
 
-          return sleep(2000)
+          return sleep(1000)
         })
         .then(function() {
           setLoading(false);
