@@ -15,6 +15,7 @@ const body = document.querySelector("body");
 export default function Cpn_header() {
   const {state_user} = useContext(AppContext); 
   const [loading , setLoading] = useState(false);
+  console.log(state_user);
 
   function handle_light_dark() {
     body.classList.toggle("dark");
