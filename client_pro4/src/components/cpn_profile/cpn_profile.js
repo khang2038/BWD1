@@ -12,8 +12,8 @@ import "swiper/css/virtual";
 import AppContext from "../AppContext";
 import { Link } from "react-router-dom";
 import ComponentDidMount from "../scroll_top/win_scroll_top";
-import Cpn_pf_statistic from "./cpn_statistic/cpn_pf_statistic"
-
+import Cpn_pf_statistic from "./cpn_statistic/cpn_pf_statistic";
+import { Pie_Chart } from "../cpn_chart/cpn_chart";
 function sleep(s) {
   return new Promise(function (resolve) {
     setTimeout(resolve, s);
@@ -141,34 +141,34 @@ export default function Cpn_profile() {
 
   //---------------statistic all prj of user
 
-//   const labels = ["GAME", "ART", "SOCIETY", "MUSIC", "SPORT", "OTHER"];
+  //   const labels = ["GAME", "ART", "SOCIETY", "MUSIC", "SPORT", "OTHER"];
 
-//   const data = {
-//     labels: labels,
-//     datasets: [
-//       {
-//         label: "My First dataset",
-//         backgroundColor: [
-//           "#FFFF99",
-//           "#99FFFF",
-//           "#FFF5EE",
-//           "#B0E2FF",
-//           "#C1FFC1",
-//           "#CDCDB4",
-//         ],
-//         borderColor: "rgb(255, 99, 132)",
-//         data: [1, 1, 2, 1, 2, 0],
-//       },
-//     ],
-//   };
+  //   const data = {
+  //     labels: labels,
+  //     datasets: [
+  //       {
+  //         label: "My First dataset",
+  //         backgroundColor: [
+  //           "#FFFF99",
+  //           "#99FFFF",
+  //           "#FFF5EE",
+  //           "#B0E2FF",
+  //           "#C1FFC1",
+  //           "#CDCDB4",
+  //         ],
+  //         borderColor: "rgb(255, 99, 132)",
+  //         data: [1, 1, 2, 1, 2, 0],
+  //       },
+  //     ],
+  //   };
 
-//   const config = {
-//     type: "pie",
-//     data: data,
-//     options: {},
-//   };
+  //   const config = {
+  //     type: "pie",
+  //     data: data,
+  //     options: {},
+  //   };
 
-//   const myChart = new Chart(document.getElementById("myChart"), config);
+  //   const myChart = new Chart(document.getElementById("myChart"), config);
 
   //minimize
 
@@ -622,7 +622,7 @@ export default function Cpn_profile() {
                   </h2>
                   <div class="temp">
                     <div class="detail_my_project_statistic">
-                      <canvas id="myChart" style={{ width: "50%" }}></canvas>
+                      <Pie_Chart data="dataProject" />
                     </div>
                     <div class="detail_statistic">
                       <h3 style={{ margin: "40px 0" }}>
