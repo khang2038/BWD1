@@ -2,7 +2,7 @@
 -sửa dòng the best working space
 * )sửa bot chat
 * )ds loading (nhớ fix các lỗi load dữ liệu trước khi render) 
--sửa button đề mục trang 3 (design)
+
 -hover vào trần hoàng ,phạm thanh hưng ,elonmusk -> demo -> trang profile của họ
 -có thể thêm hoặc xóa image,title,content
 -fix khung tìm kiếm ,trang cá nhân user (hỏi thằng thầy)

@@ -25,8 +25,8 @@
     --colorSecondary: #FFF3C9;
     --color-text : #333;
     --color-text-reverse : #fff;
-    --color-page-product : linear-gradient(90deg, #eeeeee, #f1fbff ,#fff, #f1fbff ,#ffffff);
-    --color-page-details : linear-gradient(90deg, #ffffff, #e5ffff ,#fff, #e5ffff ,#ffffff);
+    --color-page-product : linear-gradient(90deg, #eeeeee, #ebe2d0 ,#fff, #ebddc3 ,#ffffff);
+    --color-page-details : linear-gradient(90deg, #ffffff, #afe7e7 ,#fff, #afe7e7 ,#ffffff);
     --color-page-details-title : #56bbe7;
     --color-page-details-title-font : #fff;
     --background-primary-color: #84adc6;
