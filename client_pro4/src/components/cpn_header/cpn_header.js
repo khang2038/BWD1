@@ -15,6 +15,12 @@ const body = document.querySelector("body");
 export default function Cpn_header() {
   const {state_user} = useContext(AppContext); 
   const [loading , setLoading] = useState(false);
+  console.log(state_user);
+
+
+  function handle_sign_out() {
+    localStorage.removeItem("user");
+  }
 
   function handle_light_dark() {
     body.classList.toggle("dark");
@@ -74,7 +80,7 @@ export default function Cpn_header() {
                   <Link to="/add_project"> Add new project </Link>
                 </li>
                 <li>
-                  <a href="homepage"> Logout </a>
+                  <a href="homepage" onClick={handle_sign_out}> Logout </a>
                 </li>
               </div>
             </ul>

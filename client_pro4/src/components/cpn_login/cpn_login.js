@@ -58,6 +58,16 @@ export default function Cpn_login() {
       e.preventDefault();
       if (check_user(userInput.email, userInput.password) == true) {
         temp = get_user(userInput.email);
+
+        let data = {
+          email : temp.email,
+          password : temp.password,
+          img_author : temp.img_author,
+          name_author : temp.name_author,
+        }
+
+        localStorage.setItem('user', JSON.stringify(data));
+
         dispatch({ type: "CURRENT_USER", payload: { temp } });
         navigate("../homepage");
       } else {
@@ -111,7 +121,7 @@ export default function Cpn_login() {
               <button type="submit">Sign In</button>
               <p class="mention-sign-up">
                 Need a account?
-                <a class="sign-up" href="sign_up">
+                <a class="sign-up" href="sign_up" >
                   Sign up
                 </a>
               </p>

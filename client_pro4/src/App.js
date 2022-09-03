@@ -25,11 +25,23 @@ import My_post from './pages/My_post';
 import Add_project from './pages/Add_project';
 import Mess from './pages/Mess'
 
+function check_user_local() {
+  let temp = JSON.parse(localStorage.getItem("user"));
+
+  if (temp == null) {
+    return null;
+  }
+  
+  else {
+    return {temp};
+  }
+}
+
 function App_logged() {
-  const initialState = {user : null,posts : []}
-
+  const initialState = {user : check_user_local(),posts : []}
+  console.log(initialState);
   const [state_user, dispatch] = useReducer(AppReducer, initialState);
-
+  
   return (
     <AppContext.Provider value={{state_user, dispatch}}>
 
