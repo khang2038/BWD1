@@ -12,6 +12,10 @@ import AppContext from "../AppContext";
 
 //import line chart
 import Cpn_Chart from "../cpn_chart/cpn_chart";
+import Cpn_Payment from "./cpn_payment/cpn_payment";
+import Cpn_Support from "./cpn_support/cpn_support";
+import Cpn_Expire from "./Cpn_Expire/Cpn_Expire";
+
 // import { Bar } from "react-chartjs-2";
 // import ComponentDidMount from "../scroll_top/win_scroll_top";
 
@@ -22,6 +26,25 @@ function Ctn_main_prj({
   main_content,
   title_money_pledged,
 }) {
+  const [activeSupport, setActiveSport] = useState(false);
+  const [activePayment, setActivePayment] = useState(false);
+  const [messageSuccess, setMessageSuccess] = useState(false);
+  const funcToggle = {
+    handlerToggleSupport: () => {
+      setActiveSport(!activeSupport);
+    },
+    handlerTogglePayment: () => {
+      setActivePayment(!activePayment);
+    },
+    handlerSwitch: () => {
+      setActiveSport(!activeSupport);
+      setActivePayment(!activePayment);
+    },
+    handlerMessageSuccess: () => {
+      setMessageSuccess(!messageSuccess);
+      setActivePayment(!activePayment);
+    },
+  };
   return (
     <div className="ctn_main_prj">
       <div style={{ width: "90%" }}>
@@ -82,7 +105,12 @@ function Ctn_main_prj({
             <span>9800</span> % of {title_money_pledged} $
           </div>
           <div className="form_donate">
-            <button className="support_this">SUPPORT THIS</button>
+            <button
+              className="support_this"
+              onClick={() => setActiveSport(!activeSupport)}
+            >
+              SUPPORT THIS
+            </button>
             <button className="follow">FOLLOW</button>
             <div className="ctn_social">
               <i
@@ -101,6 +129,27 @@ function Ctn_main_prj({
           </div>
         </div>
       </div>
+      {activeSupport && (
+        <Cpn_Support
+          func={funcToggle}
+          img={require(`../../public/img/imgproject/${img_big}`)}
+        />
+      )}
+      {activePayment && <Cpn_Payment func={funcToggle} />}
+      {messageSuccess && (
+        <Cpn_Expire setMessageSuccess={setMessageSuccess} delay="2000">
+          <div class="card-success">
+            <div className="card-success-wrap">
+              <i class="checkmark">✓</i>
+            </div>
+            <h1>Success</h1>
+            <p>
+              We have received your payment request;
+              <br /> Thank you for using the service!
+            </p>
+          </div>
+        </Cpn_Expire>
+      )}
     </div>
   );
 }
