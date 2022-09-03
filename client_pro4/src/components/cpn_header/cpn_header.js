@@ -17,6 +17,11 @@ export default function Cpn_header() {
   const [loading , setLoading] = useState(false);
   console.log(state_user);
 
+
+  function handle_sign_out() {
+    localStorage.removeItem("user");
+  }
+
   function handle_light_dark() {
     body.classList.toggle("dark");
     var logo1 = document.querySelector(".mobile_nav .logo1");
@@ -75,7 +80,7 @@ export default function Cpn_header() {
                   <Link to="/add_project"> Add new project </Link>
                 </li>
                 <li>
-                  <a href="homepage"> Logout </a>
+                  <a href="homepage" onClick={handle_sign_out}> Logout </a>
                 </li>
               </div>
             </ul>

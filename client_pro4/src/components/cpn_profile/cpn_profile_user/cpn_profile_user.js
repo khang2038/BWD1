@@ -135,7 +135,7 @@ function sleep(s) {
 
     if (data_user == null) {
         axios
-          .get(`http://103.170.120.155:5000/login`)
+          .get(`http://localhost:5000/login`)
           .then((res) => res.data)
           .then((data) => {
             data.map((temp) => {
