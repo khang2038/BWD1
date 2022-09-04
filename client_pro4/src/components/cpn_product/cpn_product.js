@@ -11,9 +11,7 @@ import AppContext from "../AppContext";
 
 import Cpn_left_nav from "./cpn_left_nav/cpn_left_nav";
 import ComponentDidMount from "../scroll_top/win_scroll_top";
-
 const body = document.querySelector("body");
-
 function validURL(str) {
   var pattern = new RegExp(
     "^(https?:\\/\\/)?" + // protocol
@@ -35,20 +33,94 @@ function check_link_data(temp) {
 }
 
 function Ctn_product_get_data(get) {
+  const [tym, setTym] = useState(0);
+  const [comment, setComment] = useState([]);
+  const [statusTym, setStatusTym] = useState(false);
+  let dataInteractive = [];
+  // const interactive = [
+  //   {
+  //     id_product: "628e11a28a591f811058e87b",
+  //     tym: 10,
+  //     comment: [
+  //       {
+  //         img: "content/Ecommerce/author/download.png",
+  //         content: "Bai viet hay qua :))",
+  //       },
+  //     ],
+  //   },
+  // ];
+  // localStorage.setItem("interactive", JSON.stringify(interactive));
+  useEffect(() => {
+    const response = localStorage.getItem("interactive");
+    dataInteractive = JSON.parse(response) || [];
+    dataInteractive.map((item, key) => {
+      if (item.id_product == get.product._id) {
+        setTym(item.tym);
+        setComment(item.comment);
+        setStatusTym(item.tymActive);
+      }
+    });
+  }, []);
   function handle_heart(event, class1) {
     var heart = document.querySelector(`.${class1} .heart`);
-    if (heart.classList.contains("fa-regular")) {
-      heart.classList.remove("fa-regular");
-      heart.classList.add("fa-solid");
-      Object.assign(heart.style, {
-        color: "red",
+    // if (heart.classList.contains("fa-regular")) {
+    if (!statusTym) {
+      setStatusTym(true);
+      const newTym = tym + 1;
+      setTym(newTym);
+      // heart.classList.remove("fa-regular");
+      // heart.classList.add("fa-solid");
+      // Object.assign(heart.style, {
+      //   color: "red",
+      // });
+      let isData = false;
+      const response = localStorage.getItem("interactive");
+      dataInteractive = JSON.parse(response) || [];
+      dataInteractive.map((item, key) => {
+        if (item.id_product == get.product._id) {
+          isData = true;
+          dataInteractive[key].tym = newTym;
+          dataInteractive[key].tymActive = true;
+          window.localStorage.setItem(
+            "interactive",
+            JSON.stringify(dataInteractive)
+          );
+        }
       });
+      if (!isData) {
+        const interactive = [
+          ...dataInteractive,
+          {
+            id_product: get.product._id,
+            tym: newTym,
+            tymActive: true,
+            comment: [],
+          },
+        ];
+        window.localStorage.setItem("interactive", JSON.stringify(interactive));
+      }
     } else {
-      heart.classList.remove("fa-solid");
-      heart.classList.add("fa-regular");
-      Object.assign(heart.style, {
-        color: "black",
+      setStatusTym(false);
+      const newTym = tym - 1;
+      setTym(newTym);
+      const response = localStorage.getItem("interactive");
+      dataInteractive = JSON.parse(response) || [];
+      dataInteractive.map((item, key) => {
+        if (item.id_product == get.product._id) {
+          dataInteractive[key].tym = newTym;
+          dataInteractive[key].tymActive = false;
+          window.localStorage.setItem(
+            "interactive",
+            JSON.stringify(dataInteractive)
+          );
+        }
       });
+
+      // heart.classList.remove("fa-solid");
+      // heart.classList.add("fa-regular");
+      // Object.assign(heart.style, {
+      //   color: "black",
+      // });
     }
   }
 
@@ -69,6 +141,57 @@ function Ctn_product_get_data(get) {
     }
   }
 
+  const post_comment = (e) => {
+    e.preventDefault();
+    let isData = false;
+    let input = document.querySelector(`.${get.product.slug} #input_comment`);
+    let valueInput = input.value.trim();
+    if (valueInput) {
+      // get img author
+      const dataUser = JSON.parse(localStorage.getItem("user"));
+      const imgAuthor = dataUser.img_author;
+      console.log(imgAuthor);
+      const inputComment = {
+        img: imgAuthor,
+        content: valueInput,
+      };
+      const newComment = [inputComment, ...comment];
+      setComment(newComment);
+      input.value = "";
+
+      // save to localStorage
+      const response = localStorage.getItem("interactive");
+      dataInteractive = JSON.parse(response) || [];
+      dataInteractive.map((item, key) => {
+        if (item.id_product == get.product._id) {
+          isData = true;
+          dataInteractive[key].comment = newComment;
+          window.localStorage.setItem(
+            "interactive",
+            JSON.stringify(dataInteractive)
+          );
+        }
+      });
+      if (!isData) {
+        const interactive = [
+          ...dataInteractive,
+          {
+            id_product: get.product._id,
+            tym: tym,
+            comment: [
+              {
+                img: imgAuthor,
+                content: valueInput,
+              },
+            ],
+          },
+        ];
+        window.localStorage.setItem("interactive", JSON.stringify(interactive));
+      }
+    } else {
+      input.value = "";
+    }
+  };
   return (
     <div class={`Infor ${get.product.slug}`}>
       <div class="author">
@@ -88,7 +211,7 @@ function Ctn_product_get_data(get) {
       </div>
       <div class="info-des">
         <p>
-          {isShowreadmore ? str : strcut}{" "}
+          {isShowreadmore ? str : strcut}
           <span onClick={toogle}>{isShowreadmore ? "" : "Read more"}</span>{" "}
         </p>
         <div class="img-App">
@@ -110,14 +233,20 @@ function Ctn_product_get_data(get) {
       <hr style={{ marginTop: "10px" }} />
       <div class="decription">
         <div class="emotion">
+          {tym || 0}
           <i
-            class="heart fa-heart fa-regular"
+            // class="heart fa-heart fa-regular"
+            className={`heart fa-heart ${
+              statusTym ? "fa-solid active" : "fa-regular"
+            }`}
             onClick={(event) => handle_heart(event, get.product.slug)}
           ></i>
+          {comment.length}
           <i
             class="fa-regular fa-comment"
             onClick={(event) => click_cmt(event, get.product.slug)}
           ></i>
+          {Math.floor(Math.random() * 40) + 1}
           <i class="fa-solid fa-share-nodes"></i>
         </div>
         <div class="donate-investment">
@@ -138,16 +267,29 @@ function Ctn_product_get_data(get) {
           </Link>
         </div>
       </div>
-
-      <div class="ctn_comment" style={{ height: "100px" }}>
+      <div class="ctn_comment">
         <div class="bl__ctn_comment" style={{ width: "90%" }}>
           <img src={get.state_user.user.temp.img_author} class="avatar" />
-          <form action="">
-            <input type="text" placeholder="Write a comment ... " />
+          <form action="" onSubmit={post_comment}>
+            <input
+              type="text"
+              id="input_comment"
+              placeholder="Write a comment ... "
+            />
             <button>
               <i class="fa-solid fa-paper-plane"></i>
             </button>
           </form>
+        </div>
+        <div className="comment">
+          <ul className="list_comment" style={{ marginTop: "20px" }}>
+            {comment.map((item, index) => (
+              <li key={index} className="comment-item">
+                <img src={item.img} alt="" className="" />{" "}
+                <span>{item.content}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </div>
@@ -416,7 +558,6 @@ export default function Cpn_product() {
             </div>
           </div>
         </div>
-
         <div class="the_right_page">
           <ul class="investor_rankings">
             <p class="ranking"> Investor Rankings </p>
