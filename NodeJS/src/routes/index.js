@@ -82,7 +82,7 @@ function route(app){
                img_author:req.body.img_author,
            })
          tk.save()
-            .then(()=> res.redirect('login'))
+            .then(()=> res.redirect('http://localhost:3000/login'))
             .catch(error => {
 
             })  
