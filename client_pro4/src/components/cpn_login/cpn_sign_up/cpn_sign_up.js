@@ -34,7 +34,7 @@ export default function Cpn_sign_up() {
                 <div class="sign_up">
                     <div class="sign_up__form-container">
                     
-                        <form method="POST" class="sign_up__form" onSubmit={onSubmitHandle}>
+                        <form method="POST" class="sign_up__form" action="http://localhost:5000/signup">
                             <p class="sign_up__title" style={{marginLeft: '3rem'}}>
                                 Sign Up 
                             </p>
