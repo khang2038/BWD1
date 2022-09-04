@@ -199,6 +199,10 @@
 }
 
 @media only screen and (max-width: 665px) {
+  .page_details{
+    margin-top: 80px;
+  }
+
   .navduoi {
     margin-top: 8%;
     margin-left: 15%;

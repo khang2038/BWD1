@@ -1,7 +1,6 @@
 * ) thêm background màu linear (trang product)
 -sửa dòng the best working space
-* )sửa bot chat
-* )ds loading (nhớ fix các lỗi load dữ liệu trước khi render) 
+
 
 -hover vào trần hoàng ,phạm thanh hưng ,elonmusk -> demo -> trang profile của họ
 -có thể thêm hoặc xóa image,title,content
@@ -29,6 +28,8 @@ ok : socket
 ok : voice chat
 
 giang:
+ok : sửa bot chat
+ok : ds loading (nhớ fix các lỗi load dữ liệu trước khi render) 
 ok : scrollTOp khi chuyển trang
 ok : built toàn bộ web qua react (còn thiếu thống kê)
 ok : preview story (cả 3 phần) truoc khi đăng
