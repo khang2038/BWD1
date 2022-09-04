@@ -2,10 +2,10 @@ import React from "react";
 import { Container } from "@material-ui/core";
 import "animate.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import "./style_messenger.css";
+import "./style_bot_chat.css";
 import $ from "jquery";
 
-export default function Cpn_messenger() {
+export default function Cpn_bot_chat() {
   // boxchat
   var body = document.querySelector("body");
   var coll = document.getElementsByClassName("collapsible");
@@ -98,7 +98,7 @@ export default function Cpn_messenger() {
 
   // tin nhan mac dinh dau tien
   function createMarkup(firstMessage) {
-    return {__html: '<p className="botText"><span>' + firstMessage + "</span></p>"};
+    return {__html: '<p className="botText"><span style="color: black">' + firstMessage + "</span></p>"};
   }  
 
   function firstBotMessage() {
@@ -115,7 +115,7 @@ export default function Cpn_messenger() {
  // add tin nhan
 function getHardResponse(userText) {
     let botResponse = getBotResponse(userText);
-    let botHtml = '<p className="botText"><span>' + botResponse + '</span></p>';
+    let botHtml = '<p className="botText" style="color : #000;font-family: Helvetica;font-weight: normal;font-size: 16px;text-align: left;"><span style="line-height: 1.5em;display: inline-block;background: #e0e0e0;padding: 10px;border-radius: 8px;border-bottom-left-radius: 2px;max-width: 80%;margin-left: 10px;animation: floatup .5s forwards">' + botResponse + '</span></p>';
     $("#chatbox").append(botHtml);
 
     document.getElementById("chat-bar-bottom").scrollIntoView(true);
@@ -130,7 +130,7 @@ function getResponse() {
         userText = "I love Code Palace!";
     }
 
-    let userHtml = '<p className="userText"><span>' + userText + '</span></p>';
+    let userHtml = '<p className="userText" style="color: white;font-family: Helvetica;font-size: 16px;font-weight: normal;text-align: right;clear: both;"><span style="line-height: 1.5em;display: inline-block;background: #5ca6fa;padding: 10px;border-radius: 8px;border-bottom-right-radius: 2px;max-width: 80%;margin-right: 10px;animation: floatup .5s forwards">' + userText + '</span></p>';
 
     // tra ve focus ban dau
     $("#textInput").val("");

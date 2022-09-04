@@ -8,7 +8,7 @@ import potential_main from "~/public/img/imgdetail/pp1.png";
 import art_main from "~/public/img/imgdetail/art1.jpg";
 import game_main from "~/public/img/imgdetail/game1.jpg";
 import Ctn_footer from "../cpn_footer/cpn_footer.js";
-import Cpn_messenger from "../cpn_messenger/cpn_messenger";
+import Cpn_bot_chat from "../cpn_bot_chat/cpn_bot_chat";
 import Cpn_gototop from "../cpn_gototop/cpn_gototop";
 import ComponentDidMount from "../scroll_top/win_scroll_top";
 
@@ -423,7 +423,7 @@ export default function Cpn_details() {
         <Cpn_potential_project />
         <Cpn_art_project />
         <Cpn_game_project />
-        <Cpn_messenger />
+        <Cpn_bot_chat />
         <Cpn_gototop />
         <Ctn_footer />
       </div>

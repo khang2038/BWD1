@@ -18,7 +18,6 @@ import project5 from "~/public/img/imghome/project5.avif";
 import project6 from "~/public/img/imghome/project6.avif";
 // import "../../public/js/homepage.js";
 import Cpn_gototop from "../cpn_gototop/cpn_gototop";
-import Cpn_messenger from "../cpn_messenger/cpn_messenger";
 import { Cpn_loading } from "../cpn_loading/cpn_loading";
 import ComponentDidMount from "../scroll_top/win_scroll_top";
 
