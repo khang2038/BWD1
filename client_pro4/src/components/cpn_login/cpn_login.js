@@ -64,6 +64,7 @@ export default function Cpn_login() {
           password : temp.password,
           img_author : temp.img_author,
           name_author : temp.name_author,
+          _id : temp._id,
         }
 
         localStorage.setItem('user', JSON.stringify(data));

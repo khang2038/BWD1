@@ -393,58 +393,6 @@
 
 /*copy phần solution*/
 
-/*---------------footer-------------------*/
-
-.ctn__footer {
-    width: 100%;
-    height:500px;
-    background-color: #333;
-    list-style:none;
-}
-
-.ctn__footer__content {
-    width: 90%;
-    /* height: 100%; */
-    padding: 40px 0 15px;
-    margin: 0 auto;
-}
-
-.ctn__footer .footer__title {
-    color: #f4efeb;
-    font-size: 25px;
-    font-weight: 700;
-    text-align: center;
-    display: flex;
-    justify-content: flex-end;
-} 
-/*---------------------------------------------*/
-.ctn__footer .footer__title_text {
-    width: 60%;
-}
-
-.ctn__footer .footer__icon {
-    width:20%;
-}
-
-/*----------------------------------------------*/
-.footer__sign_up{
-    margin:35px 0 0;
-    display: flex;
-    justify-content: center;
-}
-.ctn__footer .sign_up__title {
-    color: #fff;
-    background-color: #a60505;
-    font-size: 18px;
-    padding: 10px 35px;
-    width: 136px;
-    border-radius: 10px;
-    font-size: 17px;
-}
-
-.ctn__footer .sign_up__title:hover {
-    cursor: pointer;
-}
 
 /*------------------sign_up_title-----------------*/
 .model{

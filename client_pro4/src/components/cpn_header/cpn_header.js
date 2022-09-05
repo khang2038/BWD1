@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "./style_header.css";
+import "./header_responsive/header_responsive.css";
 import AppContext from "../AppContext";
 import { Cpn_loading } from "../cpn_loading/cpn_loading";
 import notification from "./notification.png";

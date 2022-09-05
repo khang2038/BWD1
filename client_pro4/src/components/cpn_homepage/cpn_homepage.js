@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import "./style_homepage.css";
+import "./home_style_responsive/home_style_responsive.css";
 import "../style_pro4.css";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import $ from "jquery";
@@ -597,7 +598,7 @@ export default function Cpn_homepage() {
         <div className="ctn__image">
           <div className="ms_home_1">
             <div>
-              <div style={{ margin: "10px 20px" }} className="">
+              <div style={{ margin: "10px 20px" }} className="ms_home_1_image">
                 <img
                   style={{ width: "100%", height: "50px" }}
                   src={require("../../public/img/imghome/img_home_ms/crown.png")}
@@ -607,6 +608,7 @@ export default function Cpn_homepage() {
             </div>
 
             <div
+              className="ms_home_1_hr"
               style={{ display: "flex", alignItems: "center", width: "2px" }}
             >
               <div
@@ -634,7 +636,7 @@ export default function Cpn_homepage() {
           <img src={pro4} alt="" />
           <div className="ms_home_2">
             <div>
-              <div style={{ margin: "10px 20px 10px 0" }} className="">
+              <div style={{ margin: "10px 20px 10px 0" }} className="ms_home_2_image">
                 <img
                   style={{ width: "40px", height: "40px" }}
                   src={require("../../public/img/imghome/img_home_ms/thumbup.png")}
@@ -726,10 +728,10 @@ export default function Cpn_homepage() {
       <div className="reason_use">
         <div className="reason_title">
           <h1>Why should you use PRO4?</h1>
-          <pre>
+          <p>
             Friendly, easy to use, proactive environment for both startups and
             investors,Easily exchange and cooperate
-          </pre>
+          </p>
         </div>
         {/* {{!-- reason_title-mobile --}} */}
         <div className="reason_title-mobile">

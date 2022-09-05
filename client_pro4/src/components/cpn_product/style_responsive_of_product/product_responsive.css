@@ -1,6 +1,6 @@
 
 /*big tablet to 1200px: */
-@media only screen and (max-width:1200px){
+@media only screen and (max-width: 1200px){
     html{
         font-size:16px;
     }
@@ -303,13 +303,13 @@
 @media only screen and (max-width:600px){
      
      .center_page{
-             width: 100%;
-             margin-top: 23%;
-             margin-left: 0;
-         }
+        width: 100%;
+        margin-top: 23%;
+        margin-left: 0;
+      }
       .navduoi{
-        margin-top: 10%;
-        margin-right: 3%;
+        margin-top: 12%;
+        margin-right: 20%;
       }
 }
 /*small phone fromm 0 to 480px */

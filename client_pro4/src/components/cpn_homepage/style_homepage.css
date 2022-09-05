@@ -303,7 +303,8 @@
 }
 /*-----------------reason_title-----------------------*/
 .reason_use .reason_title {
-  padding: 100px 3%;
+  z-index: 1;
+  padding: 100px 0;
   margin: 0 10%;
   text-align: center;
 }
@@ -323,7 +324,7 @@
 }
 
 .reason_use .reason_title p {
-  margin: 0 20%;
+  margin: 0;
   text-align: left;
   font-size: 22px;
 }
@@ -431,7 +432,7 @@
 
 .card_project .form_card_project div {
   overflow: hidden;
-  height: 200px;
+  /* height: 200px; */
 }
 
 .card_project .form_card_project img {
