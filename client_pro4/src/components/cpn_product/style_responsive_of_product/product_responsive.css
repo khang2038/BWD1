@@ -142,33 +142,25 @@
         html{
             width:100%;
         }
-        header{
-            width: 100%;
-            height: 110px;
-            justify-content:center;
-        }
-        .nav_pc{
+       
+        /* .nav_pc{
             display: none;
-        }
-        .mobile_nav{
-            display:block;
-            width: 100%;
-        }
-        .navduoi .the_center_nav{
-            margin-left:20%;
-        }
+        } */
+        
+
+        /* .navduoi {
+          margin-top: 3%;
+          margin-right: 22%;
+        } */
+
+        
         .nav_bars-btn{
-           margin-right: 10%;
+          display: flex;
+          align-items: center;
+          margin-right: 10%;
         }
-        .navduoi{
-            margin-top: 5%;
-        }
-        .logo_header{
-            position:absolute;
-            height: 50%;
-            left:30px;
-            top:10px
-        }
+        
+        
         .search{
           position:absolute;  
           right:10px;
@@ -291,17 +283,27 @@
       }
 }
 @media only screen and (max-width:710px){
-     .center_page{
+      .center_page{
              width: 100%;
              margin-top: 19%;
              margin-left: 0;
-         }
+      }
+
       .navduoi{
-        margin-top: 7%;
+        margin-top: 9%;
+        margin-right: 20%;
       }
 }
-@media only screen and (max-width:600px){
-     
+
+@media only screen and (max-width: 630px){
+  .navduoi{
+    margin-top: 10%;
+    margin-right: 20%;
+
+  }
+}
+
+@media only screen and (max-width: 544px){
      .center_page{
         width: 100%;
         margin-top: 23%;
