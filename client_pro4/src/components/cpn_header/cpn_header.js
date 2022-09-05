@@ -6,10 +6,10 @@ import AppContext from "../AppContext";
 import { Cpn_loading } from "../cpn_loading/cpn_loading";
 
 function sleep(s) {
-    return new Promise(function (resolve) {
-      setTimeout(resolve, s);
-    });
-  }
+  return new Promise(function (resolve) {
+    setTimeout(resolve, s);
+  });
+}
 
 const body = document.querySelector("body");
 
