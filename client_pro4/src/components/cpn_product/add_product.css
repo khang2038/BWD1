@@ -16,8 +16,9 @@
 }
 .author img{
     width:60px;
-    height:60px;
+    height: 60px;
     border-radius:50%;
+    object-fit: cover;
 }
 .author{
     margin-left: 8px;
@@ -96,6 +97,25 @@
 }
 form button:hover{
     filter:brightness(130%);
+}
+.image-preview{
+   margin-top: 5%;
+   position: relative;
+}
+.image-preview img{
+    object-fit: cover;
+    width: 500px;
+}
+.image-preview i,
+.remove-img-spinner{
+    position: absolute;
+    top:-12px;
+    left:-12px;
+    font-size: 20px;
+    cursor: pointer;
+}
+.image-preview i:hover{
+    color: orange;
 }
 
 
