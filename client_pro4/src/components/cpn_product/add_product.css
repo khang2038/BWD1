@@ -2,8 +2,8 @@
 .body_create_prj form{
     margin-top: 2%;
     width: 100%;
-     display : flex;
-     justify-content: center;
+    display : flex;
+    justify-content: center;
 }
 
 .infor{
