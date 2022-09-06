@@ -1,24 +1,58 @@
-import React, { useState ,useContext} from "react";
+import React, { useState, useContext, useEffect } from "react";
+import axios from "axios";
 import { Link } from "react-router-dom";
 import "./style_header.css";
 import "./header_responsive/header_responsive.css";
 import AppContext from "../AppContext";
 import { Cpn_loading } from "../cpn_loading/cpn_loading";
-
+import notification from "./notification.png";
 function sleep(s) {
-    return new Promise(function (resolve) {
-      setTimeout(resolve, s);
-    });
-  }
+  return new Promise(function (resolve) {
+    setTimeout(resolve, s);
+  });
+}
 
 const body = document.querySelector("body");
 
 export default function Cpn_header() {
-  const {state_user} = useContext(AppContext); 
-  const [loading , setLoading] = useState(false);
-  console.log(state_user);
+  const { state_user } = useContext(AppContext);
+  const [loading, setLoading] = useState(false);
+  const [dataUser, setDataUser] = useState([]);
+  const [dataRenderUser, setDataRenderUser] = useState([]);
 
-
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/login`)
+      .then((res) => res.data)
+      .then((data) => {
+        setDataUser(data);
+        setDataRenderUser(data);
+      });
+  }, []);
+  const handleSearch = (value) => {
+    value = value.toLowerCase();
+    let newData = [];
+    let isFilter = false;
+    dataUser.forEach((item) => {
+      if (item.name_author.toLowerCase().includes(value)) {
+        isFilter = true;
+        newData.push(item);
+        console.log(newData);
+        setDataRenderUser(newData);
+      }
+    });
+    if (!isFilter) {
+      setDataRenderUser([]);
+      const foundSearch = document.querySelector(".search_not_found");
+      foundSearch.style.display = "flex";
+    } else {
+      const foundSearch = document.querySelector(".search_not_found");
+      foundSearch.style.display = "none";
+    }
+  };
+  const handleGetValueInput = (e) => {
+    handleSearch(e.target.value.trim());
+  };
   function handle_sign_out() {
     localStorage.removeItem("user");
   }
@@ -48,45 +82,50 @@ export default function Cpn_header() {
   }
 
   function check_user_null(user) {
-    if (user==null) {
+    if (user == null) {
       return (
         <div class="the_right_nav">
-            <div class="login_nav">
-                <i class="fa-solid fa-right-to-bracket icon"></i>
-                <a href="Login" style={{textDecoration: 'none'}}>Login</a>
-            </div> 
-        </div> 
-      )
-    }
-    else {
+          <div class="login_nav">
+            <i class="fa-solid fa-right-to-bracket icon"></i>
+            <a href="Login" style={{ textDecoration: "none" }}>
+              Login
+            </a>
+          </div>
+        </div>
+      );
+    } else {
       return (
         <div className="the_right_nav" onClick={handle_user}>
-            <img id="img_login" src={user.temp.img_author} alt="" />
-            <p>
-              {user.temp.name_author}
-              <i style={{marginLeft : '10px'}} className="fa-solid fa-sort-down icon"></i>
-            </p>
-            <ul className="user-drop">
-              <i className="fa-solid fa-xmark project_close ">
-                {" "}
-              </i>
-              <div className="menu_drop">
-                <li>
-                  <Link to="/profile"> Profile </Link>
-                </li>
-                <li>
-                  <Link to="/wallet"> Wallet </Link>
-                </li>
-                <li>
-                  <Link to="/add_project"> Add new project </Link>
-                </li>
-                <li>
-                  <a href="homepage" onClick={handle_sign_out}> Logout </a>
-                </li>
-              </div>
-            </ul>
+          <img id="img_login" src={user.temp.img_author} alt="" />
+          <p>
+            {user.temp.name_author}
+            <i
+              style={{ marginLeft: "10px" }}
+              className="fa-solid fa-sort-down icon"
+            ></i>
+          </p>
+          <ul className="user-drop">
+            <i className="fa-solid fa-xmark project_close "> </i>
+            <div className="menu_drop">
+              <li>
+                <Link to="/profile"> Profile </Link>
+              </li>
+              <li>
+                <Link to="/wallet"> Wallet </Link>
+              </li>
+              <li>
+                <Link to="/add_project"> Add new project </Link>
+              </li>
+              <li>
+                <a href="homepage" onClick={handle_sign_out}>
+                  {" "}
+                  Logout{" "}
+                </a>
+              </li>
+            </div>
+          </ul>
         </div>
-      )
+      );
     }
   }
 
@@ -94,14 +133,12 @@ export default function Cpn_header() {
   /*-----coi lại promise-------*/
   function handle_user() {
     var update1 = document.querySelector(`.user-drop`);
-    
-    if (update1.classList.contains('open1')){
-        update1.classList.remove('open1');
-    } 
-    else {
-        update1.classList.add('open1');
+
+    if (update1.classList.contains("open1")) {
+      update1.classList.remove("open1");
+    } else {
+      update1.classList.add("open1");
     }
-    
   }
 
   function onclick__home() {
@@ -150,18 +187,49 @@ export default function Cpn_header() {
   }
 
   return (
-    <div style={{position : 'absolute', zIndex : '3'}}>
-      {loading ? <Cpn_loading/> : null} 
+    <div style={{ position: "absolute", zIndex: "3" }}>
+      {loading ? <Cpn_loading /> : null}
       <header>
         <div className="nav_pc">
           <div className="the_left_nav">
-          <div class="logo_header">
-              <img class="logo1" src={require('../../public/img/img_logo/logo.jpg')} alt=""/>
-              <img class="logo2" src={require('../../public/img/img_logo/logo2.jpg')} alt="" style={{display: 'none'}}/>
-          </div>
+            <div class="logo_header">
+              <img
+                class="logo1"
+                src={require("../../public/img/img_logo/logo.jpg")}
+                alt=""
+              />
+              <img
+                class="logo2"
+                src={require("../../public/img/img_logo/logo2.jpg")}
+                alt=""
+                style={{ display: "none" }}
+              />
+            </div>
             <div className="search">
               <i className="fa-solid fa-magnifying-glass icon"></i>
-              <input type="text" placeholder="Search..." />
+              <input
+                className="search_input"
+                type="text"
+                placeholder="Search..."
+                onChange={handleGetValueInput}
+              />
+              <ul className="search_list">
+                <div className="search_title">
+                  <h4>Recent Search</h4>
+                  <span>Edit</span>
+                </div>
+                <div className="search_not_found">
+                  <img src={notification} alt="" />
+                  No, results
+                </div>
+                {dataRenderUser.map((item, index) => (
+                  <li key={index} className="search_item">
+                    <img src={item.img_author} alt="" />
+                    <span>{item.name_author}</span>
+                    <i class="fa-solid fa-xmark"></i>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
           <div className="the_center_nav">
@@ -171,53 +239,54 @@ export default function Cpn_header() {
               to="/homepage"
               onClick={onclick__home}
             ></Link>
-            {
-              state_user.user != null 
-              ?
+            {state_user.user != null ? (
               <Link
                 id="product"
                 className="fa-solid fa-earth-americas icon 2"
                 to="/product"
                 onClick={onclick__product}
               ></Link>
-              :
+            ) : (
               <Link
                 id="product"
                 className="fa-solid fa-earth-americas icon 2"
                 to="/login"
                 // onClick={onclick__product}
               ></Link>
-            }
-            {
-              state_user.user != null 
-              ?
+            )}
+            {state_user.user != null ? (
               <Link
                 id="projects"
                 className="fa-solid fa-circle-dollar-to-slot icon 3"
                 to="/details"
                 onClick={onclick__projects}
               ></Link>
-              : 
-              <Link 
+            ) : (
+              <Link
                 id="projects"
                 className="fa-solid fa-circle-dollar-to-slot icon 3"
                 to="/login"
                 // onClick={onclick__projects}
               />
-            }
+            )}
           </div>
 
-          {
-            check_user_null(state_user.user)
-          }
-
-
+          {check_user_null(state_user.user)}
         </div>
         <div className="mobile_nav">
           <div className="navtren">
             <div class="logo_header">
-                <img class="logo1" src={require('../../public/img/img_logo/logo.jpg')} alt=""/>
-                <img class="logo2" src={require('../../public/img/img_logo/logo2.jpg')} alt="" style={{display: 'none'}}/>
+              <img
+                class="logo1"
+                src={require("../../public/img/img_logo/logo.jpg")}
+                alt=""
+              />
+              <img
+                class="logo2"
+                src={require("../../public/img/img_logo/logo2.jpg")}
+                alt=""
+                style={{ display: "none" }}
+              />
             </div>
             <div className="search">
               <i className="fa-solid fa-magnifying-glass icon tk"></i>
@@ -225,9 +294,18 @@ export default function Cpn_header() {
           </div>
           <div className="navduoi">
             <div className="the_center_nav">
-              <Link to={'homepage'} id="homepage_mobile" className="fa-solid fa-house icon 1"></Link>
-              <Link to={'product'} id="product_mobile" className="fa-brands fa-atlassian icon 2"></Link>
-              <Link to={'details'}
+              <Link
+                to={"homepage"}
+                id="homepage_mobile"
+                className="fa-solid fa-house icon 1"
+              ></Link>
+              <Link
+                to={"product"}
+                id="product_mobile"
+                className="fa-brands fa-atlassian icon 2"
+              ></Link>
+              <Link
+                to={"details"}
                 id="projects_mobile"
                 className="fa-solid fa-earth-americas icon 3"
               ></Link>
