@@ -11,6 +11,9 @@ import AppContext from "../AppContext";
 
 import Cpn_left_nav from "./cpn_left_nav/cpn_left_nav";
 import ComponentDidMount from "../scroll_top/win_scroll_top";
+
+import Cpn_modal_profile from "./modal_profile/cpn_modal_profile";
+
 const body = document.querySelector("body");
 function validURL(str) {
   var pattern = new RegExp(
@@ -327,6 +330,15 @@ export default function Cpn_product() {
       });
   }, []);
 
+
+  function profile_hoang() {
+    let cpn_modal_profile = document.querySelector(".cpn_modal_profile");
+    Object.assign(cpn_modal_profile.style ,{
+      display : "flex",
+    })
+  }
+
+
   // function trans_profile_user(e) {
   //   e.preventDefault();
   //   console.log(123);
@@ -562,23 +574,27 @@ export default function Cpn_product() {
           <ul class="investor_rankings">
             <p class="ranking"> Investor Rankings </p>
             <li class="Investor 1">
+              <Cpn_modal_profile avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTKVIm_is2xDLHgYn50kQsU3CwN2ciLIsbXQ&usqp=CAU" name="Trần Hoàng" />
               <div
                 className="profile_tran_hoang"
                 style={{ boxShadow: "0 3px 0px 0px #9e9e9e91" }}
               >
-                <Link to={"../profile_user/tran_hoang"}>
+                <div onClick={profile_hoang}>
+                  
                   <i
                     class="fa-solid fa-id-badge"
                     style={{ padding: "10px", fontSize: "30px" }}
                   ></i>
-                </Link>
+
+
+                </div>
                 <i
                   class="fa-solid fa-message"
                   style={{ padding: "10px", fontSize: "30px" }}
                 ></i>
               </div>
               <img
-                src={require("../../public/content/277822595_675257793692053_156162619594281754_n.jpg")}
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTKVIm_is2xDLHgYn50kQsU3CwN2ciLIsbXQ&usqp=CAU"
                 alt=""
               />
               <div class="infor_Investor">
