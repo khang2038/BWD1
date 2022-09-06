@@ -330,14 +330,18 @@ export default function Cpn_product() {
       });
   }, []);
 
-
   function profile_hoang() {
-    let cpn_modal_profile = document.querySelector(".cpn_modal_profile");
-    Object.assign(cpn_modal_profile.style ,{
-      display : "flex",
-    })
+    let cpn_modal_profile = document.querySelector(".cpn_modal_profile.hoang");
+    Object.assign(cpn_modal_profile.style, {
+      display: "flex",
+    });
   }
-
+  function profile_hung() {
+    let cpn_modal_profile = document.querySelector(".cpn_modal_profile.hung");
+    Object.assign(cpn_modal_profile.style, {
+      display: "flex",
+    });
+  }
 
   // function trans_profile_user(e) {
   //   e.preventDefault();
@@ -574,19 +578,23 @@ export default function Cpn_product() {
           <ul class="investor_rankings">
             <p class="ranking"> Investor Rankings </p>
             <li class="Investor 1">
-              <Cpn_modal_profile avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTKVIm_is2xDLHgYn50kQsU3CwN2ciLIsbXQ&usqp=CAU" name="Trần Hoàng" />
+              <Cpn_modal_profile
+                avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTKVIm_is2xDLHgYn50kQsU3CwN2ciLIsbXQ&usqp=CAU"
+                name="Trần Hoàng"
+                className="hoang"
+                img1="https://ksr-ugc.imgix.net/assets/038/505/949/e72affd4146df8170d19f52e13200900_original.jpg?ixlib=rb-4.0.2&crop=faces&w=352&h=198&fit=crop&v=1662478083&auto=format&frame=1&q=92&s=a2973d4ad9143e6a15a75415db345fd5"
+                img2="https://ksr-ugc.imgix.net/assets/038/236/299/ccb0487e6cfb1621f85e0576030081d1_original.png?ixlib=rb-4.0.2&crop=faces&w=352&h=198&fit=crop&v=1660153901&auto=format&frame=1&q=92&s=6d80a2f06d0adb1ab2ec0493ffca53da"
+                img3="https://ksr-ugc.imgix.net/assets/038/294/590/09ad09509b996f0785c0ef53afc4db76_original.jpg?ixlib=rb-4.0.2&crop=faces&w=352&h=198&fit=crop&v=1660660067&auto=format&frame=1&q=92&s=b8a636b8ccdc2dba78858e8894433a9b"
+              />
               <div
                 className="profile_tran_hoang"
                 style={{ boxShadow: "0 3px 0px 0px #9e9e9e91" }}
               >
                 <div onClick={profile_hoang}>
-                  
                   <i
                     class="fa-solid fa-id-badge"
                     style={{ padding: "10px", fontSize: "30px" }}
                   ></i>
-
-
                 </div>
                 <i
                   class="fa-solid fa-message"
@@ -624,14 +632,24 @@ export default function Cpn_product() {
               </div>
             </li>
             <li class="Investor 2">
+              <Cpn_modal_profile
+                avatar="https://scr.vn/wp-content/uploads/2020/08/H%C3%ACnh-avt-Anime.jpg"
+                name="Tịnh"
+                className="hung"
+                img1="https://ksr-ugc.imgix.net/assets/038/433/438/08ca844bf63e228d56ea6922f4076c1a_original.jpg?ixlib=rb-4.0.2&crop=faces&w=352&h=198&fit=crop&v=1661865956&auto=format&frame=1&q=92&s=27966c84fc27bb395e0e35b10462368f"
+                img2="https://ksr-ugc.imgix.net/assets/037/931/016/8e3f471e0bb2e072869f8a8bfeae0bc3_original.jpg?ixlib=rb-4.0.2&crop=faces&w=352&h=198&fit=crop&v=1657627738&auto=format&frame=1&q=92&s=acec5278729ed9e09addca931f1a97da"
+                img3="https://ksr-ugc.imgix.net/assets/038/409/741/5d01ae313806be5a14505ea5e0661695_original.jpg?ixlib=rb-4.0.2&crop=faces&w=352&h=198&fit=crop&v=1661640408&auto=format&frame=1&q=92&s=0ef08b81062e7ca0fc71bf02a8906f3c"
+              />
               <div
                 className="profile_hung"
                 style={{ boxShadow: "0 3px 0px 0px #9e9e9e91" }}
               >
-                <i
-                  class="fa-solid fa-id-badge"
-                  style={{ padding: "10px", fontSize: "30px" }}
-                ></i>
+                <div onClick={profile_hung}>
+                  <i
+                    class="fa-solid fa-id-badge"
+                    style={{ padding: "10px", fontSize: "30px" }}
+                  ></i>
+                </div>
                 <i
                   class="fa-solid fa-message"
                   style={{ padding: "10px", fontSize: "30px" }}
@@ -639,18 +657,22 @@ export default function Cpn_product() {
               </div>
 
               <img
-                src={require("../../public/content/shark-hung-la-ai.jpg")}
+                src="https://scr.vn/wp-content/uploads/2020/08/H%C3%ACnh-avt-Anime.jpg"
                 alt=""
               />
 
               <div class="infor_Investor">
-                <span>Phạm Thanh Hưng</span>
+                <span>Duy Tịnh</span>
                 <div class="star">
-                  <i class="fa-regular fa-star"></i>
                   <i
                     style={{ color: "rgb(255, 230, 0)" }}
                     class="fa-solid fa-star"
                   ></i>
+                  <i
+                    style={{ color: "rgb(255, 230, 0)" }}
+                    class="fa-solid fa-star"
+                  ></i>
+
                   <i
                     style={{ color: "rgb(255, 230, 0)" }}
                     class="fa-solid fa-star"
