@@ -606,7 +606,7 @@ export default function Cpn_product() {
                 alt=""
               />
               <div class="infor_Investor">
-                <span>Trần Hoàng</span>
+                <span style={{ fontWeight: "bold" }}>Trần Hoàng</span>
                 <div class="star">
                   <i
                     style={{ color: "rgb(255, 230, 0)" }}
@@ -663,6 +663,7 @@ export default function Cpn_product() {
 
               <div class="infor_Investor">
                 <span>Duy Tịnh</span>
+                <span style={{ fontWeight: "bold" }}>Phạm Thanh Hưng</span>
                 <div class="star">
                   <i
                     style={{ color: "rgb(255, 230, 0)" }}
@@ -707,7 +708,7 @@ export default function Cpn_product() {
                 alt=""
               />
               <div class="infor_Investor">
-                <span>Elon Musk</span>
+                <span style={{ fontWeight: "bold" }}>Elon Musk</span>
                 <div class="star">
                   <i class="fa-regular fa-star"></i>
                   <i
@@ -741,7 +742,9 @@ export default function Cpn_product() {
                   alt=""
                 />
                 <div class="infor_project">
-                  <span>Tích hợp thực tế tăng cường (AR)</span>
+                  <span style={{ fontWeight: "bold" }}>
+                    Tích hợp thực tế tăng cường (AR)
+                  </span>
                 </div>
               </li>
             </a>
@@ -752,7 +755,9 @@ export default function Cpn_product() {
                   alt=""
                 />
                 <div class="infor_project">
-                  <span>Công nghệ Beacon Sự phát triển</span>
+                  <span style={{ fontWeight: "bold" }}>
+                    Công nghệ Beacon Sự phát triển
+                  </span>
                 </div>
               </li>
             </a>

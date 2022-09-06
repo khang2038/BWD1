@@ -1,6 +1,14 @@
 
+@media only screen and (max-width: 1700px){
+  body {
+    /* --color-page-product : rgb(194, 233, 243); */
+    --color-page-product : linear-gradient(90deg, #f0f2f5, #f0f2f5 ,#f0f2f5, #f0f2f5 ,#f0f2f5);;
+
+  }
+}
+
 /*big tablet to 1200px: */
-@media only screen and (max-width: 1200px){
+@media only screen and (max-width: 1300px){
     html{
         font-size:16px;
     }

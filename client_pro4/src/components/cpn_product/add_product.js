@@ -67,6 +67,32 @@ export default function Cpn_add_product() {
   const navigate = useNavigate();
   const [list, setList] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [images,setImages]=useState([])
+  const [imgToRemove,setImgToRemove]=useState(null)
+
+
+  function handleRemoveImg(imgObj) {
+    setImgToRemove(imgObj.public_id);   
+    setImages((prev) => prev.filter((img) => img.public_id !== imgObj.public_id));
+}
+
+
+
+
+  function showWidget() {
+    const widget = window.cloudinary.createUploadWidget(
+        {
+            cloudName: "dtcnua1zs",
+            uploadPreset: "gkhojgye",
+        },
+        (error, result) => {
+            if (!error && result.event === "success") {
+                setImages((prev) => [...prev, { url: result.info.url, public_id: result.info.public_id }]);
+            }
+        }
+    );
+    widget.open();
+}
 
   let toastProperties = null;
 
@@ -101,7 +127,7 @@ export default function Cpn_add_product() {
       var name_author = productInput.name_author;
       var img_author = productInput.img_author;
       var infor = productInput.infor;
-      var img1 = productInput.img1;
+      var img1 = images[0].url;
       var slug = productInput.name;
       var ctn__loading__home = document.querySelector(".ctn__loading__body");
       var btn_toast = document.querySelector(".btn_toast");
@@ -230,22 +256,30 @@ export default function Cpn_add_product() {
                 />
                 <span>Description</span>
               </div>
-              <div class="infor">
-                <input
+              <div >
+                <button type="button" onClick={showWidget}> Upload Image </button>
+                <div className="images-preview-container">
+                    {images.map(image => (
+                      <div className="image-preview">
+                          <img src={image.url}/>
+                          {imgToRemove != image.public_id && <i className="fa fa-times-circle" onClick={() => handleRemoveImg(image)}></i>}
+                      </div>
+                    ) )}
+                </div>
+                {/* <input
                   style={{
                     height: "30px",
                     padding: "40px 0 150px 30px",
                     borderRadius: "5px",
                   }}
                   required="required"
-                  type="text"
+                  type="file"
                   class="form-control"
                   id="img1"
                   name="img1"
                   value={productInput.img1}
                   onChange={onChangeHandle}
-                />
-                <span>Copy link image for here</span>
+                /> */}
               </div>
               <button type="submit" class="btn btn-primary">
                 Post
