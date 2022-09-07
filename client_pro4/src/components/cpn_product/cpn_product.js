@@ -702,8 +702,9 @@ export default function Cpn_product() {
                   style={{ padding: "10px", fontSize: "30px" }}
                 ></i>
               </div>
+              
               <img
-                src={require("../../public/content/ElonMusk-2017-stageshot-9046-1650013535.jpg")}
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgZU2l7s2qBB8wFeboN-0Di9ps9P-7LzOcsg&usqp=CAU"
                 alt=""
               />
               <div class="infor_Investor">
