@@ -29,6 +29,19 @@ export default function Cpn_header() {
         setDataRenderUser(data);
       });
   }, []);
+  function toggleListSearch() {
+    let listSearch = document.querySelector(".search_list");
+    listSearch.style.display = "unset";
+  }
+  function profile_quynh() {
+    let search_list = document.querySelector(".search_list");
+    search_list.style.display = "none";
+    console.log(search_list);
+    let cpn_modal_profile = document.querySelector(".cpn_modal_profile.quynh");
+    Object.assign(cpn_modal_profile.style, {
+      display: "flex",
+    });
+  }
   const handleSearch = (value) => {
     value = value.toLowerCase();
     let newData = [];
@@ -37,7 +50,6 @@ export default function Cpn_header() {
       if (item.name_author.toLowerCase().includes(value)) {
         isFilter = true;
         newData.push(item);
-        console.log(newData);
         setDataRenderUser(newData);
       }
     });
@@ -208,6 +220,8 @@ export default function Cpn_header() {
             <div className="search">
               <i className="fa-solid fa-magnifying-glass icon"></i>
               <input
+                onClick={() => toggleListSearch()}
+                id="search_input"
                 className="search_input"
                 type="text"
                 placeholder="Search..."
@@ -223,7 +237,11 @@ export default function Cpn_header() {
                   No, results
                 </div>
                 {dataRenderUser.map((item, index) => (
-                  <li key={index} className="search_item">
+                  <li
+                    key={index}
+                    className="search_item"
+                    onClick={() => profile_quynh()}
+                  >
                     <img src={item.img_author} alt="" />
                     <span>{item.name_author}</span>
                     <i class="fa-solid fa-xmark"></i>

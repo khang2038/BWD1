@@ -138,7 +138,7 @@ export default function CpnMess(){
     return(
         <div className="mess">
             <div className="chatMenu">
-                <div className="chatMenuWrapper">
+                <div className="chatMenuWrapper" style={{overflow : 'hidden'}}>
                     <div className="search_chat"> 
                         <i className="fa-solid fa-magnifying-glass icon"></i>
                         <input placeholder="search for friend..." className="chatMenuInput"></input>
@@ -184,7 +184,7 @@ export default function CpnMess(){
                 </div>
             </div>
             <div className="chatOnline">
-                <div className="chatOnlineWrapper">
+                <div className="chatOnlineWrapper" style={{overflow : 'hidden'}}>
                     <ChatOnline onlineUsers={onlineUsers} currentId={state_user.user.temp._id} setcurrentchat={setcurrentchat}/>
                 </div>
             </div>

@@ -302,7 +302,7 @@ function Highlights() {
         </div>
         <div className="form_card_project-1" onClick={open_prj_6}>
           <div>
-            <img src={project1} alt="" />
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaSTNGgBhxrZL0sujhMMpSmwfKlNP4yN1AgQ&usqp=CAU" alt="" />
           </div>
           <h1>Waterproof and soft light ball-POOF LIGHT</h1>
           <p>
@@ -540,7 +540,7 @@ function Highlights() {
         </div>
         <div className="content1">
           <div className="info_img">
-            <img src={project1} alt="" />
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaSTNGgBhxrZL0sujhMMpSmwfKlNP4yN1AgQ&usqp=CAU" alt="" />
             <p>Waterproof and soft light ball-POOF LIGHT</p>
             <p>
               Hold it, like holding the summer moon, but more than the moon to
