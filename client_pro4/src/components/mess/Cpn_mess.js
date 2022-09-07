@@ -19,7 +19,7 @@ export default function CpnMess(){
     const [arrivalmessage,setArrivalmessage]=useState(null);
     const [onlineUsers,setOnlineUser]=useState([]);
     const [voice,setvoice]=useState(false);
-    const socket = useRef(io("ws://localhost:8900"))
+    const socket = useRef()
     const scrollRef=useRef();
 
     const [showPicker, setShowPicker] = useState(false);
