@@ -665,8 +665,8 @@ export default function Cpn_homepage() {
               }}
             >
               <div style={{ display: "flex", flexDirection: "column" }}>
-                <p>The best</p>
-                <p>Working space</p>
+                <p>Bring the creative</p>
+                <p>project to life</p>
               </div>
             </div>
           </div>

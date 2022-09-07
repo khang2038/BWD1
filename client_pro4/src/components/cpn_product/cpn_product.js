@@ -576,7 +576,7 @@ export default function Cpn_product() {
         </div>
         <div class="the_right_page">
           <ul class="investor_rankings">
-            <p class="ranking"> Investor Rankings </p>
+            <p class="ranking"> Fundraiser </p>
             <li class="Investor 1">
               <Cpn_modal_profile
                 avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTKVIm_is2xDLHgYn50kQsU3CwN2ciLIsbXQ&usqp=CAU"
@@ -662,8 +662,7 @@ export default function Cpn_product() {
               />
 
               <div class="infor_Investor">
-                <span>Duy Tịnh</span>
-                <span style={{ fontWeight: "bold" }}>Phạm Thanh Hưng</span>
+                <span style={{ fontWeight: "bold" }}>Duy Tịnh</span>
                 <div class="star">
                   <i
                     style={{ color: "rgb(255, 230, 0)" }}

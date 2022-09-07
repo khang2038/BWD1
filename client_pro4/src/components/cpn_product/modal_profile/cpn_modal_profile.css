@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Anek+Tamil&family=Josefin+Sans&family=Nunito:ital,wght@0,300;1,200;1,300&family=Patua+One&display=swap');
+
 .cpn_modal_profile {
   position: fixed;
   top: 15%;
@@ -73,16 +75,16 @@
   justify-content: center;
   height: 60px;
   margin-bottom: 20px;
-  border-top: 2px solid rgb(146, 134, 134);
-  border-bottom: 2px solid rgb(146, 134, 134);
-  background-color: #e4f8ff;
+  /* border-top: 2px solid rgb(146, 134, 134); */
+  /* border-bottom: 2px solid rgb(146, 134, 134); */
+  /* background-color: #e4f8ff; */
   border-radius: 10px;
   width: 80%;
 }
 
 .cpn_modal_profile .option_profile_user div {
-  width: 15%;
-  margin: auto 20px;
+  width: 25%;
+  margin: auto 10px;
   text-align: center;
   align-items: center;
 }
@@ -138,3 +140,54 @@
   border-radius: 0;
   margin: 0;
 }
+
+/*===========================*/
+
+.ctn_about_me button p {
+  background-color: #f2f6ff;
+  font-family: 'Anek Tamil', sans-serif;
+  border : 'none';
+  font-size: 30px;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typewriter_f 1s steps(40) 1s 1 normal both,
+    blinkTextCursor_f 500ms steps(40) infinite normal;
+}
+
+@keyframes typewriter_f {
+  from {
+    width: 0;
+  }
+  to {
+    width: 400px;
+  }
+}
+
+@keyframes blinkTextCursor_f {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
