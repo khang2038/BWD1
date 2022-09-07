@@ -13,12 +13,12 @@ function createData(name, trackingId, date, status) {
 }
 
 const rows = [
-  createData("Rotisserie Chicken", 18908424, "18 June 2022", "Approved"),
-  createData("Lamb Curry ", 18908424, "18 June 2022", "Pending"),
-  createData("Special seafood", 18908424, "18 June 2022", "Approved"),
-  createData("Compo Chicken and Fruit", 18908421, "18 June 2022", "Delivered"),
-  createData("Compo Rice, Soft Drinks", 18908421, "18 June 2022", "Delivered"),
-  createData("Chicken Special", 18908421, "18 June 2022", "Delivered"),
+  createData("Shargeek Capsule Gravity", 18908424, "18 June 2022", "Approved"),
+  createData("Hồi sinh cổ phục Việt ", 18908424, "24 September 2022", "Pending"),
+  createData("The farm family project", 18908424, "1 November 2022", "Approved"),
+  createData("Mood.Hard Enamel Pins", 18908421, "4 June 2022", "Delivered"),
+  createData("DIGI SWAP", 18908421, "5 September 2022", "Delivered"),
+  createData("BED PILLOW", 18908421, "11 June 2022", "Delivered"),
   
 ];
 
@@ -57,7 +57,7 @@ export default function BasicTable() {
           <Table sx={{ minWidth: 650 }} aria-label="simple table">
             <TableHead>
               <TableRow>
-                <TableCell>Product</TableCell>
+                <TableCell>Name Project</TableCell>
                 <TableCell align="left">Tracking ID</TableCell>
                 <TableCell align="left">Date</TableCell>
                 <TableCell align="left">Status</TableCell>

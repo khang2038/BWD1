@@ -14,6 +14,7 @@ import Button from '../../cpn_toast_message/button/Button'
 import Toast from '../../cpn_toast_message/toast/Toast'
 import ComponentDidMount from "../../scroll_top/win_scroll_top";
 import { Cpn_loading } from "../../cpn_loading/cpn_loading";
+import Cpn_modal_profile from "../modal_profile/cpn_modal_profile";
 
 function sleep(s) {
   return new Promise(function (resolve) {
@@ -207,7 +208,19 @@ export default function Cpn_my_post() {
     }
   }
 
+  function profile_hoang() {
+    let cpn_modal_profile = document.querySelector(".cpn_modal_profile.hoang");
+    Object.assign(cpn_modal_profile.style, {
+      display: "flex",
+    });
+  }
   
+  function profile_hung() {
+    let cpn_modal_profile = document.querySelector(".cpn_modal_profile.hung");
+    Object.assign(cpn_modal_profile.style, {
+      display: "flex",
+    });
+  }
 
   return (
     <div>
@@ -220,6 +233,195 @@ export default function Cpn_my_post() {
 
         </div>
 
+        <div class="the_right_page">
+          <ul class="investor_rankings">
+            <p class="ranking"> Fundraiser </p>
+            <li class="Investor 1">
+              <Cpn_modal_profile
+                avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTKVIm_is2xDLHgYn50kQsU3CwN2ciLIsbXQ&usqp=CAU"
+                name="Trần Hoàng"
+                className="hoang"
+                img1="https://ksr-ugc.imgix.net/assets/038/505/949/e72affd4146df8170d19f52e13200900_original.jpg?ixlib=rb-4.0.2&crop=faces&w=352&h=198&fit=crop&v=1662478083&auto=format&frame=1&q=92&s=a2973d4ad9143e6a15a75415db345fd5"
+                img2="https://ksr-ugc.imgix.net/assets/038/236/299/ccb0487e6cfb1621f85e0576030081d1_original.png?ixlib=rb-4.0.2&crop=faces&w=352&h=198&fit=crop&v=1660153901&auto=format&frame=1&q=92&s=6d80a2f06d0adb1ab2ec0493ffca53da"
+                img3="https://ksr-ugc.imgix.net/assets/038/294/590/09ad09509b996f0785c0ef53afc4db76_original.jpg?ixlib=rb-4.0.2&crop=faces&w=352&h=198&fit=crop&v=1660660067&auto=format&frame=1&q=92&s=b8a636b8ccdc2dba78858e8894433a9b"
+              />
+              <div
+                className="profile_tran_hoang"
+                style={{ boxShadow: "0 3px 0px 0px #9e9e9e91" }}
+              >
+                <div onClick={profile_hoang}>
+                  <i
+                    class="fa-solid fa-id-badge"
+                    style={{ padding: "10px", fontSize: "30px" }}
+                  ></i>
+                </div>
+                <i
+                  class="fa-solid fa-message"
+                  style={{ padding: "10px", fontSize: "30px" }}
+                ></i>
+              </div>
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTKVIm_is2xDLHgYn50kQsU3CwN2ciLIsbXQ&usqp=CAU"
+                alt=""
+              />
+              <div class="infor_Investor">
+                <span style={{ fontWeight: "bold" }}>Trần Hoàng</span>
+                <div class="star">
+                  <i
+                    style={{ color: "rgb(255, 230, 0)" }}
+                    class="fa-solid fa-star"
+                  ></i>
+                  <i
+                    style={{ color: "rgb(255, 230, 0)" }}
+                    class="fa-solid fa-star"
+                  ></i>
+                  <i
+                    style={{ color: "rgb(255, 230, 0)" }}
+                    class="fa-solid fa-star"
+                  ></i>
+                  <i
+                    style={{ color: "rgb(255, 230, 0)" }}
+                    class="fa-solid fa-star"
+                  ></i>
+                  <i
+                    style={{ color: "rgb(255, 230, 0)" }}
+                    class="fa-solid fa-star"
+                  ></i>
+                </div>
+              </div>
+            </li>
+            <li class="Investor 2">
+              <Cpn_modal_profile
+                avatar="https://scr.vn/wp-content/uploads/2020/08/H%C3%ACnh-avt-Anime.jpg"
+                name="Tịnh"
+                className="hung"
+                img1="https://ksr-ugc.imgix.net/assets/038/433/438/08ca844bf63e228d56ea6922f4076c1a_original.jpg?ixlib=rb-4.0.2&crop=faces&w=352&h=198&fit=crop&v=1661865956&auto=format&frame=1&q=92&s=27966c84fc27bb395e0e35b10462368f"
+                img2="https://ksr-ugc.imgix.net/assets/037/931/016/8e3f471e0bb2e072869f8a8bfeae0bc3_original.jpg?ixlib=rb-4.0.2&crop=faces&w=352&h=198&fit=crop&v=1657627738&auto=format&frame=1&q=92&s=acec5278729ed9e09addca931f1a97da"
+                img3="https://ksr-ugc.imgix.net/assets/038/409/741/5d01ae313806be5a14505ea5e0661695_original.jpg?ixlib=rb-4.0.2&crop=faces&w=352&h=198&fit=crop&v=1661640408&auto=format&frame=1&q=92&s=0ef08b81062e7ca0fc71bf02a8906f3c"
+              />
+              <div
+                className="profile_hung"
+                style={{ boxShadow: "0 3px 0px 0px #9e9e9e91" }}
+              >
+                <div onClick={profile_hung}>
+                  <i
+                    class="fa-solid fa-id-badge"
+                    style={{ padding: "10px", fontSize: "30px" }}
+                  ></i>
+                </div>
+                <i
+                  class="fa-solid fa-message"
+                  style={{ padding: "10px", fontSize: "30px" }}
+                ></i>
+              </div>
+
+              <img
+                src="https://scr.vn/wp-content/uploads/2020/08/H%C3%ACnh-avt-Anime.jpg"
+                alt=""
+              />
+
+              <div class="infor_Investor">
+                <span style={{ fontWeight: "bold" }}>Duy Tịnh</span>
+                <div class="star">
+                  <i
+                    style={{ color: "rgb(255, 230, 0)" }}
+                    class="fa-solid fa-star"
+                  ></i>
+                  <i
+                    style={{ color: "rgb(255, 230, 0)" }}
+                    class="fa-solid fa-star"
+                  ></i>
+
+                  <i
+                    style={{ color: "rgb(255, 230, 0)" }}
+                    class="fa-solid fa-star"
+                  ></i>
+                  <i
+                    style={{ color: "rgb(255, 230, 0)" }}
+                    class="fa-solid fa-star"
+                  ></i>
+                  <i
+                    style={{ color: "rgb(255, 230, 0)" }}
+                    class="fa-solid fa-star"
+                  ></i>
+                </div>
+              </div>
+            </li>
+            <li class="Investor 3">
+              <div
+                className="profile_elon_musk"
+                style={{ boxShadow: "0 3px 0px 0px #9e9e9e91" }}
+              >
+                <i
+                  class="fa-solid fa-id-badge"
+                  style={{ padding: "10px", fontSize: "30px" }}
+                ></i>
+                <i
+                  class="fa-solid fa-message"
+                  style={{ padding: "10px", fontSize: "30px" }}
+                ></i>
+              </div>
+              
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgZU2l7s2qBB8wFeboN-0Di9ps9P-7LzOcsg&usqp=CAU"
+                alt=""
+              />
+              <div class="infor_Investor">
+                <span style={{ fontWeight: "bold" }}>Elon Musk</span>
+                <div class="star">
+                  <i class="fa-regular fa-star"></i>
+                  <i
+                    style={{ color: "rgb(255, 230, 0)" }}
+                    class="fa-solid fa-star"
+                  ></i>
+                  <i
+                    style={{ color: "rgb(255, 230, 0)" }}
+                    class="fa-solid fa-star"
+                  ></i>
+                  <i
+                    style={{ color: "rgb(255, 230, 0)" }}
+                    class="fa-solid fa-star"
+                  ></i>
+                  <i
+                    style={{ color: "rgb(255, 230, 0)" }}
+                    class="fa-solid fa-star"
+                  ></i>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+          <ul class="Top_project Top_project_fix">
+            <hr />
+            <p class="ranking"> Top Project</p>
+            <a href="App">
+              <li class="Project 1">
+                <img
+                  src={require("../../../public/content/App/Tích hợp thực tế tăng cường (AR)/Thực tế ảo.jpeg")}
+                  alt=""
+                />
+                <div class="infor_project">
+                  <span style={{ fontWeight: "bold" }}>
+                    Tích hợp thực tế tăng cường (AR)
+                  </span>
+                </div>
+              </li>
+            </a>
+            <a href="App">
+              <li class="Project 2">
+                <img
+                  src={require("../../../public/content/App/Công nghệ Beacon/Công nghệ Beacon.jpg")}
+                  alt=""
+                />
+                <div class="infor_project">
+                  <span style={{ fontWeight: "bold" }}>
+                    Công nghệ Beacon Sự phát triển
+                  </span>
+                </div>
+              </li>
+            </a>
+          </ul>
+        </div>
       </div>
       <form method="POST" name="delete_form"></form>
       <Button handleClick={() => showToast('success_delete_post')}></Button>

@@ -257,7 +257,6 @@ export default function Cpn_add_product() {
                 <span>Description</span>
               </div>
               <div >
-                <button type="button" onClick={showWidget}> Upload Image </button>
                 <div className="images-preview-container">
                     {images.map(image => (
                       <div className="image-preview">
@@ -266,6 +265,10 @@ export default function Cpn_add_product() {
                       </div>
                     ) )}
                 </div>
+                <button type="button" onClick={showWidget}> 
+                  <i style={{fontWeight: 'bold',margin : '0 20px'}} class="fa-solid fa-camera-retro"></i>
+                  UPLOAD IMAGE
+                </button>
                 {/* <input
                   style={{
                     height: "30px",

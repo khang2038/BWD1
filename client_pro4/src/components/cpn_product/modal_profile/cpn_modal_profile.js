@@ -94,15 +94,19 @@ export default function Cpn_modal_profile(props) {
           <div class="info_user" style={{ width: "50%" }}>
             <div class="label">
               <p style={{ margin: "20px 0", fontSize: "25px" }}>
-                Hi! Welcome to my wall
-                <i
-                  class="fa-solid fa-pencil"
-                  style={{
-                    fontSize: "15px",
-                    marginLeft: "5px",
-                    marginBottom: "2.5px",
-                  }}
-                ></i>
+                <button style={{border : 'none'}}>
+                  <p>
+                    Hi! Welcome to my wall
+                  <i
+                    class="fa-solid fa-pencil"
+                    style={{
+                      fontSize: "15px",
+                      marginLeft: "20px",
+                      marginBottom: "2.5px",
+                    }}
+                  ></i>
+                  </p>
+                </button>                
               </p>
               <hr style={{ width: "60%", margin: "20px auto" }} />
             </div>
@@ -174,13 +178,40 @@ export default function Cpn_modal_profile(props) {
         </div>
 
         <div className="profile_user_card">
-          <div style={{ display: "flex", justifyContent: "center" }}>
+          {/* <div style={{ display: "flex", justifyContent: "center" }}>
             <div className="option_profile_user">
-              <div>ABOUT ME</div>
-              <div>POST</div>
-              <div>PROJECT</div>
-              <div>
-                MORE <i class="fa-solid fa-caret-down"></i>
+              <div class="icon_f">
+                <i style={{fontSize: '14px',padding : '13px',borderRadius: '50% 0 0 50%', backgroundColor: 'rgb(189 232 255)'}} class="fa-solid fa-user"></i>
+                <span class="tooltip_f" style={{backgroundColor : 'rgb(189 232 255)', borderRadius: '0 20px 20px 0',padding: '10px',fontSize: '14px',}}>ABOUT ME</span>
+              </div>
+              <div class="icon_f" >
+                <i style={{fontSize: '14px',padding : '13px',borderRadius: '50% 0 0 50%', backgroundColor: 'rgb(189 232 255)'}} class="fa-solid fa-user"></i>
+                <span class="tooltip_f" style={{backgroundColor : 'rgb(189 232 255)', borderRadius: '0 20px 20px 0',padding: '10px',fontSize: '14px',}}>POST</span>
+              </div>
+              <div class="icon_f" >
+                <i style={{fontSize: '14px',padding : '13px',borderRadius: '50% 0 0 50%', backgroundColor: 'rgb(189 232 255)'}} class="fa-solid fa-user"></i>
+                <span class="tooltip_f" style={{backgroundColor : 'rgb(189 232 255)', borderRadius: '0 20px 20px 0',padding: '10px',fontSize: '14px',}}>PROJECTS</span>
+              </div>
+              <div class="icon_f" >
+                <i style={{fontSize: '14px',padding : '13px',borderRadius: '50% 0 0 50%', backgroundColor: 'rgb(189 232 255)'}} class="fa-solid fa-user"></i>
+                <span class="tooltip_f" style={{backgroundColor : 'rgb(189 232 255)', borderRadius: '0 20px 20px 0',padding: '10px',fontSize: '14px',}}>
+                  MORE
+                  <i style={{marginLeft : '5px'}} class="fa-solid fa-caret-down"></i>
+                </span>
+              </div>
+            
+            </div>
+          </div> */}
+
+          <div>
+            <div style={{display: 'flex',justifyContent : 'center'}}>
+              <div style={{color : '#2e89ff',margin : '0 30px 30px 30px',fontSize : '25px',borderBottom : '3px solid #2e89ff'}}>
+                <i style={{margin : '0 10px'}} class="fa-solid fa-file-shield"></i>
+                MY POST
+              </div>
+              <div style={{margin : '0 30px 30px 30px',fontSize : '25px'}}>
+                <i style={{margin : '0 10px'}} class="fa-solid fa-list"></i>
+                MY PROJECTS
               </div>
             </div>
           </div>
