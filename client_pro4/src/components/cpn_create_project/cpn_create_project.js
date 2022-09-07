@@ -520,7 +520,6 @@ export default function Cpn_create_project() {
             display: "block",
           });
         }
-        Object.assign(header_detail_prj.style, {});
         Object.assign(body_detail_prj.style, {
           justifyContent: "flex-end",
         });
@@ -529,8 +528,8 @@ export default function Cpn_create_project() {
           top: "120px",
           left: "0",
         });
-        Object.assign(right_body_prj.style, {});
       } else if (ctn_content_detail_prj_top >= body) {
+        
         Object.assign(body_detail_prj.style, {
           justifyContent: "center",
         });
@@ -538,7 +537,6 @@ export default function Cpn_create_project() {
           position: "initial",
           display: "block",
         });
-        Object.assign(right_body_prj.style, {});
       }
     });
   });

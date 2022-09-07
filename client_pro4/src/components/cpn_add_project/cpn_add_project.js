@@ -518,24 +518,42 @@ export default function Cpn_add_project() {
 
   //story
   function add_story_title() {
-    let input_add_str = document.querySelector(".input_add_str");
+    let title_content_image = document.querySelector(".title_content_image");
     id_title++;
+
+    close_all_edit();
+
+    Object.assign(title_content_image.style , {
+      display : ' initial',
+    })
+
     const div_title = document.createElement("div");
     div_title.innerHTML = `<textarea name="title${id_title}" type="text" style="height: 80px;border_radius:20px;width: 80%;font-size : 30px; padding: 20px;margin: 10px;" placeholder="Title"></textarea>`;
-    input_add_str.appendChild(div_title);
+    title_content_image.appendChild(div_title);
   }
 
   function add_story_content() {
-    let input_add_str = document.querySelector(".input_add_str");
+    let title_content_image = document.querySelector(".title_content_image");
+
+    Object.assign(title_content_image.style , {
+      display : ' initial',
+    })
+
     id_content++;
     const div_content = document.createElement("div");
     div_content.innerHTML = `<textarea name="content${id_content}" type="text" style="border-radius: 10px; height: 20px;word-break: break-word; width: 90%;font-size : 20px; padding: 30px 10px 140px 30px;margin: 10px;" placeholder="Content"></textarea>`;
-    input_add_str.appendChild(div_content);
+    title_content_image.appendChild(div_content);
   }
 
   function add_story_image() {
-    let input_add_str = document.querySelector(".input_add_str");
+    let title_content_image = document.querySelector(".title_content_image");
+
     id_image++;
+
+    Object.assign(title_content_image.style , {
+      display : ' initial',
+    })
+
     const div_image = document.createElement("div");
     div_image.innerHTML = `<div style="display: flex; flex-direction: column;">
     <img style="margin: 0 auto; z-index: 1" src="" alt="" id="image_${id_image}" width="300" height="300">
@@ -543,26 +561,44 @@ export default function Cpn_add_project() {
             accept="image/gif , image/jpeg, image/png" placeholder="image">
     </div>
     `;
-    input_add_str.appendChild(div_image);
+    title_content_image.appendChild(div_image);
   }
 
-  // $(document).ready(function () {
-  //   $(window).scroll(function () {
+  const close_all_edit = () => {
+    let temp_state_cr_prj = document.querySelector('.temp_state_cr_prj');
+    let title_content_image = document.querySelector('.title_content_image');
+    let input_add_str = document.querySelector('.input_add_str');
 
-  //     if (button_add_str_top + 455.52 < ctn_footer_top) {
-  //       var button_add_str = document.querySelector('.story_post .button_add_str');
-  //       var button_add_str_top = $(".button_add_str").offset().top;
-  //       var ctn_footer_top = $(".ctn__footer").offset().top;
-  //       Object.assign(button_add_str.style, {
-  //         display: "flex",
-  //       });
-  //     } else {
-  //       Object.assign(button_add_str.style, {
-  //         display: "none",
-  //       });
-  //     }
-  //   });
-  // });
+    Object.assign(temp_state_cr_prj.style , {
+      display : ' none',
+    })
+
+    Object.assign(title_content_image.style , {
+      display : ' none',
+    })
+
+    Object.assign(input_add_str.style , {
+      display : ' none',
+    })
+  }
+
+  const o_template_prj = () => {
+    close_all_edit();
+    let input_add_str = document.querySelector('.input_add_str');
+
+    Object.assign(input_add_str.style , {
+      display : ' flex',
+    })
+  }
+
+  const o_img_edit = () => {
+    close_all_edit();
+    let temp_state_cr_prj = document.querySelector('.temp_state_cr_prj');
+
+    Object.assign(temp_state_cr_prj.style , {
+      display : ' initial',
+    })
+  }
 
   return (
     <div>
@@ -954,23 +990,42 @@ export default function Cpn_add_project() {
       <div class="story_post" style={{ minHeight: "274px" }}>
         <div style={{ width: "80%", display: "flex", justifyContent: "right" }}>
           <div class="button_add_str">
+            <button onClick={o_img_edit}>
+              <i class="fa-solid fa-pen-fancy"></i>
+              EDIT
+            </button>
             <button onClick={add_story_title}>
-              <i class="fa-solid fa-plus"></i>
+            <i class="fa-solid fa-book-open-reader"></i>
               ADD TITLE
             </button>
             <button onClick={add_story_content}>
-              <i class="fa-solid fa-plus"></i>
+              <i class="fa-solid fa-file-lines"></i>
               ADD CONTENT
             </button>
             <button onClick={add_story_image}>
-              <i class="fa-solid fa-plus"></i>
+              <i class="fa-solid fa-photo-film"></i>
               ADD IMAGE
+            </button>
+            <button onClick={o_template_prj}>
+              <i class="fa-solid fa-clipboard-list"></i>
+              TEMPLATE
             </button>
           </div>
           <div style={{ width: "80%", position: "relative" }}>
+            <div className="temp_state_cr_prj">
+              <div className="image_temp_state">
+                <img src="https://www.adobe.com/content/dam/dx-dc/images/acrobat/online/riverflow-items/s_illu_edit-pdf_452x320.svg"/>
+              </div>
+              
+            </div>
+
+            <div className="title_content_image">
+              
+            </div>
+
             <form method="POST" onSubmit={onSubmitHandle_story} id="form_story">
               <div class="input_add_str">
-                <div style={{ display: "flex", flexDirection: "column" }}>
+                <div style={{ width : '100%', display: "flex", flexDirection: "column" }}>
                   <label
                     htmlFor="input_image1"
                     style={{

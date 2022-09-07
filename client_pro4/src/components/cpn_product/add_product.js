@@ -296,7 +296,7 @@ export default function Cpn_add_product() {
         </div>
       </div>
 
-      <div>12`13</div>
+      <div>1213</div>
 
       <div className="ctn__loading__body">
         <div className="ctn__loading">

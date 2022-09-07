@@ -145,8 +145,8 @@
 
 .story_post .button_add_str {
   position: fixed;
-  top: 238px;
-  left: 98px;
+  top: 27%;
+  left: 4%;
   width: 20%;
   display: flex;
   flex-direction: column;
@@ -154,9 +154,14 @@
 
 .story_post button {
   background-color: white;
+  color  : rgb(77 95 119);
   padding: 20px;
   margin: 10px 30px;
-  font-size: 15px;
+  font-size: 22px;
+  font-weight: bold;
+  border: none;
+  text-align: left;
+  border-bottom: 3px solid rgb(77 95 119);
 }
 
 .story_post button i {
@@ -564,3 +569,30 @@ a {
   font-size: 30px;
   margin: 0px 50px 80px 10%;
 }
+
+
+
+
+
+/*-----------form page 3 story------------*/
+#form_story .input_add_str{
+  display: none;
+}
+
+.temp_state_cr_prj .image_temp_state{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.temp_state_cr_prj .image_temp_state img{
+  width: 80%;
+}
+
+
+
+
+
+
+
+
