@@ -37,6 +37,8 @@ app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'resources/views'));
 initPassportLocal();
 route(app);
+let cors = require("cors");
+app.use(cors());
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)

@@ -17,60 +17,60 @@ header {
   margin-right: 40px;
 }
 
-  .nav_pc{
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-  }
-  .mobile_nav{
-   display:none;
-   flex-direction: column;
-   display:none;
-  }
-  .navtren{
-   display:flex;
-   justify-content:space-between;
-  }
-  .navduoi{
-    display:flex;
-    justify-content:space-around
-  }
-  
-  .the_left_nav{
-     display:flex;
-     align-items: center;
-     margin-left:2%;
-     color:var(--text-the_left_page-color);
-  }
-  
-  .nav_bars-btn{
-    /* margin-top: 7px; */
-    font-size:24px;
-    font-weight:25px;
-  }
-  .nav_overlay{
-    position:fixed;
-    top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    background-color:rgba(0, 0, 0,0.3);
-    display: none;
-    animation: fadeIn linear 0.2s;
-  }
-  .mobile_nav_drop{
-    background-color:var(--the_left_page-color);
-    display: flex;
-    width: 45%;
-    flex-direction: column;
-    border-radius:10px;
-    font-size:16px;
-    position:fixed;
-    right:0;
-    top:0;
-    bottom:0;
-    transform:translateX(100%);
-    transition:transform linear 0.2s;
+.nav_pc {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.mobile_nav {
+  display: none;
+  flex-direction: column;
+  display: none;
+}
+.navtren {
+  display: flex;
+  justify-content: space-between;
+}
+.navduoi {
+  display: flex;
+  justify-content: space-around;
+}
+
+.the_left_nav {
+  display: flex;
+  align-items: center;
+  margin-left: 2%;
+  color: var(--text-the_left_page-color);
+}
+
+.nav_bars-btn {
+  /* margin-top: 7px; */
+  font-size: 24px;
+  font-weight: 25px;
+}
+.nav_overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  display: none;
+  animation: fadeIn linear 0.2s;
+}
+.mobile_nav_drop {
+  background-color: var(--the_left_page-color);
+  display: flex;
+  width: 45%;
+  flex-direction: column;
+  border-radius: 10px;
+  font-size: 16px;
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transform: translateX(100%);
+  transition: transform linear 0.2s;
 }
 .logo_header img {
   width: 90%;
@@ -234,9 +234,12 @@ body.dark .mobile_nav_drop .mode-mobile i.moon {
   border-radius: 20px;
   position: relative;
 }
-.search_input:focus + .search_list {
-  display: unset;
+/* .search_input:focus + .search_list {
+  display: unset !important;
 }
+.search_list:hover {
+  display: unset !important;
+} */
 
 .search_list {
   position: absolute;

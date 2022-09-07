@@ -632,6 +632,15 @@ export default function Cpn_product() {
               </div>
             </li>
             <li class="Investor 2">
+              {/* modal quynh */}
+              <Cpn_modal_profile
+                avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQShaaO1hb0zEuFP4WAxq87I5CyqD6_jX1zaw&usqp=CAU"
+                name="Quỳnh"
+                className="quynh"
+                img1="https://cdn.pixabay.com/photo/2019/06/30/21/25/smart-4308821__340.jpg"
+                img2="https://cdn.pixabay.com/photo/2017/07/12/08/35/network-2496193__340.jpg"
+                img3="https://ksr-ugc.imgix.net/assets/038/352/394/238056fb2ce1fb374adad01269859798_original.gif?ixlib=rb-4.0.2&w=680&fit=max&v=1661153136&gif-q=50&q=92&s=5ae2c1d4cb05ad0262c107078c9dac15"
+              />
               <Cpn_modal_profile
                 avatar="https://scr.vn/wp-content/uploads/2020/08/H%C3%ACnh-avt-Anime.jpg"
                 name="Tịnh"
