@@ -295,6 +295,9 @@ export default function Cpn_add_product() {
           <Toast toastlist={list} position="buttom-right" setList={setList} />
         </div>
       </div>
+
+      <div>12`13</div>
+
       <div className="ctn__loading__body">
         <div className="ctn__loading">
           <div className="ctn__loading__content"></div>
