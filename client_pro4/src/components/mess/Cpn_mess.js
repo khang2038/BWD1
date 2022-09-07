@@ -8,6 +8,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css"
 import ChatOnline from "../chatOnline/ChatOnline";
 import axios from "axios"
 import {io} from "socket.io-client"
+import Picker from 'emoji-picker-react';
 
 export default function CpnMess(){
     const {state_user} = useContext(AppContext);
@@ -20,6 +21,14 @@ export default function CpnMess(){
     const [voice,setvoice]=useState(false);
     const socket = useRef(io("ws://localhost:8900"))
     const scrollRef=useRef();
+
+    const [showPicker, setShowPicker] = useState(false);
+
+ 
+    const onEmojiClick = (event, emojiObject) => {
+        setnewmessage(prevInput => prevInput + emojiObject.emoji);
+        setShowPicker(false);
+    };
 
     useEffect(()=>{
         socket.current = io("ws://localhost:8900");
@@ -154,7 +163,10 @@ export default function CpnMess(){
                        ))} 
                     </div>
                     <div className="chatBoxBottom">
-                        <i class="fa-solid fa-face-grin"></i>
+                        <i class="fa-solid fa-face-grin" onClick={() => setShowPicker(val => !val)}></i>
+                        {showPicker && <Picker
+                            pickerStyle={{ width: '25%',position: 'fixed',top:'45%' }}
+                            onEmojiClick={onEmojiClick} />}
                         <i class="fa-solid fa-microphone" onClick={handlevoice}></i>
                         <i class="fa-solid fa-image"></i>
                         <input
