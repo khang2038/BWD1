@@ -140,6 +140,7 @@
   border-radius: 4px;
   color: white;
   transition: 0.6s;
+  width: 80%;
 }
 .payment_submit:hover {
   background-color: #04cf78;
@@ -147,3 +148,10 @@
 .payment_policy a {
   text-decoration: underline;
 }
+
+.QR :hover{
+  cursor: pointer;
+}
+
+
+

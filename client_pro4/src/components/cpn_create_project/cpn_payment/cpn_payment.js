@@ -62,9 +62,17 @@ function Cpn_Payment({ func }) {
             </div>
           </div>
         </div>
-        <div className="payment_submit" onClick={func.handlerMessageSuccess}>
-          Pledge
+        <div style={{display : 'flex', justifyContent : 'space-between'}}>
+          <div class="QR" style={{borderRadius : '10px',backgroundColor: '#dddada',padding: '16px 0',textAlign : 'center' ,width : '10%',color : 'black',margin : '20px 0',}}>
+            Scan QR
+          </div>
+
+          <div className="payment_submit" onClick={func.handlerMessageSuccess}>
+            Pledge
+          </div>
+
         </div>
+
         <div className="payment_policy">
           By submitting your pledge, you agree to Kickstarter's
           <a> Terms of Use,</a> and <a>Privacy Policy,</a>

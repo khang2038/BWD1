@@ -8,6 +8,9 @@ Trước khi thi cần test :
 - Chuẩn bị bài project để đăng 
 
 
+- Ảnh trắng 
+- mess
+- sửa nd trong input
 
 - kiểm tra all nội dung
 - Thêm animation cho mượt
