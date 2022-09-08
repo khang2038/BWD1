@@ -12,6 +12,9 @@ import Button from "../cpn_toast_message/button/Button";
 import Toast from "../cpn_toast_message/toast/Toast";
 import ComponentDidMount from "../scroll_top/win_scroll_top";
 import { Cpn_loading } from "../cpn_loading/cpn_loading";
+import {Canvas} from 'react-three-fiber'
+import Earth from '../../Earth/Earth'
+import {OrbitControls, Cloud, Float } from '@react-three/drei'
 
 const body = document.querySelector("body");
 
@@ -166,13 +169,13 @@ export default function Cpn_add_product() {
   };
 
   return (
-    <div>
+    <div className="container"  >
       <ComponentDidMount />
       {loading ? <Cpn_loading /> : null}
 
       <div
         class="body_create_prj"
-        style={{ display: "flex", justifyContent: "center", marginTop: "80px" }}
+        style={{ display: "flex", marginTop: "80px",marginLeft:"15%" }}
       >
         <div
           style={{
@@ -296,12 +299,39 @@ export default function Cpn_add_product() {
         </div>
       </div>
 
-      <div>1213</div>
-
       <div className="ctn__loading__body">
         <div className="ctn__loading">
           <div className="ctn__loading__content"></div>
         </div>
+      </div>
+      <div style={{width: '50%', height: '80vh'}} className="threed">
+      <Canvas camera={{zoom: 10, position:[15, 20, 15]}}>
+        <ambientLight intensity={0.5}/>
+        <pointLight position={[35,35,0]} intensity={0.4}/>
+        <pointLight position={[-35,35,0]} intensity={0.4}/>
+        {/* <Suspense fallback={null}> */}
+       
+        <Float
+          speed={6} 
+          rotationIntensity={6} 
+          floatIntensity={0.5} 
+          floatingRange={[1, 1.5]} 
+        >
+          <Earth/>
+          <mesh />
+        </Float>
+
+        {/* <Cloud
+            opacity={0.5}
+            speed={0.4} 
+            width={10} 
+            depth={1.5}
+            segments={20} 
+        /> */}
+
+        {/* </Suspense> */}
+        <OrbitControls/>
+      </Canvas>
       </div>
     </div>
   );
