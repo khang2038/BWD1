@@ -41,7 +41,24 @@ import {
   // Analytics Cards Data
   export const cardsData = [
     {
-      title: "Order",
+      title: "Money received",
+      color: {
+        backGround:
+          "linear-gradient(rgb(248, 212, 154) -146.42%, rgb(255 202 113) -46.42%)",
+        boxShadow: "0px 10px 20px 0px #F9D59B",
+      },
+      barValue: 63,
+      value: "24,990",
+      png:UilUsdSquare,
+      series: [
+        {
+          name: "Successful",
+          data: [0,0,0,0,0,0,0, 20, 30, 34, 36, 30, 28, 26, 24, 20, 22, 24, 26 , 28, 36, 38, 45, 50, 20],
+        },
+      ],
+    },
+    {
+      title: "In progress",
       color: {
         backGround: "linear-gradient(180deg, #FF919D 0%, #FC929D 100%)",
         boxShadow: "0px 10px 20px 0px #FDC0C7",
@@ -58,7 +75,7 @@ import {
       ],
     },
     {
-      title: "Cancel",
+      title: "Money recovery",
       color: {
         backGround: "linear-gradient(180deg, #bb67ff 0%, #c484f3 100%)",
         boxShadow: "0px 10px 20px 0px #e0c6f5",
@@ -73,23 +90,7 @@ import {
         },
       ],
     },
-    {
-      title: "Successful",
-      color: {
-        backGround:
-          "linear-gradient(rgb(248, 212, 154) -146.42%, rgb(255 202 113) -46.42%)",
-        boxShadow: "0px 10px 20px 0px #F9D59B",
-      },
-      barValue: 63,
-      value: "9,990",
-      png:UilUsdSquare,
-      series: [
-        {
-          name: "Successful",
-          data: [0,0,0,0,0,0,0, 20, 30, 34, 36, 30, 28, 26, 24, 20, 22, 24, 26 , 28, 36, 38, 45, 50, 20],
-        },
-      ],
-    },
+    
   ];
   
   // Recent Update Card Data

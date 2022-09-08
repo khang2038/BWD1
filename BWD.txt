@@ -1,33 +1,34 @@
-* ) thêm background màu linear (trang product)
--sửa dòng the best working space
+
+Trước khi thi cần test :
+- 3npm  
+- log out
+- Kiểm tra wifi 
+- Kiểm tra upload 
+- Chuẩn bị bài post để đăng 
+- Chuẩn bị bài project để đăng 
 
 
--hover vào trần hoàng ,phạm thanh hưng ,elonmusk -> demo -> trang profile của họ
--có thể thêm hoặc xóa image,title,content
--fix khung tìm kiếm ,trang cá nhân user (hỏi thằng thầy)
--bản đăng mẫu cho project
--thông báo khi đăng project 
--thống kê
--sửa số tiền tăng trang project
--đăng kí tài khoản (chỉ demo)
--sửa link ảnh http
--hiển thị thông báo khi thêm project (alert ,attempt)
--ngày 8/9 Nhờ anh Bảo Anh sửa giùm lỗi chính tả
--deploy
--fixed trang created project
 
--Giải quyêt đúng vấn đề gọi vốn cộng đồng crowd funding:
-	+ quản lý được số tiền đưa vào
-	+ quản lý được những dự án mà khách hàng đã đầu tư vào
-	+ trang quà tặng 
-+sửa lại trang Donate
+- kiểm tra all nội dung
+- Thêm animation cho mượt
+* ) thêm background trang đăng project
+- design trang nhắn tin
+- Hình địa cầu anh mỹ
+- Mã QR
+- Làm no post (phân trang)
+- Ngày 8/9 Nhờ anh Bảo Anh sửa giùm lỗi chính tả (tối)
+
 
 khang : 
 ok : làm '...xem thêm'
 ok : socket
 ok : voice chat
+ok : đăng kí tài khoản (chỉ demo)
 
 giang:
+ok : Sửa thông tin thống kê 
+ok : có thể thêm hoặc xóa image,title,content
+ok : bản đăng mẫu cho project
 ok : sửa bot chat
 ok : ds loading (nhớ fix các lỗi load dữ liệu trước khi render) 
 ok : scrollTOp khi chuyển trang
@@ -37,12 +38,8 @@ ok : ds btn details trang 1
 ok : thông báo khi đăng product
 ok : sửa footer 
 ok : ds-page-details
+ok : hover vào trần hoàng ,phạm thanh hưng ,elonmusk -> demo -> trang profile của họ
 
-
-
--Mỹ : 
-+ about us 
-+ donate 
 
 
 

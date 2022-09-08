@@ -14,6 +14,8 @@ import { Link } from "react-router-dom";
 import ComponentDidMount from "../scroll_top/win_scroll_top";
 import Cpn_pf_statistic from "./cpn_statistic/cpn_pf_statistic";
 import { Pie_Chart } from "../cpn_chart/cpn_chart";
+import Cards from "./cpn_statistic/Cards/Cards";
+
 function sleep(s) {
   return new Promise(function (resolve) {
     setTimeout(resolve, s);
@@ -620,6 +622,8 @@ export default function Cpn_profile() {
                   >
                     Statistic my projects
                   </h2>
+                  <Cards />
+                  
                   <div class="temp">
                     <div class="detail_my_project_statistic">
                       <Pie_Chart data="dataProject" />

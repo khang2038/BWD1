@@ -20,7 +20,7 @@ export default function cpn_wallet() {
     $(".ctn__solution__element").addClass("animate__animated animate__bounceInUp");
     $(window).scroll(function () {
       var body = $("html,body").scrollTop();
-      var space_1 = document.querySelector(".space_1");
+      // var space_1 = document.querySelector(".space_1");
 
       var width_screen = window.innerWidth;
       console.log(width_screen);
@@ -40,9 +40,9 @@ export default function cpn_wallet() {
             return sleep(500);
           })
           .then(function () {
-            Object.assign(space_1.style, {
-              display: "none",
-            });
+            // Object.assign(space_1.style, {
+            //   display: "none",
+            // });
           });
       } else if (body >= 1100 && body < 1254 && width_screen > 739) {
       } else if (body >= 1254 && body < 1866 && width_screen > 739) {
@@ -161,7 +161,7 @@ export default function cpn_wallet() {
           <hr style={{ width: "50%" }} />
         </div>
 
-        <div class="space_1" style={{ height: "300px" }}></div>
+        {/* <div class="space_1" style={{ height: "300px" }}></div> */}
 
         <div class="ctn__feature">
           <div class="ctn__feature__image">

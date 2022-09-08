@@ -49,12 +49,12 @@ export default function Cpn_sign_up() {
                             <input onChange={onChangeHandle} type="email" name="email" id="email" placeholder="user@mail.com"/>
                             <label for="password">Password*</label>
                             <input onChange={onChangeHandle} type="password" name="password" id="password" placeholder="strong password"/>
-                            <p class="conditions">
-                                <input type="checkbox"/>
+                            <p class="conditions" style={{display : 'flex', justifyContent : 'center'}}>
+                                <input type="checkbox" style={{width: '20px',marginRight : '30px'}}/>
                                 I agree to the 
                                 <a href="#">Terms and Conditions</a>
                             </p>
-                            <button type="submit" >Sign Up</button>
+                            <button type="submit" style={{marginBottom : '30px'}}>Sign Up</button>
                     
                         </form>
                     </div>

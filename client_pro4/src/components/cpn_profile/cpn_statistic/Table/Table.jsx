@@ -48,8 +48,8 @@ const makeStyle=(status)=>{
 
 export default function BasicTable() {
   return (
-      <div className="Table" style={{marginTop : '70px'}}>
-      <h1>Recent Orders</h1>
+      <div className="Table">
+      <h2 style={{marginBottom : '30px'}}>Data sheet</h2>
         <TableContainer
           component={Paper}
           style={{ boxShadow: "0px 13px 20px 0px #80808029" ,borderRadius : '20px'}}

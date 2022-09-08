@@ -119,11 +119,6 @@ function Ctn_product_get_data(get) {
         }
       });
 
-      // heart.classList.remove("fa-solid");
-      // heart.classList.add("fa-regular");
-      // Object.assign(heart.style, {
-      //   color: "black",
-      // });
     }
   }
 
@@ -266,7 +261,7 @@ function Ctn_product_get_data(get) {
             </Link>
           )}
           <Link to={"../Mess"} class="investment">
-            Investment
+            Contact
           </Link>
         </div>
       </div>
@@ -415,7 +410,7 @@ export default function Cpn_product() {
                 <Link to="../donate">
                   <p class="donate">Access</p>
                 </Link>
-                <p class="investment">Investment</p>
+                <p class="investment">Contact</p>
               </div>
             </div>
 
@@ -480,7 +475,7 @@ export default function Cpn_product() {
                   {" "}
                   <p class="donate">Access</p>{" "}
                 </Link>
-                <p class="investment">Investment</p>
+                <p class="investment">Contact</p>
               </div>
             </div>
             <div class="ctn_comment_1" style={{ height: "100px" }}>
@@ -559,7 +554,7 @@ export default function Cpn_product() {
                   {" "}
                   <p class="donate">Access</p>{" "}
                 </Link>
-                <p class="investment">Investment</p>
+                <p class="investment">Contact</p>
               </div>
             </div>
 
