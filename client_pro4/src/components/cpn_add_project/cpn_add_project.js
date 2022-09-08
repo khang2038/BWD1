@@ -624,8 +624,44 @@ export default function Cpn_add_project() {
     });
   };
 
+  $(document).ready(function () {
+    $(window).scroll(function () {
+      var body = $("html, body").scrollTop();
+      var ctn_footer_top = $(".ctn__footer").offset().top;
+      var header_top = $("header").offset().top;
+      var button_add_str = document.querySelector(".button_add_str");
+
+      if (ctn_footer_top - header_top <= window.screen.height) {
+        Object.assign(button_add_str.style , {
+          display : 'none',
+        })
+      }
+      else {
+        Object.assign(button_add_str.style , {
+          display : 'flex',
+        })
+      }
+
+
+    })
+  })
+
   return (
     <div>
+      {/* <div style={{ width: "100%", height: "80px", zIndex: "0" }}>
+        <img
+          src={require("../../public/img/imgbackground/background_page_3.webp")}
+          style={{
+            position: "fixed",
+            width: "100%",
+            top: "0",
+            left: "0",
+            zIndex: "0",
+          }}
+          alt=""
+        />
+      </div> */}
+
       {/* <ComponentDidMount /> */}
       <div class="nav_main_post">
         <ul>

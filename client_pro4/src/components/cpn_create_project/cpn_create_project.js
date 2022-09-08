@@ -56,28 +56,7 @@ function Ctn_main_prj({
               src={require(`../../public/img/imgproject/${img_big}`)}
             />{" "}
           </div>
-          {/* <div className="main_prj_img">
-            <ul>
-              <li>
-                <img src alt="" />
-              </li>
-              <li>
-                <img src alt="" />
-              </li>
-              <li>
-                <img src alt="" />
-              </li>
-              <li>
-                <img src alt="" />
-              </li>
-              <li>
-                <img src alt="" />
-              </li>
-              <li>
-                <img src alt="" />
-              </li>
-            </ul>
-          </div> */}
+    
         </div>
 
         <div className="main_prj_content">
@@ -482,19 +461,6 @@ export default function Cpn_create_project() {
       setData_cr_prj(data);
     });
 
-  // useEffect(() => {
-  //   if (data_cr_prj === null) {
-  //   }
-  // }, []);
-
-  // useComponentWillMount(
-  //   if (main_prj.data === null) {
-  //     get_main_prj().then((res) => {
-  //       setMain_prj(res)
-  //     })
-  //   }
-  // )
-
   $(document).ready(function () {
     $(window).scroll(function () {
       var left_body_prj = document.querySelector(".left_body_prj");
@@ -540,6 +506,8 @@ export default function Cpn_create_project() {
       }
     });
   });
+
+  
 
   return (
     <div>

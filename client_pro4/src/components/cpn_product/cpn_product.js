@@ -118,7 +118,6 @@ function Ctn_product_get_data(get) {
           );
         }
       });
-
     }
   }
 
@@ -577,7 +576,7 @@ export default function Cpn_product() {
                 avatar="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTKVIm_is2xDLHgYn50kQsU3CwN2ciLIsbXQ&usqp=CAU"
                 name="Trần Hoàng"
                 className="hoang"
-                img1="https://ksr-ugc.imgix.net/assets/038/505/949/e72affd4146df8170d19f52e13200900_original.jpg?ixlib=rb-4.0.2&crop=faces&w=352&h=198&fit=crop&v=1662478083&auto=format&frame=1&q=92&s=a2973d4ad9143e6a15a75415db345fd5"
+                img1="https://ksr-ugc.imgix.net/assets/038/426/574/03ec7008231ebcfc165dc077750354af_original.jpg?ixlib=rb-4.0.2&crop=faces&w=352&h=198&fit=crop&v=1661814027&auto=format&frame=1&q=92&s=3a58a8b529d187eb070669f1fc0c54e2"
                 img2="https://ksr-ugc.imgix.net/assets/038/236/299/ccb0487e6cfb1621f85e0576030081d1_original.png?ixlib=rb-4.0.2&crop=faces&w=352&h=198&fit=crop&v=1660153901&auto=format&frame=1&q=92&s=6d80a2f06d0adb1ab2ec0493ffca53da"
                 img3="https://ksr-ugc.imgix.net/assets/038/294/590/09ad09509b996f0785c0ef53afc4db76_original.jpg?ixlib=rb-4.0.2&crop=faces&w=352&h=198&fit=crop&v=1660660067&auto=format&frame=1&q=92&s=b8a636b8ccdc2dba78858e8894433a9b"
               />
@@ -706,7 +705,7 @@ export default function Cpn_product() {
                   style={{ padding: "10px", fontSize: "30px" }}
                 ></i>
               </div>
-              
+
               <img
                 src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgZU2l7s2qBB8wFeboN-0Di9ps9P-7LzOcsg&usqp=CAU"
                 alt=""
