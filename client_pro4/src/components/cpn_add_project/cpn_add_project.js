@@ -119,8 +119,6 @@ export default function Cpn_add_project() {
       var main_content = projectInput.main_content;
       var title_money_pledged = projectInput.title_money_pledged;
 
-      
-
       if (img_big.match(/fakepath/)) {
         // update the file-path text using case-insensitive regex
         img_big = img_big.replace(/C:\\fakepath\\/i, "");
@@ -333,6 +331,10 @@ export default function Cpn_add_project() {
 
   function close_all() {
     // close main post
+    let btn_preview_template = document.querySelector("#btn-preview-template");
+    Object.assign(btn_preview_template.style, {
+      display: " none",
+    });
     if (document.querySelector(".main_post")) {
       Object.assign(document.querySelector(".main_post").style, {
         display: "none",
@@ -430,6 +432,22 @@ export default function Cpn_add_project() {
       });
     }
   }
+  function onClick_close_previewStory_template() {
+    var previewStory = document.querySelector("#modal_preview_story_template");
+    if (previewStory) {
+      Object.assign(previewStory.style, {
+        display: "none",
+      });
+    }
+  }
+  function onClick_open_previewStory() {
+    var previewStory = document.querySelector("#modal_preview_story_template");
+    if (previewStory) {
+      Object.assign(previewStory.style, {
+        display: "flex",
+      });
+    }
+  }
 
   $(document).ready(() => {
     // overview
@@ -523,9 +541,9 @@ export default function Cpn_add_project() {
 
     close_all_edit();
 
-    Object.assign(title_content_image.style , {
-      display : ' initial',
-    })
+    Object.assign(title_content_image.style, {
+      display: " initial",
+    });
 
     const div_title = document.createElement("div");
     div_title.innerHTML = `<textarea name="title${id_title}" type="text" style="height: 80px;border_radius:20px;width: 80%;font-size : 30px; padding: 20px;margin: 10px;" placeholder="Title"></textarea>`;
@@ -535,9 +553,9 @@ export default function Cpn_add_project() {
   function add_story_content() {
     let title_content_image = document.querySelector(".title_content_image");
 
-    Object.assign(title_content_image.style , {
-      display : ' initial',
-    })
+    Object.assign(title_content_image.style, {
+      display: " initial",
+    });
 
     id_content++;
     const div_content = document.createElement("div");
@@ -550,9 +568,9 @@ export default function Cpn_add_project() {
 
     id_image++;
 
-    Object.assign(title_content_image.style , {
-      display : ' initial',
-    })
+    Object.assign(title_content_image.style, {
+      display: " initial",
+    });
 
     const div_image = document.createElement("div");
     div_image.innerHTML = `<div style="display: flex; flex-direction: column;">
@@ -565,40 +583,46 @@ export default function Cpn_add_project() {
   }
 
   const close_all_edit = () => {
-    let temp_state_cr_prj = document.querySelector('.temp_state_cr_prj');
-    let title_content_image = document.querySelector('.title_content_image');
-    let input_add_str = document.querySelector('.input_add_str');
+    let temp_state_cr_prj = document.querySelector(".temp_state_cr_prj");
+    let title_content_image = document.querySelector(".title_content_image");
+    let input_add_str = document.querySelector(".input_add_str");
+    let btn_preview_template = document.querySelector("#btn-preview-template");
+    Object.assign(btn_preview_template.style, {
+      display: " none",
+    });
+    Object.assign(temp_state_cr_prj.style, {
+      display: " none",
+    });
 
-    Object.assign(temp_state_cr_prj.style , {
-      display : ' none',
-    })
+    Object.assign(title_content_image.style, {
+      display: " none",
+    });
 
-    Object.assign(title_content_image.style , {
-      display : ' none',
-    })
-
-    Object.assign(input_add_str.style , {
-      display : ' none',
-    })
-  }
+    Object.assign(input_add_str.style, {
+      display: " none",
+    });
+  };
 
   const o_template_prj = () => {
     close_all_edit();
-    let input_add_str = document.querySelector('.input_add_str');
-
-    Object.assign(input_add_str.style , {
-      display : ' flex',
-    })
-  }
+    let input_add_str = document.querySelector(".input_add_str");
+    let btn_preview_template = document.querySelector("#btn-preview-template");
+    Object.assign(btn_preview_template.style, {
+      display: " flex",
+    });
+    Object.assign(input_add_str.style, {
+      display: " flex",
+    });
+  };
 
   const o_img_edit = () => {
     close_all_edit();
-    let temp_state_cr_prj = document.querySelector('.temp_state_cr_prj');
+    let temp_state_cr_prj = document.querySelector(".temp_state_cr_prj");
 
-    Object.assign(temp_state_cr_prj.style , {
-      display : ' initial',
-    })
-  }
+    Object.assign(temp_state_cr_prj.style, {
+      display: " initial",
+    });
+  };
 
   return (
     <div>
@@ -987,26 +1011,27 @@ export default function Cpn_add_project() {
         </div>
       </div>
       {/* story */}
+
       <div class="story_post" style={{ minHeight: "274px" }}>
         <div style={{ width: "80%", display: "flex", justifyContent: "right" }}>
           <div class="button_add_str">
-            <button onClick={o_img_edit}>
+            <button onClick={o_img_edit} id="btn_edit">
               <i class="fa-solid fa-pen-fancy"></i>
               EDIT
             </button>
-            <button onClick={add_story_title}>
-            <i class="fa-solid fa-book-open-reader"></i>
+            <button onClick={add_story_title} id="btn_title">
+              <i class="fa-solid fa-book-open-reader"></i>
               ADD TITLE
             </button>
-            <button onClick={add_story_content}>
+            <button onClick={add_story_content} id="btn_content">
               <i class="fa-solid fa-file-lines"></i>
               ADD CONTENT
             </button>
-            <button onClick={add_story_image}>
+            <button onClick={add_story_image} id="btn_image">
               <i class="fa-solid fa-photo-film"></i>
               ADD IMAGE
             </button>
-            <button onClick={o_template_prj}>
+            <button onClick={o_template_prj} id="btn_template">
               <i class="fa-solid fa-clipboard-list"></i>
               TEMPLATE
             </button>
@@ -1014,18 +1039,27 @@ export default function Cpn_add_project() {
           <div style={{ width: "80%", position: "relative" }}>
             <div className="temp_state_cr_prj">
               <div className="image_temp_state">
-                <img src="https://www.adobe.com/content/dam/dx-dc/images/acrobat/online/riverflow-items/s_illu_edit-pdf_452x320.svg"/>
+                <img src="https://www.adobe.com/content/dam/dx-dc/images/acrobat/online/riverflow-items/s_illu_edit-pdf_452x320.svg" />
               </div>
-              
             </div>
-
-            <div className="title_content_image">
-              
-            </div>
-
+            <div className="title_content_image"></div>
             <form method="POST" onSubmit={onSubmitHandle_story} id="form_story">
+              <div
+                id="btn-preview-template"
+                onClick={() => {
+                  onClick_open_previewStory();
+                }}
+              >
+                Preview template
+              </div>
               <div class="input_add_str">
-                <div style={{ width : '100%', display: "flex", flexDirection: "column" }}>
+                <div
+                  style={{
+                    width: "100%",
+                    display: "flex",
+                    flexDirection: "column",
+                  }}
+                >
                   <label
                     htmlFor="input_image1"
                     style={{
@@ -1062,8 +1096,7 @@ export default function Cpn_add_project() {
                     onChange={onChangeHandle_story}
                     name="title1"
                     type="text"
-                    row="10"
-                    placeholder="voluptatem voluptate iusto laborum deserunt temporibus commodi, voluptatum quo?"
+                    placeholder="Title"
                     idArea="input_story_1"
                   ></Textarea>
                   <hr style={{ width: "70%", margin: "60px auto" }} />
@@ -1103,13 +1136,15 @@ export default function Cpn_add_project() {
                     onChange={onChangeHandle_story}
                     name="content1"
                     type="text"
-                    placeholder="voluptatem voluptate iusto laborum deserunt temporibus commodi, voluptatum quo?"
+                    row={10}
+                    placeholder="Content"
                     idArea="input_story_2"
                   ></Textarea>{" "}
                   <hr style={{ width: "70%", margin: "60px auto" }} />
                   <Textarea
                     onChange={onChangeHandle_story}
                     name="content2"
+                    row={10}
                     placeholder="Content"
                     idArea="input_story_3"
                   ></Textarea>{" "}
@@ -1124,6 +1159,7 @@ export default function Cpn_add_project() {
                   <Textarea
                     onChange={onChangeHandle_story}
                     name="content3"
+                    row={10}
                     placeholder="Content"
                     idArea="input_story_5"
                   ></Textarea>{" "}
@@ -1195,13 +1231,15 @@ export default function Cpn_add_project() {
                   <Textarea
                     onChange={onChangeHandle_story}
                     name="title3"
-                    placeholder="Title"
+                    row={10}
+                    placeholder="Content"
                     idArea="input_story_6"
                   ></Textarea>{" "}
                   <hr style={{ width: "70%", margin: "60px auto" }} />
                   <Textarea
                     onChange={onChangeHandle_story}
                     name="content4"
+                    row={10}
                     placeholder="Content"
                     idArea="input_story_7"
                   ></Textarea>{" "}
@@ -1233,12 +1271,13 @@ export default function Cpn_add_project() {
                     }}
                     type="file"
                     class="form-control"
-                    id="input_image5 "
+                    id="input_image5"
                     accept="image/gif , image/jpeg, image/png"
                     placeholder="image"
                   />
                 </div>
               </div>
+
               <button
                 style={{
                   padding: "10px 20px",
@@ -1252,7 +1291,6 @@ export default function Cpn_add_project() {
                 SEND
               </button>
             </form>
-
             {/* modal story */}
             <div className="ctn_content_detail_prj" id="modal_preview_story">
               <div
@@ -1390,7 +1428,116 @@ export default function Cpn_add_project() {
                 </div>
               </div>
             </div>
+            {/* template story */}
+            <div
+              className="ctn_content_detail_prj"
+              id="modal_preview_story_template"
+            >
+              <div
+                className="modal_preview_btn_close"
+                // style={{ display: "flex", justifyContent: "right" }}
+                onClick={onClick_close_previewStory_template}
+              >
+                <i
+                  class="fa-solid fa-circle-xmark"
+                  style={{ fontSize: "30px" }}
+                ></i>
+              </div>
+              {/* overview */}
+              <div className="body_detail_prj">
+                <div className="left_body_prj">
+                  <div className="connect">
+                    <i className="fa-brands fa-connectdevelop"></i>
+                    <p>PRO4 connects creators with backers to fund projects.</p>
+                  </div>
+                  <div className="easy">
+                    <i className="fa-brands fa-stack-exchange"></i>
+                    <p>Easy exchange environment for startups.</p>
+                  </div>
+                  <div className="target">
+                    <i
+                      className="fa-solid fa-comments-dollar"
+                      style={{ color: "rgb(134, 134, 100)" }}
+                    ></i>
+                    <p>
+                      You’re only charged if the project meets its funding goal
+                      by the campaign deadline.
+                    </p>
+                  </div>
+                </div>
+                <div className="right_body_prj">
+                  <div className="block_story open">
+                    <h1>Story</h1>
+                    <div>
+                      <div className="img_story" alt="">
+                        <img
+                          id=""
+                          src={require(`../../public/img/imgproject/prj_img_main_1_6.jpg`)}
+                        />
+                      </div>
+                      <h2>WHAT IS BED PILLOW ?</h2>
+                      <div className="img_story" style={{}}>
+                        <img
+                          src={require(`../../public/img/imgproject/prj_img_main_1_2.jpg`)}
+                        />
+                      </div>
 
+                      <p>
+                        Bed Pillow is a pillow designed to always adapt to the
+                        way you sleep. Its unique ergonomic shape and
+                        high-quality materials ensure that your head is
+                        positioned properly for a good night's sleep, regardless
+                        of your sleeping position.
+                      </p>
+                      <p>
+                        To get quality sleep, we need our whole body, especially
+                        our head, neck, and spine, to be relaxed and in the
+                        right position while we are in bed. The alignment of
+                        these parts of our body is the best way to immerse
+                        ourselves in a night of restful sleep.
+                      </p>
+                      <h2>OPTIMUM BREATHABILITY</h2>
+                      <p>
+                        We want to improve the quality of people's sleep
+                        forever. That's why we have put all our efforts into
+                        creating Bed Pillow with the latest state-of-the-art
+                        technology and the best materials available to ensure
+                        maximum performance of its unique properties for as long
+                        as possible.
+                      </p>
+                      <div className="img_story" style={{}}>
+                        <img
+                          src={require(`../../public/img/imgproject/prj_img_main_1_3.jpg`)}
+                        />
+                      </div>
+                      <div className="img_story" style={{}}>
+                        <img
+                          src={require(`../../public/img/imgproject/prj_img_main_1_4.jpg`)}
+                        />
+                      </div>
+
+                      <p>
+                        Bed Pillow is compatible with most commercial queen-size
+                        pillow covers (IKEA, Bed Bath & Beyond, Pottery Barn…),
+                        so you can match it with the rest of your bedroom.
+                      </p>
+                      <p>
+                        Unlike other pillows on the market, the core of Bed
+                        Pillow is composed of a single layer of memory foam with
+                        different thicknesses. Thanks to this solution, we have
+                        avoided the use of environmentally harmful glues and
+                        have made Bed Pillow easier to recycle.
+                      </p>
+                      <div className="img_story" style={{}}>
+                        <img
+                          src={require(`../../public/img/imgproject/prj_img_main_1_5.jpg`)}
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <button
               id="previewStory"
               style={{
