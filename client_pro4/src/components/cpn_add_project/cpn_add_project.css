@@ -159,6 +159,7 @@
   opacity: 1;
   transform: translateY(-5px);
 }
+
 #btn_edit,
 #btn_title,
 #btn_edit,
@@ -167,6 +168,7 @@
 #btn_template {
   transition: all 0.2s linear;
 }
+
 #btn_title:hover,
 #btn_edit:hover,
 #btn_content:hover,
@@ -174,6 +176,7 @@
 #btn_template:hover {
   transform: translateY(-5px);
 }
+
 .story_post .button_add_str {
   position: fixed;
   top: 27%;

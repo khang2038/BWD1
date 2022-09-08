@@ -13,35 +13,8 @@ Trước khi thi cần test :
 - sửa nd trong input
 
 - kiểm tra all nội dung
-- Thêm animation cho mượt
-* ) thêm background trang đăng project
-- design trang nhắn tin
-- Hình địa cầu anh mỹ
 - Mã QR
 - Làm no post (phân trang)
-- Ngày 8/9 Nhờ anh Bảo Anh sửa giùm lỗi chính tả (tối)
-
-
-khang : 
-ok : làm '...xem thêm'
-ok : socket
-ok : voice chat
-ok : đăng kí tài khoản (chỉ demo)
-
-giang:
-ok : Sửa thông tin thống kê 
-ok : có thể thêm hoặc xóa image,title,content
-ok : bản đăng mẫu cho project
-ok : sửa bot chat
-ok : ds loading (nhớ fix các lỗi load dữ liệu trước khi render) 
-ok : scrollTOp khi chuyển trang
-ok : built toàn bộ web qua react (còn thiếu thống kê)
-ok : preview story (cả 3 phần) truoc khi đăng
-ok : ds btn details trang 1
-ok : thông báo khi đăng product
-ok : sửa footer 
-ok : ds-page-details
-ok : hover vào trần hoàng ,phạm thanh hưng ,elonmusk -> demo -> trang profile của họ
 
 
 

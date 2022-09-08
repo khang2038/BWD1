@@ -11,10 +11,15 @@ import Ctn_footer from "../cpn_footer/cpn_footer.js";
 import Cpn_bot_chat from "../cpn_bot_chat/cpn_bot_chat";
 import Cpn_gototop from "../cpn_gototop/cpn_gototop";
 import ComponentDidMount from "../scroll_top/win_scroll_top";
+import "animate.css";
 
 const body = document.querySelector("body");
 
 function Cpn_potential_project() {
+  $(document).ready(function () {
+    $(".potential_projects").addClass("animate__animated animate__fadeInUp");
+  })
+
   return (
     <div className="potential_projects pp_featured" id="featured">
       <h3 class="title-comm">

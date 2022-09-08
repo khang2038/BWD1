@@ -1,5 +1,12 @@
 import "./Support.css";
+import $ from "jquery";
+import "animate.css";
+
 function Cpn_Support({ func, img }) {
+  $(document).ready(function () {
+    $(".support_wrap").addClass("animate__animated animate__fadeInUp");
+  })
+  
   return (
     <div className="support_wrap">
       <div className="support_btn_close" onClick={func.handlerToggleSupport}>
