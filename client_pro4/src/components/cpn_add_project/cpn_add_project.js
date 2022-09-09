@@ -632,19 +632,16 @@ export default function Cpn_add_project() {
       var button_add_str = document.querySelector(".button_add_str");
 
       if (ctn_footer_top - header_top <= window.screen.height) {
-        Object.assign(button_add_str.style , {
-          display : 'none',
-        })
+        Object.assign(button_add_str.style, {
+          display: "none",
+        });
+      } else {
+        Object.assign(button_add_str.style, {
+          display: "flex",
+        });
       }
-      else {
-        Object.assign(button_add_str.style , {
-          display : 'flex',
-        })
-      }
-
-
-    })
-  })
+    });
+  });
 
   return (
     <div>
@@ -1007,26 +1004,26 @@ export default function Cpn_add_project() {
           </div>
           <form class="ctn_FAQ" method="POST" onSubmit={onSubmitHandle_faq}>
             <div class="question_FAQ">
-              <Textarea
-                placeholder="nemo commodi tempora accusamus molestiae ipsam ad sed veniam cum"
+              <Input
+                placeholder="Write for FAQ"
                 name="question1"
                 idArea="question"
                 onChange={onChangeHandle_faq}
-              ></Textarea>
+              ></Input>
               <hr style={{ width: "70%", margin: "60px auto" }} />
-              <Textarea
-                placeholder="nemo commodi tempora accusamus molestiae ipsam ad sed veniam cum"
+              <Input
+                placeholder="Write for FAQ"
                 name="question2"
                 idArea="question"
                 onChange={onChangeHandle_faq}
-              ></Textarea>
+              ></Input>
               <hr style={{ width: "70%", margin: "60px auto " }} />
-              <Textarea
-                placeholder="nemo commodi tempora accusamus molestiae ipsam ad sed veniam cum"
+              <Input
+                placeholder="Write for FAQ"
                 name="question3"
                 idArea="question"
                 onChange={onChangeHandle_faq}
-              ></Textarea>
+              ></Input>
             </div>
             <button
               type="submit"

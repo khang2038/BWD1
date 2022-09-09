@@ -12,9 +12,6 @@ import Button from "../cpn_toast_message/button/Button";
 import Toast from "../cpn_toast_message/toast/Toast";
 import ComponentDidMount from "../scroll_top/win_scroll_top";
 import { Cpn_loading } from "../cpn_loading/cpn_loading";
-import {Canvas} from 'react-three-fiber'
-import Earth from '../../Earth/Earth'
-import {OrbitControls, Cloud, Float } from '@react-three/drei'
 
 const body = document.querySelector("body");
 
@@ -70,32 +67,33 @@ export default function Cpn_add_product() {
   const navigate = useNavigate();
   const [list, setList] = useState([]);
   const [loading, setLoading] = useState(false);
-  const [images,setImages]=useState([])
-  const [imgToRemove,setImgToRemove]=useState(null)
-
+  const [images, setImages] = useState([]);
+  const [imgToRemove, setImgToRemove] = useState(null);
 
   function handleRemoveImg(imgObj) {
-    setImgToRemove(imgObj.public_id);   
-    setImages((prev) => prev.filter((img) => img.public_id !== imgObj.public_id));
-}
-
-
-
+    setImgToRemove(imgObj.public_id);
+    setImages((prev) =>
+      prev.filter((img) => img.public_id !== imgObj.public_id)
+    );
+  }
 
   function showWidget() {
     const widget = window.cloudinary.createUploadWidget(
-        {
-            cloudName: "dtcnua1zs",
-            uploadPreset: "gkhojgye",
-        },
-        (error, result) => {
-            if (!error && result.event === "success") {
-                setImages((prev) => [...prev, { url: result.info.url, public_id: result.info.public_id }]);
-            }
+      {
+        cloudName: "dtcnua1zs",
+        uploadPreset: "gkhojgye",
+      },
+      (error, result) => {
+        if (!error && result.event === "success") {
+          setImages((prev) => [
+            ...prev,
+            { url: result.info.url, public_id: result.info.public_id },
+          ]);
         }
+      }
     );
     widget.open();
-}
+  }
 
   let toastProperties = null;
 
@@ -169,13 +167,13 @@ export default function Cpn_add_product() {
   };
 
   return (
-    <div className="container"  >
+    <div className="container">
       <ComponentDidMount />
       {loading ? <Cpn_loading /> : null}
 
       <div
         class="body_create_prj"
-        style={{ display: "flex", marginTop: "80px",marginLeft:"15%" }}
+        style={{ display: "flex", marginTop: "80px", marginLeft: "15%" }}
       >
         <div
           style={{
@@ -184,6 +182,7 @@ export default function Cpn_add_product() {
             width: "40%",
             borderRadius: "20px",
             border: "2px solid rgb(212, 179, 179)",
+            boxShadow: "0 1px 9px 2px #61929b91",
           }}
         >
           <div
@@ -259,17 +258,25 @@ export default function Cpn_add_product() {
                 />
                 <span>Description</span>
               </div>
-              <div >
+              <div>
                 <div className="images-preview-container">
-                    {images.map(image => (
-                      <div className="image-preview">
-                          <img src={image.url}/>
-                          {imgToRemove != image.public_id && <i className="fa fa-times-circle" onClick={() => handleRemoveImg(image)}></i>}
-                      </div>
-                    ) )}
+                  {images.map((image) => (
+                    <div className="image-preview">
+                      <img src={image.url} />
+                      {imgToRemove != image.public_id && (
+                        <i
+                          className="fa fa-times-circle"
+                          onClick={() => handleRemoveImg(image)}
+                        ></i>
+                      )}
+                    </div>
+                  ))}
                 </div>
-                <button type="button" onClick={showWidget}> 
-                  <i style={{fontWeight: 'bold',margin : '0 20px'}} class="fa-solid fa-camera-retro"></i>
+                <button type="button" onClick={showWidget}>
+                  <i
+                    style={{ fontWeight: "bold", margin: "0 20px" }}
+                    class="fa-solid fa-camera-retro"
+                  ></i>
                   UPLOAD IMAGE
                 </button>
                 {/* <input
@@ -304,13 +311,14 @@ export default function Cpn_add_product() {
           <div className="ctn__loading__content"></div>
         </div>
       </div>
-      <div style={{width: '50%', height: '80vh'}} className="threed">
-      <Canvas camera={{zoom: 10, position:[15, 20, 15]}}>
+      <div className="threed">
+        <div className="blur_blue"></div>
+        <div className="blur_pink"></div>
+        <img src={require("../../public/img/earth.gif")} alt="" />
+        {/* <Canvas camera={{zoom: 10, position:[15, 20, 15]}}>
         <ambientLight intensity={0.5}/>
         <pointLight position={[35,35,0]} intensity={0.4}/>
         <pointLight position={[-35,35,0]} intensity={0.4}/>
-        {/* <Suspense fallback={null}> */}
-       
         <Float
           speed={6} 
           rotationIntensity={6} 
@@ -320,18 +328,8 @@ export default function Cpn_add_product() {
           <Earth/>
           <mesh />
         </Float>
-
-        {/* <Cloud
-            opacity={0.5}
-            speed={0.4} 
-            width={10} 
-            depth={1.5}
-            segments={20} 
-        /> */}
-
-        {/* </Suspense> */}
         <OrbitControls/>
-      </Canvas>
+      </Canvas> */}
       </div>
     </div>
   );
